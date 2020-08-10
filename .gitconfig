@@ -1,6 +1,6 @@
 [user]
-    name = babramczyk
-    email = bjabramczyk@gmail.com
+    name = "Brett Abramczyk"
+    email = brettabramczyk@northwesternmutual.com
 
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
@@ -12,7 +12,6 @@
     ci = commit
     br = branch
     prune-local = "!git fetch -p && git br -D master && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
-
     # Mark a file as "assume unchanged", which means that Git will treat it
     # as though there are no changes to it even if there are. Useful for
     # temporary changes to tracked files
@@ -22,8 +21,12 @@
     # Show the files that are currently assume-unchanged
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
     
-    # Delete the current branch, and checkout the "main" dev branch (currently "dev")
-    abandon = "!BRANCH_NAME=$(git branch-name) && git co dev && git br -D $BRANCH_NAME"
+    # Delete the current branch, and checkout the "main" dev branch (currently "master")
+    abandon = "!BRANCH_NAME=$(git branch-name) && git co master && git br -D $BRANCH_NAME"
+
+    wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m '--wip-- [skip ci]'"
+    unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
+
 
 # I have no idea what this is or how this got here :)
 [filter "lfs"]
@@ -36,3 +39,10 @@
 [stash]
     # Make 'git stash show <stash>' show the diff the stash would create if applied
     showPatch = true
+[fetch]
+    # Prune remote-tracking branches that have been deleted every time running `git fetch`
+    prune = true
+
+[pager]
+    # Prevents `git branch` from showing branches in an editor (instead of just printing them)
+    branch = false
