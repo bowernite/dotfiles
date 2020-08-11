@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>893CF2A8-9826-4AB7-95CE-3BCDB8C1F0CF</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>text</key>
+			<string>mdn</string>
+			<key>url</key>
+			<string>https://www.google.com/search?btnI&amp;q=site%3Adeveloper.mozilla.org+{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
