@@ -11,3 +11,6 @@
 !Alfred/**/*
 !Alfred
 !Alfred*
+
+# Other ignores
+.DS_Store
