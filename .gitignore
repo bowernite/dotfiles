@@ -1,17 +1,5 @@
 # This is the directory where git stores its data
 .cfg
 
-# Ignore everything...
-*
-# except for the files we actually care about
-!.zshrc
-!.gitconfig
-!.gitignore
-!README.md
-!Alfred/**/*
-!Alfred
-!Alfred*
-!bootstrap.sh
-
 # Other ignores
 .DS_Store
