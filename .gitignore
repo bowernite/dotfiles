@@ -8,3 +8,6 @@
 !.gitconfig
 !.gitignore
 !README.md
+!Alfred/**/*
+!Alfred
+!Alfred*
