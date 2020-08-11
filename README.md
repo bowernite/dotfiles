@@ -1,12 +1,6 @@
 ### Alfred
 
-Alfred data is stored in Dropbox.
-
-- https://www.alfredapp.com/help/advanced/sync/#services
-- https://www.dropbox.com/h
-
-1. Download Dropbox for Desktop
-2. /Alfred folder in Dropbox should sync. Otherwise troubleshoot and look at links above
+Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
 
 ### Applications
 
