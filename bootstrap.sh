@@ -49,6 +49,7 @@ brew update
 # brew install findutils
 
 PACKAGES=(
+    bitwarden-cli
     fzf
     git
     nvm
