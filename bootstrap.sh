@@ -66,6 +66,9 @@ brew install ${PACKAGES[@]}
 echo "Cleaning up..."
 brew cleanup
 
+echo "Installing fzf keybindings and fuzzy completion..."
+$(brew --prefix)/opt/fzf/install
+
 echo "Installing cask..."
 brew install caskroom/cask/brew-cask
 
