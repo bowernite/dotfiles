@@ -123,6 +123,11 @@ alias test='echo "🧪 Testing files with Jest..." && npx jest --coverage=false 
 alias testw='echo "🧪👀 Testing files with Jest on watch..." && npx jest --watch --coverage=false'
 alias va='tc && test && lint && format'
 alias vs='tc && lint && format'
+# dotfiles repo
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# Open fzf files with vim by default
+alias go="vim -o \`fzf\`"
+
 
 #########
 # Other
@@ -151,5 +156,5 @@ precmd() {
 # Two-line prompt
 PROMPT="$PROMPT"$'\n'"😀 "
 
-# dotfiles repo
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# fzf autocompletion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
