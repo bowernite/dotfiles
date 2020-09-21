@@ -9,6 +9,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'dense-analysis/ale'
   " Plug '907th/vim-auto-save'
   Plug 'kannokanno/previm'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
