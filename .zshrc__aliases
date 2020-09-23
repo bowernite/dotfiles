@@ -16,3 +16,4 @@ alias go="vim -o \`fzf\`"
 # Make sure dotfiles are shown by ls
 alias ls="ls -A"
 alias myip="curl http://ipecho.net/plain; echo"
+alias gpom="git pull origin $(git_main_branch)"
