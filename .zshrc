@@ -4,26 +4,11 @@
 
 # `|| true` swallows the error, but it'll still log it
 
+source ~/.zshrc__aliases || true
 # Generated when initializing zsh
 source ~/.zshrc__generated || true
 # Private stuff (keys, company-specific, etc.)
 source ~/.zshrc__private || true
-
-#########
-# Aliases
-#########
-alias format='echo "💅 Formatting files with Prettier..." && npx prettier --write --loglevel=error . && echo "✅ Done formatting"'
-alias lint='echo "🔎 Linting files with ESLint..." && npx eslint . && echo "✅ Done linting"'
-alias tc='echo "🧐 Type-checking files with TypeScript..." && npx tsc --noEmit && echo "✅ Done type-checking"'
-alias test='echo "🧪 Testing files with Jest..." && npx jest --coverage=false && echo "✅ Done testing"'
-alias testw='echo "🧪👀 Testing files with Jest on watch..." && npx jest --watch --coverage=false'
-alias va='tc && test && lint && format'
-alias vs='tc && lint && format'
-# dotfiles repo
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# Open fzf files with vim by default
-alias go="vim -o \`fzf\`"
-
 
 #########
 # Other
