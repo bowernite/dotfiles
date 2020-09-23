@@ -4,11 +4,11 @@
 
 # `|| true` swallows the error, but it'll still log it
 
-source ~/.zshrc__aliases || true
 # Generated when initializing zsh
 source ~/.zshrc__generated || true
 # Private stuff (keys, company-specific, etc.)
 source ~/.zshrc__private || true
+source ~/.zshrc__aliases || true
 
 #########
 # Other
