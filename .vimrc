@@ -22,4 +22,7 @@ set expandtab
 " set number of spaces inserted when tabbing
 set shiftwidth=2
 
-
+" Press <escape><return> or <escape><wait a second...> to clear highlighting
+" of a search
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
