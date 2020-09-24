@@ -40,4 +40,14 @@ PROMPT="$PROMPT"$'\n'"😀 "
 # fzf autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='git ls-tree -r --name-only HEAD || fd --type f --hidden --follow --exclude "**/{node_modules,.git,.Trash}/*"'
+export FZF_DEFAULT_COMMAND='git ls-tree -r --name-only HEAD 2>/dev/null || fd --type f --hidden --follow --exclude="**/{node_modules,.git,.Trash}/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude="**/{node_modules,.git,.Trash}"'
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --exclude="**/{node_modules,.git,.Trash}" . "$1"
+}
+_fzf_compgen_path() {
+  git ls-tree -r --name-only HEAD 2>/dev/null || fd --type f --hidden --follow --exclude="**/{node_modules,.git,.Trash}/*" . "$1"
+}
