@@ -17,3 +17,13 @@ alias go="vim -o \`fzf\`"
 alias ls="ls -A"
 alias myip="curl http://ipecho.net/plain; echo"
 alias gpom="git pull origin \$(git_main_branch)"
+
+###########
+# Functions
+###########
+
+# Clears the screen and runs the succeeding command(s)
+run() {
+  clear;
+  eval $@;
+}
