@@ -15,8 +15,11 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias go="vim -o \`fzf\`"
 # Make sure dotfiles are shown by ls
 alias ls="ls -A"
+# Log ip to console
 alias myip="curl http://ipecho.net/plain; echo"
 alias gpom="git pull origin \$(git_main_branch)"
+# Change ping to stop after 5 pings
+alias ping="ping -c 5"
 
 ###########
 # Functions
