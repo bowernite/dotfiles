@@ -82,6 +82,7 @@ CASKS=(
     google-chrome
     # google-drive
     # gpg-suite
+    karabiner-elements
     # iterm2
     # macvim
     # postman
