@@ -4,6 +4,19 @@
 <dict>
 	<key>customSites</key>
 	<dict>
+		<key>158D993C-A2BD-4AF8-B91E-448FCA24E639</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>amz</string>
+			<key>text</key>
+			<string>Search Amazon for '{query}'</string>
+			<key>url</key>
+			<string>https://smile.amazon.com/s?k={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>893CF2A8-9826-4AB7-95CE-3BCDB8C1F0CF</key>
 		<dict>
 			<key>enabled</key>
