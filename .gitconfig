@@ -4,6 +4,16 @@
 
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Prints the branch name of the main development branch
+    dev-branch = !" \
+        f() { \
+            if [[ -n $(git branch --list develop) ]]; then \
+                echo develop; \
+            else \
+                echo master; \
+            fi \
+        }; \
+        f"
     st = status
     publish = "!git push -u origin $(git branch-name)"
     unpublish = "!git push origin :$(git branch-name)"
@@ -21,8 +31,8 @@
     # Show the files that are currently assume-unchanged
     assumed = "!git ls-files -v | grep ^h | cut -c 3-"
     
-    # Delete the current branch, and checkout the "main" dev branch (currently "master")
-    abandon = "!BRANCH_NAME=$(git branch-name) && git co master && git br -D $BRANCH_NAME"
+    # Delete the current branch, and checkout whichever branch is for developing
+    abandon = !"BRANCH_NAME=$(git branch-name) && git co $(git dev-branch) && git br -D $BRANCH_NAME"
 
     wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m '--wip-- [skip ci]'"
     unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
