@@ -17,7 +17,7 @@ alias go="vim -o \`fzf\`"
 alias ls="ls -A"
 # Log ip to console
 alias myip="curl http://ipecho.net/plain; echo"
-alias gpom="git pull origin \$(git_main_branch)"
+alias gpom="git pull origin \$(git_dev_branch)"
 # Change ping to stop after 5 pings
 alias ping="ping -c 5"
 
@@ -29,4 +29,12 @@ alias ping="ping -c 5"
 run() {
   clear;
   eval $@;
+}
+
+git_dev_branch() {
+  if [[ -n $(git branch --list develop) ]]; then 
+    echo develop; 
+  else 
+    echo master; 
+  fi 
 }
