@@ -2,13 +2,40 @@
 # Aliases
 #########
 
-alias format='echo "💅 Formatting files with Prettier..." && npx prettier --write --loglevel=error . && echo "✅ Done formatting"'
-alias lint='echo "🔎 Linting files with ESLint..." && npx eslint . && echo "✅ Done linting"'
-alias tc='echo "🧐 Type-checking files with TypeScript..." && npx tsc --noEmit && echo "✅ Done type-checking"'
-alias test='echo "🧪 Testing files with Jest..." && npx jest --coverage=false && echo "✅ Done testing"'
-alias testw='echo "🧪👀 Testing files with Jest on watch..." && npx jest --watch --coverage=false'
+# Dev stuff in repos
+format() {
+  echo "💅 Formatting files with Prettier...";
+  npx prettier --write --loglevel=error .;
+  echo "✅ Done formatting";
+}
+lint() {
+  echo "🔎 Linting files with ESLint...";
+  npx eslint . --ext js,jsx,ts,tsx;
+  echo "✅ Done linting";
+}
+tc() {
+  echo "🧐 Type-checking files with TypeScript...";
+  npx tsc --noEmit;
+  echo "✅ Done type-checking";
+}
+test() {
+  echo "🧪 Testing files changed on branch with Jest...";
+  npx jest --changedSince=$(git_dev_branch) --coverage=false;
+  echo "✅ Done testing";
+}
+testw() {
+  echo "🧪👀 Testing files changed on branch with Jest on watch...";
+  npx jest --changedSince=$(git_dev_branch) --watch --coverage=false;
+  echo "✅ Done testing";
+}
+testa() {
+  echo "🧪 Testing all files with Jest...";
+  npx jest --coverage=false;
+  echo "✅ Done testing";
+}
 alias va='tc && test && lint && format'
 alias vs='tc && lint && format'
+
 # dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Open fzf files with vim by default
