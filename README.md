@@ -36,7 +36,15 @@ As of writing this, there's weird behavior between mac keybinding remappings (do
 
 <hr />
 
-#### Additional Links
+##### Additional Links
 
 - https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b
 - https://www.legeektrotteur.com/mac-os-x-lock-caps-with-the-shift-key
+
+#### Function keys w/ Touch Bar
+
+If using a mac with a touch bar, and opting for the control strip by default and function keys when holding `fn`, you'll need to make this modification [/dotfiles-assets/fn-key-remap.png](shown here).
+
+<details>
+   The reason this is necessary is that Karabiner thinks you're holding down `fn` and hitting a `f*` key, which the checkbox at the bottom says that it should use the "special feature" for that `f*` key.
+</details>
