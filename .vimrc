@@ -33,8 +33,8 @@ set shiftwidth=2
 set nohlsearch
 
 " Remap j and k to page-up and page-down
-nnoremap j <C-D>
-nnoremap k <C-U>
+" nnoremap j <C-D>
+" nnoremap k <C-U>
 
 " Jump around curly blocks with s
 nnoremap s ]}
@@ -78,3 +78,8 @@ nnoremap _ 0
 " Always show at least 5 lines below and above the
 " cursor
 set scrolloff=5
+
+" Modify "start of line" commands to ignore leading whitespace
+nnoremap 0 _
+nnoremap _ 0
+nnoremap I _i
