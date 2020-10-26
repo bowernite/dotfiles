@@ -57,4 +57,4 @@
     # Prevents `git branch` from showing branches in an editor (instead of just printing them)
     branch = false
 [pull]
-	rebase = true
+	rebase = false
