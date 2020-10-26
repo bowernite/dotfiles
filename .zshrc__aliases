@@ -18,18 +18,18 @@ tc() {
   npx tsc --noEmit;
   echo "✅ Done type-checking";
 }
-test() {
-  echo "🧪 Testing files changed on branch with Jest...";
+jest() {
+  echo "🧪 Testing files changed on branch...";
   npx jest --changedSince=$(git_dev_branch) --coverage=false;
   echo "✅ Done testing";
 }
-testw() {
-  echo "🧪👀 Testing files changed on branch with Jest on watch...";
+jestw() {
+  echo "🧪👀 Testing files changed on branch on watch...";
   npx jest --changedSince=$(git_dev_branch) --watch --coverage=false;
   echo "✅ Done testing";
 }
-testa() {
-  echo "🧪 Testing all files with Jest...";
+jesta() {
+  echo "🧪 Testing all files...";
   npx jest --coverage=false;
   echo "✅ Done testing";
 }
