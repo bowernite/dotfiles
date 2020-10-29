@@ -10,5 +10,7 @@
 	<true/>
 	<key>hidesubtext</key>
 	<integer>2</integer>
+	<key>visibleresults</key>
+	<integer>3</integer>
 </dict>
 </plist>
