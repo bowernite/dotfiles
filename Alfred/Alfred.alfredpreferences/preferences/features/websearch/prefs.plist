@@ -17,6 +17,32 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>493CFEEB-84C2-4EE6-B5FB-796DFCBDB131</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hey feed</string>
+			<key>text</key>
+			<string>Open The Feed on Hey</string>
+			<key>url</key>
+			<string>https://app.hey.com/feedbox</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>5871AA83-1583-45BD-8D23-CC105335245D</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hey</string>
+			<key>text</key>
+			<string>Open Hey</string>
+			<key>url</key>
+			<string>https://app.hey.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>893CF2A8-9826-4AB7-95CE-3BCDB8C1F0CF</key>
 		<dict>
 			<key>enabled</key>
@@ -27,6 +53,19 @@
 			<string>mdn</string>
 			<key>url</key>
 			<string>https://www.google.com/search?btnI&amp;q=site%3Adeveloper.mozilla.org+{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D1D9E1BE-17F2-4F92-BC66-4DDA69D92821</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hey paper</string>
+			<key>text</key>
+			<string>Open Paper Trail on Hey</string>
+			<key>url</key>
+			<string>https://app.hey.com/paper_trail</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
