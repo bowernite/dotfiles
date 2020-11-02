@@ -22,113 +22,113 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-echo "Starting bootstrapping"
+# echo "Starting bootstrapping"
 
-# Check for Homebrew, install if we don't have it
-if test ! $(which brew); then
-    echo "Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
+# # Check for Homebrew, install if we don't have it
+# if test ! $(which brew); then
+#     echo "Installing homebrew..."
+#     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# fi
 
-# Update homebrew recipes
-echo "Updating homebrew recipes..."
-brew update
+# # Update homebrew recipes
+# echo "Updating homebrew recipes..."
+# brew update
 
-# TODO: Maybe check these out? See if they're better, and use these if they are
-# Install GNU core utilities (those that come with OS X are outdated)
-# brew tap homebrew/dupes
-# brew install coreutils
-# brew install gnu-sed --with-default-names
-# brew install gnu-tar --with-default-names
-# brew install gnu-indent --with-default-names
-# brew install gnu-which --with-default-names
-# brew install gnu-grep --with-default-names
+# # TODO: Maybe check these out? See if they're better, and use these if they are
+# # Install GNU core utilities (those that come with OS X are outdated)
+# # brew tap homebrew/dupes
+# # brew install coreutils
+# # brew install gnu-sed --with-default-names
+# # brew install gnu-tar --with-default-names
+# # brew install gnu-indent --with-default-names
+# # brew install gnu-which --with-default-names
+# # brew install gnu-grep --with-default-names
 
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-# TODO: Maybe check these out? See if they're better, and use these if they are
-# brew install findutils
+# # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+# # TODO: Maybe check these out? See if they're better, and use these if they are
+# # brew install findutils
 
-PACKAGES=(
-    bitwarden-cli
-    fzf
-    git
-    nvm
-    # node
-    # npm
-    python
-    python3
-    yarn
-)
-
-echo "Installing packages..."
-brew install ${PACKAGES[@]}
-
-echo "Cleaning up..."
-brew cleanup
-
-echo "Installing fzf keybindings and fuzzy completion..."
-$(brew --prefix)/opt/fzf/install
-
-echo "Installing cask..."
-brew install caskroom/cask/brew-cask
-
-# REVIEW: "maybe" packages are commented out
-CASKS=(
-    adguard
-    alfred
-    # docker
-    firefox
-    flux
-    google-chrome
-    # google-drive
-    # gpg-suite
-    karabiner-elements
-    # iterm2
-    # macvim
-    # postman
-    slack
-    spectacle
-    # vanilla
-    # virtualbox
-    # vlc
-    # zoomus
-)
-
-echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
-
-# echo "Installing fonts..."
-# brew tap caskroom/fonts
-# FONTS=(
-#     font-inconsolidata
-#     font-roboto
-#     font-clear-sans
+# PACKAGES=(
+#     bitwarden-cli
+#     fzf
+#     git
+#     nvm
+#     # node
+#     # npm
+#     python
+#     python3
+#     yarn
 # )
-# brew cask install ${FONTS[@]}
 
-# echo "Installing Python packages..."
-# PYTHON_PACKAGES=(
-#     ipython
-#     virtualenv
-#     virtualenvwrapper
+# echo "Installing packages..."
+# brew install ${PACKAGES[@]}
+
+# echo "Cleaning up..."
+# brew cleanup
+
+# echo "Installing fzf keybindings and fuzzy completion..."
+# $(brew --prefix)/opt/fzf/install
+
+# echo "Installing cask..."
+# brew install caskroom/cask/brew-cask
+
+# # REVIEW: "maybe" packages are commented out
+# CASKS=(
+#     adguard
+#     alfred
+#     # docker
+#     firefox
+#     flux
+#     google-chrome
+#     # google-drive
+#     # gpg-suite
+#     karabiner-elements
+#     # iterm2
+#     # macvim
+#     # postman
+#     slack
+#     spectacle
+#     # vanilla
+#     # virtualbox
+#     # vlc
+#     # zoomus
 # )
-# sudo pip install ${PYTHON_PACKAGES[@]}
 
-# echo "Installing global npm packages..."
-# npm install marked -g
+# echo "Installing cask apps..."
+# brew cask install ${CASKS[@]}
 
-echo "Configuring OSX..."
-# TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
+# # echo "Installing fonts..."
+# # brew tap caskroom/fonts
+# # FONTS=(
+# #     font-inconsolidata
+# #     font-roboto
+# #     font-clear-sans
+# # )
+# # brew cask install ${FONTS[@]}
 
-# Set fast key repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
+# # echo "Installing Python packages..."
+# # PYTHON_PACKAGES=(
+# #     ipython
+# #     virtualenv
+# #     virtualenvwrapper
+# # )
+# # sudo pip install ${PYTHON_PACKAGES[@]}
 
-# Require password as soon as screensaver or sleep mode starts
-# defaults write com.apple.screensaver askForPassword -int 1
-# defaults write com.apple.screensaver askForPasswordDelay -int 0
+# # echo "Installing global npm packages..."
+# # npm install marked -g
 
-# Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# echo "Configuring OSX..."
+# # TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
+
+# # Set fast key repeat rate
+# defaults write NSGlobalDomain KeyRepeat -int 2
+
+# # Require password as soon as screensaver or sleep mode starts
+# # defaults write com.apple.screensaver askForPassword -int 1
+# # defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# # Show filename extensions by default
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -137,5 +137,21 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # echo "Creating folder structure..."
 # [[ ! -d Wiki ]] && mkdir Wiki
 # [[ ! -d Workspace ]] && mkdir Workspace
+
+#######################################
+# Symlinks
+#
+# Symlinks from this directory to the machine's root
+#######################################
+
+source bootstrap-helpers.sh
+
+install_dotfile ".zshrc"
+install_dotfile ".gitconfig"
+install_dotfile ".vimrc"
+
+#######################################
+# Fin
+#######################################
 
 echo "Bootstrapping complete"
