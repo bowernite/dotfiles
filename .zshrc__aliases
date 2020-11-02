@@ -36,8 +36,6 @@ jesta() {
 alias va='tc && test && lint && format'
 alias vs='tc && lint && format'
 
-# dotfiles repo
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Open fzf files with vim by default
 alias go="vim -o \`fzf\`"
 # Make sure dotfiles are shown by ls
