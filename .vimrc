@@ -1,4 +1,4 @@
-source ~/.vimrc__defaults
+source .vimrc__defaults
 
 call plug#begin('~/.vim/plugged')
   Plug 'ianks/vim-tsx'

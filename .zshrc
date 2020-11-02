@@ -5,10 +5,10 @@
 # `|| true` swallows the error, but it'll still log it
 
 # Generated when initializing zsh
-source ~/.zshrc__generated || true
+source .zshrc__generated || true
 # Private stuff (keys, company-specific, etc.)
-source ~/.zshrc__private || true
-source ~/.zshrc__aliases || true
+source .zshrc__private || true
+source .zshrc__aliases || true
 
 #########
 # Other
