@@ -39,7 +39,7 @@ As of writing this, there's weird behavior between mac keybinding remappings (do
 
 #### Function keys w/ Touch Bar
 
-If using a mac with a touch bar, and opting for the control strip by default and function keys when holding `fn`, you'll need to make this modification [shown here](/dotfiles-assets/fn-key-remap.png).
+If using a mac with a touch bar, and opting for the control strip by default and function keys when holding `fn`, you'll need to make this modification [shown here](/assets/fn-key-remap.png).
 
 <details>
    The reason this is necessary is that Karabiner thinks you're holding down `fn` and hitting a `f*` key, which the checkbox at the bottom says that it should use the "special feature" for that `f*` key.
