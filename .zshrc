@@ -7,7 +7,9 @@
 # Generated when initializing zsh
 source .zshrc__generated || true
 # Private stuff (keys, company-specific, etc.)
-source .zshrc__private || true
+if [ -e .zshrc__private ]; then
+  source .zshrc__private
+fi
 source .zshrc__aliases || true
 
 #########
