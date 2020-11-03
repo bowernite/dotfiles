@@ -91,11 +91,6 @@ HOMEBREW_CASKS=(
 )
 brew cask install ${HOMEBREW_CASKS[@]}
 
-# Q: Is this going to duplicate stuff that we already have committed to .zshrc?
-# TODO: prevent the install from prompting when this is installed
-echo "Installing fzf keybindings and fuzzy completion..."
-$(brew --prefix)/opt/fzf/install
-
 #######################################
 # MacOS
 #######################################
