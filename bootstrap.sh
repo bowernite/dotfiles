@@ -22,7 +22,26 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-echo "Starting bootstrapping"
+echo "Hi, $USER! 👋"
+echo "Let's get you set up... 👨‍💻"
+echo ""
+
+echo "Pulling in some shell helpers"
+source bootstrap-helpers.sh
+
+#######################################
+# Symlinks
+#######################################
+echo "Symlinking dotfiles to \$HOME: $HOME"
+
+install_dotfile ".zshrc"
+install_dotfile ".gitconfig"
+install_dotfile ".vimrc"
+
+#######################################
+# Homebrew
+#######################################
+echo "🍺 Homebrew: Starting Homebrew installations"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
@@ -30,25 +49,11 @@ if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Update homebrew recipes
-echo "Updating homebrew recipes..."
+echo "Homebrew: Updating recipes..."
 brew update
 
-# TODO: Maybe check these out? See if they're better, and use these if they are
-# Install GNU core utilities (those that come with OS X are outdated)
-# brew tap homebrew/dupes
-# brew install coreutils
-# brew install gnu-sed --with-default-names
-# brew install gnu-tar --with-default-names
-# brew install gnu-indent --with-default-names
-# brew install gnu-which --with-default-names
-# brew install gnu-grep --with-default-names
-
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-# TODO: Maybe check these out? See if they're better, and use these if they are
-# brew install findutils
-
-PACKAGES=(
+echo "Homebrew: Installing generic packages..."
+HOMEBREW_PACKAGES=(
     bitwarden-cli
     fzf
     git
@@ -60,21 +65,16 @@ PACKAGES=(
     # node
     # npm
 )
+brew install ${HOMEBREW_PACKAGES[@]}
 
-echo "Installing packages..."
-brew install ${PACKAGES[@]}
-
-echo "Cleaning up..."
+echo "Homebrew: Cleaning up..."
 brew cleanup
 
-# Q: Is this going to duplicate stuff that we already have committed to .zshrc?
-echo "Installing fzf keybindings and fuzzy completion..."
-$(brew --prefix)/opt/fzf/install
-
-echo "Installing cask..."
+echo "Homebrew: Installing Homebrew cask..."
 brew install caskroom/cask/brew-cask
 
-CASKS=(
+echo "Homebrew: Installing cask apps..."
+HOMEBREW_CASKS=(
     adguard
     alfred
     bartender
@@ -91,11 +91,53 @@ CASKS=(
     virtualbox
     zoomus
 )
+brew cask install ${HOMEBREW_CASKS[@]}
 
-echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+# Q: Is this going to duplicate stuff that we already have committed to .zshrc?
+echo "Installing fzf keybindings and fuzzy completion..."
+$(brew --prefix)/opt/fzf/install
 
-# echo "Installing fonts..."
+#######################################
+# MacOS
+#######################################
+echo " Configuring MacOS..."
+# TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
+
+# Set fast key repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+# Show filename extensions by default
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+#######################################
+# Fin
+#######################################
+
+echo ""
+echo "All done. Have fun! 🚀"
+
+#######################################
+# Maybe one day...
+#
+# These might be helpful at some point,
+# but they aren't right now
+######################################
+
+# Install GNU core utilities (those that come with OS X are outdated)
+# TODO: Maybe check these out? See if they're better, and use these if they are
+# echo "Homebrew: Installing better GNU utilities..."
+# brew tap homebrew/dupes
+# brew install coreutils
+# brew install gnu-sed --with-default-names
+# brew install gnu-tar --with-default-names
+# brew install gnu-indent --with-default-names
+# brew install gnu-which --with-default-names
+# brew install gnu-grep --with-default-names
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+# TODO: Maybe check this out
+# brew install findutils
+
+# echo "Homebrew: Installing fonts..."
 # brew tap caskroom/fonts
 # FONTS=(
 #     font-inconsolidata
@@ -115,41 +157,6 @@ brew cask install ${CASKS[@]}
 # echo "Installing global npm packages..."
 # npm install marked -g
 
-echo "Configuring OSX..."
-# TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
-
-# Set fast key repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
-
 # Require password as soon as screensaver or sleep mode starts
 # defaults write com.apple.screensaver askForPassword -int 1
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-Enable tap-to-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-echo "Creating folder structure..."
-[[ ! -d Wiki ]] && mkdir Wiki
-[[ ! -d Workspace ]] && mkdir Workspace
-
-#######################################
-# Symlinks
-#
-# Symlinks from this directory to the machine's root
-#######################################
-
-source bootstrap-helpers.sh
-
-install_dotfile ".zshrc"
-install_dotfile ".gitconfig"
-install_dotfile ".vimrc"
-
-#######################################
-# Fin
-#######################################
-
-echo "Bootstrapping complete"
