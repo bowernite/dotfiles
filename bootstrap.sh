@@ -75,7 +75,6 @@ brew install caskroom/cask/brew-cask
 
 echo "Homebrew: Installing cask apps..."
 HOMEBREW_CASKS=(
-    adguard
     alfred
     bartender
     docker
