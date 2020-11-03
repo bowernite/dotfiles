@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>Open with VSCode</name>
-  <version>1.1</version>
-  <bundle>iamstevendao.alfred-open-with-vscode</bundle>
-  <updated>1562742511</updated>
-  <file>open-with-vscode.alfredworkflow</file>
-</workflow>
