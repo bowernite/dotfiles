@@ -53,11 +53,12 @@ PACKAGES=(
     fzf
     git
     nvm
-    # node
-    # npm
     python
     python3
     yarn
+    # Q: Are these necessary, or do they come with nvm?
+    # node
+    # npm
 )
 
 echo "Installing packages..."
@@ -66,32 +67,29 @@ brew install ${PACKAGES[@]}
 echo "Cleaning up..."
 brew cleanup
 
+# Q: Is this going to duplicate stuff that we already have committed to .zshrc?
 echo "Installing fzf keybindings and fuzzy completion..."
 $(brew --prefix)/opt/fzf/install
 
 echo "Installing cask..."
 brew install caskroom/cask/brew-cask
 
-# REVIEW: "maybe" packages are commented out
 CASKS=(
     adguard
     alfred
-    # docker
+    bartender
+    docker
     firefox
     flux
     google-chrome
-    # google-drive
-    # gpg-suite
+    gpg-suite
     karabiner-elements
-    # iterm2
-    # macvim
-    # postman
+    postman
     slack
     spectacle
-    # vanilla
-    # virtualbox
-    # vlc
-    # zoomus
+    spotify
+    virtualbox
+    zoomus
 )
 
 echo "Installing cask apps..."
