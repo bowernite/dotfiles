@@ -22,17 +22,19 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-echo "Hi, $USER! 👋"
-echo "Let's get you set up... 👨‍💻"
-echo ""
-
-echo "Pulling in some shell helpers"
 source bootstrap-helpers.sh
+
+clear
+printf "Hi, $USER! 👋\n"
+printf "Let's get you set up... 👨‍💻\n"
+# For dramatic effect/a new UX 🙂
+sleep 2s
+
 
 #######################################
 # Symlinks
 #######################################
-echo "Symlinking dotfiles to \$HOME: $HOME"
+log "Symlinking dotfiles to \$HOME: $HOME"
 
 install_dotfile ".zshrc"
 install_dotfile ".gitconfig"
@@ -41,30 +43,25 @@ install_dotfile ".vimrc"
 #######################################
 # MacOS installs
 #######################################
-echo "Updating MacOS apps"
+log "Updating MacOS apps"
 softwareupdate -i -a
-
-#######################################
-# Homebrew
-#######################################
-echo "Homebrew: Starting Homebrew installations"
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
-    echo "Installing homebrew..."
+    log "Homebrew: Installing homebrew..."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-echo "Homebrew: Updating recipes..."
+log "Homebrew: Updating recipes..."
 brew update
 
-echo "Homebrew: Installing and upgrading packages..."
+log "Homebrew: Installing and upgrading packages..."
 brew bundle
 
 #######################################
 # MacOS
 #######################################
-echo " Configuring MacOS..."
+log " Configuring MacOS..."
 # TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
 
 # Set fast key repeat rate
@@ -77,5 +74,4 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # Fin
 #######################################
 
-echo ""
-echo "All done. Have fun! 🚀"
+log "All done. Have fun! 🚀"

@@ -19,3 +19,15 @@ install_dotfile() {
     ln -s $from $to
   fi
 }
+
+#######################################
+# Pretty logger for bootstrapping only
+#######################################
+log() {
+    local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    printf "\n\n\n" 
+    echo $separator
+    echo "👨‍💻 $1"
+    echo $separator
+    echo
+}
