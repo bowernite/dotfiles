@@ -72,9 +72,6 @@ brew install ${HOMEBREW_PACKAGES[@]}
 echo "Homebrew: Cleaning up..."
 brew cleanup
 
-echo "Homebrew: Installing Homebrew cask..."
-brew install caskroom/cask/brew-cask
-
 echo "Homebrew: Installing cask apps..."
 HOMEBREW_CASKS=(
     alfred
