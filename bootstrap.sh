@@ -52,44 +52,8 @@ fi
 echo "Homebrew: Updating recipes..."
 brew update
 
-echo "Homebrew: Upgrading existing packages"
-brew upgrade
-
-echo "Homebrew: Installing generic packages..."
-HOMEBREW_PACKAGES=(
-    bitwarden-cli
-    fzf
-    git
-    nvm
-    python
-    yarn
-    # Q: Are these necessary, or do they come with nvm?
-    # node
-    # npm
-)
-brew install ${HOMEBREW_PACKAGES[@]}
-
-echo "Homebrew: Cleaning up..."
-brew cleanup
-
-echo "Homebrew: Installing cask apps..."
-HOMEBREW_CASKS=(
-    alfred
-    bartender
-    docker
-    firefox
-    flux
-    google-chrome
-    gpg-suite
-    karabiner-elements
-    postman
-    slack
-    spectacle
-    spotify
-    virtualbox
-    zoomus
-)
-brew cask install ${HOMEBREW_CASKS[@]}
+echo "Homebrew: Installing and upgrading packages..."
+brew bundle
 
 #######################################
 # MacOS
