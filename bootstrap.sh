@@ -39,6 +39,12 @@ install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
 
 #######################################
+# MacOS installs
+#######################################
+echo "Updating MacOS apps"
+softwareupdate -i -a
+
+#######################################
 # Homebrew
 #######################################
 echo "Homebrew: Starting Homebrew installations"
