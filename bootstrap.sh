@@ -59,7 +59,6 @@ HOMEBREW_PACKAGES=(
     git
     nvm
     python
-    python3
     yarn
     # Q: Are these necessary, or do they come with nvm?
     # node
