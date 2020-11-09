@@ -1,6 +1,8 @@
 source ~/dotfiles/.vimrc__defaults
 
 call plug#begin('~/.vim/plugged')
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
   Plug 'ianks/vim-tsx'
   " Plug 'Quramy/tsuquyomi'
   Plug 'leafgarland/typescript-vim'
