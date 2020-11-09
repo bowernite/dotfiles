@@ -48,6 +48,8 @@ alias ping="ping -c 5"
 alias c="clear"
 # `gcob` maps easier in my head
 alias gcob="git co -b"
+# oh-my-zsh originally has this as "git checkout master", but this makes more sense to me
+alias gcm="gc -m"
 
 ###########
 # Functions
