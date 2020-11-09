@@ -58,5 +58,7 @@ _fzf_compgen_dir() {
   fd --type d --hidden --exclude=$FZF_EXCLUDE_GLOB . "$1"
 }
 _fzf_compgen_path() {
-  git ls-tree -r --name-only HEAD 2>/dev/null || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . "$1"
+  # If it's a git repo, only search for files tracked by git
+  # Otherwise, just use fd
+  git ls-tree -r --name-only HEAD 2>/dev/null "$1" || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . "$1"
 }
