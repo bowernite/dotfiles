@@ -122,6 +122,15 @@ let g:jsx_ext_required = 0          " allow JSX in .js files
 " Prettier with =
 nnoremap = :Prettier<CR>
 
+" Store temp and swap files in macOS's temp directory
+" This keeps working directories cleaner, but preserves vim's native
+" backup functionality
+" The `,.` provides the current working directory as a backup, in case
+" the OS's backup directory doesn't exist
+set backupdir=$TMPDIR//,.
+set directory=$TMPDIR//,.
+set undodir=$TMPDIR//,.
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linting
 
