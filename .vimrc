@@ -28,8 +28,6 @@ let mapleader = "\<Space>"
 set expandtab
 " set number of spaces inserted when tabbing
 set shiftwidth=2
-" auto wrap text at 80 chars
-set textwidth=80
 " use 2 char width for tab chars
 set tabstop=2
 
@@ -163,6 +161,12 @@ set laststatus=2        " always show status bar
 
 set wrap                " wrap long lines by default
 set linebreak           " when wrapping, break on word boundaries
+" auto wrap text at the given number of chars. this is 0 right now to wrap at the window width. if we want to give up on soft wrapping at some point, and just actually wrap lines at a given number of chars in the future, we can set that here
+set textwidth=0
+set wrapmargin=0
+" This seems like the only way to softwrap at 80 chars. However, it can only do so by manually changing the size of the window, which isn't ideal.
+" TODO: Look more into how to softwrap in vim
+" set columns=80
 
 " Toggle wrapping with <Leader>w
 noremap <Leader>w :set wrap!<Return>
@@ -172,3 +176,4 @@ noremap <Leader>w :set wrap!<Return>
 " https://github.com/mjackson/dotfiles/blob/master/vimrc
 " https://gist.github.com/ryanflorence/6d92b7495873263aec0b4e3c299b3bd3
 " https://github.com/cfoust/cawnfig/tree/master/configs/vim
+"
