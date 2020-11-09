@@ -46,6 +46,8 @@ alias gpom="git pull origin \$(git_dev_branch)"
 # Change ping to stop after 5 pings
 alias ping="ping -c 5"
 alias c="clear"
+# `gcob` maps easier in my head
+alias gcob="git co -b"
 
 ###########
 # Functions
