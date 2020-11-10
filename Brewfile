@@ -3,6 +3,7 @@
 #######################################
 
 brew "bitwarden-cli"
+brew "fd"
 brew "fzf"
 brew "git"
 brew "nvm"
