@@ -44,7 +44,8 @@ install_dotfile ".vimrc"
 # MacOS installs
 #######################################
 log "Updating MacOS apps"
-softwareupdate -i -a
+# TODO: Uncomment this if I'm ever on a non-enterprise machine and can acutally use the latest macOS 🤓
+# softwareupdate -i -a
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
