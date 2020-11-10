@@ -27,7 +27,7 @@ source bootstrap-helpers.sh
 clear
 printf "Hi, $USER! 👋\n"
 printf "Let's get you set up... 👨‍💻\n"
-# For dramatic effect/a new UX 🙂
+# For dramatic effect...
 sleep 2s
 
 
