@@ -50,7 +50,7 @@ log "Updating MacOS apps"
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     log "Homebrew: Installing homebrew..."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 log "Homebrew: Updating recipes..."
