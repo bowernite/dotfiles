@@ -1,3 +1,16 @@
+## Installation
+
+1. Clone the repo to `~/dotfiles`
+2. Check [bootstrap.sh](bootstrap.sh) and [Brewfile](Brefile) for any commented out lines from past computers
+3. Run `./bootstrap.sh`
+
+#### You might need to...
+
+1. Check Karabiner Elements and make sure its folders in the `~/.config` directory are correctly using the files in this repo
+   - [bin/sync.sh](bin/sync.sh) might be able to help with that
+2. Make sure the Bartender app is running correctly (enter in License Key from Bitwarden)
+3. Follow any other instructions below
+
 ### Alfred
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
