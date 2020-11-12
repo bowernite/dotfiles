@@ -35,7 +35,7 @@ This app is installed through homebrew-cask within the `bootstrap.sh` file, but 
 4. Enable the following rules:
    - `Change caps_lock to control if pressed with other keys, to escape if pressed alone.`
    - `Toggle caps_lock by pressing left_shift + right_shift at the same time`
-      - NOTE: Neither of these solutions seem to turn on the keyboard light for external keyboards. If you want to try and tackle this, check out [this tutorial](https://robin.lauren.fi/posts/map-caps-lock-to-ctrl-or-escape/#:~:text=Open%20the%20%E2%80%9CComplex%20Modifications%E2%80%9D%20tab,alone%20and%20you're%20done!)
+     - NOTE: Neither of these solutions seem to turn on the keyboard light for external keyboards. If you want to try and tackle this, check out [this tutorial](https://robin.lauren.fi/posts/map-caps-lock-to-ctrl-or-escape/#:~:text=Open%20the%20%E2%80%9CComplex%20Modifications%E2%80%9D%20tab,alone%20and%20you're%20done!)
 
 <hr />
 
