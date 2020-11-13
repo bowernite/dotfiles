@@ -20,10 +20,9 @@ osascript -e 'tell application "System Preferences" to quit'
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 # https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 
-# TODO: Run this and make sure they actually all work. Also review that you actually want all of these
-# TODO: See if I need to add defaults for third-party apps (e.g. Zoom and Rectangle). Can do so by googling it, or looking at the plist file, or changing a setting an diffing the output to `defaults read`
+# TODO: Karabiner defaults
+# TODO: Terminal defaults (theme, option as meta key, etc.)
 # TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
-# TODO: Get preferences from Terminal (e.g. theme)
 
 ##############################################################
 # General/UI/UX
@@ -67,8 +66,6 @@ defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
-
-# TODO: Fix these display/system sleep commands. They spit out warnings when running them
 
 # Sleep the display after 15 minutes
 sudo pmset -a displaysleep 15
