@@ -161,6 +161,12 @@
         "options": {
           "full_name": "zoomus"
         }
+      },
+      "rectangle": {
+        "version": "0.37",
+        "options": {
+          "full_name": "rectangle"
+        }
       }
     }
   },
