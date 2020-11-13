@@ -30,5 +30,4 @@ cask "rectangle"
 # TODO: Uncomment when not on enterprise machine
 # cask "slack"
 cask "spotify"
-cask "virtualbox"
 cask "zoomus"
