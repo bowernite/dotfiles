@@ -2,6 +2,8 @@
 # Formulae
 #######################################
 
+# TODO: Research how to automatically update this packages on some regular interval
+
 brew "bitwarden-cli"
 brew "fd"
 brew "fzf"
