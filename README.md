@@ -20,6 +20,10 @@
    This is done here because this keybinding changes a plist option where it's some data array, and I don't know exactly how to modify that correctly.
 </details>
 
+### Bartender
+
+As of writing this, there's a Bartender 4 update that is only for Big Sur+. Because of the unknown of that, when setting up just set up Bartender manually. Maybe at that time, run the pref diffs and add them to the macos setup script as necessary.
+
 ### Alfred
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
