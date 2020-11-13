@@ -203,9 +203,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show the ~/Library folder
-# Note: Had to remove this from the end of the line because mac was yelling at me for it ("No such xattr: com.apple.FinderInfo")
-#   `&& xattr -d com.apple.FinderInfo ~/Library`
-# TODO: Fix this (just google how to do this)
 chflags nohidden ~/Library
 
 # Show the /Volumes folder
