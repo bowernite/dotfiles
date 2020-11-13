@@ -4,3 +4,5 @@
 # Other ignores
 .DS_Store
 /.zshrc__private
+/bin/.out/*
+!/bin/.out/.gitkeep
