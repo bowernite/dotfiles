@@ -62,14 +62,7 @@ brew bundle
 #######################################
 # MacOS
 #######################################
-log " Configuring MacOS..."
-# TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
-
-# Set fast key repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
-
-# Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+source bootstrap-macos.sh
 
 #######################################
 # Fin
