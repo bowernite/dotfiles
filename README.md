@@ -24,6 +24,18 @@
 
 As of writing this, there's a Bartender 4 update that is only for Big Sur+. Because of the unknown of that, when setting up just set up Bartender manually. Maybe at that time, run the pref diffs and add them to the macos setup script as necessary.
 
+### Terminal
+
+1. Open Terminal
+2. Open `Preferences > Profile`
+3. Drag [macos/terminal-theme.terminal](macos/terminal-theme.terminal) into the pane with all of the profiles
+4. Select the font to be `Dank Mono Regular`, `18 pt.`
+5. Elsewhere in preferences, set that to be the default theme and window
+
+<details>
+   Terminal's preferences are weird and nested, and I don't want to deal with that right now, and who knows, maybe I switch to iTerm one day 😅. So this is fine for now.
+</details>
+
 ### Alfred
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
