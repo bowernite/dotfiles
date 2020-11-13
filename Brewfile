@@ -30,4 +30,6 @@ cask "rectangle"
 # TODO: Uncomment when not on enterprise machine
 # cask "slack"
 cask "spotify"
+# TODO: Uncomment when switching machines
+# cask "visual-studio-code"
 cask "zoomus"
