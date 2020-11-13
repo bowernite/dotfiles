@@ -11,6 +11,15 @@
 2. Make sure the Bartender app is running correctly (enter in License Key from Bitwarden)
 3. Follow any other instructions below
 
+### Rectangle
+
+1. Open Rectangle's preferences
+2. Add a keybinding for "Almost Maximize" (e.g. `ctrl+opt+cmd+↩`), if desired
+
+<details>
+   This is done here because this keybinding changes a plist option where it's some data array, and I don't know exactly how to modify that correctly.
+</details>
+
 ### Alfred
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.

@@ -311,6 +311,19 @@ defaults write org.herf.Flux lateColorTemp -int 2900
 defaults write org.herf.Flux nightColorTemp -int 2900
 
 ##############################################################
+# Rectangle
+##############################################################
+
+# Launch on login
+defaults write com.knollsoft.Rectangle launchOnLogin -bool true
+
+# Check for updates automatically
+defaults write com.knollsoft.Rectangle SUEnableAutomaticChecks -bool true
+
+# Gaps between windows (in pixels)
+defaults write com.knollsoft.Rectangle gapSize -int 12
+
+##############################################################
 # ???
 #
 # I don't know exactly what these are, but a lot of others
@@ -357,6 +370,7 @@ for app in "Activity Monitor" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
+	"Rectangle" \
 	"Safari" \
 	"SystemUIServer" \
 	"Terminal" \
