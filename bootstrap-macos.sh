@@ -299,6 +299,18 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 ##############################################################
+# Flux
+##############################################################
+
+# Start at login
+defaults write org.herf.Flux startAtLogin -bool true
+
+# Temps for each time of day
+defaults write org.herf.Flux dayColorTemp -int 4400
+defaults write org.herf.Flux lateColorTemp -int 2900
+defaults write org.herf.Flux nightColorTemp -int 2900
+
+##############################################################
 # ???
 #
 # I don't know exactly what these are, but a lot of others
@@ -339,6 +351,7 @@ for app in "Activity Monitor" \
 	"cfprefsd" \
 	"Contacts" \
 	"Dock" \
+	"Flux" \
 	"Finder" \
 	"Google Chrome" \
 	"Mail" \
