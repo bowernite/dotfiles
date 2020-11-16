@@ -22,7 +22,7 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-source bootstrap-helpers.sh
+source ~/dotfiles/bootstrap-helpers.sh
 
 clear
 printf "Hi, $USER! 👋\n"
