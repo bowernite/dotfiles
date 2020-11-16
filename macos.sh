@@ -1,4 +1,4 @@
-source "bootstrap-helpers.sh"
+source ~/dotfiles/bootstrap-helpers.sh
 
 ##############################################################
 #  macOS: Configure macOS settings
