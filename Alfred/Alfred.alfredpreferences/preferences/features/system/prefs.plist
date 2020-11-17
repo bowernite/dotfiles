@@ -4,8 +4,6 @@
 <dict>
 	<key>forcequitKeyword</key>
 	<string>fq</string>
-	<key>quitKeyword</key>
-	<string>q</string>
 	<key>quitallConfirm</key>
 	<true/>
 </dict>
