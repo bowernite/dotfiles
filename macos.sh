@@ -231,6 +231,7 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 ##############################################################
 
 # Turn off Spotlight shortcut (use Alfred instead), and change it to cmd+opt+space
+# FIXME: I don't think this works. The `dict-add` might not work like we think it does
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled = 0; value = { parameters = (65535, 49, 1572864); type = 'standard';}; }"
 
 ##############################################################
