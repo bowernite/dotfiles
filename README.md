@@ -82,6 +82,7 @@ As of writing this, there's weird behavior between mac keybinding remappings (do
 
 - https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b
 - https://www.legeektrotteur.com/mac-os-x-lock-caps-with-the-shift-key
+- [Reference for Karabiner Emacs bindings](https://github.com/drliangjin/karabiner.d)
 
 #### Function keys w/ Touch Bar
 
