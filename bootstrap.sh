@@ -34,11 +34,30 @@ sleep 2s
 #######################################
 # Symlinks
 #######################################
-log "Symlinking dotfiles to \$HOME: $HOME"
+log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
 install_dotfile ".zshrc"
 install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
+
+# In the future, this could link a whole directory in this repo for karabiner.json, so that we could track things other than just this one JSON file (e.g. unused complex modifications, automated_backups dir, etc.).
+# ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
+
+##############################################################
+# Karabiner symlinking
+##############################################################
+log "Symlinking directory for Karabiner Elements"
+
+kb_root_dir="$HOME/.config/karabiner"
+kb_dotfiles_dir="$HOME/dotfiles/karabiner"
+
+[[ -d "$HOME/.config" ]] || mkdir "$HOME/.config"
+[[ -d "${kb_root_dir}" ]] && rm -rf "${kb_root_dir}"
+ln -sf "${kb_dotfiles_dir}" "${kb_root_dir}"
+if [[ $? != 0 ]]; then
+  echo "🚨 unable to link Karabiner Root directory to the dotfiles directory (${kb_root_dir} to ${kb_dotfiles_dir})"
+  return 1
+fi
 
 #######################################
 # MacOS installs
