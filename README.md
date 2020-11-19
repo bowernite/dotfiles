@@ -67,3 +67,10 @@ For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) fo
 - [Reference for Karabiner Emacs bindings](https://github.com/drliangjin/karabiner.d)
 - [Remapping Cocoa Keybindings](http://irreal.org/blog/?p=259)
   - Decided against this, since plenty of apps don't use Coca's text system. Using Karabiner to define keybindings at the OS level seems far more robust
+  
+## To-Do
+
+There's a million things I could do... I don't know, maybe some of them are over the top. I'm just gonna put them down here in case I decide they're a good idea one day...
+
+- Get crazy with Karabiner remappings: https://wiki.nikitavoloboev.xyz/macos/macos-apps/karabiner
+- Look into Hyper. Maybe trigger with left control. [Dr. Jin's Karabiner repo](https://wiki.nikitavoloboev.xyz/macos/macos-apps/karabiner) might be able to help
