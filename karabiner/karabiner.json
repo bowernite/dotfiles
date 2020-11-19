@@ -397,18 +397,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "option",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                            "command"
-                                        ],
-                                        "repeat": false
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -470,18 +462,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "option",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
-                                            "command"
-                                        ],
-                                        "repeat": false
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1018,18 +1002,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "right_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "delete",
                                         "modifiers": [
                                             "command"
-                                        ],
-                                        "repeat": false
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -1091,18 +1067,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_arrow",
-                                        "modifiers": [
-                                            "command",
-                                            "shift"
-                                        ]
-                                    },
-                                    {
                                         "key_code": "delete_or_backspace",
                                         "modifiers": [
                                             "command"
-                                        ],
-                                        "repeat": false
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
