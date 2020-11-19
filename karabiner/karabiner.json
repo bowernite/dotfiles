@@ -394,7 +394,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_forward",
+                                        "key_code": "delete_or_backspace",
                                         "modifiers": [
                                             "option"
                                         ]
@@ -1025,7 +1025,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
+                                        "key_code": "delete_or_delete_or_backspace",
                                         "modifiers": [
                                             "command"
                                         ]
