@@ -20,7 +20,6 @@ osascript -e 'tell application "System Preferences" to quit'
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 # https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 
-# TODO: Karabiner defaults
 # TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
 
 ##############################################################
