@@ -53,8 +53,10 @@
     # Prune remote-tracking branches that have been deleted every time running `git fetch`
     prune = true
 
+# Setting these to `false` for a command prints output to stdout instead opening it in `less`
 [pager]
-    # Prevents `git branch` from showing branches in an editor (instead of just printing them)
     branch = false
+    stash = false
+
 [pull]
 	rebase = false
