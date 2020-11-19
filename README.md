@@ -56,12 +56,14 @@ Keyboard remapping is done with the Karabiner-Elements app.
 
 > NOTE: Remapping for external "non-Mac" keyboards is currently done on a one-off basis for my particular mechanical keyboard (Karabiner stores product and vendor IDs). If you ever switch keyboards, you'll need to manually \*\*swap the `opt` and `command` keys just for that keyboard
 
-##### Additional Links
+### Font
+
+For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) font (the confirmation/link to the actual asset should be in your email somewhere)
+
+## Resources
 
 - https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b
 - https://www.legeektrotteur.com/mac-os-x-lock-caps-with-the-shift-key
 - [Reference for Karabiner Emacs bindings](https://github.com/drliangjin/karabiner.d)
-
-### Font
-
-For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) font (the confirmation/link to the actual asset should be in your email somewhere)
+- [Remapping Cocoa Keybindings](http://irreal.org/blog/?p=259)
+  - Decided against this, since plenty of apps don't use Coca's text system. Using Karabiner to define keybindings at the OS level seems far more robust
