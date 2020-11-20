@@ -11,7 +11,8 @@
 - [ ] Alfred
 - [ ] Bartender
 
-2. Follow any other instructions below
+2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
+3. Follow any other instructions below
 
 ### macOS Preferences
 
