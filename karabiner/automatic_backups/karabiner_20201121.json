@@ -441,7 +441,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace"
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -502,7 +505,10 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_forward"
+                                        "key_code": "delete_forward",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -813,10 +819,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_forward",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "delete_forward"
                                     }
                                 ],
                                 "type": "basic"
@@ -877,10 +880,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": [
-                                            "option"
-                                        ]
+                                        "key_code": "delete_or_backspace"
                                     }
                                 ],
                                 "type": "basic"
