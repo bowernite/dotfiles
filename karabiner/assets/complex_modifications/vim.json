@@ -228,9 +228,9 @@
 
         {
           "from": {
-            "key_code": "comma",
+            "key_code": "j",
             "modifiers": {
-              "mandatory": ["control"]
+              "mandatory": ["option"]
             }
           },
           "to": [
@@ -242,9 +242,9 @@
         },
         {
           "from": {
-            "key_code": "period",
+            "key_code": "k",
             "modifiers": {
-              "mandatory": ["control"]
+              "mandatory": ["option"]
             }
           },
           "to": [
