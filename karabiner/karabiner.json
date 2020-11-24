@@ -332,6 +332,25 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "o",
                                     "modifiers": {
                                         "mandatory": [
@@ -351,10 +370,29 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "u",
+                                    "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
                                             "option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
                                         ]
                                     }
                                 },
@@ -399,10 +437,10 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "i",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "mandatory": [
-                                            "control"
+                                            "option"
                                         ]
                                     }
                                 },
