@@ -21,6 +21,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
 
 # TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
+# TODO: See if there's an overall Font Size preference we can set. There's specific ones (for Notes.app), but text is still pretty small in apps like Reminders.app
 
 ##############################################################
 # General/UI/UX
