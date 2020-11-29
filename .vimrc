@@ -167,7 +167,6 @@ set linebreak           " when wrapping, break on word boundaries
 set textwidth=0
 set wrapmargin=0
 " This seems like the only way to softwrap at 80 chars. However, it can only do so by manually changing the size of the window, which isn't ideal.
-" TODO: Look more into how to softwrap in vim
 " set columns=80
 
 " Toggle wrapping with <Leader>w

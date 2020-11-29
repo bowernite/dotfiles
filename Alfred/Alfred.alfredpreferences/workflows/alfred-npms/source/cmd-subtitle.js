@@ -8,7 +8,6 @@ const dateFormat = require('date-format');
 module.exports = ({author, date, publisher, version}) => {
 	let subtitle = `${version}`;
 
-	// TODO: Behind an if-statement because of https://github.com/npms-io/npms-api/issues/82
 	if (date) {
 		subtitle += ` published at ${dateFormat('yyyy-dd-MM', new Date(date))}`;
 	}

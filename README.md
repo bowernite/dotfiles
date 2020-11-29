@@ -1,7 +1,7 @@
 ## Installation
 
 1. Clone the repo to `~/dotfiles`
-1. Check [bootstrap.sh](bootstrap.sh) and [Brewfile](Brewfile) for any commented out lines from past computers
+1. Uncomment/handle lines labeled with `NEXT_MACHINE`
 1. Run `./bootstrap.sh`
 
 #### You might need to...

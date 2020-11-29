@@ -62,8 +62,9 @@ fi
 #######################################
 # MacOS installs
 #######################################
+# TODO: Store some kind of variable in a gitignored file. Use it to only run this command once for a whole machine (i.e. on a fresh macOS install)
 log "Updating MacOS apps"
-# TODO: Uncomment this if I'm ever on a non-enterprise machine and can acutally use the latest macOS 🤓
+# Install latest macOS and Apple Apps (Safari, etc.)
 # softwareupdate -i -a
 
 # Check for Homebrew, install if we don't have it
