@@ -1,8 +1,10 @@
 ## Installation
 
-1. Clone the repo to `~/dotfiles`
+<!-- TODO: Figure out how to set up git credentials. Might have to do that before this step, or figure out some `curl` way to install this without git. See how others do it -->
+1. `cd ~ && git clone https://github.com/mathiasbynens/dotfiles.git`
 1. Uncomment/handle lines labeled with `NEXT_MACHINE`
-1. Run `./bootstrap.sh`
+1. `cd ~/dotfiles && source bootstrap.sh`
+1. Fix or note any findings that were specific to the "next machine" (including these installation instructions 🙂)
 
 #### You might need to...
 
