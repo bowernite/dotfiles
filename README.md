@@ -21,6 +21,7 @@
 The macOS setup script tries to set all necessary preferences as best it can, but there's a few essential things it doesn't work work with yet. Maybe we'll fix those one day, but for now just go and manually check these.
 
 - Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
+- Enable Alfred workflows to run all scripts. `System Preferences` > `Security & Privacy` > `Privacy` > `Developer Tools` > `Enable Alfred`
 
 ### Rectangle
 
