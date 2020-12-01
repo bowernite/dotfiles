@@ -2,8 +2,18 @@
 
 <!-- TODO: Figure out how to set up git credentials. Might have to do that before this step, or figure out some `curl` way to install this without git. See how others do it -->
 
-1. `cd ~ && git clone https://github.com/mathiasbynens/dotfiles.git`
-1. Uncomment/handle lines labeled with `NEXT_MACHINE`
+> NEXT_MACHINE: Try step 2 on its own. If it works, take a note of that, and maybe make a to-do that simplifies this (i.e. remove step 1, run those commands in `bootstrap.sh`, only run those commands once by putting some kind of flag into `.zshrc\_\_private, etc.)
+
+1. On a brand new installation of macOS:
+
+<!-- softwareupdate: Updates and installs Apple software (like Safari, macOS, etc.) -->
+<!-- xcode-select: Installs dev tools (like git, make, etc.) -->
+
+- `sudo softwareupdate -i -a`
+- `xcode-select --install`
+
+2. Install: `` bash -c "`curl -fsSL https://raw.githubusercontent.com/babramczyk/dotfiles/master/remote-install.sh`" ``
+1. In this repo, uncomment/handle lines labeled with `NEXT_MACHINE`
 1. `cd ~/dotfiles && source bootstrap.sh`
 1. Fix or note any findings that were specific to the "next machine" (including these installation instructions 🙂)
 
@@ -15,7 +25,7 @@
 - [ ] Bartender
 
 2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
-3. Follow any other instructions below
+1. Follow any other instructions below
 
 ### macOS Preferences
 
@@ -27,7 +37,7 @@ The macOS setup script tries to set all necessary preferences as best it can, bu
 ### Rectangle
 
 1. Open Rectangle's preferences
-1. Add a keybinding for "Almost Maximize" (e.g. `ctrl+opt+cmd+↩`), if desired
+1. Copy the keybindings [shown here](/assets/rectangle-keybindings.png)
 
 <details>
    This is done here because this keybinding changes a plist option where it's some data array, and I don't know exactly how to modify that correctly.
@@ -80,3 +90,4 @@ There's a million things I could do... I don't know, maybe some of them are over
 
 - Get crazy with Karabiner remappings: https://wiki.nikitavoloboev.xyz/macos/macos-apps/karabiner
 - Look into Hyper. Maybe trigger with left control. [Dr. Jin's Karabiner repo](https://github.com/drliangjin/karabiner.d) might be able to help
+- WebPro's dotfiles. See what you can steal from here: https://github.com/webpro/dotfiles
