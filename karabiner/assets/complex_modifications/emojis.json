@@ -1,0 +1,24 @@
+{
+  "title": "Emoji shortcuts",
+  "rules": [
+    {
+      "description": "Ctrl+<number row> maps to commonly used emojis",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["control"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "🙂"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
