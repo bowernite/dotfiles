@@ -40,9 +40,6 @@ install_dotfile ".zshrc"
 install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
 
-# In the future, this could link a whole directory in this repo for karabiner.json, so that we could track things other than just this one JSON file (e.g. unused complex modifications, automated_backups dir, etc.).
-# ln -sf ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
-
 ##############################################################
 # Karabiner symlinking
 ##############################################################
