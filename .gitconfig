@@ -37,6 +37,8 @@
 
     wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m '--wip-- [skip ci]'"
     unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
+    
+    rig = !"git ls-files --ignored --exclude-standard | sed 's/.*/"&"/' | xargs git rm -r --cached"
 
 
 # I have no idea what this is or how this got here :)
