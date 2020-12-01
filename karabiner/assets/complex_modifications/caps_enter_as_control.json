@@ -1,8 +1,8 @@
 {
-  "title": "Brett's custom, general keybindings",
+  "title": "CTRL",
   "rules": [
     {
-      "description": "Map CapsLock and Enter to Ctrl, CapsLock to ESC if pressed alone",
+      "description": "CTRL for CapsLock or Enter. ESC if CapsLock pressed alone",
       "manipulators": [
         {
           "from": {
@@ -42,6 +42,9 @@
               "key_code": "return_or_enter"
             }
           ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 150
+          },
           "type": "basic"
         }
       ]
