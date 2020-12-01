@@ -277,6 +277,13 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
 
 ##############################################################
+# Notes
+##############################################################
+
+# Default Font Size (it's super tiny by default)
+defaults write com.apple.Notes ICMGlobalZoomFactorIndexKey -int 2
+
+##############################################################
 # Google Chrome
 ##############################################################
 
