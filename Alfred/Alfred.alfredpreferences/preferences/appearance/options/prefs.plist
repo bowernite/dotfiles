@@ -8,9 +8,7 @@
 	<true/>
 	<key>hideshortcuts</key>
 	<true/>
-	<key>hidesubtext</key>
-	<integer>2</integer>
 	<key>visibleresults</key>
-	<integer>3</integer>
+	<integer>5</integer>
 </dict>
 </plist>
