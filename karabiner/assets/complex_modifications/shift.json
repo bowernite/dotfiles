@@ -1,0 +1,36 @@
+{
+  "title": "Shift keys",
+  "rules": [
+    {
+      "description": "Shift keys alone are parens",
+      "manipulators": [
+        {
+          "description": "map left shift to opening parenthesis",
+          "type": "basic",
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to_if_alone": [{ "key_code": "9", "modifiers": ["left_shift"] }],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 150
+          },
+          "to": [{ "key_code": "left_shift", "lazy": true }]
+        },
+        {
+          "description": "map right shift to closing parenthesis",
+          "type": "basic",
+          "from": {
+            "key_code": "right_shift",
+            "modifiers": { "optional": ["any"] }
+          },
+          "to_if_alone": [{ "key_code": "0", "modifiers": ["right_shift"] }],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 150
+          },
+          "to": [{ "key_code": "right_shift", "lazy": true }]
+        }
+      ]
+    }
+  ]
+}

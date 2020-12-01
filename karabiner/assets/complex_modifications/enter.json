@@ -1,29 +1,9 @@
 {
-  "title": "CTRL",
+  "title": "Enter",
   "rules": [
     {
-      "description": "CTRL for CapsLock or Enter. ESC if CapsLock pressed alone",
+      "description": "Enter is Ctrl if held, Enter if alone",
       "manipulators": [
-        {
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_control",
-              "lazy": true
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "escape"
-            }
-          ],
-          "type": "basic"
-        },
         {
           "from": {
             "key_code": "return_or_enter",
