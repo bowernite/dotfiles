@@ -89,5 +89,7 @@ For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) fo
 There's a million things I could do... I don't know, maybe some of them are over the top. I'm just gonna put them down here in case I decide they're a good idea one day...
 
 - Get crazy with Karabiner remappings: https://wiki.nikitavoloboev.xyz/macos/macos-apps/karabiner
+  - Here's [his post](https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6) on what it allows you to do. Basically, every single key on his keyboard is a modifier key. I'm curious how he still gets letter keys to show up quickly; [See here](https://www.alfredforum.com/topic/9420-a-way-to-boost-your-productivity-with-karabiner/) for details
+  - Here's [his dotfiles](https://github.com/nikitavoloboev/dotfiles). You could probably go crazy in here. Or just copy him. Or just use his stuff
 - Look into Hyper. Maybe trigger with left control. [Dr. Jin's Karabiner repo](https://github.com/drliangjin/karabiner.d) might be able to help
 - WebPro's dotfiles. See what you can steal from here: https://github.com/webpro/dotfiles
