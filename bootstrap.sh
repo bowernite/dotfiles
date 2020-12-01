@@ -46,7 +46,7 @@ install_dotfile ".vimrc"
 log "Symlinking directory for Karabiner Elements"
 
 kb_root_dir="$HOME/.config/karabiner"
-kb_dotfiles_dir="$HOME/dotfiles/karabiner"
+kb_dotfiles_dir="$dotfiles_dir/karabiner"
 
 [[ -d "$HOME/.config" ]] || mkdir "$HOME/.config"
 [[ -d "${kb_root_dir}" ]] && rm -rf "${kb_root_dir}"
