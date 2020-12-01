@@ -7,3 +7,5 @@
 /bin/.out/*
 !/bin/.out/.gitkeep
 /karabiner/automatic_backups/
+/__dev_notes/*
+!/__dev_notes/.gitkeep
