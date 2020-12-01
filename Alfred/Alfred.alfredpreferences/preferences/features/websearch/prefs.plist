@@ -7,7 +7,7 @@
 		<key>158D993C-A2BD-4AF8-B91E-448FCA24E639</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>amz</string>
 			<key>text</key>
