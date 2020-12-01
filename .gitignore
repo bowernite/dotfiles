@@ -6,3 +6,4 @@
 /.zshrc__private
 /bin/.out/*
 !/bin/.out/.gitkeep
+/karabiner/automatic_backups
