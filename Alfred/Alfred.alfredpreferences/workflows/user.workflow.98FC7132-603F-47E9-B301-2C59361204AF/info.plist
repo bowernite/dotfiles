@@ -38,7 +38,7 @@
 	<key>description</key>
 	<string>Get Google Search Suggestions</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Google Suggest</string>
 	<key>objects</key>
