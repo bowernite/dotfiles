@@ -289,7 +289,6 @@ function getAction(options) {
 			valid = false;
 			title = "Cannot create reminder"
 			subtitle = "No list called \"" + options['reminderList'] + "\" was found in Reminders";
-			// TODO: maybe add a different icon here
 		}
 	}
 
@@ -713,7 +712,6 @@ function getAction(options) {
 			valid = false;
 			title = "Cannot create reminder"
 			subtitle = "No list called \"" + options['reminderList'] + "\" was found in Reminders";
-			// TODO: maybe add a different icon here
 		}
 	}
 
@@ -1510,8 +1508,7 @@ Uses Brati's Lover Property List Library (http://applescript.bratis-lover.net/li
 			<key>colorindex</key>
 			<integer>3</integer>
 			<key>note</key>
-			<string>TODO
-Understand why this doesn't get passed along</string>
+			<string>Understand why this doesn't get passed along</string>
 			<key>xpos</key>
 			<integer>70</integer>
 			<key>ypos</key>
@@ -1619,8 +1616,7 @@ Provides automatic updating</string>
 			<key>colorindex</key>
 			<integer>10</integer>
 			<key>note</key>
-			<string>TODO
-Reduce code duplication</string>
+			<string>Reduce code duplication</string>
 			<key>xpos</key>
 			<integer>220</integer>
 			<key>ypos</key>
