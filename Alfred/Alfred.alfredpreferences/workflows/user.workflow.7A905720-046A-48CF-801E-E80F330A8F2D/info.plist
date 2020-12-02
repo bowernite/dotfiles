@@ -6,13 +6,26 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>0FB3BF07-2E64-4199-8153-EFED490DC1BE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C1092DD-568F-4EE9-8A0B-F3E68D132631</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>12C2DBF7-7026-4E78-B4EE-6AF69F04CEE7</key>
 		<array/>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
+				<string>F0D395EC-76D5-4BCD-94C1-708249453C58</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -25,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>970B3BFD-C53E-4732-9DD6-2C97185B1FF5</string>
+				<string>743B9002-8800-4E64-AF16-6758A916DF0F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -47,11 +60,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>743B9002-8800-4E64-AF16-6758A916DF0F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CAFD6656-65AB-479B-8785-83F8BBAE7923</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>95CF9557-CCDE-4E0E-A6C9-EB3B32225622</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9A7970B5-EB05-4A86-8732-A99FF6FDE9D7</string>
+				<string>0FB3BF07-2E64-4199-8153-EFED490DC1BE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -113,69 +139,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>dfg</string>
-				<key>subtext</key>
-				<string>Open dotfiles repo in Github</string>
-				<key>text</key>
-				<string>View dotfiles in GitHub</string>
-				<key>withspace</key>
-				<false/>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>6E2FBBFB-EE46-4158-8193-2F0DD97D0D49</string>
+			<string>F0D395EC-76D5-4BCD-94C1-708249453C58</string>
 			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query={query}
-
-echo $query &gt;/dev/stderr
-
-/usr/local/bin/code ~/dotfiles</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>16039760-F173-4AB8-9C73-DA7401D5DE23</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://github.com/babramczyk/dotfiles</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>12C2DBF7-7026-4E78-B4EE-6AF69F04CEE7</string>
-			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -201,25 +175,17 @@ echo $query &gt;/dev/stderr
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/code ~/dotfiles/.vimrc</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>9A7970B5-EB05-4A86-8732-A99FF6FDE9D7</string>
+			<string>0FB3BF07-2E64-4199-8153-EFED490DC1BE</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -239,6 +205,112 @@ echo $query &gt;/dev/stderr
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>95CF9557-CCDE-4E0E-A6C9-EB3B32225622</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles/.vimrc</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>7C1092DD-568F-4EE9-8A0B-F3E68D132631</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles/.zshrc</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>CAFD6656-65AB-479B-8785-83F8BBAE7923</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>zrc</string>
+				<key>subtext</key>
+				<string>Edit .zshrc with VS Code</string>
+				<key>text</key>
+				<string>Edit .zshrc</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>34B3F69C-5CBD-42EB-93AB-3E898C8759C3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>743B9002-8800-4E64-AF16-6758A916DF0F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>dfg</string>
+				<key>subtext</key>
+				<string>Open dotfiles repo in Github</string>
+				<key>text</key>
+				<string>View dotfiles in GitHub</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6E2FBBFB-EE46-4158-8193-2F0DD97D0D49</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/babramczyk/dotfiles</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>12C2DBF7-7026-4E78-B4EE-6AF69F04CEE7</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -325,50 +397,6 @@ echo $query &gt;/dev/stderr
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>/usr/local/bin/code ~/dotfiles/.zshrc</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>970B3BFD-C53E-4732-9DD6-2C97185B1FF5</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>zrc</string>
-				<key>subtext</key>
-				<string>Edit .zshrc with VS Code</string>
-				<key>text</key>
-				<string>Edit .zshrc</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>34B3F69C-5CBD-42EB-93AB-3E898C8759C3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -411,26 +439,26 @@ echo $query &gt;/dev/stderr
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0FB3BF07-2E64-4199-8153-EFED490DC1BE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>195</integer>
+		</dict>
 		<key>12C2DBF7-7026-4E78-B4EE-6AF69F04CEE7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>470</integer>
 		</dict>
 		<key>15580952-D2D0-4198-B593-BEF1715365A9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>325</integer>
-		</dict>
-		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
-		<dict>
-			<key>xpos</key>
-			<integer>270</integer>
-			<key>ypos</key>
-			<integer>50</integer>
+			<integer>745</integer>
 		</dict>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>
@@ -449,23 +477,37 @@ echo $query &gt;/dev/stderr
 		<key>5BE58A05-1D52-472D-8EAB-A2033EEC83CF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>615</integer>
 		</dict>
 		<key>6E2FBBFB-EE46-4158-8193-2F0DD97D0D49</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>470</integer>
+		</dict>
+		<key>743B9002-8800-4E64-AF16-6758A916DF0F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
+		<key>7C1092DD-568F-4EE9-8A0B-F3E68D132631</key>
+		<dict>
+			<key>xpos</key>
+			<integer>450</integer>
+			<key>ypos</key>
+			<integer>195</integer>
 		</dict>
 		<key>922C0E36-6AA4-401D-AC0C-3195FB5CAF28</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>235</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>885</integer>
 		</dict>
 		<key>95CF9557-CCDE-4E0E-A6C9-EB3B32225622</key>
 		<dict>
@@ -474,40 +516,40 @@ echo $query &gt;/dev/stderr
 			<key>ypos</key>
 			<integer>195</integer>
 		</dict>
-		<key>970B3BFD-C53E-4732-9DD6-2C97185B1FF5</key>
-		<dict>
-			<key>xpos</key>
-			<integer>280</integer>
-			<key>ypos</key>
-			<integer>330</integer>
-		</dict>
-		<key>9A7970B5-EB05-4A86-8732-A99FF6FDE9D7</key>
-		<dict>
-			<key>xpos</key>
-			<integer>275</integer>
-			<key>ypos</key>
-			<integer>195</integer>
-		</dict>
 		<key>C9C9B4CD-8244-47DC-993B-916C8E1B61F5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>885</integer>
+		</dict>
+		<key>CAFD6656-65AB-479B-8785-83F8BBAE7923</key>
+		<dict>
+			<key>xpos</key>
+			<integer>455</integer>
+			<key>ypos</key>
+			<integer>330</integer>
 		</dict>
 		<key>CC413798-51C0-4D43-A600-8A25C7604571</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>195</integer>
+			<integer>615</integer>
 		</dict>
 		<key>E9979091-0FA4-4CE6-AAA1-B47A536641AD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>325</integer>
+			<integer>745</integer>
+		</dict>
+		<key>F0D395EC-76D5-4BCD-94C1-708249453C58</key>
+		<dict>
+			<key>xpos</key>
+			<integer>295</integer>
+			<key>ypos</key>
+			<integer>50</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
