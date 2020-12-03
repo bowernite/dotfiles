@@ -161,7 +161,7 @@
 				<key>subtext</key>
 				<string>Open dotfiles with VS Code</string>
 				<key>text</key>
-				<string>Edit dotfiles</string>
+				<string>Open dotfiles</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
