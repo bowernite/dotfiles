@@ -205,7 +205,13 @@
               "modifiers": ["command"]
             }
           ],
-          "type": "basic"
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_unless"
+            }
+          ]
         },
         {
           "from": {
@@ -220,7 +226,13 @@
               "modifiers": ["command"]
             }
           ],
-          "type": "basic"
+          "type": "basic",
+          "conditions": [
+            {
+              "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"],
+              "type": "frontmost_application_unless"
+            }
+          ]
         },
         {
           "from": {
