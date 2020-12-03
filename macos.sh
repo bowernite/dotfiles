@@ -26,6 +26,9 @@ osascript -e 'tell application "System Preferences" to quit'
 # General/UI/UX
 ##############################################################
 
+# Turn off font smoothing (reference: https://tonsky.me/blog/monitors/)
+defaults -currentHost write -g AppleFontSmoothing -int 0
+
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
