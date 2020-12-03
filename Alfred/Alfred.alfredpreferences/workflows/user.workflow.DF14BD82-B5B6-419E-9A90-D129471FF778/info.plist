@@ -50,6 +50,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>3CB66A88-5E86-42E7-9CF3-FACCDEEA351E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>CDE14BF2-FCF4-4D4C-A842-9C9102EF41D5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -103,25 +113,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>CDE14BF2-FCF4-4D4C-A842-9C9102EF41D5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
 	tell application "/Applications/Google Chrome.app"
@@ -156,6 +147,44 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>A0F4D554-843E-4CDD-8FAB-90B7BD045F1A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://myaccounts.capitalone.com/accountSummary</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>3CB66A88-5E86-42E7-9CF3-FACCDEEA351E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>CDE14BF2-FCF4-4D4C-A842-9C9102EF41D5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -262,30 +291,37 @@ end alfred_script</string>
 		<key>072F17A0-474E-4829-ABB6-862FDDE0A44A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>405</integer>
 			<key>ypos</key>
-			<integer>655</integer>
+			<integer>755</integer>
+		</dict>
+		<key>3CB66A88-5E86-42E7-9CF3-FACCDEEA351E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>425</integer>
+			<key>ypos</key>
+			<integer>65</integer>
 		</dict>
 		<key>60FCF7FE-47C0-4AD8-B227-F61FDDB57876</key>
 		<dict>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>525</integer>
 		</dict>
 		<key>6D78D81E-1C2E-43E3-B63B-79EA3875F7F4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>215</integer>
 			<key>ypos</key>
-			<integer>655</integer>
+			<integer>755</integer>
 		</dict>
 		<key>6DC5C6E5-3127-4078-89D1-11BD4F3C0A07</key>
 		<dict>
 			<key>xpos</key>
 			<integer>405</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>390</integer>
 		</dict>
 		<key>A0F4D554-843E-4CDD-8FAB-90B7BD045F1A</key>
 		<dict>
@@ -306,14 +342,14 @@ end alfred_script</string>
 			<key>xpos</key>
 			<integer>405</integer>
 			<key>ypos</key>
-			<integer>60</integer>
+			<integer>225</integer>
 		</dict>
 		<key>D5D82D2D-6193-47B2-BF78-50F9EA0D23C1</key>
 		<dict>
 			<key>xpos</key>
 			<integer>410</integer>
 			<key>ypos</key>
-			<integer>485</integer>
+			<integer>650</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
