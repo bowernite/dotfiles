@@ -4,8 +4,23 @@
 <dict>
 	<key>bundleid</key>
 	<string></string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>5F7C552E-D8D1-4B55-B190-B96C69BBFFEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EAC929B9-47A1-4C51-B08F-98071BC6DC50</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>60FCF7FE-47C0-4AD8-B227-F61FDDB57876</key>
 		<array/>
 		<key>6D78D81E-1C2E-43E3-B63B-79EA3875F7F4</key>
@@ -113,25 +128,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "/Applications/Google Chrome.app"
-		make new window
-	end tell
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>A8158A77-0A99-4CF1-8ED1-74BC85D19E8D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -147,6 +143,25 @@ end alfred_script</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>A0F4D554-843E-4CDD-8FAB-90B7BD045F1A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "/Applications/Google Chrome.app"
+		make new window
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A8158A77-0A99-4CF1-8ED1-74BC85D19E8D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -283,6 +298,46 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>amzo</string>
+				<key>subtext</key>
+				<string>View the My Orders page in Amazon</string>
+				<key>text</key>
+				<string>Amazon - My Orders</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5F7C552E-D8D1-4B55-B190-B96C69BBFFEA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.amazon.com/gp/your-account/order-history</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>EAC929B9-47A1-4C51-B08F-98071BC6DC50</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -301,6 +356,13 @@ end alfred_script</string>
 			<integer>425</integer>
 			<key>ypos</key>
 			<integer>65</integer>
+		</dict>
+		<key>5F7C552E-D8D1-4B55-B190-B96C69BBFFEA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>910</integer>
 		</dict>
 		<key>60FCF7FE-47C0-4AD8-B227-F61FDDB57876</key>
 		<dict>
@@ -350,6 +412,13 @@ end alfred_script</string>
 			<integer>410</integer>
 			<key>ypos</key>
 			<integer>650</integer>
+		</dict>
+		<key>EAC929B9-47A1-4C51-B08F-98071BC6DC50</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>910</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
