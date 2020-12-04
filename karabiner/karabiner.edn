@@ -30,12 +30,15 @@
        
        {:des   "launch mode"
               :rules [
-                      :launch-mode
+                     :launch-mode
                      ;  Most common apps
                      ; Home row right
+                     ; *Just* browsin'
                       [:j [:opena "Google Chrome"] :!Chromes]
-                ;       [:j :same_wind_app :Chromes]
+                     ; [:j :same_wind_app :Chromes]
+                     ; Kode
                       [:k [:opena "Visual Studio Code"]]
+                     ;  sLack
                       [:l [:opena "Slack"]]
                       [:semicolon [:opena "Terminal"]]
                      ;  Nearby `w` in case we want to use one hand
