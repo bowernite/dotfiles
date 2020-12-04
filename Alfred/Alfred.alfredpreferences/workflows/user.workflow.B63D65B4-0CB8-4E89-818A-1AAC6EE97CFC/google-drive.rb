@@ -12,8 +12,9 @@ require 'tempfile'
 require 'open-uri'
 
 # FIXME: These are empty when this script runs, but available in my shell
-CLIENT_ID       = ENV["___GOOGLE_DRIVE_CLIENT_ID"]
-CLIENT_SECRET   = ENV["___GOOGLE_DRIVE_CLIENT_SECRET"]
+puts ENV["ID"]
+CLIENT_ID       = ENV["ID"]
+CLIENT_SECRET   = ENV["SECRET"]
 REDIRECT_URL    = 'http://127.0.0.1:1337'
 
 RELEASES_URL    = "https://api.github.com/repos/#{ENV['gh_repos'] || 'azai91/alfred-drive-workflow'}/releases"
