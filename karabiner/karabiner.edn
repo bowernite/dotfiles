@@ -34,20 +34,20 @@
                      ;  Most common apps
                      ; Home row right
                      ; *Just* browsin'
-                      [:j [:opena "Google Chrome"] :!Chromes]
-                     ; [:j :same_wind_app :Chromes]
+                     [:j [:opena "Google Chrome"] :!Chromes]
+                     [:j :same_wind_app :Chromes]
                      ; Kode
-                      [:k [:opena "Visual Studio Code"]]
+                     [:k [:opena "Visual Studio Code"]]
                      ;  sLack
-                      [:l [:opena "Slack"]]
-                      [:semicolon [:opena "Terminal"]]
+                     [:l [:opena "Slack"]]
+                     [:semicolon [:opena "Terminal"]]
                      ;  Nearby `w` in case we want to use one hand
                      
                      ; Also common
                      ;  Notes
-                      [:n [:opena "Notes"]]
+                     [:n [:opena "Notes"]]
                      ;  reMinders
-                      [:m [:opena "Reminders"]]
+                     [:m [:opena "Reminders"]]
                      ; sPotify
                      [:p [:opena "Spotify"]]
                      ; *i*Message
@@ -102,4 +102,34 @@
 ;                       [[:w :l] [:open "/Applications/Slack.app"]]
 ;                       [[:w :h] [:opena "Terminal"]]
 ;                       ]}]
+
+:applications       {
+                      :VSCode                        ["^com\\.microsoft\\.VSCode(Insiders)?$"]
+                      :Chromes                       ["^com\\.google\\.Chrome$", "^org\\.chromium\\.Chromium$", "^com\\.google\\.Chrome\\.canary$"]
+                      :Firefoxes                     ["^org\\.mozilla\\.firefox$"
+                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"]
+                      :Terminals                     ["^com\\.apple\\.Terminal$"
+                                                      "^com\\.googlecode\\.iterm2$"
+                                                      "^co\\.zeit\\.hyperterm$"
+                                                      "^co\\.zeit\\.hyper$"
+                                                      "^io\\.alacritty$"
+                                                      "^net\\.kovidgoyal\\.kitty$"]
+                      :Finder                        ["^com\\.apple\\.finder$"]
+                      :Debuggers                     ["^org\\.mozilla\\.firefox$"
+                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"
+                                                      "^com\\.google\\.Chrome$"
+                                                      "^org\\.chromium\\.Chromium$"
+                                                      "^com\\.google\\.Chrome\\.canary$"
+                                                      "^com\\.apple\\.Safari$"
+                                                      "^com\\.microsoft\\.VSCode(Insiders)?$"]
+                      :Alfred                        ["^com\\.runningwithcrayons\\.Alfred$"]
+                      :Keybase                       ["^keybase\\.Electron$"]
+                      :Browsers                      ["^org\\.mozilla\\.firefox$"
+                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"
+                                                      "^com\\.google\\.Chrome$"
+                                                      "^org\\.chromium\\.Chromium$"
+                                                      "^com\\.google\\.Chrome\\.canary$"
+                                                      "^com\\.apple\\.Safari$"]
+}
+
  :simlayer-threshold 210}
