@@ -34,10 +34,11 @@
                      ;  Most common apps
                      ; Home row right
                      ; *Just* browsin'
-                     [:j [:opena "Google Chrome"] :!Chromes]
-                     [:j :same_wind_app :Chromes]
+                     [:j [:opena "Google Chrome"] :!Chrome]
+                     [:j :same_wind_app :Chrome]
                      ; Kode
-                     [:k [:opena "Visual Studio Code"]]
+                     [:k [:opena "Visual Studio Code"] :!VSCode]
+                     [:k :same_wind_app :VSCode]
                      ;  sLack
                      [:l [:opena "Slack"]]
                      [:semicolon [:opena "Terminal"]]
@@ -96,8 +97,8 @@
                       
 ;  :main      [{:des   "launcher mode"
 ;               :rules [
-;                       [[:w :j] [:open "/Applications/Google Chrome.app/"] :!Chromes]
-;                       [[:w :j] :same_wind_app :Chromes]
+;                       [[:w :j] [:open "/Applications/Google Chrome.app/"] :!Chrome]
+;                       [[:w :j] :same_wind_app :Chrome]
 ;                       [[:w :k] [:open "/Applications/Visual Studio Code.app"]]
 ;                       [[:w :l] [:open "/Applications/Slack.app"]]
 ;                       [[:w :h] [:opena "Terminal"]]
@@ -105,7 +106,7 @@
 
 :applications       {
                       :VSCode                        ["^com\\.microsoft\\.VSCode(Insiders)?$"]
-                      :Chromes                       ["^com\\.google\\.Chrome$", "^org\\.chromium\\.Chromium$", "^com\\.google\\.Chrome\\.canary$"]
+                      :Chrome                       ["^com\\.google\\.Chrome$", "^org\\.chromium\\.Chromium$", "^com\\.google\\.Chrome\\.canary$"]
                       :Firefoxes                     ["^org\\.mozilla\\.firefox$"
                                                       "^org\\.mozilla\\.firefoxdeveloperedition$"]
                       :Terminals                     ["^com\\.apple\\.Terminal$"
