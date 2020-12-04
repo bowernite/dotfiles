@@ -739,6 +739,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>amazon-com</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1133DEAA-5A8F-4E7D-9E9C-A76CB82D9F92</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>google-en</key>
 		<array>
 			<dict>
@@ -2219,6 +2232,53 @@ ok=$?
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
+				<string>amz</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Fetching results…</string>
+				<key>script</key>
+				<string>./search amazon-com "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Searchio!</string>
+				<key>title</key>
+				<string>Amazon United States</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>amazon-com</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
 				<string>g</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
@@ -2969,6 +3029,15 @@ Search suggestions from multiple search engines in different locales</string>
 			<key>ypos</key>
 			<integer>210</integer>
 		</dict>
+		<key>amazon-com</key>
+		<dict>
+			<key>note</key>
+			<string>Amazon United States</string>
+			<key>xpos</key>
+			<integer>270</integer>
+			<key>ypos</key>
+			<integer>220</integer>
+		</dict>
 		<key>google-en</key>
 		<dict>
 			<key>note</key>
@@ -2976,7 +3045,7 @@ Search suggestions from multiple search engines in different locales</string>
 			<key>xpos</key>
 			<integer>270</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>390</integer>
 		</dict>
 		<key>google-lucky-en</key>
 		<dict>
@@ -2985,7 +3054,7 @@ Search suggestions from multiple search engines in different locales</string>
 			<key>xpos</key>
 			<integer>270</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>560</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
