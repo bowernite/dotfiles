@@ -94,10 +94,8 @@
         [:m [:opena "Music"]]
         ;  "Hey"
         ; todo: Open hey URL. Or just trigger alfred workflow
-        ; [:m [:opena "Calendar"]]
-        ; *i*Cal
-        ; (tbd on what calendar app to use. maybe it'll be a URL)
-        ; [:m [:opena "Calendar"]]
+        ; [:h [:opena "Calendar"]]
+        [:y [:opena "Outlook"]]
       ]
     }
     
