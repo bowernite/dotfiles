@@ -22,16 +22,6 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>E5B72F9E-C243-4876-B6BB-4C79008E62D0</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
 				<string>DF47C07B-3990-4258-9ADD-9750C97514B2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -585,6 +575,8 @@ function showHelpItems() {
 			<dict>
 				<key>argument</key>
 				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>defaultList</key>
@@ -602,6 +594,10 @@ function showHelpItems() {
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
 				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
@@ -988,7 +984,7 @@ function showHelpItems() {
 			<key>uid</key>
 			<string>B3DC4BDA-18AF-4BC9-B6FD-5AC43239F9A0</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
