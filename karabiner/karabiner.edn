@@ -76,7 +76,8 @@
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ;  sLack
-        [:l [:opena "Slack"]]
+        ; [:l [:opena "Slack"]]
+        [:l [:opena "Slack Web"]]
         [:semicolon [:opena "Terminal"]]
         ;  Nearby `w` in case we want to use one hand
         
