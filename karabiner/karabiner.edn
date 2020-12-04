@@ -120,8 +120,8 @@
         
         ; To start and end of line
         ; todo: don't let these into vs code
-        [:!Tn :!Cleft_arrow]
-        [:!Tm :!Cright_arrow]
+        [:!Tn :!Cleft_arrow :!VSCode]
+        [:!Tm :!Cright_arrow :!VSCode]
         [:!On :!Cdelete_or_backspace]
         [:!Om :!Cdelete_forward]
         
