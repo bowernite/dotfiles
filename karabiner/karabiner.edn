@@ -31,11 +31,34 @@
        {:des   "launch mode"
               :rules [
                       :launch-mode
-                      [:j [:open "/Applications/Google Chrome.app/"] :!Chromes]
+                     ;  Most common apps
+                     ; Home row right
+                      [:j [:opena "Google Chrome"] :!Chromes]
                 ;       [:j :same_wind_app :Chromes]
-                      [:k [:open "/Applications/Visual Studio Code.app"]]
-                      [:l [:open "/Applications/Slack.app"]]
+                      [:k [:opena "Visual Studio Code"]]
+                      [:l [:opena "Slack"]]
                       [:semicolon [:opena "Terminal"]]
+                     ;  Nearby `w` in case we want to use one hand
+                     
+                     ; Also common
+                     ;  Notes
+                      [:n [:opena "Notes"]]
+                     ;  reMinders
+                      [:m [:opena "Reminders"]]
+                     ; sPotify
+                     [:p [:opena "Spotify"]]
+                     ; *i*Message
+                     [:i [:opena "Messages"]]
+                     ; zOOm
+                     [:o [:opena "zoom.us.app"]]
+                     ; mUsic
+                     [:m [:opena "Music"]]
+                     ;  "Hey"
+                     ; todo: Open hey URL. Or just trigger alfred workflow
+                     ; [:m [:opena "Calendar"]]
+                     ; *i*Cal
+                     ; (tbd on what calendar app to use. maybe it'll be a URL)
+                     ; [:m [:opena "Calendar"]]
               ]
        }
        
