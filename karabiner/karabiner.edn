@@ -97,7 +97,9 @@
         ;  "Hey"
         ; todo: Open hey URL. Or just trigger alfred workflow
         ; [:h [:opena "Calendar"]]
-        [:y [:opena "Outlook"]]
+        [:period [:opena "Karabiner-Elements"]]
+        [:slash [:opena "Karabiner-EventViewer"]]
+        [:comma [:opena "Alfred Preferences"]]
       ]
     }
     
