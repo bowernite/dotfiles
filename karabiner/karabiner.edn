@@ -1,5 +1,5 @@
 {:profiles
- {:goku {:default true :sim 40 :delay 500 :alone 200 :held 250}}
+ {:Goku {:default true :sim 40 :delay 500 :alone 200 :held 250}}
  :tos       {:same_wind_app   {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
              :prev_app        {:key :tab :modi [:left_command] :lazy true}
              :left_paren      {:key :9 :modi [:left_shift] :lazy true}
