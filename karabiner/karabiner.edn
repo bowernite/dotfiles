@@ -17,9 +17,10 @@
              }
 
 ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
- :layers    {:launch-mode           {:key :tab}}
- 
 ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+
+; We'll see how this works. It's definitely the easiest, but has the downside of a delay when typing w
+ :simlayers    {:launch-mode           {:key :w}}
 
  :main      [
        {:des   "caps_lock"
@@ -34,7 +35,7 @@
                 ;       [:j :same_wind_app :Chromes]
                       [:k [:open "/Applications/Visual Studio Code.app"]]
                       [:l [:open "/Applications/Slack.app"]]
-                      [:h [:opena "Terminal"]]
+                      [:semicolon [:opena "Terminal"]]
               ]
        }
        
