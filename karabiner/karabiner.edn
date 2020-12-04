@@ -4,6 +4,7 @@
              :prev_app        {:key :tab :modi [:left_command] :lazy true}
              :left_paren      {:key :9 :modi [:left_shift] :lazy true}
              :right_paren     {:key :0 :modi [:left_shift] :lazy true}
+             :left_control_lazy  {:key :left_control :lazy true}
        }
  :modifiers {:ro :right_option}
  :templates {:launch      "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
@@ -24,9 +25,9 @@
 
  :main      [
        {:des   "caps_lock"
-              :rules [[:##caps_lock :left_control nil {:alone :escape}]]}
+              :rules [[:##caps_lock :left_control_lazy nil {:alone :escape}]]}
        {:des   "enter"
-              :rules [[:##return_or_enter :right_control nil {:alone :return_or_enter}]]}
+              :rules [[:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]]}
        
        {:des   "launch mode"
               :rules [
