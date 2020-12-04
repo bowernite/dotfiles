@@ -1,137 +1,166 @@
-{:profiles
- {:Goku {:default true :sim 40 :delay 500 :alone 200 :held 250}}
- :tos       {:same_wind_app   {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
-             :prev_app        {:key :tab :modi [:left_command] :lazy true}
-             :left_paren      {:key :9 :modi [:left_shift] :lazy true}
-             :right_paren     {:key :0 :modi [:left_shift] :lazy true}
-             :left_control_lazy  {:key :left_control :lazy true}
-       }
- :modifiers {:ro :right_option}
- :templates {:launch      "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
-             :alf         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\"'"
-             :open        "open \"%s\""
-             :opena       "open -a \"%s\""
-             :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
-             :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
-             :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
-             ;; :focus      "/usr/local/bin/yabai -m display --focus \"%s\" & /usr/local/bin/yabai -m space --focus \"%s\""
-             }
+{
+  :profiles {
+    :Goku {
+      :default true
+      :sim 40
+      :delay 500
+      :alone 200
+      :held 250
+    }
+  }
+  :simlayer-threshold 210
 
-; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
-; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+  :tos {
+    :same_wind_app   {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
+    :prev_app        {:key :tab :modi [:left_command] :lazy true}
+    :left_paren      {:key :9 :modi [:left_shift] :lazy true}
+    :right_paren     {:key :0 :modi [:left_shift] :lazy true}
+    :left_control_lazy  {:key :left_control :lazy true}
+  }
 
-; We'll see how this works. It's definitely the easiest, but has the downside of a delay when typing w
- :simlayers    {:launch-mode           {:key :w}}
+  :modifiers {
+    :ro :right_option
+  }
 
- :main      [
-       {:des   "caps_lock"
-              :rules [[:##caps_lock :left_control_lazy nil {:alone :escape}]]}
-       {:des   "enter"
-              :rules [[:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]]}
-       
-       {:des   "launch mode"
-              :rules [
-                     :launch-mode
-                     ;  Most common apps
-                     ; Home row right
-                     ; *Just* browsin'
-                     [:j [:opena "Google Chrome"] :!Chrome]
-                     [:j :same_wind_app :Chrome]
-                     ; Kode
-                     [:k [:opena "Visual Studio Code"] :!VSCode]
-                     [:k :same_wind_app :VSCode]
-                     ;  sLack
-                     [:l [:opena "Slack"]]
-                     [:semicolon [:opena "Terminal"]]
-                     ;  Nearby `w` in case we want to use one hand
-                     
-                     ; Also common
-                     ;  Notes
-                     [:n [:opena "Notes"]]
-                     ;  reMinders
-                     [:m [:opena "Reminders"]]
-                     ; sPotify
-                     [:p [:opena "Spotify"]]
-                     ; *i*Message
-                     [:i [:opena "Messages"]]
-                     ; zOOm
-                     [:o [:opena "zoom.us.app"]]
-                     ; mUsic
-                     [:m [:opena "Music"]]
-                     ;  "Hey"
-                     ; todo: Open hey URL. Or just trigger alfred workflow
-                     ; [:m [:opena "Calendar"]]
-                     ; *i*Cal
-                     ; (tbd on what calendar app to use. maybe it'll be a URL)
-                     ; [:m [:opena "Calendar"]]
-              ]
-       }
-       
-       {:des "Vim nav"
-              :rules [
-                     ; Char and word-wise nav
-                     [:!Th :left_arrow]
-                     [:!Tj :down_arrow]
-                     [:!Tk :up_arrow]
-                     [:!Tl :right_arrow]
-                     [:!Ty :!Oleft_arrow]
-                     [:!To :!Oright_arrow]
-                     
-                     ; Char and word-wise deletion
-                     [:!Tu :!Odelete_or_backspace]
-                     [:!Ti :delete_or_backspace]
-                     [:!Ou :!Odelete_forward]
-                     [:!Oi :delete_forward]
-                     
-                     ; To start and end of line
-                     ; todo: don't let these into vs code
-                     [:!Tn :!Cleft_arrow]
-                     [:!Tm :!Cright_arrow]
-                     [:!On :!Cdelete_or_backspace]
-                     [:!Om :!Cdelete_forward]
-                     
-                     ; Page up/down
-                     [:!Oj :page_down]
-                     [:!Ok :page_up]
-              ]}
-]
-                      
-;  :main      [{:des   "launcher mode"
-;               :rules [
-;                       [[:w :j] [:open "/Applications/Google Chrome.app/"] :!Chrome]
-;                       [[:w :j] :same_wind_app :Chrome]
-;                       [[:w :k] [:open "/Applications/Visual Studio Code.app"]]
-;                       [[:w :l] [:open "/Applications/Slack.app"]]
-;                       [[:w :h] [:opena "Terminal"]]
-;                       ]}]
+  :templates {
+    :launch      "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
+    :alf         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\"'"
+    :open        "open \"%s\""
+    :opena       "open -a \"%s\""
+    :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
+    :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
+    :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
+    ; :focus      "/usr/local/bin/yabai -m display --focus \"%s\" & /usr/local/bin/yabai -m space --focus \"%s\""
+  }
 
-:applications       {
-                      :VSCode                        ["^com\\.microsoft\\.VSCode(Insiders)?$"]
-                      :Chrome                       ["^com\\.google\\.Chrome$", "^org\\.chromium\\.Chromium$", "^com\\.google\\.Chrome\\.canary$"]
-                      :Firefoxes                     ["^org\\.mozilla\\.firefox$"
-                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"]
-                      :Terminals                     ["^com\\.apple\\.Terminal$"
-                                                      "^com\\.googlecode\\.iterm2$"
-                                                      "^co\\.zeit\\.hyperterm$"
-                                                      "^co\\.zeit\\.hyper$"
-                                                      "^io\\.alacritty$"
-                                                      "^net\\.kovidgoyal\\.kitty$"]
-                      :Finder                        ["^com\\.apple\\.finder$"]
-                      :Debuggers                     ["^org\\.mozilla\\.firefox$"
-                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"
-                                                      "^com\\.google\\.Chrome$"
-                                                      "^org\\.chromium\\.Chromium$"
-                                                      "^com\\.google\\.Chrome\\.canary$"
-                                                      "^com\\.apple\\.Safari$"
-                                                      "^com\\.microsoft\\.VSCode(Insiders)?$"]
-                      :Alfred                        ["^com\\.runningwithcrayons\\.Alfred$"]
-                      :Keybase                       ["^keybase\\.Electron$"]
-                      :Browsers                      ["^org\\.mozilla\\.firefox$"
-                                                      "^org\\.mozilla\\.firefoxdeveloperedition$"
-                                                      "^com\\.google\\.Chrome$"
-                                                      "^org\\.chromium\\.Chromium$"
-                                                      "^com\\.google\\.Chrome\\.canary$"
-                                                      "^com\\.apple\\.Safari$"]
+  ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
+  ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+
+  ; We'll see how this works. It's definitely the easiest, but has the downside of a delay when typing w
+  :simlayers    {
+    :launch-mode{ :key :w }
+  }
+
+  :main [
+    {
+      :des "caps_lock"
+      :rules [
+        [:##caps_lock :left_control_lazy nil {:alone :escape}]
+      ]
+    }
+    {
+      :des "enter"
+      :rules [
+        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
+      ]
+    }
+    
+    {
+      :des "launch mode"
+      :rules [
+        :launch-mode
+        ;  Most common apps
+        ; Home row right
+        ; *Just* browsin'
+        [:j [:opena "Google Chrome"] :!Chrome]
+        [:j :same_wind_app :Chrome]
+        ; Kode
+        [:k [:opena "Visual Studio Code"] :!VSCode]
+        [:k :same_wind_app :VSCode]
+        ;  sLack
+        [:l [:opena "Slack"]]
+        [:semicolon [:opena "Terminal"]]
+        ;  Nearby `w` in case we want to use one hand
+        
+        ; Also common
+        ;  Notes
+        [:n [:opena "Notes"]]
+        ;  reMinders
+        [:m [:opena "Reminders"]]
+        ; sPotify
+        [:p [:opena "Spotify"]]
+        ; *i*Message
+        [:i [:opena "Messages"]]
+        ; zOOm
+        [:o [:opena "zoom.us.app"]]
+        ; mUsic
+        [:m [:opena "Music"]]
+        ;  "Hey"
+        ; todo: Open hey URL. Or just trigger alfred workflow
+        ; [:m [:opena "Calendar"]]
+        ; *i*Cal
+        ; (tbd on what calendar app to use. maybe it'll be a URL)
+        ; [:m [:opena "Calendar"]]
+      ]
+    }
+    
+    {
+      :des "Vim nav"
+      :rules [
+        ; Char and word-wise nav
+        [:!Th :left_arrow]
+        [:!Tj :down_arrow]
+        [:!Tk :up_arrow]
+        [:!Tl :right_arrow]
+        [:!Ty :!Oleft_arrow]
+        [:!To :!Oright_arrow]
+        
+        ; Char and word-wise deletion
+        [:!Tu :!Odelete_or_backspace]
+        [:!Ti :delete_or_backspace]
+        [:!Ou :!Odelete_forward]
+        [:!Oi :delete_forward]
+        
+        ; To start and end of line
+        ; todo: don't let these into vs code
+        [:!Tn :!Cleft_arrow]
+        [:!Tm :!Cright_arrow]
+        [:!On :!Cdelete_or_backspace]
+        [:!Om :!Cdelete_forward]
+        
+        ; Page up/down
+        [:!Oj :page_down]
+        [:!Ok :page_up]
+      ]}
+  ]
+
+  :applications {
+    :VSCode ["^com\\.microsoft\\.VSCode(Insiders)?$"]
+    :Chrome [
+      "^com\\.google\\.Chrome$",
+      "^org\\.chromium\\.Chromium$",
+      "^com\\.google\\.Chrome\\.canary$"
+    ]
+    :Firefoxes [
+      "^org\\.mozilla\\.firefox$",
+      "^org\\.mozilla\\.firefoxdeveloperedition$"
+    ]
+    :Terminals [
+      "^com\\.apple\\.Terminal$"
+      "^com\\.googlecode\\.iterm2$"
+      "^co\\.zeit\\.hyperterm$"
+      "^co\\.zeit\\.hyper$"
+      "^io\\.alacritty$"
+      "^net\\.kovidgoyal\\.kitty$"
+      ]
+    :Finder ["^com\\.apple\\.finder$"]
+    :Debuggers [
+      "^org\\.mozilla\\.firefox$"
+    "^org\\.mozilla\\.firefoxdeveloperedition$"
+    "^com\\.google\\.Chrome$"
+    "^org\\.chromium\\.Chromium$"
+    "^com\\.google\\.Chrome\\.canary$"
+    "^com\\.apple\\.Safari$"
+    "^com\\.microsoft\\.VSCode(Insiders)?$"]
+    :Alfred ["^com\\.runningwithcrayons\\.Alfred$"]
+    :Keybase ["^keybase\\.Electron$"]
+    :Browsers [
+      "^org\\.mozilla\\.firefox$"
+      "^org\\.mozilla\\.firefoxdeveloperedition$"
+      "^com\\.google\\.Chrome$"
+      "^org\\.chromium\\.Chromium$"
+      "^com\\.google\\.Chrome\\.canary$"
+      "^com\\.apple\\.Safari$"
+    ]
+  }
 }
-
- :simlayer-threshold 210}
