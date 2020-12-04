@@ -78,14 +78,14 @@
 				<key>script</key>
 				<string>if [[ "$action" == '--open' ]]
   then /usr/bin/open ${open_args} "$1"
-  else ./google-drive.rb "$action" "$1" --name "$name"
+  else ID=___GOOGLE_DRIVE_CLIENT_ID SECRET=___GOOGLE_DRIVE_CLIENT_SECRET /usr/bin/ruby ./google-drive.rb "$action" "$1" --name "$name"
 fi</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>0</integer>
+				<integer>5</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -98,6 +98,10 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
 				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
@@ -137,7 +141,7 @@ fi</string>
 			<key>uid</key>
 			<string>3C794000-8A32-436F-82A1-5642A20CA50A</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -274,6 +278,15 @@ If you want to open links in a specific browser you can create a [Workflow Envir
 			<integer>190</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>secret</key>
+		<string>abcdefg</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>secret</string>
+	</array>
 	<key>version</key>
 	<string>2.1</string>
 	<key>webaddress</key>
