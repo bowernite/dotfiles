@@ -1,0 +1,630 @@
+    ;; !  | means mandatory -   modifier(s) alone when pressend change behavior
+    ;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+    ;; ## | optional any
+    ;; !! | command + control + optional + shift (hyper)
+    ;; C  | left_command (Emacs: hyper)
+    ;; T  | left_control (Emacs: control)
+    ;; O  | left_option (Emacs: meta)
+    ;; S  | left_shift
+    ;; F  | fn (Emacs: super)
+    ;; Q  | right_command (Emacs: control)
+    ;; W  | right_control (Emacs: control)
+    ;; E  | right_option (Emacs: )
+    ;; R  | right_shift
+{:profiles
+ {:Default {:default true
+         :sim     50
+         :delay   80 ;
+         :alone   100 ; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to-if-alone/
+         :held    70}}
+ :templates {:alfred "osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
+             :km "osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'"
+             :open "open \"%s\""
+             }
+             ; Least frequent letters in English: z, q, x, j https://en.wikipedia.org/wiki/Letter_frequency
+             ; Hence ideally suited to act as modifier keys (minimizing accidental triggers)
+ :simlayers {
+             :j-mode {:key :j} ; websites
+             ;; :w-mode {:key :w}
+             :q-mode {:key :q} ; apps
+             :x-mode {:key :x} ; folders
+             :z-mode {:key :z} ; emacs
+             :end-mode {:key :f17} ; app-specific macros
+             :page_down-mode {:key :f18} ; site-specific macros
+             :slash-mode {:key :slash} ; global macros
+             :return_or_enter-mode {:key :return_or_enter} ; numbers and symbols
+             :spacebar-mode {:key :spacebar} ; navigation
+             }
+ :applications {
+                :emacs ["org.gnu.Emacs"]
+                }
+ :main [
+        ;; {:des "Page up toggles between two most recent windows" :rules [[:##f16 :!Ctab]]}
+        ;; {:des "Page up toggles between two most recent tabs" :rules [[:##f15 :!Oq]]}
+        {:des "Caps with shift" :rules [[:!Rcaps_lock :left_option nil {:alone :!ESbackslash}]]}
+        {:des "Caps without shift" :rules [[:##caps_lock :left_option nil {:alone :!Ebackslash}]]}
+        ;; {:des "caps_lock -> left_option (alone) open parenthesis (held)"
+        ;;  :rules [
+        ;;          [:##caps_lock :left_option nil {:alone :!S9}]
+        ;;          ]}
+        ;; {:des "open_bracket -> right_control (alone) open parenthesis (held)"
+        ;;  :rules [
+        ;;          [:##open_bracket :right_control nil {:alone :!S0}]
+        ;;          ]}
+        {:des "left ctrl → command + option"
+         :rules [
+                 [:##f20 :!Cleft_option nil {:alone :!S9}]
+                 ]}
+        {:des "right ctrl → command + option"
+         :rules [
+                 [:##f19 :!Tfn nil {:alone :!S0}]
+                 ]}
+        {:des "quote -> quote (alone) right_control (held)"
+ 				 :rules [
+ 								 [:##quote :fn nil {:alone :quote}]
+                 ]}
+        ;; {:des "hyphen -> hyphen (alone) left_shift (held)"
+         ;; :rules [
+         ;;         [:##hyphen :left_shift nil {:alone :hyphen}]
+         ;;         ]}
+        {:des "left_shift -> left_shift (alone) hyphen (held)"
+         :rules [
+                 [:##left_shift :left_shift nil {:alone :hyphen}]
+                 ]}
+        {:des "right_shift -> right_shift (alone) equal_sign (held)"
+ 				 :rules [
+ 								[:##right_shift :right_shift nil {:alone :equal_sign}]]}
+        {:des "delete_or_backspace -> hyphen (alone) left_command (held)"
+         :rules [
+                 [:##delete_or_backspace :left_command nil {:alone :escape}]
+                 ]}
+        {:des "right_command -> escape (alone) left_control (held)"
+         :rules [
+                 [:##tab :left_control nil {:alone :tab}]
+                 ]}
+        ;; {:des "trackpad control"
+        ;;  :rules [
+        ;;          :multitouch_extension_finger_count_total
+        ;;          [:f :button1]
+        ;;          ]}
+        ;; {:des "test"
+        ;;  :rules [:w-mode
+        ;;          [:!Se :2]
+        ;;          [:e :1]
+        ;;          [:1 :!S1]
+        ;;          [:2 :!S2]
+        ;;          [:3 :!S3]
+        ;;          [:4 :!S4]
+        ;;          [:5 :!S5]
+        ;;          [:6 :!S6]
+        ;;          [:7 :!S7]
+        ;;          [:8 :!S8]
+        ;;          [:9 :!S9]
+        ;;          [:0 :!S0]
+        ;;          [:hyphen :!Shyphen]
+        ;;          [:equal_sign :!Sequal_sign]
+        ;;          [:open_bracket :!Sopen_bracket]
+        ;;          [:close_bracket :!Sclose_bracket]
+        ;;          [:backslash :!Sbackslash]
+        ;;          [:a :!Sa]
+        ;;          [:b :!Sb]
+        ;;          [:c :!Sc]
+        ;;          [:d :!Sd]
+        ;;          [:e :!Se]
+        ;;          [:f :!Sf]
+        ;;          [:i :!Si]
+        ;;          [:g :!Sg]
+        ;;          [:h :!Sh]
+        ;;          [:j :!Sj]
+        ;;          [:k :!Sk]
+        ;;          [:l :!Sl]
+        ;;          [:m :!Sm]
+        ;;          [:n :!Sn]
+        ;;          [:o :!So]
+        ;;          [:p :!Sp]
+        ;;          [:r :!Sr]
+        ;;          [:s :!Ss]
+        ;;          [:t :!St]
+        ;;          [:u :!Su]
+        ;;          [:y :!Sy]
+        ;;          [:z :!Sz]
+        ;;          [:x :!Sx]
+        ;;          [:v :!Sv]
+        ;;          [:w :!Sw]
+        ;;          [:semicolon :!Ssemicolon]
+        ;;          [:comma :!Scomma]
+        ;;          [:period :!Speriod]
+        ;;          [:slash :!Sslash]
+        ;;          [:spacebar :!Sspacebar]
+        ;;          [:1 [:km "jump to Morning routine"]]
+        ;;          [:2 [:km "jump to Night routine"]]
+        ;;          [:3 [:km "jump to EA Encyclopedia"]]
+        ;;          [:a [:km "jump to audiobooks"]]
+        ;;          [:b [:km "jump to eablogs.net"]]
+        ;;          [:d [:km "jump to Documentaries"]]
+        ;;          [:e [:km "jump to Emacs"]]
+        ;;          [:f [:km "jump to French"]]
+        ;;          [:g [:km "jump to German"]]
+        ;;          [:h [:km "jump to Khan Academy"]]
+        ;;          [:i [:km "jump to Anki"]]
+        ;;          [:j [:km "jump to Gymnastic Bodies"]]
+        ;;          [:k [:km "jump to Keyboard Maestro"]]
+        ;;          [:l [:km "jump to Lulu & Nana"]]
+        ;;          [:m [:km "jump to Metaculus"]]
+        ;;          [:n [:km "jump to Notes"]]
+        ;;          [:o [:km "jump to Org mode"]]
+        ;;          [:p [:km "jump to Sleep"]]
+        ;;          [:r [:km "jump to Karabiner"]]
+        ;;          [:s [:km "jump to Kabinett Stern meetings"]]
+        ;;          [:t [:km "jump to Misc. tasks"]]
+        ;;          [:u [:km "jump to Books"]]
+        ;;          [:x [:km "jump to inbox"]]
+                 ;; ]}
+        {:des "app-specific macros"
+         :rules [:end-mode
+                 [:1 [:km "Local app 1"]]
+                 [:2 [:km "Local app 2"]]
+                 [:3 [:km "Local app 3"]]
+                 [:4 [:km "Local app 4"]]
+                 [:5 [:km "Local app 5"]]
+                 [:6 [:km "Local app 6"]]
+                 [:7 [:km "Local app 7"]]
+                 [:8 [:km "Local app 8"]]
+                 [:9 [:km "Local app 9"]]
+                 [:0 [:km "Local app 0"]]
+                 [:a [:km "Local app a"]]
+                 [:b [:km "Local app b"]]
+                 [:c [:km "Local app c"]]
+                 [:d [:km "Local app d"]]
+                 [:e [:km "Local app e"]]
+                 [:f [:km "Local app f"]]
+                 [:g [:km "Local app g"]]
+                 [:h [:km "Local app h"]]
+                 [:i [:km "Local app i"]]
+                 [:j [:km "Local app j"]]
+                 [:k [:km "Local app k"]]
+                 [:l [:km "Local app l"]]
+                 [:m [:km "Local app m"]]
+                 [:n [:km "Local app n"]]
+                 [:o [:km "Local app o"]]
+                 [:p [:km "Local app p"]]
+                 [:q [:km "Local app q"]]
+                 [:r [:km "Local app r"]]
+                 [:s [:km "Local app s"]]
+                 [:t [:km "Local app t"]]
+                 [:!St [:km "Local app St"]]
+                 [:u [:km "Local app u"]]
+                 [:y [:km "Local app y"]]
+                 [:z [:km "Local app z"]]
+                 [:x [:km "Local app x"]]
+                 [:v [:km "Local app v"]]
+                 [:w [:km "Local app w"]]
+                 [:semicolon [:km "Local app semicolon"]]
+                 [:quote [:km "Local app quote"]]
+                 [:comma [:km "Local app comma"]]
+                 [:period [:km "Local app period"]]
+                 [:slash [:km "Local app slash"]]
+                 [:return_or_enter [:km "Local app return_or_enter"]]
+                 ; [:spacebar [:km "Local app spacebar"]]
+                 ]}
+        {:des "website-specific"
+         :rules [:page_down-mode
+                 [:1 [:km "Local website 1"]]
+                 [:2 [:km "Local website 2"]]
+                 [:3 [:km "Local website 3"]]
+                 [:4 [:km "Local website 4"]]
+                 [:5 [:km "Local website 5"]]
+                 [:6 [:km "Local website 6"]]
+                 [:7 [:km "Local website 7"]]
+                 [:8 [:km "Local website 8"]]
+                 [:9 [:km "Local website 9"]]
+                 [:0 [:km "Local website 0"]]
+                 [:a [:km "Local website a"]]
+                 [:b [:km "Local website b"]]
+                 [:c [:km "Local website c"]]
+                 [:d [:km "Local website d"]]
+                 [:e [:km "Local website e"]]
+                 [:f [:km "Local website f"]]
+                 [:g [:km "Local website g"]]
+                 [:h [:km "Local website h"]]
+                 [:i [:km "Local website i"]]
+                 [:j [:km "Local website j"]]
+                 [:k [:km "Local website k"]]
+                 [:l [:km "Local website l"]]
+                 [:m [:km "Local website m"]]
+                 [:n [:km "Local website n"]]
+                 [:o [:km "Local website o"]]
+                 [:p [:km "Local website p"]]
+                 [:r [:km "Local website r"]]
+                 [:s [:km "Local website s"]]
+                 [:t [:km "Local website t"]]
+                 [:u [:km "Local website u"]]
+                 [:y [:km "Local website y"]]
+                 [:z [:km "Local website z"]]
+                 [:x [:km "Local website x"]]
+                 [:v [:km "Local website v"]]
+                 [:w [:km "Local website w"]]
+                 [:semicolon [:km "Local website semicolon"]]
+                 [:comma [:km "Local website comma"]]
+                 [:period [:km "Local website period"]]
+                 [:slash [:km "Local website slash"]]
+                 [:return_or_enter [:km "Local website return_or_enter"]]
+                 ; [:spacebar [:km "Local website spacebar"]]
+       					 ]}
+        {:des "q-key (apps)"
+         :rules [:q-mode
+                 ; :a [:km "Activate: "]] ; not ergonomic
+         				 [:b [:km "Activate: Calibre"]]
+         				 [:c [:km "Activate: Chrome"]]
+         				 [:d [:km "Activate: Calendar"]]
+                 [:e [:km "Activate: Emacs"]]
+         				 [:f [:km "Activate: Finder"]]
+         				 ; [:g [:km "Activate: "]]
+         				 [:h [:km "Activate: Vuze"]]
+         				 [:i [:km "Activate: Anki"]]
+         				 [:j [:km "Activate: Media Center"]]
+                 [:k [:km "Activate: Keyboard Maestro"]]
+         				 [:l [:km "Activate: Calculator"]]
+         				 [:m [:km "Activate: Freedom"]]
+         				 [:n [:km "Activate: Mendeley"]]
+                 [:o [:km "Activate: Messenger"]]
+         				 [:p [:km "Activate: Preview"]]
+         				 [:r [:km "Activate: Karabiner"]]
+                 [:s [:km "Activate: WhatsApp"]]
+         				 [:t [:km "Activate: Terminal"]]
+         		     [:u [:km "Activate: Telegram"]]
+         				 [:v [:km "Activate: VLC"]]
+         				 [:w [:km "Activate: Smart Switch"]]
+         				 [:x [:km "Activate: App Cleaner"]]
+                 [:y [:km "Activate: Spotify"]]
+                 ]}
+        {:des "j-key (Chrome tabs)"
+         :rules [:j-mode
+                 [:a [:km "Open: WhatsApp"]]
+                 [:b [:km "Open: Effective Altruism Blogs"]]
+                 [:c [:km "Open: Sci Hub"]]
+                 [:d [:km "Open: Clipboard"]]
+                 [:e [:km "Open: Telegram"]]
+                 [:f [:km "Open: Effective Altruism Forum"]]
+                 [:g [:km "Open: Library Genesis"]]
+                 [:h [:km "Open: Khan Academy"]]
+                 [:i [:km "Open: Gmail"]]
+                 [:k [:km "Open: Book search"]]
+                 [:l [:km "Open: LessWrong"]]
+                 [:m [:km "Open: Metaculus"]]
+                 ;; [:n [:km "Open: "]]
+                 [:o [:km "Open: Messenger"]]
+                 [:p [:km "Open: Metaculus Pandemic"]]
+                 ; [:q [:km "Open: "]]
+                 [:r [:km "Open: Reaction time"]]
+                 [:s [:km "Open: Chrome search"]]
+                 [:t [:km "Open: Worldcat"]]
+                 [:u [:km "Open: Drive"]]
+                 [:v [:km "Open: Lingvist"]]
+                 [:w [:km "Open: Wayback Machine"]]
+                 [:x [:km "Open: Finances"]]
+                 [:y [:km "Open: YouTube"]]
+                 [:z [:km "Open: Goals"]]
+                 ]}
+        {:des "z-key (Emacs commands)"
+         :rules [:z-mode
+                 [:1 [:km "jump to Morning routine"]]
+                 [:2 [:km "jump to Night routine"]]
+                 [:3 [:km "jump to EA Encyclopedia"]]
+       ;           [:4 [:km ""]]
+       ;           [:5 [:km ""]]
+       ;           [:6 [:km ""]]
+       ;           [:7 [:km ""]]
+       ;           [:8 [:km ""]]
+       ;           [:9 [:km ""]]
+       ;           [:0 [:km ""]]
+                 ;; [:a [:km "jump to "]]
+                 [:b [:km "jump to eablogs.net"]]
+                 [:c [:km "jump to Config file"]]
+                 [:d [:km "jump to Documentaries"]]
+                 [:e [:km "jump to Emacs"]]
+                 [:f [:km "jump to Personal finance"]]
+                 ;; [:g [:km "jump to "]]
+                 [:h [:km "jump to Khan Academy"]]
+                 [:i [:km "jump to Anki"]]
+                 ;; [:j [:km "jump to "]]
+                 [:k [:km "jump to Keyboard Maestro"]]
+                 ;; [:l [:km "jump to "]]
+                 [:m [:km "jump to Metaculus"]]
+                 [:n [:km "jump to Notes"]]
+                 [:o [:km "jump to Org mode"]]
+                 [:p [:km "jump to Sleep"]]
+                 [:q [:km "save all buffers and log out"]] ; not ergonomic
+                 [:r [:km "jump to Karabiner"]]
+                 [:s [:km "jump to WhatsApp"]]
+                 ;; [:t [:km "jump to "]]
+                 [:u [:km "jump to Books"]]
+       ;           [:v [:km ""]]
+       ;           [:w [:km ""]]
+                 [:x [:km "jump to inbox"]]
+                 [:y [:km "jump to audiobooks"]]
+       ;           [:semicolon [:km ""]]
+       ;           [:quote [:km ""]]
+       ;           [:comma [:km ""]]
+       ;           [:period [:km ""]]
+       ;           [:slash [:km ""]]
+       ;           [:spacebar [:km ""]]
+                 ]}
+        {:des "x-key (folders)"
+         :rules [:x-mode
+                 ; [:a [:km "open: "]] ; not ergonomic
+                 [:b [:km "open: Audiobooks"]]
+         				 [:c [:km "open: Financial"]]
+         				 [:d [:km "open: Documentaries"]]
+                 ; [:e [:km "open: "]]
+                 ; [:f [:km "open: "]]
+         				 [:g [:km "open: Tango"]]
+         				 ; [:h [:km "open: "]]
+         				 [:i [:km "open: Music"]]
+         				 ; [:j [:km "open: "]]
+                 ; [:k [:km "open: "]]
+         				 [:l [:km "open: Downloads"]]
+                 [:m [:km "open: Metaculus"]]
+         				 ; [:n [:km "open: "]]
+         				 [:o [:km "open: Dropbox"]]
+         				 [:p [:km "open: Applications"]]
+         				 ; [:q [:km "open: "]]
+         				 [:r [:km "open: Org"]]
+                 [:t [:km "open: To sort"]]
+         				 [:u [:km "open: Google Drive"]]
+         				 [:v [:km "open: Movies"]]
+         				 ; [:x [:km "open: "]]
+         				 [:y [:km "open: Library"]]
+         				 [:z [:km "open: Apps"]]
+         				 [:grave_accent_and_tilde [:km "open: User"]]
+       					 ]}
+        {:des "spacebar (numbers & symbols)"
+         :rules [:spacebar-mode
+         				 [:##j :left_arrow]
+                 [:##k :down_arrow]
+         				 [:##l :right_arrow]
+                 [:##i :up_arrow]
+                 [:u :page_up]
+                 [:o :page_down]
+                 [:h :home]
+                 [:y :!Cleft_arrow]
+                 [:p :!Cright_arrow]
+                 [:return_or_enter :end]
+         				 [:a :!Odelete_or_backspace] ; backward delete word
+         				 [:s :delete_or_backspace] ; backward delete letter
+         				 [:d :delete_forward] ; forward delete letter
+                 [:f :!Od :emacs] ; on Emacs, forward delete word
+         				 [:f :!Odelete_forward] ; forward delete word
+                 [:q [:!Tx :delete_or_backspace] :emacs] ; on Emacs, backward delete sentence
+                 [:w [:!Tu :0 :!Tk] :emacs] ; on Emacs, backward delete line
+         				 [:w :!Cdelete_or_backspace] ; backward delete line
+                 [:e :!TOCFk :emacs] ; on Emacs, smart delete line (CRUX)
+                 [:e :!Tk] ; forward delete line
+         				 [:r :!Ok :emacs] ; on Emacs, forward delete sentence
+         				 ;; [:p :semicolon]
+         				 ;; [:v :comma]
+         				 ;; [:n :period]
+         				 ;; [:right_control :quote]
+         				 ;; [:open_bracket :!Squote]
+         				 ;; [:!T0 :keypad_0]
+         				 ;; [:!T9 :keypad_9]
+         				 ;; [:!T8 :keypad_8]
+         				 ;; [:!T7 :keypad_7]
+         				 ;; [:!To :keypad_6]
+         				 ;; [:!Ti :keypad_5]
+         				 ;; [:!Tu :keypad_4]
+         				 ;; [:!Tl :keypad_3]
+         				 ;; [:!Tk :keypad_2]
+         				 ;; [:!Tj :keypad_1]
+         				 ;; [:!Treturn_or_enter :keypad_0]
+         				 ;; [:!Tperiod :keypad_period]
+         				 ;; [:escape :!Oq]
+                 ;; [:!C8 :!Oa :emacs]
+                 [:z :display_brightness_decrement]
+                 [:x :display_brightness_increment]
+                 [:c :mission_control]
+                 [:v :launchpad]
+                 [:b :rewind]
+                 [:n :play_or_pause]
+                 [:m :mute]
+                 [:comma :volume_down]
+                 [:period :volume_up]
+                 [:b :rewind]
+                 [:slash :fastforward]
+                 [:delete_or_backspace :!COleft_arrow]
+                 [:left_shift :!COright_arrow]
+                 ]}
+        {:des "slash (global macros)"
+          :rules [:slash-mode
+                  [:1 :!!1]
+                  [:2 :!!2]
+                  [:3 :!!3]
+                  [:4 :!!4]
+                  [:5 :!!5]
+                  [:6 :!!6]
+                  [:7 :!!7]
+                  [:8 :!!8]
+                  [:9 :!!9]
+                  [:0 :!!0]
+       ;           [:a [:km ""]]
+       ;           [:b [:km ""]]
+       ;           [:c [:km ""]]
+       ;           [:d [:km ""]]
+       ;           [:e [:km ""]]
+                 ; [:f [:km ""]]
+                  [:hyphen [:km "Remove hyphens from selection"]]
+                  [:equal_sign [:km "Remove underscores from selection"]]
+                 [:i :!QWERi]
+       ;           [:g [:km ""]]
+       ;           [:h [:km ""]]
+                 [:j :!QWERj]
+                 [:k :!QWERk]
+                 [:l :!QWERl]
+       ;           [:m [:km ""]]
+       ;           [:n [:km ""]]
+       ;           [:o [:km ""]]
+                 [:p [:km "Remove spaces from selection"]]
+       ;           [:r [:km ""]]
+                 [:s [:km "Change selection to sentence case"]]
+                 [:t [:km "Change selection to title case"]]
+       ;           [:u [:km ""]]
+       ;           [:y [:km ""]]
+       ;           [:z [:km ""]]
+       ;           [:x [:km ""]]
+       ;           [:v [:km ""]]
+       ;           [:w [:km ""]]
+       ;           [:semicolon [:km ""]]
+       ;           [:quote [:km ""]]
+                  [:comma [:km "open: System Preferences"]]
+                  [:period [:km "Mouse click on center of screen (.)"]]
+       ;           [:slash [:km ""]]
+       ;           [:spacebar [:km ""]]
+                  ]}
+        {:des "numbers and symbols"
+         :rules [:return_or_enter-mode
+                 ;; [:grave_accent_and_tilde :]
+                 [:1 :!Ff1]
+                 [:2 :!Ff2]
+                 [:3 :!Ff3]
+                 [:4 :!Ff4]
+                 [:5 :!Ff5]
+                 [:6 :!Ff6]
+                 [:7 :!Ff7]
+                 [:8 :!Ff8]
+                 [:9 :!Ff9]
+                 [:0 :!Ff10]
+                 ;; [:hyphen :]
+                 ;; [:equal_sign :]
+                 ;; [:open_bracket :]
+                 ;; [:close_bracket :]
+                 ;; [:backslash :]
+                 [:a :!S5]
+                 [:b :grave_accent_and_tilde]
+                 [:c :open_bracket]
+                 [:d :!S7]
+                 [:e :!S3]
+                 [:f :!S8]
+                 [:g :!Ssemicolon]
+                 [:h :semicolon]
+                 [:##i :8]
+                 [:##j :4]
+                 [:##k :5]
+                 [:##l :6]
+                 [:##m :1]
+                 [:n :!Sgrave_accent_and_tilde]
+                 [:##o :9]
+                 [:##p :0]
+                 [:q :!S1]
+                 [:r :!S4]
+                 [:s :!S6]
+                 [:t :backslash]
+                 [:##u :7]
+                 [:v :close_bracket]
+                 [:w :!S2]
+                 [:x :!Sclose_bracket]
+                 [:y :!Sbackslash]
+                 [:z :!Sopen_bracket]
+                 ;; [:semicolon :]
+                 ;; [:quote :]
+                 [:##comma :2]
+                 [:##period :3]
+                 ;; [:slash :]
+                 [:spacebar :##0]
+                 [:!Sd :!Ebackslash]
+                 [:#SRf :!SEbackslash]
+       					 ]}
+        ; {:des "[]]-key ([description])"
+        ;  :rules [:[]-mode
+       ;           [:1 [:km ""]]
+       ;           [:2 [:km ""]]
+       ;           [:3 [:km ""]]
+       ;           [:4 [:km ""]]
+       ;           [:5 [:km ""]]
+       ;           [:6 [:km ""]]
+       ;           [:7 [:km ""]]
+       ;           [:8 [:km ""]]
+       ;           [:9 [:km ""]]
+       ;           [:0 [:km ""]]
+       ;           [:a [:km ""]]
+       ;           [:b [:km ""]]
+       ;           [:c [:km ""]]
+       ;           [:d [:km ""]]
+       ;           [:e [:km ""]]
+       ;           [:f [:km ""]]
+       ;           [:i [:km ""]]
+       ;           [:g [:km ""]]
+       ;           [:h [:km ""]]
+       ;           [:j [:km ""]]
+       ;           [:k [:km ""]]
+       ;           [:l [:km ""]]
+       ;           [:m [:km ""]]
+       ;           [:n [:km ""]]
+       ;           [:o [:km ""]]
+       ;           [:p [:km ""]]
+       ;           [:r [:km ""]]
+       ;           [:s [:km ""]]
+       ;           [:t [:km ""]]
+       ;           [:u [:km ""]]
+       ;           [:y [:km ""]]
+       ;           [:z [:km ""]]
+       ;           [:x [:km ""]]
+       ;           [:v [:km ""]]
+       ;           [:w [:km ""]]
+       ;           [:semicolon [:km ""]]
+       ;           [:quote [:km ""]]
+       ;           [:comma [:km ""]]
+       ;           [:period [:km ""]]
+       ;           [:slash [:km ""]]
+       ;           [:spacebar [:km ""]]
+       											; ]}
+       ;  {:des "[]-key ([description])"
+       ;   :rules [:[]-mode
+                 ; [:grave_accent_and_tilde :]
+                 ; [:1 :]
+                 ; [:2 :]
+                 ; [:3 :]
+                 ; [:4 :]
+                 ; [:5 :]
+                 ; [:6 :]
+                 ; [:7 :]
+                 ; [:8 :]
+                 ; [:9 :]
+                 ; [:0 :]
+                 ; [:hyphen :]
+                 ; [:equal_sign :]
+                 ; [:open_bracket :]
+                 ; [:close_bracket :]
+                 ; [:backslash :]
+                 ; [:a :]
+                 ; [:b :]
+                 ; [:c :]
+                 ; [:d :]
+                 ; [:e :]
+                 ; [:f :]
+                 ; [:i :]
+                 ; [:g :]
+                 ; [:h :]
+                 ; [:j :]
+                 ; [:k :]
+                 ; [:l :]
+                 ; [:m :]
+                 ; [:n :]
+                 ; [:o :]
+                 ; [:p :]
+                 ; [:r :]
+                 ; [:s :]
+                 ; [:t :]
+                 ; [:u :]
+                 ; [:y :]
+                 ; [:z :]
+                 ; [:x :]
+                 ; [:v :]
+                 ; [:w :]
+                 ; [:semicolon :]
+                 ; [:quote :]
+                 ; [:comma :]
+                 ; [:period :]
+                 ; [:slash :]
+                 ; [:spacebar :]
+       					 ; ]}
+        ]}
