@@ -11,11 +11,12 @@
   :simlayer-threshold 210
 
   :tos {
-    :same_wind_app   {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
-    :prev_app        {:key :tab :modi [:left_command] :lazy true}
-    :left_paren      {:key :9 :modi [:left_shift] :lazy true}
-    :right_paren     {:key :0 :modi [:left_shift] :lazy true}
+    :same_wind_app      {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
+    :prev_app           {:key :tab :modi [:left_command] :lazy true}
+    :left_paren         {:key :9 :modi [:left_shift] :lazy true}
+    :right_paren        {:key :0 :modi [:left_shift] :lazy true}
     :left_control_lazy  {:key :left_control :lazy true}
+    :left_cmd_lazy      {:key :left_command :lazy true}
   }
 
   :modifiers {
@@ -52,7 +53,13 @@
     {
       :des "enter"
       :rules [
-        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
+        [:##return_or_enter :left_cmd_lazy nil {:alone :return_or_enter}]
+      ]
+    }
+    {
+      :des "quote -> quote (alone) left_control (held)"
+ 			:rules [
+        [:##quote :left_control_lazy nil {:alone :quote}]
       ]
     }
     
