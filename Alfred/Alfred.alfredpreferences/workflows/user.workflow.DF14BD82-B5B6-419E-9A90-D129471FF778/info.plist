@@ -114,6 +114,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>D457C0B1-1F95-4E0D-87B6-216904555B24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EC6583F3-D97B-4880-B68D-292016BCFAF3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Brett Abramczyk</string>
@@ -125,6 +138,25 @@
 	<string>Shortcuts</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "/Applications/Google Chrome.app"
+		make new window
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>A8158A77-0A99-4CF1-8ED1-74BC85D19E8D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -143,25 +175,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>A0F4D554-843E-4CDD-8FAB-90B7BD045F1A</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "/Applications/Google Chrome.app"
-		make new window
-	end tell
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>A8158A77-0A99-4CF1-8ED1-74BC85D19E8D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -263,6 +276,25 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "/Applications/Google Chrome.app"
+		make new window
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>6D78D81E-1C2E-43E3-B63B-79EA3875F7F4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -282,19 +314,19 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "/Applications/Google Chrome.app"
-		make new window
-	end tell
-end alfred_script</string>
-				<key>cachescript</key>
-				<false/>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://www.amazon.com/gp/your-account/order-history</string>
+				<key>utf8</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
+			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>6D78D81E-1C2E-43E3-B63B-79EA3875F7F4</string>
+			<string>EAC929B9-47A1-4C51-B08F-98071BC6DC50</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -322,19 +354,40 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>amzf</string>
+				<key>subtext</key>
+				<string>Open Amazon Fresh</string>
+				<key>text</key>
+				<string>Amazon Fresh</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>D457C0B1-1F95-4E0D-87B6-216904555B24</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://www.amazon.com/gp/your-account/order-history</string>
+				<string>https://www.amazon.com/alm/storefront?almBrandId=QW1hem9uIEZyZXNo</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>EAC929B9-47A1-4C51-B08F-98071BC6DC50</string>
+			<string>EC6583F3-D97B-4880-B68D-292016BCFAF3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -406,6 +459,13 @@ end alfred_script</string>
 			<key>ypos</key>
 			<integer>225</integer>
 		</dict>
+		<key>D457C0B1-1F95-4E0D-87B6-216904555B24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
+		</dict>
 		<key>D5D82D2D-6193-47B2-BF78-50F9EA0D23C1</key>
 		<dict>
 			<key>xpos</key>
@@ -419,6 +479,13 @@ end alfred_script</string>
 			<integer>250</integer>
 			<key>ypos</key>
 			<integer>910</integer>
+		</dict>
+		<key>EC6583F3-D97B-4880-B68D-292016BCFAF3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>1050</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
