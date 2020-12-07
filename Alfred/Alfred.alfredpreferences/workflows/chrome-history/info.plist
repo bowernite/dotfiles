@@ -37,7 +37,7 @@
 	<key>description</key>
 	<string>Access to URLs in your Google Chrome profile's history</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Google Chrome History</string>
 	<key>objects</key>
