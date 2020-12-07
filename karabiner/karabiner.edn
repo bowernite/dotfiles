@@ -90,8 +90,9 @@
         :launch-mode
         ;  Most common apps
         ; "Web"
-        [:w [:opena "Google Chrome"] :!Chrome]
-        [:w :same_wind_app :Chrome]
+        [:w [:opena "Google Chrome"]]
+        ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
+        ; [:w :same_wind_app :Chrome]
         ; "Editor"
         [:e [:opena "Visual Studio Code"] :!VSCode]
         [:e :same_wind_app :VSCode]
