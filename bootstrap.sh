@@ -80,6 +80,10 @@ brew update
 log "Homebrew: Installing and upgrading packages..."
 brew bundle
 
+log "Homebrew: Starting services..."
+# Based on documentation I've read, Homebrew _should_ automatically start these services up on boot indefinitely
+brew services start goku
+
 #######################################
 # MacOS
 #######################################
