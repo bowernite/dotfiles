@@ -165,21 +165,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string>/Applications/Visual Studio Code.app</string>
-				<key>sourcefile</key>
-				<string>~/dotfiles</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>F0D395EC-76D5-4BCD-94C1-708249453C58</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>keyword</key>
@@ -197,6 +182,21 @@
 			<string>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/dotfiles</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>F0D395EC-76D5-4BCD-94C1-708249453C58</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -306,6 +306,21 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
+				<string>~/dotfiles/karabiner/karabiner.edn</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>D4D3236A-175F-42C8-8E01-FC3A2D0EF561</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
 				<string>~/dotfiles</string>
 			</dict>
 			<key>type</key>
@@ -335,21 +350,6 @@
 			<string>2D134451-DCE0-48C2-A2A3-F78B24E60E8A</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string>/Applications/Visual Studio Code.app</string>
-				<key>sourcefile</key>
-				<string>~/dotfiles/karabiner/karabiner.edn</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>D4D3236A-175F-42C8-8E01-FC3A2D0EF561</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -434,6 +434,25 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://github.com/babramczyk/dotfiles/issues/new</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>15580952-D2D0-4198-B593-BEF1715365A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -449,25 +468,6 @@
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>E9979091-0FA4-4CE6-AAA1-B47A536641AD</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://github.com/babramczyk/dotfiles/issues/new</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>15580952-D2D0-4198-B593-BEF1715365A9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
