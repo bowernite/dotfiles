@@ -336,7 +336,7 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>amzo</string>
+				<string>amo</string>
 				<key>subtext</key>
 				<string>View the My Orders page in Amazon</string>
 				<key>text</key>
@@ -357,7 +357,7 @@ end alfred_script</string>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>amzf</string>
+				<string>amf</string>
 				<key>subtext</key>
 				<string>Open Amazon Fresh</string>
 				<key>text</key>
