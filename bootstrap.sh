@@ -56,6 +56,10 @@ if [[ $? != 0 ]]; then
   return 1
 fi
 
+# Goku symlinks
+ln -s  "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
+ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
+
 #######################################
 # MacOS installs
 #######################################

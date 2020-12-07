@@ -40,8 +40,6 @@ precmd() {
 # Two-line prompt
 PROMPT="$PROMPT"$'\n'"😀 "
 
-export GOKU_EDN_CONFIG_FILE=~/dotfiles/karabiner/karabiner.edn
-
 #######################################
 # FZF
 #######################################
