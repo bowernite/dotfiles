@@ -114,6 +114,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C322E44A-CCA7-4A83-90D5-238F1AFC3298</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C268ECF9-AF5A-408E-9D60-7D4B79242DDC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>D457C0B1-1F95-4E0D-87B6-216904555B24</key>
 		<array>
 			<dict>
@@ -391,6 +404,42 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>afpw</string>
+				<key>subtext</key>
+				<string>Open Alfred.alfredpreferences/workflows in Finder</string>
+				<key>text</key>
+				<string>Open Alfred.alfredpreferences/workflows</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C322E44A-CCA7-4A83-90D5-238F1AFC3298</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string>~/dotfiles/Alfred/Alfred.alfredpreferences/workflows</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>C268ECF9-AF5A-408E-9D60-7D4B79242DDC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -451,6 +500,20 @@ end alfred_script</string>
 			<integer>235</integer>
 			<key>ypos</key>
 			<integer>60</integer>
+		</dict>
+		<key>C268ECF9-AF5A-408E-9D60-7D4B79242DDC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>235</integer>
+			<key>ypos</key>
+			<integer>1255</integer>
+		</dict>
+		<key>C322E44A-CCA7-4A83-90D5-238F1AFC3298</key>
+		<dict>
+			<key>xpos</key>
+			<integer>45</integer>
+			<key>ypos</key>
+			<integer>1255</integer>
 		</dict>
 		<key>CDE14BF2-FCF4-4D4C-A842-9C9102EF41D5</key>
 		<dict>
