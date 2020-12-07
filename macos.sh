@@ -323,6 +323,35 @@ defaults write com.knollsoft.Rectangle SUEnableAutomaticChecks -bool true
 defaults write com.knollsoft.Rectangle gapSize -int 12
 
 ##############################################################
+# Default apps by file extension
+#
+# Set default apps for files with duti util
+# https://github.com/moretension/duti/
+##############################################################
+
+duti -s com.microsoft.VSCode js all
+duti -s com.microsoft.VSCode mjs all
+duti -s com.microsoft.VSCode jsx all
+duti -s com.microsoft.VSCode ts all
+duti -s com.microsoft.VSCode tsx all
+duti -s com.microsoft.VSCode json all
+duti -s com.microsoft.VSCode yml all
+duti -s com.microsoft.VSCode yaml all
+duti -s com.microsoft.VSCode php all
+duti -s com.microsoft.VSCode c all
+duti -s com.microsoft.VSCode cpp all
+duti -s com.microsoft.VSCode md all
+duti -s com.microsoft.VSCode rb all
+duti -s com.microsoft.VSCode go all
+duti -s com.microsoft.VSCode py all
+duti -s com.microsoft.VSCode pyc all
+duti -s com.microsoft.VSCode html all
+duti -s com.microsoft.VSCode css all
+duti -s com.microsoft.VSCode scss all
+duti -s com.microsoft.VSCode lock all
+duti -s com.microsoft.VSCode log all
+
+##############################################################
 # ???
 #
 # I don't know exactly what these are, but a lot of others
