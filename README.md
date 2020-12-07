@@ -85,6 +85,10 @@ Keyboard remapping is done with the Karabiner-Elements app.
 
 For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) font (the confirmation/link to the actual asset should be in your email somewhere)
 
+### After cloning repositories
+
+After cloning any repositories, exclude their `node_modules` from Alfred's/Spotlight's search by going to `System Preferences` > `Spotlight` > `Privacy` and adding each `node_modules` folder to the list.
+
 ## Resources 📚
 
 - https://medium.com/@pechyonkin/how-to-map-capslock-to-control-and-escape-on-mac-60523a64022b
