@@ -10,5 +10,7 @@
 	<string>q</string>
 	<key>quitallConfirm</key>
 	<true/>
+	<key>quitallKeyword</key>
+	<string>qa</string>
 </dict>
 </plist>
