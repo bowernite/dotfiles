@@ -59,7 +59,7 @@
     {
       :des "quote -> quote (alone) left_control (held)"
  			:rules [
-        [:##quote :left_control_lazy nil {:alone :quote}]
+        [:quote :left_control_lazy nil {:alone :quote}]
       ]
     }
     
