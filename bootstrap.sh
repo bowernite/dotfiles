@@ -87,7 +87,7 @@ brew services start goku
 #######################################
 # MacOS
 #######################################
-source bootstrap-macos.sh
+source macos.sh
 
 #######################################
 # Fin
