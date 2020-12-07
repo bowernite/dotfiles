@@ -6,7 +6,5 @@
 	<true/>
 	<key>ignoreMusic</key>
 	<true/>
-	<key>ignorePlist</key>
-	<true/>
 </dict>
 </plist>
