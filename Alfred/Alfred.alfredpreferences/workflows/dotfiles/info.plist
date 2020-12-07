@@ -336,7 +336,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>kedn</string>
+				<string>kb</string>
 				<key>subtext</key>
 				<string>Edit karabiner.edn with VS Code</string>
 				<key>text</key>
