@@ -5,6 +5,7 @@
 # TODO: Research how to automatically update these packages on some regular interval
 
 brew "bitwarden-cli"
+brew "duti"
 brew "fd"
 brew "fzf"
 brew "git"
