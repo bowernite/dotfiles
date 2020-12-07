@@ -47,7 +47,8 @@
     {
       :des "caps_lock"
       :rules [
-        [:##caps_lock :left_control_lazy nil {:alone :escape}]
+        ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
+        [:#CTOSFQWEcaps_lock :left_control_lazy nil {:alone :escape}]
       ]
     }
     {
@@ -60,6 +61,12 @@
       :des "backslash -> backslash (alone) left_control (held)"
  			:rules [
         [:backslash :left_control_lazy nil {:alone :backslash}]
+      ]
+    }
+    {
+      :des "right_shift + caps_lock -> caps_lock"
+      :rules [
+        [:!Rcaps_lock :caps_lock]
       ]
     }
     
