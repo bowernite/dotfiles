@@ -92,6 +92,7 @@
         [:x [:opena "Spotify"]]
         [:z [:opena "zoom.us.app"]]
         [:a [:opena "Alfred Preferences"]]
+        [:f [:opena "Finder"]]
         
         ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
         ; [:h [:opena "Calendar"]]
