@@ -57,9 +57,9 @@
       ]
     }
     {
-      :des "quote -> quote (alone) left_control (held)"
+      :des "backslash -> backslash (alone) left_control (held)"
  			:rules [
-        [:quote :left_control_lazy nil {:alone :quote}]
+        [:backslash :left_control_lazy nil {:alone :backslash}]
       ]
     }
     
