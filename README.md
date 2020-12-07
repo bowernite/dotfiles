@@ -32,7 +32,6 @@
 - [ ] Bartender
 
 2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
-1. Make sure there's a Karabiner Profile called `Goku`
 1. Follow any other instructions below
 
 ### macOS Preferences 👨‍💻
@@ -70,14 +69,17 @@ As of writing this, there's a Bartender 4 update that is only for Big Sur+. Beca
 ### Alfred 🎩
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
-
-When starting Alfred for the first time, you'll need to point it to the files in this repo. To do so, open Alfred's preferences > `Appearance` > `Set preferences folder…` and select `<DOTFILES_REPO_PATH>/Alfred`
+ 
+- [ ] When starting Alfred for the first time, you'll need to point it to the files in this repo. To do so, open Alfred's preferences > `Appearance` > `Set preferences folder…` and select `<DOTFILES_REPO_PATH>/Alfred`
+- [ ] Make sure Alfred and its workflows have proper OS access. `System Preferences` > `Security & Privacy` > Check `Alfred` for `Full Disk Access` and `Developer Tools`
 
 ### Keyboard ⌨️
 
 Keyboard remapping is done with the Karabiner-Elements app.
 
 > NOTE: Remapping for external "non-Mac" keyboards is currently done on a one-off basis for my particular mechanical keyboard (Karabiner stores product and vendor IDs). If you ever switch keyboards, you'll need to manually \*\*swap the `opt` and `command` keys just for that keyboard
+
+- [ ] Make sure the default Profile is called `Goku`
 
 ### Font 🔠
 
