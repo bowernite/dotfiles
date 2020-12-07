@@ -35,4 +35,4 @@ cask "rectangle"
 cask "spotify"
 # NEXT_MACHINE
 # cask "visual-studio-code"
-cask "zoomus"
+# cask "zoomus"
