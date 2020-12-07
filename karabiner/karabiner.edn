@@ -112,7 +112,7 @@
     }
     
     {
-      :des "Vim nav"
+      :des "Text navigation and manipulation"
       :rules [
         ; Char and word-wise nav
         [:!Th :left_arrow]
