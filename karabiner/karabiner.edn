@@ -40,7 +40,7 @@
 
   ; We'll see how this works. It's definitely the easiest, but has the downside of a delay when typing w
   :simlayers    {
-    :launch-mode{ :key :w }
+    :launch-mode{ :key :j }
   }
 
   :main [
@@ -75,38 +75,31 @@
       :rules [
         :launch-mode
         ;  Most common apps
-        ; Home row right
-        ; *Just* browsin'
-        [:j [:opena "Google Chrome"] :!Chrome]
-        [:j :same_wind_app :Chrome]
-        ; Kode
-        [:k [:opena "Visual Studio Code"] :!VSCode]
-        [:k :same_wind_app :VSCode]
-        ;  sLack
-        ; [:l [:opena "Slack"]]
-        [:l [:opena "Slack Web"]]
-        [:semicolon [:opena "Terminal"]]
+        ; "Web"
+        [:w [:opena "Google Chrome"] :!Chrome]
+        [:w :same_wind_app :Chrome]
+        ; "Editor"
+        [:e [:opena "Visual Studio Code"] :!VSCode]
+        [:e :same_wind_app :VSCode]
+        ; [:s [:opena "Slack"]]
+        [:s [:opena "Slack Web"]]
+        [:t [:opena "Terminal"]]
         ;  Nearby `w` in case we want to use one hand
         
         ; Also common
-        ;  Notes
-        [:n [:opena "Notes"]]
-        ;  reMinders
-        [:m [:opena "Reminders"]]
-        ; sPotify
-        [:p [:opena "Spotify"]]
-        ; *i*Message
-        [:i [:opena "Messages"]]
-        ; zOOm
-        [:o [:opena "zoom.us.app"]]
-        ; mUsic
-        [:m [:opena "Music"]]
-        ;  "Hey"
-        ; todo: Open hey URL. Or just trigger alfred workflow
+        [:q [:opena "Notes"]]
+        [:r [:opena "Reminders"]]
+        [:x [:opena "Spotify"]]
+        [:z [:opena "zoom.us.app"]]
+        [:a [:opena "Alfred Preferences"]]
+        
+        ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
         ; [:h [:opena "Calendar"]]
-        [:period [:opena "Karabiner-Elements"]]
-        [:slash [:opena "Karabiner-EventViewer"]]
-        [:comma [:opena "Alfred Preferences"]]
+        ; [:k [:opena "Karabiner-Elements"]]
+        ; [:l [:opena "Karabiner-EventViewer"]]
+        ; [:c [:opena "Music"]]
+        ; [:g [:opena "Messages"]]
+        ; email?
       ]
     }
     
