@@ -45,6 +45,13 @@
 
   :main [
     {
+      :des "App-specific overrides"
+      :rules [
+        ; In Chrome, use left_option+enter to return focus to the document (Chrome doesn't provide any way to do this natively)
+        [:!Oreturn_or_enter [:!Cl :j :return_or_enter] :Chrome]
+      ]
+    }
+    {
       :des "caps_lock"
       :rules [
         ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
@@ -138,7 +145,8 @@
         ; Page up/down
         [:!Oj :page_down]
         [:!Ok :page_up]
-      ]}
+      ]
+    }
   ]
 
   :applications {
