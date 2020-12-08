@@ -26,7 +26,7 @@
       "iconSize" : 44
     },
     "search" : {
-      "paddingVertical" : 16,
+      "paddingVertical" : 20,
       "background" : "#27313EFF",
       "spacing" : 4,
       "text" : {
@@ -39,9 +39,9 @@
     },
     "window" : {
       "color" : "#27313EFF",
-      "paddingHorizontal" : 55,
-      "width" : 559,
-      "borderPadding" : 18,
+      "paddingHorizontal" : 36,
+      "width" : 825,
+      "borderPadding" : 20,
       "borderColor" : "#1F2937FF",
       "blur" : 5,
       "roundness" : 20,
