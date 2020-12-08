@@ -358,7 +358,7 @@ osascript -l JavaScript emoji.js "$query" 2&gt;&amp;1</string>
 				<key>focusedappvariablename</key>
 				<string>snippetapp</string>
 				<key>keyword</key>
-				<string>::</string>
+				<string>;;</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.snippet</string>
