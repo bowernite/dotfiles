@@ -106,8 +106,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>F36CDFFD-4057-4FF1-965B-4379AE4B8D90</key>
-		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>James Sumners</string>
@@ -119,37 +117,6 @@
 	<string>Emoji search</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>14</integer>
-				<key>hotmod</key>
-				<integer>1048576</integer>
-				<key>hotstring</key>
-				<string>E</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>F36CDFFD-4057-4FF1-965B-4379AE4B8D90</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -436,13 +403,6 @@ https://github.com/jsumners/alfred-emoji/issues</string>
 			<integer>450</integer>
 			<key>ypos</key>
 			<integer>290</integer>
-		</dict>
-		<key>F36CDFFD-4057-4FF1-965B-4379AE4B8D90</key>
-		<dict>
-			<key>xpos</key>
-			<integer>40</integer>
-			<key>ypos</key>
-			<integer>25</integer>
 		</dict>
 		<key>F5CA3331-1B99-45EF-8E9A-06C417387250</key>
 		<dict>
