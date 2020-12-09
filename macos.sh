@@ -133,6 +133,15 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ##############################################################
+# Language & Region
+##############################################################
+
+# Preferences > Language & Region > Advanced > Dates
+# Changes the date format for short/medium/long/full (these are used by Alfred for date snippets)
+# 1: short, 2: medium, 3: long, 4: full
+defaults write "Apple Global Domain" AppleICUDateFormatStrings -dict-add 2 "EEEE MMM d"
+
+##############################################################
 # Finder
 ##############################################################
 
