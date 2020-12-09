@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "{datetime:full}",
+    "uid" : "FEBBF63E-1785-43D7-A151-96A730DF3369",
+    "name" : "Full datetime",
+    "keyword" : "dt.f"
+  }
+}

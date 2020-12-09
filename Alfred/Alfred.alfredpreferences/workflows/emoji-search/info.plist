@@ -54,19 +54,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>69116487-E1CC-4FAE-BBFC-7904198F317B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>05450F7C-3D4F-45BF-ACA3-9422EF54EFDD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>7521B349-C1D6-4186-B21E-8EAC41BD18F3</key>
 		<array>
 			<dict>
@@ -317,23 +304,6 @@ osascript -l JavaScript emoji.js "$query" 2&gt;&amp;1</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>focusedappvariable</key>
-				<true/>
-				<key>focusedappvariablename</key>
-				<string>snippetapp</string>
-				<key>keyword</key>
-				<string>;;</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.snippet</string>
-			<key>uid</key>
-			<string>69116487-E1CC-4FAE-BBFC-7904198F317B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string># Emoji Workflow
@@ -373,13 +343,6 @@ https://github.com/jsumners/alfred-emoji/issues</string>
 			<integer>550</integer>
 			<key>ypos</key>
 			<integer>260</integer>
-		</dict>
-		<key>69116487-E1CC-4FAE-BBFC-7904198F317B</key>
-		<dict>
-			<key>xpos</key>
-			<integer>50</integer>
-			<key>ypos</key>
-			<integer>350</integer>
 		</dict>
 		<key>7521B349-C1D6-4186-B21E-8EAC41BD18F3</key>
 		<dict>
