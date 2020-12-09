@@ -203,7 +203,7 @@
         }
       },
       "spotify": {
-        "version": "latest",
+        "version": "1.1.47.684.g136419d9",
         "options": {
           "full_name": "spotify"
         }
