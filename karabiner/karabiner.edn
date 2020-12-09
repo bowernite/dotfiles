@@ -108,9 +108,9 @@
         [:z [:opena "zoom.us.app"]]
         [:a [:opena "Alfred Preferences"]]
         [:f [:opena "Finder"]]
+        [:c [:opena "Outlook"]]
         
         ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
-        ; [:h [:opena "Calendar"]]
         ; [:k [:opena "Karabiner-Elements"]]
         ; [:l [:opena "Karabiner-EventViewer"]]
         ; [:c [:opena "Music"]]
