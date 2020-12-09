@@ -82,22 +82,22 @@
         "bottle": false
       },
       "fd": {
-        "version": "8.2.0",
+        "version": "8.2.1",
         "bottle": {
           "cellar": ":any_skip_relocation",
           "prefix": "/usr/local",
           "files": {
             "big_sur": {
-              "url": "https://homebrew.bintray.com/bottles/fd-8.2.0.big_sur.bottle.tar.gz",
-              "sha256": "dd916cd328337487954f0a6c7f9bb7579a6782fe6b8d091862c43118a0bc0b8c"
+              "url": "https://homebrew.bintray.com/bottles/fd-8.2.1.big_sur.bottle.tar.gz",
+              "sha256": "378bf3b71edf7c09a80cd8815bd068f6c2b8abaf2df149fc23f33f52acecc817"
             },
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/fd-8.2.0.catalina.bottle.tar.gz",
-              "sha256": "c9f64d2af2fc4aac3660b830bd36fbe8feb5fecdc301d5678ee7e198465d19bf"
+              "url": "https://homebrew.bintray.com/bottles/fd-8.2.1.catalina.bottle.tar.gz",
+              "sha256": "1fef32a7cd0c80f62343b4caf6a0979f89bacfa7434ed54ffede6adb85ace329"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/fd-8.2.0.mojave.bottle.tar.gz",
-              "sha256": "ef711df1c71826542e05385d19a50178564403e96ba5e46438dcf8d5e45313c0"
+              "url": "https://homebrew.bintray.com/bottles/fd-8.2.1.mojave.bottle.tar.gz",
+              "sha256": "160cdfc22b5d0ac9694ce8dd95f7e22a7bdc95f6d376344d15f924f9ef67149b"
             }
           }
         }
@@ -127,6 +127,27 @@
             "high_sierra": {
               "url": "https://homebrew.bintray.com/bottles/duti-1.5.4_1.high_sierra.bottle.tar.gz",
               "sha256": "e495d02894655b516f79fa10671f5d768cae04c5b73c1aa077f8b0c573584cbf"
+            }
+          }
+        }
+      },
+      "bluetoothconnector": {
+        "version": "2.0.0",
+        "bottle": {
+          "cellar": ":any_skip_relocation",
+          "prefix": "/usr/local",
+          "files": {
+            "big_sur": {
+              "url": "https://homebrew.bintray.com/bottles/bluetoothconnector-2.0.0.big_sur.bottle.tar.gz",
+              "sha256": "5b1be2b35a5d442e3874c82ebe2c37ff5ac22478d561cf28effc8110475f3bc4"
+            },
+            "catalina": {
+              "url": "https://homebrew.bintray.com/bottles/bluetoothconnector-2.0.0.catalina.bottle.tar.gz",
+              "sha256": "38d8b5c89fd8fee4a746eadaceb399d5b7e1148db2cee896381b6e093aef56e3"
+            },
+            "mojave": {
+              "url": "https://homebrew.bintray.com/bottles/bluetoothconnector-2.0.0.mojave.bottle.tar.gz",
+              "sha256": "1a0c1e83b5640a35c48ba982f1b7cf5b1bebdda6fd4957368262c3e001c740e3"
             }
           }
         }
@@ -212,7 +233,7 @@
       "catalina": {
         "HOMEBREW_VERSION": "2.6.0",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "1a60e2e6309cd922b8dc50cd514472daa71b5fb2",
+        "Homebrew/homebrew-core": "4388394c6c010e9a0d2b85cd33126751e0b4b5fb",
         "CLT": "12.2.0.0.1.1604628099",
         "Xcode": "12.2",
         "macOS": "10.15.6"

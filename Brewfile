@@ -5,6 +5,7 @@
 # TODO: Research how to automatically update these packages on some regular interval
 
 brew "bitwarden-cli"
+brew "bluetoothconnector"
 brew "duti"
 brew "fd"
 brew "fzf"
@@ -33,7 +34,6 @@ cask "postman"
 cask "rectangle"
 # NEXT_MACHINE
 # cask "slack"
-cask "spotify"
-# NEXT_MACHINE
+# cask "spotify"
 # cask "visual-studio-code"
 # cask "zoomus"
