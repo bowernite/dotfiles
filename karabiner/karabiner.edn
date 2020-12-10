@@ -143,7 +143,9 @@
         [:!Om :!Cdelete_forward]
         
         ; Clear current line
-        [:!Tsemicolon [:!Cright_arrow :!Cdelete_or_backspace]]
+        ; Some apps don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
+        [:!Tsemicolon [:!Ta :!Tk]]
+        
         ; Clear everything
         [:!Tquote [:!Ca :delete_or_backspace]]
         
