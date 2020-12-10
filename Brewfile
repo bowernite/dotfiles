@@ -1,15 +1,23 @@
 #######################################
+# Taps
+#######################################
+
+tap "domt4/autoupdate"
+
+#######################################
 # Formulae
 #######################################
 
-# TODO: Research how to automatically update these packages on some regular interval
-
 brew "bitwarden-cli"
+# Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
+# Tool for managing default apps for each extension on macos
 brew "duti"
+# Better "find" util
 brew "fd"
 brew "fzf"
 brew "git"
+# Tool for making Karabiner config management more manageable and powerful
 brew "goku"
 brew "nvm"
 brew "python"
