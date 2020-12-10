@@ -40,6 +40,8 @@
     
     # Remove files from git that are now ignored
     rig = !"git ls-files --ignored --exclude-standard | sed 's/.*/"&"/' | xargs git rm -r --cached"
+    
+    rev = !"git fetch && git diff origin/$(git dev-branch)"
 
 
 # I have no idea what this is or how this got here :)
