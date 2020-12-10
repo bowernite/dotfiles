@@ -1,8 +1,7 @@
-#########
-# Aliases
-#########
+##############################################################
+# Dev Utils
+##############################################################
 
-# Dev stuff in repos
 format() {
   echo "💅 Formatting files with Prettier...";
   npx prettier --write --loglevel=error .;
@@ -36,20 +35,18 @@ jesta() {
 alias va='tc && test && lint && format'
 alias vs='tc && lint && format'
 
-# Open fzf files with vim by default
-alias go="vim -o \`fzf\`"
-# Make sure dotfiles are shown by ls
-alias ls="ls -A"
-# Log ip to console
-alias myip="curl http://ipecho.net/plain; echo"
-alias gpom="git pull origin \$(git_dev_branch)"
-# Change ping to stop after 5 pings
-alias ping="ping -c 5"
-alias c="clear"
-# `gcob` maps easier in my head
+##############################################################
+# Git
+##############################################################
+
+# "git checkout branch"
 alias gcob="git co -b"
+# "git commit message"
 # oh-my-zsh originally has this as "git checkout master", but this makes more sense to me
 alias gcm="gc -m"
+
+# "git pull origin main"
+alias gpom="git pull origin \$(git_dev_branch)"
 
 # Git diffing with origin/master and origin/<dev_branch>
 alias grem="git remote" # (original oh-my-zsh `gr` alias)
@@ -59,9 +56,19 @@ alias gdod="git fetch && git diff origin/\$(git_dev_branch)"
 # "git diff origin main"
 alias gdom="git fetch && git diff origin/\$(git_main_branch)"
 
-###########
-# Functions
-###########
+##############################################################
+# Miscellaneous
+##############################################################
+
+# Open fzf files with vim by default
+alias go="vim -o \`fzf\`"
+# Make sure dotfiles are shown by ls
+alias ls="ls -A"
+# Log ip to console
+alias myip="curl http://ipecho.net/plain; echo"
+# Change ping to stop after 5 pings
+alias ping="ping -c 5"
+alias c="clear"
 
 # Clears the screen and runs the succeeding command(s)
 run() {
