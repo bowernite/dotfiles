@@ -4,5 +4,11 @@
 <dict>
 	<key>applicationFuzzyType</key>
 	<integer>1</integer>
+	<key>showDocuments</key>
+	<true/>
+	<key>showFolders</key>
+	<true/>
+	<key>showImages</key>
+	<true/>
 </dict>
 </plist>
