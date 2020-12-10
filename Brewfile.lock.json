@@ -226,6 +226,11 @@
           "full_name": "rectangle"
         }
       }
+    },
+    "tap": {
+      "domt4/autoupdate": {
+        "revision": "982c496e0d6639742b4551b7353ec89067fc6bfe"
+      }
     }
   },
   "system": {
