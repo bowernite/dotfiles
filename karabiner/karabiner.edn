@@ -139,8 +139,8 @@
         ; To start and end of line
         [:!Tn :!Cleft_arrow :!VSCode]
         [:!Tm :!Cright_arrow :!VSCode]
-        [:!On :!Cdelete_or_backspace]
-        [:!Om :!Cdelete_forward]
+        [:!Tcomma :!Cdelete_or_backspace]
+        [:!Tperiod :!Cdelete_forward]
         
         ; Clear current line
         ; Some apps don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
