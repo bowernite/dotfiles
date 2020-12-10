@@ -51,6 +51,14 @@ alias gcob="git co -b"
 # oh-my-zsh originally has this as "git checkout master", but this makes more sense to me
 alias gcm="gc -m"
 
+# Git diffing with origin/master and origin/<dev_branch>
+alias grem="git remote" # (original oh-my-zsh `gr` alias)
+alias gr="git rev"
+# "git diff origin dev"
+alias gdod="git fetch && git diff origin/\$(git_dev_branch)"
+# "git diff origin main"
+alias gdom="git fetch && git diff origin/\$(git_main_branch)"
+
 ###########
 # Functions
 ###########
