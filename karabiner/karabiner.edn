@@ -145,7 +145,7 @@
         ; Clear current line
         [:!Tsemicolon [:!Cright_arrow :!Cdelete_or_backspace]]
         ; Clear everything
-        ; [:!Tquote [:!Ca :delete_or_backspace]]
+        [:!Tquote [:!Ca :delete_or_backspace]]
         
         ; Page up/down
         [:!Oj :page_down]
