@@ -22,12 +22,13 @@
         "color" : "#231B34FF"
       },
       "iconPaddingHorizontal" : 11,
+      "roundness" : 0,
       "paddingVertical" : 13,
       "iconSize" : 44
     },
     "search" : {
-      "paddingVertical" : 20,
-      "background" : "#FDFEFCFF",
+      "backgroundSelected" : "#B2D7FEFF",
+      "paddingHorizontal" : 8,
       "spacing" : 4,
       "text" : {
         "size" : 44,
@@ -35,15 +36,17 @@
         "font" : "San Francisco Text Bold",
         "color" : "#231C33FF"
       },
-      "backgroundSelected" : "#B2D7FEFF"
+      "background" : "#FDFEFCFF",
+      "roundness" : 0,
+      "paddingVertical" : 20
     },
     "window" : {
       "color" : "#FEFFFEFF",
       "paddingHorizontal" : 36,
       "width" : 825,
-      "borderPadding" : 20,
+      "borderPadding" : 0,
       "borderColor" : "#FDFEFCFF",
-      "blur" : 28,
+      "blur" : 0,
       "roundness" : 20,
       "paddingVertical" : 0
     },
