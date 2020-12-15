@@ -3,14 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>forcequitKeyword</key>
-	<string>fq</string>
-	<key>hideKeyword</key>
-	<string>h</string>
-	<key>quitKeyword</key>
-	<string>q</string>
+	<string>quitf</string>
 	<key>quitallConfirm</key>
 	<true/>
 	<key>quitallKeyword</key>
-	<string>qa</string>
+	<string>quita</string>
 </dict>
 </plist>
