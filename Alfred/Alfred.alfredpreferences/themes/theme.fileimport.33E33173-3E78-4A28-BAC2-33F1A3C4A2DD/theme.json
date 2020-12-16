@@ -48,7 +48,7 @@
       "borderColor" : "#FDFEFCFF",
       "blur" : 0,
       "roundness" : 20,
-      "paddingVertical" : 0
+      "paddingVertical" : 20
     },
     "credit" : "Chris Messina",
     "separator" : {
