@@ -157,8 +157,8 @@ def get_search_terms(search: str) -> tuple:
     Returns:
         tuple: Tuple with search terms
     """
-    if "&" in search:
-        search_terms = tuple(search.split("&"))
+    if " " in search:
+        search_terms = tuple(search.split(" "))
     elif "|" in search:
         search_terms = tuple(search.split("|"))
     else:
@@ -209,13 +209,13 @@ def search_in_tuples(tuples: list, search: str) -> list:
     result = list()
     for t in tuples:
         # Search AND
-        if "&" in search and all([is_in_tuple(t, ts) for ts in search_terms]):
+        if " " in search and all([is_in_tuple(t, ts) for ts in search_terms]):
             result.append(t)
         # Search OR
         if "|" in search and any([is_in_tuple(t, ts) for ts in search_terms]):
             result.append(t)
         # Search Single term
-        if "|" not in search and "&" not in search and any([is_in_tuple(t, ts) for ts in search_terms]):
+        if "|" not in search and " " not in search and any([is_in_tuple(t, ts) for ts in search_terms]):
             result.append(t)
     return result
 
