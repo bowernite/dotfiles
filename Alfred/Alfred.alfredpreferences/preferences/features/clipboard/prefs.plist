@@ -4,6 +4,8 @@
 <dict>
 	<key>autoExpandMidString</key>
 	<true/>
+	<key>autoExpandSimulatedKeyEventPadding</key>
+	<real>1</real>
 	<key>autoExpandSnippetsExcludedApps</key>
 	<array>
 		<string>com.runningwithcrayons.Alfred</string>
