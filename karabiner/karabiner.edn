@@ -123,12 +123,12 @@
       :des "Text navigation and manipulation"
       :rules [
         ; Char and word-wise nav
-        [:!Th :left_arrow]
-        [:!Tj :down_arrow]
-        [:!Tk :up_arrow]
-        [:!Tl :right_arrow]
-        [:!Ty :!Oleft_arrow]
-        [:!To :!Oright_arrow]
+        [:!T#SRh :left_arrow]
+        [:!T#SRj :down_arrow]
+        [:!T#SRk :up_arrow]
+        [:!T#SRl :right_arrow]
+        [:!T#SRy :!Oleft_arrow]
+        [:!T#SRo :!Oright_arrow]
         
         ; Char and word-wise deletion
         [:!Tu :!Odelete_or_backspace]
@@ -139,6 +139,8 @@
         ; To start and end of line
         [:!Tn :!Cleft_arrow :!VSCode]
         [:!Tm :!Cright_arrow :!VSCode]
+        [:!T#SRn :!Cleft_arrow]
+        [:!T#SRm :!Cright_arrow]
         [:!Tcomma :!Cdelete_or_backspace]
         [:!Tperiod :!Cdelete_forward]
         
