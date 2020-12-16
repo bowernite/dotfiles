@@ -7,9 +7,9 @@
 		<key>158D993C-A2BD-4AF8-B91E-448FCA24E639</key>
 		<dict>
 			<key>enabled</key>
-			<false/>
+			<true/>
 			<key>keyword</key>
-			<string>amz</string>
+			<string>am</string>
 			<key>text</key>
 			<string>Search Amazon for '{query}'</string>
 			<key>url</key>
@@ -70,7 +70,5 @@
 			<true/>
 		</dict>
 	</dict>
-	<key>onlyShowEnabledInPrefs</key>
-	<true/>
 </dict>
 </plist>
