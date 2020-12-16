@@ -133,8 +133,8 @@
         ; Char and word-wise deletion
         [:!Tu :!Odelete_or_backspace]
         [:!Ti :delete_or_backspace]
-        [:!Ou :!Odelete_forward]
-        [:!Oi :delete_forward]
+        [:!T7 :!Odelete_forward]
+        [:!T8 :delete_forward]
         
         ; To start and end of line
         [:!Tn :!Cleft_arrow :!VSCode]
