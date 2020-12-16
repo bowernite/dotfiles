@@ -1199,7 +1199,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>am</string>
+				<string>aam</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1451,7 +1451,7 @@ echo -n "$p"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>g</string>
+				<string>gg</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -1709,7 +1709,7 @@ end run</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>go</string>
+				<string>ggo</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -3078,7 +3078,7 @@ Search suggestions from multiple search engines in different locales</string>
 	<key>variables</key>
 	<dict>
 		<key>ALFRED_SORTS_RESULTS</key>
-		<string>1</string>
+		<string>0</string>
 		<key>GOOGLE_PLACES_API_KEY</key>
 		<string></string>
 		<key>SHOW_QUERY_IN_RESULTS</key>
