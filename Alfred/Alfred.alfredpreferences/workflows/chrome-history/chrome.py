@@ -55,7 +55,7 @@ SELECT urls.id, urls.title, urls.url {favicon_select}
     FROM urls
     {favicon_join}
     WHERE (urls.title LIKE ? OR urls.url LIKE ?)
-    ORDER BY visit_count DESC, typed_count DESC, last_visit_time DESC
+    ORDER BY last_visit_time DESC, visit_count DESC, typed_count DESC
 """
 
 UNIX_EPOCH = datetime.datetime.utcfromtimestamp(0)
