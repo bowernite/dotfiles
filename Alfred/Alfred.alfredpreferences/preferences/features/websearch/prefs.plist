@@ -24,7 +24,7 @@
 			<key>keyword</key>
 			<string>hey feed</string>
 			<key>text</key>
-			<string>Open The Feed on Hey</string>
+			<string>Hey - The Feed</string>
 			<key>url</key>
 			<string>https://app.hey.com/feedbox</string>
 			<key>utf8</key>
@@ -37,9 +37,22 @@
 			<key>keyword</key>
 			<string>hey</string>
 			<key>text</key>
-			<string>Open Hey</string>
+			<string>Hey</string>
 			<key>url</key>
 			<string>https://app.hey.com</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>650ABEBD-3799-4796-991F-9D6B41B0E794</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>hey w</string>
+			<key>text</key>
+			<string>Hey - Write New Message</string>
+			<key>url</key>
+			<string>https://app.hey.com/messages/new</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
@@ -63,7 +76,7 @@
 			<key>keyword</key>
 			<string>hey paper</string>
 			<key>text</key>
-			<string>Open Paper Trail on Hey</string>
+			<string>Hey - Paper Trail</string>
 			<key>url</key>
 			<string>https://app.hey.com/paper_trail</string>
 			<key>utf8</key>
