@@ -17,6 +17,7 @@ brew "duti"
 brew "fd"
 brew "fzf"
 brew "git"
+brew "go"
 # Tool for making Karabiner config management more manageable and powerful
 brew "goku"
 brew "nvm"

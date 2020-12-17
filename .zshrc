@@ -27,7 +27,11 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
 export PATH
 
 # Setting PATH for mongodb
-PATH="/Users/abr1402/mongodb/bin:${PATH}"
+PATH="$HOME/mongodb/bin:${PATH}"
+export PATH
+
+# Setting PATH for Go executables
+PATH="$HOME/go/bin:${PATH}"
 export PATH
 
 # Prompt customization
