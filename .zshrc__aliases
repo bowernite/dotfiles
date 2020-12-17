@@ -61,7 +61,7 @@ alias gdom="git fetch && git diff origin/\$(git_main_branch)"
 ##############################################################
 
 # Open fzf files with vim by default
-alias go="vim -o \`fzf\`"
+alias goto="vim -o \`fzf\`"
 # Make sure dotfiles are shown by ls
 alias ls="ls -A"
 # Log ip to console
