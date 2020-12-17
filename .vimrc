@@ -177,4 +177,5 @@ noremap <Leader>w :set wrap!<Return>
 " https://github.com/mjackson/dotfiles/blob/master/vimrc
 " https://gist.github.com/ryanflorence/6d92b7495873263aec0b4e3c299b3bd3
 " https://github.com/cfoust/cawnfig/tree/master/configs/vim
-"
+
+" test
