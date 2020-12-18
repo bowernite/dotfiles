@@ -8,6 +8,19 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>189E72DD-18CF-44BC-BA6E-33264C7AAE7F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>09AFB55E-784E-4FE0-A229-CFDCB25A6115</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5F7C552E-D8D1-4B55-B190-B96C69BBFFEA</key>
 		<array>
 			<dict>
@@ -407,6 +420,59 @@ end alfred_script</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  	tell application "System Events"
+		activate
+		tell process "Notification Center"
+			click last item of windows
+		end tell
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>09AFB55E-784E-4FE0-A229-CFDCB25A6115</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>42</integer>
+				<key>hotmod</key>
+				<integer>262144</integer>
+				<key>hotstring</key>
+				<string>\</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>189E72DD-18CF-44BC-BA6E-33264C7AAE7F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
@@ -451,6 +517,20 @@ end alfred_script</string>
 			<integer>405</integer>
 			<key>ypos</key>
 			<integer>755</integer>
+		</dict>
+		<key>09AFB55E-784E-4FE0-A229-CFDCB25A6115</key>
+		<dict>
+			<key>xpos</key>
+			<integer>625</integer>
+			<key>ypos</key>
+			<integer>1145</integer>
+		</dict>
+		<key>189E72DD-18CF-44BC-BA6E-33264C7AAE7F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>445</integer>
+			<key>ypos</key>
+			<integer>1145</integer>
 		</dict>
 		<key>3CB66A88-5E86-42E7-9CF3-FACCDEEA351E</key>
 		<dict>
