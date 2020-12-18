@@ -147,18 +147,15 @@
         [:!Tcomma :!Cdelete_or_backspace]
         [:!Tperiod :!Cdelete_forward]
         
-        ; Delete line backward
-        [:!Tslash :!Tu]
-        
         ; PENDING: Things are tricky below. Going to just try the above `delete line backward` and see if that's good enough for now. If it isn't, uncomment below
         ; Below is fine... the only downside is then when you're editing code, it removes indentation. If clearing the current line is really that useful, I still think there's some investigation you could do here
         
         ; Clear current line
-        ; [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
+        [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
         ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
-        ; [:!Tslash [:!Tk :!Tu] [:Terminals :VSCode]]
+        [:!Tslash [:!Te :!Tu] :Terminals]
         ; For VS Code, it's trickier -- you want to preserve indentation, but also want it to behave nicely in the integrated terminal…
-        ; [:Tslash [:!Cright_arrow :!Cdelete_or_backspace]]
+        [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] :VSCode]
         
         ; Clear everything
         [:!Tdelete_or_backspace [:!Ca :delete_or_backspace]]
