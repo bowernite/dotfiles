@@ -145,11 +145,12 @@
         [:!Tperiod :!Cdelete_forward]
         
         ; Clear current line
-        ; Some apps don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
-        [:!Tsemicolon [:!Ta :!Tk]]
+        [:!Tp [:!Cleft_arrow :!Cdelete_forward] :!Terminals]
+        ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
+        [:!Tp [:!Ta :!Tk] :Terminals]
         
         ; Clear everything
-        [:!Tquote [:!Ca :delete_or_backspace]]
+        [:!Tdelete_or_backspace [:!Ca :delete_or_backspace]]
         
         ; Page up/down
         [:!Oj :page_down]
