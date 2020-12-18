@@ -137,8 +137,8 @@
         [:!T8 :delete_forward]
         
         ; To start and end of line
-        [:!Tn :!Cleft_arrow :!VSCode]
-        [:!Tm :!Cright_arrow :!VSCode]
+        [:!Tn :!Cleft_arrow]
+        [:!Tm :!Cright_arrow]
         [:!T#SRn :!Cleft_arrow]
         [:!T#SRm :!Cright_arrow]
         [:!Tcomma :!Cdelete_or_backspace]
