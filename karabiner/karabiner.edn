@@ -145,7 +145,7 @@
         [:!Tperiod :!Cdelete_forward]
         
         ; Clear current line
-        [:!Tp [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
+        [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
         ; In VSCode, this provides slightly better behavior (preserves line indentation in code) (ideally, this would be the case for all apps, but other apps don't support `!Cdelete_forward`)
         [:!Tp [:!Cleft_arrow :!Cdelete_forward] :VSCode]
         ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
