@@ -128,7 +128,7 @@
         ; Char and word-wise nav
         [:!T#SRh :left_arrow]
         [:!T#SRj :down_arrow]
-        ; [:!T#SRk :up_arrow]
+        [:!T#SRk :up_arrow]
         [:!T#SRl :right_arrow]
         [:!T#SRy :!Oleft_arrow]
         [:!T#SRo :!Oright_arrow]
