@@ -106,7 +106,7 @@
         
         ; Also common
         [:q [:opena "Notes"]]
-        [:r [:opena "Reminders"]]
+        [:r [:opena "Trello"]]
         [:x [:opena "Spotify"]]
         [:z [:opena "zoom.us.app"]]
         [:a [:opena "Alfred Preferences"]]
