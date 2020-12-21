@@ -1,3 +1,17 @@
+;; !  | means mandatory -   modifier(s) alone when pressend change behavior
+;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+;; ## | optional any
+;; !! | command + control + optional + shift (hyper)
+;; C  | left_command (Emacs: hyper)
+;; T  | left_control (Emacs: control)
+;; O  | left_option (Emacs: meta)
+;; S  | left_shift
+;; F  | fn (Emacs: super)
+;; Q  | right_command (Emacs: control)
+;; W  | right_control (Emacs: control)
+;; E  | right_option (Emacs: )
+;; R  | right_shift
+
 {
   :profiles {
     :Goku {
