@@ -160,10 +160,10 @@
         ; Also common
         ;  Notes
         [:n [:opena "Notes"]]
-        [:u [:opena "Trello"]]
+        [:m [:opena "Trello"]]
         ; sPotify
         [:p [:opena "Spotify"]]
-        [:m [:opena "Messages"]]
+        [:i [:opena "Messages"]]
         ; zOOm
         [:o [:opena "zoom.us.app"]]
         [:quote [:opena "Music"]]
