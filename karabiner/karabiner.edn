@@ -102,7 +102,6 @@
         ; [:s [:opena "Slack"]]
         [:s [:opena "Slack Web"]]
         [:t [:opena "Terminal"]]
-        ;  Nearby `w` in case we want to use one hand
         
         ; Also common
         [:q [:opena "Notes"]]
