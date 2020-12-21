@@ -168,7 +168,7 @@
         [:o [:opena "zoom.us.app"]]
         [:quote [:opena "Music"]]
         ; todo: Open hey URL. Or just trigger alfred workflow
-        [:y [:opena "Calendar"]]
+        [:y [:opena "Outlook"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         
