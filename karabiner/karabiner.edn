@@ -52,9 +52,8 @@
   ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
   ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
-  ; We'll see how this works. It's definitely the easiest, but has the downside of a delay when typing w
   :simlayers    {
-    :launch-mode{ :key :j }
+    :launch-mode{ :key :x }
   }
 
   :main [
@@ -101,37 +100,82 @@
       ]
     }
     
+    ; {
+    ;   :des "launch mode"
+    ;   :rules [
+    ;     :launch-mode
+    ;     ;  Most common apps
+    ;     ; "Web"
+    ;     [:w [:opena "Google Chrome"]]
+    ;     ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
+    ;     ; [:w :same_wind_app :Chrome]
+    ;     ; "Editor"
+    ;     [:e [:opena "Visual Studio Code"] :!VSCode]
+    ;     [:e :same_wind_app :VSCode]
+    ;     ; [:s [:opena "Slack"]]
+    ;     [:s [:opena "Slack Web"]]
+    ;     [:t [:opena "Terminal"]]
+        
+    ;     ; Also common
+    ;     [:q [:opena "Notes"]]
+    ;     [:r [:opena "Trello"]]
+    ;     [:x [:opena "Spotify"]]
+    ;     [:z [:opena "zoom.us.app"]]
+    ;     [:a [:opena "Alfred Preferences"]]
+    ;     [:f [:opena "Finder"]]
+    ;     [:c [:opena "Outlook"]]
+        
+    ;     ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
+    ;     ; [:k [:opena "Karabiner-Elements"]]
+    ;     ; [:l [:opena "Karabiner-EventViewer"]]
+    ;     ; [:c [:opena "Music"]]
+    ;     ; [:g [:opena "Messages"]]
+    ;     ; email?
+    ;   ]
+    ; }
+    
     {
-      :des "launch mode"
+      :des "launch mode (non-j)"
       :rules [
         :launch-mode
         ;  Most common apps
-        ; "Web"
-        [:w [:opena "Google Chrome"]]
-        ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
-        ; [:w :same_wind_app :Chrome]
-        ; "Editor"
-        [:e [:opena "Visual Studio Code"] :!VSCode]
-        [:e :same_wind_app :VSCode]
-        ; [:s [:opena "Slack"]]
-        [:s [:opena "Slack Web"]]
-        [:t [:opena "Terminal"]]
+        ; Home row right
+        ; *Just* browsin'
+        [:j [:opena "Google Chrome"] :!Chrome]
+        [:j :same_wind_app :Chrome]
+        ; Kode
+        [:k [:opena "Visual Studio Code"] :!VSCode]
+        [:k :same_wind_app :VSCode]
+        ; Some same/left hand alternatives
+        [:c [:opena "Google Chrome"] :!Chrome]
+        [:c :same_wind_app :Chrome]
+        [:v [:opena "Visual Studio Code"] :!VSCode]
+        [:k :same_wind_app :VSCode]
+        ;  sLack
+        ; [:l [:opena "Slack"]]
+        [:l [:opena "Slack Web"]]
+        [:spacebar [:opena "Terminal"]]
+        ;  Nearby `w` in case we want to use one hand
         
         ; Also common
-        [:q [:opena "Notes"]]
-        [:r [:opena "Trello"]]
-        [:x [:opena "Spotify"]]
-        [:z [:opena "zoom.us.app"]]
-        [:a [:opena "Alfred Preferences"]]
-        [:f [:opena "Finder"]]
-        [:c [:opena "Outlook"]]
+        ;  Notes
+        [:n [:opena "Notes"]]
+        [:u [:opena "Trello"]]
+        ; sPotify
+        [:p [:opena "Spotify"]]
+        [:m [:opena "Messages"]]
+        ; zOOm
+        [:o [:opena "zoom.us.app"]]
+        [:quote [:opena "Music"]]
+        ; todo: Open hey URL. Or just trigger alfred workflow
+        [:y [:opena "Calendar"]]
+        [:comma [:opena "System Preferences"]]
+        [:period [:opena "Alfred Preferences"]]
         
-        ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
-        ; [:k [:opena "Karabiner-Elements"]]
-        ; [:l [:opena "Karabiner-EventViewer"]]
-        ; [:c [:opena "Music"]]
-        ; [:g [:opena "Messages"]]
-        ; email?
+        ; Less common
+        [:backslash [:opena "Activity Monitor"]]
+        [:7 [:opena "Karabiner-Elements"]]
+        [:6 [:opena "Karabiner-EventViewer"]]
       ]
     }
     
