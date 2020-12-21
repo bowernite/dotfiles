@@ -43,15 +43,15 @@ defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
 defaults write com.apple.dock magnification -bool true
 
 # System Preferences > Keyboard > Key Repeat
-# NOTE: 2 is super fast -- the lower, the faster for this option
+# NOTE: 1 is super fast -- the lower, the faster for this option
 defaults write NSGlobalDomain KeyRepeat -int 1
 
 # System Preferences > Keyboard > Delay Until Repeat
-# Disabled for now to practice getting better, but this could be something like `15` in the future. Also, whenever I am ready to go back to key repeat, uncomment the ApplePressAndHoldEnabled line below
-defaults write NSGlobalDomain InitialKeyRepeat -int 300000
+# Set to 300000 to disable if you want "hard mode"
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
