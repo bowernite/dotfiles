@@ -144,10 +144,13 @@
         [:!Tm :!Cright_arrow]
         [:!T#SRn :!Cleft_arrow]
         [:!T#SRm :!Cright_arrow]
+
+        ; Line clearing
+        ; Delete line backward
         [:!Tcomma :!Cdelete_or_backspace]
+        ; Delete line forward
         [:!Tperiod :!Cdelete_forward]
-        
-        ; Clear current line
+        ; Delete full line
         [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
         ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
         [:!Tslash [:!Te :!Tu] :Terminals]
