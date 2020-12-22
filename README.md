@@ -98,7 +98,7 @@ After cloning any repositories, exclude their `node_modules` from Alfred's/Spotl
 - https://wiki.nikitavoloboev.xyz/macos/macos-apps/karabiner
 - https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
 
-## To copy from 📝
+## Inspirations 📝
 
 The Issues page on GitHub contains concrete to-dos.
 
@@ -108,6 +108,7 @@ Here are some places to poke around at for inspiration for things you might want
 - WebPro's dotfiles: https://github.com/webpro/dotfiles
 - https://github.com/mjackson/dotfiles
 - Nikita's shell aliases: https://github.com/nikitavoloboev/dotfiles/blob/43568152bdade89cd331b45ee4db39a7036b2663/zsh/alias.zsh
+- [dotcommon - common vim plugins, shell aliases, etc.](https://github.com/Kharacternyk/dotcommon)
 
 ### Just when you think you're done...
 
