@@ -170,12 +170,13 @@
         [:y [:opena "Outlook"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
-        [:slash [:opena "Preview"]]
+        [:open_bracket [:opena "Preview"]]
+        [:slash [:opena "Finder"]]
         
         ; Less common
         [:backslash [:opena "Activity Monitor"]]
-        [:7 [:opena "Karabiner-Elements"]]
-        [:6 [:opena "Karabiner-EventViewer"]]
+        [:8 [:opena "Karabiner-Elements"]]
+        [:7 [:opena "Karabiner-EventViewer"]]
       ]
     }
     
