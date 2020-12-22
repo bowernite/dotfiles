@@ -102,11 +102,12 @@ After cloning any repositories, exclude their `node_modules` from Alfred's/Spotl
 
 The Issues page on GitHub contains concrete to-dos.
 
-But here... here is where the bottomless pit of overoptimization lies. Beware -- once you see these, you won't stop thinking about them... 🙈
+Here are some places to poke around at for inspiration for things you might want to do
 
 - Nikita's dotfiles: https://github.com/nikitavoloboev/dotfiles
 - WebPro's dotfiles: https://github.com/webpro/dotfiles
 - https://github.com/mjackson/dotfiles
+- Nikita's shell aliases: https://github.com/nikitavoloboev/dotfiles/blob/43568152bdade89cd331b45ee4db39a7036b2663/zsh/alias.zsh
 
 ### Just when you think you're done...
 
