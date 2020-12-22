@@ -203,11 +203,15 @@
         [:!T#SRn :!Cleft_arrow]
         [:!T#SRm :!Cright_arrow]
 
-        ; Line clearing
+        ; Line deletion
+        ; Use Cocoa emacs bindings for apps that doesn't support ⌘+⌦ (i.e. Notes, Terminal)
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Delete line backward
-        [:!Tcomma :!Cdelete_or_backspace]
+        [:!Tcomma :!Cdelete_or_backspace [:!Terminals]]
+        [:!Tcomma :!Tu [:Terminals]]
         ; Delete line forward
-        [:!Tperiod :!Cdelete_forward]
+        [:!Tperiod :!Cdelete_forward [:!Notes :!Terminals]]
+        [:!Tperiod :!Tk]
         ; Delete full line
         [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
         ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
@@ -245,6 +249,7 @@
       "^net\\.kovidgoyal\\.kitty$"
       ]
     :Finder ["^com\\.apple\\.finder$"]
+    :Notes ["^com\\.apple\\.Notes$"]
     :Debuggers [
       "^org\\.mozilla\\.firefox$"
     "^org\\.mozilla\\.firefoxdeveloperedition$"
