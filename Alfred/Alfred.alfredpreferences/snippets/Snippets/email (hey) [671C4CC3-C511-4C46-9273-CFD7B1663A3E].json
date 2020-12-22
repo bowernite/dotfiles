@@ -1,9 +1,8 @@
 {
   "alfredsnippet" : {
     "snippet" : "brett.abramczyk@hey.com",
-    "dontautoexpand" : true,
     "uid" : "671C4CC3-C511-4C46-9273-CFD7B1663A3E",
     "name" : "email (hey)",
-    "keyword" : ""
+    "keyword" : "hmail"
   }
 }
