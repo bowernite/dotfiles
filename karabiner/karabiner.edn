@@ -154,8 +154,7 @@
         ;  sLack
         ; [:l [:opena "Slack"]]
         [:l [:opena "Slack Web"]]
-        [:spacebar [:opena "Terminal"]]
-        ;  Nearby `w` in case we want to use one hand
+        [:semicolon [:opena "Terminal"]]
         
         ; Also common
         ;  Notes
@@ -171,6 +170,7 @@
         [:y [:opena "Outlook"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
+        [:slash [:opena "Preview"]]
         
         ; Less common
         [:backslash [:opena "Activity Monitor"]]
