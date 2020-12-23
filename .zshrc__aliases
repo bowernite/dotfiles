@@ -55,6 +55,10 @@ alias gr="git rev"
 alias gdod="git fetch && git diff origin/\$(git_dev_branch)"
 # "git diff origin main"
 alias gdom="git fetch && git diff origin/\$(git_main_branch)"
+# "git undo": "undoes" the last commit, and puts its changes back into the index
+alias gundo="git reset HEAD~"
+# "git undo soft/staged": "undoes" the last commit, and puts its changes into the staging area
+alias gundos="git reset HEAD~ --soft"
 
 ##############################################################
 # Miscellaneous
