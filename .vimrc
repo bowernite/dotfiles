@@ -22,30 +22,62 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
+let g:jsx_ext_required = 0 " allow JSX in .js files
 
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General options
+
 " Change the leader to space
-" WARNING: makes you a master programmer
 let mapleader = "\<Space>"
 
-" use tabs as spaces
-set expandtab
-" set number of spaces inserted when tabbing
-set shiftwidth=2
-" use 2 char width for tab chars
-set tabstop=2
+" Copy to clipboard when yanking
+set clipboard=unnamed
 
-" set nohlsearch
+" Store temp and swap files in macOS's temp directory
+" This keeps working directories cleaner, but preserves vim's native
+" backup functionality
+" The `,.` provides the current working directory as a backup, in case
+" the OS's backup directory doesn't exist
+set backupdir=$TMPDIR//,.
+set directory=$TMPDIR//,.
+set undodir=$TMPDIR//,.
 
-" Jump around and show matches as we search with /.
-" Useful when you want to look to see if something's in
-" the file but don't want to commit to jumping to it.
-set incsearch
-set gdefault
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Linting
 
+" set signcolumn=yes                  " always show the signcolumn on LH side
+let g:ale_set_highlights = 0        " don't highlight first char of errors
+let g:ale_completion_enabled = 1    " enable completion when available
+
+let g:ale_linters = {
+\ 'javascript': ['eslint'],
+\ 'typescript': ['eslint', 'tsserver']
+\}
+let g:ale_linters_ignore = {
+\ 'typescript': ['tslint']
+\}
+
+" Use <Leader>aj or <Leader>ak for quickly jumping between lint errors
+" nmap <silent> <Leader>aj :ALENext<cr>
+" nmap <silent> <Leader>ak :ALEPrevious<cr> 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearance
+
+set splitbelow          " open split panes on bottom (instead of top)
+set splitright          " open split panes on right (instead of left)
+
+set laststatus=2        " always show status bar
+
+" Always show at least 5 lines below and above the cursor
+set scrolloff=5
+
+" Show the line and column number of the cursor position
 set ruler
 
+" Enable syntax highlighting
 syntax on
 
 " Necessary for true color support afaik
@@ -56,28 +88,44 @@ set t_8b=[48;2;%lu;%lu;%lum
 " Turn on line numbers
 set number
 
-" Always show at least 5 lines below and above the
-" cursor
-set scrolloff=5
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Text
+
+" use tabs as spaces
+set expandtab
+" set number of spaces inserted when tabbing
+set shiftwidth=2
+" use 2 char width for tab chars
+set tabstop=2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Searching
+
+" Don't highlight all matches of a search
+" set nohlsearch
+
+" Jump around and show matches as we search with /.
+" Useful when you want to look to see if something's in
+" the file but don't want to commit to jumping to it.
+set incsearch
+set gdefault
 
 " Ignore case when searching
 set ignorecase
 " Don't ignore case when there _is_ a capital letter
 set smartcase
 
-" Copy to clipboard when yanking
-set clipboard=unnamed
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Wrapping
 
-let g:jsx_ext_required = 0          " allow JSX in .js files
-
-" Store temp and swap files in macOS's temp directory
-" This keeps working directories cleaner, but preserves vim's native
-" backup functionality
-" The `,.` provides the current working directory as a backup, in case
-" the OS's backup directory doesn't exist
-set backupdir=$TMPDIR//,.
-set directory=$TMPDIR//,.
-set undodir=$TMPDIR//,.
+set wrap                " wrap long lines by default
+set linebreak           " when wrapping, break on word boundaries
+" auto wrap text at the given number of chars
+" this is 0 right now to wrap at the window width. if we want to give up on soft wrapping at some point, and just actually wrap lines at a given number of chars in the future, we can set that here
+set textwidth=0
+set wrapmargin=0
+" This seems like the only way to softwrap at 80 chars. However, it can only do so by manually changing the size of the terminal window, which isn't ideal.
+" set columns=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remappings  
@@ -176,46 +224,10 @@ nnoremap <leader>/ :noh
 map j gj
 map k gk
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Linting
-
-" set signcolumn=yes                  " always show the signcolumn on LH side
-let g:ale_set_highlights = 0        " don't highlight first char of errors
-let g:ale_completion_enabled = 1    " enable completion when available
-
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'typescript': ['eslint', 'tsserver']
-\}
-let g:ale_linters_ignore = {
-\ 'typescript': ['tslint']
-\}
-
-" Use <Leader>aj or <Leader>ak for quickly jumping between lint errors
-" nmap <silent> <Leader>aj :ALENext<cr>
-" nmap <silent> <Leader>ak :ALEPrevious<cr> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearance
+" References
 
-set splitbelow          " open split panes on bottom (instead of top)
-set splitright          " open split panes on right (instead of left)
-
-set laststatus=2        " always show status bar
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Wrapping
-
-set wrap                " wrap long lines by default
-set linebreak           " when wrapping, break on word boundaries
-" auto wrap text at the given number of chars. this is 0 right now to wrap at the window width. if we want to give up on soft wrapping at some point, and just actually wrap lines at a given number of chars in the future, we can set that here
-set textwidth=0
-set wrapmargin=0
-" This seems like the only way to softwrap at 80 chars. However, it can only do so by manually changing the size of the window, which isn't ideal.
-" set columns=80
-
-" REFERENCES
-"
 " https://github.com/mjackson/dotfiles/blob/master/vimrc
 " https://gist.github.com/ryanflorence/6d92b7495873263aec0b4e3c299b3bd3
 " https://github.com/cfoust/cawnfig/tree/master/configs/vim
