@@ -22,7 +22,14 @@
 2. Install: `` bash -c "`curl -fsSL https://raw.githubusercontent.com/babramczyk/dotfiles/master/remote-install.sh`" ``
 1. In this repo, uncomment/handle lines labeled with `NEXT_MACHINE`
 1. `cd ~/dotfiles && source bootstrap.sh`
-1. Fix or note any findings that were specific to the "next machine" (including these installation instructions 🙂)
+1. Add sensitive data to [.zshrc\_\_private](.zshrc__private) (find them in your password manager)
+
+```shell
+export __TRELLO_API_KEY=
+export __TRELLO_TOKEN=
+```
+
+6. Fix or note any findings that were specific to the "next machine" (including these installation instructions 🙂)
 
 #### You might need to...
 
@@ -69,7 +76,7 @@ As of writing this, there's a Bartender 4 update that is only for Big Sur+. Beca
 ### Alfred 🎩
 
 Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in this repository at [/Alfred](/Alfred) for simplicity of migrating on a new computer. If this becomes infeasible, I can always move this back to Dropbox folder syncing.
- 
+
 - [ ] When starting Alfred for the first time, you'll need to point it to the files in this repo. To do so, open Alfred's preferences > `Appearance` > `Set preferences folder…` and select `<DOTFILES_REPO_PATH>/Alfred`
 - [ ] Make sure Alfred and its workflows have proper OS access. In Alfred's preferences, go to `General` > `Permissions` > `Request Permissions`, and let Alfred guide you 🧙‍♂️
 
