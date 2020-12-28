@@ -171,9 +171,10 @@ nnoremap I _i
 nnoremap c0 c_
 nnoremap d0 d_
 
-" TODO: Fix this -- it doesn't work right now (and has really weird behavior in actual Vim in a terminal
-" noremap <Down> <C-d>
-" noremap <Up> <C-u>
+" Remap down and up arrow keys to scroll half pages up and down
+" NOTE: At the time of this writing, this actually lets us use <C-j> and <C-k> to scroll, because of our OS remappings with Karabiner
+noremap <Down> <C-d>
+noremap <Up> <C-u>
 
 nnoremap <leader>o o<esc>o<space><backspace>
 nnoremap <leader>O O<space><backspace><esc>O
