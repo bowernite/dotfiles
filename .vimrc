@@ -23,6 +23,7 @@ call plug#end()
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:jsx_ext_required = 0 " allow JSX in .js files
+let g:camelcasemotion_key = '<leader>'
 
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
@@ -129,9 +130,10 @@ set wrapmargin=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remappings  
- 
+
 " File actions
-nnoremap <silent> <leader>w :w<CR>
+" Ideally this would be <leader>w, but the collision with the CamelCaseMotion plugin forced my hand. So.... `s` for save it is
+nnoremap <silent> <leader>s :w<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :qa!<CR>
 nnoremap <silent> <leader>a :x<CR>   
