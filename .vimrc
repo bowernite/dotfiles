@@ -173,7 +173,7 @@ nnoremap <leader>o o<esc>o<space><backspace>
 nnoremap <leader>O O<space><backspace><esc>O
 
 " Prevent `x` from writing to the default register
-nmap x \"_x
+nnoremap x \"_x
 vmap x \"_x
 
 vmap <leader>d y'>p
