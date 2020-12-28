@@ -1,5 +1,8 @@
 source ~/dotfiles/.vimrc__defaults
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+
 call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
@@ -33,23 +36,7 @@ set shiftwidth=2
 " use 2 char width for tab chars
 set tabstop=2
 
-" <leader>/ to clear search highlighting of a search
-nnoremap <leader>/ :noh
 " set nohlsearch
-
-" Remap j and k to page-up and page-down
-" nnoremap j <C-D>
-" nnoremap k <C-U>
-
-" Default j and k to respect wrapped line content
-map j gj
-map k gk
-
-" Jump around curly blocks with s
-nnoremap s ]}
-nnoremap S [{
-vmap s ]}
-vmap S [{
 
 " Jump around and show matches as we search with /.
 " Useful when you want to look to see if something's in
@@ -66,17 +53,6 @@ set termguicolors
 set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
-" Delete line below with <leader>d and above with <leader>D
-" nnoremap <silent> <leader>d :+d <CR>
-" nnoremap <silent> <leader>D :-d <CR>
-
-" Move between splits with double leader
-nnoremap <leader>h <C-W><C-H>
-nnoremap <leader>l <C-W><C-l>
-" Could use these one day, but until I actually _use_ vertical splits, might as well save them
-" nnoremap <leader>j <C-W><C-J>
-" nnoremap <leader>k <C-W><C-K>
-
 " Turn on line numbers
 set number
 
@@ -84,30 +60,10 @@ set number
 " cursor
 set scrolloff=5
 
-" Modify "start of line" commands to ignore leading whitespace
-nnoremap 0 _
-nnoremap _ 0
-nnoremap I _i
-
-" Toggle commenting of lines with <leader>/
-nnoremap <leader>/ :Commentary<CR>
-vnoremap <leader>/ :Commentary<CR>
-" Toggle commenting of lines with command + / (only works in MacVim)
-nnoremap <D-/> :Commentary<CR>
-vnoremap <D-/> :Commentary<CR>
-
 " Ignore case when searching
 set ignorecase
 " Don't ignore case when there _is_ a capital letter
 set smartcase
-
-" Move lines and preserve indentation
-" See http://vim.wikia.com/wiki/Moving_lines_up_or_down
-" Currently not operable, given global keyboard overrides for <C-j> and <C-k>
-" nnoremap <C-j> :m .+1<Return>==
-" nnoremap <C-k> :m .-2<Return>==
-" vnoremap <C-j> :m '>+1<Return>gv=gv
-" vnoremap <C-k> :m '<-2<Return>gv=gv
 
 " Copy to clipboard when yanking
 set clipboard=unnamed
@@ -178,6 +134,48 @@ vmap x \"_x
 
 vmap <leader>d y'>p
 
+" Move lines and preserve indentation
+" See http://vim.wikia.com/wiki/Moving_lines_up_or_down
+" Currently not operable, given global keyboard overrides for <C-j> and <C-k>
+" nnoremap <C-j> :m .+1<Return>==
+" nnoremap <C-k> :m .-2<Return>==
+" vnoremap <C-j> :m '>+1<Return>gv=gv
+" vnoremap <C-k> :m '<-2<Return>gv=gv
+
+" Toggle commenting of lines with <leader>/
+nnoremap <leader>/ :Commentary<CR>
+vnoremap <leader>/ :Commentary<CR>
+" Toggle commenting of lines with command + / (only works in MacVim)
+nnoremap <D-/> :Commentary<CR>
+vnoremap <D-/> :Commentary<CR>
+
+" Move between splits with double leader
+nnoremap <leader>h <C-W><C-H>
+nnoremap <leader>l <C-W><C-l>
+" Could use these one day, but until I actually _use_ vertical splits, might as well save them
+" nnoremap <leader>j <C-W><C-J>
+" nnoremap <leader>k <C-W><C-K>
+
+" Jump around curly blocks with s
+nnoremap s ]}
+nnoremap S [{
+vmap s ]}
+vmap S [{
+
+" Delete line below with <leader>d and above with <leader>D
+" nnoremap <silent> <leader>d :+d <CR>
+" nnoremap <silent> <leader>D :-d <CR>
+
+" <leader>/ to clear search highlighting of a search
+nnoremap <leader>/ :noh
+
+" Toggle wrapping with <Leader>w
+" noremap <Leader>w :set wrap!<Return>
+
+" Default j and k to respect wrapped line content
+map j gj
+map k gk
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linting
 
@@ -216,13 +214,8 @@ set wrapmargin=0
 " This seems like the only way to softwrap at 80 chars. However, it can only do so by manually changing the size of the window, which isn't ideal.
 " set columns=80
 
-" Toggle wrapping with <Leader>w
-" noremap <Leader>w :set wrap!<Return>
-
 " REFERENCES
 "
 " https://github.com/mjackson/dotfiles/blob/master/vimrc
 " https://gist.github.com/ryanflorence/6d92b7495873263aec0b4e3c299b3bd3
 " https://github.com/cfoust/cawnfig/tree/master/configs/vim
-
-" test
