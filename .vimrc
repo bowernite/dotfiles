@@ -149,16 +149,19 @@ nnoremap <leader>p \"0p
 nnoremap <C-\[> <C-o>
 nnoremap <C-\]> <C-i>
 
-nnoremap cc _C
-
+" Comment lines (both in Normal and Visual Modes)
 noremap <leader>c :Commentary<CR>
 
+" Clear search highlights
 noremap <leader>/ :nohl<CR>
 
+" Insert line below, without moving to it or entering Insert mode
 nnoremap <leader>k moO<esc>`o
 nnoremap <leader>j moo<esc>`o
+" Insert line below and move to it, but stay in Normal mode
 nnoremap <CR> o<Space><backspace><esc>
 
+" When making a new line with o/O, preserve indentation -- even if we escape right to Normal mode right away
 nnoremap o o<space><bs>
 nnoremap O O<space><bs>
  
@@ -170,12 +173,15 @@ noremap _ 0
 nnoremap I _i
 nnoremap c0 c_
 nnoremap d0 d_
+" When changing a "full line", preserve indentation
+nnoremap cc _C
 
 " Remap down and up arrow keys to scroll half pages up and down
 " NOTE: At the time of this writing, this actually lets us use <C-j> and <C-k> to scroll, because of our OS remappings with Karabiner
 noremap <Down> <C-d>
 noremap <Up> <C-u>
 
+" Insert lines above/below with padding
 nnoremap <leader>o o<CR>
 nnoremap <leader>O O<space><backspace><esc>O
 
@@ -183,6 +189,7 @@ nnoremap <leader>O O<space><backspace><esc>O
 nnoremap x \"_x
 vnoremap x \"_x
 
+" Duplicate visual selection _after_ the selection (by default, vim takes you back to the cursor position you started the visual selection with; so '> takes us back to the end of it before pasting)
 vmap <leader>d y'>p
 
 " Move lines and preserve indentation
