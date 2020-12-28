@@ -176,7 +176,7 @@ nnoremap d0 d_
 noremap <Down> <C-d>
 noremap <Up> <C-u>
 
-nnoremap <leader>o o<esc>o<space><backspace>
+nnoremap <leader>o o<CR>
 nnoremap <leader>O O<space><backspace><esc>O
 
 " Prevent `x` from writing to the default register
