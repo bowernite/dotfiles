@@ -176,14 +176,13 @@
 # Version 1.6.2
 # https://github.com/MikoMagni/Trello-Workflow-for-Alfred
 
-key=''
-token='' 
-boardid=''
+source ~/dotfiles/.zshrc__private
 
-&gt;&amp;2 echo $NVM_DIR
-&gt;&amp;2 echo $HOME
+key=$__TRELLO_API_KEY
+token=$__TRELLO_TOKEN
+boardid='5fda6dff5832a33ec469b3d8'
 
-# php -f trello.php -- "${key};${token};${boardid};{query}"</string>
+php -f trello.php -- "${key};${token};${boardid};{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -306,6 +305,27 @@ boardid=''
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Authorize Trello Workflow to use your account.</string>
+				<key>title</key>
+				<string>Trello</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BD2245DE-C519-47BB-9947-BE1A44C7C54F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -340,27 +360,6 @@ boardid=''
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>0442D773-2E45-40E3-B79E-6879C09EDCB8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>Authorize Trello Workflow to use your account.</string>
-				<key>title</key>
-				<string>Trello</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>BD2245DE-C519-47BB-9947-BE1A44C7C54F</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
