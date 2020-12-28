@@ -33,11 +33,9 @@ set shiftwidth=2
 " use 2 char width for tab chars
 set tabstop=2
 
-" Press <escape><return> or <escape><wait a second...> to clear highlighting
-" of a search
-" nnoremap <esc> :noh<return><esc>
-" nnoremap <esc>^[ <esc>^[
-set nohlsearch
+" <leader>/ to clear search highlighting of a search
+nnoremap <leader>/ :noh
+" set nohlsearch
 
 " Remap j and k to page-up and page-down
 " nnoremap j <C-D>
@@ -69,22 +67,18 @@ set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
 " Delete line below with <leader>d and above with <leader>D
-nnoremap <silent> <leader>d :+d <CR>
-nnoremap <silent> <leader>D :-d <CR>
+" nnoremap <silent> <leader>d :+d <CR>
+" nnoremap <silent> <leader>D :-d <CR>
 
 " Move between splits with double leader
-nnoremap <leader><leader>h <C-W><C-H>
-nnoremap <leader><leader>j <C-W><C-J>
-nnoremap <leader><leader>k <C-W><C-K>
-nnoremap <leader><leader>l <C-W><C-L>
+nnoremap <leader>h <C-W><C-H>
+nnoremap <leader>l <C-W><C-l>
+" Could use these one day, but until I actually _use_ vertical splits, might as well save them
+" nnoremap <leader>j <C-W><C-J>
+" nnoremap <leader>k <C-W><C-K>
 
 " Turn on line numbers
 set number
-
-" Make 0 go to first non-whitespace char in the line,
-" and make _ do 0's original job
-nnoremap 0 _
-nnoremap _ 0
 
 " Always show at least 5 lines below and above the
 " cursor
@@ -109,18 +103,16 @@ set smartcase
 
 " Move lines and preserve indentation
 " See http://vim.wikia.com/wiki/Moving_lines_up_or_down
-nnoremap <C-j> :m .+1<Return>==
-nnoremap <C-k> :m .-2<Return>==
-vnoremap <C-j> :m '>+1<Return>gv=gv
-vnoremap <C-k> :m '<-2<Return>gv=gv
+" Currently not operable, given global keyboard overrides for <C-j> and <C-k>
+" nnoremap <C-j> :m .+1<Return>==
+" nnoremap <C-k> :m .-2<Return>==
+" vnoremap <C-j> :m '>+1<Return>gv=gv
+" vnoremap <C-k> :m '<-2<Return>gv=gv
 
 " Copy to clipboard when yanking
 set clipboard=unnamed
 
 let g:jsx_ext_required = 0          " allow JSX in .js files
-
-" Prettier with =
-nnoremap = :Prettier<CR>
 
 " Store temp and swap files in macOS's temp directory
 " This keeps working directories cleaner, but preserves vim's native
@@ -130,6 +122,61 @@ nnoremap = :Prettier<CR>
 set backupdir=$TMPDIR//,.
 set directory=$TMPDIR//,.
 set undodir=$TMPDIR//,.
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remappings  
+ 
+" File actions
+nnoremap <silent> <leader>w :w<CR>
+nnoremap <silent> <leader>q :q<CR>
+nnoremap <silent> <leader>Q :qa!<CR>
+nnoremap <silent> <leader>a :x<CR>   
+
+" Prettier with <leader>u
+nnoremap <leader>u :Prettier<CR>
+
+" Paste last yanked with <leader>p (last yanked will be in `0` register, while last yanked _or_ deleted will be in default register)
+nnoremap <leader>p \"0p
+
+" Change default keybindings for moving through jump history to <C-[> and <C-]>
+" (my global keyboard overrides use the defaults of <C-i> and <C-o>
+nnoremap <C-[> <C-o>
+nnoremap <C-]> <C-i>
+
+nnoremap cc _C
+
+noremap <leader>c :Commentary<CR>
+
+noremap <leader>/ :nohl<CR>
+
+nnoremap <leader>k moO<esc>`o
+nnoremap <leader>j moo<esc>`o
+nnoremap <CR> o<Space><backspace><esc>
+
+nnoremap o o<space><bs>
+nnoremap O O<space><bs>
+ 
+" Change 0's and i's default behavior to go to the first non-whitespace
+" character, instead of the first character, in a line
+noremap 0 _
+" Use _ to get back 0's native behavior
+noremap _ 0
+nnoremap I _i
+nnoremap c0 c_
+nnoremap d0 d_
+
+" TODO: Fix this -- it doesn't work right now (and has really weird behavior in actual Vim in a terminal
+" noremap <Down> <C-d>
+" noremap <Up> <C-u>
+
+nnoremap <leader>o o<esc>o<space><backspace>
+nnoremap <leader>O O<space><backspace><esc>O
+
+" Prevent `x` from writing to the default register
+nmap x \"_x
+vmap x \"_x
+
+vmap <leader>d y'>p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linting
@@ -147,8 +194,8 @@ let g:ale_linters_ignore = {
 \}
 
 " Use <Leader>aj or <Leader>ak for quickly jumping between lint errors
-nmap <silent> <Leader>aj :ALENext<cr>
-nmap <silent> <Leader>ak :ALEPrevious<cr>
+" nmap <silent> <Leader>aj :ALENext<cr>
+" nmap <silent> <Leader>ak :ALEPrevious<cr> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
@@ -170,7 +217,7 @@ set wrapmargin=0
 " set columns=80
 
 " Toggle wrapping with <Leader>w
-noremap <Leader>w :set wrap!<Return>
+" noremap <Leader>w :set wrap!<Return>
 
 " REFERENCES
 "
