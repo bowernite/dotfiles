@@ -146,8 +146,8 @@ nnoremap <leader>p \"0p
 
 " Change default keybindings for moving through jump history to <C-[> and <C-]>
 " (my global keyboard overrides use the defaults of <C-i> and <C-o>
-nnoremap <C-[> <C-o>
-nnoremap <C-]> <C-i>
+nnoremap <C-\[> <C-o>
+nnoremap <C-\]> <C-i>
 
 nnoremap cc _C
 
