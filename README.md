@@ -41,6 +41,10 @@ export __TRELLO_TOKEN=
 2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
 1. Follow any other instructions below
 
+#### Double check...
+
+- [ ] That Alfred is indexing markdown files properly. In Alfred's modal, try `in <text>`, where text is some text that exists in a markdown file on the machine. If this doesn't work, try running [scripts/make-spotlight-index-markdown.sh](scripts/make-spotlight-index-markdown.sh) again. If it does work right away, remove this blurb.
+
 ### macOS Preferences 👨‍💻
 
 The macOS setup script tries to set all necessary preferences as best it can, but there's a few essential things it doesn't work work with yet. Maybe we'll fix those one day, but for now just go and manually check these.
