@@ -1,6 +1,7 @@
 // This is a util found online to automatically ignore node_modules from Spotlight, and therefore Alfred. It's necessary, because Alfred consumes Spotlight's native indexing for performance reasons
 
 // To do this manually: Go to `System Preferences` > `Spotlight` > `Privacy` and manually add in any folders you want Spotlight to ignore
+// UPDATE: Tried doing this manually and it still doesn't work. Going to have to look into this more at some point...
 
 const { execSync } = require("child_process");
 
