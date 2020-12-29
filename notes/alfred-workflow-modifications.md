@@ -9,3 +9,17 @@ The following is a list of modifications made to third-party Alfred workflows. I
 #### `NEXT_MACHINE`
 
 - Change profile paths for both history and bookmarks to be `Default` instead of `Profile 1`
+
+#### Trello
+
+- Changed scripts to pass in the Trello token and key via zsh env variables. If we switch to Dropbox, we can revert this change. Example:
+
+```shell
+source ~/dotfiles/.zshrc__private
+
+key=$__TRELLO_API_KEY
+token=$__TRELLO_TOKEN
+boardid='5fda6dff5832a33ec469b3d8'
+
+php -f trello.php -- "${key};${token};${boardid};{query}"
+```
