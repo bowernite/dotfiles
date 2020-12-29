@@ -222,7 +222,7 @@
 	<key>description</key>
 	<string>Search / Open Recent Github Repos</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Github Jump</string>
 	<key>objects</key>
@@ -251,6 +251,8 @@
 			<dict>
 				<key>argument</key>
 				<string>{query}#readme</string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -398,6 +400,8 @@ git clone {query}
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>issues</key>
@@ -416,6 +420,8 @@ git clone {query}
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>new</key>
@@ -472,6 +478,8 @@ git clone {query}
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>pulls</key>
@@ -490,6 +498,8 @@ git clone {query}
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>searchFiles</key>
@@ -603,6 +613,8 @@ git clone {query}
 			<dict>
 				<key>argument</key>
 				<string></string>
+				<key>passthroughargument</key>
+				<false/>
 				<key>variables</key>
 				<dict>
 					<key>wiki</key>
