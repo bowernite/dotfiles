@@ -12,15 +12,12 @@ log " Configuring macOS..."
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Make Spotlight/Alfred index markdown files
+source ~/dotfiles/scripts/make-spotlight-index-markdown.sh
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
-
-# https://apple.stackexchange.com/questions/118482/is-there-any-way-to-save-mac-os-x-preferences-into-a-shell-file
-# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
-# https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
-
-# TODO: See which other preferences I normally use, how to set them from the shell, then add them to this list
 
 ##############################################################
 # General/UI/UX
