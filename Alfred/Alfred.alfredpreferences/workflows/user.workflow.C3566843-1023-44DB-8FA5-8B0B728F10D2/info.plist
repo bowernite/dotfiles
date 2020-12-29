@@ -6,11 +6,50 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>44917A09-461D-4AFB-BEFD-7684E990ED7A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E606C45E-CD82-4731-9480-1E5403ADBD61</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -34,13 +73,13 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string></string>
+	<string>Brett Abramczyk</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Brett's Notes</string>
+	<string>Brett's Brain</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -90,18 +129,6 @@
 						<false/>
 						<key>split</key>
 						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTitle</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<false/>
 						<key>value</key>
 						<string>{query}</string>
 						<key>words</key>
@@ -249,6 +276,146 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>New note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>~/Documents/Personal Docs/Notes Wiki/not-imported/{var:basename}.md</string>
+				<key>filetext</key>
+				<string># {var:title}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+  return JSON.stringify({
+    alfredworkflow: {
+      arg: query,
+      variables: {
+        basename: query.toLowerCase().replace(/\s/g, "-"),
+     	title: titleCase(query),
+      },
+    },
+  });
+}
+
+/********************************************************************
+ * Utils
+ *******************************************************************/
+
+// Title case util. Taken from https://github.com/blakeembrey/change-case/blob/master/packages/title-case/src/index.ts 
+
+var SMALL_WORDS = /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
+var TOKENS = /[^\s:–—-]+|./g;
+var WHITESPACE = /\s/;
+var IS_MANUAL_CASE = /.(?=[A-Z]|\..)/;
+var ALPHANUMERIC_PATTERN = /[A-Za-z0-9\u00C0-\u00FF]/;
+
+function titleCase(input) {
+  var result = "";
+  var m;
+
+  while ((m = TOKENS.exec(input)) !== null) {
+    var { 0: token, index } = m;
+
+    if (
+      // Ignore already capitalized words.
+      !IS_MANUAL_CASE.test(token) &amp;&amp;
+      // Ignore small words except at beginning or end.
+      (!SMALL_WORDS.test(token) ||
+        index === 0 ||
+        index + token.length === input.length) &amp;&amp;
+      // Ignore URLs.
+      (input.charAt(index + token.length) !== ":" ||
+        WHITESPACE.test(input.charAt(index + token.length + 1)))
+    ) {
+      // Find and uppercase first word character, skips over *modifiers*.
+      result += token.replace(ALPHANUMERIC_PATTERN, function (m) {
+        return m.toUpperCase();
+      });
+      continue;
+    }
+
+    result += token;
+  }
+
+  return result;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -257,32 +424,77 @@
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>310</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>190</integer>
+		</dict>
+		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
+		<dict>
+			<key>note</key>
+			<string>Create a new note</string>
+			<key>xpos</key>
+			<integer>90</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>650</integer>
+			<key>ypos</key>
+			<integer>350</integer>
 		</dict>
 		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
 		<dict>
 			<key>xpos</key>
-			<integer>405</integer>
+			<integer>315</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>35</integer>
+		</dict>
+		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>310</integer>
+			<key>ypos</key>
+			<integer>350</integer>
 		</dict>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<dict>
+			<key>note</key>
+			<string>Search for existing notes (by filename)</string>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>100</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>190</integer>
+		</dict>
+		<key>E606C45E-CD82-4731-9480-1E5403ADBD61</key>
+		<dict>
+			<key>xpos</key>
+			<integer>475</integer>
+			<key>ypos</key>
+			<integer>350</integer>
 		</dict>
 		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
 		<dict>
+			<key>note</key>
+			<string>Search the contents of all notes</string>
 			<key>xpos</key>
-			<integer>185</integer>
+			<integer>95</integer>
 			<key>ypos</key>
-			<integer>65</integer>
+			<integer>35</integer>
 		</dict>
 	</dict>
+	<key>variables</key>
+	<dict>
+		<key>notes_dir</key>
+		<string>/Users/abr1402/Documents/Personal Docs/Notes Wiki</string>
+	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>notes_dir</string>
+	</array>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
