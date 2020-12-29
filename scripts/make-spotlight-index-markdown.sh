@@ -19,17 +19,17 @@ set -e
 
 dotfiles_dir=$HOME/dotfiles
 
-# If we already have the markdown metadata importer, then this has already been done. So let's gtfo
-if [[ ! -e /Library/Spotlight/Markdown.mdimporter ]]; then
-  # Create a copy of the system `RichText.mdimporter`.
-  cp -r /System/Library/Spotlight/RichText.mdimporter $dotfiles_dir
+# Just to make this idempotent, scrap any work we've already done through this script so we can start fresh and try it again
+sudo rm -rf /Library/Spotlight/Markdown.mdimporter
 
-  # Change it to only index markdown files.
-  patch -p2 $dotfiles_dir/RichText.mdimporter/Contents/Info.plist < $dotfiles_dir/scripts/Markdown.mdimporter.patch
+# Create a copy of the system `RichText.mdimporter`.
+cp -r /System/Library/Spotlight/RichText.mdimporter $dotfiles_dir
 
-  # Move it into `/Library/Spotlight` as `Markdown.mdimporter`.
-  sudo mv $dotfiles_dir/RichText.mdimporter /Library/Spotlight/Markdown.mdimporter
+# Change it to only index markdown files.
+patch -p2 $dotfiles_dir/RichText.mdimporter/Contents/Info.plist < $dotfiles_dir/scripts/Markdown.mdimporter.patch
 
-  # Re-index with the new importer.
-  mdimport -r /Library/Spotlight/Markdown.mdimporter
-fi
+# Move it into `/Library/Spotlight` as `Markdown.mdimporter`.
+sudo mv $dotfiles_dir/RichText.mdimporter /Library/Spotlight/Markdown.mdimporter
+
+# Re-index with the new importer.
+mdimport -r /Library/Spotlight/Markdown.mdimporter
