@@ -27,6 +27,7 @@ cp -r /System/Library/Spotlight/RichText.mdimporter $dotfiles_dir
 
 # Change it to only index markdown files.
 patch -p2 $dotfiles_dir/RichText.mdimporter/Contents/Info.plist < $dotfiles_dir/scripts/Markdown.mdimporter.patch
+# NOTE: The .patch file can be super tricky. It expects certain characters for end of lines (e.g. LF vs CRLF) that I'm not exactly sure of. If it breaks again and you get an error like "unexpected end of line" in diff, try reverting back to an old version of the patch file and making your new changes carefully
 
 # Move it into `/Library/Spotlight` as `Markdown.mdimporter`.
 sudo mv $dotfiles_dir/RichText.mdimporter /Library/Spotlight/Markdown.mdimporter
