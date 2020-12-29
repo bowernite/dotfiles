@@ -326,7 +326,7 @@ defaults write com.knollsoft.Rectangle launchOnLogin -bool true
 defaults write com.knollsoft.Rectangle SUEnableAutomaticChecks -bool true
 
 # Gaps between windows (in pixels)
-defaults write com.knollsoft.Rectangle gapSize -int 12
+# defaults write com.knollsoft.Rectangle gapSize -int 12
 
 ##############################################################
 # Default apps by file extension
