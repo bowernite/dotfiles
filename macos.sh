@@ -354,7 +354,6 @@ duti -s com.microsoft.VSCode rb all
 duti -s com.microsoft.VSCode go all
 duti -s com.microsoft.VSCode py all
 duti -s com.microsoft.VSCode pyc all
-duti -s com.microsoft.VSCode html all
 duti -s com.microsoft.VSCode css all
 duti -s com.microsoft.VSCode scss all
 duti -s com.microsoft.VSCode lock all
