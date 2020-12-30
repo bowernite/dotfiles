@@ -60,8 +60,15 @@
     ; Plain rule ideas:
       ; Swap ; and : (seems useful, but drifts away from normal keyboard a lot)
       ; Semicolon as shift key (pretty good -- might even help with ⌘+⇧ keybinding ergonomics)
+      ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
+      ; Using simultaneous keypresses for singular actions (might be cool, though something to keep an eye on is the difficulty of pressing the keys simultaneously)
+
+    ; Hyper key ideas: (only when used alone -- see Shawn's usage for "left option when used alone")
+      ; Left control
+      ; Left option
 
     ; Simlayer ideas:
+      ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
       ; Semicolon as app launcher (pretty awesome, especially if the delay isn't noticeable. Might be the move if we're okay with using a pinky for that)
       ; Using a simlayer for websites specifically (cool, but not sure if there's enough common websites for this to be worth it)
       ; Using a simlayer for symbols (punctuation, equals sign, brackets, etc.) (good for ergonomics, but has drift and requires another simlayer key)
@@ -73,6 +80,8 @@
       ; "Clone repo to ~/clones and open with VS Code" (Nikita) (could be cool -- could look into this)
       ; Using a simlayer for media controls (Nikita)
       ; Using a simlayer for common words/snippets (Nikita) (appears like it can only do it with actual keys/letters, and couldn't use unicode/emoji) (could use for `// TODO:`, "VSCode/XCode/Sublime comment on top of line with TODO", )
+      ; Using a simlayer to control rectangle (this would be nice -- at the very least could do Maximize and Center)
+      ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
 
     ; Simlayer key ideas
       ; tilde
