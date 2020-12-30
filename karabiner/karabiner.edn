@@ -60,7 +60,7 @@
     ; Plain rule ideas:
       ; Swap ; and : (seems useful, but drifts away from normal keyboard a lot)
       ; Semicolon as shift key (pretty good -- might even help with ⌘+⇧ keybinding ergonomics)
-    
+
     ; Simlayer ideas:
       ; Semicolon as app launcher (pretty awesome, especially if the delay isn't noticeable. Might be the move if we're okay with using a pinky for that)
       ; Using a simlayer for websites specifically (cool, but not sure if there's enough common websites for this to be worth it)
@@ -73,7 +73,7 @@
       ; "Clone repo to ~/clones and open with VS Code" (Nikita) (could be cool -- could look into this)
       ; Using a simlayer for media controls (Nikita)
       ; Using a simlayer for common words/snippets (Nikita) (appears like it can only do it with actual keys/letters, and couldn't use unicode/emoji) (could use for `// TODO:`, "VSCode/XCode/Sublime comment on top of line with TODO", )
-    
+
     ; Simlayer key ideas
       ; tilde
       ; semicolon
@@ -85,7 +85,7 @@
       ; ======
       ; q, w, x, z, j, numbers
       ; https://en.wikipedia.org/wiki/Letter_frequency
-    
+
     {
       :des "left cmd -> cmd+tab"
       :rules [[:left_command :left_command nil {:alone :!Ctab}]]
@@ -125,14 +125,14 @@
         [:!Rcaps_lock :caps_lock]
       ]
     }
-    
+
     {
       :des "Disable cmd+tab"
       :rules [
         [:!Ctab :vk_none]
       ]
     }
-    
+
     ; {
     ;   :des "launch mode"
     ;   :rules [
@@ -148,7 +148,7 @@
     ;     ; [:s [:opena "Slack"]]
     ;     [:s [:opena "Slack Web"]]
     ;     [:t [:opena "Terminal"]]
-        
+
     ;     ; Also common
     ;     [:q [:opena "Notes"]]
     ;     [:r [:opena "Trello"]]
@@ -157,7 +157,7 @@
     ;     [:a [:opena "Alfred Preferences"]]
     ;     [:f [:opena "Finder"]]
     ;     [:c [:opena "Outlook"]]
-        
+
     ;     ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
     ;     ; [:k [:opena "Karabiner-Elements"]]
     ;     ; [:l [:opena "Karabiner-EventViewer"]]
@@ -166,7 +166,7 @@
     ;     ; email?
     ;   ]
     ; }
-    
+
     {
       :des "launch mode (non-j)"
       :rules [
@@ -188,7 +188,7 @@
         ; [:l [:opena "Slack"]]
         [:l [:opena "Slack Web"]]
         [:semicolon [:opena "Terminal"]]
-        
+
         ; Also common
         ;  Notes
         [:n [:opena "Notes"]]
@@ -205,14 +205,14 @@
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
         [:slash [:opena "Finder"]]
-        
+
         ; Less common
         [:backslash [:opena "Activity Monitor"]]
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
       ]
     }
-    
+
     {
       :des "Text navigation and manipulation"
       :rules [
@@ -223,13 +223,13 @@
         [:!T#SRl :right_arrow]
         [:!T#SRy :!Oleft_arrow]
         [:!T#SRo :!Oright_arrow]
-        
+
         ; Char and word-wise deletion
         [:!Tu :!Odelete_or_backspace]
         [:!Ti :delete_or_backspace]
         [:!T7 :!Odelete_forward]
         [:!T8 :delete_forward]
-        
+
         ; To start and end of line
         [:!Tn :!Cleft_arrow]
         [:!Tm :!Cright_arrow]
@@ -251,10 +251,10 @@
         [:!Tslash [:!Te :!Tu] :Terminals]
         ; For VS Code, it's trickier -- you want to preserve indentation, but also want it to behave nicely in the integrated terminal…
         [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] :VSCode]
-        
+
         ; Clear everything
         [:!Tdelete_or_backspace [:!Ca :delete_or_backspace]]
-        
+
         ; Page up/down
         [:!Oj :page_down]
         [:!Ok :page_up]
