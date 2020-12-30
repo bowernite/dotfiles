@@ -22,7 +22,7 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-source ~/dotfiles/bootstrap-helpers.sh
+source ~/dotfiles/bin/utils.sh
 
 clear
 printf "Hi, $USER! 👋\n"
@@ -58,17 +58,24 @@ if [[ $? != 0 ]]; then
 fi
 
 # Goku symlinks
-ln -s  "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
-ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
+if [[ ! -h ~/.config/karabiner.edn ]]; then
+  ln -s  "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
+fi
+touch "$dotfiles_dir/karabiner/goku.log"
+if [[ ! -h ~/Library/Logs/goku.log ]]; then
+  ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
+fi
 
 ##############################################################
 # Software installs (homebrew, npm/yarn)
 ##############################################################
 
-source $dotfiles_dir/setup/brew.sh
+source setup/brew.sh
 
 # Might change this at some point if we go full yarn. Still, it _is_ nice to have npx for "use the local binary if it's there, otherwise use the global one". AFAIK, that doesn't exist with yarn. It's useful for our shell aliases for running prettier, jest, etc.
-npm i -g npx
+if ! command -v npx &> /dev/null; then
+  npm i -g npx
+fi
 
 ##############################################################
 # macOS
@@ -78,7 +85,7 @@ log "Updating MacOS apps"
 # Install latest macOS and Apple Apps (Safari, etc.)
 # softwareupdate -i -a
 
-source macos.sh
+source setup/macos.sh
 
 #######################################
 # Fin

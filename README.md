@@ -43,7 +43,7 @@ export __TRELLO_TOKEN=
 
 #### Double check...
 
-- [ ] That Alfred is indexing markdown files properly. In Alfred's modal, try `in <text>`, where text is some text that exists in a markdown file on the machine. If this doesn't work, try running [scripts/make-spotlight-index-markdown.sh](scripts/make-spotlight-index-markdown.sh) again. If it does work right away, remove this blurb.
+- [ ] That Alfred is indexing markdown files properly. In Alfred's modal, try `in <text>`, where text is some text that exists in a markdown file on the machine. If this doesn't work, try running [setup/make-spotlight-index-markdown.sh](setup/make-spotlight-index-markdown.sh) again. If it does work right away, remove this blurb.
 
 ### macOS Preferences 👨‍💻
 
