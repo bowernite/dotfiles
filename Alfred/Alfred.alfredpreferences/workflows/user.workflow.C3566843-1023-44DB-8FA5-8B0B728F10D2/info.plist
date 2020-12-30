@@ -19,6 +19,34 @@
 				<false/>
 			</dict>
 		</array>
+		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>79CE02CC-05FC-4071-B47B-4753F8ACF20E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>79CE02CC-05FC-4071-B47B-4753F8ACF20E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
+		<array/>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<array>
 			<dict>
@@ -62,7 +90,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</string>
+				<string>7529674F-DF0E-456C-AACE-162D9EB5CF8F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -82,21 +110,6 @@
 	<string>Brett's Brain</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -178,6 +191,95 @@
 			<string>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>/</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>v</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>CD33CDD6-50F7-488A-A77F-126388B715F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>79CE02CC-05FC-4071-B47B-4753F8ACF20E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7529674F-DF0E-456C-AACE-162D9EB5CF8F</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -279,23 +381,17 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>n</string>
-				<key>subtext</key>
-				<string>Create a new note</string>
-				<key>text</key>
-				<string>New note</string>
-				<key>withspace</key>
-				<true/>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
+			<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -321,6 +417,27 @@
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>subtext</key>
+				<string>Create a new note</string>
+				<key>text</key>
+				<string>New note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -401,21 +518,6 @@ function titleCase(input) {
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -424,25 +526,25 @@ function titleCase(input) {
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>295</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>340</integer>
 		</dict>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<dict>
 			<key>note</key>
 			<string>Create a new note</string>
 			<key>xpos</key>
-			<integer>90</integer>
+			<integer>100</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>540</integer>
 		</dict>
 		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>650</integer>
+			<integer>660</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>540</integer>
 		</dict>
 		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
 		<dict>
@@ -451,28 +553,58 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>35</integer>
 		</dict>
+		<key>7529674F-DF0E-456C-AACE-162D9EB5CF8F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>79CE02CC-05FC-4071-B47B-4753F8ACF20E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>545</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
+		<dict>
+			<key>xpos</key>
+			<integer>670</integer>
+			<key>ypos</key>
+			<integer>40</integer>
+		</dict>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>540</integer>
 		</dict>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<dict>
 			<key>note</key>
 			<string>Search for existing notes (by filename)</string>
 			<key>xpos</key>
-			<integer>100</integer>
+			<integer>85</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>340</integer>
+		</dict>
+		<key>CD33CDD6-50F7-488A-A77F-126388B715F7</key>
+		<dict>
+			<key>note</key>
+			<string>TODO: If Alfred can provide us the original query, paste it here and press Enter to execute a Vim search for it</string>
+			<key>xpos</key>
+			<integer>875</integer>
+			<key>ypos</key>
+			<integer>50</integer>
 		</dict>
 		<key>E606C45E-CD82-4731-9480-1E5403ADBD61</key>
 		<dict>
 			<key>xpos</key>
-			<integer>475</integer>
+			<integer>485</integer>
 			<key>ypos</key>
-			<integer>350</integer>
+			<integer>540</integer>
 		</dict>
 		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
 		<dict>
