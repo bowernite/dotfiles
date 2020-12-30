@@ -136,7 +136,7 @@ set wrapmargin=0
 nnoremap <silent> <leader>s :w<CR>
 nnoremap <silent> <leader>q :q<CR>
 nnoremap <silent> <leader>Q :qa!<CR>
-nnoremap <silent> <leader>a :x<CR>   
+nnoremap <silent> <leader>x :x<CR>   
 
 " Prettier with <leader>u
 nnoremap <leader>u :Prettier<CR>
