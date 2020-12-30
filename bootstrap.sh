@@ -39,6 +39,7 @@ log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 install_dotfile ".zshrc"
 install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
+install_dotfile ".sandboxrc"
 
 ##############################################################
 # Karabiner symlinking
