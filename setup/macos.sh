@@ -1,4 +1,4 @@
-source ~/dotfiles/bootstrap-helpers.sh
+source ~/dotfiles/bin/utils.sh
 
 ##############################################################
 #  macOS: Configure macOS settings
@@ -13,7 +13,7 @@ log " Configuring macOS..."
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Make Spotlight/Alfred index markdown files
-source ~/dotfiles/scripts/make-spotlight-index-markdown.sh
+source ~/dotfiles/setup/make-spotlight-index-markdown.sh
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
@@ -390,25 +390,28 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Apply
 ##############################################################
 
-# Kill affected apps
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Flux" \
-	"Finder" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Photos" \
-	"Rectangle" \
-	"Safari" \
-	"SystemUIServer" \
-	"Terminal" \
-	"iCal"; do
-	killall "${app}" &> /dev/null
-done
+# # Kill affected apps
+# for app in "Activity Monitor" \
+# 	"Address Book" \
+# 	"Calendar" \
+# 	"cfprefsd" \
+# 	"Contacts" \
+# 	"Dock" \
+# 	"Flux" \
+# 	"Finder" \
+# 	"Google Chrome" \
+# 	"Mail" \
+# 	"Messages" \
+# 	"Photos" \
+# 	"Rectangle" \
+# 	"Safari" \
+# 	"SystemUIServer" \
+# 	"Terminal" \
+# 	"iCal"; do
+# 	killall "${app}" &> /dev/null
+# done
 
-echo "\n\n\n⚡️ Dunzo. Note that some of these changes require a logout/restart to take effect."
+echo
+echo
+echo
+echo "⚡️ Dunzo. Note that some of these changes require a logout/restart to take effect."

@@ -7,7 +7,7 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 install_dotfile() {
   local name="$1"
@@ -20,9 +20,9 @@ install_dotfile() {
   fi
 }
 
-#######################################
+##############################################################
 # Pretty logger for bootstrapping only
-#######################################
+##############################################################
 log() {
     local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     printf "\n\n\n" 
