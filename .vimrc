@@ -193,6 +193,8 @@ nnoremap <leader>O O<space><backspace><esc>O
 nnoremap x \"_x
 vnoremap x \"_x
 
+" Duplicate current line
+nnoremap <leader>d yyp
 " Duplicate visual selection _after_ the selection (by default, vim takes you back to the cursor position you started the visual selection with; so '> takes us back to the end of it before pasting)
 vmap <leader>d y'>p
 
