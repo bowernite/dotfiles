@@ -49,7 +49,7 @@ function random_element {
   printf "%s\n" "${array[$r]}"
 }
 function random_emoji () {
-  printf "$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
+  printf "$(random_element 😅 👽 🔥 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
 }
 PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
 
@@ -75,6 +75,17 @@ _fzf_compgen_path() {
   # Otherwise, just use fd
   git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
+
+##############################################################
+# Navigation
+##############################################################
+
+# When typing a command that can't be executed, and the command is the name of the directory, cd into it. Also works with autocomplete
+# Source: http://zsh.sourceforge.net/Doc/Release/Options.html
+setopt auto_cd
+
+# TODO: Update these paths when I update my directory structure
+cdpath=($HOME/personal $HOME/nml)
 
 ##############################################################
 # Miscellaneous setup
