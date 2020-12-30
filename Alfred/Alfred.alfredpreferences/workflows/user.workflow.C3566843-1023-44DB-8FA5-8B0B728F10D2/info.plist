@@ -6,11 +6,50 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>0BE143EC-C038-4FA8-9207-CACE815C74EF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2901CC42-9061-4E8D-8B07-5570DE21B1F3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2901CC42-9061-4E8D-8B07-5570DE21B1F3</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -47,6 +86,19 @@
 		</array>
 		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
 		<array/>
+		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<array>
 			<dict>
@@ -333,18 +385,6 @@
 						<key>words</key>
 						<true/>
 					</dict>
-					<dict>
-						<key>field</key>
-						<string>kMDItemTextContent</string>
-						<key>not</key>
-						<false/>
-						<key>split</key>
-						<true/>
-						<key>value</key>
-						<string>{query}</string>
-						<key>words</key>
-						<true/>
-					</dict>
 				</array>
 				<key>includesystem</key>
 				<false/>
@@ -381,6 +421,48 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>subtext</key>
+				<string>Create a new note</string>
+				<key>text</key>
+				<string>New note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>↩</string>
+				<key>keycode</key>
+				<integer>36</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>openwith</key>
 				<string></string>
 				<key>sourcefile</key>
@@ -405,7 +487,9 @@
 				<key>filename</key>
 				<string>~/Documents/Personal Docs/Notes Wiki/not-imported/{var:basename}.md</string>
 				<key>filetext</key>
-				<string># {var:title}</string>
+				<string># {var:title}
+
+## Notes</string>
 				<key>ignoredynamicplaceholders</key>
 				<false/>
 				<key>relativepathmode</key>
@@ -417,27 +501,6 @@
 			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
 			<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>n</string>
-				<key>subtext</key>
-				<string>Create a new note</string>
-				<key>text</key>
-				<string>New note</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -518,31 +581,111 @@ function titleCase(input) {
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>o</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>nn</string>
+				<key>subtext</key>
+				<string>Create a new note</string>
+				<key>text</key>
+				<string>New note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A89E933C-3873-4B67-B14C-17B78298CDBF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>2901CC42-9061-4E8D-8B07-5570DE21B1F3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0BE143EC-C038-4FA8-9207-CACE815C74EF</key>
+		<dict>
+			<key>note</key>
+			<string>Open 2 new lines and enter Vim insert mode</string>
+			<key>xpos</key>
+			<integer>900</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
+		<key>2901CC42-9061-4E8D-8B07-5570DE21B1F3</key>
+		<dict>
+			<key>note</key>
+			<string>Wait .2 seconds</string>
+			<key>xpos</key>
+			<integer>825</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>295</integer>
+			<integer>290</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>225</integer>
 		</dict>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<dict>
 			<key>note</key>
-			<string>Create a new note</string>
+			<string>Create a new note (shown amongst `n` note query)</string>
 			<key>xpos</key>
-			<integer>100</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>385</integer>
 		</dict>
 		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
 		<dict>
 			<key>xpos</key>
 			<integer>660</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
+		<key>7370F59B-6663-43D7-BFC9-C688F3BA761A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1075</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -574,6 +717,15 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
+		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
+		<dict>
+			<key>note</key>
+			<string>Create a new note</string>
+			<key>xpos</key>
+			<integer>75</integer>
+			<key>ypos</key>
+			<integer>560</integer>
+		</dict>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<dict>
 			<key>xpos</key>
@@ -586,9 +738,9 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Search for existing notes (by filename)</string>
 			<key>xpos</key>
-			<integer>85</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>225</integer>
 		</dict>
 		<key>CD33CDD6-50F7-488A-A77F-126388B715F7</key>
 		<dict>
