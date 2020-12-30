@@ -111,6 +111,10 @@
         [:!Oreturn_or_enter [:!Cl :j :return_or_enter] :Chrome]
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
+
+        ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
+        [:!Topen_bracket :!To :Terminals]
+        [:!Tclose_bracket :!Ti :Terminals]
       ]
     }
     {

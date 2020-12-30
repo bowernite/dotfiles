@@ -146,8 +146,12 @@ nnoremap <leader>p \"0p
 
 " Change default keybindings for moving through jump history to <C-[> and <C-]>
 " (my global keyboard overrides use the defaults of <C-i> and <C-o>
-nnoremap <C-[> <C-o>
-nnoremap <C-]> <C-i>
+" UPDATE: Because <C-[> has a special meaning (escape) in the terminal, we
+" can't put this in .vimrc. Instead, we're going to use Karabiner to map this
+" when in the terminal, and apply this remapping directly in any GUIs for Vim
+" (e.g. VS Code)
+" nnoremap <C-[> <C-o>
+" nnoremap <C-]> <C-i>
 
 " Comment lines (both in Normal and Visual Modes)
 noremap <leader>c :Commentary<CR>
