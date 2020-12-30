@@ -159,12 +159,6 @@ noremap <leader>c :Commentary<CR>
 " Clear search highlights
 noremap <leader>/ :nohl<CR>
 
-" Insert line below, without moving to it or entering Insert mode
-nnoremap <leader>k moO<esc>`o
-nnoremap <leader>j moo<esc>`o
-" Insert line below and move to it, but stay in Normal mode
-nnoremap <CR> o<Space><backspace><esc>
-
 " When making a new line with o/O, preserve indentation -- even if we escape right to Normal mode right away
 nnoremap o o<space><bs>
 nnoremap O O<space><bs>
@@ -185,8 +179,15 @@ nnoremap cc _C
 noremap <Down> <C-d>
 noremap <Up> <C-u>
 
+" Insert line below, without moving to it or entering Insert mode
+nnoremap <leader>k moO<esc>`o
+nnoremap <leader>j moo<esc>`o
+
+" Insert line below and move to it, but stay in Normal mode
+nnoremap <CR> o<Space><backspace><esc>
+
 " Insert lines above/below with padding
-nnoremap <leader>o o<CR>
+nnoremap <leader>o o<CR><space><backspace>
 nnoremap <leader>O O<space><backspace><esc>O
 
 " Prevent `x` from writing to the default register
