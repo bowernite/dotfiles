@@ -23,7 +23,7 @@ brew "goku"
 brew "nvm"
 brew "python"
 brew "yarn"
-# Q: Are these necessary, or do they come with nvm?
+# NEXT_MACHINE: Are these necessary, or do they come with nvm? Try installing them with Brew on its own. If they don't come with it, uncomment these lines and alphabetize them above
 # node
 # npm
 
