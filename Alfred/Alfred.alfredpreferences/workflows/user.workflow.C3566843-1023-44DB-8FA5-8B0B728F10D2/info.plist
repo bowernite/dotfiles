@@ -23,7 +23,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+				<string>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -86,6 +86,19 @@
 		</array>
 		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
 		<array/>
+		<key>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<array>
 			<dict>
@@ -445,9 +458,9 @@
 				<key>count</key>
 				<integer>1</integer>
 				<key>keychar</key>
-				<string>↩</string>
+				<string>o</string>
 				<key>keycode</key>
-				<integer>36</integer>
+				<integer>-1</integer>
 				<key>keymod</key>
 				<integer>0</integer>
 				<key>overridewithargument</key>
@@ -456,7 +469,28 @@
 			<key>type</key>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
-			<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
+			<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>g</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>131072</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -587,9 +621,9 @@ function titleCase(input) {
 				<key>count</key>
 				<integer>1</integer>
 				<key>keychar</key>
-				<string>o</string>
+				<string>↩</string>
 				<key>keycode</key>
-				<integer>-1</integer>
+				<integer>36</integer>
 				<key>keymod</key>
 				<integer>0</integer>
 				<key>overridewithargument</key>
@@ -598,7 +632,7 @@ function titleCase(input) {
 			<key>type</key>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
-			<string>0BE143EC-C038-4FA8-9207-CACE815C74EF</string>
+			<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -646,7 +680,7 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Open 2 new lines and enter Vim insert mode</string>
 			<key>xpos</key>
-			<integer>900</integer>
+			<integer>1105</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -685,7 +719,7 @@ function titleCase(input) {
 		<key>7370F59B-6663-43D7-BFC9-C688F3BA761A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1075</integer>
+			<integer>1280</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -716,6 +750,13 @@ function titleCase(input) {
 			<integer>670</integer>
 			<key>ypos</key>
 			<integer>40</integer>
+		</dict>
+		<key>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>910</integer>
+			<key>ypos</key>
+			<integer>540</integer>
 		</dict>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<dict>
