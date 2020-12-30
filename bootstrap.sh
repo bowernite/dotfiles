@@ -31,9 +31,9 @@ printf "Let's get you set up... 👨‍💻\n"
 sleep 2s
 
 
-#######################################
+##############################################################
 # Symlinks
-#######################################
+##############################################################
 log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
 install_dotfile ".zshrc"
@@ -61,35 +61,23 @@ fi
 ln -s  "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
 ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
 
-#######################################
-# MacOS installs
-#######################################
+##############################################################
+# Software installs (homebrew, npm/yarn)
+##############################################################
+
+source $dotfiles_dir/setup/brew.sh
+
+# Might change this at some point if we go full yarn. Still, it _is_ nice to have npx for "use the local binary if it's there, otherwise use the global one". AFAIK, that doesn't exist with yarn. It's useful for our shell aliases for running prettier, jest, etc.
+npm i -g npx
+
+##############################################################
+# macOS
+##############################################################
 # TODO: Store some kind of variable in a gitignored file. Use it to only run this command once for a whole machine (i.e. on a fresh macOS install)
 log "Updating MacOS apps"
 # Install latest macOS and Apple Apps (Safari, etc.)
 # softwareupdate -i -a
 
-# Check for Homebrew, install if we don't have it
-if test ! $(which brew); then
-    log "Homebrew: Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
-
-log "Homebrew: Updating recipes..."
-brew update
-
-log "Homebrew: Installing and upgrading packages..."
-brew bundle
-
-log "Homebrew: Starting services..."
-# Based on documentation I've read, Homebrew _should_ automatically start these services up on boot indefinitely
-brew services start goku
-# Auto update and upgrade brew packages
-brew autoupdate --start --upgrade --enable-notification --cleanup
-
-#######################################
-# MacOS
-#######################################
 source macos.sh
 
 #######################################
