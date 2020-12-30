@@ -2,7 +2,6 @@
 # Imports
 ##############################################################
 
-
 # Yeah... I mean ideally this would be computed and not so nashty, but deriving this doesn't seem too easy because of symlinking -- unless the zsh session is launched from this directory, it always thinks the current directory is $HOME, the directory of the symlink target `.zshrc`
 dotfiles_dir="$HOME/dotfiles"
 
@@ -37,12 +36,22 @@ export PATH
 
 # Puts a new line after all prompts
 precmd() {
-    precmd() {
-        echo
-    }
+  precmd() {
+    echo
+  }
 }
-# Two-line prompt
-PROMPT="$PROMPT"$'\n'"😀 "
+
+# Two-line prompt with emoji
+# Source: https://github.com/kentcdodds/dotfiles/blob/master/.zshrc
+function random_element {
+  declare -a array=("$@")
+  r=$((RANDOM % ${#array[@]}))
+  printf "%s\n" "${array[$r]}"
+}
+function random_emoji () {
+  printf "$(random_element 😅 👽 🔥 🚀 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
+}
+PROMPT="$PROMPT"$'\n'"$(random_emoji) "
 
 ##############################################################
 # FZF
