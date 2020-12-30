@@ -260,7 +260,8 @@
         [:!Tcomma :!Cdelete_or_backspace [:!Terminals]]
         [:!Tcomma :!Tu [:Terminals]]
         ; Delete line forward
-        [:!Tperiod :!Cdelete_forward [:!Notes :!Terminals]]
+        ; Ideally this would just be ⌘+⌦, but that's not respected everywhere (e.g. browser textareas, VS Code's integrated terminals)
+        [:!Tperiod [:!CSright_arrow :delete_or_backspace] [:!Notes :!Terminals :!VSCode]]
         [:!Tperiod :!Tk]
         ; Delete full line
         [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
