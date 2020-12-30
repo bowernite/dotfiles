@@ -41,24 +41,34 @@ alias vs='tc && lint && format'
 
 # "git checkout branch"
 alias gcob="git co -b"
-# "git commit message"
-# oh-my-zsh originally has this as "git checkout master", but this makes more sense to me
+
+# "git commit message" (oh-my-zsh originally has this as "git checkout master", but this makes more sense to me)
 alias gcm="gc -m"
 
 # "git pull origin main"
 alias gpom="git pull origin \$(git_dev_branch)"
 
 # Git diffing with origin/master and origin/<dev_branch>
-alias grem="git remote" # (original oh-my-zsh `gr` alias)
 alias gr="git rev"
+alias grem="git remote" # (original oh-my-zsh `gr` alias)
+
 # "git diff origin dev"
 alias gdod="git fetch && git diff origin/\$(git_dev_branch)"
 # "git diff origin main"
 alias gdom="git fetch && git diff origin/\$(git_main_branch)"
+
 # "git undo": "undoes" the last commit, and puts its changes back into the index
 alias gundo="git reset HEAD~"
 # "git undo soft/staged": "undoes" the last commit, and puts its changes into the staging area
 alias gundos="git reset HEAD~ --soft"
+
+git_dev_branch() {
+  if [[ -n $(git branch --list develop) ]]; then 
+    echo develop; 
+  else 
+    echo master; 
+  fi 
+}
 
 ##############################################################
 # Miscellaneous
@@ -78,12 +88,4 @@ alias c="clear"
 run() {
   clear;
   eval $@;
-}
-
-git_dev_branch() {
-  if [[ -n $(git branch --list develop) ]]; then 
-    echo develop; 
-  else 
-    echo master; 
-  fi 
 }
