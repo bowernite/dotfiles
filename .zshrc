@@ -1,6 +1,7 @@
-#########
+##############################################################
 # Imports
-#########
+##############################################################
+
 
 # Yeah... I mean ideally this would be computed and not so nashty, but deriving this doesn't seem too easy because of symlinking -- unless the zsh session is launched from this directory, it always thinks the current directory is $HOME, the directory of the symlink target `.zshrc`
 dotfiles_dir="$HOME/dotfiles"
@@ -13,13 +14,9 @@ if [ -e $dotfiles_dir/.zshrc__private ]; then
 fi
 source $dotfiles_dir/.zshrc__aliases
 
-#########
-# Other
-#########
-
-export NVM_DIR="$HOME/.nvm"
-    [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-    [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+##############################################################
+# PATH shenanigans
+##############################################################
 
 # Setting PATH for Python 3.8
 # The original version is saved in .bash_profile.pysave
@@ -34,7 +31,10 @@ export PATH
 PATH="$HOME/go/bin:${PATH}"
 export PATH
 
-# Prompt customization
+##############################################################
+# Shell prompt
+##############################################################
+
 # Puts a new line after all prompts
 precmd() {
     precmd() {
@@ -44,9 +44,9 @@ precmd() {
 # Two-line prompt
 PROMPT="$PROMPT"$'\n'"😀 "
 
-#######################################
+##############################################################
 # FZF
-#######################################
+##############################################################
 
 # fzf autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -66,3 +66,18 @@ _fzf_compgen_path() {
   # Otherwise, just use fd
   git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
+
+##############################################################
+# Miscellaneous setup
+##############################################################
+
+# Load sandboxd to lazy load some things
+# Source: https://github.com/benvan/sandboxd
+# See .sandboxrc for details
+source ~/dotfiles/bin/sandboxd
+
+# NEXT_MACHINE: Make sure nvm is installed correctly. When homebrew installs it, it might try to put similar lines in this file (but we don't want it to, because we're making our own modifications)
+export NVM_DIR="$HOME/.nvm"
+# We're using `sandboxd` above to lazy load nvm instead of loading it right here
+# [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+# [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
