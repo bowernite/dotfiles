@@ -23,3 +23,5 @@ boardid='5fda6dff5832a33ec469b3d8'
 
 php -f trello.php -- "${key};${token};${boardid};{query}"
 ```
+
+- Added script to capitalize the first letter of the `query`/card name

@@ -32,6 +32,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>32224FD1-B355-46EE-876D-B160F3D92443</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B52392F2-134F-4DC0-A056-B7581FD26897</key>
 		<array/>
 		<key>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</key>
@@ -89,7 +102,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</string>
+				<string>32224FD1-B355-46EE-876D-B160F3D92443</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -102,7 +115,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</string>
+				<string>32224FD1-B355-46EE-876D-B160F3D92443</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -122,6 +135,65 @@
 	<string>Trello Worklfow for Alfred v.1.6.2</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>script</key>
+				<string># Trello Workflow for Alfred
+# Version 1.6.2
+# https://github.com/MikoMagni/Trello-Workflow-for-Alfred
+
+source ~/dotfiles/.zshrc__private
+
+key=$__TRELLO_API_KEY
+token=$__TRELLO_TOKEN
+boardid='5fda6dff5832a33ec469b3d8'
+
+php -f trello.php -- "${key};${token};${boardid};{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>5</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+  return query.charAt(0).toUpperCase() + query.slice(1);
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>32224FD1-B355-46EE-876D-B160F3D92443</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -163,39 +235,6 @@
 			<string>BCBEF829-5790-415C-B492-BE2D0DFAEB63</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>62</integer>
-				<key>script</key>
-				<string># Trello Workflow for Alfred
-# Version 1.6.2
-# https://github.com/MikoMagni/Trello-Workflow-for-Alfred
-
-source ~/dotfiles/.zshrc__private
-
-key=$__TRELLO_API_KEY
-token=$__TRELLO_TOKEN
-boardid='5fda6dff5832a33ec469b3d8'
-
-php -f trello.php -- "${key};${token};${boardid};{query}"</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>5</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -246,6 +285,25 @@ php -f trello.php -- "${key};${token};${boardid};{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://trello.com/app-key/</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>16BB38FE-8155-4853-8675-42456C67EE07</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -288,19 +346,21 @@ php -f trello.php -- "${key};${token};${boardid};{query}"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://trello.com/app-key/</string>
-				<key>utf8</key>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>get trello token</string>
+				<key>subtext</key>
+				<string>Usage: get trello token {YourAPIKey}</string>
+				<key>text</key>
+				<string>Authorize Trello Workflow to use your Trello account.</string>
+				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>16BB38FE-8155-4853-8675-42456C67EE07</string>
+			<string>0442D773-2E45-40E3-B79E-6879C09EDCB8</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -344,27 +404,6 @@ php -f trello.php -- "${key};${token};${boardid};{query}"</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>get trello token</string>
-				<key>subtext</key>
-				<string>Usage: get trello token {YourAPIKey}</string>
-				<key>text</key>
-				<string>Authorize Trello Workflow to use your Trello account.</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>0442D773-2E45-40E3-B79E-6879C09EDCB8</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Script: 	   		Trello Workflow for Alfred
@@ -397,6 +436,15 @@ https://github.com/MikoMagni/Trello-Workflow-for-Alfred</string>
 			<key>ypos</key>
 			<integer>500</integer>
 		</dict>
+		<key>32224FD1-B355-46EE-876D-B160F3D92443</key>
+		<dict>
+			<key>note</key>
+			<string>Capitalize the first letter of the entire query/card name</string>
+			<key>xpos</key>
+			<integer>420</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
 		<key>B52392F2-134F-4DC0-A056-B7581FD26897</key>
 		<dict>
 			<key>xpos</key>
@@ -407,7 +455,7 @@ https://github.com/MikoMagni/Trello-Workflow-for-Alfred</string>
 		<key>BB4FCEDA-A055-4022-BE05-A9D2E24CFB9E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>540</integer>
+			<integer>600</integer>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
