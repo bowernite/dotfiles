@@ -81,7 +81,7 @@
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>keyword</key>
-				<string>ch</string>
+				<string>chr</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
