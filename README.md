@@ -50,7 +50,6 @@ export __TRELLO_TOKEN=
 The macOS setup script tries to set all necessary preferences as best it can, but there's a few essential things it doesn't work work with yet. Maybe we'll fix those one day, but for now just go and manually check these.
 
 - Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
-- Enable Alfred workflows to run all scripts. `System Preferences` > `Security & Privacy` > `Privacy` > `Developer Tools` > `Enable Alfred`
 
 ### Rectangle ▬
 
@@ -64,6 +63,9 @@ The macOS setup script tries to set all necessary preferences as best it can, bu
 ### Bartender ⧓
 
 As of writing this, there's a Bartender 4 update that is only for Big Sur+. Because of the unknown of that, when setting up just set up Bartender manually. Maybe at that time, run the pref diffs and add them to the macos setup script as necessary.
+
+- Make sure it runs at login
+- Configure any apps necessary in the menu bar (`NEXT_MACHINE`: Run the pref diffs and record it somewhere, in case we ever want to automate this part)
 
 ### Terminal 💻
 
