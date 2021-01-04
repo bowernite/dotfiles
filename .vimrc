@@ -191,8 +191,8 @@ nnoremap <leader>o o<CR><space><backspace>
 nnoremap <leader>O O<space><backspace><esc>O
 
 " Prevent `x` from writing to the default register
-nnoremap x \"_x
-vnoremap x \"_x
+nnoremap x "_x
+vnoremap x "_x
 
 " Duplicate current line
 nnoremap <leader>d yyp
