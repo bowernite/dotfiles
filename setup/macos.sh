@@ -1,8 +1,8 @@
-source ~/dotfiles/bin/utils.sh
-
 ##############################################################
 #  macOS: Configure macOS settings
 ##############################################################
+
+source ~/dotfiles/bin/utils.sh
 
 # Ask for the administrator password upfront
 sudo -v

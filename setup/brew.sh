@@ -15,6 +15,8 @@ fi
 # brew update
 
 log "Homebrew: Installing and upgrading packages..."
+# cd into the dotfiles directory, since that's where the `Brewfile` is
+cd $dotfiles_dir
 brew bundle
 
 log "Homebrew: Starting services..."
