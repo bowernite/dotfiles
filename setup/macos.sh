@@ -236,7 +236,8 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
 # Turn off Spotlight shortcut (use Alfred instead), and change it to cmd+opt+space
 # NEXT_MACHINE: See if this works or not. If it does, great -- remove this comment. If it doesn't, then it wasn't NM's enterprise stuff at all -- add a to-do for it
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled = 0; value = { parameters = (32, 49, 1048576); type = 'standard';}; }"
+# The remapping is ⌃⌥⌘F15 right now, in cased `enabled = 0` doesn't work (it hasn't in the past). At least that's uncommon and will remove the conflict with Alfred in case this is faulty
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled = 0; value = { parameters = (65535, 113, 10223616); type = 'standard';}; }"
 
 ##############################################################
 # Activity Monitor
