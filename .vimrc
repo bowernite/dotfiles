@@ -169,8 +169,8 @@ noremap 0 _
 " Use _ to get back 0's native behavior
 noremap _ 0
 nnoremap I _i
-nnoremap c0 c_
-nnoremap d0 d_
+nnoremap c0 c^
+nnoremap d0 d^
 " When changing a "full line", preserve indentation
 nnoremap cc _C
 
