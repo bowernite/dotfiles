@@ -22,9 +22,9 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>hey feed</string>
+			<string>heyf</string>
 			<key>text</key>
-			<string>Hey - The Feed</string>
+			<string>Open Hey feed</string>
 			<key>url</key>
 			<string>https://app.hey.com/feedbox</string>
 			<key>utf8</key>
@@ -37,7 +37,7 @@
 			<key>keyword</key>
 			<string>hey</string>
 			<key>text</key>
-			<string>Hey</string>
+			<string>Open Hey</string>
 			<key>url</key>
 			<string>https://app.hey.com</string>
 			<key>utf8</key>
@@ -48,9 +48,9 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>hey w</string>
+			<string>hnew</string>
 			<key>text</key>
-			<string>Hey - Write New Message</string>
+			<string>Write a new email in Hey</string>
 			<key>url</key>
 			<string>https://app.hey.com/messages/new</string>
 			<key>utf8</key>
@@ -74,11 +74,50 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>hey paper</string>
+			<string>heypt</string>
 			<key>text</key>
-			<string>Hey - Paper Trail</string>
+			<string>Open Hey paper trail</string>
 			<key>url</key>
 			<string>https://app.hey.com/paper_trail</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>DDC70BC2-35A5-4A69-A151-9E22F118AEE1</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>amf</string>
+			<key>text</key>
+			<string>Open Amazon Fresh</string>
+			<key>url</key>
+			<string>https://www.amazon.com/alm/storefront?almBrandId=QW1hem9uIEZyZXNo</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>EBA68AB4-4113-4CBF-90C3-0628E41F4C6C</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>amf</string>
+			<key>text</key>
+			<string>Search Amazon Fresh for '{query}'</string>
+			<key>url</key>
+			<string>https://www.amazon.com/s?k={query}&amp;i=amazonfresh&amp;ref=nb_sb_noss_1</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>F34A0694-AA85-4701-BB23-2B5383211757</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>amo</string>
+			<key>text</key>
+			<string>Amazon Orders</string>
+			<key>url</key>
+			<string>https://www.amazon.com/gp/your-account/order-history</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
