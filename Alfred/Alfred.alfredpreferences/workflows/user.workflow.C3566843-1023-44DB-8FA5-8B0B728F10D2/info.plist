@@ -85,18 +85,7 @@
 			</dict>
 		</array>
 		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>2901CC42-9061-4E8D-8B07-5570DE21B1F3</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
 		<array>
 			<dict>
@@ -1207,6 +1196,33 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>{query}</string>
+				<key>filetext</key>
+				<string>- {var:mdLink}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1244,33 +1260,6 @@ function titleCase(input) {
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<false/>
-				<key>filename</key>
-				<string>{query}</string>
-				<key>filetext</key>
-				<string>- {var:mdLink}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>2</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1281,7 +1270,7 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Open 2 new lines and enter Vim insert mode</string>
 			<key>xpos</key>
-			<integer>1105</integer>
+			<integer>1155</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -1297,7 +1286,7 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Wait .2 seconds</string>
 			<key>xpos</key>
-			<integer>825</integer>
+			<integer>875</integer>
 			<key>ypos</key>
 			<integer>570</integer>
 		</dict>
@@ -1361,7 +1350,7 @@ function titleCase(input) {
 		<key>7370F59B-6663-43D7-BFC9-C688F3BA761A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1280</integer>
+			<integer>1330</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
@@ -1426,7 +1415,7 @@ function titleCase(input) {
 		<key>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>910</integer>
+			<integer>960</integer>
 			<key>ypos</key>
 			<integer>540</integer>
 		</dict>
