@@ -23,6 +23,7 @@
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
 source ~/dotfiles/bin/utils.sh
+cd $dotfiles_dir
 
 clear
 printf "Hi, $USER! 👋\n"

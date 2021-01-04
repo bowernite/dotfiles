@@ -7,7 +7,7 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+dotfiles_dir=~/dotfiles
 
 install_dotfile() {
   local name="$1"
