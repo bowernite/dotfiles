@@ -31,7 +31,7 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 " General options
 
 " Change the leader to space
-let mapleader = "\<Space>"
+let mapleader = "<Space>"
 
 " Copy to clipboard when yanking
 set clipboard=unnamed
@@ -142,7 +142,7 @@ nnoremap <silent> <leader>x :x<CR>
 nnoremap <leader>u :Prettier<CR>
 
 " Paste last yanked with <leader>p (last yanked will be in `0` register, while last yanked _or_ deleted will be in default register)
-nnoremap <leader>p \"0p
+nnoremap <leader>p "0p
 
 " Change default keybindings for moving through jump history to <C-[> and <C-]>
 " (my global keyboard overrides use the defaults of <C-i> and <C-o>
