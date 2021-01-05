@@ -102,6 +102,23 @@ touch_dir ~/src/personal
 touch_dir ~/src/work
 
 ##############################################################
+# Clone git repos
+#
+# NEXT_MACHINE: See if this worked
+##############################################################
+
+function clone_repo() {
+  local repo_name=$1
+  if [[ ! -d $1 ]]; then
+    git clone "https://github.com/babramczyk/$repo_name.git" "~/src/personal/$repo_name"
+  fi
+}
+
+clone_repo base-project-config
+clone_repo abramczyk.dev
+clone_repo doofi
+
+##############################################################
 # Fin
 ##############################################################
 
