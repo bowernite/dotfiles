@@ -31,7 +31,7 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 " General options
 
 " Change the leader to space
-let mapleader = "<Space>"
+let mapleader = "\<Space>"
 
 " Copy to clipboard when yanking
 set clipboard=unnamed
