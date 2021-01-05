@@ -94,6 +94,8 @@ alias myip="curl http://ipecho.net/plain; echo"
 # Change ping to stop after 5 pings
 alias ping="ping -c 5"
 alias c="clear"
+# I do this all the time when I need to re-source my zshrc
+alias ez="exec zsh"
 
 # Clears the screen and runs the succeeding command(s)
 run() {
