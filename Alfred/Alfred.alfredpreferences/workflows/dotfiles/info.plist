@@ -219,7 +219,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>vrc</string>
+				<string>vimrc</string>
 				<key>subtext</key>
 				<string>Edit .vimrc with VS Code</string>
 				<key>text</key>
@@ -270,7 +270,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>zrc</string>
+				<string>zshrc</string>
 				<key>subtext</key>
 				<string>Edit .zshrc with VS Code</string>
 				<key>text</key>

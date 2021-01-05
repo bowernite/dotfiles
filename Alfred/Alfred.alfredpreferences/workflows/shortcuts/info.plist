@@ -118,6 +118,16 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>F6598189-DE68-420E-8C82-D9D352675562</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>D5D82D2D-6193-47B2-BF78-50F9EA0D23C1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -275,7 +285,26 @@ end alfred_script</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>https://mint.intuit.com/sso_login/index.html?offering_id=Intuit.ifs.mint&amp;namespace_id=50000026&amp;redirect_url=https%3A%2F%2Fmint.intuit.com%2Foverview.event%3Futm_medium%3Ddirect%26cta%3Dnav_login_dropdown%26ivid%3Da6e7881a-cd92-47b7-9264-f2e5bb9201aa</string>
+				<string>https://mint.intuit.com/trend.event</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F6598189-DE68-420E-8C82-D9D352675562</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://mint.intuit.com/overview.event</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -457,23 +486,23 @@ end alfred_script</string>
 		<key>072F17A0-474E-4829-ABB6-862FDDE0A44A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>405</integer>
+			<integer>425</integer>
 			<key>ypos</key>
-			<integer>755</integer>
+			<integer>910</integer>
 		</dict>
 		<key>09AFB55E-784E-4FE0-A229-CFDCB25A6115</key>
 		<dict>
 			<key>xpos</key>
-			<integer>230</integer>
+			<integer>250</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>189E72DD-18CF-44BC-BA6E-33264C7AAE7F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>1200</integer>
+			<integer>1340</integer>
 		</dict>
 		<key>3CB66A88-5E86-42E7-9CF3-FACCDEEA351E</key>
 		<dict>
@@ -485,9 +514,9 @@ end alfred_script</string>
 		<key>4950E4EA-F631-421E-BDEC-7B866524F43C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>45</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>1045</integer>
+			<integer>1185</integer>
 		</dict>
 		<key>60FCF7FE-47C0-4AD8-B227-F61FDDB57876</key>
 		<dict>
@@ -499,9 +528,9 @@ end alfred_script</string>
 		<key>6D78D81E-1C2E-43E3-B63B-79EA3875F7F4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>215</integer>
+			<integer>220</integer>
 			<key>ypos</key>
-			<integer>755</integer>
+			<integer>910</integer>
 		</dict>
 		<key>6DC5C6E5-3127-4078-89D1-11BD4F3C0A07</key>
 		<dict>
@@ -527,35 +556,42 @@ end alfred_script</string>
 		<key>C268ECF9-AF5A-408E-9D60-7D4B79242DDC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>260</integer>
 			<key>ypos</key>
-			<integer>890</integer>
+			<integer>1030</integer>
 		</dict>
 		<key>C322E44A-CCA7-4A83-90D5-238F1AFC3298</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>70</integer>
 			<key>ypos</key>
-			<integer>890</integer>
+			<integer>1030</integer>
 		</dict>
 		<key>CC8449E2-FBF0-4F75-9CE0-A0E009687184</key>
 		<dict>
 			<key>xpos</key>
-			<integer>235</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>1045</integer>
+			<integer>1185</integer>
 		</dict>
 		<key>CDE14BF2-FCF4-4D4C-A842-9C9102EF41D5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>405</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>220</integer>
 		</dict>
 		<key>D5D82D2D-6193-47B2-BF78-50F9EA0D23C1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>415</integer>
+			<key>ypos</key>
+			<integer>775</integer>
+		</dict>
+		<key>F6598189-DE68-420E-8C82-D9D352675562</key>
+		<dict>
+			<key>xpos</key>
+			<integer>415</integer>
 			<key>ypos</key>
 			<integer>650</integer>
 		</dict>
