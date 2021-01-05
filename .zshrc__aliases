@@ -62,6 +62,9 @@ alias gundo="git reset HEAD~"
 # "git undo soft/staged": "undoes" the last commit, and puts its changes into the staging area
 alias gundos="git reset HEAD~ --soft"
 
+# "git abandon": See .gitconfig alias for details
+alias gab="git abandon"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
