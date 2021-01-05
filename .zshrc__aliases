@@ -92,13 +92,16 @@ alias nip="npm install -P"
 alias goto="vim -o \`fzf\`"
 # Make sure dotfiles are shown by ls
 alias ls="ls -A"
+# List directories
+alias lsd=ls -d */
 # Log ip to console
 alias myip="curl http://ipecho.net/plain; echo"
 # Change ping to stop after 5 pings
 alias ping="ping -c 5"
 alias c="clear"
-# I do this all the time when I need to re-source my zshrc
+# I do these all the time when I'm mucking around with zsh/my .zshrc
 alias ez="exec zsh"
+alias sz="source ~/.zshrc"
 
 # Clears the screen and runs the succeeding command(s)
 run() {
