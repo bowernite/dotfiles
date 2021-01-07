@@ -70,6 +70,13 @@ alias gbm="git branch -m"
 
 alias gap="git add --patch"
 
+# Remap oh-my-zsh's default `gup`
+alias gpr="git pull --rebase"
+
+# Quick commites with `gitupdate` go package
+alias gup="gitupdate ."
+alias gupp="gitupdate . && git push"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
