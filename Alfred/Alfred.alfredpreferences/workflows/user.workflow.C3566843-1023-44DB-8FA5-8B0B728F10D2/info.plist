@@ -387,7 +387,7 @@
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/Documents/Personal Docs/Notes Wiki</string>
+					<string>~/src/personal/notes</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
@@ -561,7 +561,7 @@
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/Documents/Personal Docs/Notes Wiki</string>
+					<string>~/src/personal/notes</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
@@ -614,7 +614,7 @@
 				<key>createintermediatefolders</key>
 				<false/>
 				<key>filename</key>
-				<string>~/Documents/Personal Docs/Notes Wiki/not-imported/{var:basename}.md</string>
+				<string>~/src/personal/notes/public/{var:basename}.md</string>
 				<key>filetext</key>
 				<string># {var:title}
 
@@ -912,7 +912,7 @@ function titleCase(input) {
 				<key>createintermediatefolders</key>
 				<false/>
 				<key>filename</key>
-				<string>~/Documents/Personal Docs/Notes Wiki/not-imported/{var:basename}.md</string>
+				<string>~/src/personal/notes/public/{var:basename}.md</string>
 				<key>filetext</key>
 				<string># {var:title}
 
@@ -1004,7 +1004,7 @@ function titleCase(input) {
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/Documents/Personal Docs/Notes Wiki</string>
+					<string>~/src/personal/notes</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
@@ -1196,33 +1196,6 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<false/>
-				<key>filename</key>
-				<string>{query}</string>
-				<key>filetext</key>
-				<string>- {var:mdLink}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>2</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1259,6 +1232,33 @@ function titleCase(input) {
 			<string>36D77114-C3B6-4047-AEE3-6991DF73FDBA</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>{query}</string>
+				<key>filetext</key>
+				<string>- {var:mdLink}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
