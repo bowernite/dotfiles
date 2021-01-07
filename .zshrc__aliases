@@ -68,6 +68,8 @@ alias gab="git abandon"
 # "git branch modify": Rename a branch
 alias gbm="git branch -m"
 
+alias gap="git add --patch"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
