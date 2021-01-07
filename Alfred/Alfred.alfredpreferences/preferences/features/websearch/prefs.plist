@@ -33,7 +33,7 @@
 		<key>5871AA83-1583-45BD-8D23-CC105335245D</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>hey</string>
 			<key>text</key>
@@ -63,7 +63,7 @@
 			<key>keyword</key>
 			<string>mdn</string>
 			<key>text</key>
-			<string>mdn</string>
+			<string>Search mdn for '{query}'</string>
 			<key>url</key>
 			<string>https://www.google.com/search?btnI&amp;q=site%3Adeveloper.mozilla.org+{query}</string>
 			<key>utf8</key>
