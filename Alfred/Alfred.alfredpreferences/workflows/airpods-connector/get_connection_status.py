@@ -7,6 +7,8 @@ import sys
 
 mac = os.getenv('AIRPODS_MAC')
 
+# test
+
 if mac == None or mac == "":
     menu = {
         "items": [
