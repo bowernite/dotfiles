@@ -214,6 +214,7 @@
         [:p [:opena "Spotify"]]
         [:i [:opena "Messages"]]
         ; zOOm
+        ; test
         [:o [:opena "zoom.us.app"]]
         [:quote [:opena "Music"]]
         ; todo: Open hey URL. Or just trigger alfred workflow
