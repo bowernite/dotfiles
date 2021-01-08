@@ -143,12 +143,12 @@
       ]
     }
 
-    {
-      :des "Disable cmd+tab"
-      :rules [
-        [:!Ctab :vk_none]
-      ]
-    }
+    ; {
+    ;   :des "Disable cmd+tab"
+    ;   :rules [
+    ;     [:!Ctab :vk_none]
+    ;   ]
+    ; }
 
     ; {
     ;   :des "launch mode"
