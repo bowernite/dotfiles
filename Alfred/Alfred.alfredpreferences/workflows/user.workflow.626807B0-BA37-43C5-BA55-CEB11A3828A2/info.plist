@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>bja.md-links</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>4D453CF7-925A-4217-840E-2F441770B34D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D703A283-AE5B-4A47-89B3-8BD57EE732A7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D703A283-AE5B-4A47-89B3-8BD57EE732A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FCBDF171-D47C-4F87-8F97-B2B1854B3650</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Brett Abramczyk</string>
+	<key>description</key>
+	<string>Generate useful Markdown links</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Markdown Links</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>triggerid</key>
+				<string>md link tab</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>7612D840-0217-4DD1-ABA1-2B09530D3288</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mdt</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create MD link from current tab</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+
+  const chrome = Application("Google Chrome")
+  const activeTab = chrome.windows[0].activeTab
+  const { url, title: tabTitle } = activeTab
+
+  const givenTitle = query;
+  const title = givenTitle || tabTitle()
+
+  return `[${title}](${url()})`;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>D703A283-AE5B-4A47-89B3-8BD57EE732A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>mds</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create a MD link from the current text selection</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>FCBDF171-D47C-4F87-8F97-B2B1854B3650</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+
+  chrome = Application("Google Chrome");
+  activeTab = chrome.windows[0].activeTab
+  chrome.copySelection(activeTab);
+
+  systemEvents = Application('System Events');
+  systemEvents.includeStandardAdditions = true;  
+  linkTitle = systemEvents.theClipboard();
+
+  return linkTitle;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</key>
+		<dict>
+			<key>note</key>
+			<string>Make MD link from current tab title and URL</string>
+			<key>xpos</key>
+			<integer>215</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</key>
+		<dict>
+			<key>note</key>
+			<string>Copy selected text in Chrome to clipboard.
+
+NOTE: As of now, will also take whatever's already in the clipboard</string>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>445</integer>
+		</dict>
+		<key>4D453CF7-925A-4217-840E-2F441770B34D</key>
+		<dict>
+			<key>note</key>
+			<string>Construct the MD link</string>
+			<key>xpos</key>
+			<integer>605</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>7612D840-0217-4DD1-ABA1-2B09530D3288</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</key>
+		<dict>
+			<key>xpos</key>
+			<integer>905</integer>
+			<key>ypos</key>
+			<integer>275</integer>
+		</dict>
+		<key>D703A283-AE5B-4A47-89B3-8BD57EE732A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>795</integer>
+			<key>ypos</key>
+			<integer>305</integer>
+		</dict>
+		<key>FCBDF171-D47C-4F87-8F97-B2B1854B3650</key>
+		<dict>
+			<key>note</key>
+			<string>Make markdown link from selected text and current tab URL</string>
+			<key>xpos</key>
+			<integer>190</integer>
+			<key>ypos</key>
+			<integer>445</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

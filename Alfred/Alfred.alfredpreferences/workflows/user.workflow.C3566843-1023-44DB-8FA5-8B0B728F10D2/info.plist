@@ -1372,6 +1372,25 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>md link tab</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>bja.md-links</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>18C68F37-94A8-46B2-9CB2-26E7BA75400E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -1463,6 +1482,13 @@ function titleCase(input) {
 			<integer>320</integer>
 			<key>ypos</key>
 			<integer>705</integer>
+		</dict>
+		<key>18C68F37-94A8-46B2-9CB2-26E7BA75400E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1055</integer>
+			<key>ypos</key>
+			<integer>1345</integer>
 		</dict>
 		<key>21ECEE94-5798-4112-87C1-C650A53C9CA5</key>
 		<dict>
@@ -1591,7 +1617,7 @@ function titleCase(input) {
 		<key>84E682B7-4405-488E-B9AC-102C5D6B67D1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1050</integer>
+			<integer>1045</integer>
 			<key>ypos</key>
 			<integer>1195</integer>
 		</dict>
@@ -1633,9 +1659,9 @@ function titleCase(input) {
 		<key>A45D872D-C93F-4C43-BF88-5B905825E95E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1220</integer>
+			<integer>1265</integer>
 			<key>ypos</key>
-			<integer>1310</integer>
+			<integer>1335</integer>
 		</dict>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<dict>
