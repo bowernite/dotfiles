@@ -112,6 +112,7 @@ alias c="clear"
 # I do these all the time when I'm mucking around with zsh/my .zshrc
 alias ez="exec zsh"
 alias sz="source ~/.zshrc"
+alias alg="alias | grep"
 
 # Clears the screen and runs the succeeding command(s)
 run() {
