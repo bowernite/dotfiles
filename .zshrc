@@ -85,7 +85,7 @@ _fzf_compgen_path() {
 setopt auto_cd
 
 # TODO: Update these paths when I update my directory structure
-cdpath=($HOME/personal $HOME/nml)
+cdpath=($HOME/src $HOME/playground $HOME/personal)
 
 # Show named and cdpath directories in autocomplete suggestions
 # Source: https://superuser.com/questions/515633/my-zsh-autocompletion-for-cdpath-stopped-working
