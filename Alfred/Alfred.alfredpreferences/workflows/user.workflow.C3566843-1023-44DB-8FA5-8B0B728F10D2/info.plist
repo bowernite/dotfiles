@@ -19,6 +19,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>15025469-9F5F-4202-9E6F-EB0557C599D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>21ECEE94-5798-4112-87C1-C650A53C9CA5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>91264C2D-A87E-41DC-9D37-60551D8A7214</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2901CC42-9061-4E8D-8B07-5570DE21B1F3</key>
 		<array>
 			<dict>
@@ -62,7 +88,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<string>21ECEE94-5798-4112-87C1-C650A53C9CA5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -76,6 +102,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>70F14922-D8AF-4079-A8DE-0A73250E530E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>15025469-9F5F-4202-9E6F-EB0557C599D6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -176,6 +215,19 @@
 		</array>
 		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
 		<array/>
+		<key>91264C2D-A87E-41DC-9D37-60551D8A7214</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</key>
 		<array>
 			<dict>
@@ -206,7 +258,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B20DC028-EBF6-4294-88F3-08206C4443FB</string>
+				<string>21ECEE94-5798-4112-87C1-C650A53C9CA5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AC99DC55-EA0E-4E6E-8E1F-253E5D37A438</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70F14922-D8AF-4079-A8DE-0A73250E530E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -259,6 +324,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>E5400D8A-EE0E-4EBA-9862-A5B9ABECC53E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70F14922-D8AF-4079-A8DE-0A73250E530E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -324,7 +402,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Brett's Brain</string>
+	<string>Brett's Wiki</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -380,21 +458,21 @@
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>nb</string>
+				<string>ws</string>
 				<key>limit</key>
 				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/src/personal/notes</string>
+					<string>~/src/personal/wiki</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search note bodies</string>
+				<string>Search wiki content</string>
 				<key>types</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
@@ -554,14 +632,14 @@
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>n</string>
+				<string>w</string>
 				<key>limit</key>
 				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/src/personal/notes</string>
+					<string>~/src/personal/wiki</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
@@ -582,59 +660,6 @@
 			<string>BCE7C345-2B71-4131-9229-446F3D398110</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>n</string>
-				<key>subtext</key>
-				<string>Create a new note</string>
-				<key>text</key>
-				<string>New note</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<false/>
-				<key>filename</key>
-				<string>~/src/personal/notes/public/{var:basename}.md</string>
-				<key>filetext</key>
-				<string># {var:title}
-
-## Notes
-
-## Links
-</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -660,17 +685,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>↩</string>
+				<key>keycode</key>
+				<integer>36</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
-			<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
+			<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
 			<key>version</key>
-			<integer>3</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -690,6 +721,89 @@
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>2901CC42-9061-4E8D-8B07-5570DE21B1F3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>w</string>
+				<key>subtext</key>
+				<string>Create a new note</string>
+				<key>text</key>
+				<string>New note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>21ECEE94-5798-4112-87C1-C650A53C9CA5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wn</string>
+				<key>subtext</key>
+				<string>Create and open a new wiki file</string>
+				<key>text</key>
+				<string>New wiki file</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A89E933C-3873-4B67-B14C-17B78298CDBF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>wiki_dir</key>
+					<string>public</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>91264C2D-A87E-41DC-9D37-60551D8A7214</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -773,21 +887,67 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>↩</string>
-				<key>keycode</key>
-				<integer>36</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
+				<key>adduuid</key>
 				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>~/src/personal/wiki/{var:wiki_dir}/{var:basename}.md</string>
+				<key>filetext</key>
+				<string># {var:title}
+
+## Notes
+
+## Links
+</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<string>alfred.workflow.output.writefile</string>
 			<key>uid</key>
-			<string>7370F59B-6663-43D7-BFC9-C688F3BA761A</string>
+			<string>E606C45E-CD82-4731-9480-1E5403ADBD61</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>wiki_dir</key>
+					<string>private</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>15025469-9F5F-4202-9E6F-EB0557C599D6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -797,31 +957,47 @@ function titleCase(input) {
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>nn</string>
+				<string>w</string>
 				<key>subtext</key>
-				<string>Create a new note</string>
+				<string>Create and open a new private wiki file</string>
 				<key>text</key>
-				<string>New note</string>
+				<string>New private wiki file</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>A89E933C-3873-4B67-B14C-17B78298CDBF</string>
+			<string>AC99DC55-EA0E-4E6E-8E1F-253E5D37A438</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>70F14922-D8AF-4079-A8DE-0A73250E530E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>seconds</key>
-				<string>.2</string>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wnp</string>
+				<key>subtext</key>
+				<string>Create and open a new private wiki file</string>
+				<key>text</key>
+				<string>New private wiki file</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>2901CC42-9061-4E8D-8B07-5570DE21B1F3</string>
+			<string>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -905,6 +1081,27 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wal</string>
+				<key>subtext</key>
+				<string>Append current tab as MD link to new wiki file</string>
+				<key>text</key>
+				<string>Append tab to new wiki file</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C115FD1D-09F9-42A8-BB42-ABB475C13691</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -912,7 +1109,7 @@ function titleCase(input) {
 				<key>createintermediatefolders</key>
 				<false/>
 				<key>filename</key>
-				<string>~/src/personal/notes/public/{var:basename}.md</string>
+				<string>~/src/personal/wiki/public/{var:basename}.md</string>
 				<key>filetext</key>
 				<string># {var:title}
 
@@ -938,21 +1135,36 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>nal</string>
-				<key>subtext</key>
-				<string>Append current tab as MD link to new note</string>
-				<key>text</key>
-				<string>Append tab to new note</string>
-				<key>withspace</key>
-				<true/>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>C115FD1D-09F9-42A8-BB42-ABB475C13691</string>
+			<string>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>⎋</string>
+				<key>keycode</key>
+				<integer>53</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>84751103-E81D-4F6F-B259-0338056B8629</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -997,21 +1209,21 @@ function titleCase(input) {
 				<key>includesystem</key>
 				<false/>
 				<key>keyword</key>
-				<string>nal</string>
+				<string>wal</string>
 				<key>limit</key>
 				<integer>0</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>scopes</key>
 				<array>
-					<string>~/src/personal/notes</string>
+					<string>~/src/personal/wiki</string>
 				</array>
 				<key>sortmode</key>
 				<integer>0</integer>
 				<key>subtext</key>
-				<string>Append the current tab as a MD link to a note</string>
+				<string>Append the current tab as a MD link to a wiki file</string>
 				<key>title</key>
-				<string>Append tab to note</string>
+				<string>Append tab to wiki file</string>
 				<key>types</key>
 				<array>
 					<string>net.daringfireball.markdown</string>
@@ -1090,21 +1302,6 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>count</key>
 				<integer>1</integer>
 				<key>keychar</key>
@@ -1120,27 +1317,6 @@ function titleCase(input) {
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
 			<string>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>⎋</string>
-				<key>keycode</key>
-				<integer>53</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>84751103-E81D-4F6F-B259-0338056B8629</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1196,6 +1372,33 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>adduuid</key>
+				<false/>
+				<key>allowemptyfiles</key>
+				<true/>
+				<key>createintermediatefolders</key>
+				<false/>
+				<key>filename</key>
+				<string>{query}</string>
+				<key>filetext</key>
+				<string>- {var:mdLink}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>relativepathmode</key>
+				<integer>0</integer>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.writefile</string>
+			<key>uid</key>
+			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1233,33 +1436,6 @@ function titleCase(input) {
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>adduuid</key>
-				<false/>
-				<key>allowemptyfiles</key>
-				<true/>
-				<key>createintermediatefolders</key>
-				<false/>
-				<key>filename</key>
-				<string>{query}</string>
-				<key>filetext</key>
-				<string>- {var:mdLink}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>relativepathmode</key>
-				<integer>0</integer>
-				<key>type</key>
-				<integer>2</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.writefile</string>
-			<key>uid</key>
-			<string>4772E9FF-5CC2-4427-9015-D635536E6430</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -1270,34 +1446,48 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Open 2 new lines and enter Vim insert mode</string>
 			<key>xpos</key>
-			<integer>1155</integer>
+			<integer>1170</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>345</integer>
 		</dict>
 		<key>136F8BB7-6EBD-47F9-8FEA-A61377AE66EB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1280</integer>
+			<integer>1265</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
+		</dict>
+		<key>15025469-9F5F-4202-9E6F-EB0557C599D6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>705</integer>
+		</dict>
+		<key>21ECEE94-5798-4112-87C1-C650A53C9CA5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>245</integer>
+			<key>ypos</key>
+			<integer>525</integer>
 		</dict>
 		<key>2901CC42-9061-4E8D-8B07-5570DE21B1F3</key>
 		<dict>
 			<key>note</key>
 			<string>Wait .2 seconds</string>
 			<key>xpos</key>
-			<integer>875</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>570</integer>
+			<integer>375</integer>
 		</dict>
 		<key>36D77114-C3B6-4047-AEE3-6991DF73FDBA</key>
 		<dict>
 			<key>note</key>
 			<string>TODO: This works if I ever want to just add the link without opening the file. The only thing to fix is the gap between the new link and the rest</string>
 			<key>xpos</key>
-			<integer>310</integer>
+			<integer>295</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<integer>1365</integer>
 		</dict>
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
@@ -1311,21 +1501,21 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Could also just copy-paste this to the "new note" part of `nal` above</string>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>455</integer>
 			<key>ypos</key>
-			<integer>1070</integer>
+			<integer>1365</integer>
 		</dict>
 		<key>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</key>
 		<dict>
 			<key>xpos</key>
-			<integer>740</integer>
+			<integer>725</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<dict>
 			<key>note</key>
-			<string>Create a new note (shown amongst `n` note query)</string>
+			<string>Create a new note (shown amongst `w` note query)</string>
 			<key>xpos</key>
 			<integer>80</integer>
 			<key>ypos</key>
@@ -1334,25 +1524,32 @@ function titleCase(input) {
 		<key>55A246D6-91C2-4467-9E59-B26355B299E6</key>
 		<dict>
 			<key>note</key>
-			<string>Search for existing notes (by filename)</string>
+			<string>Search for wiki file to append current tab as markdown link to</string>
 			<key>xpos</key>
-			<integer>80</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
+		</dict>
+		<key>70F14922-D8AF-4079-A8DE-0A73250E530E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>800</integer>
 		</dict>
 		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>660</integer>
+			<integer>875</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>605</integer>
 		</dict>
 		<key>7370F59B-6663-43D7-BFC9-C688F3BA761A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1330</integer>
+			<integer>1345</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>345</integer>
 		</dict>
 		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
 		<dict>
@@ -1380,30 +1577,30 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Wait .2 seconds</string>
 			<key>xpos</key>
-			<integer>480</integer>
+			<integer>465</integer>
 			<key>ypos</key>
-			<integer>930</integer>
+			<integer>1225</integer>
 		</dict>
 		<key>84751103-E81D-4F6F-B259-0338056B8629</key>
 		<dict>
 			<key>xpos</key>
-			<integer>575</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>84E682B7-4405-488E-B9AC-102C5D6B67D1</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1065</integer>
+			<integer>1050</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</key>
 		<dict>
 			<key>xpos</key>
-			<integer>285</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
 		<dict>
@@ -1412,51 +1609,67 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
+		<key>91264C2D-A87E-41DC-9D37-60551D8A7214</key>
+		<dict>
+			<key>xpos</key>
+			<integer>320</integer>
+			<key>ypos</key>
+			<integer>575</integer>
+		</dict>
 		<key>987F2B5D-B80D-41BA-8B0C-AFC7BE78C74E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>960</integer>
+			<integer>975</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>345</integer>
 		</dict>
 		<key>9A5C8093-7FF1-49CA-8D6E-609938732294</key>
 		<dict>
 			<key>xpos</key>
-			<integer>435</integer>
+			<integer>420</integer>
 			<key>ypos</key>
-			<integer>725</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>A45D872D-C93F-4C43-BF88-5B905825E95E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1235</integer>
+			<integer>1220</integer>
 			<key>ypos</key>
-			<integer>1015</integer>
+			<integer>1310</integer>
 		</dict>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<dict>
 			<key>note</key>
-			<string>Create a new note</string>
+			<string>Create a new wiki file</string>
 			<key>xpos</key>
 			<integer>75</integer>
 			<key>ypos</key>
 			<integer>560</integer>
 		</dict>
+		<key>AC99DC55-EA0E-4E6E-8E1F-253E5D37A438</key>
+		<dict>
+			<key>note</key>
+			<string>Create a new private wiki file (shown amonst `w` query)</string>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>710</integer>
+		</dict>
 		<key>ADB441A7-DB88-4664-A99F-B9B758214726</key>
 		<dict>
 			<key>xpos</key>
-			<integer>900</integer>
+			<integer>885</integer>
 			<key>ypos</key>
-			<integer>900</integer>
+			<integer>1195</integer>
 		</dict>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<dict>
 			<key>note</key>
 			<string>Create the filename and header based on the query</string>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>425</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>605</integer>
 		</dict>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<dict>
@@ -1469,10 +1682,12 @@ function titleCase(input) {
 		</dict>
 		<key>C115FD1D-09F9-42A8-BB42-ABB475C13691</key>
 		<dict>
+			<key>note</key>
+			<string>Create a wiki file and append the current tab as a markdown link</string>
 			<key>xpos</key>
-			<integer>75</integer>
+			<integer>65</integer>
 			<key>ypos</key>
-			<integer>725</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>CD33CDD6-50F7-488A-A77F-126388B715F7</key>
 		<dict>
@@ -1483,21 +1698,30 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>50</integer>
 		</dict>
+		<key>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</key>
+		<dict>
+			<key>note</key>
+			<string>Create a new private wiki file</string>
+			<key>xpos</key>
+			<integer>65</integer>
+			<key>ypos</key>
+			<integer>875</integer>
+		</dict>
 		<key>E5400D8A-EE0E-4EBA-9862-A5B9ABECC53E</key>
 		<dict>
 			<key>note</key>
 			<string>Create the filename and header based on the query</string>
 			<key>xpos</key>
-			<integer>270</integer>
+			<integer>255</integer>
 			<key>ypos</key>
-			<integer>725</integer>
+			<integer>1020</integer>
 		</dict>
 		<key>E606C45E-CD82-4731-9480-1E5403ADBD61</key>
 		<dict>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>645</integer>
 			<key>ypos</key>
-			<integer>540</integer>
+			<integer>605</integer>
 		</dict>
 		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
 		<dict>
