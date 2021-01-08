@@ -212,7 +212,7 @@
         [:m [:opena "Trello"]]
         ; sPotify
         [:p [:opena "Spotify"]]
-        [:i [:opena "Messages"]]
+        ; [:i [:opena "Messages"]]
         ; zOOm
         ; test
         [:o [:opena "zoom.us.app"]]
