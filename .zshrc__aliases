@@ -76,6 +76,9 @@ alias gpr="git pull --rebase"
 # Quick commites with `gitupdate` go package
 alias gup="gitupdate ."
 
+# "git publish": See .gitcnofig alias for details
+alias gpub="git publish"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
