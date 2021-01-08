@@ -45,11 +45,12 @@ export __TRELLO_TOKEN=
 
 - [ ] That Alfred is indexing markdown files properly. In Alfred's modal, try `in <text>`, where text is some text that exists in a markdown file on the machine. If this doesn't work, try running [setup/make-spotlight-index-markdown.sh](setup/make-spotlight-index-markdown.sh) again. If it does work right away, remove this blurb.
 
-### macOS Preferences 👨‍💻
+### One-offs
 
-The macOS setup script tries to set all necessary preferences as best it can, but there's a few essential things it doesn't work work with yet. Maybe we'll fix those one day, but for now just go and manually check these.
+I try to automate everything I can, but here's everything I haven't yet, or maybe don't ever want to, or maybe it's just too early to tell if these are evergreen yet.
 
 - Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
+- Save Trello (and Slack) as "apps" from Chrome (overflow menu > `More Tools` > `Create shortcut…` > check `Open as new window`)
 
 ### Rectangle ▬
 
