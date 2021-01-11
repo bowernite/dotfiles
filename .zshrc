@@ -6,12 +6,12 @@
 dotfiles_dir="$HOME/dotfiles"
 
 # The generated file that comes from oh-my-zsh
-source $dotfiles_dir/.zshrc__generated
+source .zshrc__generated
 # Private stuff (keys, company-specific, etc.)
-if [ -e $dotfiles_dir/.zshrc__private ]; then
-  source $dotfiles_dir/.zshrc__private
+if [ -e .zshrc__private ]; then
+  source .zshrc__private
 fi
-source $dotfiles_dir/.zshrc__aliases
+source .zshrc__aliases
 
 ##############################################################
 # PATH shenanigans
