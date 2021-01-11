@@ -100,8 +100,9 @@ touch_dir ~/src/work
 
 function clone_repo() {
   local repo_name=$1
-  if [[ ! -d $1 ]]; then
-    git clone "https://github.com/babramczyk/$repo_name.git" "~/src/personal/$repo_name"
+  local target_dir="$HOME/src/personal/$repo_name"
+  if [[ ! -d $target_dir ]]; then
+    git clone "https://github.com/babramczyk/$repo_name.git" $target_dir
   fi
 }
 
