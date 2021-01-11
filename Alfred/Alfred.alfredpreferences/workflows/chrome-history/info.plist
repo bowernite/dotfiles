@@ -81,7 +81,7 @@
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>keyword</key>
-				<string>chr</string>
+				<string>rec</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -103,7 +103,7 @@ python chrome.py "${PROFILE}" "{query}"</string>
 				<key>subtext</key>
 				<string>Search URLs in your profile's history</string>
 				<key>title</key>
-				<string>Google Chrome History</string>
+				<string>Recent Chrome History</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
