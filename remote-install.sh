@@ -2,7 +2,7 @@
 
 SOURCE="https://github.com/babramczyk/dotfiles"
 TARBALL="$SOURCE/tarball/master"
-TARGET="$HOME/dotfiles"
+TARGET="$HOME/src/personal/dotfiles"
 TAR_CMD="tar -xzv -C "$TARGET" --strip-components=1 --exclude='{.gitignore}'"
 
 is_executable() {

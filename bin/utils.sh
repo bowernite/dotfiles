@@ -7,7 +7,7 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-dotfiles_dir=~/dotfiles
+dotfiles_dir=~/src/personal/dotfiles
 
 install_dotfile() {
   local name="$1"
@@ -27,7 +27,7 @@ log() {
     local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     printf "\n\n\n" 
     echo $separator
-    echo "👨‍💻 $1"
+    echo "‍💻 $1"
     echo $separator
     echo
 }

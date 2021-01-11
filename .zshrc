@@ -2,15 +2,10 @@
 # Imports
 ##############################################################
 
-# Yeah... I mean ideally this would be computed and not so nashty, but deriving this doesn't seem too easy because of symlinking -- unless the zsh session is launched from this directory, it always thinks the current directory is $HOME, the directory of the symlink target `.zshrc`
-dotfiles_dir="$HOME/dotfiles"
-
 # The generated file that comes from oh-my-zsh
 source .zshrc__generated
 # Private stuff (keys, company-specific, etc.)
-if [ -e .zshrc__private ]; then
-  source .zshrc__private
-fi
+source .zshrc__private
 source .zshrc__aliases
 
 ##############################################################
@@ -98,7 +93,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
 # See .sandboxrc for details
-source ~/dotfiles/bin/sandboxd
+source ~/src/personal/dotfiles/bin/sandboxd
 
 # NEXT_MACHINE: Make sure nvm is installed correctly. When homebrew installs it, it might try to put similar lines in this file (but we don't want it to, because we're making our own modifications)
 export NVM_DIR="$HOME/.nvm"

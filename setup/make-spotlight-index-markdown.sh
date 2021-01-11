@@ -17,7 +17,7 @@ set -e
 
 # Source: https://github.com/solarsailer/dotfiles/blob/a4771c67a163533ecc5bda47d19302dafb82ca83/scripts/markdown-spotlight-importer.bash 
 
-dotfiles_dir=$HOME/dotfiles
+dotfiles_dir=$HOME/src/personal/dotfiles
 
 if [[ ! -e /Library/Spotlight/Markdown.mdimporter ]]; then
   # Just to make this idempotent, scrap any work we've already done through this script so we can start fresh and try it again

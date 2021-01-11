@@ -2,7 +2,7 @@
 # Homebrew setup
 ##############################################################
 
-source ~/dotfiles/bin/utils.sh
+source ~/src/personal/dotfiles/bin/utils.sh
 
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
