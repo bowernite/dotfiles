@@ -26,8 +26,11 @@ sleep 2s
 log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
 install_dotfile ".zshrc"
+install_dotfile ".zshrc__generated"
+install_dotfile ".zshrc__aliases"
 install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
+install_dotfile ".vimrc__defaults"
 install_dotfile ".sandboxrc"
 
 ##############################################################

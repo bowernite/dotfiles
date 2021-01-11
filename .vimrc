@@ -1,4 +1,4 @@
-source ~/dotfiles/.vimrc__defaults
+source .vimrc__defaults
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
