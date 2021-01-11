@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>modalt</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>modcmd</key>
 	<integer>1</integer>
 	<key>modctrl</key>
-	<integer>3</integer>
+	<integer>4</integer>
 </dict>
 </plist>
