@@ -189,7 +189,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles</string>
+				<string>~/src/personal/dotfiles</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -204,7 +204,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles</string>
+				<string>~/src/personal/dotfiles</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -240,7 +240,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles/.vimrc</string>
+				<string>~/src/personal/dotfiles/.vimrc</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -255,7 +255,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles/.zshrc</string>
+				<string>~/src/personal/dotfiles/.zshrc</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -291,7 +291,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles</string>
+				<string>~/src/personal/dotfiles</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -306,7 +306,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles/karabiner/karabiner.edn</string>
+				<string>~/src/personal/dotfiles/karabiner/karabiner.edn</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
@@ -321,7 +321,7 @@
 				<key>openwith</key>
 				<string>/Applications/Visual Studio Code.app</string>
 				<key>sourcefile</key>
-				<string>~/dotfiles</string>
+				<string>~/src/personal/dotfiles</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>

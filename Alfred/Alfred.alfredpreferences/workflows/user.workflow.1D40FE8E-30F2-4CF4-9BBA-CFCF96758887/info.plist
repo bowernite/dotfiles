@@ -147,7 +147,7 @@
 # Version 1.6.2
 # https://github.com/MikoMagni/Trello-Workflow-for-Alfred
 
-source ~/dotfiles/.zshrc__private
+source ~.zshrc__private
 
 key=$__TRELLO_API_KEY
 token=$__TRELLO_TOKEN
