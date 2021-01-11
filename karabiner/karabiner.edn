@@ -249,10 +249,11 @@
         [:!T8 :delete_forward]
 
         ; To start and end of line
-        [:!Tn :!Cleft_arrow]
-        [:!Tm :!Cright_arrow]
-        [:!T#SRn :!Cleft_arrow]
-        [:!T#SRm :!Cright_arrow]
+        [:!T#SRn :!Cleft_arrow :!Terminals]
+        [:!T#SRm :!Cright_arrow :!Terminals]
+        ; Terminal doesn't support ⌘ like above, so gotta use its Cocoa keybindings
+        [:!Tn :!Ta :Terminals]
+        [:!Tm :!Te :Terminals]
 
         ; Line deletion
         ; Use Cocoa emacs bindings for apps that doesn't support ⌘+⌦ (i.e. Notes, Terminal)
