@@ -21,7 +21,7 @@
 
 2. Install: `` bash -c "`curl -fsSL https://raw.githubusercontent.com/babramczyk/dotfiles/master/remote-install.sh`" ``
 1. In this repo, uncomment/handle lines labeled with `NEXT_MACHINE`
-1. `cd ~/dotfiles && source bootstrap.sh`
+1. `cd ~/src/personal/dotfiles && source bootstrap.sh`
 1. Add sensitive data to [.zshrc\_\_private](.zshrc__private) (find them in your password manager)
 
 ```shell

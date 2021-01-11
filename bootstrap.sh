@@ -11,7 +11,27 @@
 # - https://news.ycombinator.com/item?id=8402079
 # - http://notes.jerzygangi.com/the-best-pgp-tutorial-for-mac-os-x-ever/
 
-source ~/dotfiles/bin/utils.sh
+##############################################################
+# Filesystem setup
+##############################################################
+
+function touch_dir() {
+  [[ -d $1 ]] || mkdir $1
+}
+
+touch_dir ~/src
+touch_dir ~/src/clones
+touch_dir ~/src/personal
+touch_dir ~/src/work
+touch_dir ~/src/playground
+
+touch ~/src/personal/dotfiles/.zshrc__private
+
+##############################################################
+# Begin
+##############################################################
+
+source ~/src/personal/dotfiles/bin/utils.sh
 cd $dotfiles_dir
 
 clear
@@ -28,6 +48,7 @@ log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 install_dotfile ".zshrc"
 install_dotfile ".zshrc__generated"
 install_dotfile ".zshrc__aliases"
+install_dotfile ".zshrc__private"
 install_dotfile ".gitconfig"
 install_dotfile ".vimrc"
 install_dotfile ".vimrc__defaults"
@@ -78,19 +99,6 @@ log "Updating MacOS apps"
 # softwareupdate -i -a
 
 source setup/macos.sh
-
-##############################################################
-# Filesystem setup
-##############################################################
-
-function touch_dir() {
-  [[ -d $1 ]] || mkdir $1
-}
-
-touch_dir ~/src
-touch_dir ~/src/clones
-touch_dir ~/src/personal
-touch_dir ~/src/work
 
 ##############################################################
 # Clone git repos

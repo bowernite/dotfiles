@@ -2,7 +2,7 @@
 #  macOS: Configure macOS settings
 ##############################################################
 
-source ~/dotfiles/bin/utils.sh
+source ~/src/personal/dotfiles/bin/utils.sh
 
 # Ask for the administrator password upfront
 sudo -v
@@ -13,7 +13,7 @@ log " Configuring macOS..."
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Make Spotlight/Alfred index markdown files
-source ~/dotfiles/setup/make-spotlight-index-markdown.sh
+source $dotfiles_dir/setup/make-spotlight-index-markdown.sh
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change

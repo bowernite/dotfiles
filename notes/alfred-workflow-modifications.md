@@ -15,7 +15,7 @@ The following is a list of modifications made to third-party Alfred workflows. I
 - Changed scripts to pass in the Trello token and key via zsh env variables. If we switch to Dropbox, we can revert this change. Example:
 
 ```shell
-source ~/dotfiles/.zshrc__private
+source ~/.zshrc__private
 
 key=$__TRELLO_API_KEY
 token=$__TRELLO_TOKEN
