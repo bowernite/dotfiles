@@ -1,4 +1,4 @@
-source .vimrc__defaults
+source ~/.vimrc__defaults
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins

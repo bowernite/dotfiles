@@ -1,12 +1,14 @@
+dotfiles_dir=$HOME/src/personal/dotfiles
+
 ##############################################################
 # Imports
 ##############################################################
 
 # The generated file that comes from oh-my-zsh
-source .zshrc__generated
+source $dotfiles_dir/.zshrc__generated
 # Private stuff (keys, company-specific, etc.)
-source .zshrc__private
-source .zshrc__aliases
+source $dotfiles_dir/.zshrc__private
+source $dotfiles_dir/.zshrc__aliases
 
 ##############################################################
 # PATH shenanigans
@@ -93,7 +95,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
 # See .sandboxrc for details
-source ~/src/personal/dotfiles/bin/sandboxd
+source $dotfiles_dir/bin/sandboxd
 
 # NEXT_MACHINE: Make sure nvm is installed correctly. When homebrew installs it, it might try to put similar lines in this file (but we don't want it to, because we're making our own modifications)
 export NVM_DIR="$HOME/.nvm"
