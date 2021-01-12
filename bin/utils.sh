@@ -1,12 +1,5 @@
 #!/bin/sh
 
-fancy_echo() {
-  local fmt="$1"; shift
-
-  # shellcheck disable=SC2059
-  printf "\n$fmt\n" "$@"
-}
-
 dotfiles_dir=~/src/personal/dotfiles
 
 install_dotfile() {
@@ -15,7 +8,7 @@ install_dotfile() {
   local to="$HOME/$name"
 
   if [ ! -e $to ]; then
-    fancy_echo "Creating $to ..."
+    echo "Creating $to ..."
     ln -s $from $to
   fi
 }
