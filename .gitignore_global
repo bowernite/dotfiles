@@ -1,3 +1,16 @@
 # Global gitignore
 
 .DS_Store
+npm-debug.log
+yarn-error.log
+*.un~
+Session.vim
+*~
+*.swp
+.lvimrc
+.history
+.nvmrc
+*.ignored/
+*.ignored.*
+.eslintcache
+.vscode/
