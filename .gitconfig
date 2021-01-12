@@ -67,4 +67,5 @@
 [pull]
 	rebase = false
 [core]
-	excludesfile = /Users/abr1402/.gitignore_global
+  # 
+	excludesfile = ~/.gitignore_global
