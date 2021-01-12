@@ -202,8 +202,8 @@
         [:v [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ;  sLack
-        ; [:l [:opena "Slack"]]
-        [:l [:opena "Slack Web"]]
+        [:l [:opena "Slack"]]
+        ; [:l [:opena "Slack Web"]]
         [:semicolon [:opena "Terminal"]]
 
         ; Also common

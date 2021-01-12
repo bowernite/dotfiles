@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.vitorgalvao.alfred.directories</string>
+	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>2334D99F-0F6F-4286-8E0E-4318CE30BC6A</key>
+		<key>046C8B9B-B046-4ED1-ADB1-B9149558E961</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>77E6FD6A-64B9-407A-B978-9EED97BC7E7B</string>
+				<string>F525988E-4ED1-4E45-8CAD-25BAF510025C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -18,35 +18,39 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
-		</array>
-		<key>27CCAB57-E1FF-4323-8E02-0C22F01589D5</key>
-		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>FAB474E8-0645-4B8E-81A4-C5731D0C27E9</string>
+				<string>41199D31-F1B9-416E-B70D-D4387161301B</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Move to Trash</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
+				<key>modifiers</key>
+				<integer>1179648</integer>
+				<key>modifiersubtext</key>
+				<string>Open in VS Code</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE45EE7A-E144-498A-BAB8-B969C80D63DD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Terminal</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 		</array>
 		<key>649F9AFD-6103-4CF9-8D52-7B323305962F</key>
 		<array/>
-		<key>77E6FD6A-64B9-407A-B978-9EED97BC7E7B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F5F6D0C3-8382-4CDB-B641-324404BD6738</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>A10F711E-4562-4988-8205-77E555679788</key>
 		<array>
 			<dict>
@@ -65,30 +69,70 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Trash</string>
+				<string>Move to Trash</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>DD6E216B-5484-4F8C-B422-33492F36E3B0</string>
+				<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1179648</integer>
 				<key>modifiersubtext</key>
-				<string>Open in iTerm</string>
+				<string>Open in VS Code</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE45EE7A-E144-498A-BAB8-B969C80D63DD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Terminal</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 		</array>
-		<key>C51C7AB3-7566-4C03-B857-ABBB721C22F6</key>
+		<key>C963183A-B0D5-4C32-AD3F-D32515446AF2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CC9712F3-DD5B-4C8B-99E3-A61DECDB4AA8</string>
+				<string>F525988E-4ED1-4E45-8CAD-25BAF510025C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>41199D31-F1B9-416E-B70D-D4387161301B</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Move to Trash</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
+				<key>modifiers</key>
+				<integer>1179648</integer>
+				<key>modifiersubtext</key>
+				<string>Open in VS Code</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE45EE7A-E144-498A-BAB8-B969C80D63DD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Terminal</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -116,26 +160,13 @@
 				<false/>
 			</dict>
 		</array>
-		<key>CF342907-B695-4CC0-AA1C-168A2A3ED01B</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>C51C7AB3-7566-4C03-B857-ABBB721C22F6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>DD6E216B-5484-4F8C-B422-33492F36E3B0</key>
 		<array/>
 		<key>F5F6D0C3-8382-4CDB-B641-324404BD6738</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
+				<string>F525988E-4ED1-4E45-8CAD-25BAF510025C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -147,19 +178,29 @@
 				<key>destinationuid</key>
 				<string>41199D31-F1B9-416E-B70D-D4387161301B</string>
 				<key>modifiers</key>
-				<integer>262144</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
-				<string>Trash</string>
+				<string>Move to Trash</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>DD6E216B-5484-4F8C-B422-33492F36E3B0</string>
+				<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>1179648</integer>
 				<key>modifiersubtext</key>
-				<string>Open in iTerm</string>
+				<string>Open in VS Code</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DE45EE7A-E144-498A-BAB8-B969C80D63DD</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Browse in Terminal</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -167,9 +208,9 @@
 				<key>destinationuid</key>
 				<string>649F9AFD-6103-4CF9-8D52-7B323305962F</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1572864</integer>
 				<key>modifiersubtext</key>
-				<string>Open Git origin</string>
+				<string>asdf</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -177,20 +218,7 @@
 				<key>destinationuid</key>
 				<string>0144BBB5-755E-41E4-A47B-9639B7D9E352</string>
 				<key>modifiers</key>
-				<integer>131072</integer>
-				<key>modifiersubtext</key>
-				<string>New PR on GitHub</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>FAB474E8-0645-4B8E-81A4-C5731D0C27E9</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>A10F711E-4562-4988-8205-77E555679788</string>
-				<key>modifiers</key>
-				<integer>0</integer>
+				<integer>655360</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -199,30 +227,15 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Vítor Galvão</string>
+	<string>Brett Abramczyk</string>
 	<key>description</key>
-	<string>List and act on the contents of directories</string>
+	<string>List and act on the contents of folders</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
-	<string>Directory watches</string>
+	<string>Search folders</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>F525988E-4ED1-4E45-8CAD-25BAF510025C</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -287,75 +300,76 @@ echo "&lt;/items&gt;"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>search desktop</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>27CCAB57-E1FF-4323-8E02-0C22F01589D5</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>mv "$1" ~/Dropbox/Shares/</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3D3AEA20-7990-4C0E-96D1-59C9B91F4B7F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>json</key>
-				<string>{
-  "alfredworkflow" : {
-    "arg" : "{query}",
-    "config" : {
-      "title" : "",
-      "runningsubtext" : "",
-      "subtext" : ""
-    },
-    "variables" : {
-    }
-  }
-}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
-			<key>uid</key>
-			<string>FAB474E8-0645-4B8E-81A4-C5731D0C27E9</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>openwith</key>
-				<string>/Applications/Visual Studio Code.app</string>
+				<string></string>
 				<key>sourcefile</key>
 				<string></string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
+			<string>F525988E-4ED1-4E45-8CAD-25BAF510025C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dl</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>IFS=$'\n'
+
+files=$(ls -dtc ${HOME}/Downloads/* | grep -i ".*{query}.*" | perl -MHTML::Entities -CS -pe'$_ = encode_entities($_, q{&amp;&lt;&gt;"'\''})')
+
+echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
+for file in ${files}; do
+  echo "&lt;item uuid='file' arg='${file}' type='file'&gt;"
+  echo "&lt;title&gt;$(basename ${file})&lt;/title&gt;"
+  echo "&lt;subtitle&gt;${file}&lt;/subtitle&gt;"
+  echo "&lt;icon type='fileicon'&gt;${file}&lt;/icon&gt;"
+  echo "&lt;/item&gt;"
+done
+echo "&lt;/items&gt;"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search ~/Downloads</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>046C8B9B-B046-4ED1-ADB1-B9149558E961</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -389,13 +403,89 @@ osascript -e 'tell application "Finder" to delete POSIX file "'"$filepath"'"'</s
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>search clones</string>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.action.openfile</string>
 			<key>uid</key>
-			<string>2334D99F-0F6F-4286-8E0E-4318CE30BC6A</string>
+			<string>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>docs</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>IFS=$'\n'
+
+files=$(ls -dtc ${HOME}/Documents/* | grep -i ".*{query}.*" | perl -MHTML::Entities -CS -pe'$_ = encode_entities($_, q{&amp;&lt;&gt;"'\''})')
+
+echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
+for file in ${files}; do
+  echo "&lt;item uuid='file' arg='${file}' type='file'&gt;"
+  echo "&lt;title&gt;$(basename ${file})&lt;/title&gt;"
+  echo "&lt;subtitle&gt;${file}&lt;/subtitle&gt;"
+  echo "&lt;icon type='fileicon'&gt;${file}&lt;/icon&gt;"
+  echo "&lt;/item&gt;"
+done
+echo "&lt;/items&gt;"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search ~/Documents</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C963183A-B0D5-4C32-AD3F-D32515446AF2</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.browseinterminal</string>
+			<key>uid</key>
+			<string>DE45EE7A-E144-498A-BAB8-B969C80D63DD</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -435,6 +525,7 @@ echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
 for file in ${files}; do
   echo "&lt;item uuid='file' arg='${file}' type='file'&gt;"
   echo "&lt;title&gt;$(basename ${file})&lt;/title&gt;"
+  echo "&lt;subtitle&gt;⇧⌘ VS Code | ⇧ Terminal | ⌘ Trash | ⌘⌥ Open origin | ⌥⇧ New PR&lt;/subtitle&gt;"
   echo "&lt;subtitle&gt;${file}&lt;/subtitle&gt;"
   echo "&lt;icon type='fileicon'&gt;${file}&lt;/icon&gt;"
   echo "&lt;/item&gt;"
@@ -463,26 +554,27 @@ echo "&lt;/items&gt;"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>json</key>
-				<string>{
-  "alfredworkflow" : {
-    "arg" : "{query}",
-    "config" : {
-      "title" : "",
-      "runningsubtext" : "",
-      "subtext" : ""
-    },
-    "variables" : {
-    }
-  }
-}</string>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>38</integer>
+				<key>script</key>
+				<string># open git origin of cd'd folder
+cd "{query}"
+open $(git config --get remote.origin.url)</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>77E6FD6A-64B9-407A-B978-9EED97BC7E7B</string>
+			<string>649F9AFD-6103-4CF9-8D52-7B323305962F</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -490,26 +582,25 @@ echo "&lt;/items&gt;"</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>68</integer>
+				<integer>102</integer>
 				<key>script</key>
-				<string>on run argv
-  set theQuery to item 1 of argv
-	set cmdStr to "cd " &amp; theQuery &amp; " &amp;&amp; exa"
-	activate application "iTerm"
-	tell application "System Events" to keystroke "1" using command down	tell application "iTerm"		if exists window 1 then			tell current window				tell current session to write text cmdStr
-			end tell		else			create window with default profile			tell current window				tell current session to write text cmdStr			end tell		end if	end tell
-end run</string>
+				<string>cd "$1"
+REPO_URL=$(git config remote.origin.url)
+SUFFIX=".git"
+REPO_URL=${REPO_URL%$SUFFIX}
+REPO_URL+="/pull/new/master"
+open "${REPO_URL}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>6</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>DD6E216B-5484-4F8C-B422-33492F36E3B0</string>
+			<string>0144BBB5-755E-41E4-A47B-9639B7D9E352</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -592,68 +683,6 @@ echo "&lt;/items&gt;"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>search trash</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>CF342907-B695-4CC0-AA1C-168A2A3ED01B</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>38</integer>
-				<key>script</key>
-				<string># open git origin of cd'd folder
-cd "{query}"
-open $(git config --get remote.origin.url)</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>649F9AFD-6103-4CF9-8D52-7B323305962F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>json</key>
-				<string>{
-  "alfredworkflow" : {
-    "arg" : "{query}",
-    "config" : {
-      "title" : "",
-      "runningsubtext" : "",
-      "subtext" : ""
-    },
-    "variables" : {
-    }
-  }
-}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.json</string>
-			<key>uid</key>
-			<string>C51C7AB3-7566-4C03-B857-ABBB721C22F6</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -680,14 +709,38 @@ open $(git config --get remote.origin.url)</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set theQuery to item 1 of argv
+	set cmdStr to "cd " &amp; theQuery &amp; " &amp;&amp; exa"
+	activate application "iTerm"
+	tell application "System Events" to keystroke "1" using command down	tell application "iTerm"		if exists window 1 then			tell current window				tell current session to write text cmdStr
+			end tell		else			create window with default profile			tell current window				tell current session to write text cmdStr			end tell		end if	end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DD6E216B-5484-4F8C-B422-33492F36E3B0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>cd "$1"
-REPO_URL=$(git config remote.origin.url)
-SUFFIX=".git"
-REPO_URL=${REPO_URL%$SUFFIX}
-REPO_URL+="/pull/new/master"
-open "${REPO_URL}"</string>
+				<string>mv "$1" ~/Dropbox/Shares/</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -698,9 +751,22 @@ open "${REPO_URL}"</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>0144BBB5-755E-41E4-A47B-9639B7D9E352</string>
+			<string>3D3AEA20-7990-4C0E-96D1-59C9B91F4B7F</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>path</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.revealfile</string>
+			<key>uid</key>
+			<string>9CF17623-C61A-4D0D-B5DF-E31870D7BB7D</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -712,126 +778,125 @@ open "${REPO_URL}"</string>
 			<key>note</key>
 			<string>Make new PR in GitHub</string>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>735</integer>
 			<key>ypos</key>
-			<integer>820</integer>
+			<integer>765</integer>
 		</dict>
-		<key>2334D99F-0F6F-4286-8E0E-4318CE30BC6A</key>
+		<key>046C8B9B-B046-4ED1-ADB1-B9149558E961</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>5</integer>
 			<key>xpos</key>
-			<integer>50</integer>
+			<integer>75</integer>
 			<key>ypos</key>
-			<integer>280</integer>
+			<integer>185</integer>
 		</dict>
 		<key>26B458B6-3E33-485C-B917-25D887B99DCA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>480</integer>
-		</dict>
-		<key>27CCAB57-E1FF-4323-8E02-0C22F01589D5</key>
-		<dict>
-			<key>xpos</key>
-			<integer>60</integer>
-			<key>ypos</key>
-			<integer>70</integer>
+			<integer>800</integer>
 		</dict>
 		<key>3D3AEA20-7990-4C0E-96D1-59C9B91F4B7F</key>
 		<dict>
 			<key>note</key>
 			<string>Move to Dropbox shares</string>
 			<key>xpos</key>
-			<integer>1110</integer>
+			<integer>855</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>1080</integer>
 		</dict>
 		<key>41199D31-F1B9-416E-B70D-D4387161301B</key>
 		<dict>
 			<key>note</key>
 			<string>Trash</string>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>725</integer>
 			<key>ypos</key>
-			<integer>250</integer>
+			<integer>190</integer>
 		</dict>
 		<key>649F9AFD-6103-4CF9-8D52-7B323305962F</key>
 		<dict>
 			<key>note</key>
 			<string>Open git origin</string>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>730</integer>
 			<key>ypos</key>
-			<integer>560</integer>
-		</dict>
-		<key>77E6FD6A-64B9-407A-B978-9EED97BC7E7B</key>
-		<dict>
-			<key>xpos</key>
-			<integer>200</integer>
-			<key>ypos</key>
-			<integer>310</integer>
+			<integer>610</integer>
 		</dict>
 		<key>9AE1C9D0-D044-4078-B7B1-5E1C2A06C634</key>
 		<dict>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>130</integer>
+			<integer>340</integer>
+		</dict>
+		<key>9CF17623-C61A-4D0D-B5DF-E31870D7BB7D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1020</integer>
+			<key>ypos</key>
+			<integer>1085</integer>
 		</dict>
 		<key>A10F711E-4562-4988-8205-77E555679788</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>5</integer>
+			<integer>2</integer>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>75</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>60</integer>
 		</dict>
-		<key>C51C7AB3-7566-4C03-B857-ABBB721C22F6</key>
+		<key>C963183A-B0D5-4C32-AD3F-D32515446AF2</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
 			<key>xpos</key>
-			<integer>150</integer>
+			<integer>75</integer>
 			<key>ypos</key>
-			<integer>560</integer>
+			<integer>355</integer>
 		</dict>
 		<key>CC9712F3-DD5B-4C8B-99E3-A61DECDB4AA8</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
 			<key>xpos</key>
-			<integer>220</integer>
+			<integer>75</integer>
 			<key>ypos</key>
-			<integer>530</integer>
+			<integer>850</integer>
 		</dict>
 		<key>CE137348-C8D0-4B0D-8DDD-AE00F6D92AAF</key>
 		<dict>
 			<key>note</key>
 			<string>Move to Desktop</string>
 			<key>xpos</key>
-			<integer>420</integer>
+			<integer>275</integer>
 			<key>ypos</key>
-			<integer>610</integer>
-		</dict>
-		<key>CF342907-B695-4CC0-AA1C-168A2A3ED01B</key>
-		<dict>
-			<key>xpos</key>
-			<integer>10</integer>
-			<key>ypos</key>
-			<integer>530</integer>
+			<integer>930</integer>
 		</dict>
 		<key>DD6E216B-5484-4F8C-B422-33492F36E3B0</key>
 		<dict>
 			<key>note</key>
 			<string>Go to first tab in iTerm and open path</string>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>705</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>1075</integer>
+		</dict>
+		<key>DE45EE7A-E144-498A-BAB8-B969C80D63DD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>725</integer>
+			<key>ypos</key>
+			<integer>465</integer>
 		</dict>
 		<key>F525988E-4ED1-4E45-8CAD-25BAF510025C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>950</integer>
+			<integer>715</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>65</integer>
 		</dict>
 		<key>F5F6D0C3-8382-4CDB-B641-324404BD6738</key>
 		<dict>
@@ -840,21 +905,14 @@ open "${REPO_URL}"</string>
 			<key>note</key>
 			<string>Search ~/src/clones</string>
 			<key>xpos</key>
-			<integer>280</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>280</integer>
-		</dict>
-		<key>FAB474E8-0645-4B8E-81A4-C5731D0C27E9</key>
-		<dict>
-			<key>xpos</key>
-			<integer>210</integer>
-			<key>ypos</key>
-			<integer>100</integer>
+			<integer>540</integer>
 		</dict>
 	</dict>
 	<key>version</key>
 	<string>2.7</string>
 	<key>webaddress</key>
-	<string>http://vitorgalvao.com/</string>
+	<string></string>
 </dict>
 </plist>
