@@ -130,19 +130,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>62CAD691-222B-46BF-872E-831400C666AA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>3E55BD38-9681-4C42-8ED3-CBFC406A2406</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>62F4DBBA-509D-4866-91C1-E2192737DE13</key>
 		<array>
 			<dict>
@@ -328,19 +315,6 @@
 				<string>6F49D933-25A4-4293-AFDF-A83B07B1603D</string>
 				<key>modifiers</key>
 				<integer>8388608</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>9D3316F3-A7F4-4300-A8EC-B20B686EBF1F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>62CAD691-222B-46BF-872E-831400C666AA</string>
-				<key>modifiers</key>
-				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -1344,59 +1318,6 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>googlemaps</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Google maps</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>62CAD691-222B-46BF-872E-831400C666AA</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>triggerid</key>
-				<string>search google maps</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>9D3316F3-A7F4-4300-A8EC-B20B686EBF1F</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://www.google.com/maps/place/{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>3E55BD38-9681-4C42-8ED3-CBFC406A2406</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>browser</key>
 				<string></string>
 				<key>spaces</key>
@@ -2187,13 +2108,6 @@ Post any issues and feature requests you have there. 💜</string>
 			<key>ypos</key>
 			<integer>130</integer>
 		</dict>
-		<key>3E55BD38-9681-4C42-8ED3-CBFC406A2406</key>
-		<dict>
-			<key>xpos</key>
-			<integer>390</integer>
-			<key>ypos</key>
-			<integer>1720</integer>
-		</dict>
 		<key>409BE6BD-FB40-4B7A-861D-5B1BACFA8279</key>
 		<dict>
 			<key>xpos</key>
@@ -2263,13 +2177,6 @@ Post any issues and feature requests you have there. 💜</string>
 			<integer>540</integer>
 			<key>ypos</key>
 			<integer>1240</integer>
-		</dict>
-		<key>62CAD691-222B-46BF-872E-831400C666AA</key>
-		<dict>
-			<key>xpos</key>
-			<integer>210</integer>
-			<key>ypos</key>
-			<integer>1720</integer>
 		</dict>
 		<key>62F4DBBA-509D-4866-91C1-E2192737DE13</key>
 		<dict>
@@ -2389,13 +2296,6 @@ Post any issues and feature requests you have there. 💜</string>
 			<integer>370</integer>
 			<key>ypos</key>
 			<integer>260</integer>
-		</dict>
-		<key>9D3316F3-A7F4-4300-A8EC-B20B686EBF1F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>50</integer>
-			<key>ypos</key>
-			<integer>1720</integer>
 		</dict>
 		<key>A8A7FD11-3F7C-461F-BFD8-7F4CFDADE35A</key>
 		<dict>

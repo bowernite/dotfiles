@@ -88,6 +88,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5DD9C331-1AE4-4067-8DD0-8404CB49A314</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70738211-CA4A-4BA3-8069-C04D767764C1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6740BCB6-6818-49E2-A88A-9D19EA132F08</key>
 		<array>
 			<dict>
@@ -116,6 +129,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>4D8E3444-14C2-4D0E-A8C1-AA67988AE358</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9FCBAE6E-9EDF-4C43-9675-7368A50B3F71</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>70738211-CA4A-4BA3-8069-C04D767764C1</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -199,63 +225,11 @@
 	<key>description</key>
 	<string>Open notes in iCloud/Apple Notes</string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>Search Notes</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
-				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>2</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>1A6D4810-ABAF-4604-9639-CC1327A279B7</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>applescript</key>
-				<string>on alfred_script(q)
-	tell application "System Events"		tell process "Notes"			set frontmost to true			click menu item 1 of menu of menu item 16 of menu 4 of menu bar 1 -- Edit, Find, Note List Search…
-			-- Get user search query which is second half of q
-			set userQuery to text ((offset of "?" in q)+1) thru -1 of q
-			set clipboardOld to the clipboard
-			set the clipboard to userQuery			click menu item 6 of menu 4 of menu bar 1 -- Edit, Paste
-			delay 0.1
-			set the clipboard to clipboardOld		end tell	end tell
-end alfred_script</string>
-				<key>cachescript</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.applescript</string>
-			<key>uid</key>
-			<string>CE746687-24FD-4E5C-841F-0D4826E007C4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -309,6 +283,58 @@ fi
 			<string>5BC84589-FA2A-459F-982A-54B612C9BA7F</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>2</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>1A6D4810-ABAF-4604-9639-CC1327A279B7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "System Events"		tell process "Notes"			set frontmost to true			click menu item 1 of menu of menu item 16 of menu 4 of menu bar 1 -- Edit, Find, Note List Search…
+			-- Get user search query which is second half of q
+			set userQuery to text ((offset of "?" in q)+1) thru -1 of q
+			set clipboardOld to the clipboard
+			set the clipboard to userQuery			click menu item 6 of menu 4 of menu bar 1 -- Edit, Paste
+			delay 0.1
+			set the clipboard to clipboardOld		end tell	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>CE746687-24FD-4E5C-841F-0D4826E007C4</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -600,6 +626,77 @@ end alfred_script</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>n</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create new note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9FCBAE6E-9EDF-4C43-9675-7368A50B3F71</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Notes"
+  		show default folder in default account
+			show default folder in default account
+			tell application "System Events"				tell process "Notes"					click menu item 1 of menu 3 of menu bar 1 -- File, New Note
+					if q is not equal to "" then
+						set clipboardOld to the clipboard
+						set the clipboard to q						click menu item 6 of menu 4 of menu bar 1 -- Edit, Paste
+						click menu item 1 of menu 5 of menu bar 1 -- Format, Title
+						key code {36, 36} -- press enter twice
+						delay 0.1
+						set the clipboard to clipboardOld
+					end if				end tell			end tell
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>70738211-CA4A-4BA3-8069-C04D767764C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>nn</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Create a new note</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>5DD9C331-1AE4-4067-8DD0-8404CB49A314</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>Instructions and Help
@@ -660,7 +757,14 @@ or create note</string>
 			<key>xpos</key>
 			<integer>225</integer>
 			<key>ypos</key>
-			<integer>115</integer>
+			<integer>60</integer>
+		</dict>
+		<key>5DD9C331-1AE4-4067-8DD0-8404CB49A314</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>720</integer>
 		</dict>
 		<key>6740BCB6-6818-49E2-A88A-9D19EA132F08</key>
 		<dict>
@@ -679,6 +783,22 @@ or create note</string>
 			<integer>225</integer>
 			<key>ypos</key>
 			<integer>395</integer>
+		</dict>
+		<key>70738211-CA4A-4BA3-8069-C04D767764C1</key>
+		<dict>
+			<key>note</key>
+			<string>Create new note with given title</string>
+			<key>xpos</key>
+			<integer>595</integer>
+			<key>ypos</key>
+			<integer>640</integer>
+		</dict>
+		<key>9FCBAE6E-9EDF-4C43-9675-7368A50B3F71</key>
+		<dict>
+			<key>xpos</key>
+			<integer>220</integer>
+			<key>ypos</key>
+			<integer>575</integer>
 		</dict>
 		<key>B9ECD7D6-EA33-4E2E-AE3E-4E22EEDD6097</key>
 		<dict>

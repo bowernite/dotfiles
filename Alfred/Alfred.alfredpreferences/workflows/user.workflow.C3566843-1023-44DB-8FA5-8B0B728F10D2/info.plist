@@ -71,6 +71,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AEE21852-0EAF-47F6-923E-C75065E2F617</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</key>
 		<array>
 			<dict>
@@ -129,7 +142,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>79CE02CC-05FC-4071-B47B-4753F8ACF20E</string>
+				<string>5B3DED28-DE6B-462C-8880-609B9FF435BD</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -245,6 +258,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -293,6 +316,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>AEE21852-0EAF-47F6-923E-C75065E2F617</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B3DED28-DE6B-462C-8880-609B9FF435BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<array>
 			<dict>
@@ -318,6 +354,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>C115FD1D-09F9-42A8-BB42-ABB475C13691</key>
 		<array>
@@ -332,6 +378,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</key>
+		<array/>
 		<key>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</key>
 		<array>
 			<dict>
@@ -362,6 +410,16 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
@@ -386,6 +444,16 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>7529674F-DF0E-456C-AACE-162D9EB5CF8F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -579,21 +647,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>44917A09-461D-4AFB-BEFD-7684E990ED7A</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>anchorfields</key>
 				<true/>
 				<key>argumenttrimmode</key>
@@ -660,6 +713,55 @@
 			<string>BCE7C345-2B71-4131-9229-446F3D398110</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string></string>
+				<key>sourcefile</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>44917A09-461D-4AFB-BEFD-7684E990ED7A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>v</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1179648</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>5B3DED28-DE6B-462C-8880-609B9FF435BD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>seconds</key>
+				<string>.2</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.delay</string>
+			<key>uid</key>
+			<string>AEE21852-0EAF-47F6-923E-C75065E2F617</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -757,6 +859,21 @@
 			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/src/personal/wiki</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -1478,6 +1595,8 @@ function titleCase(input) {
 		</dict>
 		<key>15025469-9F5F-4202-9E6F-EB0557C599D6</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
@@ -1492,6 +1611,8 @@ function titleCase(input) {
 		</dict>
 		<key>21ECEE94-5798-4112-87C1-C650A53C9CA5</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>245</integer>
 			<key>ypos</key>
@@ -1518,9 +1639,9 @@ function titleCase(input) {
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>290</integer>
+			<integer>440</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>230</integer>
 		</dict>
 		<key>4772E9FF-5CC2-4427-9015-D635536E6430</key>
 		<dict>
@@ -1540,6 +1661,8 @@ function titleCase(input) {
 		</dict>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Create a new note (shown amongst `w` note query)</string>
 			<key>xpos</key>
@@ -1549,6 +1672,8 @@ function titleCase(input) {
 		</dict>
 		<key>55A246D6-91C2-4467-9E59-B26355B299E6</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
 			<key>note</key>
 			<string>Search for wiki file to append current tab as markdown link to</string>
 			<key>xpos</key>
@@ -1556,8 +1681,17 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>1195</integer>
 		</dict>
+		<key>5B3DED28-DE6B-462C-8880-609B9FF435BD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>695</integer>
+			<key>ypos</key>
+			<integer>330</integer>
+		</dict>
 		<key>70F14922-D8AF-4079-A8DE-0A73250E530E</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>240</integer>
 			<key>ypos</key>
@@ -1587,9 +1721,9 @@ function titleCase(input) {
 		<key>7529674F-DF0E-456C-AACE-162D9EB5CF8F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>485</integer>
+			<integer>615</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>190</integer>
 		</dict>
 		<key>79CE02CC-05FC-4071-B47B-4753F8ACF20E</key>
 		<dict>
@@ -1637,6 +1771,8 @@ function titleCase(input) {
 		</dict>
 		<key>91264C2D-A87E-41DC-9D37-60551D8A7214</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>xpos</key>
 			<integer>320</integer>
 			<key>ypos</key>
@@ -1665,6 +1801,8 @@ function titleCase(input) {
 		</dict>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Create a new wiki file</string>
 			<key>xpos</key>
@@ -1674,6 +1812,8 @@ function titleCase(input) {
 		</dict>
 		<key>AC99DC55-EA0E-4E6E-8E1F-253E5D37A438</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Create a new private wiki file (shown amonst `w` query)</string>
 			<key>xpos</key>
@@ -1688,6 +1828,15 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>1195</integer>
 		</dict>
+		<key>AEE21852-0EAF-47F6-923E-C75065E2F617</key>
+		<dict>
+			<key>note</key>
+			<string>Wait .2 seconds</string>
+			<key>xpos</key>
+			<integer>590</integer>
+			<key>ypos</key>
+			<integer>335</integer>
+		</dict>
 		<key>B20DC028-EBF6-4294-88F3-08206C4443FB</key>
 		<dict>
 			<key>note</key>
@@ -1699,6 +1848,8 @@ function titleCase(input) {
 		</dict>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
 			<key>note</key>
 			<string>Search for existing notes (by filename)</string>
 			<key>xpos</key>
@@ -1708,12 +1859,25 @@ function titleCase(input) {
 		</dict>
 		<key>C115FD1D-09F9-42A8-BB42-ABB475C13691</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>11</integer>
 			<key>note</key>
 			<string>Create a wiki file and append the current tab as a markdown link</string>
 			<key>xpos</key>
 			<integer>65</integer>
 			<key>ypos</key>
 			<integer>1020</integer>
+		</dict>
+		<key>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>1</integer>
+			<key>note</key>
+			<string>Open wiki in VS Code</string>
+			<key>xpos</key>
+			<integer>540</integer>
+			<key>ypos</key>
+			<integer>410</integer>
 		</dict>
 		<key>CD33CDD6-50F7-488A-A77F-126388B715F7</key>
 		<dict>
@@ -1726,6 +1890,8 @@ function titleCase(input) {
 		</dict>
 		<key>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>6</integer>
 			<key>note</key>
 			<string>Create a new private wiki file</string>
 			<key>xpos</key>
@@ -1751,12 +1917,14 @@ function titleCase(input) {
 		</dict>
 		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
 		<dict>
+			<key>colorindex</key>
+			<integer>2</integer>
 			<key>note</key>
 			<string>Search the contents of all notes</string>
 			<key>xpos</key>
-			<integer>95</integer>
+			<integer>80</integer>
 			<key>ypos</key>
-			<integer>35</integer>
+			<integer>30</integer>
 		</dict>
 	</dict>
 	<key>variables</key>

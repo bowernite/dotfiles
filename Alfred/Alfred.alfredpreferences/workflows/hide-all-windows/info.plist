@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.apple.samlu.hide</string>
+	<string></string>
 	<key>connections</key>
 	<dict>
 		<key>5F9B89EB-F37B-4642-9162-9D1CFDE7E3B2</key>
@@ -23,7 +23,7 @@
 		<array/>
 	</dict>
 	<key>createdby</key>
-	<string>Sam Lu</string>
+	<string>Brett Abramczyk</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
@@ -69,15 +69,9 @@
 				<key>applescript</key>
 				<string>on alfred_script(q)
 
-tell application "Finder" to activate
-
-tell application "System Events"
-    tell application process "Finder"
-        tell menu bar 1
-            click menu item "Hide Others" of menu of menu bar item "Finder"
-            click menu item "Minimize All" of menu of menu bar item "Window"
-        end tell
-    end tell
+tell application "Finder"
+    set visible of every process whose visible is true and name is not "Finder" to false
+    set the collapsed of windows to true
 end tell
 
 end alfred_script</string>
@@ -106,12 +100,12 @@ end alfred_script</string>
 		<key>7686C74A-A33F-49C2-8231-40F1569A481A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>440</integer>
+			<integer>395</integer>
 			<key>ypos</key>
 			<integer>60</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>www.samvlu.com</string>
+	<string></string>
 </dict>
 </plist>

@@ -8,11 +8,11 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</key>
+		<key>293CAF59-AFAC-45A0-A95C-20AA2FD33689</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
+				<string>458DB3B0-8ED2-41BF-8FE9-BB473461FE3B</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -21,7 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</key>
+		<key>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -38,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>D703A283-AE5B-4A47-89B3-8BD57EE732A7</string>
+				<string>CC2AB55D-0235-4354-963C-6C14A3DF33DF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -47,11 +47,87 @@
 				<false/>
 			</dict>
 		</array>
-		<key>D703A283-AE5B-4A47-89B3-8BD57EE732A7</key>
+		<key>618253DF-A6A6-4FF5-A336-1061D2F36165</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C0D9410F-E6ED-4C33-85CD-1E63CD6CEB5E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA714A38-A4CA-4D5E-BF9E-E91D9AD516DC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CC2AB55D-0235-4354-963C-6C14A3DF33DF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6E12793-B45F-4204-9756-7822F4B0EC06</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>3659782B-51DC-4505-BF07-7A1853FEDE25</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C0D9410F-E6ED-4C33-85CD-1E63CD6CEB5E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>1C7E16A2-490B-4BF5-96DB-DE764D50AEA0</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>293CAF59-AFAC-45A0-A95C-20AA2FD33689</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E6E12793-B45F-4204-9756-7822F4B0EC06</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CA714A38-A4CA-4D5E-BF9E-E91D9AD516DC</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -64,7 +140,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</string>
+				<string>4D453CF7-925A-4217-840E-2F441770B34D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -87,13 +163,36 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>triggerid</key>
-				<string>md link tab</string>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Chrome is not active</string>
+				<key>title</key>
+				<string>💔 Could not generate MD link</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
+			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>7612D840-0217-4DD1-ABA1-2B09530D3288</string>
+			<string>E6E12793-B45F-4204-9756-7822F4B0EC06</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Funk</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>CA714A38-A4CA-4D5E-BF9E-E91D9AD516DC</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -121,25 +220,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -148,12 +228,34 @@
 				<string>function run(argv) {
   var query = argv[0];
 
-  const chrome = Application("Google Chrome")
+  // Setup
+  chrome = Application("Google Chrome");
+  systemEvents = Application('System Events');
+  systemEvents.includeStandardAdditions = true;
+  var app = Application.currentApplication()
+  app.includeStandardAdditions = true
   const activeTab = chrome.windows[0].activeTab
   const { url, title: tabTitle } = activeTab
 
-  const givenTitle = query;
-  const title = givenTitle ? givenTitle.trim() : tabTitle()
+  // Grab the original clipboard for reference
+  const originalClipboard = systemEvents.theClipboard()
+
+  // Copy the current chrome selection to the clipboard
+  chrome.copySelection(activeTab);
+  const selection = app.theClipboard();
+  console.log('selection', selection);
+
+  // Determine if Chrome actually had a selection by seeing if the clipboard changed
+  const chromeHasSelection = selection !== originalClipboard
+  console.log('chromeHasSelection', chromeHasSelection)
+
+  // Determine the title based on if there was a selection or not
+  let title
+  if (chromeHasSelection) {
+    title = selection.trim();
+  } else {
+    title = tabTitle()
+  }
 
   return `[${title}](${url()})`;
 }</string>
@@ -174,17 +276,65 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>'{query}', {allvars}</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>err: chrome not active</string>
+						<key>outputlabel</key>
+						<string>chrome not active</string>
+						<key>uid</key>
+						<string>3659782B-51DC-4505-BF07-7A1853FEDE25</string>
+					</dict>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>0</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>output is blank</string>
+						<key>uid</key>
+						<string>1C7E16A2-490B-4BF5-96DB-DE764D50AEA0</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>✅ success</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
+			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
-			<string>D703A283-AE5B-4A47-89B3-8BD57EE732A7</string>
+			<string>CC2AB55D-0235-4354-963C-6C14A3DF33DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Something went wrong</string>
+				<key>title</key>
+				<string>💔 Could not generate MD link</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C0D9410F-E6ED-4C33-85CD-1E63CD6CEB5E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -212,35 +362,86 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>autopaste</key>
 				<false/>
-				<key>escaping</key>
-				<integer>68</integer>
-				<key>script</key>
-				<string>function run(argv) {
-  var query = argv[0];
-
-  chrome = Application("Google Chrome");
-  activeTab = chrome.windows[0].activeTab
-  chrome.copySelection(activeTab);
-
-  systemEvents = Application('System Events');
-  systemEvents.includeStandardAdditions = true;  
-  linkTitle = systemEvents.theClipboard();
-
-  return linkTitle;
-}</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>7</integer>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</string>
+			<string>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Ping</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>458DB3B0-8ED2-41BF-8FE9-BB473461FE3B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Copied "{query}"</string>
+				<key>title</key>
+				<string>✅ MD link generated</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>293CAF59-AFAC-45A0-A95C-20AA2FD33689</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>8</integer>
+				<key>hotmod</key>
+				<integer>1179648</integer>
+				<key>hotstring</key>
+				<string>C</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>618253DF-A6A6-4FF5-A336-1061D2F36165</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -249,64 +450,88 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>293CAF59-AFAC-45A0-A95C-20AA2FD33689</key>
+		<dict>
+			<key>xpos</key>
+			<integer>835</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
 		<key>33EBB58B-B1BC-44BA-87B1-B7167DAC54C3</key>
 		<dict>
 			<key>note</key>
 			<string>Make MD link from current tab title and URL</string>
 			<key>xpos</key>
-			<integer>215</integer>
+			<integer>50</integer>
 			<key>ypos</key>
 			<integer>180</integer>
 		</dict>
-		<key>4CBD4A7B-A8BC-4062-A3BA-927A173153A0</key>
+		<key>458DB3B0-8ED2-41BF-8FE9-BB473461FE3B</key>
 		<dict>
-			<key>note</key>
-			<string>Copy selected text in Chrome to clipboard.
-
-NOTE: As of now, will also take whatever's already in the clipboard</string>
 			<key>xpos</key>
-			<integer>400</integer>
+			<integer>1000</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>420</integer>
 		</dict>
 		<key>4D453CF7-925A-4217-840E-2F441770B34D</key>
 		<dict>
 			<key>note</key>
 			<string>Construct the MD link</string>
 			<key>xpos</key>
-			<integer>605</integer>
+			<integer>325</integer>
 			<key>ypos</key>
-			<integer>275</integer>
+			<integer>190</integer>
 		</dict>
-		<key>7612D840-0217-4DD1-ABA1-2B09530D3288</key>
+		<key>618253DF-A6A6-4FF5-A336-1061D2F36165</key>
 		<dict>
 			<key>xpos</key>
-			<integer>40</integer>
+			<integer>50</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>545</integer>
+		</dict>
+		<key>C0D9410F-E6ED-4C33-85CD-1E63CD6CEB5E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>670</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>CA714A38-A4CA-4D5E-BF9E-E91D9AD516DC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>845</integer>
+			<key>ypos</key>
+			<integer>165</integer>
+		</dict>
+		<key>CC2AB55D-0235-4354-963C-6C14A3DF33DF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>485</integer>
+			<key>ypos</key>
+			<integer>210</integer>
 		</dict>
 		<key>CD0A2BC1-FDD3-40EF-B0A1-D1880402BE96</key>
 		<dict>
 			<key>xpos</key>
-			<integer>905</integer>
+			<integer>665</integer>
 			<key>ypos</key>
-			<integer>275</integer>
+			<integer>420</integer>
 		</dict>
-		<key>D703A283-AE5B-4A47-89B3-8BD57EE732A7</key>
+		<key>E6E12793-B45F-4204-9756-7822F4B0EC06</key>
 		<dict>
 			<key>xpos</key>
-			<integer>795</integer>
+			<integer>665</integer>
 			<key>ypos</key>
-			<integer>305</integer>
+			<integer>165</integer>
 		</dict>
 		<key>FCBDF171-D47C-4F87-8F97-B2B1854B3650</key>
 		<dict>
 			<key>note</key>
 			<string>Make markdown link from selected text and current tab URL</string>
 			<key>xpos</key>
-			<integer>190</integer>
+			<integer>50</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>360</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
