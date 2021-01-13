@@ -392,26 +392,26 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Apply
 ##############################################################
 
-# # Kill affected apps
-# for app in "Activity Monitor" \
-# 	"Address Book" \
-# 	"Calendar" \
-# 	"cfprefsd" \
-# 	"Contacts" \
-# 	"Dock" \
-# 	"Flux" \
-# 	"Finder" \
-# 	"Google Chrome" \
-# 	"Mail" \
-# 	"Messages" \
-# 	"Photos" \
-# 	"Rectangle" \
-# 	"Safari" \
-# 	"SystemUIServer" \
-# 	"Terminal" \
-# 	"iCal"; do
-# 	killall "${app}" &> /dev/null
-# done
+# Kill affected apps
+for app in "Activity Monitor" \
+	"Address Book" \
+	"Calendar" \
+	"cfprefsd" \
+	"Contacts" \
+	"Dock" \
+	"Flux" \
+	"Finder" \
+	"Google Chrome" \
+	"Mail" \
+	"Messages" \
+	"Photos" \
+	"Rectangle" \
+	"Safari" \
+	"SystemUIServer" \
+	"Terminal" \
+	"iCal"; do
+	killall "${app}" &> /dev/null
+done
 
 echo
 echo
