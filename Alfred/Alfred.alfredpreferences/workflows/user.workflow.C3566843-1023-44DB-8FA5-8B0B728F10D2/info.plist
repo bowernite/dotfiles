@@ -72,18 +72,7 @@
 			</dict>
 		</array>
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>AEE21852-0EAF-47F6-923E-C75065E2F617</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</key>
 		<array>
 			<dict>
@@ -138,19 +127,6 @@
 		</array>
 		<key>71BAF271-7E8B-447B-921B-B2649DB8647E</key>
 		<array/>
-		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5B3DED28-DE6B-462C-8880-609B9FF435BD</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>79CE02CC-05FC-4071-B47B-4753F8ACF20E</key>
 		<array>
 			<dict>
@@ -342,7 +318,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
+		<key>B2D09B80-6DCE-4F5E-85C4-997CDE89F6D5</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -357,6 +333,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EDAF20FE-4A98-4D79-8626-3EF14605ACC2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -410,7 +399,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -420,7 +409,33 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>71BAF271-7E8B-447B-921B-B2649DB8647E</string>
+				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E6DDE36C-09DB-4124-BF65-A2ABE58F3E1D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A85597C6-D3DA-4FF8-B1E7-69D9B55FF904</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EDAF20FE-4A98-4D79-8626-3EF14605ACC2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6DDE36C-09DB-4124-BF65-A2ABE58F3E1D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -433,27 +448,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>7529674F-DF0E-456C-AACE-162D9EB5CF8F</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+				<string>EDAF20FE-4A98-4D79-8626-3EF14605ACC2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -473,6 +468,48 @@
 	<string>Brett's Wiki</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>/</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>v</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>1048576</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>CD33CDD6-50F7-488A-A77F-126388B715F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -558,63 +595,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>/</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>v</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>1048576</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>CD33CDD6-50F7-488A-A77F-126388B715F7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>seconds</key>
 				<string>.2</string>
 			</dict>
@@ -624,6 +604,56 @@
 			<string>79CE02CC-05FC-4071-B47B-4753F8ACF20E</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://bjabramczyk.gitbook.io/wiki/{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>A85597C6-D3DA-4FF8-B1E7-69D9B55FF904</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>function run(argv) {
+  var query = argv[0];
+
+  const path = query;
+  const filename = path.split('/').slice(-1)[0]
+  const slug = filename.split('.')[0]
+
+  return slug;
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EDAF20FE-4A98-4D79-8626-3EF14605ACC2</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -643,6 +673,19 @@
 			<string>7529674F-DF0E-456C-AACE-162D9EB5CF8F</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.transform</string>
+			<key>uid</key>
+			<string>E6DDE36C-09DB-4124-BF65-A2ABE58F3E1D</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -728,6 +771,76 @@
 			<string>44917A09-461D-4AFB-BEFD-7684E990ED7A</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>anchorfields</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>daterange</key>
+				<integer>0</integer>
+				<key>fields</key>
+				<array>
+					<dict>
+						<key>field</key>
+						<string>kMDItemDisplayName</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+					<dict>
+						<key>field</key>
+						<string>kMDItemFinderComment</string>
+						<key>not</key>
+						<false/>
+						<key>split</key>
+						<true/>
+						<key>value</key>
+						<string>{query}</string>
+						<key>words</key>
+						<true/>
+					</dict>
+				</array>
+				<key>includesystem</key>
+				<false/>
+				<key>keyword</key>
+				<string>wedit</string>
+				<key>limit</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>scopes</key>
+				<array>
+					<string>~/src/personal/wiki</string>
+				</array>
+				<key>sortmode</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>Search for notes by title</string>
+				<key>title</key>
+				<string>Search for and edit Wiki files</string>
+				<key>types</key>
+				<array>
+					<string>net.daringfireball.markdown</string>
+				</array>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.filefilter</string>
+			<key>uid</key>
+			<string>B2D09B80-6DCE-4F5E-85C4-997CDE89F6D5</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -859,21 +972,6 @@
 			<string>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string>/Applications/Visual Studio Code.app</string>
-				<key>sourcefile</key>
-				<string>~/src/personal/wiki</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -1088,6 +1186,21 @@ function titleCase(input) {
 			<string>AC99DC55-EA0E-4E6E-8E1F-253E5D37A438</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>openwith</key>
+				<string>/Applications/Visual Studio Code.app</string>
+				<key>sourcefile</key>
+				<string>~/src/personal/wiki</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openfile</string>
+			<key>uid</key>
+			<string>CA7C8F39-05D7-49E8-98A9-CD9523E156E6</string>
+			<key>version</key>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>type</key>
@@ -1489,25 +1602,6 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>md link tab</string>
-				<key>passinputasargument</key>
-				<false/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>bja.md-links</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>18C68F37-94A8-46B2-9CB2-26E7BA75400E</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>adduuid</key>
 				<false/>
 				<key>allowemptyfiles</key>
@@ -1602,13 +1696,6 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>705</integer>
 		</dict>
-		<key>18C68F37-94A8-46B2-9CB2-26E7BA75400E</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1055</integer>
-			<key>ypos</key>
-			<integer>1345</integer>
-		</dict>
 		<key>21ECEE94-5798-4112-87C1-C650A53C9CA5</key>
 		<dict>
 			<key>colorindex</key>
@@ -1683,6 +1770,8 @@ function titleCase(input) {
 		</dict>
 		<key>5B3DED28-DE6B-462C-8880-609B9FF435BD</key>
 		<dict>
+			<key>note</key>
+			<string>Open MD Preview of file</string>
 			<key>xpos</key>
 			<integer>695</integer>
 			<key>ypos</key>
@@ -1711,26 +1800,19 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>345</integer>
 		</dict>
-		<key>74138C34-B8A1-4DE4-9E30-E9DF8DFDD232</key>
-		<dict>
-			<key>xpos</key>
-			<integer>315</integer>
-			<key>ypos</key>
-			<integer>35</integer>
-		</dict>
 		<key>7529674F-DF0E-456C-AACE-162D9EB5CF8F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>615</integer>
+			<integer>1005</integer>
 			<key>ypos</key>
-			<integer>190</integer>
+			<integer>125</integer>
 		</dict>
 		<key>79CE02CC-05FC-4071-B47B-4753F8ACF20E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>545</integer>
+			<integer>835</integer>
 			<key>ypos</key>
-			<integer>70</integer>
+			<integer>40</integer>
 		</dict>
 		<key>7CF8BA7C-BC19-46F0-AA46-B7F84C042A71</key>
 		<dict>
@@ -1765,9 +1847,9 @@ function titleCase(input) {
 		<key>8F340BF8-8FFA-42A3-AA7C-82CBC8FE0334</key>
 		<dict>
 			<key>xpos</key>
-			<integer>670</integer>
+			<integer>960</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>10</integer>
 		</dict>
 		<key>91264C2D-A87E-41DC-9D37-60551D8A7214</key>
 		<dict>
@@ -1798,6 +1880,13 @@ function titleCase(input) {
 			<integer>1265</integer>
 			<key>ypos</key>
 			<integer>1335</integer>
+		</dict>
+		<key>A85597C6-D3DA-4FF8-B1E7-69D9B55FF904</key>
+		<dict>
+			<key>xpos</key>
+			<integer>480</integer>
+			<key>ypos</key>
+			<integer>110</integer>
 		</dict>
 		<key>A89E933C-3873-4B67-B14C-17B78298CDBF</key>
 		<dict>
@@ -1846,6 +1935,17 @@ function titleCase(input) {
 			<key>ypos</key>
 			<integer>605</integer>
 		</dict>
+		<key>B2D09B80-6DCE-4F5E-85C4-997CDE89F6D5</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>3</integer>
+			<key>note</key>
+			<string>Search for existing notes (by filename)</string>
+			<key>xpos</key>
+			<integer>255</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
 		<key>BCE7C345-2B71-4131-9229-446F3D398110</key>
 		<dict>
 			<key>colorindex</key>
@@ -1875,18 +1975,18 @@ function titleCase(input) {
 			<key>note</key>
 			<string>Open wiki in VS Code</string>
 			<key>xpos</key>
-			<integer>540</integer>
+			<integer>655</integer>
 			<key>ypos</key>
-			<integer>410</integer>
+			<integer>790</integer>
 		</dict>
 		<key>CD33CDD6-50F7-488A-A77F-126388B715F7</key>
 		<dict>
 			<key>note</key>
 			<string>TODO: If Alfred can provide us the original query, paste it here and press Enter to execute a Vim search for it</string>
 			<key>xpos</key>
-			<integer>875</integer>
+			<integer>1165</integer>
 			<key>ypos</key>
-			<integer>50</integer>
+			<integer>20</integer>
 		</dict>
 		<key>E205EDC8-41FE-4F62-95E3-F1D7AAD75475</key>
 		<dict>
@@ -1914,6 +2014,22 @@ function titleCase(input) {
 			<integer>645</integer>
 			<key>ypos</key>
 			<integer>605</integer>
+		</dict>
+		<key>E6DDE36C-09DB-4124-BF65-A2ABE58F3E1D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>140</integer>
+		</dict>
+		<key>EDAF20FE-4A98-4D79-8626-3EF14605ACC2</key>
+		<dict>
+			<key>note</key>
+			<string>Construct URL from filename</string>
+			<key>xpos</key>
+			<integer>250</integer>
+			<key>ypos</key>
+			<integer>110</integer>
 		</dict>
 		<key>FF8E3BE3-2E94-4801-8A01-9AA8DE17340B</key>
 		<dict>
