@@ -36,7 +36,7 @@ cd $dotfiles_dir
 
 clear
 printf "Hi, $USER! 👋\n"
-printf "Let's get you set up... 👨‍💻\n"
+printf "Let's get you set up... 💻\n"
 # For dramatic effect...
 sleep 2s
 
@@ -58,7 +58,7 @@ install_dotfile ".sandboxrc"
 ##############################################################
 # Karabiner symlinking
 ##############################################################
-log "Symlinking directory for Karabiner Elements"
+log "Symlinking files/dirs for Karabiner Elements and Goku"
 
 kb_root_dir="$HOME/.config/karabiner"
 kb_dotfiles_dir="$dotfiles_dir/karabiner"
