@@ -100,8 +100,8 @@
       :rules [[:left_command :left_command nil {:alone :!Ctab}]]
     }
     {
-      :des "right shift -> cmd+b (bold)"
-      :rules [[:right_shift :right_shift nil {:alone :!Cb}]]
+      :des "left shift -> cmd+b (bold)"
+      :rules [[:left_shift :left_shift nil {:alone :!Cb}]]
     }
     {
       :des "App-specific overrides"

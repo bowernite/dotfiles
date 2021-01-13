@@ -328,7 +328,7 @@ echo "&lt;/items&gt;"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>dl</string>
+				<string>down</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -505,7 +505,7 @@ echo "&lt;/items&gt;"</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>clones</string>
+				<string>s</string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -519,7 +519,7 @@ echo "&lt;/items&gt;"</string>
 				<key>script</key>
 				<string>IFS=$'\n'
 
-files=$(ls -dtc ~/src/clones/* | grep -i ".*{query}.*" | perl -MHTML::Entities -CS -pe'$_ = encode_entities($_, q{&amp;&lt;&gt;"'\''})')
+files=$(ls -dtc ~/src/**/* | grep -i ".*{query}.*" | perl -MHTML::Entities -CS -pe'$_ = encode_entities($_, q{&amp;&lt;&gt;"'\''})')
 
 echo "&lt;?xml version='1.0'?&gt;&lt;items&gt;"
 for file in ${files}; do
@@ -538,7 +538,7 @@ echo "&lt;/items&gt;"</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Search ~/src/clones</string>
+				<string>Search ~/src</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
