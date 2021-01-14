@@ -141,18 +141,7 @@
 			</dict>
 		</array>
 		<key>7CF8BA7C-BC19-46F0-AA46-B7F84C042A71</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>84751103-E81D-4F6F-B259-0338056B8629</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>84751103-E81D-4F6F-B259-0338056B8629</key>
 		<array>
 			<dict>
@@ -1365,6 +1354,23 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  -- your script here
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>4B22D3C8-3A66-48A9-83D8-EA11D292DD80</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>openwith</key>
 				<string></string>
 				<key>sourcefile</key>
@@ -1376,27 +1382,6 @@ function titleCase(input) {
 			<string>8E2FC65A-1223-4025-BFE8-3AC98CAD1123</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>⎋</string>
-				<key>keycode</key>
-				<integer>53</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>84751103-E81D-4F6F-B259-0338056B8629</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1511,48 +1496,6 @@ function titleCase(input) {
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>o</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>131072</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>ADB441A7-DB88-4664-A99F-B9B758214726</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>g</string>
-				<key>keycode</key>
-				<integer>-1</integer>
-				<key>keymod</key>
-				<integer>131072</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -1596,6 +1539,69 @@ function titleCase(input) {
 			<string>alfred.workflow.utility.debug</string>
 			<key>uid</key>
 			<string>A45D872D-C93F-4C43-BF88-5B905825E95E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>⎋</string>
+				<key>keycode</key>
+				<integer>53</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>84751103-E81D-4F6F-B259-0338056B8629</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>o</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>131072</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>ADB441A7-DB88-4664-A99F-B9B758214726</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>g</string>
+				<key>keycode</key>
+				<integer>-1</integer>
+				<key>keymod</key>
+				<integer>131072</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1721,7 +1727,7 @@ function titleCase(input) {
 			<key>xpos</key>
 			<integer>295</integer>
 			<key>ypos</key>
-			<integer>1365</integer>
+			<integer>1550</integer>
 		</dict>
 		<key>44917A09-461D-4AFB-BEFD-7684E990ED7A</key>
 		<dict>
@@ -1737,14 +1743,21 @@ function titleCase(input) {
 			<key>xpos</key>
 			<integer>455</integer>
 			<key>ypos</key>
-			<integer>1365</integer>
+			<integer>1550</integer>
+		</dict>
+		<key>4B22D3C8-3A66-48A9-83D8-EA11D292DD80</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>1180</integer>
 		</dict>
 		<key>4F3E4F61-94CD-442B-9B7C-5803BC6CC661</key>
 		<dict>
 			<key>xpos</key>
-			<integer>725</integer>
+			<integer>730</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
+			<integer>1410</integer>
 		</dict>
 		<key>54C5A78B-3F7C-4AAB-992E-FF90FD5734B4</key>
 		<dict>
@@ -1826,9 +1839,9 @@ function titleCase(input) {
 		<key>84751103-E81D-4F6F-B259-0338056B8629</key>
 		<dict>
 			<key>xpos</key>
-			<integer>560</integer>
+			<integer>565</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
+			<integer>1410</integer>
 		</dict>
 		<key>84E682B7-4405-488E-B9AC-102C5D6B67D1</key>
 		<dict>
@@ -1913,9 +1926,9 @@ function titleCase(input) {
 		<key>ADB441A7-DB88-4664-A99F-B9B758214726</key>
 		<dict>
 			<key>xpos</key>
-			<integer>885</integer>
+			<integer>890</integer>
 			<key>ypos</key>
-			<integer>1195</integer>
+			<integer>1410</integer>
 		</dict>
 		<key>AEE21852-0EAF-47F6-923E-C75065E2F617</key>
 		<dict>
