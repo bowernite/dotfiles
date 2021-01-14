@@ -21,11 +21,10 @@ brew "go"
 # Tool for making Karabiner config management more manageable and powerful
 brew "yqrashawn/goku/goku"
 brew "nvm"
+# This does come with nvm, but doing it this way lets us leverage brew autoupdating
+brew "npm"
 brew "python"
 brew "yarn"
-# NEXT_MACHINE: Are these necessary, or do they come with nvm? Try installing them with Brew on its own. If they don't come with it, uncomment these lines and alphabetize them above
-# node
-# npm
 
 #######################################
 # Casks

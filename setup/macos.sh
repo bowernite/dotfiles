@@ -2,6 +2,8 @@
 #  macOS: Configure macOS settings
 ##############################################################
 
+# TODO: Touchbar preferences
+
 source ~/src/personal/dotfiles/bin/utils.sh
 
 # Ask for the administrator password upfront
@@ -35,9 +37,6 @@ defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool tru
 
 # System Preferences > General > Click in the scrollbar to: Jump to the spot that's clicked
 defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
-
-# System Preferences > Dock > Magnification:
-defaults write com.apple.dock magnification -bool true
 
 # System Preferences > Keyboard > Key Repeat
 # NOTE: 1 is super fast -- the lower, the faster for this option
@@ -222,6 +221,18 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 # System Preferences > Dock > Minimize windows using: Scale effect
 defaults write com.apple.dock mineffect -string "scale"
 
+# System Preferences > Dock > Magnification:
+defaults write com.apple.dock magnification -bool true
+
+# Don't show recently used applications in the Dock
+defaults write com.Apple.Dock show-recents -bool false
+
+# No bouncing icons
+# defaults write com.apple.dock no-bouncing -bool true
+
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
+
 # Remove the spring loading delay for directories
 # "Spring loading" is when a directory opens up when you drag something over it
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
@@ -229,15 +240,24 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # Remove the spring loading delay for directories
 # "Spring loading" is when a directory opens up when you drag something over it
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+# TODO: Set which apps go in the dock. dockutil isn't a standard thing, so might have to look that up
+# dockutil --no-restart --remove all
+# dockutil --no-restart --add "/Applications/Google Chrome.app"
+# dockutil --no-restart --add "/System/Applications/Mail.app"
+# dockutil --no-restart --add "/System/Applications/Calendar.app"
+# dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
+# dockutil --no-restart --add "/System/Applications/System Preferences.app"
+# dockutil --no-restart --add "/Applications/Spotify.app"
 
 ##############################################################
 # Keyboard shortcuts
 ##############################################################
 
 # Turn off Spotlight shortcut (use Alfred instead), and change it to cmd+opt+space
-# NEXT_MACHINE: See if this works or not. If it does, great -- remove this comment. If it doesn't, then it wasn't NM's enterprise stuff at all -- add a to-do for it
 # The remapping is ⌃⌥⌘F15 right now, in cased `enabled = 0` doesn't work (it hasn't in the past). At least that's uncommon and will remove the conflict with Alfred in case this is faulty
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled = 0; value = { parameters = (65535, 113, 10223616); type = 'standard';}; }"
+# UPDATE: This doesn't work, no matter how hard I've tried... oh well, keeping it here for reference
+# defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "{enabled = 0; value = { parameters = (65535, 113, 10223616); type = 'standard';}; }"
 
 ##############################################################
 # Activity Monitor

@@ -81,7 +81,7 @@ if [[ ! -h ~/Library/Logs/goku.log ]]; then
 fi
 
 ##############################################################
-# Software installs (homebrew, npm/yarn)
+# Software installs (homebrew, npm/yarn, etc.)
 ##############################################################
 
 source setup/brew.sh
@@ -90,6 +90,13 @@ source setup/brew.sh
 if ! command -v npx &> /dev/null; then
   npm i -g npx
 fi
+
+# Install oh-my-zsh
+# Look here for updated instructions if this is broken: https://github.com/ohmyzsh/ohmyzsh
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Go packages
+go get -u github.com/nikitavoloboev/gitupdate
 
 ##############################################################
 # macOS
@@ -103,8 +110,6 @@ source setup/macos.sh
 
 ##############################################################
 # Clone git repos
-#
-# NEXT_MACHINE: See if this worked
 ##############################################################
 
 function clone_repo() {
@@ -118,6 +123,10 @@ function clone_repo() {
 clone_repo base-project-config
 clone_repo abramczyk.dev
 clone_repo doofi
+
+# TODO: Clean this up
+cd ~/src/personal/abramczyk.dev
+yarn
 
 ##############################################################
 # Fin
