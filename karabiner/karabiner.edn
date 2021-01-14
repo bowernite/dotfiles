@@ -53,7 +53,7 @@
   ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
   :simlayers    {
-    :launch-mode{ :key :w }
+    :launch-mode{ :key :x }
   }
 
   :main [
