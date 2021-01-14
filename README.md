@@ -42,10 +42,6 @@ export __TRELLO_TOKEN=
 2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
 1. Follow any other instructions below
 
-#### Double check...
-
-- [ ] That Alfred is indexing markdown files properly. In Alfred's modal, try `in <text>`, where text is some text that exists in a markdown file on the machine. If this doesn't work, try running [setup/make-spotlight-index-markdown.sh](setup/make-spotlight-index-markdown.sh) again. If it does work right away, remove this blurb.
-
 ### One-offs
 
 I try to automate everything I can, but here's everything I haven't yet, or maybe don't ever want to, or maybe it's just too early to tell if these are evergreen yet.
@@ -56,7 +52,7 @@ I try to automate everything I can, but here's everything I haven't yet, or mayb
 ### Rectangle ▬
 
 1. Open Rectangle's preferences
-1. Copy the keybindings [shown here](/assets/rectangle-keybindings.png)
+1. Change them to what you're used to
 
 <details>
    This is done here because this keybinding changes a plist option where it's some data array, and I don't know exactly how to modify that correctly.
@@ -68,6 +64,15 @@ As of writing this, there's a Bartender 4 update that is only for Big Sur+. Beca
 
 - Make sure it runs at login
 - Configure any apps necessary in the menu bar (`NEXT_MACHINE`: Run the pref diffs and record it somewhere, in case we ever want to automate this part)
+
+### Font 🔠
+
+For use in VS Code and your terminal:
+
+1. Download the [Dank Mono](https://gumroad.com/l/dank-mono) font (link to download it is in your password manager)
+2. Extract and open the downloaded zip
+3. Open the `OpenType-PS` directory
+4. Double click on all the fonts, and click `Install Font` for each
 
 ### Terminal 💻
 
@@ -92,13 +97,9 @@ Alfred recommends syncing with Dropbox. For now, all Alfred data is stored in th
 
 Keyboard remapping is done with the Karabiner-Elements app.
 
-> NOTE: Remapping for external "non-Mac" keyboards is currently done on a one-off basis for my particular mechanical keyboard (Karabiner stores product and vendor IDs). If you ever switch keyboards, you'll need to manually \*\*swap the `opt` and `command` keys just for that keyboard
+> NOTE: Remapping for external "non-Mac" keyboards is currently done on a one-off basis for my particular mechanical keyboard (Karabiner stores product and vendor IDs). If you ever switch keyboards, you'll need to manually **swap the `opt` and `command` keys just for that keyboard**
 
 - [ ] Make sure the default Profile is called `Goku`
-
-### Font 🔠
-
-For use in VS Code, download the [Dank Mono](https://gumroad.com/l/dank-mono) font (the confirmation/link to the actual asset should be in your email somewhere)
 
 ### After cloning repositories
 

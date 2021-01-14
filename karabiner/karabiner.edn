@@ -232,7 +232,6 @@
         [:backslash [:opena "Activity Monitor"]]
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
-        [:9 [:emoji "🚀"]]
       ]
     }
 
