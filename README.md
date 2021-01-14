@@ -38,6 +38,7 @@ export __TRELLO_TOKEN=
 - [ ] Alfred
 - [ ] Bartender
 
+<!-- TODO: Automate this -->
 2. Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
 1. Follow any other instructions below
 

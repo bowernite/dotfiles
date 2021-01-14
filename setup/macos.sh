@@ -408,9 +408,10 @@ for app in "Activity Monitor" \
 	"Rectangle" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
-	"iCal"; do
-	killall "${app}" &> /dev/null
+	"Terminal"; do
+	# `2>/dev/null` swallows the stderr error message
+	# `|| true` makes sure error/exit code is swallowed, and the script can continue
+	sudo killall "${app}" 2>/dev/null || true
 done
 
 echo
