@@ -1,7 +1,6 @@
 [user]
     name = "Brett Abramczyk"
-    # NEXT_MACHINE
-    email = brettabramczyk@northwesternmutual.com
+    email = bjabramczyk@gmail.com
 
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
