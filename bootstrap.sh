@@ -91,18 +91,21 @@ if ! command -v npx &> /dev/null; then
   npm i -g npx
 fi
 
-# Install oh-my-zsh
+echo "Installing oh-my-zsh"
 # Look here for updated instructions if this is broken: https://github.com/ohmyzsh/ohmyzsh
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Go packages
+echo "Installing fzf keybindings and fuzzy completion..."
+$(brew --prefix)/opt/fzf/install
+
+echo "Installing go packages"
 go get -u github.com/nikitavoloboev/gitupdate
 
 # Vim plugins with vim-plug
 if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
-  # Install vim-plug
+  echo "Installing vim-plug"
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  # Install all plugins specified in vimrc
+  echo "Installing all Vim plugins with PlugInstall"
   vim +PlugInstall +qall
 fi
 
