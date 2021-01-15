@@ -374,6 +374,7 @@ duti -s com.microsoft.VSCode scss all
 duti -s com.microsoft.VSCode lock all
 duti -s com.microsoft.VSCode log all
 duti -s com.microsoft.VSCode plist all
+duti -s com.microsoft.VSCode sh all
 
 ##############################################################
 # ???
