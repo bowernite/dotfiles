@@ -121,10 +121,6 @@ fi
 ##############################################################
 # macOS
 ##############################################################
-# TODO: Store some kind of variable in a gitignored file. Use it to only run this command once for a whole machine (i.e. on a fresh macOS install)
-log "Updating MacOS apps"
-# Install latest macOS and Apple Apps (Safari, etc.)
-# softwareupdate -i -a
 
 source setup/macos.sh
 
