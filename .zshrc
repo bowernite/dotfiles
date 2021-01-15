@@ -39,6 +39,7 @@ precmd() {
 }
 
 # Two-line prompt with emoji
+# This is off for now... it go annoying with the emojis that were sometimes wider than one character, depending on the terminal that was rendering it. Maybe one day I'll turn it back on and move the emoji or just use emojis that are always one character wide (e.g. 😀)
 # Source: https://github.com/kentcdodds/dotfiles/blob/master/.zshrc
 function random_element {
   declare -a array=("$@")
@@ -48,7 +49,9 @@ function random_element {
 function random_emoji () {
   printf "$(random_element 😅 👽 🔥 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
 }
-PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
+# PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
+
+PROMPT="$PROMPT"$'\n'"  "
 
 ##############################################################
 # FZF
