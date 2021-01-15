@@ -42,7 +42,3 @@
 # Require password as soon as screensaver or sleep mode starts
 # defaults write com.apple.screensaver askForPassword -int 1
 # defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Q: Is this going to duplicate stuff that we already have committed to .zshrc?
-# echo "Installing fzf keybindings and fuzzy completion..."
-# $(brew --prefix)/opt/fzf/install
