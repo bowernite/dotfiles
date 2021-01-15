@@ -290,6 +290,12 @@
         "options": {
           "full_name": "visual-studio-code"
         }
+      },
+      "bitwarden": {
+        "version": "1.23.1",
+        "options": {
+          "full_name": "bitwarden"
+        }
       }
     },
     "tap": {
@@ -311,7 +317,7 @@
       "big_sur": {
         "HOMEBREW_VERSION": "2.7.5",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "342500437c6a62b0fae3d277351aab11bd9194c8",
+        "Homebrew/homebrew-core": "5e1a9fe44ff5b8d5036bdd17e578baa76c56101b",
         "CLT": "12.0.32.28",
         "Xcode": "12.0",
         "macOS": "11.1"

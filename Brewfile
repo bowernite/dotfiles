@@ -33,6 +33,7 @@ brew "yarn"
 
 cask "alfred"
 cask "bartender"
+cask "bitwarden"
 cask "docker"
 cask "firefox"
 cask "flux"
