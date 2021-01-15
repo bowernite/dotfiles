@@ -7,6 +7,6 @@
 	<key>modcmd</key>
 	<integer>1</integer>
 	<key>modctrl</key>
-	<integer>4</integer>
+	<integer>0</integer>
 </dict>
 </plist>
