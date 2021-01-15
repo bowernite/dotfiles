@@ -241,15 +241,6 @@ defaults write NSGlobalDomain com.apple.springing.delay -float 0
 # "Spring loading" is when a directory opens up when you drag something over it
 defaults write NSGlobalDomain com.apple.springing.delay -float 0
 
-# TODO: Set which apps go in the dock. dockutil isn't a standard thing, so might have to look that up
-# dockutil --no-restart --remove all
-# dockutil --no-restart --add "/Applications/Google Chrome.app"
-# dockutil --no-restart --add "/System/Applications/Mail.app"
-# dockutil --no-restart --add "/System/Applications/Calendar.app"
-# dockutil --no-restart --add "/System/Applications/Utilities/Terminal.app"
-# dockutil --no-restart --add "/System/Applications/System Preferences.app"
-# dockutil --no-restart --add "/Applications/Spotify.app"
-
 ##############################################################
 # Keyboard shortcuts
 ##############################################################

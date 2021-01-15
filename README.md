@@ -29,7 +29,7 @@ export __TRELLO_API_KEY=
 export __TRELLO_TOKEN=
 ```
 
-6. Fix or note any findings that were specific to the "next machine" (including these installation instructions 🙂)
+6. `macos/dock.sh` - Sets up the dock for the first time on a new machine
 
 #### You might need to...
 
