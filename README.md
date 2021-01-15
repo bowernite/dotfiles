@@ -101,6 +101,17 @@ Keyboard remapping is done with the Karabiner-Elements app.
 
 - [ ] Make sure the default Profile is called `Goku`
 
+### GitHub
+
+- [ ] Follow the [instructions here](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) to create a personal access token (you'll need to do this, since having 2FA enabled on your GitHub account prevents you from using username+password from the CLI).
+  - [ ] Copy the generated token
+- [ ] Go to any repo that's been cloned for you in `~/src/personal/`
+  - [ ] Make a small change and commit it
+  - [ ] `git push`
+  - [ ] Use your GitHub username (not email), and the token for the password
+
+You should now be properly authenticated for future requests to GitHub.
+
 ### After cloning repositories
 
 After cloning any repositories, exclude their `node_modules` from Alfred's/Spotlight's search by going to `System Preferences` > `Spotlight` > `Privacy` and adding each `node_modules` folder to the list.
