@@ -98,6 +98,14 @@ sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/maste
 # Go packages
 go get -u github.com/nikitavoloboev/gitupdate
 
+# Vim plugins with vim-plug
+if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
+  # Install vim-plug
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # Install all plugins specified in vimrc
+  vim +PlugInstall +qall
+fi
+
 ##############################################################
 # macOS
 ##############################################################

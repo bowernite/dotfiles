@@ -16,7 +16,7 @@ HISTORY_MAP = {
     "brave": "/Library/Application Support/BraveSoftware/Brave-Browser/Default/History",
     "brave_dev": "/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/History",
     "chromium": "/Library/Application Support/Chromium/Default/History",
-    "chrome": "/Library/Application Support/Google/Chrome/Profile 1/History",
+    "chrome": "/Library/Application Support/Google/Chrome/Default/History",
     "firefox": "/Library/Application Support/Firefox/Profiles",
     "opera": "/Library/Application Support/com.operasoftware.Opera/History",
     "sidekick": '/Library/Application Support/Sidekick/Default/History',
