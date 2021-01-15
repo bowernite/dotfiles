@@ -584,6 +584,7 @@
 				<string>Search wiki content</string>
 				<key>types</key>
 				<array>
+					<string>dyn.ah62d4rv4ge8043a</string>
 					<string>net.daringfireball.markdown</string>
 				</array>
 				<key>withspace</key>
@@ -749,6 +750,7 @@
 				<string>Search notes</string>
 				<key>types</key>
 				<array>
+					<string>dyn.ah62d4rv4ge8043a</string>
 					<string>net.daringfireball.markdown</string>
 				</array>
 				<key>withspace</key>
@@ -834,6 +836,7 @@
 				<string>Search for and edit Wiki files</string>
 				<key>types</key>
 				<array>
+					<string>dyn.ah62d4rv4ge8043a</string>
 					<string>net.daringfireball.markdown</string>
 				</array>
 				<key>withspace</key>
@@ -1502,6 +1505,7 @@ end alfred_script</string>
 				<string>Append tab to wiki file</string>
 				<key>types</key>
 				<array>
+					<string>dyn.ah62d4rv4ge8043a</string>
 					<string>net.daringfireball.markdown</string>
 				</array>
 				<key>withspace</key>
@@ -1644,6 +1648,7 @@ end alfred_script</string>
 				<string>Append selection as note to wiki file</string>
 				<key>types</key>
 				<array>
+					<string>dyn.ah62d4rv4ge8043a</string>
 					<string>net.daringfireball.markdown</string>
 				</array>
 				<key>withspace</key>
