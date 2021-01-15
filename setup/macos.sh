@@ -215,14 +215,17 @@ sudo chflags nohidden /Volumes
 # Dock, Dashboard, and hot corners
 ##############################################################
 
-# Enable highlight hover effect for the grid view of a stack (Dock)
-defaults write com.apple.dock mouse-over-hilite-stack -bool true
+# Put the dock on the left
+defaults write com.apple.dock orientation -string "left"
 
 # System Preferences > Dock > Minimize windows using: Scale effect
 defaults write com.apple.dock mineffect -string "scale"
 
 # System Preferences > Dock > Magnification:
 defaults write com.apple.dock magnification -bool true
+
+# Size of the magnification when icons are hovered
+defaults write com.apple.dock largesize -int 65
 
 # Don't show recently used applications in the Dock
 defaults write com.Apple.Dock show-recents -bool false
@@ -232,6 +235,9 @@ defaults write com.Apple.Dock show-recents -bool false
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
+
+# Enable highlight hover effect for the grid view of a stack (Dock)
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
 # Remove the spring loading delay for directories
 # "Spring loading" is when a directory opens up when you drag something over it
