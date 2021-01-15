@@ -88,15 +88,24 @@ source setup/brew.sh
 
 # Might change this at some point if we go full yarn. Still, it _is_ nice to have npx for "use the local binary if it's there, otherwise use the global one". AFAIK, that doesn't exist with yarn. It's useful for our shell aliases for running prettier, jest, etc.
 if ! command -v npx &> /dev/null; then
+  echo "Installing npx globally"
   npm i -g npx
 fi
 
-echo "Installing oh-my-zsh"
-# Look here for updated instructions if this is broken: https://github.com/ohmyzsh/ohmyzsh
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Install oh-my-zsh
+# Check if $ZSH variable doesn't exist (hence, oh-my-zsh is already installed)
+if [[ -z $ZSH ]]; then
+  echo "Installing oh-my-zsh"
+  # Look here for updated instructions if this is broken: https://github.com/ohmyzsh/ohmyzsh
+  sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
-echo "Installing fzf keybindings and fuzzy completion..."
-$(brew --prefix)/opt/fzf/install
+# FZF setup for keybindings and fuzzy completion
+# The setup generates this file, so check for its existence before doing it unnecessarily
+if [[ ! -e ~/.fzf.zsh ]]; then
+  echo "Installing fzf keybindings and fuzzy completion..."
+  $(brew --prefix)/opt/fzf/install
+fi
 
 echo "Installing go packages"
 go get -u github.com/nikitavoloboev/gitupdate
@@ -120,7 +129,7 @@ log "Updating MacOS apps"
 source setup/macos.sh
 
 ##############################################################
-# Clone git repos
+# Repo setup
 ##############################################################
 
 function clone_repo() {
@@ -135,9 +144,12 @@ clone_repo base-project-config
 clone_repo abramczyk.dev
 clone_repo doofi
 
-# TODO: Clean this up
+# Install node_modules in any node projects (just when the machine is first set up)
 cd ~/src/personal/abramczyk.dev
-yarn
+if [[ ! -d node_modules ]]; then
+  echo "Installing node_modules in: $pwd"
+  yarn
+fi
 
 ##############################################################
 # Fin
