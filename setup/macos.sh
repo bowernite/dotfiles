@@ -407,6 +407,18 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 ##############################################################
+# Miscellaneous
+##############################################################
+
+# Use TouchID for `sudo`
+if [[ ! $(grep -xF 'auth sufficient pam_tid.so' /private/etc/pam.d/sudo) ]]; then
+  echo "Enabling Touch ID for sudo access 🔑"
+  sudo sed -i '' '2i\
+auth sufficient pam_tid.so\
+'  /private/etc/pam.d/sudo
+fi
+
+##############################################################
 # Apply
 ##############################################################
 
