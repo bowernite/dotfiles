@@ -100,8 +100,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # See .sandboxrc for details
 source $dotfiles_dir/bin/sandboxd
 
-# NEXT_MACHINE: Make sure nvm is installed correctly. When homebrew installs it, it might try to put similar lines in this file (but we don't want it to, because we're making our own modifications)
 export NVM_DIR="$HOME/.nvm"
-# We're using `sandboxd` above to lazy load nvm instead of loading it right here
+# Normally, nvm wants us to run these lines to load nvm on shell startup. But instead, we're using sandboxd to lazy load nvm logic to keep shell startup snappy af
 # [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 # [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
