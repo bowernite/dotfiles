@@ -198,8 +198,8 @@
         [:j [:opena "Google Chrome"] :!Chrome]
         [:j :same_wind_app :Chrome]
         ; Kode
-        [:quote [:opena "Visual Studio Code"] :!VSCode]
-        [:quote :same_wind_app :VSCode]
+        [:semicolon [:opena "Visual Studio Code"] :!VSCode]
+        [:semicolon :same_wind_app :VSCode]
         ; Some same/left hand alternatives
         [:k [:opena "Google Chrome"] :!Chrome]
         [:k :same_wind_app :Chrome]
@@ -208,7 +208,7 @@
         ;  sLack
         [:l [:opena "Slack"]]
         ; [:l [:opena "Slack Web"]]
-        [:semicolon [:opena "Terminal"]]
+        [:quote [:opena "Terminal"]]
 
         ; Also common
         ;  Notes
@@ -219,7 +219,7 @@
         [:i [:opena "Messages"]]
         ; zOOm
         [:o [:opena "zoom.us.app"]]
-        [:quote [:opena "Music"]]
+        [:u [:opena "Music"]]
         ; todo: Open hey URL. Or just trigger alfred workflow
         [:y [:opena "Outlook"]]
         [:comma [:opena "System Preferences"]]
