@@ -296,6 +296,12 @@
         "options": {
           "full_name": "bitwarden"
         }
+      },
+      "dropbox": {
+        "version": "112.4.321",
+        "options": {
+          "full_name": "dropbox"
+        }
       }
     },
     "tap": {
