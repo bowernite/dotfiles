@@ -39,7 +39,6 @@ I try to automate everything I can, but here's everything I haven't yet (or won'
 - [ ] Save Trello (and Slack) as "apps" from Chrome (overflow menu > `More Tools` > `Create shortcut…` > check `Open as new window`)
 - [ ] Rectangle ◻️: Open up Rectangle, and configure it how you'd like
 - [ ] Bartender ️🍸: Open up Bartender, and configure it how you'd like
-- [ ] Put this at the top of `/private/etc/pam.d/sudo`: `auth sufficient pam_tid.so`. This allows TouchID instead of a password for sudo
 
 ### Keyboard ⌨️
 
