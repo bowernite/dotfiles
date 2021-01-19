@@ -1,6 +1,3 @@
 {
   "editor.wordWrap": "wordWrapColumn",
-  "search.exclude": {
-    "**alfredpreferences**": true
-  }
 }
