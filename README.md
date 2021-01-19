@@ -53,7 +53,6 @@ Keyboard remapping is done with the Karabiner-Elements app.
 
 ### Alfred 🎩
 
-- [ ] When starting Alfred for the first time, you'll need to point it to the files in this repo. To do so, open Alfred's preferences > `Appearance` > `Set preferences folder…` and select `<DOTFILES_REPO_PATH>/Alfred`
 - [ ] Make sure Alfred and its workflows have proper OS access. In Alfred's preferences, go to `General` > `Permissions` > `Request Permissions`, and let Alfred guide you 🧙‍♂️
 - [ ] Exclude all `node_modules` from Spotlight: `System Preferences` > `Spotlight` > `Privacy`: Drag folders from Finder into the drop area. You can easily find these by triggering Alfred and querying for `node_modules`
 

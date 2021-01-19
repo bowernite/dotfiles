@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/abr1402/src/personal/dotfiles/Alfred/Alfred.alfredpreferences/workflows/apple-notes/update.py", line 70, in <module>
-    latestVersion = latest['tag_name']
-KeyError: 'tag_name'

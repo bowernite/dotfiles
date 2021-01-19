@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "{datetime:long}",
-    "uid" : "2D5B0D03-F98E-4A2C-9245-A639A1F7D887",
-    "name" : "Long datetime",
-    "keyword" : "dt.l"
-  }
-}

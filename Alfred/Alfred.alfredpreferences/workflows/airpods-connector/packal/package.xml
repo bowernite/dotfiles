@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<workflow>
-  <name>AirPods Connector</name>
-  <version>1.2</version>
-  <bundle>de.mariuskiessling.alfred-airpods-connector</bundle>
-  <updated>1591553057</updated>
-  <file>airpods_connector.alfredworkflow</file>
-</workflow>

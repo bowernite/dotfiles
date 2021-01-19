@@ -1,4 +1,2 @@
-/Alfred/
-
 # This would be nice... but since Karabiner writes a completely new JSON file every time it changes a setting, the formatting gets reset and the diff is the whole file instead of just the setting
 /karabiner/karabiner.json

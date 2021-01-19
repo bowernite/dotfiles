@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "echo $var > \/dev\/stderr",
-    "uid" : "B90EEFF1-2E35-476A-8CC1-5BFDBAA25B09",
-    "name" : "shell stderr",
-    "keyword" : "stderr"
-  }
-}
