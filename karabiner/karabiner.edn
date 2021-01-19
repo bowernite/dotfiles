@@ -198,11 +198,11 @@
         [:j [:opena "Google Chrome"] :!Chrome]
         [:j :same_wind_app :Chrome]
         ; Kode
-        [:k [:opena "Visual Studio Code"] :!VSCode]
-        [:k :same_wind_app :VSCode]
+        [:quote [:opena "Visual Studio Code"] :!VSCode]
+        [:quote :same_wind_app :VSCode]
         ; Some same/left hand alternatives
-        [:c [:opena "Google Chrome"] :!Chrome]
-        [:c :same_wind_app :Chrome]
+        [:k [:opena "Google Chrome"] :!Chrome]
+        [:k :same_wind_app :Chrome]
         [:v [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ;  sLack

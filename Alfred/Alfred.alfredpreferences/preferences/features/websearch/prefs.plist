@@ -9,7 +9,7 @@
 			<key>enabled</key>
 			<true/>
 			<key>keyword</key>
-			<string>german</string>
+			<string>germ</string>
 			<key>text</key>
 			<string>Translate '{query}' to German</string>
 			<key>url</key>
@@ -27,6 +27,19 @@
 			<string>Search Amazon for '{query}'</string>
 			<key>url</key>
 			<string>https://smile.amazon.com/s?k={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>1DA65369-1375-4923-94F5-16D6339F6B35</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>eng</string>
+			<key>text</key>
+			<string>Translate '{query}' to English</string>
+			<key>url</key>
+			<string>https://translate.google.com/?sl=auto&amp;tl=en&amp;text={query}&amp;op=translate</string>
 			<key>utf8</key>
 			<true/>
 		</dict>
