@@ -109,6 +109,9 @@ fi
 
 echo "Installing go packages"
 go get -u github.com/nikitavoloboev/gitupdate
+# Used by VS Code Go extensions
+go get -v github.com/ramya-rao-a/go-outline
+go get -v golang.org/x/tools/gopls
 
 # Vim plugins with vim-plug
 if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
