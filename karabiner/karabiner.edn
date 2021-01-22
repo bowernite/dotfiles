@@ -56,7 +56,7 @@
 
   :simlayers    {
     :launch-mode { :key :x }
-    :symbol-mode { :key :semicolon }
+    :symbol-mode { :key :quote }
   }
 
   :main [
@@ -97,6 +97,10 @@
       ; q, w, x, z, j, numbers
       ; https://en.wikipedia.org/wiki/Letter_frequency
 
+    {
+      :des "semicolon -> shift"
+      :rules [[:semicolon :right_shift nil {:alone :semicolon}]]
+    }
     {
       :des "left cmd -> cmd+tab"
       :rules [[:left_command :left_command nil {:alone :!Ctab}]]
