@@ -277,7 +277,7 @@
         [:c :!Shyphen] ; _
         [:v :hyphen] ; -
 
-        [:grave_accent_and_tilde :!Sgrave_accent_and_tilde] ; -> ~
+        [:grave_accent_and_tilde [:hyphen :!Speriod]] ; -> ~
         [:tab :!Squote] ; "
         [:caps_lock [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:
         [:left_shift [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:
