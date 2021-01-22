@@ -57,6 +57,7 @@
   :simlayers    {
     :launch-mode { :key :x }
     :symbol-mode { :key :quote }
+    :macro-mode { :key :right_shift }
   }
 
   :main [
@@ -94,6 +95,13 @@
       ; q, w, x, z, j, numbers
       ; https://en.wikipedia.org/wiki/Letter_frequency
 
+    {
+      :des "swap : and ;"
+      :rules [
+        [:#Psemicolon :!Ssemicolon]
+        [:!Ssemicolon :semicolon]
+      ]
+    }
     {
       :des "semicolon -> shift"
       :rules [[:semicolon :right_shift nil {:alone :semicolon}]]
@@ -246,6 +254,23 @@
     }
 
     {
+      :des "macro mode"
+      :rules [
+        :macro-mode
+        
+        ; Window resizing (Rectangle)
+        [:f :!TOa]
+        [:c :!TOs]
+        ; Left/right half of current monitor
+        [:a :!TOh]
+        [:s :!TOl]
+        ; Move to next/prev monitor
+        [:z :!CTOh]
+        [:x :!CTOl]
+      ]
+    }
+
+    {
       :des "symbol mode"
       :rules [
         :symbol-mode
@@ -266,8 +291,8 @@
         [:d :!Sopen_bracket] ; {
         [:f :!Sclose_bracket] ; }
 
-        [:g :slash] ; /
-        [:b :!Sslash] ; ?
+        [:b :slash] ; /
+        [:g :!Sslash] ; ?
 
         [:z :!Sequal_sign] ; +
         [:x :equal_sign] ; =
