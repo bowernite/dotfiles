@@ -47,8 +47,6 @@
     :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
     ; Doesn't work :(
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
-    
-    
     :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
     ; :focus      "/usr/local/bin/yabai -m display --focus \"%s\" & /usr/local/bin/yabai -m space --focus \"%s\""
   }
@@ -57,7 +55,8 @@
   ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
   :simlayers    {
-    :launch-mode{ :key :x }
+    :launch-mode { :key :x }
+    :symbol-mode { :key :semicolon }
   }
 
   :main [
@@ -73,7 +72,6 @@
 
     ; Simlayer ideas:
       ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
-      ; Semicolon as app launcher (pretty awesome, especially if the delay isn't noticeable. Might be the move if we're okay with using a pinky for that)
       ; Using a simlayer for websites specifically (cool, but not sure if there's enough common websites for this to be worth it)
       ; Using a simlayer for symbols (punctuation, equals sign, brackets, etc.) (good for ergonomics, but has drift and requires another simlayer key)
       ; Having a simlayer for Alfred workflows (see Nikita's) (might be worth it someday, but those workflows are still maturing, and keywords are fine for now)
@@ -149,47 +147,6 @@
         [:!Rcaps_lock :caps_lock]
       ]
     }
-
-    ; {
-    ;   :des "Disable cmd+tab"
-    ;   :rules [
-    ;     [:!Ctab :vk_none]
-    ;   ]
-    ; }
-
-    ; {
-    ;   :des "launch mode"
-    ;   :rules [
-    ;     :launch-mode
-    ;     ;  Most common apps
-    ;     ; "Web"
-    ;     [:w [:opena "Google Chrome"]]
-    ;     ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
-    ;     ; [:w :same_wind_app :Chrome]
-    ;     ; "Editor"
-    ;     [:e [:opena "Visual Studio Code"] :!VSCode]
-    ;     [:e :same_wind_app :VSCode]
-    ;     ; [:s [:opena "Slack"]]
-    ;     [:s [:opena "Slack Web"]]
-    ;     [:t [:opena "Terminal"]]
-
-    ;     ; Also common
-    ;     [:q [:opena "Notes"]]
-    ;     [:r [:opena "Trello"]]
-    ;     [:x [:opena "Spotify"]]
-    ;     [:z [:opena "zoom.us.app"]]
-    ;     [:a [:opena "Alfred Preferences"]]
-    ;     [:f [:opena "Finder"]]
-    ;     [:c [:opena "Outlook"]]
-
-    ;     ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
-    ;     ; [:k [:opena "Karabiner-Elements"]]
-    ;     ; [:l [:opena "Karabiner-EventViewer"]]
-    ;     ; [:c [:opena "Music"]]
-    ;     ; [:g [:opena "Messages"]]
-    ;     ; email?
-    ;   ]
-    ; }
 
     {
       :des "launch mode (non-j)"
@@ -286,6 +243,84 @@
         [:!Ok :page_up]
       ]
     }
+
+    {
+      :des "symbol mode"
+      :rules [
+        :symbol-mode
+
+        [:1 :!S1]
+        [:2 :!S2]
+        [:3 :!S3]
+        [:4 :!S4]
+        [:4 :!S5]
+        [:q :!S6]
+        [:w :!S7]
+        [:e :!S8]
+        [:r :!S9]
+        [:t :!S0]
+
+        [:a :open_bracket] ; [
+        [:s :close_bracket] ; ]
+        [:d :!Sopen_bracket] ; {
+        [:f :!Sclose_bracket] ; }
+
+        [:g :slash] ; /
+        [:b :!Sslash] ; ?
+
+        [:z :!Sequal_sign] ; +
+        [:x :equal_sign] ; =
+        [:c :!Shyphen] ; _
+        [:v :hyphen] ; -
+
+        [:grave_accent_and_tilde :!Sgrave_accent_and_tilde] ; -> ~
+        [:tab :!Squote] ; "
+        [:caps_lock [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:
+        [:left_shift [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:
+
+        ; Most common
+        ; hyphen
+        ; underscore
+        ; plus
+        ; equals
+        ; pipe
+        ; question mark
+
+        ; Next tier
+        ; slash
+        ; backslash
+        ; arrow (-> )
+        ; comment (// )
+
+        ; [:1 :!S1]
+        ; [:2 :!S2]
+        ; [:3 :!Sequal_sign]
+        ; [:4 :!S8]
+        ; [:5 :!S5]
+        ; [:q :!Sopen_bracket]
+        ; [:w :!S9]
+        ; [:e :!S3]
+        ; [:r :!Squote]
+        ; [:t :quote]
+        ; [:o :open_bracket] ; [
+        ; [:p :close_bracket] ; ]
+        ; [:open_bracket :!Sclose_bracket] ; }
+        ; [:caps_lock [:km "Match symbols"]]
+        ; [:a :slash]
+        ; [:s :!Shyphen]
+        ; [:d :backslash]
+        ; [:f :hyphen]
+        ; [:g :!S4]
+        ; [:j :equal_sign]
+        ; [:l [:hyphen :!Speriod :spacebar]] ; -> arrow (->)
+        ; [:semicolon :semicolon]
+        [:z :!Sslash]
+        [:x :!Sbackslash]
+        ; [:c :!S7]
+        ; [:v :!Scomma]
+        ; [:b [:slash :slash :spacebar]] ; -> //
+      ]
+    }
   ]
 
   :applications {
@@ -329,4 +364,46 @@
       "^com\\.apple\\.Safari$"
     ]
   }
+
+  ; {
+  ;   :des "Disable cmd+tab"
+  ;   :rules [
+  ;     [:!Ctab :vk_none]
+  ;   ]
+  ; }
+
+  ; {
+  ;   :des "launch mode"
+  ;   :rules [
+  ;     :launch-mode
+  ;     ;  Most common apps
+  ;     ; "Web"
+  ;     [:w [:opena "Google Chrome"]]
+  ;     ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
+  ;     ; [:w :same_wind_app :Chrome]
+  ;     ; "Editor"
+  ;     [:e [:opena "Visual Studio Code"] :!VSCode]
+  ;     [:e :same_wind_app :VSCode]
+  ;     ; [:s [:opena "Slack"]]
+  ;     [:s [:opena "Slack Web"]]
+  ;     [:t [:opena "Terminal"]]
+
+  ;     ; Also common
+  ;     [:q [:opena "Notes"]]
+  ;     [:r [:opena "Trello"]]
+  ;     [:x [:opena "Spotify"]]
+  ;     [:z [:opena "zoom.us.app"]]
+  ;     [:a [:opena "Alfred Preferences"]]
+  ;     [:f [:opena "Finder"]]
+  ;     [:c [:opena "Outlook"]]
+
+  ;     ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
+  ;     ; [:k [:opena "Karabiner-Elements"]]
+  ;     ; [:l [:opena "Karabiner-EventViewer"]]
+  ;     ; [:c [:opena "Music"]]
+  ;     ; [:g [:opena "Messages"]]
+  ;     ; email?
+  ;   ]
+  ; }
+
 }
