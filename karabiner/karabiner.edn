@@ -73,7 +73,6 @@
     ; Simlayer ideas:
       ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
       ; Using a simlayer for websites specifically (cool, but not sure if there's enough common websites for this to be worth it)
-      ; Using a simlayer for symbols (punctuation, equals sign, brackets, etc.) (good for ergonomics, but has drift and requires another simlayer key)
       ; Having a simlayer for Alfred workflows (see Nikita's) (might be worth it someday, but those workflows are still maturing, and keywords are fine for now)
       ; Using a simlayer for the ctrl key, e.g. `a` (cool, but a simlayer on `a` is going to be hella annoying)
       ; Using a simlayer for mouse controls (might be useful for when we can see the mouse and we just want to bring focus to wherever it is)
@@ -81,13 +80,11 @@
       ; Using a simlayer for ⌘ (Nikita) (useful for ergonomics)
       ; "Clone repo to ~/clones and open with VS Code" (Nikita) (could be cool -- could look into this)
       ; Using a simlayer for media controls (Nikita)
-      ; Using a simlayer for common words/snippets (Nikita) (appears like it can only do it with actual keys/letters, and couldn't use unicode/emoji) (could use for `// TODO:`, "VSCode/XCode/Sublime comment on top of line with TODO", )
       ; Using a simlayer to control rectangle (this would be nice -- at the very least could do Maximize and Center)
       ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
 
     ; Simlayer key ideas
       ; tilde
-      ; semicolon
       ; backslash (currently used as ctrl key)
       ; tab
       ; slash
@@ -277,10 +274,11 @@
         [:c :!Shyphen] ; _
         [:v :hyphen] ; -
 
-        [:grave_accent_and_tilde [:hyphen :!Speriod]] ; -> ~
+        [:grave_accent_and_tilde [:hyphen :!Speriod]] ; ->
         [:tab :!Squote] ; "
-        [:caps_lock [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:
-        [:left_shift [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:
+        [:caps_lock [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; // TODO:
+        [:left_shift [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; // FIXME:
+        [:j :backslash]
 
         ; Most common
         ; hyphen
