@@ -286,13 +286,13 @@
         [:q :!S6]
         [:w :!S7]
         [:e :!S8]
-        [:r :!S9]
-        [:t :!S0]
+        [:r :!Sopen_bracket] ; {
+        [:t :!Sclose_bracket] ; }
 
         [:a :open_bracket] ; [
         [:s :close_bracket] ; ]
-        [:d :!Sopen_bracket] ; {
-        [:f :!Sclose_bracket] ; }
+        [:d :!S9]
+        [:f :!S0]
 
         [:b :slash] ; /
         [:g :!Sslash] ; ?
