@@ -26,6 +26,7 @@ touch_dir ~/src/work
 touch_dir ~/src/playground
 
 touch ~/src/personal/dotfiles/.zshrc__private
+touch ~/src/work/.gitconfig
 
 ##############################################################
 # Begin
