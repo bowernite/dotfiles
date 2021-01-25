@@ -297,8 +297,8 @@
         [:g :!Sbackslash] ; |
         [:f :!Sslash] ; ?
 
-        [:r :!Sequal_sign] ; +
-        [:t :equal_sign] ; =
+        [:t :!Sequal_sign] ; +
+        [:r :equal_sign] ; =
         [:b :!Shyphen] ; _
         [:v :hyphen] ; -
 
