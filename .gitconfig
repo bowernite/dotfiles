@@ -1,7 +1,11 @@
 [user]
     name = "Brett Abramczyk"
-    # TODO: Figure out how to change this based on the repository. Don't really know yet how to separate work email and personal email for Git
-    email = brett@wonder.me
+    email = bjabramczyk@gmail.com
+    
+# Work-specific config
+# Source: https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig/43654115#43654115
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
 
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
