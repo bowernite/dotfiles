@@ -299,8 +299,8 @@
 
         [:r :!Sequal_sign] ; +
         [:t :equal_sign] ; =
-        [:v :!Shyphen] ; _
-        [:b :hyphen] ; -
+        [:b :!Shyphen] ; _
+        [:v :hyphen] ; -
 
         [:grave_accent_and_tilde [:hyphen :!Speriod]] ; ->
         [:tab :!Squote] ; "
