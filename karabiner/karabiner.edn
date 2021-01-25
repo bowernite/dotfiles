@@ -291,8 +291,8 @@
 
         [:a :open_bracket] ; [
         [:z :close_bracket] ; ]
-        [:s :!S9]
-        [:x :!S0]
+        [:s :!S9] ; (
+        [:x :!S0] ; )
 
         [:g :!Sbackslash] ; |
         [:f :!Sslash] ; ?
