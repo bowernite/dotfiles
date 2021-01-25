@@ -108,3 +108,13 @@ export NVM_DIR="$HOME/.nvm"
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/slss.zsh
