@@ -52,11 +52,6 @@ alias gpom="git pull origin \$(git_dev_branch)"
 alias gr="git rev"
 alias grem="git remote" # (original oh-my-zsh `gr` alias)
 
-# "git diff origin dev"
-alias gdod="git fetch && git diff origin/\$(git_dev_branch)"
-# "git diff origin main"
-alias gdom="git fetch && git diff origin/\$(git_main_branch)"
-
 # "git undo": "undoes" the last commit, and puts its changes back into the index
 alias gundo="git reset HEAD~"
 # "git undo soft/staged": "undoes" the last commit, and puts its changes into the staging area
@@ -88,6 +83,20 @@ git_dev_branch() {
     echo master; 
   fi 
 }
+
+# Diff files with git + syntax highlighting. Taken from the `bat` man page.
+batdiff() {
+    git diff --name-only --diff-filter=d "$@" | xargs bat --diff
+}
+# Make a shorter alias
+alias gd="batdiff"
+# Other diff aliases that we also want to use `bat` for
+# "git diff origin dev"
+alias gdod="git fetch && gdf origin/\$(git_dev_branch)"
+# "git diff origin main"
+alias gdom="git fetch && gdf origin/\$(git_main_branch)"
+# Replacement alias for vanilla `git diff`
+alias gdf="git diff"
 
 ##############################################################
 # npm

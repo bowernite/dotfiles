@@ -8,6 +8,7 @@ tap "domt4/autoupdate"
 # Formulae
 #######################################
 
+brew "bat"
 brew "bitwarden-cli"
 # Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
