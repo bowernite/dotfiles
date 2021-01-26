@@ -260,11 +260,11 @@
         :macro-mode
         
         ; Window resizing (Rectangle)
-        [:f :!TOa]
-        [:c :!TOs]
+        [:a :!TOa]
+        [:s :!TOs]
         ; Left/right half of current monitor
-        [:a :!TOh]
-        [:s :!TOl]
+        [:q :!TOh]
+        [:w :!TOl]
         ; Move to next/prev monitor
         [:z :!CTOh]
         [:x :!CTOl]
