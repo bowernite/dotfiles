@@ -86,15 +86,15 @@ git_dev_branch() {
 
 # Diff files with git + syntax highlighting. Taken from the `bat` man page.
 batdiff() {
-    git diff --name-only --diff-filter=d "$@" | xargs bat --diff
+    git diff --name-only --diff-filter=d "$@" | xargs bat --diff --paging=auto
 }
 # Make a shorter alias
 alias gd="batdiff"
 # Other diff aliases that we also want to use `bat` for
 # "git diff origin dev"
-alias gdod="git fetch && gdf origin/\$(git_dev_branch)"
+alias gdod="git fetch && gd origin/\$(git_dev_branch)"
 # "git diff origin main"
-alias gdom="git fetch && gdf origin/\$(git_main_branch)"
+alias gdom="git fetch && gd origin/\$(git_main_branch)"
 # Replacement alias for vanilla `git diff`
 alias gdf="git diff"
 
