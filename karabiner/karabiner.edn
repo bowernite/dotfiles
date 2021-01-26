@@ -186,8 +186,8 @@
         ; sPotify
         [:p [:opena "Spotify"]]
         [:i [:opena "Messages"]]
-        ; zOOm
-        [:o [:opena "zoom.us.app"]]
+        ; Office
+        [:o [:opena "Office"]]
         [:u [:opena "Music"]]
         ; todo: Open hey URL. Or just trigger alfred workflow
         [:y [:opena "Wonder Calendar"]]
@@ -401,39 +401,4 @@
   ;     [:!Ctab :vk_none]
   ;   ]
   ; }
-
-  ; {
-  ;   :des "launch mode"
-  ;   :rules [
-  ;     :launch-mode
-  ;     ;  Most common apps
-  ;     ; "Web"
-  ;     [:w [:opena "Google Chrome"]]
-  ;     ; This would be a nice-to-have, but has the downside of being a no-op if Chrome is open with no windows
-  ;     ; [:w :same_wind_app :Chrome]
-  ;     ; "Editor"
-  ;     [:e [:opena "Visual Studio Code"] :!VSCode]
-  ;     [:e :same_wind_app :VSCode]
-  ;     ; [:s [:opena "Slack"]]
-  ;     [:s [:opena "Slack Web"]]
-  ;     [:t [:opena "Terminal"]]
-
-  ;     ; Also common
-  ;     [:q [:opena "Notes"]]
-  ;     [:r [:opena "Trello"]]
-  ;     [:x [:opena "Spotify"]]
-  ;     [:z [:opena "zoom.us.app"]]
-  ;     [:a [:opena "Alfred Preferences"]]
-  ;     [:f [:opena "Finder"]]
-  ;     [:c [:opena "Outlook"]]
-
-  ;     ; Maybe... going to see how necessary these are. If they're not, we could use these for things other than just app launching
-  ;     ; [:k [:opena "Karabiner-Elements"]]
-  ;     ; [:l [:opena "Karabiner-EventViewer"]]
-  ;     ; [:c [:opena "Music"]]
-  ;     ; [:g [:opena "Messages"]]
-  ;     ; email?
-  ;   ]
-  ; }
-
 }
