@@ -107,7 +107,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Use `bat` for syntax highlighting in man pages
 # This sometimes doesn't work because of recursion with git: https://github.com/sharkdp/bat/issues/1413
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
 
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file

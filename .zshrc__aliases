@@ -84,9 +84,11 @@ git_dev_branch() {
   fi 
 }
 
+bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
+alias bat="bat --theme=$bat_theme"
 # Diff files with git + syntax highlighting. Taken from the `bat` man page.
 batdiff() {
-    git diff --name-only --diff-filter=d "$@" | xargs bat --diff --paging=auto
+  git diff --name-only --diff-filter=d "$@" | xargs bat --diff --paging=auto  --theme=$theme
 }
 # Make a shorter alias
 alias gd="batdiff"
