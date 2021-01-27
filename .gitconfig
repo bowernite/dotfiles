@@ -4,8 +4,8 @@
     
 # Work-specific config
 # Source: https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig/43654115#43654115
-[includeIf "gitdir:~/work/"]
-    path = ~/work/.gitconfig
+[includeIf "gitdir:~/src/work/"]
+    path = ~/src/work/.gitconfig
 
 [alias]
     branch-name = "!git rev-parse --abbrev-ref HEAD"
