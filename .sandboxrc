@@ -10,6 +10,8 @@ sandbox_init_nvm(){
   source $(brew --prefix nvm)/nvm.sh #long running setup command
 }
 
-# create hooks for commands 'nvm', 'node' and 'nodemon'
+# Create hooks for commands that we need to run `nvm` before
 sandbox_hook nvm node
 sandbox_hook nvm nodemon
+# This isn't ideal, but is temporarily necessary. Since running scripts in a node package can be done with `yarn`, we need nvm to run before _any_ yarn command
+sandbox_hook nvm yarn
