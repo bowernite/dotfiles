@@ -50,6 +50,11 @@ alias gpom="git pull origin \$(git_main_branch)"
 # "git pull origin dev"
 alias gpod="git pull origin \$(git_dev_branch)"
 
+# "git diff origin dev"
+alias gdod="git fetch && gd origin/\$(git_dev_branch)"
+# "git diff origin main"
+alias gdom="git fetch && gd origin/\$(git_main_branch)"
+
 # Git diffing with origin/master and origin/<dev_branch>
 alias gr="git rev"
 alias grem="git remote" # (original oh-my-zsh `gr` alias)
@@ -90,19 +95,6 @@ git_dev_branch() {
 
 bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias bat="bat --theme=$bat_theme"
-# Diff files with git + syntax highlighting. Taken from the `bat` man page.
-batdiff() {
-  git diff --name-only --diff-filter=d "$@" | xargs bat --diff --paging=auto  --theme=$theme
-}
-# Make a shorter alias
-alias gd="batdiff"
-# Other diff aliases that we also want to use `bat` for
-# "git diff origin dev"
-alias gdod="git fetch && gd origin/\$(git_dev_branch)"
-# "git diff origin main"
-alias gdom="git fetch && gd origin/\$(git_main_branch)"
-# Replacement alias for vanilla `git diff`
-alias gdf="git diff"
 
 ##############################################################
 # npm
