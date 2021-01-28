@@ -81,6 +81,3 @@
 
 [delta "decorations"]
   file-decoration-style = none
-
-[interactive]
-  diffFilter = delta --color-only
