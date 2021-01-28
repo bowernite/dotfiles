@@ -1,7 +1,7 @@
 [user]
   name = "Brett Abramczyk"
   email = bjabramczyk@gmail.com
-    
+
 # Work-specific config
 # Source: https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig/43654115#43654115
 [includeIf "gitdir:~/src/work/"]
@@ -37,16 +37,16 @@
   unassume = update-index --no-assume-unchanged
   # Show the files that are currently assume-unchanged
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
-  
+
   # Delete the current branch, and checkout whichever branch is for developing
   abandon = !"BRANCH_NAME=$(git branch-name) && git co $(git dev-branch) && git br -D $BRANCH_NAME"
 
   wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m '--wip-- [skip ci]'"
   unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
-  
+
   # Remove files from git that are now ignored
   rig = !"git ls-files --ignored --exclude-standard | sed 's/.*/"&"/' | xargs git rm -r --cached"
-  
+
   rev = !"git fetch && git diff origin/$(git dev-branch)"
 
 
@@ -57,7 +57,7 @@
   process = git-lfs filter-process
   required = true
   unstage = reset HEAD
-    
+
 [stash]
   # Make 'git stash show <stash>' show the diff the stash would create if applied
   showPatch = true
@@ -75,18 +75,11 @@
 
 [core]
   excludesfile = ~/.gitignore_global
-  pager = delta
 
 [delta]
   features = line-numbers decorations
-  whitespace-error-style = 22 reverse
-  plus-color = "#012800"
-  minus-color = "#340001"
-  syntax-theme = GitHub
-    
+
 [delta "decorations"]
-  commit-decoration-style = bold yellow box ul
-  file-style = bold yellow ul
   file-decoration-style = none
 
 [interactive]
