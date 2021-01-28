@@ -40,6 +40,10 @@ I try to automate everything I can, but here's everything I haven't yet (or won'
 - [ ] Rectangle ◻️: Open up Rectangle, and configure it how you'd like
 - [ ] Bartender ️🍸: Open up Bartender, and configure it how you'd like
 - [ ] Set `user.email` in `~/src/work/.gitconfig` to work GitHub/GitLab account email (if applicable)
+- [ ] Follow [the instructions here](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8) to set up iTerm theming based on macOS dark mode
+  - [ ] Use the script at the bottom of the page
+  - [ ] Install [GitHub themes](https://github.com/fcaldera/github-primer-iterm2) using [these instructions](https://github.com/fcaldera/github-primer-iterm2)
+  - [ ] In the script, change the dark and light themes to `GitHub Dark` and `GitHub Light` (found [])
 
 ### Keyboard ⌨️
 
