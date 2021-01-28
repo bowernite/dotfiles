@@ -14,6 +14,8 @@
         f() { \
             if [[ -n $(git branch --list develop) ]]; then \
                 echo develop; \
+            elif [[ -n $(git branch --list development) ]]; then \
+                echo development; \
             else \
                 echo master; \
             fi \
