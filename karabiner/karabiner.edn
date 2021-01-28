@@ -177,7 +177,7 @@
         ;  sLack
         [:l [:opena "Slack"]]
         ; [:l [:opena "Slack Web"]]
-        [:semicolon [:opena "Terminal"]]
+        [:semicolon [:opena "iTerm"]]
 
         ; Also common
         ;  Notes
