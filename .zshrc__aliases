@@ -77,6 +77,8 @@ alias gpub="git publish"
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
+  elif [[ -n $(git branch --list development) ]]; then 
+    echo development; 
   elif [[ -n $(git branch --list main) ]]; then
     echo main;
   else 
