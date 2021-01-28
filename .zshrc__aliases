@@ -46,7 +46,9 @@ alias gcob="git co -b"
 alias gcm="gc -m"
 
 # "git pull origin main"
-alias gpom="git pull origin \$(git_dev_branch)"
+alias gpom="git pull origin \$(git_main_branch)"
+# "git pull origin dev"
+alias gpod="git pull origin \$(git_dev_branch)"
 
 # Git diffing with origin/master and origin/<dev_branch>
 alias gr="git rev"
