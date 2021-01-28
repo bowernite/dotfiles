@@ -93,8 +93,20 @@ git_dev_branch() {
   fi 
 }
 
+##############################################################
+# Bat and Delta
+##############################################################
+
+# Decide the theme based on macOS dark mode
 bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
-alias bat="bat --theme=$bat_theme"
+alias cat="bat --theme=$bat_theme"
+
+# Decide the theme based on macOS dark mode
+delta_theme="$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo Monokai Extended || echo GitHub)"
+alias del="delta --syntax-theme=$delta_theme"
+
+# To make sure git uses Delta, _with_ the theme we've decided on :)
+export GIT_PAGER="delta --syntax-theme=$delta_theme"
 
 ##############################################################
 # npm
