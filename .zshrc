@@ -106,7 +106,6 @@ export NVM_DIR="$HOME/.nvm"
 # [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # Use `bat` for syntax highlighting in man pages
-# This sometimes doesn't work because of recursion with git: https://github.com/sharkdp/bat/issues/1413
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
 
 # Enable zsh-syntax-highlighting.
