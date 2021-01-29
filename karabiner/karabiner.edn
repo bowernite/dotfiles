@@ -183,12 +183,10 @@
         ;  Notes
         [:n [:opena "Notes"]]
         [:m [:opena "Trello"]]
-        ; sPotify
-        [:p [:opena "Spotify"]]
+        [:u [:opena "Spotify"]]
         [:i [:opena "Messages"]]
         ; Office
         [:o [:opena "Office"]]
-        [:u [:opena "Music"]]
         ; todo: Open hey URL. Or just trigger alfred workflow
         [:y [:opena "Wonder Calendar"]]
         [:close_bracket [:opena "Calendar"]]
