@@ -174,6 +174,10 @@ nnoremap d0 d^
 " When changing a "full line", preserve indentation
 nnoremap cc _C
 
+" Change `Y` to mirror the behavior of `C` and `D` (read: operate until the end of the line)
+" For some reason, `Y`'s default behavior is that of `yy`'s (yank the whole line). Discussion here: https://vi.stackexchange.com/questions/6061/why-is-y-a-synonym-for-yy-instead-of-y#:~:text=The%20command%20Y%20is%20a,duplicate%20several%20lines%20try%203YP.
+nnoremap Y y$
+
 " Remap down and up arrow keys to scroll half pages up and down
 " NOTE: At the time of this writing, this actually lets us use <C-j> and <C-k> to scroll, because of our OS remappings with Karabiner
 noremap <Down> <C-d>
