@@ -98,7 +98,8 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
 # See .sandboxrc for details
-source $dotfiles_dir/bin/sandboxd
+# Turning this off for now -- current position has a node requirement in package.json that prevents a lot of things from running if the correct node version isn't available. So for now, going to roll without sandboxd
+# source $dotfiles_dir/bin/sandboxd
 
 export NVM_DIR="$HOME/.nvm"
 # Normally, nvm wants us to run these lines to load nvm on shell startup. But instead, we're using sandboxd to lazy load nvm logic to keep shell startup snappy af
