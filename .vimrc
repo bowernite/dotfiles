@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'ianks/vim-tsx'
   " Plug 'Quramy/tsuquyomi'
   Plug 'leafgarland/typescript-vim'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
   Plug 'dense-analysis/ale'
   " Plug '907th/vim-auto-save'
@@ -19,11 +18,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-sensible'
   Plug 'bkad/camelcasemotion'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 let g:previm_open_cmd = 'open -a "Google Chrome"'
 let g:jsx_ext_required = 0 " allow JSX in .js files
 let g:camelcasemotion_key = '<leader>'
+let g:airline_theme='light'
 
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
