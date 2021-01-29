@@ -187,7 +187,6 @@
         [:i [:opena "Messages"]]
         ; Office
         [:o [:opena "Office"]]
-        ; todo: Open hey URL. Or just trigger alfred workflow
         [:y [:opena "Wonder Calendar"]]
         [:close_bracket [:opena "Calendar"]]
         [:comma [:opena "System Preferences"]]
