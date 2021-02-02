@@ -4,32 +4,36 @@
 
 format() {
   echo "💅 Formatting files with Prettier...";
-  npx prettier --write --loglevel=error .;
+  if [[ -e yarn.lock ]]; then
+    yarn prettier --write --loglevel=error .;
+  else
+    npx prettier --write --loglevel=error .;
+  fi
   echo "✅ Done formatting";
 }
 lint() {
   echo "🔎 Linting files with ESLint...";
-  npx eslint . --ext js,jsx,ts,tsx;
+  yarn eslint . --ext js,jsx,ts,tsx;
   echo "✅ Done linting";
 }
 tc() {
   echo "🧐 Type-checking files with TypeScript...";
-  npx tsc --noEmit;
+  yarn tsc --noEmit;
   echo "✅ Done type-checking";
 }
 jest() {
   echo "🧪 Testing files changed on branch...";
-  npx jest --changedSince=$(git_dev_branch) --coverage=false;
+  yarn jest --changedSince=$(git_dev_branch) --coverage=false;
   echo "✅ Done testing";
 }
 jestw() {
   echo "🧪👀 Testing files changed on branch on watch...";
-  npx jest --changedSince=$(git_dev_branch) --watch --coverage=false;
+  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false;
   echo "✅ Done testing";
 }
 jesta() {
   echo "🧪 Testing all files...";
-  npx jest --coverage=false;
+  yarn jest --coverage=false;
   echo "✅ Done testing";
 }
 alias va='tc && test && lint && format'
