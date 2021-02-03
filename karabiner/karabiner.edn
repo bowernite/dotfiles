@@ -139,15 +139,9 @@
       ]
     }
     {
-      :des "enter"
+      :des "enter -> enter (alone) left_control (held)"
       :rules [
-        [:##return_or_enter :left_cmd_lazy nil {:alone :return_or_enter}]
-      ]
-    }
-    {
-      :des "backslash -> backslash (alone) left_control (held)"
- 			:rules [
-        [:backslash :left_control_lazy nil {:alone :backslash}]
+        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
       ]
     }
     {
