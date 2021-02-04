@@ -115,6 +115,25 @@
       :rules [[:left_shift :left_shift nil {:alone :!Cb}]]
     }
     {
+      :des "caps_lock"
+      :rules [
+        ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
+        [:#CTOSFQWEcaps_lock :left_control_lazy nil {:alone :escape}]
+      ]
+    }
+    {
+      :des "enter -> enter (alone) left_control (held)"
+      :rules [
+        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
+      ]
+    }
+    {
+      :des "right_shift + caps_lock -> caps_lock"
+      :rules [
+        [:!Rcaps_lock :caps_lock]
+      ]
+    }
+    {
       :des "App-specific overrides"
       :rules [
         [:!Cj :!Ttab :Messages]
@@ -132,22 +151,19 @@
       ]
     }
     {
-      :des "caps_lock"
+      :des "iTerm shortcuts"
       :rules [
-        ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
-        [:#CTOSFQWEcaps_lock :left_control_lazy nil {:alone :escape}]
-      ]
-    }
-    {
-      :des "enter -> enter (alone) left_control (held)"
-      :rules [
-        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
-      ]
-    }
-    {
-      :des "right_shift + caps_lock -> caps_lock"
-      :rules [
-        [:!Rcaps_lock :caps_lock]
+        :iTerm
+
+        ; Panes
+        ;;;;;
+        ; Navigating between panes
+        [:!CSh :!Copen_bracket]
+        [:!CSl :!Cclose_bracket]
+        ; Split pane right
+        [:!Csemicolon :!Cd]
+        ; Split pane down
+        [:!CSsemicolon :!CSd]
       ]
     }
 
@@ -362,7 +378,8 @@
       "^co\\.zeit\\.hyper$"
       "^io\\.alacritty$"
       "^net\\.kovidgoyal\\.kitty$"
-      ]
+    ]
+    :iTerm ["^com\\.googlecode\\.iterm2$"]
     :Finder ["^com\\.apple\\.finder$"]
     :Notes ["^com\\.apple\\.Notes$"]
     :Messages ["^com\\.apple\\.MobileSMS$"]
