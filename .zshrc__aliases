@@ -46,7 +46,11 @@ alias vs='tc && lint && format'
 # "git checkout branch"
 alias gcob="git co -b"
 
-# "git commit message" (oh-my-zsh originally has this as "git checkout master", but this makes more sense to me)
+# "git checkout main/dev"
+alias gcom="git co \$(git_main_branch)"
+alias gcod="git co \$(git_dev_branch)"
+
+# "git commit message"
 alias gcm="gc -m"
 
 # "git pull origin main"

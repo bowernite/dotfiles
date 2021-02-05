@@ -265,7 +265,7 @@
       :des "macro mode"
       :rules [
         :macro-mode
-        
+
         ; Window resizing (Rectangle)
         [:a :!TOa]
         [:s :!TOs]
@@ -275,7 +275,7 @@
         ; Move to next/prev monitor
         [:z :!CTOh]
         [:x :!CTOl]
-        
+
         ; Alfred
         [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
       ]
