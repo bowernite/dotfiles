@@ -277,7 +277,12 @@
         [:x :!CTOl]
 
         ; Alfred
-        [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        [:d [:alfred "screenshot" "dev.abramczyk"]]
+        [:c [:alfred "screenshot copy" "dev.abramczyk"]]
+        [:b [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
+        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
       ]
     }
 
