@@ -89,6 +89,10 @@ alias gup="gitupdate ."
 # "git publish": See .gitcnofig alias for details
 alias gpub="git publish"
 
+# "git fixup": Quick fixup commits
+alias gix="git commit -m 'fixup'"
+alias gixa="git commit -a -m 'fixup'"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
