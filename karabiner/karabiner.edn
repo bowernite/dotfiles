@@ -177,8 +177,8 @@
         [:j [:opena "Google Chrome"] :!Chrome]
         [:j :same_wind_app :Chrome]
         ; VS Code
-        [:quote [:opena "Visual Studio Code"] :!VSCode]
-        [:quote :same_wind_app :VSCode]
+        [:h [:opena "Visual Studio Code"] :!VSCode]
+        [:h :same_wind_app :VSCode]
         ; Some same/left hand alternatives
         [:k [:opena "Google Chrome"] :!Chrome]
         [:k :same_wind_app :Chrome]
