@@ -47,6 +47,9 @@ set backupdir=$TMPDIR//,.
 set directory=$TMPDIR//,.
 set undodir=$TMPDIR//,.
 
+" Add < and > to the sets of pairs that you can navigate with %
+set matchpairs+=<:>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Linting
 
