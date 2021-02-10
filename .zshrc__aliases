@@ -155,6 +155,9 @@ alias ping="ping -c 5"
 alias ez="exec zsh"
 alias sz="source ~/.zshrc"
 alias alg="alias | grep"
+# "bundle id": Given the path to an app, gives the app's bundle id
+# Source: https://superuser.com/questions/346369/getting-the-bundle-identifier-of-an-os-x-application-in-a-shell-script
+alias bid="mdls -name kMDItemCFBundleIdentifier -r"
 
 # Clears the screen and runs the succeeding command(s)
 c() {

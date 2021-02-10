@@ -148,6 +148,8 @@
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Topen_bracket :!To :Terminals]
         [:!Tclose_bracket :!Ti :Terminals]
+        
+        [:!Cescape :!CTescape]
       ]
     }
     {
