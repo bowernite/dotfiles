@@ -136,6 +136,12 @@ set wrapmargin=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remappings  
 
+" Swap ; and :. Because they're swapped in my global keyboard bindings, and it makese sense the way Vim originally has them
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
 " File actions
 " Ideally this would be <leader>w, but the collision with the CamelCaseMotion plugin forced my hand. So.... `s` for save it is
 nnoremap <silent> <leader>s :w<CR>
