@@ -136,8 +136,13 @@
     {
       :des "App-specific overrides"
       :rules [
+        ; Messages
         [:!Cj :!Ttab :Messages]
         [:!Ck :!TStab :Messages]
+
+        ; Calendar
+        [:!Cj :!Cright_arrow]
+        [:!Ck :!Cleft_arrow]
 
         ; In Chrome, use left_option+enter to return focus to the document (Chrome doesn't provide any way to do this natively)
         ; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
