@@ -204,8 +204,8 @@
         [:i [:opena "Messages"]]
         ; Office
         [:o [:opena "Office"]]
-        [:y [:opena "Wonder Calendar (2)"]]
-        [:close_bracket [:opena "Calendar"]]
+        [:y [:opena "Calendar"]]
+        [:close_bracket [:open "https://calendar.google.com/calendar/u/1/r"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
