@@ -204,7 +204,7 @@
         [:i [:opena "Messages"]]
         ; Office
         [:o [:opena "Office"]]
-        [:y [:opena "Wonder Calendar"]]
+        [:y [:opena "Wonder Calendar (2)"]]
         [:close_bracket [:opena "Calendar"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
