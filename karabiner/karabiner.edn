@@ -115,7 +115,7 @@
       :rules [[:left_shift :left_shift nil {:alone :!Cb}]]
     }
     {
-      :des "caps_lock"
+      :des "caps lock -> escape (alone) left_control (held)"
       :rules [
         ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
         [:#CTOSFQWEcaps_lock :left_control_lazy nil {:alone :escape}]
