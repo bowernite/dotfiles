@@ -54,9 +54,11 @@
   ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
   ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
-  :simlayers    {
+  :simlayers {
     :launch-mode { :key :x }
-    :symbol-mode { :key :quote }
+    ;; :symbol-mode { :key :quote }
+  }
+  :layers {
     :macro-mode { :key :right_shift }
   }
 
