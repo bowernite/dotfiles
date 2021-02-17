@@ -84,7 +84,7 @@ _fzf_compgen_path() {
 # Source: http://zsh.sourceforge.net/Doc/Release/Options.html
 setopt auto_cd
 
-cdpath=($HOME/src $HOME/playground $HOME/src/personal $HOME/Dropbox $HOME/work)
+cdpath=($HOME/src $HOME/src/work $HOME/src/personal $HOME/playground $HOME/Dropbox)
 
 # Show named and cdpath directories in autocomplete suggestions
 # Source: https://superuser.com/questions/515633/my-zsh-autocompletion-for-cdpath-stopped-working
