@@ -144,7 +144,7 @@
 
         ; Calendar
         [:!Cj :!Cright_arrow :Calendar]
-        [:!Ck :!Cleft_arrow :Calendar] 
+        [:!Ck :!Cleft_arrow :Calendar]
 
         ; In Chrome, use left_option+enter to return focus to the document (Chrome doesn't provide any way to do this natively)
         ; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
@@ -155,7 +155,7 @@
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Topen_bracket :!To :Terminals]
         [:!Tclose_bracket :!Ti :Terminals]
-        
+
         ; Cmd+Esc to stop screenshot video
         [:!Cescape :!CTescape]
       ]
@@ -272,17 +272,20 @@
     }
 
     {
-      :des "macro mode"
+      :des "macros (with right shift)"
       :rules [
         :macro-mode
 
         ; macOS
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
         [:c :!CTS4]
 
-        ; Window resizing (Rectangle)
-        [:a :!TOa]
-        [:s :!TOs]
+        ; Rectangle
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Window resizing
+        [:a :!CTOa]
+        [:s :!CTOs]
         ; Left/right half of current monitor
         [:q :!TOh]
         [:w :!TOl]
@@ -291,12 +294,15 @@
         [:x :!CTOl]
 
         ; Alfred
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:d [:alfred "screenshot" "dev.abramczyk"]]
         ; [:c [:alfred "screenshot copy" "dev.abramczyk"]]
         [:b [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
         [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
         [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
         ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
+        [:4 :!CSTOa]
       ]
     }
 
