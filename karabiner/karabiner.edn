@@ -156,6 +156,7 @@
         [:!Topen_bracket :!To :Terminals]
         [:!Tclose_bracket :!Ti :Terminals]
         
+        ; Cmd+Esc to stop screenshot video
         [:!Cescape :!CTescape]
       ]
     }
