@@ -58,9 +58,6 @@
     :launch-mode { :key :x }
     ;; :symbol-mode { :key :quote }
   }
-  :layers {
-    :macro-mode { :key :right_shift }
-  }
 
   :main [
     ; Plain rule ideas:
@@ -99,7 +96,8 @@
 
     {
       :des "semicolon -> shift"
-      :rules [[:semicolon :right_shift nil {:alone :!Ssemicolon}]]
+      ;; NOTE: _Has_ to be the left shift, so we can we right shift as a macro key/hyper key (below)
+      :rules [[:semicolon :left_shift nil {:alone :!Ssemicolon}]]
     }
     {
       :des "swap : and ;"
@@ -274,35 +272,33 @@
     {
       :des "macros (with right shift)"
       :rules [
-        :macro-mode
-
-        ; macOS
+        ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
-        [:c :!CTS4]
+        [:!Rc :!CTS4]
+        ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
+        [:!Rd :!CTSOd]
 
         ; Rectangle
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Window resizing
-        [:a :!CTOa]
-        [:s :!CTOs]
+        [:!Ra :!CTOa]
+        [:!Rs :!CTOs]
         ; Left/right half of current monitor
-        [:q :!TOh]
-        [:w :!TOl]
+        [:!Rq :!TOh]
+        [:!Rw :!TOl]
         ; Move to next/prev monitor
-        [:z :!CTOh]
-        [:x :!CTOl]
+        [:!Rz :!CTOh]
+        [:!Rx :!CTOl]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:d [:alfred "screenshot" "dev.abramczyk"]]
-        ; [:c [:alfred "screenshot copy" "dev.abramczyk"]]
-        [:b [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
-        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
-        [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
-        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        [:!Rb [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        [:!Rt [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        [:!Rr [:alfred "recent history" "com.thomasupton.chrome-history"]]
+        ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
         ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
-        [:4 :!CSTOa]
+        [:!R4 :!CSTOa]
       ]
     }
 
