@@ -115,6 +115,12 @@
       :rules [[:left_shift :left_shift nil {:alone :!Cb}]]
     }
     {
+      :des "left_shift + caps_lock -> caps_lock"
+      :rules [
+        [:!Scaps_lock :caps_lock]
+      ]
+    }
+    {
       :des "caps lock -> escape (alone) left_control (held)"
       :rules [
         ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
@@ -125,12 +131,6 @@
       :des "enter -> enter (alone) left_control (held)"
       :rules [
         [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
-      ]
-    }
-    {
-      :des "right_shift + caps_lock -> caps_lock"
-      :rules [
-        [:!Rcaps_lock :caps_lock]
       ]
     }
     {
