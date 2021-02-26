@@ -180,6 +180,7 @@
       :rules [
         :launch-mode
         ;  Most common apps
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Home row right
         ; *Just* browsin'
         [:h [:opena "Google Chrome"] :!Chrome]
@@ -198,6 +199,7 @@
         [:semicolon [:opena "iTerm"]]
 
         ; Also common
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;  Notes
         [:n [:opena "Notes"]]
         [:m [:opena "Trello"]]
@@ -213,9 +215,15 @@
         [:slash [:opena "Finder"]]
 
         ; Less common
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:backslash [:opena "Activity Monitor"]]
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
+
+        ; Work-specific
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Can be just the Notion app one day, if I decide to use it
+        [:9 [:open "https://www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
       ]
     }
 
