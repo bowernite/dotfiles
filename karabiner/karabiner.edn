@@ -282,8 +282,8 @@
         ; Rectangle
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Window resizing
-        [:!Ra :!CTOa]
-        [:!Rs :!CTOs]
+        [:!Ra :!TOa]
+        [:!Rs :!TOs]
         ; Left/right half of current monitor
         [:!Rq :!TOh]
         [:!Rw :!TOl]
