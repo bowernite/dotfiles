@@ -93,6 +93,11 @@ alias gpub="git publish"
 alias gix="git commit -m 'fixup'"
 alias gixa="git commit -a -m 'fixup'"
 
+# "git authors": See how many lines of code each dev/author is responsible for
+# Source: https://stackoverflow.com/questions/4589731/git-blame-commit-statistics
+alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
+--line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
