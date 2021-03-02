@@ -45,6 +45,7 @@
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
     :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
     :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
+    ;; :wait        "osascript -e 'delay 1'"
     ; Doesn't work :(
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
     :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
@@ -134,6 +135,8 @@
         ; Calendar
         [:!Cj :!Cright_arrow :Calendar]
         [:!Ck :!Cleft_arrow :Calendar]
+        ;; WIP: A command that triggers a menu item that doesn't have a shortcut (in this case, the "Show Notifications" item in Calendar). Inconsistent right now, as something the `return_or_enter` fires too quickly and doesn't register -- the left/right_arrows are meant to be a hack to delay it, but it's not really working
+        [:!Cbackslash [:!CSslash :n :o :down_arrow :left_arrow :right_arrow :left_arrow :right_arrow :return_or_enter] :Calendar]
 
         ; In Chrome, use left_option+enter to return focus to the document (Chrome doesn't provide any way to do this natively)
         ; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
