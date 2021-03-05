@@ -30,6 +30,7 @@
     :left_paren         {:key :9 :modi [:left_shift] :lazy true}
     :right_paren        {:key :0 :modi [:left_shift] :lazy true}
     :left_control_lazy  {:key :left_control :lazy true}
+    :right_control_lazy  {:key :right_control :lazy true}
     :left_cmd_lazy      {:key :left_command :lazy true}
   }
 
@@ -251,8 +252,18 @@
         ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
         ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
         [:!R4 :!CSTOa]
+        [:!Rg [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
+        [:!Re [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
       ]
-    }   
+    }
+    {
+      :des "macros (with left ctrl)"
+      :rules [
+        ; Nothing to see here yet -- just a POC
+        ;; [:!Tn [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+      ]
+    }
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Text and input
@@ -342,53 +353,53 @@
     {
       :des "caps lock -> escape (alone) left_control (held)"
       :rules [
-        ; The mandatory modifiers here are everything except right_shift (it's used down below for caps_lock)
-        [:#CTOSFQWEcaps_lock :left_control_lazy nil {:alone :escape}]
+        ; Using right_ctrl lets us use left_control as a hyper key
+        [:#CTOSFQWEcaps_lock :right_control_lazy nil {:alone :escape}]
       ]
     }
     {
       :des "Text navigation and manipulation"
       :rules [
         ; Char and word-wise nav
-        [:!T#SRh :left_arrow]
-        [:!T#SRj :down_arrow]
-        [:!T#SRk :up_arrow]
-        [:!T#SRl :right_arrow]
-        [:!T#SRy :!Oleft_arrow]
-        [:!T#SRo :!Oright_arrow]
+        [:!W#SRh :left_arrow]
+        [:!W#SRj :down_arrow]
+        [:!W#SRk :up_arrow]
+        [:!W#SRl :right_arrow]
+        [:!W#SRy :!Oleft_arrow]
+        [:!W#SRo :!Oright_arrow]
 
         ; Char and word-wise deletion
-        [:!Tu :!Odelete_or_backspace]
-        [:!Ti :delete_or_backspace]
-        [:!T7 :!Odelete_forward]
-        [:!T8 :delete_forward]
+        [:!Wu :!Odelete_or_backspace]
+        [:!Wi :delete_or_backspace]
+        [:!W7 :!Odelete_forward]
+        [:!W8 :delete_forward]
 
         ; To start and end of line
-        [:!T#SRn :!Cleft_arrow :!Terminals]
-        [:!T#SRm :!Cright_arrow :!Terminals]
+        [:!W#SRn :!Cleft_arrow :!Terminals]
+        [:!W#SRm :!Cright_arrow :!Terminals]
         ; Terminal doesn't support ⌘ like above, so gotta use its Cocoa keybindings
-        [:!Tn :!Ta :Terminals]
-        [:!Tm :!Te :Terminals]
+        [:!Wn :!Ta :Terminals]
+        [:!Wm :!Te :Terminals]
 
         ; Line deletion
         ; Use Cocoa emacs bindings for apps that doesn't support ⌘+⌦ (i.e. Notes, Terminal)
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Delete line backward
-        [:!Tcomma :!Cdelete_or_backspace [:!Terminals]]
-        [:!Tcomma :!Tu [:Terminals]]
+        [:!Wcomma :!Cdelete_or_backspace [:!Terminals]]
+        [:!Wcomma :!Tu [:Terminals]]
         ; Delete line forward
         ; Ideally this would just be ⌘+⌦, but that's not respected everywhere (e.g. browser textareas, VS Code's integrated terminals)
-        [:!Tperiod [:!CSright_arrow :delete_or_backspace] [:!Notes :!Terminals :!VSCode]]
-        [:!Tperiod :!Tk]
+        [:!Wperiod [:!CSright_arrow :delete_or_backspace] [:!Notes :!Terminals :!VSCode]]
+        [:!Wperiod :!Tk]
         ; Delete full line
-        [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
+        [:!Wslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!VSCode]]
         ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
-        [:!Tslash [:!Te :!Tu] :Terminals]
+        [:!Wslash [:!Te :!Tu] :Terminals]
         ; For VS Code, it's trickier -- you want to preserve indentation, but also want it to behave nicely in the integrated terminal…
-        [:!Tslash [:!Cright_arrow :!Cdelete_or_backspace] :VSCode]
+        [:!Wslash [:!Cright_arrow :!Cdelete_or_backspace] :VSCode]
 
         ; Clear everything
-        [:!Tdelete_or_backspace [:!Ca :delete_or_backspace]]
+        [:!Wdelete_or_backspace [:!Ca :delete_or_backspace]]
 
         ; Page up/down
         [:!Oj :page_down]
