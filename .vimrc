@@ -253,10 +253,11 @@ nnoremap <leader>/ :noh
 " Toggle wrapping with <Leader>w
 " noremap <Leader>w :set wrap!<Return>
 
+" This doesn't play well with VS Code Vim right now (doesn't preserve column). Issue here: https://github.com/VSCodeVim/Vim/issues/6240
 " Default j and k to respect wrapped line content
 " NOTE: This used to me just `map` (for some reason…), but that had an issue where the column wasn't preserved properly when using j/k. Wow, was that the most annoying thing in the world :)
-nnoremap j gj
-nnoremap k gk
+" nnoremap j gj
+" nnoremap k gk
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
