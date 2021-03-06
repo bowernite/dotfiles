@@ -254,8 +254,9 @@ nnoremap <leader>/ :noh
 " noremap <Leader>w :set wrap!<Return>
 
 " Default j and k to respect wrapped line content
-map j gj
-map k gk
+" NOTE: This used to me just `map` (for some reason…), but that had an issue where the column wasn't preserved properly when using j/k. Wow, was that the most annoying thing in the world :)
+nnoremap j gj
+nnoremap k gk
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
