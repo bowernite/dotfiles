@@ -18,7 +18,7 @@ lint() {
 }
 tc() {
   echo "🧐 Type-checking files with TypeScript...";
-  yarn tsc --noEmit;
+  yarn tsc $@ --noEmit;
   echo "✅ Done type-checking";
 }
 jest() {
