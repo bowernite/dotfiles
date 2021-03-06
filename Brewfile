@@ -20,13 +20,14 @@ brew "fd"
 brew "fzf"
 brew "git"
 brew "go"
+brew "gnu-sed"
 # Tool for making Karabiner config management more manageable and powerful
-brew "yqrashawn/goku/goku"
 brew "nvm"
 # This does come with nvm, but doing it this way lets us leverage brew autoupdating
 brew "npm"
 brew "python"
 brew "yarn"
+brew "yqrashawn/goku/goku"
 
 #######################################
 # Casks
@@ -47,4 +48,4 @@ cask "rectangle"
 cask "spotify"
 cask "slack"
 cask "visual-studio-code"
-cask "zoomus"
+cask "zoom"

@@ -17,14 +17,16 @@ source $dotfiles_dir/.zshrc__aliases
 # Setting PATH for Python 3.8
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
-export PATH
 
 # Setting PATH for mongodb
 PATH="$HOME/mongodb/bin:${PATH}"
-export PATH
 
 # Setting PATH for Go executables
 PATH="$HOME/go/bin:${PATH}"
+
+# For making GNU utilities the default over the macOS/BSD ones
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 export PATH
 
 ##############################################################

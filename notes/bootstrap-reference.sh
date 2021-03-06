@@ -10,11 +10,11 @@
 # echo "Homebrew: Installing better GNU utilities..."
 # brew tap homebrew/dupes
 # brew install coreutils
-# brew install gnu-sed --with-default-names
-# brew install gnu-tar --with-default-names
-# brew install gnu-indent --with-default-names
-# brew install gnu-which --with-default-names
-# brew install gnu-grep --with-default-names
+# brew install gnu-sed
+# brew install gnu-tar
+# brew install gnu-indent
+# brew install gnu-which
+# brew install gnu-grep
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 # TODO: Maybe check this out
 # brew install findutils
