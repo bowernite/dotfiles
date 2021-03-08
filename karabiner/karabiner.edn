@@ -190,16 +190,14 @@
         ;  sLack
         [:l [:opena "Slack"]]
         ; [:l [:opena "Slack Web"]]
-        [:semicolon [:opena "iTerm"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;  Notes
         [:n [:opena "Notes"]]
-        [:m [:opena "Trello"]]
+        [:semicolon [:opena "iTerm"]]
+        [:m [:opena "Messages"]]
+        [:i [:opena "Trello"]]
         [:u [:opena "Spotify"]]
-        [:i [:opena "Messages"]]
-        ; Office
         [:o [:opena "Office"]]
         [:y [:opena "Calendar"]]
         [:close_bracket [:opena "Wonder Calendar"]]
