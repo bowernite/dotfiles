@@ -176,7 +176,7 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
         [:!Rc :!CTS4]
-        ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
+        ; Save screenshot of selected area to screenshots dir (using Alfred workflow). Use CTSO here instead of using an Alfred to avoid the Alfred search bar
         [:!Rd :!CTSOd]
 
         ; Rectangle
@@ -207,6 +207,7 @@
     {
       :des "macros (with left ctrl)"
       :rules [
+        [:!Tu [:alfred "search" "pw.symbols-search"]]
         ; Nothing to see here yet -- just a POC
         ;; [:!Tn [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
       ]
