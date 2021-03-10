@@ -98,6 +98,9 @@ alias gixa="git commit -a -m 'fixup'"
 alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
 --line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr"
 
+# Change "git rebase continue" to skip editing the commit message
+alias grbc="GIT_EDITOR=true git rebase --continue"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
