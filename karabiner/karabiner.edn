@@ -170,6 +170,52 @@
       ]
     }
     {
+      :des "macros (with right shift)"
+      :rules [
+        ; Screenshots
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Copy screenshot of selected area
+        [:!Rc :!CTS4]
+        ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
+        [:!Rd :!CTSOd]
+
+        ; Rectangle
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Window resizing
+        [:!Ra :!TOa]
+        [:!Rs :!TOs]
+        ; Left/right half of current monitor
+        [:!Rq :!TOh]
+        [:!Rw :!TOl]
+        ; Move to next/prev monitor
+        [:!Rz :!CTOh]
+        [:!Rx :!CTOl]
+
+        ; Alfred
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:!Rb [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        [:!Rt [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        [:!Rr [:alfred "recent history" "com.thomasupton.chrome-history"]]
+        ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
+        [:!R4 :!CSTOa]
+        [:!Rg [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
+        [:!Re [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
+      ]
+    }
+    {
+      :des "macros (with left ctrl)"
+      :rules [
+        ; Nothing to see here yet -- just a POC
+        ;; [:!Tn [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+      ]
+    }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; App launcher
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
       :des "launch mode (non-j)"
       :rules [
         :launch-mode
@@ -218,48 +264,6 @@
         [:9 [:open "https://www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
         [:0 [:open "https://gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
-      ]
-    }
-    {
-      :des "macros (with right shift)"
-      :rules [
-        ; Screenshots
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Copy screenshot of selected area
-        [:!Rc :!CTS4]
-        ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
-        [:!Rd :!CTSOd]
-
-        ; Rectangle
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Window resizing
-        [:!Ra :!TOa]
-        [:!Rs :!TOs]
-        ; Left/right half of current monitor
-        [:!Rq :!TOh]
-        [:!Rw :!TOl]
-        ; Move to next/prev monitor
-        [:!Rz :!CTOh]
-        [:!Rx :!CTOl]
-
-        ; Alfred
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:!Rb [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
-        [:!Rt [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
-        [:!Rr [:alfred "recent history" "com.thomasupton.chrome-history"]]
-        ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
-        ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
-        [:!R4 :!CSTOa]
-        [:!Rg [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
-        [:!Re [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
-        [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
-      ]
-    }
-    {
-      :des "macros (with left ctrl)"
-      :rules [
-        ; Nothing to see here yet -- just a POC
-        ;; [:!Tn [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
       ]
     }
 
