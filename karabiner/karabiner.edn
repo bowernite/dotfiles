@@ -322,7 +322,7 @@
       :rules [
         :caps-lock-mode
 
-        [:caps_lock :left_control_lazy nil {:alone  ["caps-lock-mode" 0]}]
+        [:caps_lock :right_control_lazy nil {:alone  ["caps-lock-mode" 0]}]
 
         [:q :!Sq]
         [:w :!Sw]
