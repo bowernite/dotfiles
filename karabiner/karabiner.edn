@@ -266,6 +266,7 @@
         [:9 [:open "https://www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
         [:0 [:open "https://gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
+        [:quote [:open "https://wonder-me.atlassian.net/jira/software/projects/WD/boards/12"]]
       ]
     }
 
