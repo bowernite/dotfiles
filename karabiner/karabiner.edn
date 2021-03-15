@@ -202,6 +202,7 @@
         [:!Rg [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         [:!Re [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
+        [:!Rspacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
       ]
     }
     {
