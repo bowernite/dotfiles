@@ -209,6 +209,7 @@
       :des "macros (with left ctrl)"
       :rules [
         [:!Tu [:alfred "search" "pw.symbols-search"]]
+        [:!Tj [:alfred "jira" "jira.steyep"]]
         ; Nothing to see here yet -- just a POC
         ;; [:!Tn [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
       ]
