@@ -239,9 +239,9 @@ nnoremap <leader>l <C-W><C-l>
 " Jump around curly blocks with s
 nnoremap s ]}
 nnoremap S [{
+vnoremap s ]}
 " This might be nice at some point, but the capital S conflicts with vim-surround
-" vmap s ]}
-" vmap S [{
+nnoremap S [{
 
 " Delete line below with <leader>d and above with <leader>D
 " nnoremap <silent> <leader>d :+d <CR>
