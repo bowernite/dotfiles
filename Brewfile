@@ -15,6 +15,8 @@ brew "bluetoothconnector"
 brew "dockutil"
 # Tool for managing default apps for each extension on macos
 brew "duti"
+# Better `ls` util
+brew "exa"
 # Better "find" util
 brew "fd"
 brew "fzf"

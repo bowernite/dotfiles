@@ -151,8 +151,7 @@ alias bi="brew install"
 
 # Open fzf files with vim by default
 alias goto="vim -o \`fzf\`"
-# Make sure dotfiles are shown by ls
-alias ls="ls -A"
+alias ls="exa"
 # List directories
 alias lsd="ls -d */"
 # Log ip to console
