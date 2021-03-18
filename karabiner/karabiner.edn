@@ -209,7 +209,7 @@
       :des "macros (with left ctrl)"
       :rules [
         [:!Tu [:alfred "search" "pw.symbols-search"]]
-        [:!Tj [:alfred "jira" "jira.steyep"]]
+        [:!Tquote [:alfred "jira" "jira.steyep"]]
       ]
     }
 
