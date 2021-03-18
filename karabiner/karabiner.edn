@@ -247,7 +247,7 @@
         [:u [:opena "Spotify"]]
         [:o [:opena "Office"]]
         [:y [:opena "Calendar"]]
-        [:close_bracket [:opena "Wonder Calendar"]]
+        [:close_bracket [:open "https://calendar.google.com/calendar/u/1/r"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
