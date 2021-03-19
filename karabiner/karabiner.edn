@@ -312,6 +312,26 @@
         [:n :!Sn]
         [:m :!Sm]
 
+        ; Combination with other modifiers
+        ;
+        ; Only have the keys that are otherwise
+        ; hard-to-reach with left shift. Also,
+        ; Only ⌘ and ⌃ right now
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Best we can do right now to keep the semicolon as a shift modifier with other keys (like command). Not perfect, since you have to hold down the semicolon before any other modifier
+        [:!Ca :!CSa]
+        [:!Cs :!CSa]
+        [:!Cx :!CSa]
+        [:!Cz :!CSa]
+        [:!Cq :!CSa]
+        [:!Cw :!CSa]
+        [:!Ta :!TSa]
+        [:!Ts :!TSa]
+        [:!Tx :!TSa]
+        [:!Tz :!TSa]
+        [:!Tq :!TSa]
+        [:!Tw :!TSa]
+
         ;; Enter a simulated caps lock mode, instead of triggering actual caps lock. See the mode below for details
         [:caps_lock ["caps-lock-mode" 1]]
       ]
