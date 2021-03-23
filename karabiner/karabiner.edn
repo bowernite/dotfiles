@@ -213,6 +213,7 @@
         :q-mode
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
+        [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
         [:quote [:alfred "jira" "jira.steyep"]]
       ]
     }
