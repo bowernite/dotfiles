@@ -58,7 +58,7 @@
 
   :simlayers {
     :launch-mode { :key :x }
-    :q-mode      { :key :q }
+    :z-mode      { :key :z }
     ;; :symbol-mode { :key :quote }
   }
 
@@ -208,9 +208,9 @@
     }
     {
       ;; :des "macros (with left ctrl)"
-      :des "macros (with q)"
+      :des "macros (with z)"
       :rules [
-        :q-mode
+        :z-mode
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
