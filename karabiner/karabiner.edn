@@ -217,6 +217,7 @@
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
         [:j [:alfred "jira" "jira.steyep"]]
+        [:k [:open "$HOME/src/personal/dotfiles/karabiner/karabiner.edn"]]
       ]
     }
 
@@ -227,6 +228,7 @@
       :des "app launch mode"
       :rules [
         :x-mode
+
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Home row right
@@ -254,6 +256,7 @@
         [:u [:opena "Spotify"]]
         [:o [:opena "Office"]]
         [:y [:opena "Calendar"]]
+        [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
