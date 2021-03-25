@@ -43,6 +43,7 @@
     :alfred         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
     :open        "open \"%s\""
     :opena       "open -a \"%s\" %s"
+    :openw       "open \"https://%s\""
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
     :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
     :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
@@ -57,8 +58,9 @@
   ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
   :simlayers {
-    :launch-mode { :key :x }
-    :z-mode      { :key :z }
+    :q-mode { :key :q }
+    :x-mode { :key :x }
+    :z-mode { :key :z }
     ;; :symbol-mode { :key :quote }
   }
 
@@ -214,17 +216,17 @@
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
-        [:quote [:alfred "jira" "jira.steyep"]]
+        [:j [:alfred "jira" "jira.steyep"]]
       ]
     }
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ; App launcher
+    ; Launchers
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
-      :des "launch mode (non-j)"
+      :des "app launch mode"
       :rules [
-        :launch-mode
+        :x-mode
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Home row right
@@ -252,7 +254,6 @@
         [:u [:opena "Spotify"]]
         [:o [:opena "Office"]]
         [:y [:opena "Calendar"]]
-        [:close_bracket [:open "https://calendar.google.com/calendar/u/1/r"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
@@ -266,11 +267,37 @@
 
         ; Work-specific
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; Can be just the Notion app one day, if I decide to use it
-        [:9 [:open "https://www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
-        [:0 [:open "https://gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
-        [:quote [:open "https://wonder-me.atlassian.net/jira/software/projects/WD/boards/12?assignee=600ed6c720445000694823cb"]]
+        [:0 [:openw "gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
+      ]
+    }
+    {
+      :des "websites, common repos"
+      :rules [
+        :q-mode
+
+        ; Work
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:n [:openw "www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
+        [:j [:openw "wonder-me.atlassian.net/jira/software/projects/WD/boards/12?assignee=600ed6c720445000694823cb"]]
+        [:k [:openw "wonder-me.atlassian.net/jira/software/projects/WD/boards/12"]]
+        [:l [:openw "calendar.google.com/calendar/u/1/r"]]
+        [:w [:openw "mail.google.com/mail/u/1"]]
+        ;; Add custom emojis to Slack
+        [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
+
+        [:m [:openw "mail.google.com/mail/u/0"]]
+        [:h [:openw "app.hey.com/"]]
+        [:b [:openw "www.schwab.com/public/schwab/client_home"]]
+        [:i [:openw "accounts.intuit.com/index.html?offering_id=Intuit.ifs.mint"]]
+        [:g [:openw "drive.google.com"]]
+        ;; Money projections
+        [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528"]]
+        [:f [:openw "fast.com/"]]
+        [:open_bracket [:openw "www.linkedin.com/in/brett-abramczyk/"]]
+        [:y [:openw "youtube.com"]]
+        [:o [:openw "amazon.com"]]
+        [:0 [:openw "capitalone.com"]]
       ]
     }
 
