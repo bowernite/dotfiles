@@ -115,7 +115,8 @@
                  [:h [:km "wiki: Used hotkeys"]]
                  [:j [:km "edit: Aliases"]]
                  [:k [:km "edit: Zsh functions"]]
-                 [:l [:km "Search current safari url in wiki"]]
+                 ;[:l [:km "Search current safari url in wiki"]]
+                 [:l [:km "proj: epictools.dev"]]
                  [:semicolon [:km "proj: Knowledge"]]
                  [:quote [:km "wiki: Summary"]]
                  [:n [:km "proj: Dotfiles"]]
@@ -137,9 +138,9 @@
                  ;[:j :!SOTw] ; Replies
                  ;[:k :!SOTf] ; App specific
                  ;[:l :!SOTr] ; Personal
-                 [:j [:km "w: Phabricator"]]
+                 [:j [:km "w: nikitavoloboev.xyz"]]
                  [:k [:km "w: GitLab"]]
-                 [:l [:km "w: RealTime"]]
+                 [:l [:km "w: Repl.it"]]
                  [:period [:km "w: CodeSandbox"]]]}
         {:des "qkey (cmd + shift)"
          :rules [:q-mode
@@ -189,15 +190,17 @@
                  [:e [:km "open: Fantastical"]]
                  [:r [:km "open: Notion"]]
                  [:t [:km "open: Activity Monitor"]]
-                 [:i [:km "open: Instruments"]]
+                 ;[:i [:km "open: Instruments"]]
+                 [:i [:km "open: Obsidian"]]
                  [:o [:km "open: Keyboard Maestro"]]
                  [:p [:km "open: Postgres"]]
                  [:caps_lock [:km "open: Finder"]]
                  [:a :!OSC1] ; Open Dash
                  [:d [:km "open: Postico"]]
                  [:f [:km "open: 2Do"]]
-                 ;[:g [:km "open: Linear"]]
+                 [:g [:km "open: Linear"]]
                  ;[:h [:km "open: Safari Technology Preview"]]
+                 [:h [:km "open: Android Emulator"]]
                  [:j [:km "open: iTerm"]]
                  [:k [:km "open: Safari"]]
                  [:l [:km "open: VS Code"]]
@@ -282,7 +285,6 @@
          :rules [:t-mode
                  [:0 [:km "w: regex101"]]
                  [:e [:km "w: Facebook"]]
-                 [:r [:km "w: Repl"]]
                  [:u [:km "w: Medium"]]
                  [:i [:km "w: Arxiv"]]
                  [:o [:km "w: Stack Overflow"]]
@@ -446,7 +448,7 @@
                  [:r :!Stab]
                  [:t :!Sreturn_or_enter]
                  [:u :!COp] ; Selection -> HasteBin link
-                 ;[:i :!CTperiod] ; Contexts search active windows
+                 [:i :!CTperiod] ; Contexts search active windows
                  [:o :!Cx] ; Cut
                  ;[:open_bracket :!Oleft_arrow]
                  [:open_bracket [:km "Lowercase selected text"]]
@@ -494,10 +496,10 @@
                  [:tab [:km "Test"]]
                  ;[:q [:km "open: Photos"]]
                  ;[:w [:km "open: Simulator / Xcode"]]
-                 ;[:q [:km "open: MindNode"]]
                  ;[:q [:km "edit: 1st Safari tab"]]
-                 [:q [:km "open: Figma"]]
-                 [:w [:km "Save clipboard link"]]
+                 ;[:q [:km "open: Figma"]]
+                 [:q [:km "open: Chrome Canary"]]
+                 [:w [:km "Save link"]]
                  [:e :!CO8] ; Alfred clipboard history search
                  [:r [:km "Centre mouse to active app"]]
                  [:i :!Treturn_or_enter]
@@ -505,20 +507,21 @@
                  [:p :!CTOc] ; Sleep
                  [:open_bracket :!CT5] ; Turn display on/off
                  [:caps_lock :!CTOu] ; Sip color picker
-                 [:a [:km "open: Chrome Canary"]]
+                 [:a [:km "open: Figma"]]
                  [:s [:km "edit: 2nd iTerm tab"]]
-                 [:d [:km "Save clipboard link (top)"]]
+                 [:d [:km "Save link (top)"]]
                  [:h [:km "Make markdown link from selection {link}"]]
                  [:j [:km "edit: 1st iTerm tab"]]
                  [:k :return_or_enter]
                  [:l :!Creturn_or_enter]
-                 [:semicolon [:km "edit: Karabiner"]]
+                 [:semicolon [:km "open: MindNode"]]
                  [:quote [:km "Goku Run"]]
                  [:z :!Ospacebar] ; Switch language (Russian <-> English)
                  [:n :!Freturn_or_enter]
                  [:m :!Sreturn_or_enter]
                  [:comma  [:km "Add safari link to selected markdown text"]]
-                 [:period :!CTO4] ; Alfred file action
+                 [:period [:km "edit: Karabiner"]]
+                 [:slash :!CTO4] ; Alfred file action
                  [:spacebar :!CTq]]} ; Selection -> Web Searches
         {:des "gkey (actions)"
          :rules [:g-mode
@@ -565,18 +568,17 @@
                  [:f [:km "open: Spark"]]
                  [:g [:alfred "search contacts" "nikivi.search.content"]]
                  [:h [:km "Create new contact"]]
-                 [:j [:km "w: Element"]]
-                 ;[:j [:km "open: Textual"]]
+                 [:j [:km "open: Discord"]]
                  [:k [:km "open: Telegram"]]
-                 [:l [:km "open: Discord"]]
+                 [:l [:km "w: Element"]]
                  [:semicolon [:km "open: Slack"]]
                  [:c [:km "open: Contacts"]]
                  [:v [:km "open: Tweetbot"]]
                  [:b [:km "w: Twitter"]]
-                 [:n [:km "New tweet"]]
-                 [:m [:km "New tweet with current URL"]]
-                 [:comma [:km "w: Twitter Search"]]
-                 [:slash [:km "Search Tweetbot"]]
+                 [:n [:km "w: Twitter Compose"]]
+                 [:m [:km "w: Twitter Compose with current URL pasted"]]
+                 [:comma [:km "w: Typefully"]]
+                 [:period [:km "w: Twitter Search"]]
                  [:spacebar :!CSOz]]} ; Selection -> Twitter
         {:des "xkey (spotify)"
          :rules [:x-mode
@@ -622,24 +624,27 @@
                  [:open_bracket [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:playlist:0ERn0U4qZIKC8Dy7RrMMsn"]] ; Likes 
                  [:close_bracket [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:playlist:2N82DnDsPGMnpJhN8sVFJu"]] ; Bliss
                  ;[:a [:km "Repeat Spotify song"]] ; TODO: do in background
-                 ;[:a [:km "Play/pause Endel"]]
+                 [:a [:km "Play/Pause Endel"]]
                  ;[:a [:km "open: Endel"]]
-                 [:s [:km "Play/pause Spotify"]]
+                 ;[:a [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:2xqhXTdxgBg5z9IuOOCIV3"]] ; Endel
+                 [:s [:km "Play/Pause Spotify"]]
                  [:d :!CO9] ; Connect/disconnect AirPods
                  [:h :vk_consumer_previous]
                  [:j :mute]
                  [:k :vk_consumer_play]
                  [:l :vk_consumer_next]
                  [:semicolon [:alfred "spot_mini" "com.vdesabou.spotify.mini.player"]]
-                 [:quote [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:playlist:5QOChSDsvLTtBwXmIn8Pss"]] ; Ambient
+                 [:quote [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:3zy0JafsRQJgAMU67hnjYX"]] ; Focus Active
+                 [:backslash [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:1IERjUpo0AhB3yoxCBl7FQ"]] ; Focus Slow
                  [:grave_accent_and_tilde [:alfred "artist_radio" "com.vdesabou.spotify.mini.player"]]
                  [:z [:alfred "song_radio" "com.vdesabou.spotify.mini.player"]]
                  [:b [:alfred "show_playlists" "com.vdesabou.spotify.mini.player"]]
                  [:n :volume_decrement]
                  [:m :volume_increment]
                  [:comma [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:playlist:0ESjwZeTcHOWzY3FYO5zs5"]] ; Focus
-                 ;[:period [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:episode:4ZjiY5692n0Nev7q38tMvB"]] ; Rain
-                 [:period [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:1lLuJ1PTq8wXAorPqHwMOd"]] ; Focus song
+                 ;[:period [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:show:26mJz0W2vvRG5nMyT7ufwv"]] ; Rain
+                 [:period [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:3nTQL2ScjeyOxjqSmDoCCr"]] ; Focus song
+                 ;[:period [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:track:4dlZMmWmdog41eBKNuOTU6"]] ; Focus Slow
                  [:slash [:alfred "play" "com.vdesabou.spotify.mini.player" "spotify:playlist:5fIL0WiQ79QtgsP4Y4L20V"]] ; Inspired
                  [:spacebar :!CSOv]]} ; Selection -> Google Images
         {:des "bkey (break)"
@@ -713,7 +718,7 @@
                  [:r [:alfred "search alfred" "nikivi.utilities" "react "]]
                  [:t [:alfred "search alfred" "nikivi.utilities" "ts "]]
                  [:a [:alfred "search alfred" "nikivi.utilities" "man "]]
-                 [:d [:alfred "search alfred" "nikivi.utilities" "docker "]]
+                 ;[:d [:alfred "search alfred" "nikivi.utilities" "docker "]]
                  [:f [:alfred "search alfred" "nikivi.utilities" "apple "]]
                  [:s [:alfred "search alfred" "nikivi.utilities" "lodash "]]
                  [:d [:alfred "search alfred" "nikivi.utilities" "node "]]
