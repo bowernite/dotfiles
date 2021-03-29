@@ -49,6 +49,9 @@ alias gcob="git co -b"
 # "git checkout main/dev"
 alias gcom="git co \$(git_main_branch)"
 alias gcod="git co \$(git_dev_branch)"
+# Should probably only use these when trying to check out files from origin/dev or origin/main
+alias gcoom="git co origin/\$(git_main_branch)"
+alias gcood="git co origin/\$(git_dev_branch)"
 
 # "git commit message"
 alias gcm="gc -m"
