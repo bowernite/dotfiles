@@ -275,7 +275,7 @@
       ]
     }
     {
-      :des "websites, common repos"
+      :des "websites"
       :rules [
         :q-mode
 
@@ -284,7 +284,9 @@
         [:n [:openw "www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         [:j [:openw "wonder-me.atlassian.net/jira/software/projects/WD/boards/12?assignee=600ed6c720445000694823cb"]]
         [:k [:openw "wonder-me.atlassian.net/jira/software/projects/WD/boards/12"]]
+        ;; Work calendar
         [:l [:openw "calendar.google.com/calendar/u/1/r"]]
+        ;; Work email
         [:w [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
         [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
