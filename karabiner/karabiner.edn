@@ -303,6 +303,7 @@
         [:y [:openw "youtube.com"]]
         [:o [:openw "amazon.com"]]
         [:0 [:openw "capitalone.com"]]
+        [:v [:openw "voice.google.com"]]
       ]
     }
 
