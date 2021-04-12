@@ -288,9 +288,9 @@
         ;; Work calendar
         [:y [:openw "calendar.google.com/calendar/u/1/r"]]
         ;; Work email
-        [:w [:openw "mail.google.com/mail/u/1"]]
+        [:comma [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
-        [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
+        [:c [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
         [:m [:openw "mail.google.com/mail/u/0"]]
         [:h [:openw "app.hey.com/"]]
@@ -306,7 +306,7 @@
         [:0 [:openw "capitalone.com"]]
         [:v [:openw "voice.google.com"]]
         [:6 [:openw "app.n26.com"]]
-        [:r [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
+        [:semicolon [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
       ]
     }
 
