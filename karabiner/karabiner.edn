@@ -261,6 +261,7 @@
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
         [:slash [:opena "Finder"]]
+        [:0 [:opena "Bitwarden"]]
 
         ; Less common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -270,8 +271,8 @@
 
         ; Work-specific
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
-        [:0 [:openw "gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
+        ;; [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
+        ;; [:0 [:openw "gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
       ]
     }
     {
@@ -305,7 +306,7 @@
         [:0 [:openw "capitalone.com"]]
         [:v [:openw "voice.google.com"]]
         [:6 [:openw "app.n26.com"]]
-        [:r [:openw "https://trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
+        [:r [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
       ]
     }
 
