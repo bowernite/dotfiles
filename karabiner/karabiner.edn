@@ -41,7 +41,7 @@
   :templates {
     :launch      "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
     :alfred         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
-    :open        "open \"%s\""
+    :open        "open %s"
     :opena       "open -a \"%s\" %s"
     :openw       "open \"https://%s\""
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
@@ -217,7 +217,8 @@
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
         [:j [:alfred "jira" "jira.steyep"]]
-        [:k [:open "$HOME/src/personal/dotfiles/karabiner/karabiner.edn"]]
+        [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
+        [:o [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
       ]
     }
 
