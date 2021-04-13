@@ -298,7 +298,7 @@
         ;; Work calendar
         [:y [:openw "calendar.google.com/calendar/u/1/r"]]
         ;; Work email
-        [:comma [:openw "mail.google.com/mail/u/1"]]
+        [:w [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
         [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
