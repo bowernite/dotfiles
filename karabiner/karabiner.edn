@@ -227,7 +227,7 @@
     {
       :des "app launch mode"
       :rules [
-        :q-mode
+        :x-mode
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -278,7 +278,7 @@
     {
       :des "websites"
       :rules [
-        :x-mode
+        :q-mode
 
         ; Work
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
