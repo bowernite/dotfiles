@@ -209,11 +209,13 @@
       ]
     }
     {
-      ;; :des "macros (with left ctrl)"
       :des "macros (with z)"
       :rules [
         :z-mode
 
+        ;; umlaut (uses macOS's option+u for this)
+        [:semicolon :!Ou]
+        ;; Unicode symbol search
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
