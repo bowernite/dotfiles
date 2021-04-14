@@ -221,7 +221,7 @@
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
         [:j [:alfred "jira" "jira.steyep"]]
         [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
-        [:o [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
+        [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
         
         ; Alfred
