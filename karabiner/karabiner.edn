@@ -235,7 +235,7 @@
         ;; Hide notification
         [:h :!CTOSh]
         ;; Click notification
-        [:c :!CTOSreturn_or_enter]
+        [:return_or_enter :!CTOSreturn_or_enter]
         ;; Reply to notification (e.g. Slack)
         [:y :!CTOSy]
 
