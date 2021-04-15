@@ -65,6 +65,12 @@
   }
 
   :main [
+    ; Hyper keys
+    ;; Sometimes need to use "hyper" keys (unlikely modifier combos) for different scenarios. i.e. if you want to use a Karabiner modifier (like z/z-mode) to trigger something in another app with a Keybinding (like Alfred or Keysmith)
+    ;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
+    ;;; CTOS (in use)
+    ;;; CTOSF (not in use yet)
+
     ; Plain rule ideas:
       ; Swap ; and : (seems useful, but drifts away from normal keyboard a lot)
       ; Semicolon as shift key (pretty good -- might even help with ⌘+⇧ keybinding ergonomics)
@@ -180,7 +186,7 @@
         ; Copy screenshot of selected area
         [:!Rc :!CTS4]
         ; Save screenshot of selected area to screenshots dir (using Alfred workflow). Use CTSO here instead of using an Alfred to avoid the Alfred search bar
-        [:!Rd :!CTSOd]
+        [:!Rd :!CTOSd]
 
         ; Rectangle
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -223,7 +229,15 @@
         [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
-        [:delete_or_backspace :!CTOSdelete_or_backspace]
+
+        ; Keysmith
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Hide notification
+        [:h :!CTOSh]
+        ;; Click notification
+        [:c :!CTOSreturn_or_enter]
+        ;; Reply to notification (e.g. Slack)
+        [:y :!CTOSy]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
