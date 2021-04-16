@@ -36,7 +36,7 @@ jesta() {
   yarn jest --coverage=false;
   echo "✅ Done testing";
 }
-alias va='tc && test && lint && format'
+alias va='tc && jesta && lint && format'
 alias vs='tc && lint && format'
 
 ##############################################################
