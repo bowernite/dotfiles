@@ -208,8 +208,7 @@
         ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
         ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
         [:!R4 :!CSTOa]
-        [:!Rg [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
-        [:!Re [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        [:!Rg [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
         [:!Rspacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
       ]
@@ -229,6 +228,7 @@
         [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
+        [:l [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
