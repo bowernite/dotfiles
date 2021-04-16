@@ -11,3 +11,4 @@
 /karabiner/goku.log
 /__dev_notes/*
 !/__dev_notes/.gitkeep
+bin/sudo_askpass.sh
