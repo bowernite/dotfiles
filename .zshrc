@@ -115,6 +115,27 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
 # NOTE: Per this package's documentation, this needs to be at the end of this file
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# Skip all annoying commit hooks 
+# WIP, not really tested yet
+export HUSKY_SKIP_HOOKS=1
+if [[ -z $has_aliased_npx ]]; then
+  npx() {
+    echo 'in the function'
+    local -i i=$argv[(i)^-*]
+    # $argv[i] is the first non-option argument (or empty if there is none).
+    local is_bad=0
+    case $argv[i] in
+      commitlint | lint-staged) is_bad=1
+    esac
+    echo 'is bad'
+    echo $is_bad
+    if [[ $is_bad == 0 ]]; then
+      command npx "$@" 
+    fi
+  }
+  export has_aliased_npx=1
+fi
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 # [[ -f /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/brett/src/work/aws-puppeteer-runner/node_modules/tabtab/.completions/serverless.zsh
