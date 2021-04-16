@@ -182,7 +182,9 @@
       :des "macros (with right shift)"
       :rules [
         ;; Change VPN
-        [:!Rv :!CTOSv]
+        ;; If we ever find that something like Keysmith or Alfred handles this better
+        ;; [:!Rv :!CTOSv]
+        [:!Rv [:opena "NordVPN Teams"]]
         
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
