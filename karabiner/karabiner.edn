@@ -181,6 +181,9 @@
     {
       :des "macros (with right shift)"
       :rules [
+        ;; Change VPN
+        [:!Rv :!CTOSv]
+        
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
