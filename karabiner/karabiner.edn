@@ -336,6 +336,7 @@
         [:o [:openw "amazon.de"]]
         [:v [:openw "voice.google.com"]]
         [:r [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
+        [:8 [:openw "google.com/maps"]]
 
         ; Keysmith/login sites
         ;; Sites that require you to log in each
