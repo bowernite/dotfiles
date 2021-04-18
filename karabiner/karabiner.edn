@@ -185,12 +185,12 @@
         ;; If we ever find that something like Keysmith or Alfred handles this better
         ;; [:!Rv :!CTOSv]
         [:!Rv [:opena "NordVPN Teams"]]
-        
+
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
         [:!Rc :!CTS4]
-        ; Save screenshot of selected area to screenshots dir (using Alfred workflow). Use CTSO here instead of using an Alfred to avoid the Alfred search bar
+        ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
         [:!Rd :!CTOSd]
 
         ; Rectangle
@@ -238,11 +238,11 @@
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Hide notification
-        [:h :!CTOSh]
+        [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
         ;; Click notification
-        [:return_or_enter :!CTOSreturn_or_enter]
+        [:return_or_enter [:open "keysmith://run-macro/54216F6C-407F-49B2-8E00-7946BD6F6144"]]
         ;; Reply to notification (e.g. Slack)
-        [:y :!CTOSy]
+        [:y [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -327,8 +327,6 @@
 
         [:m [:openw "mail.google.com/mail/u/0"]]
         [:h [:openw "app.hey.com/"]]
-        [:b [:openw "www.schwab.com/public/schwab/client_home"]]
-        [:i [:openw "accounts.intuit.com/index.html?offering_id=Intuit.ifs.mint"]]
         [:g [:openw "drive.google.com"]]
         ;; Money projections
         [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528"]]
@@ -336,10 +334,24 @@
         [:open_bracket [:openw "www.linkedin.com/in/brett-abramczyk/"]]
         [:u [:openw "youtube.com"]]
         [:o [:openw "amazon.de"]]
-        [:0 [:openw "capitalone.com"]]
         [:v [:openw "voice.google.com"]]
-        [:6 [:openw "app.n26.com"]]
         [:r [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
+
+        ; Keysmith/login sites
+        ;; Sites that require you to log in each
+        ;; session. So, we do it through Keysmith
+        ;; so that we can automate clicking the
+        ;; Sign In button
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; [:i [:openw "accounts.intuit.com/index.html?offering_id=Intuit.ifs.mint"]]
+        ;; Mint
+        [:i [:open "keysmith://run-macro/7FBA7681-5813-4EF3-98AE-D36B97AAFF92"]]
+        ;; N26
+        [:6 [:open "keysmith://run-macro/E1CC131A-957E-465C-A947-D68CF9BF663D"]]
+        ;; Schwab
+        [:b [:open "keysmith://run-macro/48481C68-2E36-4D36-B4C9-0A46B954B50F"]]
+        ;; Capital One
+        [:0 [:open "keysmith://run-macro/FF214A3F-42F8-4DAB-8E86-597765A95318"]]
       ]
     }
 
