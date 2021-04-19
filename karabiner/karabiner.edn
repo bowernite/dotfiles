@@ -271,10 +271,10 @@
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives
-        [:c [:opena "Google Chrome"] :!Chrome]
-        [:c :same_wind_app :Chrome]
-        [:v [:opena "Visual Studio Code"] :!VSCode]
-        [:v :same_wind_app :VSCode]
+        ;; [:c [:opena "Google Chrome"] :!Chrome]
+        ;; [:c :same_wind_app :Chrome]
+        ;; [:v [:opena "Visual Studio Code"] :!VSCode]
+        ;; [:v :same_wind_app :VSCode]
         ;  sLack
         [:l [:opena "Slack"]]
         ; [:l [:opena "Slack Web"]]
@@ -301,6 +301,7 @@
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
         [:close_bracket [:opena "WhatsApp"]]
+        [:c [:opena "Emmet Cheat Sheet"]]
 
         ; Work-specific
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
