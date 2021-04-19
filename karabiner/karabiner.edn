@@ -263,11 +263,8 @@
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Home row right
-        ; *Just* browsin'
         [:h [:opena "Google Chrome"] :!Chrome]
         [:h :same_wind_app :Chrome]
-        ; VS Code
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives
@@ -275,9 +272,7 @@
         ;; [:c :same_wind_app :Chrome]
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
-        ;  sLack
         [:l [:opena "Slack"]]
-        ; [:l [:opena "Slack Web"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
