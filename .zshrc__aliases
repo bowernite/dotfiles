@@ -103,6 +103,8 @@ alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
 
 # Change "git rebase continue" to skip editing the commit message
 alias grbc="GIT_EDITOR=true git rebase --continue"
+# "git rebase next": Add all files and continue the rebase
+alias grbn="git add . && grbc"
 
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
