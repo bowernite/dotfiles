@@ -229,11 +229,11 @@
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
+        [:l [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         [:j [:alfred "jira" "jira.steyep"]]
         [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
-        [:l [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
