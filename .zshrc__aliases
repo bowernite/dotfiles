@@ -27,6 +27,11 @@ jest() {
   echo "✅ Done testing";
 }
 jestw() {
+  echo "🧪👀 Testing files on watch...";
+  yarn jest  --watch --coverage=false;
+  echo "✅ Done testing";
+}
+jestbw() {
   echo "🧪👀 Testing files changed on branch on watch...";
   yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false;
   echo "✅ Done testing";
