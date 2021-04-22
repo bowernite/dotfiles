@@ -111,6 +111,9 @@ alias grbc="GIT_EDITOR=true git rebase --continue"
 # "git rebase next": Add all files and continue the rebase
 alias grbn="git add . && grbc"
 
+# "git forget": Remove all files that used to be tracked, but aren't any longer (by gitignore)
+alias gforget="git rm -r --cached . && git add ."
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
