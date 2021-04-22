@@ -91,7 +91,7 @@ alias gap="git add --patch"
 # Remap oh-my-zsh's default `gup`
 alias gpr="git pull --rebase"
 
-# Quick commites with `gitupdate` go package
+# Quick committs with `gitupdate` go package
 alias gup="gitupdate ."
 
 # "git publish": See .gitcnofig alias for details
