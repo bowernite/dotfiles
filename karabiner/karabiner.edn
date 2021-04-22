@@ -61,6 +61,7 @@
     :q-mode { :key :q }
     :x-mode { :key :x }
     :z-mode { :key :z }
+    :slash-mode { :key :slash }
     ;; :symbol-mode { :key :quote }
   }
 
@@ -179,43 +180,45 @@
       ]
     }
     {
-      :des "macros (with right shift)"
+      :des "slash-mode (macros)"
       :rules [
+        :slash-mode
+        
         ;; Change VPN
         ;; If we ever find that something like Keysmith or Alfred handles this better
-        ;; [:!Rv :!CTOSv]
-        [:!Rv [:opena "NordVPN Teams"]]
+        ;; [:v :!CTOSv]
+        [:v [:opena "NordVPN Teams"]]
 
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Copy screenshot of selected area
-        [:!Rc :!CTS4]
+        [:c :!CTS4]
         ; Save screenshot of selected area to screenshots dir (using Alfred workflow)
-        [:!Rd :!CTOSd]
+        [:d :!CTOSd]
 
         ; Rectangle
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Window resizing
-        [:!Ra :!TOa]
-        [:!Rs :!TOs]
+        [:a :!TOa]
+        [:s :!TOs]
         ; Left/right half of current monitor
-        [:!Rq :!TOh]
-        [:!Rw :!TOl]
+        [:q :!TOh]
+        [:w :!TOl]
         ; Move to next/prev monitor
-        [:!Rz :!CTOh]
-        [:!Rx :!CTOl]
+        [:z :!CTOh]
+        [:x :!CTOl]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:!Rb [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
-        [:!Rt [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
-        [:!Rr [:alfred "recent history" "com.thomasupton.chrome-history"]]
-        ; [:!Rb [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        [:b [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
+        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
         ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
-        [:!R4 :!CSTOa]
-        [:!Rg [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
-        [:!Rtab [:alfred "search" "com.sindresorhus.npms"]]
-        [:!Rspacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
+        [:4 :!CSTOa]
+        [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        [:tab [:alfred "search" "com.sindresorhus.npms"]]
+        [:spacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
       ]
     }
     {
