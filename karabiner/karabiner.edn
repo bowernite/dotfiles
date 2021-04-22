@@ -237,8 +237,10 @@
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; Hide notification
-        [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
+        ;; Hide notification(s)
+        [:h :!CTOSh]
+        ;; This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
+        ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
         ;; Click notification
         [:return_or_enter [:open "keysmith://run-macro/54216F6C-407F-49B2-8E00-7946BD6F6144"]]
         ;; Reply to notification (e.g. Slack)
