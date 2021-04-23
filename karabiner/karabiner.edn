@@ -222,7 +222,7 @@
       ]
     }
     {
-      :des "macros (with z)"
+      :des "z-mode (macros)"
       :rules [
         :z-mode
 
@@ -262,7 +262,7 @@
     ; Launchers
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
-      :des "app launch mode"
+      :des "x-mode (app launcher)"
       :rules [
         :x-mode
 
@@ -310,7 +310,7 @@
       ]
     }
     {
-      :des "websites"
+      :des "q-mode (websites)"
       :rules [
         :q-mode
 
@@ -362,7 +362,7 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       ;; Just mapping semicolon to shift gets tricky sometimes, with rules conflicting. So, this way, we get more fine-grained control, and can do things like using the caps lock key in this mode for actual caps lock
-      :des "shift mode"
+      :des "semicolon-mode (simulated 'shift mode')"
       :rules [
         :semicolon-mode
 
@@ -437,7 +437,7 @@
     ;; This mode is necessary, since while in the hardware-defined caps lock "mode", the caps lock key is always the key to exit it -- which prevents the key from being escape/control like it normally is. This causes a weird scenario, where when we're using the hardware's caps lock, the caps lock key customizations are taken away from us, which can be disorienting
     ;; So instead, we have a Goku layer for it -- letters pressed during this mode will be capital, and we still have our escape/control functionality for the actual caps lock key
     {
-      :des "simulated caps lock mode"
+      :des "caps-lock-mode"
       :rules [
         :caps-lock-mode
 
@@ -530,7 +530,7 @@
     }
 
     {
-      :des "symbol mode"
+      :des "symbol-mode"
       :rules [
         :symbol-mode
 
