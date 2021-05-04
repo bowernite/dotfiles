@@ -214,8 +214,11 @@
         [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
         [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
         ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
-        ; Toggle AirPod connection. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
-        [:4 :!CSTOa]
+        ; AirPod connection and output. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
+        ;; Connect and set to audio output device
+        [:4 :!CSTO4]
+        ;; Disconnect (from bluetooth)
+        [:5 :!CSTO5]
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
         [:spacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
