@@ -62,6 +62,7 @@
     :x-mode { :key :x }
     :z-mode { :key :z }
     :slash-mode { :key :slash }
+    :period-mode { :key :period }
     ;; :symbol-mode { :key :quote }
   }
 
@@ -219,7 +220,6 @@
         [:4 :!CSTO4]
         ;; Disconnect (from bluetooth)
         [:5 :!CSTO5]
-        [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
         [:spacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
       ]
@@ -234,8 +234,6 @@
         ;; Unicode symbol search
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
-        [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
-        [:l [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         [:j [:alfred "jira" "jira.steyep"]]
         [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
@@ -307,11 +305,6 @@
         [:7 [:opena "Karabiner-EventViewer"]]
         [:close_bracket [:opena "WhatsApp"]]
         [:b [:opena "Emmet Cheat Sheet"]]
-
-        ; Work-specific
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; [:j [:opena "Visual Studio Code" "~/src/work/yotribe-web"]]
-        ;; [:0 [:openw "gitlab.com/yotribe/yotribe-web/-/merge_requests"]]
       ]
     }
     {
@@ -361,6 +354,35 @@
         [:b [:open "keysmith://run-macro/48481C68-2E36-4D36-B4C9-0A46B954B50F"]]
         ;; Capital One
         [:0 [:open "keysmith://run-macro/26BE7270-9742-406D-95BA-7AE34A73700A"]]
+      ]
+    }
+    {
+      :des "period-mode (repositories)"
+      :rules [
+        :period-mode
+
+        ;; Personal
+        [:comma [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
+        [:slash [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
+        
+        ;; Frontend
+        [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-web"]]
+        [:r [:openw "gitlab.com/wonder.me/wonder-web/-/merge_requests"]]
+        [:f [:opena "Visual Studio Code" "~/src/work/wonder-web"]]
+        [:v [:openw "gitlab.com/wonder.me/wonder-web/"]]
+        
+        ;; Backend
+        [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
+        [:e [:openw "gitlab.com/wonder.me/wonder-backend/-/merge_requests"]]
+        [:d [:opena "Visual Studio Code" "~/src/work/wonder-backend"]]
+        [:c [:openw "gitlab.com/wonder.me/wonder-backend/"]]
+        
+        ;; Search local repos
+        [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        ;; Search GitLab repos
+        [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]] 
+        ;; My merge requests
+        [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
       ]
     }
 
