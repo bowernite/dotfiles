@@ -114,6 +114,11 @@ alias grbn="git add . && grbc"
 # "git forget": Remove all files that used to be tracked, but aren't any longer (by gitignore)
 alias gforget="git rm -r --cached . && git add ."
 
+# "git conflicts": Show all files with conflicts (does so by using `git diff`, because in the case of rebase/merge conflicts, only conflict files will be in the index)
+alias gconflicts="git diff --name-only | uniq"
+# "git fix": Open all files with conflicts (in VS Code)
+alias gfix="git diff --name-only | uniq | xargs code"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
