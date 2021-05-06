@@ -47,11 +47,10 @@
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
     :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
     :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
-    ;; :wait        "osascript -e 'delay 1'"
+    :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
+    :wait        "osascript -e 'delay %s'"
     ; Doesn't work :(
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
-    :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
-    ; :focus      "/usr/local/bin/yabai -m display --focus \"%s\" & /usr/local/bin/yabai -m space --focus \"%s\""
   }
 
   ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
@@ -74,8 +73,6 @@
     ;;; CTOSF (not in use yet)
 
     ; Plain rule ideas:
-      ; Swap ; and : (seems useful, but drifts away from normal keyboard a lot)
-      ; Semicolon as shift key (pretty good -- might even help with ⌘+⇧ keybinding ergonomics)
       ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
       ; Using simultaneous keypresses for singular actions (might be cool, though something to keep an eye on is the difficulty of pressing the keys simultaneously)
 
@@ -85,25 +82,18 @@
 
     ; Simlayer ideas:
       ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
-      ; Using a simlayer for websites specifically (cool, but not sure if there's enough common websites for this to be worth it)
-      ; Having a simlayer for Alfred workflows (see Nikita's) (might be worth it someday, but those workflows are still maturing, and keywords are fine for now)
       ; Using a simlayer for the ctrl key, e.g. `a` (cool, but a simlayer on `a` is going to be hella annoying)
-      ; Using a simlayer for mouse controls (might be useful for when we can see the mouse and we just want to bring focus to wherever it is)
       ; Using a simlayer for ⌘+⇧ (Nikita) (useful for ergonomics)
       ; Using a simlayer for ⌘ (Nikita) (useful for ergonomics)
-      ; "Clone repo to ~/clones and open with VS Code" (Nikita) (could be cool -- could look into this)
       ; Using a simlayer for media controls (Nikita)
-      ; Using a simlayer to control rectangle (this would be nice -- at the very least could do Maximize and Center)
       ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
 
     ; Simlayer key ideas
       ; tilde
-      ; backslash (currently used as ctrl key)
+      ; backslash
       ; tab
-      ; slash
-      ; period
       ; comma
-      ; ======
+      ; right shift
       ; q, w, x, z, j, numbers
       ; https://en.wikipedia.org/wiki/Letter_frequency
 
@@ -138,7 +128,7 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
     {
-      :des "App-specific overrides"
+      :des "app-specific"
       :rules [
         ; Messages
         [:!Cj :!Ttab :Messages]
