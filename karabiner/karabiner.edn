@@ -1,17 +1,3 @@
-;; !  | means mandatory -   modifier(s) alone when pressend change behavior
-;; #  | means optional  -   modifiers are optional (but atleast one necessary)
-;; ## | optional any
-;; !! | command + control + optional + shift (hyper)
-;; C  | left_command (Emacs: hyper)
-;; T  | left_control (Emacs: control)
-;; O  | left_option (Emacs: meta)
-;; S  | left_shift
-;; F  | fn (Emacs: super)
-;; Q  | right_command (Emacs: control)
-;; W  | right_control (Emacs: control)
-;; E  | right_option (Emacs: )
-;; R  | right_shift
-
 {
   :profiles {
     :Goku {
@@ -53,8 +39,8 @@
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
   }
 
-  ; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
-  ; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+  ;; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
+  ;; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
 
   :simlayers {
     :q-mode { :key :q }
@@ -66,45 +52,18 @@
   }
 
   :main [
-    ; Hyper keys
-    ;; Sometimes need to use "hyper" keys (unlikely modifier combos) for different scenarios. i.e. if you want to use a Karabiner modifier (like z/z-mode) to trigger something in another app with a Keybinding (like Alfred or Keysmith)
-    ;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
-    ;;; CTOS (in use)
-    ;;; CTOSF (not in use yet)
 
-    ; Plain rule ideas:
-      ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
-      ; Using simultaneous keypresses for singular actions (might be cool, though something to keep an eye on is the difficulty of pressing the keys simultaneously)
-
-    ; Hyper key ideas: (only when used alone -- see Shawn's usage for "left option when used alone")
-      ; Left control
-      ; Left option
-
-    ; Simlayer ideas:
-      ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
-      ; Using a simlayer for the ctrl key, e.g. `a` (cool, but a simlayer on `a` is going to be hella annoying)
-      ; Using a simlayer for ⌘+⇧ (Nikita) (useful for ergonomics)
-      ; Using a simlayer for ⌘ (Nikita) (useful for ergonomics)
-      ; Using a simlayer for media controls (Nikita)
-      ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
-
-    ; Simlayer key ideas
-      ; tilde
-      ; backslash
-      ; tab
-      ; comma
-      ; right shift
-      ; q, w, x, z, j, numbers
-      ; https://en.wikipedia.org/wiki/Letter_frequency
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; General/simple
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       :des "swap : and ;"
       :rules [
-        [:semicolon ["semicolon-mode" 1] nil { :afterup ["semicolon-mode" 0] :alone :!Ssemicolon }]
+        [
+          :semicolon
+          ["semicolon-mode" 1] nil
+          { :afterup ["semicolon-mode" 0] :alone :!Ssemicolon}
+        ]
         [:!Ssemicolon :semicolon]
       ]
     }
@@ -123,10 +82,9 @@
       ]
     }
 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Macros
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       :des "app-specific"
       :rules [
@@ -155,7 +113,7 @@
       ]
     }
     {
-      :des "iTerm shortcuts"
+      :des "iTerm"
       :rules [
         :iTerm
 
@@ -174,7 +132,7 @@
       :des "slash-mode (macros)"
       :rules [
         :slash-mode
-        
+
         ;; Change VPN
         ;; If we ever find that something like Keysmith or Alfred handles this better
         ;; [:v :!CTOSv]
@@ -251,9 +209,9 @@
       ]
     }
 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Launchers
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       :des "x-mode (app launcher)"
       :rules [
@@ -354,31 +312,31 @@
         ;; Personal
         [:comma [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:slash [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
-        
+
         ;; Frontend
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-web"]]
         [:r [:openw "gitlab.com/wonder.me/wonder-web/-/merge_requests"]]
         [:f [:opena "Visual Studio Code" "~/src/work/wonder-web"]]
         [:v [:openw "gitlab.com/wonder.me/wonder-web/"]]
-        
+
         ;; Backend
         [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
         [:e [:openw "gitlab.com/wonder.me/wonder-backend/-/merge_requests"]]
         [:d [:opena "Visual Studio Code" "~/src/work/wonder-backend"]]
         [:c [:openw "gitlab.com/wonder.me/wonder-backend/"]]
-        
+
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         ;; Search GitLab repos
-        [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]] 
+        [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         ;; My merge requests
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
       ]
     }
 
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Text and input
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       ;; Just mapping semicolon to shift gets tricky sometimes, with rules conflicting. So, this way, we get more fine-grained control, and can do things like using the caps lock key in this mode for actual caps lock
       :des "semicolon-mode (simulated 'shift mode')"
@@ -499,7 +457,7 @@
       ]
     }
     {
-      :des "Text navigation and manipulation"
+      :des "text nav and manipulation (with left ctrl/caps lock)"
       :rules [
         ; Char and word-wise nav
         [:!W#SRh :left_arrow]
@@ -547,7 +505,6 @@
         [:!Ok :page_up]
       ]
     }
-
     {
       :des "symbol-mode"
       :rules [
@@ -670,11 +627,54 @@
       "^com\\.apple\\.Safari$"
     ]
   }
-
-  ; {
-  ;   :des "Disable cmd+tab"
-  ;   :rules [
-  ;     [:!Ctab :vk_none]
-  ;   ]
-  ; }
 }
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Notes, ideas, and reference
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Hyper Keys
+;; Sometimes need to use "hyper" keys (unlikely modifier combos) for different scenarios. i.e. if you want to use a Karabiner modifier (like z/z-mode) to trigger something in another app with a Keybinding (like Alfred or Keysmith)
+;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
+;;; CTOS (in use)
+;;; CTOSF (not in use yet)
+
+; Plain Rule Ideas
+  ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
+  ; Using simultaneous keypresses for singular actions (might be cool, though something to keep an eye on is the difficulty of pressing the keys simultaneously)
+
+; Hyper key ideas: (only when used alone -- see Shawn's usage for "left option when used alone")
+  ; Left control
+  ; Left option
+
+; Simlayer ideas:
+  ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
+  ; Using a simlayer for the ctrl key, e.g. `a` (cool, but a simlayer on `a` is going to be hella annoying)
+  ; Using a simlayer for ⌘+⇧ (Nikita) (useful for ergonomics)
+  ; Using a simlayer for ⌘ (Nikita) (useful for ergonomics)
+  ; Using a simlayer for media controls (Nikita)
+  ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
+
+; Simlayer key ideas
+  ; tilde
+  ; backslash
+  ; tab
+  ; comma
+  ; right shift
+  ; q, w, x, z, j, numbers
+  ; https://en.wikipedia.org/wiki/Letter_frequency
+
+; Goku Syntax
+;; !  | means mandatory -   modifier(s) alone when pressend change behavior
+;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+;; ## | optional any
+;; !! | command + control + optional + shift (hyper)
+;; C  | left_command (Emacs: hyper)
+;; T  | left_control (Emacs: control)
+;; O  | left_option (Emacs: meta)
+;; S  | left_shift
+;; F  | fn (Emacs: super)
+;; Q  | right_command (Emacs: control)
+;; W  | right_control (Emacs: control)
+;; E  | right_option (Emacs: )
+;; R  | right_shift
