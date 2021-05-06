@@ -152,7 +152,7 @@ nnoremap <silent> <leader>x :x<CR>
 " Prettier with <leader>u
 nnoremap <leader>u :Prettier<CR>
 
-" Paste last yanked with <leader>p (last yanked will be in `0` register, while last yanked _or_ deleted will be in default register)
+" Paste last yanked with <leader>p (last yanked will be in `0` register, while last yanked _or_ deleted will be in default register, `"`)
 nnoremap <leader>p "0p
 
 " Change default keybindings for moving through jump history to <C-[> and <C-]>

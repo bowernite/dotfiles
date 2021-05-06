@@ -14,6 +14,6 @@
   },
   "peacock.color": "#4a0e7e",
   "[clojure]": {
-    "editor.wordWrapColumn": 120
+    // "editor.wordWrapColumn": 120
   }
 }
