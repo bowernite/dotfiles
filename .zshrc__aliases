@@ -2,9 +2,22 @@
 # Dev Utils
 ##############################################################
 
+#######################################
+# Returns 0 if project is a yarn project,
+# 1 if not (if in node project, then
+# it's likely npm)
+#######################################
+is_yarn_project() {
+  if [[ -e yarn.lock ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
 format() {
   echo "💅 Formatting files with Prettier...";
-  if [[ -e yarn.lock ]]; then
+  if is_yarn_project; then
     yarn prettier --write --loglevel=error .;
   else
     npx prettier --write --loglevel=error .;
