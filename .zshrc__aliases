@@ -1,11 +1,11 @@
-##############################################################
+#####################################################################
 # Dev Utils
-##############################################################
+#####################################################################
 
 #######################################
-# Returns 0 if project is a yarn project,
-# 1 if not (if in node project, then
-# it's likely npm)
+# Returns 0 if project is a yarn project, 1 if not. If it's not and it's a node project, this probably means it's npm we're working with
+#
+# Arguments: none
 #######################################
 is_yarn_project() {
   if [[ -e yarn.lock ]]; then
@@ -54,8 +54,31 @@ jesta() {
   yarn jest --coverage=false;
   echo "✅ Done testing";
 }
-alias va='tc && jesta && lint && format'
-alias vs='tc && lint && format'
+# "validate static"
+vs() {
+  if is_yarn_project; then
+    yarn
+  else
+    npm i
+  fi
+
+  tc
+  lint 
+  format
+}
+# "validate all" (static plus Jest tests)
+va() {
+  if is_yarn_project; then
+    yarn
+  else
+    npm i
+  fi
+
+  tc
+  jesta
+  lint
+  format
+}
 
 ##############################################################
 # Git
