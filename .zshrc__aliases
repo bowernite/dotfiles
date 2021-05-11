@@ -113,7 +113,8 @@ alias gcsm='gc -s -m'
 gci() {
   if git diff --cached --quiet; then
     # No files are staged -- commit all unstaged changes
-    gca $@
+    git add -A -- .
+    gc $@
   else
     # Files are staged -- only commit them
     gc $@
