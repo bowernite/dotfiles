@@ -155,6 +155,9 @@ alias gconflicts="git diff --name-only | uniq"
 # "git fix": Open all files with conflicts (in VS Code)
 alias gfix="git diff --name-only | uniq | xargs code"
 
+# "git show head"
+alias gshh="git show HEAD"
+
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then 
     echo develop; 
