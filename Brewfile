@@ -28,6 +28,7 @@ brew "nvm"
 # This does come with nvm, but doing it this way lets us leverage brew autoupdating
 brew "npm"
 brew "python"
+brew "qmk/qmk/qmk"
 brew "yarn"
 brew "yqrashawn/goku/goku"
 
