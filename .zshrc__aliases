@@ -94,8 +94,33 @@ alias gcod="git co \$(git_dev_branch)"
 alias gcoom="git co origin/\$(git_main_branch)"
 alias gcood="git co origin/\$(git_dev_branch)"
 
-# "git commit message"
+# Override existing git aliases from the oh-my-zsh plugin to all use this custom `gc` alias, which uses `--no-verify`. This allows us to always circumvent pre-commit hooks that slow us down 🙈🤷‍♂️
+alias gc="git commit --no-verify"
 alias gcm="gc -m"
+alias gcam="gc -am"
+alias 'gc!'='gc -v --amend'
+alias gca='gc -v -a'
+alias 'gca!'='gc -v -a --amend'
+alias gcam='gc -a -m'
+alias 'gcan!'='gc -v -a --no-edit --amend'
+alias 'gcans!'='gc -v -a -s --no-edit --amend'
+alias gcmsg='gc -m'
+alias 'gcn!'='gc -v --no-edit --amend'
+alias gcs='gc -S'
+alias gcsm='gc -s -m'
+
+# "git commit lazy": Commit all if no staged changes, otherwise commit only staged files. Mirrors VS Code's behavior for commiting
+gci() {
+  if git diff --cached --quiet; then
+    # No files are staged -- commit all unstaged changes
+    gca $@
+  else
+    # Files are staged -- only commit them
+    gc $@
+  fi
+}
+# Commit lazy, with a message
+alias gcim="gci -m"
 
 # "git pull origin main"
 alias gpom="git pull origin \$(git_main_branch)"
@@ -134,8 +159,8 @@ alias gup="gitupdate ."
 alias gpub="git publish"
 
 # "git fixup": Quick fixup commits
-alias gix="git commit -m 'fixup'"
-alias gixa="git commit -a -m 'fixup'"
+alias gix="gc -m 'fixup'"
+alias gixa="gc -a -m 'fixup'"
 
 # "git authors": See how many lines of code each dev/author is responsible for
 # Source: https://stackoverflow.com/questions/4589731/git-blame-commit-statistics
