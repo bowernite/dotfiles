@@ -1,6 +1,7 @@
 # Copy of logic for the `gcim` shell alias. This exists as an executable (and is symlinked into `/usr/local/bin` in .zshrc) so that VS Code tasks have access to it, as it doesn't seem to have access to our custom shell aliases
 if git diff --cached --quiet; then
   # No files are staged -- commit all unstaged changes
+  git add -A -- .
   git commit --no-verify -m "$1"
 else
   # Files are staged -- only commit them
