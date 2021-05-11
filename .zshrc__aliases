@@ -108,7 +108,6 @@ alias gcmsg='gc -m'
 alias 'gcn!'='gc -v --no-edit --amend'
 alias gcs='gc -S'
 alias gcsm='gc -s -m'
-
 # "git commit lazy": Commit all if no staged changes, otherwise commit only staged files. Mirrors VS Code's behavior for commiting
 gci() {
   if git diff --cached --quiet; then
