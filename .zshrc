@@ -137,4 +137,6 @@ if [[ -z $has_aliased_npx ]]; then
 fi
 
 # Symlink local executables into a path-accessible place
-ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim" 
+if [[ ! -h "/usr/local/bin/gcim" ]]; then
+  ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim" 
+fi
