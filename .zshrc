@@ -64,7 +64,9 @@ PROMPT="$PROMPT"$'\n'"  "
 
 FZF_EXCLUDE_GLOB="**/{node_modules,.git,.Trash,Library,Music,.node-gyp,.npm}"
 
-export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD 2>/dev/null || fd --hidden --follow --exclude='$FZF_EXCLUDE_GLOB'"
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude='$FZF_EXCLUDE_GLOB'"
+# This version only looks for files through git. But this can be annoying sometimes (when git doesn't know about files yet, for example). So going to try only leveraging the exclude glob above, and seeing if that's better. Also, `fd` respects gitignore by default. So the only thing piping `git ls-tree` is really providing here is ignoring untracked files, which... no
+# export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD 2>/dev/null || fd --hidden --follow --exclude='$FZF_EXCLUDE_GLOB'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude='$FZF_EXCLUDE_GLOB'"
 
@@ -73,9 +75,11 @@ _fzf_compgen_dir() {
   fd --type d --hidden --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 _fzf_compgen_path() {
+  fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+  # See notes above on rationale for not using git here
   # If it's a git repo, only search for files tracked by git
   # Otherwise, just use fd
-  git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+  # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 
 ##############################################################
