@@ -183,7 +183,6 @@
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:j [:alfred "jira" "jira.steyep"]]
-        [:k [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
         ;; Hide notification(s)
@@ -312,6 +311,7 @@
         ;; Personal
         [:s [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
         [:w [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
+        [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
 
         ;; Frontend
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-web"]]
