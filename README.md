@@ -5,6 +5,8 @@
 
 <hr />
 
+> NOTE: While this once was a dedicated place where you could find _every_ computer/OS configuration customization, it's not quite as comprehensive anymore since I've started doing cloud backups for my entire filesystem. Moving to this saves me energy (don't need to find a way to automate it in this repository, e.g. with a shell script). It also gives me confidence that my computer, its files, config, etc. will never be lost. That being said, this repository is not a wasteland -- it still has _many_ useful auomations, my config for things like shells and Vim, and I still put other things in here from time to time.
+
 ## Installation
 
 > You may need to restart your mac between some of these steps, but if you can defer until as late in this process as possible, do so to keep the number of reboots to a minimum.
