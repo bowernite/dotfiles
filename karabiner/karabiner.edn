@@ -197,7 +197,7 @@
         ;; Click notification
         [:return_or_enter [:open "keysmith://run-macro/54216F6C-407F-49B2-8E00-7946BD6F6144"]]
         ;; Reply to notification (e.g. Slack)
-        [:y [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
+        [:quote [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
