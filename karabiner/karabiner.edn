@@ -310,8 +310,8 @@
         :period-mode
 
         ;; Personal
-        [:comma [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
-        [:slash [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
+        [:s [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
+        [:w [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
 
         ;; Frontend
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-web"]]
