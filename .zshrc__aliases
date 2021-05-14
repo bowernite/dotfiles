@@ -36,22 +36,22 @@ tc() {
 }
 jest() {
   echo "🧪 Testing files changed on branch...";
-  yarn jest --changedSince=$(git_dev_branch) --coverage=false;
+  yarn jest --changedSince=$(git_dev_branch) --coverage=false $@;
   echo "✅ Done testing";
 }
 jestw() {
   echo "🧪👀 Testing files on watch...";
-  yarn jest  --watch --coverage=false;
+  yarn jest  --watch --coverage=false $@;
   echo "✅ Done testing";
 }
 jestbw() {
   echo "🧪👀 Testing files changed on branch on watch...";
-  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false;
+  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false $@;
   echo "✅ Done testing";
 }
 jesta() {
   echo "🧪 Testing all files...";
-  yarn jest --coverage=false;
+  yarn jest --coverage=false $@;
   echo "✅ Done testing";
 }
 # "validate static"
