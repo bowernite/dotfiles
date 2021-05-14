@@ -26,7 +26,7 @@
   unpublish = "!git push origin :$(git branch-name)"
   co = checkout
   cob = checkout -b
-  ci = commit --no-verify
+  ci = commit
   br = branch
   prune-local = "!git fetch -p && git br -D master && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
   # Mark a file as "assume unchanged", which means that Git will treat it
@@ -48,8 +48,6 @@
   rig = !"git ls-files --ignored --exclude-standard | sed 's/.*/"&"/' | xargs git rm -r --cached"
 
   rev = !"git fetch && git diff origin/$(git dev-branch)"
-  
-  commit = commit --no-verasdfify
 
 
 # I have no idea what this is or how this got here :)
