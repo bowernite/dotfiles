@@ -144,3 +144,6 @@ fi
 if [[ ! -h "/usr/local/bin/gcim" ]]; then
   ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim" 
 fi
+
+# Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
+export GIT_MERGE_AUTOEDIT=no
