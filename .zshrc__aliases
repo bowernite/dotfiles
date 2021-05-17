@@ -125,9 +125,11 @@ gci() {
 alias gcim="gci -m"
 
 # "git pull origin main"
-alias gpom="git pull origin \$(git_main_branch)"
+# `--no-edit` suppresses editing the commit message when doing the pull as a merge
+alias gpom="git pull origin \$(git_main_branch) --no-edit"
 # "git pull origin dev"
-alias gpod="git pull origin \$(git_dev_branch)"
+# `--no-edit` suppresses editing the commit message when doing the pull as a merge
+alias gpod="git pull origin \$(git_dev_branch) --no-edit"
 
 # "git diff origin dev"
 alias gdod="git fetch && gd origin/\$(git_dev_branch)"
