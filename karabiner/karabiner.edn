@@ -169,7 +169,9 @@
         ;; Disconnect (from bluetooth)
         [:5 :!CSTO5]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
-        [:spacebar [:alfred "add to inbox" "com.mikomagni.trello"]]
+        [:g [:alfred "add to inbox" "com.mikomagni.trello"]]
+        ;; Duplicate, for one-handed purposes
+        [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
       ]
     }
     {
