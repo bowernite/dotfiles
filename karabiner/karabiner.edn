@@ -185,8 +185,6 @@
         [:u [:alfred "search" "pw.symbols-search"]]
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
         [:j [:alfred "jira" "jira.steyep"]]
-        [:f [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
-        [:i [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
         ;; Hide notification(s)
         [:h :!CTOSh]
         ;; Create a new event in Calendar
