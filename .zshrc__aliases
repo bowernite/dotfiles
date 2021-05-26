@@ -75,7 +75,7 @@ va() {
   fi
 
   tc
-  jesta
+  jest
   lint
   format
 }
