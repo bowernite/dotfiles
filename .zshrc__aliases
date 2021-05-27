@@ -26,7 +26,7 @@ format() {
 }
 lint() {
   echo "🔎 Linting files with ESLint...";
-  yarn eslint . --ext js,jsx,ts,tsx;
+  yarn eslint .;
   echo "✅ Done linting";
 }
 tc() {
@@ -62,9 +62,15 @@ vs() {
     npm i
   fi
 
-  tc
-  lint 
-  format
+  # NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
+  # Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
+  # local bin="$(pwd)/node_modules/.bin"
+  concurrently \
+    -n typescript,eslint,prettier\
+    -c "#4077ba,#7b7ee3,#efbd52"\
+    "npx tsc --noEmit"\
+    "npx eslint ."\
+    "npx prettier -write --loglevel=error .";
 }
 # "validate all" (static plus Jest tests)
 va() {
@@ -74,10 +80,16 @@ va() {
     npm i
   fi
 
-  tc
-  jest
-  lint
-  format
+  # NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
+  # Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
+  # local bin="$(pwd)/node_modules/.bin"
+  concurrently \
+    -n typescript,jest,eslint,prettier\
+    -c "#4077ba,#8f455b,#7b7ee3,#efbd52"\
+    "npx tsc --noEmit"\
+    "npx jest --changedSince=$(git_dev_branch) --coverage=false"\
+    "npx eslint ."\
+    "npx prettier -write --loglevel=error .";
 }
 
 ##############################################################

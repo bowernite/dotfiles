@@ -90,8 +90,11 @@ source setup/brew.sh
 # Might change this at some point if we go full yarn. Still, it _is_ nice to have npx for "use the local binary if it's there, otherwise use the global one". AFAIK, that doesn't exist with yarn. It's useful for our shell aliases for running prettier, jest, etc.
 if ! command -v npx &> /dev/null; then
   echo "Installing npx globally"
-  npm i -g npx
+  yarn global add npx
 fi
+
+echo "Installing global npm packages"
+yarn global add concurrently
 
 # Install oh-my-zsh
 # Check if $ZSH variable doesn't exist (hence, oh-my-zsh is already installed)
