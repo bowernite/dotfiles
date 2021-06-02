@@ -12,7 +12,11 @@ sudo -v
 log " Configuring macOS..."
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+while true; do
+	sudo -n true
+	sleep 60
+	kill -0 "$$" || exit
+done 2>/dev/null &
 
 # Make Spotlight/Alfred index markdown files
 source $dotfiles_dir/setup/make-spotlight-index-markdown.sh
@@ -77,7 +81,7 @@ sudo pmset -b sleep 15
 sudo pmset -a standbydelay 86400
 
 # Never go into computer sleep mode
-sudo systemsetup -setcomputersleep Off > /dev/null
+sudo systemsetup -setcomputersleep Off >/dev/null
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
@@ -412,10 +416,10 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Use TouchID for `sudo`
 if [[ ! $(grep -xF 'auth sufficient pam_tid.so' /private/etc/pam.d/sudo) ]]; then
-  echo "Enabling Touch ID for sudo access 🔑"
-  sudo sed -i '' '2i\
+	echo "Enabling Touch ID for sudo access 🔑"
+	sudo sed -i '' '2i\
 auth sufficient pam_tid.so\
-'  /private/etc/pam.d/sudo
+' /private/etc/pam.d/sudo
 fi
 
 ##############################################################
