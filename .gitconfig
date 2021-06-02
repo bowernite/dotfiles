@@ -38,8 +38,8 @@
   # Show the files that are currently assume-unchanged
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
 
-  # Delete the current branch, and checkout whichever branch is for developing
-  abandon = !"BRANCH_NAME=$(git branch-name) && git co $(git dev-branch) && git br -D $BRANCH_NAME"
+  # Delete the current branch, and checkout whichever branch is for developing. Also resets hard to HEAD, since that's always what I want to do when doing this operation
+  abandon = !"BRANCH_NAME=$(git branch-name) && git co $(git dev-branch) && git br -D $BRANCH_NAME && git reset origin/$(git branch-name) --hard"
 
   wip = "!git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m '--wip-- [skip ci]'"
   unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
