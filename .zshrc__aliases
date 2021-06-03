@@ -175,7 +175,9 @@ alias gup="gitupdate ."
 alias gpub="git publish"
 
 # "git fixup": Quick fixup commits
-alias gix="gc -m 'fixup'"
+# This one does all files, or just the ones staged, if any
+alias gix="gcim 'fixup'"
+# Explicitly select all files
 alias gixa="gc -a -m 'fixup'"
 
 # "git authors": See how many lines of code each dev/author is responsible for
