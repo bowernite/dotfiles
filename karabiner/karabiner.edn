@@ -190,7 +190,6 @@
         ;; Create a new event in Calendar
         [:n [:open "keysmith://run-macro/F8C058F7-FE8E-4A61-8B04-56FB04D431FF"]]
 
-
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
