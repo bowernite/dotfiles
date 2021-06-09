@@ -186,7 +186,7 @@ alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
 --line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr"
 
 # "git merge continue": add all files that had conflicts, and finish the merge (skip editing the commit message, since `true` is working here as a no-op editor)
-alias gmc="gaa && GIT_EDITOR=true git merge --continue --no-verify"
+alias gmc="gaa && GIT_EDITOR=true gc"
 
 # Change "git rebase continue" to skip editing the commit message (since `true` is working here as a no-op editor)
 alias grbc="GIT_EDITOR=true git rebase --continue"
