@@ -20,19 +20,19 @@ set -e
 dotfiles_dir=$HOME/src/personal/dotfiles
 
 if [[ ! -e /Library/Spotlight/Markdown.mdimporter ]]; then
-	# Just to make this idempotent, scrap any work we've already done through this script so we can start fresh and try it again
-	sudo rm -rf /Library/Spotlight/Markdown.mdimporter
+  # Just to make this idempotent, scrap any work we've already done through this script so we can start fresh and try it again
+  sudo rm -rf /Library/Spotlight/Markdown.mdimporter
 
-	# Create a copy of the system `RichText.mdimporter`.
-	cp -r /System/Library/Spotlight/RichText.mdimporter $dotfiles_dir
+  # Create a copy of the system `RichText.mdimporter`.
+  cp -r /System/Library/Spotlight/RichText.mdimporter $dotfiles_dir
 
-	# Change it to only index markdown files.
-	patch -p2 $dotfiles_dir/RichText.mdimporter/Contents/Info.plist <$dotfiles_dir/setup/Markdown.mdimporter.patch
-	# NOTE: The .patch file can be super tricky. It expects certain characters for end of lines (e.g. LF vs CRLF) that I'm not exactly sure of. If it breaks again and you get an error like "unexpected end of line" in diff, try reverting back to an old version of the patch file and making your new changes carefully
+  # Change it to only index markdown files.
+  patch -p2 $dotfiles_dir/RichText.mdimporter/Contents/Info.plist <$dotfiles_dir/setup/Markdown.mdimporter.patch
+  # NOTE: The .patch file can be super tricky. It expects certain characters for end of lines (e.g. LF vs CRLF) that I'm not exactly sure of. If it breaks again and you get an error like "unexpected end of line" in diff, try reverting back to an old version of the patch file and making your new changes carefully
 
-	# Move it into `/Library/Spotlight` as `Markdown.mdimporter`.
-	sudo mv $dotfiles_dir/RichText.mdimporter /Library/Spotlight/Markdown.mdimporter
+  # Move it into `/Library/Spotlight` as `Markdown.mdimporter`.
+  sudo mv $dotfiles_dir/RichText.mdimporter /Library/Spotlight/Markdown.mdimporter
 
-	# Re-index with the new importer.
-	mdimport -r /Library/Spotlight/Markdown.mdimporter
+  # Re-index with the new importer.
+  mdimport -r /Library/Spotlight/Markdown.mdimporter
 fi

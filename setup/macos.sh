@@ -13,9 +13,9 @@ log " Configuring macOS..."
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do
-	sudo -n true
-	sleep 60
-	kill -0 "$$" || exit
+  sudo -n true
+  sleep 60
+  kill -0 "$$" || exit
 done 2>/dev/null &
 
 # Make Spotlight/Alfred index markdown files
@@ -416,8 +416,8 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Use TouchID for `sudo`
 if [[ ! $(grep -xF 'auth sufficient pam_tid.so' /private/etc/pam.d/sudo) ]]; then
-	echo "Enabling Touch ID for sudo access 🔑"
-	sudo sed -i '' '2i\
+  echo "Enabling Touch ID for sudo access 🔑"
+  sudo sed -i '' '2i\
 auth sufficient pam_tid.so\
 ' /private/etc/pam.d/sudo
 fi
@@ -428,24 +428,24 @@ fi
 
 # Kill affected apps
 for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Flux" \
-	"Finder" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Photos" \
-	"Rectangle" \
-	"Safari" \
-	"SystemUIServer" \
-	"Terminal"; do
-	# `2>/dev/null` swallows the stderr error message
-	# `|| true` makes sure error/exit code is swallowed, and the script can continue
-	sudo killall "${app}" 2>/dev/null || true
+  "Address Book" \
+  "Calendar" \
+  "cfprefsd" \
+  "Contacts" \
+  "Dock" \
+  "Flux" \
+  "Finder" \
+  "Google Chrome" \
+  "Mail" \
+  "Messages" \
+  "Photos" \
+  "Rectangle" \
+  "Safari" \
+  "SystemUIServer" \
+  "Terminal"; do
+  # `2>/dev/null` swallows the stderr error message
+  # `|| true` makes sure error/exit code is swallowed, and the script can continue
+  sudo killall "${app}" 2>/dev/null || true
 done
 
 echo
