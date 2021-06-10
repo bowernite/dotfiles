@@ -106,6 +106,9 @@ alias gcod="git co \$(git_dev_branch) && groh"
 alias gcoom="git co origin/\$(git_main_branch)"
 alias gcood="git co origin/\$(git_dev_branch)"
 
+# "git checkout all"
+alias gcoa="gco ."
+
 # Override existing git aliases from the oh-my-zsh plugin to all use this custom `gc` alias, which uses `--no-verify`. This allows us to always circumvent pre-commit hooks that slow us down 🙈🤷‍♂️
 alias gc="git commit --no-verify"
 alias gcm="gc -m"
@@ -183,6 +186,7 @@ alias gixa="gc -a -m 'fixup'"
 # "git authors": See how many lines of code each dev/author is responsible for
 # Source: https://stackoverflow.com/questions/4589731/git-blame-commit-statistics
 alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
+
 --line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr"
 
 # "git merge continue": add all files that had conflicts, and finish the merge (skip editing the commit message, since `true` is working here as a no-op editor)
