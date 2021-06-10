@@ -269,11 +269,11 @@
         ;; Jira - Board
         [:j [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?projectKey=COCKPIT&rapidView=18"]]
         ;; Jira - Backlog
-        [:k [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
+        [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
         ;; Work calendar
         [:y [:openw "calendar.google.com/calendar/u/1/r"]]
         ;; Work email
-        [:w [:openw "mail.google.com/mail/u/1"]]
+        [:k [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
         [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
