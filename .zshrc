@@ -35,21 +35,21 @@ export PATH
 
 # Puts a new line after all prompts
 precmd() {
-	precmd() {
-		echo
-	}
+  precmd() {
+    echo
+  }
 }
 
 # Two-line prompt with emoji
 # This is off for now... it go annoying with the emojis that were sometimes wider than one character, depending on the terminal that was rendering it. Maybe one day I'll turn it back on and move the emoji or just use emojis that are always one character wide (e.g. 😀)
 # Source: https://github.com/kentcdodds/dotfiles/blob/master/.zshrc
 function random_element {
-	declare -a array=("$@")
-	r=$((RANDOM % ${#array[@]}))
-	printf "%s\n" "${array[$r]}"
+  declare -a array=("$@")
+  r=$((RANDOM % ${#array[@]}))
+  printf "%s\n" "${array[$r]}"
 }
 function random_emoji() {
-	printf "$(random_element 😅 👽 🔥 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
+  printf "$(random_element 😅 👽 🔥 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
 }
 # PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
 
@@ -72,14 +72,14 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude='$FZF_EXCLUDE_GLOB'"
 
 # Use fd to generate the list for directory completion
 _fzf_compgen_dir() {
-	fd --type d --hidden --exclude=$FZF_EXCLUDE_GLOB . $1
+  fd --type d --hidden --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 _fzf_compgen_path() {
-	fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
-	# See notes above on rationale for not using git here
-	# If it's a git repo, only search for files tracked by git
-	# Otherwise, just use fd
-	# git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+  fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+  # See notes above on rationale for not using git here
+  # If it's a git repo, only search for files tracked by git
+  # Otherwise, just use fd
+  # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 
 ##############################################################
@@ -95,7 +95,7 @@ cdpath=($HOME/src $HOME/src/work $HOME/src/personal $HOME/playground $HOME/Dropb
 # Show named and cdpath directories in autocomplete suggestions
 # Source: https://superuser.com/questions/515633/my-zsh-autocompletion-for-cdpath-stopped-working
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
-	'local-directories named-directories path-directories'
+  'local-directories named-directories path-directories'
 
 ##############################################################
 # Miscellaneous setup
@@ -123,27 +123,27 @@ source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 # WIP, not really tested yet
 export HUSKY_SKIP_HOOKS=1
 if [[ -z $has_aliased_npx ]]; then
-	npx() {
-		echo 'in the function'
-		# shfmt doesn't like this ¯\_(ツ)_/¯
-		# local -i i=$argv[(i)^-*]
-		# $argv[i] is the first non-option argument (or empty if there is none).
-		local is_bad=0
-		case $argv[i] in
-		commitlint | lint-staged) is_bad=1 ;;
-		esac
-		echo 'is bad'
-		echo $is_bad
-		if [[ $is_bad == 0 ]]; then
-			command npx "$@"
-		fi
-	}
-	export has_aliased_npx=1
+  npx() {
+    echo 'in the function'
+    # shfmt doesn't like this ¯\_(ツ)_/¯
+    # local -i i=$argv[(i)^-*]
+    # $argv[i] is the first non-option argument (or empty if there is none).
+    local is_bad=0
+    case $argv[i] in
+    commitlint | lint-staged) is_bad=1 ;;
+    esac
+    echo 'is bad'
+    echo $is_bad
+    if [[ $is_bad == 0 ]]; then
+      command npx "$@"
+    fi
+  }
+  export has_aliased_npx=1
 fi
 
 # Symlink local executables into a path-accessible place
 if [[ ! -L "/usr/local/bin/gcim" ]]; then
-	ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
+  ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
 fi
 
 # Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️

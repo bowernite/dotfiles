@@ -8,86 +8,86 @@
 # Arguments: none
 #######################################
 is_yarn_project() {
-	if [[ -e yarn.lock ]]; then
-		return 0
-	else
-		return 1
-	fi
+  if [[ -e yarn.lock ]]; then
+    return 0
+  else
+    return 1
+  fi
 }
 
 format() {
-	echo "💅 Formatting files with Prettier..."
-	if is_yarn_project; then
-		yarn prettier --write --loglevel=error .
-	else
-		npx prettier --write --loglevel=error .
-	fi
-	echo "✅ Done formatting"
+  echo "💅 Formatting files with Prettier..."
+  if is_yarn_project; then
+    yarn prettier --write --loglevel=error .
+  else
+    npx prettier --write --loglevel=error .
+  fi
+  echo "✅ Done formatting"
 }
 lint() {
-	echo "🔎 Linting files with ESLint..."
-	yarn eslint .
-	echo "✅ Done linting"
+  echo "🔎 Linting files with ESLint..."
+  yarn eslint .
+  echo "✅ Done linting"
 }
 tc() {
-	echo "🧐 Type-checking files with TypeScript..."
-	yarn tsc $@ --noEmit
-	echo "✅ Done type-checking"
+  echo "🧐 Type-checking files with TypeScript..."
+  yarn tsc $@ --noEmit
+  echo "✅ Done type-checking"
 }
 jest() {
-	echo "🧪 Testing files changed on branch..."
-	yarn jest --changedSince=$(git_dev_branch) --coverage=false $@
-	echo "✅ Done testing"
+  echo "🧪 Testing files changed on branch..."
+  yarn jest --changedSince=$(git_dev_branch) --coverage=false $@
+  echo "✅ Done testing"
 }
 jestw() {
-	echo "🧪👀 Testing files on watch..."
-	yarn jest --watch --coverage=false $@
-	echo "✅ Done testing"
+  echo "🧪👀 Testing files on watch..."
+  yarn jest --watch --coverage=false $@
+  echo "✅ Done testing"
 }
 jestbw() {
-	echo "🧪👀 Testing files changed on branch on watch..."
-	yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false $@
-	echo "✅ Done testing"
+  echo "🧪👀 Testing files changed on branch on watch..."
+  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false $@
+  echo "✅ Done testing"
 }
 jesta() {
-	echo "🧪 Testing all files..."
-	yarn jest --coverage=false $@
-	echo "✅ Done testing"
+  echo "🧪 Testing all files..."
+  yarn jest --coverage=false $@
+  echo "✅ Done testing"
 }
 # "validate static"
 vs() {
-	if is_yarn_project; then
-		yarn
-	else
-		npm i
-	fi
+  if is_yarn_project; then
+    yarn
+  else
+    npm i
+  fi
 
-	# NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
-	# Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
-	# local bin="$(pwd)/node_modules/.bin"
-	concurrently \
-		-n typescript,eslint,prettier -c "#4077ba,#7b7ee3,#efbd52" \
-		"npx tsc --noEmit" \
-		"npx eslint ." \
-		"npx prettier -write --loglevel=error ."
+  # NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
+  # Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
+  # local bin="$(pwd)/node_modules/.bin"
+  concurrently \
+    -n typescript,eslint,prettier -c "#4077ba,#7b7ee3,#efbd52" \
+    "npx tsc --noEmit" \
+    "npx eslint ." \
+    "npx prettier -write --loglevel=error ."
 }
 # "validate all" (static plus Jest tests)
 va() {
-	if is_yarn_project; then
-		yarn
-	else
-		npm i
-	fi
+  if is_yarn_project; then
+    yarn
+  else
+    npm i
+  fi
 
-	# NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
-	# Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
-	# local bin="$(pwd)/node_modules/.bin"
-	concurrently \
-		-n typescript,jest,eslint,prettier -c "#4077ba,#8f455b,#7b7ee3,#efbd52" \
-		"npx tsc --noEmit" \
-		"npx jest --changedSince=$(git_dev_branch) --coverage=false" \
-		"npx eslint ." \
-		"npx prettier -write --loglevel=error ."
+  # NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
+  # Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
+  # local bin="$(pwd)/node_modules/.bin"
+  concurrently \
+    -n typescript,jest,eslint,prettier -c "#4077ba,#8f455b,#7b7ee3,#efbd52" \
+    "npx tsc --noEmit" \
+    "npx jest --changedSince=$(git_dev_branch) --coverage=false" \
+    "npx eslint ." \
+    "npx prettier -write --loglevel=error ."
 }
 
 #####################################################################
@@ -126,14 +126,14 @@ alias gcsm='gc -s -m'
 
 # "git commit lazy": Commit all if no staged changes, otherwise commit only staged files. Mirrors VS Code's behavior for commiting
 gci() {
-	if git diff --cached --quiet; then
-		# No files are staged -- commit all unstaged changes
-		git add -A -- .
-		gc $@
-	else
-		# Files are staged -- only commit them
-		gc $@
-	fi
+  if git diff --cached --quiet; then
+    # No files are staged -- commit all unstaged changes
+    git add -A -- .
+    gc $@
+  else
+    # Files are staged -- only commit them
+    gc $@
+  fi
 }
 # Commit lazy, with a message
 # NOTE: A copy of this logic (without using zsh aliases) exists as an executable in `bin` in this repository. See that script for details why
@@ -209,15 +209,15 @@ alias gfix="git diff --name-only | uniq | xargs code"
 alias gshh="git show HEAD"
 
 git_dev_branch() {
-	if [[ -n $(git branch --list develop) ]]; then
-		echo develop
-	elif [[ -n $(git branch --list development) ]]; then
-		echo development
-	elif [[ -n $(git branch --list main) ]]; then
-		echo main
-	else
-		echo master
-	fi
+  if [[ -n $(git branch --list develop) ]]; then
+    echo develop
+  elif [[ -n $(git branch --list development) ]]; then
+    echo development
+  elif [[ -n $(git branch --list main) ]]; then
+    echo main
+  else
+    echo master
+  fi
 }
 
 #####################################################################
@@ -289,6 +289,6 @@ alias wh=which
 
 # Clears the screen and runs the succeeding command(s)
 c() {
-	clear
-	eval $@
+  clear
+  eval $@
 }

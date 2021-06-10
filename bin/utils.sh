@@ -10,31 +10,31 @@ dotfiles_dir=~/src/personal/dotfiles
 #   [to_filename]: The name of the target/the symlink to create
 #######################################
 install_dotfile() {
-	local from_filename=$1
-	local to_filename=$2
+  local from_filename=$1
+  local to_filename=$2
 
-	# Default the new/to filename to the name of the file in this repo
-	if [[ -z $to_filename ]]; then
-		to_filename=$from_filename
-	fi
+  # Default the new/to filename to the name of the file in this repo
+  if [[ -z $to_filename ]]; then
+    to_filename=$from_filename
+  fi
 
-	local from="$dotfiles_dir/$from_filename"
-	local to="$HOME/$to_filename"
+  local from="$dotfiles_dir/$from_filename"
+  local to="$HOME/$to_filename"
 
-	if [ ! -e $to ]; then
-		echo "Creating $to ..."
-		ln -s $from $to
-	fi
+  if [ ! -e $to ]; then
+    echo "Creating $to ..."
+    ln -s $from $to
+  fi
 }
 
 ##############################################################
 # Pretty logger for bootstrapping only
 ##############################################################
 log() {
-	local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-	printf "\n\n\n"
-	echo $separator
-	echo "‍💻 $1"
-	echo $separator
-	echo
+  local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+  printf "\n\n\n"
+  echo $separator
+  echo "‍💻 $1"
+  echo $separator
+  echo
 }
