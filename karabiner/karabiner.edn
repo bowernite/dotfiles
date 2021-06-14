@@ -314,7 +314,6 @@
 
         ;; Personal
         [:s [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
-
         [:w [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
         [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:q [:open "~/src/personal/qmk_firmware/keyboards/preonic/keymaps/babramczyk/keymap.c"]]
