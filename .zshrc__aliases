@@ -73,6 +73,11 @@ vs() {
 }
 # "validate all" (static plus Jest tests)
 va() {
+  if git_has_changes; then
+    echo "Uncommitted changes found; aborting."
+    return
+  fi
+
   if is_yarn_project; then
     yarn
   else
@@ -123,6 +128,19 @@ alias gcmsg='gc -m'
 alias 'gcn!'='gc -v --no-edit --amend'
 alias gcs='gc -S'
 alias gcsm='gc -s -m'
+
+#######################################
+# Returns 0 if there are any git changes,
+# 1 if not
+#
+# Reference: https://stackoverflow.com/questions/3878624/how-do-i-programmatically-determine-if-there-are-uncommitted-changes
+#######################################
+git_has_changes() {
+  # This is for edge cases/timestamps that I'm not sure I need yet, and is noisey, so I'm just ignoring it for now
+  # git update-index --refresh
+
+  ! git diff-index --quiet HEAD --
+}
 
 # "git commit lazy": Commit all if no staged changes, otherwise commit only staged files. Mirrors VS Code's behavior for commiting
 gci() {
