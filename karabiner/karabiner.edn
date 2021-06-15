@@ -179,17 +179,6 @@
       :rules [
         :z-mode
 
-        ;; umlaut (uses macOS's option+u for this)
-        [:semicolon :!Ou]
-        ;; Unicode symbol search
-        [:u [:alfred "search" "pw.symbols-search"]]
-        [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
-        [:j [:alfred "jira" "jira.steyep"]]
-        ;; Hide notification(s)
-        [:h :!CTOSh]
-        ;; Create a new event in Calendar
-        [:n [:open "keysmith://run-macro/F8C058F7-FE8E-4A61-8B04-56FB04D431FF"]]
-
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
@@ -202,6 +191,8 @@
         [:k [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Add Alfred text replacement
         [:8 [:open "keysmith://run-macro/C6D033A7-26A5-4638-B8F4-4B1013B76D8F"]]
+        ;; Create a new event in Calendar
+        [:n [:open "keysmith://run-macro/F8C058F7-FE8E-4A61-8B04-56FB04D431FF"]]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -209,6 +200,15 @@
         [:comma :!CTOcomma]
         ;; Translate English to German
         [:period :!CTOperiod]
+        ;; umlaut (uses macOS's option+u for this)
+        [:semicolon :!Ou]
+        ;; Unicode symbol search
+        [:u [:alfred "search" "pw.symbols-search"]]
+        [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
+        [:j [:alfred "jira" "jira.steyep"]]
+        ;; Hide notification(s)
+        [:h :!CTOSh]
+        [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
       ]
     }
 
