@@ -329,6 +329,12 @@
         [:e [:openw "gitlab.com/wonder.me/wonder-backend/-/merge_requests"]]
         [:d [:opena "Visual Studio Code" "~/src/work/wonder-backend"]]
         [:c [:openw "gitlab.com/wonder.me/wonder-backend/"]]
+        
+        ;; URLs
+        ;;; Local
+        [:z [:openw "app.wonder.loc"]]
+        ;;; Staging
+        [:a [:openw "app.wonder.ac"]]
 
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
