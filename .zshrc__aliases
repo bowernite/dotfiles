@@ -2,11 +2,11 @@
 # Dev Utils
 #####################################################################
 
-###########################################################
+#################################################
 # Returns 0 if project is a yarn project, 1 if not. If it's not and it's a node project, this probably means it's npm we're working with
 #
 # Arguments: none
-###########################################################
+#################################################
 is_yarn_project() {
   if [[ -e yarn.lock ]]; then
     return 0
@@ -105,146 +105,6 @@ va() {
 }
 
 #####################################################################
-# Git
-#####################################################################
-
-# "git checkout branch"
-alias gcob="git co -b"
-
-# "git checkout main/dev"
-# Also resets to HEAD, since that's pretty much always what I want when switching to one of these branches. Could also `git fetch` here before resetting to HEAD, but not sure if that's desirable yet + not necessary when in VS Code, since it fetches automatically in the background
-alias gcom="git co \$(git_main_branch) && groh"
-alias gcod="git co \$(git_dev_branch) && groh"
-# Should probably only use these when trying to check out files from origin/dev or origin/main
-# NOTE: Doing this (at least when the local version of the branch is not up-to-date, will put Git in a "detached head" state -- not just reset the local branch to origin's HEAD)
-alias gcoom="git co origin/\$(git_main_branch)"
-alias gcood="git co origin/\$(git_dev_branch)"
-
-# "git checkout all"
-alias gcoa="gco ."
-
-# Override existing git aliases from the oh-my-zsh plugin to all use this custom `gc` alias, which uses `--no-verify`. This allows us to always circumvent pre-commit hooks that slow us down 🙈🤷‍♂️
-alias gc="git commit --no-verify"
-alias gcm="gc -m"
-alias gcam="gc -am"
-alias 'gc!'='gc -v --amend'
-alias gca='gc -v -a'
-alias 'gca!'='gc -v -a --amend'
-alias gcam='gc -a -m'
-alias 'gcan!'='gc -v -a --no-edit --amend'
-alias 'gcans!'='gc -v -a -s --no-edit --amend'
-alias gcmsg='gc -m'
-alias 'gcn!'='gc -v --no-edit --amend'
-alias gcs='gc -S'
-alias gcsm='gc -s -m'
-
-# "git commit lazy": Commit all if no staged changes, otherwise commit only staged files. Mirrors VS Code's behavior for commiting
-gci() {
-  if git diff --cached --quiet; then
-    # No files are staged -- commit all unstaged changes
-    git add -A -- .
-    gc $@
-  else
-    # Files are staged -- only commit them
-    gc $@
-  fi
-}
-# Commit lazy, with a message
-# NOTE: A copy of this logic (without using zsh aliases) exists as an executable in `bin` in this repository. See that script for details why
-alias gcim="gci -m"
-
-# "git pull origin main"
-# `--no-edit` suppresses editing the commit message when doing the pull as a merge
-alias gpom="git pull origin \$(git_main_branch) --no-edit"
-# "git pull origin dev"
-# `--no-edit` suppresses editing the commit message when doing the pull as a merge
-alias gpod="git pull origin \$(git_dev_branch) --no-edit"
-
-# "git diff origin dev"
-alias gdod="git fetch && gd origin/\$(git_dev_branch)"
-# "git diff origin main"
-alias gdom="git fetch && gd origin/\$(git_main_branch)"
-
-# Git diffing with origin/master and origin/<dev_branch>
-alias gr="git rev"
-alias grem="git remote" # (original oh-my-zsh `gr` alias)
-
-# "git undo": "undoes" the last commit, and puts its changes back into the index
-alias gundo="git reset HEAD~"
-# "git undo soft/staged": "undoes" the last commit, and puts its changes into the staging area
-alias gundos="git reset HEAD~ --soft"
-
-# "git abandon": See .gitconfig alias for details
-alias gab="git abandon"
-
-# "git branch modify": Rename a branch
-alias gbm="git branch -m"
-
-alias gap="git add --patch"
-
-# Remap oh-my-zsh's default `gup`
-alias gpr="git pull --rebase"
-
-# Quick committs with `gitupdate` go package
-alias gup="gitupdate ."
-
-# "git publish": See .gitcnofig alias for details
-alias gpub="git publish"
-
-# "git fixup": Quick fixup commits
-# This one does all files, or just the ones staged, if any
-alias gix="gcim 'fixup'"
-# Explicitly select all files
-alias gixa="gc -a -m 'fixup'"
-
-# "git authors": See how many lines of code each dev/author is responsible for
-# Source: https://stackoverflow.com/questions/4589731/git-blame-commit-statistics
-alias gauth="git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame \
-
---line-porcelain HEAD |grep  '^author '|sort|uniq -c|sort -nr"
-
-# "git merge continue": add all files that had conflicts, and finish the merge (skip editing the commit message, since `true` is working here as a no-op editor)
-alias gmc="gaa && GIT_EDITOR=true gc"
-
-# Change "git rebase continue" to skip editing the commit message (since `true` is working here as a no-op editor)
-alias grbc="GIT_EDITOR=true git rebase --continue"
-# "git rebase next": Add all files and continue the rebase
-alias grbn="git add . && grbc"
-
-# "git forget": Remove all files that used to be tracked, but aren't any longer (by gitignore)
-alias gforget="git rm -r --cached . && git add ."
-
-# "git conflicts": Show all files with conflicts (does so by using `git diff`, because in the case of rebase/merge conflicts, only conflict files will be in the index)
-alias gconflicts="git diff --name-only | uniq"
-# "git fix": Open all files with conflicts (in VS Code)
-alias gfix="git diff --name-only | uniq | xargs code"
-
-# "git show head"
-alias gshh="git show HEAD"
-
-git_dev_branch() {
-  if [[ -n $(git branch --list develop) ]]; then
-    echo develop
-  elif [[ -n $(git branch --list development) ]]; then
-    echo development
-  elif [[ -n $(git branch --list main) ]]; then
-    echo main
-  else
-    echo master
-  fi
-}
-
-###########################################################
-# Returns 0 if there are any git changes, 1 if not
-#
-# Reference: https://stackoverflow.com/questions/3878624/how-do-i-programmatically-determine-if-there-are-uncommitted-changes
-###########################################################
-git_has_changes() {
-  git update-index -q --refresh
-  ! git diff-index --quiet HEAD --
-}
-
-#####################################################################
 # Bat and Delta
 #####################################################################
 
@@ -300,8 +160,8 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias ping="ping -c 5"
 
 # I do these all the time when I'm mucking around with zsh/my .zshrc
-alias ez="exec zsh"
-alias sz="source ~/.zshrc"
+alias z="exec zsh"
+alias zo="source ~/.zshrc"
 
 alias alg="alias | grep"
 

@@ -9,6 +9,7 @@ source $dotfiles_dir/.zshrc__generated
 # Private stuff (keys, company-specific, etc.)
 source $dotfiles_dir/.zshrc__private
 source $dotfiles_dir/.zshrc__aliases
+source $dotfiles_dir/.zshrc__git
 
 ##############################################################
 # PATH shenanigans
