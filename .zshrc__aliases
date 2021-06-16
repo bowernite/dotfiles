@@ -27,7 +27,7 @@ format() {
 }
 lint() {
   echo "🔎 Linting files with ESLint..."
-  yarn eslint .
+  yarn eslint --max-warnings=0 --fix .
   echo "✅ Done linting"
 }
 tc() {
@@ -74,7 +74,7 @@ vs() {
   concurrently \
     -n typescript,eslint,prettier -c "#4077ba,#7b7ee3,#efbd52" \
     "npx tsc --noEmit" \
-    "npx eslint --fix ." \
+    "npx eslint --max-warnings=0  --fix ." \
     "npx prettier -write --loglevel=error ."
 }
 # "validate all" (static plus Jest tests)
@@ -97,7 +97,7 @@ va() {
     -n typescript,jest,eslint,prettier -c "#4077ba,#8f455b,#7b7ee3,#efbd52" \
     "npx tsc --noEmit" \
     "npx jest --changedSince=$(git_dev_branch) --coverage=false" \
-    "npx eslint --fix ." \
+    "npx eslint --max-warnings=0 --fix ." \
     "npx prettier -write --loglevel=error ."
 
   if git_has_changes; then
