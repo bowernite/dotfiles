@@ -17,11 +17,12 @@ is_yarn_project() {
 
 format() {
   echo "💅 Formatting files with Prettier..."
-  if is_yarn_project; then
-    yarn prettier --write --loglevel=error .
-  else
-    npx prettier --write --loglevel=error .
-  fi
+  # This `is_yarn_project` isn't working well inside in concurrently, just ignoring and using yarn by default for now
+  # if is_yarn_project; then
+  yarn prettier --write --loglevel=error .
+  # else
+  # npx prettier --write --loglevel=error .
+  # fi
   echo "✅ Done formatting"
 }
 lint() {
