@@ -257,6 +257,8 @@
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
         [:close_bracket [:opena "WhatsApp"]]
+        ;; Duplicate for Preonic
+        [:g [:opena "WhatsApp"]]
         [:b [:opena "Emmet Cheat Sheet"]]
       ]
     }
