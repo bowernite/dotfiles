@@ -251,7 +251,7 @@
 
         ; Less common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:backslash [:opena "Activity Monitor"]]
+        [:9 [:opena "Activity Monitor"]]
         [:8 [:opena "Karabiner-Elements"]]
         [:7 [:opena "Karabiner-EventViewer"]]
         [:close_bracket [:opena "WhatsApp"]]
