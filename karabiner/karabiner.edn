@@ -246,6 +246,8 @@
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
+        ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
+        [:delete_or_backspace [:opena "Preview"]]
         [:slash [:opena "Finder"]]
         [:0 [:opena "Bitwarden"]]
 
