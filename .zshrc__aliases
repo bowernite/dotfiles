@@ -142,6 +142,9 @@ alias yst="yarn && yarn start"
 #####################################################################
 
 alias bi="brew install"
+alias bb="brew bundle"
+alias bupd="brew update"
+alias bupg="brew upgrade"
 
 #####################################################################
 # Miscellaneous
