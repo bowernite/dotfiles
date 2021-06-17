@@ -178,6 +178,9 @@
       :des "z-mode (macros)"
       :rules [
         :z-mode
+        
+        ;; Show notification center
+        [:quote :f12]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
