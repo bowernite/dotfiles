@@ -15,7 +15,7 @@ alias gcoom="git co origin/\$(git_main_branch)"
 alias gcood="git co origin/\$(git_dev_branch)"
 
 # "git checkout all"
-alias gcoa="gco ."
+alias gc.="gco ."
 
 # Override existing git aliases from the oh-my-zsh plugin to all use this custom `gc` alias, which uses `--no-verify`. This allows us to always circumvent pre-commit hooks that slow us down 🙈🤷‍♂️
 alias gc="git commit --no-verify"
