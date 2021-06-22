@@ -15,7 +15,7 @@ is_yarn_project() {
   fi
 }
 
-format() {
+fm() {
   echo "💅 Formatting files with Prettier..."
   # This `is_yarn_project` isn't working well inside in concurrently, just ignoring and using yarn by default for now
   # if is_yarn_project; then
