@@ -207,7 +207,12 @@
         [:semicolon :!Ou]
         ;; Unicode symbol search
         [:u [:alfred "search" "pw.symbols-search"]]
+        ;; Passwords (Chrome)
         [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
+        ;; Passwords (password manager)
+        ;;; Have to use a hotkey, since the Bitwarden workflow can't "show more" properly when the workflow was triggered with an External Trigger
+        [:o [:!CTOSo]]
+        ;; [:o [:alfred "query bitwarden" "com.lisowski-development.alfred.bitwarden"]]
         [:j [:alfred "jira" "jira.steyep"]]
         ;; Hide notification(s)
         [:h :!CTOSh]
