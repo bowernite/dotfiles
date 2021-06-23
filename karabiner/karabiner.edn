@@ -173,6 +173,7 @@
         [:g [:alfred "add to inbox" "com.mikomagni.trello"]]
         ;; Duplicate, for one-handed purposes
         [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
+        [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
       ]
     }
     {
