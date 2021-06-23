@@ -22,6 +22,7 @@ brew "nvm"
 brew "npm"
 brew "python"
 brew "qmk/qmk/qmk"
+brew "ruby"
 # Formatter for shell scripts
 brew "shfmt"
 brew "yarn"

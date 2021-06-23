@@ -25,6 +25,10 @@ PATH="$HOME/mongodb/bin:${PATH}"
 # Setting PATH for Go executables
 PATH="$HOME/go/bin:${PATH}"
 
+# Setting PATH for ruby and its gem executables
+PATH="/usr/local/opt/ruby/bin:$PATH"
+PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+
 # For making GNU utilities the default over the macOS/BSD ones
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
