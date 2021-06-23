@@ -209,6 +209,9 @@
         ;; Hide notification(s)
         [:h :!CTOSh]
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
+        ; Text replacement
+        [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
+        [:i [:alfred "add new text replacement" "dev.abramczyk.macos-text-replacement"]]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
