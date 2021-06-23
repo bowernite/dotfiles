@@ -322,9 +322,9 @@
       ]
     }
     {
-      :des "comma-mode (repositories)"
+      :des "period-mode (repositories)"
       :rules [
-        :comma-mode
+        :period-mode
 
         ;; Personal
         [:s [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
@@ -363,9 +363,9 @@
     ; Text and input
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
-      :des "period-mode (symbols and snippets)"
+      :des "comma-mode (symbols and snippets)"
       :rules [
-        :period-mode
+        :comma-mode
 
         [:d :hyphen] ; -
         [:f :equal_sign] ; =
