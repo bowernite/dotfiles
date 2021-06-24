@@ -369,6 +369,7 @@ duti -s com.microsoft.VSCode php all
 duti -s com.microsoft.VSCode c all
 duti -s com.microsoft.VSCode cpp all
 duti -s com.microsoft.VSCode md all
+duti -s com.microsoft.VSCode mdx all
 duti -s com.microsoft.VSCode rb all
 duti -s com.microsoft.VSCode go all
 duti -s com.microsoft.VSCode py all
