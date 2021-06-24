@@ -409,6 +409,14 @@
       ]
     }
     {
+      :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
+      :rules [
+        [:open_bracket :!Sslash] ; [ -> ?
+        ;; Will probably add more at some point, but will wait for the above symbol mode to mature a bit
+        ;; I think the vision is that on the Prenoic I'll have useful snippets/symbols that didn't make it into symbol mode that are activated by a layer, and to make up for that I'll add them on normal keyboards too by using no longer necessary keys (close_bracket, backslash, plus, minus)
+      ]
+    }
+    {
       ;; Just mapping semicolon to shift gets tricky sometimes, with rules conflicting. So, this way, we get more fine-grained control, and can do things like using the caps lock key in this mode for actual caps lock
       :des "semicolon-mode (simulated 'shift mode')"
       :rules [
