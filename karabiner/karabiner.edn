@@ -18,6 +18,7 @@
     :left_control_lazy  {:key :left_control :lazy true}
     :right_control_lazy  {:key :right_control :lazy true}
     :left_cmd_lazy      {:key :left_command :lazy true}
+    :secondary_brightness_off {:key :!Tdisplay_brightness_decrement :repeat true :hold_down_ms 3000}
   }
 
   :modifiers {
@@ -49,7 +50,7 @@
     :slash-mode { :key :slash }
     :comma-mode { :key :comma }
     :period-mode { :key :period }
-    ;; :symbol-mode { :key :quote }
+    :tab-mode { :key :tab }
   }
 
   :main [
@@ -395,7 +396,7 @@
 
         [:b :!S4] ; $
         [:caps_lock :!S8] ; *
-        [:tab :!equal_sign] ; +
+        [:tab :!Sequal_sign] ; +
 
         [:h :!S6] ; ^
         [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
@@ -417,6 +418,14 @@
         [:open_bracket :!Sslash] ; [ -> ?
         ;; Will probably add more at some point, but will wait for the above symbol mode to mature a bit
         ;; I think the vision is that on the Prenoic I'll have useful snippets/symbols that didn't make it into symbol mode that are activated by a layer, and to make up for that I'll add them on normal keyboards too by using no longer necessary keys (close_bracket, backslash, plus, minus)
+      ]
+    }
+    {
+      :des "tab-mode (media)"
+      :rules [
+        :tab-mode
+        
+        [:j :secondary_brightness_off]
       ]
     }
     {
