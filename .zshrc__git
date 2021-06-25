@@ -112,8 +112,10 @@ alias gconflicts="git diff --name-only | uniq"
 # "git fix": Open all files with conflicts (in VS Code)
 alias gfix="git diff --name-only | uniq | xargs code"
 
-# "git show head"
-alias gshh="git show HEAD"
+# "git summary": Show a summary of a commit (i.e. without the diff)
+alias gsm="git show --quiet"
+# Even less info (i.e. no commit author or time)
+alias gsmo="gsm --oneline"
 
 git_dev_branch() {
   if [[ -n $(git branch --list develop) ]]; then
