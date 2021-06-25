@@ -42,17 +42,16 @@
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
   }
 
-  ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession
+  ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession. Another con is that you can't use that key in other layers (only tested for semicolon-mode, which might be an edge case since we're doing that manually)
   ;; Simlayers: Pro is that you never have to worry about typing too quickly and accidentally triggering a layer's rule, when you're just trying to type. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
   
-  :layers {
-    :tab-mode { :key :tab }
-  }
+  :layers {}
   :simlayers {
     :q-mode { :key :q }
     :x-mode { :key :x }
     :z-mode { :key :z }
     :slash-mode { :key :slash }
+    :tab-mode { :key :tab }
     ;; Theoretically could be in :layers, but frequently I'll do space immediately after these
     :period-mode { :key :period }
     :comma-mode { :key :comma }
