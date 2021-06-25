@@ -25,6 +25,8 @@ fm() {
   # fi
   echo "✅ Done formatting"
 }
+# "format commit": format the files, and commit the result
+alias fmc="fm && gcim 'cleanup'"
 lint() {
   echo "🔎 Linting files with ESLint..."
   yarn eslint --max-warnings=0 --fix .
