@@ -18,7 +18,8 @@
     :left_control_lazy  {:key :left_control :lazy true}
     :right_control_lazy  {:key :right_control :lazy true}
     :left_cmd_lazy      {:key :left_command :lazy true}
-    :secondary_brightness_off {:key :!Tdisplay_brightness_decrement :repeat true :hold_down_ms 3000}
+    :second_brightness_decrement {:key :!Tdisplay_brightness_decrement }
+    :second_brightness_increment {:key :!Tdisplay_brightness_increment }
   }
 
   :modifiers {
@@ -41,17 +42,20 @@
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
   }
 
-  ;; Layers: Pro is that you can hold down and do multiple simultaneously. Con is that if you type another character quickly, it won't register
-  ;; Simlayers: Pro is that it's super robust; can do multiple, never going to type something you don't want. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
-
+  ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession
+  ;; Simlayers: Pro is that you never have to worry about typing too quickly and accidentally triggering a layer's rule, when you're just trying to type. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+  
+  :layers {
+    :tab-mode { :key :tab }
+  }
   :simlayers {
     :q-mode { :key :q }
     :x-mode { :key :x }
     :z-mode { :key :z }
     :slash-mode { :key :slash }
-    :comma-mode { :key :comma }
+    ;; Theoretically could be in :layers, but frequently I'll do space immediately after these
     :period-mode { :key :period }
-    :tab-mode { :key :tab }
+    :comma-mode { :key :comma }
   }
 
   :main [
@@ -427,7 +431,20 @@
       :rules [
         :tab-mode
         
-        [:j :secondary_brightness_off]
+        [:j :volume_down]
+        [:k :volume_up]
+        [:m :mute]
+        [:comma :vk_consumer_previous]
+        [:period :vk_consumer_next]
+        [:spacebar :play_or_pause]
+
+        [:u :display_brightness_decrement]
+        [:i :display_brightness_increment]
+        [:h :second_brightness_decrement]
+        [:l :second_brightness_increment]
+
+        ;; Dupe, not sure if it's necessary
+        [:n :f12]
       ]
     }
     {
