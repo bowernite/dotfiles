@@ -26,7 +26,13 @@ fm() {
   echo "✅ Done formatting"
 }
 # "format commit": format the files, and commit the result
-alias fmc="fm && gcim 'cleanup'"
+fmc() {
+  fm
+
+  if git_has_changes; then
+    gcim 'cleanup'
+  fi
+}
 lint() {
   echo "🔎 Linting files with ESLint..."
   yarn eslint --max-warnings=0 --fix .
