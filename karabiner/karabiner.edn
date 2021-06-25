@@ -192,9 +192,6 @@
       :rules [
         :z-mode
 
-        ;; Show notification center
-        [:quote :f12]
-
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Translate German to English
@@ -202,7 +199,7 @@
         ;; Translate English to German
         [:period :!CTOperiod]
         ;; umlaut (uses macOS's option+u for this)
-        [:semicolon :!Ou]
+        [:quote :!Ou]
         ;; Unicode symbol search
         [:u [:alfred "search" "pw.symbols-search"]]
         ;; Passwords (Chrome)
@@ -217,7 +214,11 @@
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
         ; Text replacement
         [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
-        [:i [:alfred "add new text replacement" "dev.abramczyk.macos-text-replacement"]]
+        [:y [:alfred "add new text replacement" "dev.abramczyk.macos-text-replacement"]]
+        ;; Quit app
+        [:i :!CTOSi]
+        ;; Hide app
+        [:semicolon :!CTOSsemicolon]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
