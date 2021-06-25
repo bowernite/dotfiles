@@ -442,8 +442,13 @@
         [:h :second_brightness_decrement]
         [:l :second_brightness_increment]
 
+        ; Random, not really "media"
         ;; Dupe, not sure if it's necessary
         [:n :f12]
+        ;; Zoom out
+        [:o :!Chyphen]
+        ;; Zoom in
+        [:p :!Cequal_sign]
       ]
     }
     {
