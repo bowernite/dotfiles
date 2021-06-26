@@ -139,9 +139,9 @@
       :rules [
         :slash-mode
 
-        ;; Change VPN
-        ;; If we ever find that something like Keysmith or Alfred handles this better
-        ;; [:v :!CTOSv]
+        ; VPN
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Connect to configured default country VPN
         [:2 [:opena "NordVPN Teams"]]
         [:1 [:quit "NordVPN Teams"]]
 
