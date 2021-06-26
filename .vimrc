@@ -200,7 +200,7 @@ noremap <Down> <C-d>
 noremap <Up> <C-u>
 
 " Insert line below, without moving to it or entering Insert mode
-" nnoremap <leader>k moO<esc>`o
+nnoremap <leader>k moO<esc>`o
 nnoremap <leader>j moo<esc>`o
 
 " Insert line below and move to it, but stay in Normal mode
