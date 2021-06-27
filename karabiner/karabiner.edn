@@ -219,6 +219,9 @@
         [:i :!CTOSi]
         ;; Hide app
         [:semicolon :!CTOSsemicolon]
+        ;; MDN search ("feeling lucky" Google search on MDN)
+        ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
+        [:slash :!CTOSm]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
