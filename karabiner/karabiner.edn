@@ -379,6 +379,10 @@
     ; Text and input
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
+      ;; Ideas:
+      ;;; - Add %. Might have to leverage existing symbol keys
+      ;;; - Use Shift quote for something. Maybe something pretty common already in the rules defined here, which would free up room for that here (i.e. backtick). Idk, figure out what makes most sense, based on frequency used
+      ;;; - Replace used symbols for number keys with something. Could even be a macro row. Or for snippets! That'd be nice. Would free up more for symbol mode. Really all we need together in symbol mode is symbols that are likely to be typed together. That's what's important
       :des "comma-mode (symbols and snippets)"
       :rules [
         :comma-mode
