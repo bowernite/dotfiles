@@ -395,12 +395,12 @@
         [:g :equal_sign] ; =
         [:c :!Shyphen] ; _
 
-        [:q :!Sopen_bracket] ; {
-        [:w :!Sclose_bracket] ; }
+        [:q :open_bracket] ; [
+        [:w :close_bracket] ; ]
         [:a :!S9] ; (
         [:s :!S0] ; )
-        [:z :open_bracket] ; [
-        [:x :close_bracket] ; ]
+        [:z :!Sopen_bracket] ; {
+        [:x :!Sclose_bracket] ; }
 
         [:r :!S1] ; !
         [:t :!Sbackslash] ; |
