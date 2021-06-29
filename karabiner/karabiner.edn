@@ -341,7 +341,7 @@
       ]
     }
     {
-      :des "period-mode (repositories)"
+      :des "period-mode (repos, files, work stuff)"
       :rules [
         :period-mode
 
