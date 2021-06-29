@@ -45,7 +45,9 @@
   ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession. Another con is that you can't use that key in other layers (only tested for semicolon-mode, which might be an edge case since we're doing that manually)
   ;; Simlayers: Pro is that you never have to worry about typing too quickly and accidentally triggering a layer's rule, when you're just trying to type. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
   
-  :layers {}
+  :layers {
+    :comma-mode { :key :comma }
+  }
   :simlayers {
     :q-mode { :key :q }
     :x-mode { :key :x }
@@ -54,7 +56,6 @@
     :tab-mode { :key :tab }
     ;; Theoretically could be in :layers, but frequently I'll do space immediately after these
     :period-mode { :key :period }
-    :comma-mode { :key :comma }
   }
 
   :main [
@@ -422,6 +423,10 @@
 
         [:m [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
         [:period :backslash] ; \
+        
+        ;; Spacebar is the only key I type very quickly after comma
+        ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
+        [:spacebar [:comma :spacebar]]
       ]
     }
     {
