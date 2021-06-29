@@ -426,6 +426,7 @@
         
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
+        ;; It also allows us to hold down comma without a repeat -- we don't need comma repeats, and we might hold down comma before we've decided what key we're going to press for a symbol
         [:spacebar [:comma :spacebar]]
       ]
     }
