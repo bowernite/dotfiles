@@ -54,7 +54,6 @@
     :z-mode { :key :z }
     :slash-mode { :key :slash }
     :tab-mode { :key :tab }
-    ;; Theoretically could be in :layers, but frequently I'll do space immediately after these
     :period-mode { :key :period }
   }
 
