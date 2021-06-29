@@ -433,7 +433,10 @@
     {
       :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
       :rules [
-        [:open_bracket :!Sslash] ; [ -> ?
+        [:quote :!Sslash] ; [ -> ?
+        ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
+        [:open_bracket :quote] ; [ -> '
+
         ;; Will probably add more at some point, but will wait for the above symbol mode to mature a bit
         ;; I think the vision is that on the Prenoic I'll have useful snippets/symbols that didn't make it into symbol mode that are activated by a layer, and to make up for that I'll add them on normal keyboards too by using no longer necessary keys (close_bracket, backslash, plus, minus)
       ]
