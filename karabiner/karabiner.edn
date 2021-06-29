@@ -52,6 +52,7 @@
     :q-mode { :key :q }
     :x-mode { :key :x }
     :z-mode { :key :z }
+    ;; Could move these to layers, if desirable. Won't be able to repeat the characters when holding the key anymore. Make sure to follow the process at the bottom of comma-mode
     :slash-mode { :key :slash }
     :tab-mode { :key :tab }
     :period-mode { :key :period }
