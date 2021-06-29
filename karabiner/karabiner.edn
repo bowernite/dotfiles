@@ -383,8 +383,6 @@
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       ;; Ideas:
-      ;;; - Add %. Might have to leverage existing symbol keys
-      ;;; - Use Shift quote for something. Maybe something pretty common already in the rules defined here, which would free up room for that here (i.e. backtick). Idk, figure out what makes most sense, based on frequency used
       ;;; - Replace used symbols for number keys with something. Could even be a macro row. Or for snippets! That'd be nice. Would free up more for symbol mode. Really all we need together in symbol mode is symbols that are likely to be typed together. That's what's important
       :des "comma-mode (symbols and snippets)"
       :rules [
@@ -421,7 +419,6 @@
         [:2 [:!Cslash :!St :!So :!Sd :!So]] ; -> // TODO
         [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se]] ; -> // FIXME
 
-        [:m [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
         [:period :backslash] ; \
         
         ;; Spacebar is the only key I type very quickly after comma
@@ -434,11 +431,19 @@
       :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
       :rules [
         [:quote :!Sslash] ; [ -> ?
+        [:!Squote [:spacebar :hyphen :hyphen :spacebar]]
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
         [:open_bracket :quote] ; [ -> '
-
-        ;; Will probably add more at some point, but will wait for the above symbol mode to mature a bit
-        ;; I think the vision is that on the Prenoic I'll have useful snippets/symbols that didn't make it into symbol mode that are activated by a layer, and to make up for that I'll add them on normal keyboards too by using no longer necessary keys (close_bracket, backslash, plus, minus)
+        
+        ;; Available: Shift numbers 5, 6, 7, 8, 9, 0
+        ;; Available: Shift -, Shift =
+        ;; Available: Shift [, Shift /
+        ;; Available: Shift .
+        ;; Candidate: ( and ) (though can't replace these entirely in symbol mode, since we want to be able to type them quickly with other bracket symbols)
+        ;; Candidate: /**
+        ;; Candidate: // TODO
+        ;; Candidate: ===
+        ;; Candidate: ```
       ]
     }
     {
@@ -477,7 +482,8 @@
         [:1 :!S1]
         [:2 :!S2]
         [:3 :!S3]
-        [:4 :!S4]
+        ;; Replaced $ with %, since we have $ in symbol mode
+        [:4 :!S5]
         [:5 :!S5]
         [:tab :!Stab]
         [:q :!Sq]
