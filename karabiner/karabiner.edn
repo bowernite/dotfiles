@@ -44,7 +44,7 @@
 
   ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession. Another con is that you can't use that key in other layers (only tested for semicolon-mode, which might be an edge case since we're doing that manually)
   ;; Simlayers: Pro is that you never have to worry about typing too quickly and accidentally triggering a layer's rule, when you're just trying to type. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
-  
+
   :layers {
     :comma-mode { :key :comma }
   }
@@ -393,11 +393,11 @@
         [:g :equal_sign] ; =
         [:c :!Shyphen] ; _
 
-        [:q :open_bracket] ; [
-        [:w :close_bracket] ; ]
+        [:q :close_bracket] ; ]
+        [:w :open_bracket] ; [
         [:a :!S9] ; (
-        [:s :!S0] ; )
-        [:z :!Sopen_bracket] ; {
+        [:s :!Sopen_bracket] ; {
+        [:z :!S0] ; )
         [:x :!Sclose_bracket] ; }
 
         [:r :!S1] ; !
@@ -410,17 +410,17 @@
         [:tab :!Sequal_sign] ; +
 
         [:h :!S6] ; ^
-        [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
+        [:4 :!S6] ; ^
         [:j :!Speriod] ; >
+        ;; [:period :backslash] ; \
+        ;; [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
         ;; [:n [:slash :!S8 :!S8]] ; /**
 
-        [:3 [:equal_sign :equal_sign :equal_sign]] ; ===
-        [:4 [:!S1 :equal_sign :equal_sign]] ; !==
-        [:2 [:!Cslash :!St :!So :!Sd :!So]] ; -> // TODO
-        [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se]] ; -> // FIXME
+        ;; [:3 [:equal_sign :equal_sign :equal_sign]] ; ===
+        ;; [:4 [:!S1 :equal_sign :equal_sign]] ; !==
+        [:2 [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO;␣
+        [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME;␣
 
-        [:period :backslash] ; \
-        
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
         ;; It also allows us to hold down comma without a repeat -- we don't need comma repeats, and we might hold down comma before we've decided what key we're going to press for a symbol
@@ -430,28 +430,34 @@
     {
       :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
       :rules [
+        ; ' key
         [:quote :!Sslash] ; [ -> ?
-        [:!Squote [:spacebar :hyphen :hyphen :spacebar]]
+        [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
+
+        ; [ key
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
         [:open_bracket :quote] ; [ -> '
-        [:!Sslash [:slash :!S8 :!S8]]
-        
-        ;; Available: Shift numbers 1, 5, 6, 7, 8, 9, 0
+        [:!Sopen_bracket :backslash] ; \
+
+        ; / key
+        [:!Sslash [:slash :!S8 :!S8]] ; -> /**
+
+        ; Shift + numbers (right side; left side are in semicolon-mode rules)
+        [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
+        [:!S8 [:equal_sign :equal_sign :equal_sign]] ; ===
+        [:!S9 [:!S1 :equal_sign :equal_sign]] ; !==
+
+        ;; Available: Shift numbers 1, 5, 6, 0
         ;; Available: Shift -, Shift =
-        ;; Available: Shift [, Shift /
-        ;; Available: Shift .
-        ;; Candidate: ( and ) (though can't replace these entirely in symbol mode, since we want to be able to type them quickly with other bracket symbols)
-        ;; Candidate: /**
+        ;; Available: Shift . (kind of)
         ;; Candidate: // TODO
-        ;; Candidate: ===
-        ;; Candidate: ```
       ]
     }
     {
       :des "tab-mode (media)"
       :rules [
         :tab-mode
-        
+
         [:j :volume_down]
         [:k :volume_up]
         [:m :mute]
