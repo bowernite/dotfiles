@@ -365,9 +365,9 @@
 
         ;; URLs
         ;;; Local
-        [:z [:openw "app.wonder.loc"]]
+        [:z [:openw "app.wonder.loc/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
         ;;; Staging
-        [:a [:openw "app.wonder.ac"]]
+        [:a [:openw "app.wonder.ac/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
 
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
