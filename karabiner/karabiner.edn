@@ -177,11 +177,11 @@
         ;; Disconnect (from bluetooth)
         [:5 :!CSTO5]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
-        [:g [:alfred "add to inbox" "com.mikomagni.trello"]]
+        [:t [:alfred "add to inbox" "com.mikomagni.trello"]]
         ;; Duplicate, for one-handed purposes
         [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
         [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
-        [:f [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
+        [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
