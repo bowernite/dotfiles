@@ -177,7 +177,7 @@
         ;; Disconnect (from bluetooth)
         [:5 :!CSTO5]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
-        [:t [:alfred "add to inbox" "com.mikomagni.trello"]]
+        [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
         ;; Duplicate, for one-handed purposes
         [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
         [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
