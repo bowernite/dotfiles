@@ -395,10 +395,10 @@
 
         [:q :close_bracket] ; ]
         [:w :open_bracket] ; [
-        [:a :!S9] ; (
-        [:s :!Sopen_bracket] ; {
-        [:z :!S0] ; )
-        [:x :!Sclose_bracket] ; }
+        [:a :!Sopen_bracket] ; {
+        [:s :!S9] ; (
+        [:z :!Sclose_bracket] ; }
+        [:x :!S0] ; )
 
         [:r :!S1] ; !
         [:t :!Sbackslash] ; |
