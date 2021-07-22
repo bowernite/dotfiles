@@ -274,6 +274,7 @@
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
         [:open_bracket [:opena "Preview"]]
+        [:p [:opena "Reminders"]]
         ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
         [:delete_or_backspace [:opena "Preview"]]
         [:slash [:opena "Finder"]]
@@ -288,7 +289,6 @@
         ;; Duplicate for Preonic
         [:g [:opena "WhatsApp"]]
         [:b [:opena "Emmet Cheat Sheet"]]
-        [:p [:opena "Reminders"]]
       ]
     }
     {
