@@ -355,7 +355,7 @@
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-web"]]
         ;; [:r [:openw "gitlab.com/wonder.me/wonder-web/-/merge_requests"]]
         ;; With Cockpit label
-        [:r [:openw "gitlab.com/wonder.me/wonder-web/-/merge_requests?scope=all&state=opened&label_name[]=cockpit"]]
+        [:r [:openw "gitlab.com/wonder.me/wonder-web/-/merge_requests"]]
         [:f [:opena "Visual Studio Code" "~/src/work/wonder-web"]]
         [:v [:openw "gitlab.com/wonder.me/wonder-web/"]]
 
@@ -386,7 +386,7 @@
     {
       ;; Ideas:
       ;;; - Replace used symbols for number keys with something. Could even be a macro row. Or for snippets! That'd be nice. Would free up more for symbol mode. Really all we need together in symbol mode is symbols that are likely to be typed together. That's what's important
-      :des "comma-mode (symbols and snippets)"
+      :des "comma-mode/symbol-mode (symbols and snippets)"
       :rules [
         :comma-mode
 
