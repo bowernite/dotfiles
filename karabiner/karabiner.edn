@@ -124,6 +124,10 @@
       :rules [
         :iTerm
 
+        ;; More ergonomic Copy Mode
+        ;;; Ctrl-v, to mirror Vim's visual mode (somewhat)
+        [:!Tv :!CSc]
+
         ; Panes
         ;;;;;
         ; Navigating between panes
