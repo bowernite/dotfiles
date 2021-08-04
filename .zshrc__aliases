@@ -153,6 +153,7 @@ alias bi="brew install"
 alias bb="brew bundle"
 alias bupd="brew update"
 alias bupg="brew upgrade"
+alias bun="brew uninstall"
 
 #####################################################################
 # Miscellaneous
