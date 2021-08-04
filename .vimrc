@@ -1,6 +1,10 @@
 source ~/.vimrc__defaults
 
-" foobar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Runtime
+
+" Adds support for using `%` to jump to matching XML/HTML tags
+runtime macros/matchit.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
