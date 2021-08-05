@@ -423,9 +423,11 @@
         ;; [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
         ;; [:n [:slash :!S8 :!S8]] ; /**
 
-        [:3 [:!SO2]] ; €
         [:2 [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:␣
         [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:␣
+
+        ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
+        [:3 [:!SO2]] ; €
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
