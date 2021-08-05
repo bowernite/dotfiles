@@ -88,10 +88,13 @@
         [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
       ]
     }
-
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ; Macros
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "cmd+quote, cmd+shift+quote -> cmd+close_bracket, cmd+shift+close_bracket"
+      :rules [
+          [:!Cquote :!Cclose_bracket]
+          [:!CSquote :!CSclose_bracket]
+      ]
+    }
     {
       :des "app-specific"
       :rules [
@@ -142,6 +145,10 @@
         [:!CSsemicolon :!CSd]
       ]
     }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Macros
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
       :des "slash-mode (macros)"
       :rules [
