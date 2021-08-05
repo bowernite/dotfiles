@@ -114,6 +114,9 @@
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Wopen_bracket :!To :Terminals]
         [:!Wclose_bracket :!Ti :Terminals]
+        ;; Allow forward Vim jump navigation on Preonic keyboard, where we don't have a ] accessible
+        [:!Wquote :!Ti :Terminals]
+        [:!Wquote :!Wclose_bracket :VSCode]
 
         ; Cmd+Esc to stop screenshot video
         [:!Cescape :!CTescape]
