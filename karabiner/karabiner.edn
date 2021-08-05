@@ -424,20 +424,18 @@
 
         [:b :!S4] ; $
         [:caps_lock :!S8] ; *
-        [:tab :!Sequal_sign] ; +
-
-        [:h :!S6] ; ^
-        [:4 :!S6] ; ^
+        [:tab :!S6] ; ^
+        ;; [:h :!S6] ; ^
+        ;; [:4 :!S6] ; ^
         [:j :!Speriod] ; >
-        ;; [:period :backslash] ; \
-        ;; [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
-        ;; [:n [:slash :!S8 :!S8]] ; /**
 
         [:2 [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:␣
         [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:␣
 
         ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
-        [:3 [:!SO2]] ; €
+        [:3 :!SO2] ; €
+        ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
+        [:4 [:slash :!S8 :!S8]] ; -> /**
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
@@ -454,20 +452,24 @@
 
         ; [ key
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
+        ;; Depending on how little I end up using this going forward, it might even make sense to swap this and `. I use the backtick all the time, and it'd also be nice for jumping to Vim marks. Though I still need apostrophes when typing comments in an editor :(
         [:open_bracket :quote] ; [ -> '
         [:!Sopen_bracket :backslash] ; \
 
         ; / key
-        [:!Sslash [:slash :!S8 :!S8]] ; -> /**
+        ;; (could maybe do # here instead)
+        [:!Sslash :!S2] ; -> @
+        
+        ; > (shift + .) key
+        [:!Speriod :!Sequal_sign] ; -> +
 
         ; Shift + numbers (right side; left side are in semicolon-mode rules)
         [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
         [:!S8 [:equal_sign :equal_sign :equal_sign]] ; ===
         [:!S9 [:!S1 :equal_sign :equal_sign]] ; !==
 
-        ;; Available: Shift numbers 1, 5, 6, 0
-        ;; Available: Shift -, Shift =
-        ;; Available: Shift . (kind of)
+        ;; Available: Shift numbers 1, 2, 5, 6, 0
+        ;; Available: Shift -, Shift = (only on Macbook keyboard)
         ;; Candidate: // TODO
       ]
     }
@@ -505,7 +507,9 @@
 
         [:grave_accent_and_tilde :!Sgrave_accent_and_tilde] ; -> ~
         [:1 :!S1]
-        [:2 :!S2]
+        ;; Replace @ with ~, since we have @ remapped elsewhere
+        [:2 :!Sgrave_accent_and_tilde]
+        ;; [:2 :!S2]
         [:3 :!S3]
         ;; Replaced $ with %, since we have $ in symbol mode
         [:4 :!S5]
@@ -540,33 +544,30 @@
 
         ; Combination with other modifiers
         ;
-        ; Only have the keys that are otherwise
-        ; hard-to-reach with left shift. Also,
-        ; Only ⌘ and ⌃ right now
+        ; Only have keys on the left side of the keyboard for now, as that's the only time I'd be using the "right shift"/semicolon for command combos. Also, only ⌘ combos handled for now
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Best we can do right now to keep the semicolon as a shift modifier with other keys (like command). Not perfect, since you have to hold down the semicolon before any other modifier
+        [:!Cq :!CSq]
+        [:!Cw :!CSw]
+        [:!Ce :!CSe]
+        [:!Cr :!CSr]
+        [:!Ct :!CSt]
         [:!Ca :!CSa]
-        [:!Cs :!CSa]
-        [:!Cx :!CSa]
-        [:!Cz :!CSa]
-        [:!Cq :!CSa]
-        [:!Cw :!CSa]
+        [:!Cs :!CSs]
+        [:!Cs :!CSd]
+        [:!Cd :!CSf]
+        [:!Cf :!CSg]
+        [:!Cg :!CSz]
+        [:!Cz :!CSx]
+        [:!Cx :!CSx]
+        [:!Cc :!CSc]
+        [:!Cv :!CSv]
+        [:!Cb :!CSb]
         [:!C1 :!CS1]
         [:!C2 :!CS2]
         [:!C3 :!CS3]
         [:!C4 :!CS4]
         [:!C5 :!CS5]
-        [:!Ta :!TSa]
-        [:!Ts :!TSa]
-        [:!Tx :!TSa]
-        [:!Tz :!TSa]
-        [:!Tq :!TSa]
-        [:!Tw :!TSa]
-        [:!T1 :!TS1]
-        [:!T2 :!TS2]
-        [:!T3 :!TS3]
-        [:!T4 :!TS4]
-        [:!T5 :!TS5]
 
         ;; Enter a simulated caps lock mode, instead of triggering actual caps lock. See the mode below for details
         [:caps_lock ["caps-lock-mode" 1]]
