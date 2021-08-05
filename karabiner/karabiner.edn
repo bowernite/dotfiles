@@ -423,8 +423,7 @@
         ;; [:grave_accent_and_tilde [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
         ;; [:n [:slash :!S8 :!S8]] ; /**
 
-        ;; [:3 [:equal_sign :equal_sign :equal_sign]] ; ===
-        ;; [:4 [:!S1 :equal_sign :equal_sign]] ; !==
+        [:3 [:!SO2]] ; €
         [:2 [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:␣
         [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:␣
 
