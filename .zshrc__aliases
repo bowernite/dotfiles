@@ -84,6 +84,10 @@ vs() {
     "npx tsc --noEmit" \
     "npx eslint --max-warnings=0  --fix ." \
     "npx prettier -write --loglevel=error ."
+
+  if git_has_changes; then
+    gcim "cleanup"
+  fi
 }
 # "validate all" (static plus Jest tests)
 va() {
