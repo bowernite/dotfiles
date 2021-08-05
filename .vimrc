@@ -152,8 +152,9 @@ vnoremap : ;
 " Ideally this would be <leader>w, but the collision with the CamelCaseMotion plugin forced my hand. So.... `s` for save it is
 nnoremap <silent> <leader>s :w<CR>
 nnoremap <silent> <leader>q :q<CR>
-nnoremap <silent> <leader>Q :qa!<CR>
+nnoremap <silent> <leader>Q :q!<CR>
 nnoremap <silent> <leader>x :x<CR>   
+nnoremap <silent> <leader>X :xa<CR>   
 
 " Prettier with <leader>u
 nnoremap <leader>u :Prettier<CR>
