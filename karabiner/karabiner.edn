@@ -399,8 +399,6 @@
     ; Text and input
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     {
-      ;; Ideas:
-      ;;; - Replace used symbols for number keys with something. Could even be a macro row. Or for snippets! That'd be nice. Would free up more for symbol mode. Really all we need together in symbol mode is symbols that are likely to be typed together. That's what's important
       :des "comma-mode/symbol-mode (symbols and snippets)"
       :rules [
         :comma-mode
@@ -458,7 +456,7 @@
 
         ; / key
         ;; (could maybe do # here instead)
-        [:!Sslash :!S2] ; -> @
+        [:!Sslash :!Sgrave_accent_and_tilde] ; -> ~
         
         ; > (shift + .) key
         [:!Speriod :!Sequal_sign] ; -> +
@@ -507,9 +505,7 @@
 
         [:grave_accent_and_tilde :!Sgrave_accent_and_tilde] ; -> ~
         [:1 :!S1]
-        ;; Replace @ with ~, since we have @ remapped elsewhere
-        [:2 :!Sgrave_accent_and_tilde]
-        ;; [:2 :!S2]
+        [:2 :!S2]
         [:3 :!S3]
         ;; Replaced $ with %, since we have $ in symbol mode
         [:4 :!S5]
