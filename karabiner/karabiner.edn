@@ -96,6 +96,12 @@
       ]
     }
     {
+      :des "easier 'save as': ctrl+cmd+S shift+opt+cmd+S"
+      :rules [
+        [:!CTs :!SOCs]
+      ]
+    }
+    {
       :des "app-specific"
       :rules [
         ; Messages
