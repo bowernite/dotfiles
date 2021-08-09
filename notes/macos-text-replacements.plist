@@ -1,7 +1,278 @@
 // My text replacements for macOS (as of 08/06/21). Putting them here for backup (I've seen others report iCloud bugs where they've lost these or haven't been able to edit them 😬), but also visibility in case anyone cares 🤷🏼‍♂️
 // What a text replacement is: ✨ https://support.apple.com/guide/mac-help/replace-text-punctuation-documents-mac-mh35735/mac
 // These save me a ton of time while typing in any "normal" (i.e. non-editor) text field
+
 (
+        {
+        on = 1;
+        replace = ymrn;
+        with = "yesterday morning";
+    },
+        {
+        on = 1;
+        replace = tmrn;
+        with = "tomorrow morning";
+    },
+        {
+        on = 1;
+        replace = mrn;
+        with = morning;
+    },
+        {
+        on = 1;
+        replace = wkd;
+        with = weekend;
+    },
+        {
+        on = 1;
+        replace = dsn;
+        with = "doesn't";
+    },
+        {
+        on = 1;
+        replace = utd;
+        with = "up to date";
+    },
+        {
+        on = 1;
+        replace = wev;
+        with = "we've";
+    },
+        {
+        on = 1;
+        replace = kas;
+        with = "that's";
+    },
+        {
+        on = 1;
+        replace = pfcs;
+        with = perfects;
+    },
+        {
+        on = 1;
+        replace = pfci;
+        with = perfection;
+    },
+        {
+        on = 1;
+        replace = pfc;
+        with = perfect;
+    },
+        {
+        on = 1;
+        replace = anto;
+        with = "another one";
+    },
+        {
+        on = 1;
+        replace = bcam;
+        with = became;
+    },
+        {
+        on = 1;
+        replace = bcm;
+        with = become;
+    },
+        {
+        on = 1;
+        replace = hwv;
+        with = however;
+    },
+        {
+        on = 1;
+        replace = mdod;
+        with = misunderstood;
+    },
+        {
+        on = 1;
+        replace = udod;
+        with = understood;
+    },
+        {
+        on = 1;
+        replace = mdnds;
+        with = misunderstands;
+    },
+        {
+        on = 1;
+        replace = mdnd;
+        with = misunderstand;
+    },
+        {
+        on = 1;
+        replace = mdndn;
+        with = misunderstanding;
+    },
+        {
+        on = 1;
+        replace = ains;
+        with = against;
+    },
+        {
+        on = 1;
+        replace = ain;
+        with = again;
+    },
+        {
+        on = 1;
+        replace = wk;
+        with = week;
+    },
+        {
+        on = 1;
+        replace = wjr;
+        with = were;
+    },
+        {
+        on = 1;
+        replace = wbu;
+        with = "what about you?";
+    },
+        {
+        on = 1;
+        replace = ijd;
+        with = "I'd";
+    },
+        {
+        on = 1;
+        replace = jf;
+        with = the;
+    },
+        {
+        on = 1;
+        replace = urem;
+        with = "you're welcome";
+    },
+        {
+        on = 1;
+        replace = tyd;
+        with = "they'd";
+    },
+        {
+        on = 1;
+        replace = ak;
+        with = at;
+    },
+        {
+        on = 1;
+        replace = fods;
+        with = forwards;
+    },
+        {
+        on = 1;
+        replace = bkds;
+        with = backwards;
+    },
+        {
+        on = 1;
+        replace = bkd;
+        with = backward;
+    },
+        {
+        on = 1;
+        replace = fod;
+        with = forward;
+    },
+        {
+        on = 1;
+        replace = gng;
+        with = going;
+    },
+        {
+        on = 1;
+        replace = tos;
+        with = those;
+    },
+        {
+        on = 1;
+        replace = tjs;
+        with = these;
+    },
+        {
+        on = 1;
+        replace = ivpd;
+        with = improved;
+    },
+        {
+        on = 1;
+        replace = ivps;
+        with = improves;
+    },
+        {
+        on = 1;
+        replace = ivpg;
+        with = improving;
+    },
+        {
+        on = 1;
+        replace = ivp;
+        with = improve;
+    },
+        {
+        on = 1;
+        replace = cn;
+        with = "can't";
+    },
+        {
+        on = 1;
+        replace = ck;
+        with = can;
+    },
+        {
+        on = 1;
+        replace = sl;
+        with = still;
+    },
+        {
+        on = 1;
+        replace = pbi;
+        with = probability;
+    },
+        {
+        on = 1;
+        replace = pbl;
+        with = probable;
+    },
+        {
+        on = 1;
+        replace = pby;
+        with = probably;
+    },
+        {
+        on = 1;
+        replace = ka;
+        with = that;
+    },
+        {
+        on = 1;
+        replace = hvn;
+        with = "haven't";
+    },
+        {
+        on = 1;
+        replace = ti;
+        with = this;
+    },
+        {
+        on = 1;
+        replace = kwe;
+        with = knew;
+    },
+        {
+        on = 1;
+        replace = kwg;
+        with = knowing;
+    },
+        {
+        on = 1;
+        replace = kws;
+        with = knows;
+    },
+        {
+        on = 1;
+        replace = ofj;
+        with = "of course";
+    },
         {
         on = 1;
         replace = kebss;
@@ -509,11 +780,6 @@
     },
         {
         on = 1;
-        replace = thdy;
-        with = "they\\U2019d";
-    },
-        {
-        on = 1;
         replace = anwh;
         with = anywhere;
     },
@@ -559,11 +825,6 @@
     },
         {
         on = 1;
-        replace = wkr;
-        with = were;
-    },
-        {
-        on = 1;
         replace = tbhsu;
         with = "to be honest with you";
     },
@@ -571,11 +832,6 @@
         on = 1;
         replace = tbhs;
         with = "to be honest";
-    },
-        {
-        on = 1;
-        replace = urem;
-        with = "you\\U2019re welcome";
     },
         {
         on = 1;
@@ -724,11 +980,6 @@
     },
         {
         on = 1;
-        replace = ijd;
-        with = "I'd";
-    },
-        {
-        on = 1;
         replace = rle;
         with = really;
     },
@@ -809,11 +1060,6 @@
     },
         {
         on = 1;
-        replace = thas;
-        with = "that's";
-    },
-        {
-        on = 1;
         replace = ivl;
         with = "I'll";
     },
@@ -834,11 +1080,6 @@
     },
         {
         on = 1;
-        replace = hvnt;
-        with = "haven't";
-    },
-        {
-        on = 1;
         replace = hsnt;
         with = "hasn't";
     },
@@ -846,11 +1087,6 @@
         on = 1;
         replace = hdnt;
         with = "hadn't";
-    },
-        {
-        on = 1;
-        replace = dsnt;
-        with = "doesn't";
     },
         {
         on = 1;
@@ -976,11 +1212,6 @@
         on = 1;
         replace = 1o;
         with = "one-off";
-    },
-        {
-        on = 1;
-        replace = anst;
-        with = against;
     },
         {
         on = 1;
@@ -1191,11 +1422,6 @@
         on = 1;
         replace = whrs;
         with = "where's";
-    },
-        {
-        on = 1;
-        replace = wknd;
-        with = weekend;
     },
         {
         on = 1;
@@ -2091,11 +2317,6 @@
         on = 1;
         replace = imo;
         with = IMO;
-    },
-        {
-        on = 1;
-        replace = cant;
-        with = "can't";
     },
         {
         on = 1;
