@@ -279,7 +279,9 @@
         ;; [:c :same_wind_app :Chrome]
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
-        [:l [:opena "Slack"]]
+
+        ;; Until I can learn to control myself, god damnit!
+        ;; [:l [:opena "Slack"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
