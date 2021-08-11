@@ -45,22 +45,24 @@ tc() {
 }
 jest() {
   echo "🧪 Testing files changed on branch..."
-  yarn jest --changedSince=$(git_dev_branch) --coverage=false $@
+  # Maaaaaan, Jest don't know SHIT about how many workers to use
+  # https://dev.to/vantanev/make-your-jest-tests-up-to-20-faster-by-changing-a-single-setting-i36
+  yarn jest --changedSince=$(git_dev_branch) --coverage=false --maxWorkers=50% $@
   echo "✅ Done testing"
 }
 jestw() {
   echo "🧪👀 Testing files on watch..."
-  yarn jest --watch --coverage=false $@
+  yarn jest --watch --coverage=false --maxWorkers=25% $@
   echo "✅ Done testing"
 }
 jestbw() {
   echo "🧪👀 Testing files changed on branch on watch..."
-  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false $@
+  yarn jest --changedSince=$(git_dev_branch) --watch --coverage=false --maxWorkers=25% $@
   echo "✅ Done testing"
 }
 jesta() {
   echo "🧪 Testing all files..."
-  yarn jest --coverage=false $@
+  yarn jest --coverage=false --maxWorkers=50% $@
   echo "✅ Done testing"
 }
 # "validate static"
