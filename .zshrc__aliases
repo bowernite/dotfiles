@@ -110,7 +110,7 @@ va() {
   concurrently \
     -n typescript,jest,eslint,prettier -c "#4077ba,#8f455b,#7b7ee3,#efbd52" \
     "npx tsc --noEmit" \
-    "npx jest --changedSince=$(git_dev_branch) --coverage=false" \
+    "npx jest --changedSince=$(git_dev_branch) --coverage=false --maxWorkers=50%" \
     "npx eslint --max-warnings=0 --fix ." \
     "npx prettier -write --loglevel=error ."
 
