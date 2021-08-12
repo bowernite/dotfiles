@@ -66,7 +66,11 @@ jesta() {
   echo "✅ Done testing"
 }
 # "validate static"
-vs() {
+vs() { (
+  # Exit and fail the function if any command in it fails. In a function, you have to add the parens to create a "subshell" in order for this to work. Without them, zsh itself crashes
+  # https://stackoverflow.com/questions/40429865/how-to-exit-bash-function-if-error
+  set -e
+
   if git_has_changes; then
     echo "Uncommitted changes found; aborting."
     return
@@ -90,9 +94,13 @@ vs() {
   if git_has_changes; then
     gcim "cleanup"
   fi
-}
+); }
 # "validate all" (static plus Jest tests)
-va() {
+va() { (
+  # Exit and fail the function if any command in it fails. In a function, you have to add the parens to create a "subshell" in order for this to work. Without them, zsh itself crashes
+  # https://stackoverflow.com/questions/40429865/how-to-exit-bash-function-if-error
+  set -e
+
   if git_has_changes; then
     echo "Uncommitted changes found; aborting."
     return
@@ -117,7 +125,7 @@ va() {
   if git_has_changes; then
     gcim "cleanup"
   fi
-}
+); }
 
 #####################################################################
 # Bat and Delta
