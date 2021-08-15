@@ -2,6 +2,281 @@
 // What a text replacement is: ✨ https://support.apple.com/guide/mac-help/replace-text-punctuation-documents-mac-mh35735/mac
 // These save me a ton of time while typing in any "normal" (i.e. non-editor) text field
 (
+    {
+        on = 1;
+        replace = fdot;
+        with = "figured out";
+    },
+        {
+        on = 1;
+        replace = fout;
+        with = "figure out";
+    },
+        {
+        on = 1;
+        replace = ufm;
+        with = unfamiliar;
+    },
+        {
+        on = 1;
+        replace = fmzs;
+        with = familiarizes;
+    },
+        {
+        on = 1;
+        replace = fmzd;
+        with = familiarized;
+    },
+        {
+        on = 1;
+        replace = fmzn;
+        with = familiarizing;
+    },
+        {
+        on = 1;
+        replace = fmz;
+        with = familiarize;
+    },
+        {
+        on = 1;
+        replace = fmr;
+        with = familiar;
+    },
+        {
+        on = 1;
+        replace = ig;
+        with = "I guess";
+    },
+        {
+        on = 1;
+        replace = msj;
+        with = "message's";
+    },
+        {
+        on = 1;
+        replace = msn;
+        with = messaging;
+    },
+        {
+        on = 1;
+        replace = msd;
+        with = messaged;
+    },
+        {
+        on = 1;
+        replace = mss;
+        with = messages;
+    },
+        {
+        on = 1;
+        replace = msg;
+        with = message;
+    },
+        {
+        on = 1;
+        replace = tpey;
+        with = transparency;
+    },
+        {
+        on = 1;
+        replace = tpe;
+        with = transparent;
+    },
+        {
+        on = 1;
+        replace = apcd;
+        with = appreciated;
+    },
+        {
+        on = 1;
+        replace = apcs;
+        with = appreciates;
+    },
+        {
+        on = 1;
+        replace = apci;
+        with = appreciation;
+    },
+        {
+        on = 1;
+        replace = apcn;
+        with = appreciating;
+    },
+        {
+        on = 1;
+        replace = apc;
+        with = appreciate;
+    },
+        {
+        on = 1;
+        replace = eis;
+        with = "either's";
+    },
+        {
+        on = 1;
+        replace = nems;
+        with = "anytime's";
+    },
+        {
+        on = 1;
+        replace = neis;
+        with = "neither's";
+    },
+        {
+        on = 1;
+        replace = nem;
+        with = anytime;
+    },
+        {
+        on = 1;
+        replace = neo;
+        with = anymore;
+    },
+        {
+        on = 1;
+        replace = nei;
+        with = neither;
+    },
+        {
+        on = 1;
+        replace = nci;
+        with = "once in a while";
+    },
+        {
+        on = 1;
+        replace = nc;
+        with = once;
+    },
+        {
+        on = 1;
+        replace = eiw;
+        with = "either way";
+    },
+        {
+        on = 1;
+        replace = eir;
+        with = either;
+    },
+        {
+        on = 1;
+        replace = nntr;
+        with = "no need to rush";
+    },
+        {
+        on = 1;
+        replace = ffs;
+        with = "feature flags";
+    },
+        {
+        on = 1;
+        replace = ff;
+        with = "feature flag";
+    },
+        {
+        on = 1;
+        replace = ntl;
+        with = until;
+    },
+        {
+        on = 1;
+        replace = ns;
+        with = "not sure";
+    },
+        {
+        on = 1;
+        replace = wyt;
+        with = "what do you think";
+    },
+        {
+        on = 1;
+        replace = wwd;
+        with = waited;
+    },
+        {
+        on = 1;
+        replace = wwn;
+        with = waiting;
+    },
+        {
+        on = 1;
+        replace = wws;
+        with = waits;
+    },
+        {
+        on = 1;
+        replace = ww;
+        with = wait;
+    },
+        {
+        on = 1;
+        replace = nw;
+        with = now;
+    },
+        {
+        on = 1;
+        replace = dblc;
+        with = "double check";
+    },
+        {
+        on = 1;
+        replace = dabs;
+        with = disables;
+    },
+        {
+        on = 1;
+        replace = dabn;
+        with = disabling;
+    },
+        {
+        on = 1;
+        replace = dabd;
+        with = disabled;
+    },
+        {
+        on = 1;
+        replace = hr;
+        with = there;
+    },
+        {
+        on = 1;
+        replace = hrf;
+        with = thereafter;
+    },
+        {
+        on = 1;
+        replace = hrs;
+        with = "there's";
+    },
+        {
+        on = 1;
+        replace = ep;
+        with = empty;
+    },
+        {
+        on = 1;
+        replace = clss;
+        with = closes;
+    },
+        {
+        on = 1;
+        replace = clsn;
+        with = closing;
+    },
+        {
+        on = 1;
+        replace = cls;
+        with = close;
+    },
+        {
+        on = 1;
+        replace = cles;
+        with = circles;
+    },
+        {
+        on = 1;
+        replace = cle;
+        with = circle;
+    },
         {
         on = 1;
         replace = mrl;
@@ -59,11 +334,6 @@
     },
         {
         on = 1;
-        replace = neis;
-        with = "anytime's";
-    },
-        {
-        on = 1;
         replace = nehs;
         with = "anywhere's";
     },
@@ -76,16 +346,6 @@
         on = 1;
         replace = nens;
         with = "anything's";
-    },
-        {
-        on = 1;
-        replace = nem;
-        with = anymore;
-    },
-        {
-        on = 1;
-        replace = nei;
-        with = anytime;
     },
         {
         on = 1;
@@ -1179,21 +1439,6 @@
     },
         {
         on = 1;
-        replace = dabls;
-        with = disables;
-    },
-        {
-        on = 1;
-        replace = dablg;
-        with = disabling;
-    },
-        {
-        on = 1;
-        replace = dabld;
-        with = disabled;
-    },
-        {
-        on = 1;
         replace = dabl;
         with = disable;
     },
@@ -1859,11 +2104,6 @@
     },
         {
         on = 1;
-        replace = thr;
-        with = there;
-    },
-        {
-        on = 1;
         replace = stht;
         with = straight;
     },
@@ -2011,11 +2251,6 @@
         on = 1;
         replace = heres;
         with = "here's";
-    },
-        {
-        on = 1;
-        replace = dblch;
-        with = "double check";
     },
         {
         on = 1;
@@ -2226,11 +2461,6 @@
         on = 1;
         replace = thtl;
         with = "that'll";
-    },
-        {
-        on = 1;
-        replace = thrs;
-        with = "there's";
     },
         {
         on = 1;
@@ -2479,11 +2709,6 @@
     },
         {
         on = 1;
-        replace = wyt;
-        with = WDYT;
-    },
-        {
-        on = 1;
         replace = "@m";
         with = "mcabramczyk@gmail.com";
     },
@@ -2526,11 +2751,6 @@
         on = 1;
         replace = shdv;
         with = "should've";
-    },
-        {
-        on = 1;
-        replace = thftr;
-        with = thereafter;
     },
         {
         on = 1;
