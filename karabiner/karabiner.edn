@@ -495,7 +495,7 @@
         [:l :second_brightness_increment]
 
         ; Random, not really "media"
-        ;; Dupe, not sure if it's necessary
+        ;; Show notification center
         [:n :f12]
         ;; Zoom out
         [:o :!Chyphen]
