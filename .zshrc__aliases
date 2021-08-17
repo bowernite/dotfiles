@@ -115,10 +115,10 @@ va() { (
   # NOTE: Since concurrently doesn't have access to our functions/aliases above, we have to duplicate their commands here. So those and these should remain in sync
   # Using `npx` right now to reduce noise of saying `yarn run v1.x.x` right now, but could switch to yarn. Or could use bin below (but at that point, have to be in the project root for this to work. Or write some intelligent function that traverses upwards to find the project root, then use the `/node_modules/.bin` from there)
   # local bin="$(pwd)/node_modules/.bin"
+  # Normally do this with `maxWorkers=50%`, but since we're doing this other stuff in parallel too, we have even less resources to work with, so 50% ends up being too much again
   concurrently \
     -n typescript,jest,eslint,prettier -c "#4077ba,#8f455b,#7b7ee3,#efbd52" \
     "npx tsc --noEmit" \
-    # Normally do this with `maxWorkers=50%`, but since we're doing this other stuff in parallel too, we have even less resources to work with, so 50% ends up being too much again
     "npx jest --changedSince=$(git_dev_branch) --coverage=false --maxWorkers=25%" \
     "npx eslint --max-warnings=0 --fix ." \
     "npx prettier -write --loglevel=error ."
