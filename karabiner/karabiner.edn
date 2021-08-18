@@ -290,7 +290,8 @@
         [:m [:opena "Messages"]]
         [:i [:opena "Trello"]]
         [:u [:opena "Spotify"]]
-        [:o [:opena "Office"]]
+        ;; Office/Zoom
+        [:o [:opena "Wonder"]]
         [:y [:opena "Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
