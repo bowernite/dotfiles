@@ -114,9 +114,9 @@
         ;; WIP: A command that triggers a menu item that doesn't have a shortcut (in this case, the "Show Notifications" item in Calendar). Inconsistent right now, as something the `return_or_enter` fires too quickly and doesn't register -- the left/right_arrows are meant to be a hack to delay it, but it's not really working. Trying Keysmith for now
         ;; [:!Cbackslash [:!CSslash :n :o :down_arrow :left_arrow :right_arrow :left_arrow :right_arrow :return_or_enter] :Calendar]
 
-        ; In Chrome, use left_option+enter to return focus to the document (Chrome doesn't provide any way to do this natively)
+        ; In Chrome, return focus to the document (Chrome doesn't provide any way to do this natively)
         ; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
-        [:!Wspacebar [:!Cl :j :return_or_enter :g :!Sf] :Chrome]
+        [:!Sspacebar [:!Cl :j :return_or_enter :g :!Sf] :Chrome]
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
 
