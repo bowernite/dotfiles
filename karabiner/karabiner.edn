@@ -281,8 +281,7 @@
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
 
-        ;; Until I can learn to control myself, god damnit!
-        ;; [:l [:opena "Slack"]]
+        [:l [:opena "Slack"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
