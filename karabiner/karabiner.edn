@@ -391,7 +391,7 @@
 
         ;; URLs
         ;;; Local
-        [:z [:openw "app.wonder.loc/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
+        [:z [:openw "app.wonder.loc/?spaceId=e4a4a98b-66d5-4684-aacc-e9fa52bfa258"]]
         ;;; Staging
         [:a [:openw "app.wonder.ac/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
 
