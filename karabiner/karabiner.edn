@@ -161,6 +161,9 @@
       :rules [
         :slash-mode
 
+        ;; Simulates a right click
+        [:3 :!Sf10]
+
         ; VPN
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Connect to configured default country VPN
