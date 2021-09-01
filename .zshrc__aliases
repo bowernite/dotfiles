@@ -132,19 +132,49 @@ va() { (
 # Bat and Delta
 #####################################################################
 
-# Decide the theme based on macOS dark mode
-bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo default || echo GitHub)"
-alias bat="bat --theme=$bat_theme"
-alias cat="bat"
+# Set up the themes for Bat and Delta, based on if macOS dark mode is on or not
+# Can also pass in a theme instead of inferring from macOS dark mode
+setup_themes() {
+  local theme=$1
 
-# Decide the theme based on macOS dark mode
-delta_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo Monokai Extended || echo GitHub)"
-alias delta="delta --syntax-theme=$delta_theme"
+  case "$theme" in
+  "dark")
+    local bat_theme="default"
+    local delta_theme="Monokai Extended"
+    ;;
+  "light")
+    local bat_theme="GitHub"
+    local delta_theme="GitHub"
+    ;;
+  *)
+    # Decide the theme based on macOS dark mode
+    local bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo default || echo GitHub)"
+    local delta_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo Monokai Extended || echo GitHub)"
+    ;;
+  esac
 
-# To make sure git uses Delta, _with_ the theme we've decided on :)
-export GIT_PAGER="delta --syntax-theme=$delta_theme"
-# Oh, and since you can't use environment variables in your ~/.gitconfig, we're going to manually set the "system" gitconfig here based on $delta_theme, to make sure intractive git commands (e.g. `git add -p`) are also pretty 💅
-git config --system interactive.diffFilter "delta --color-only --syntax-theme=$delta_theme"
+  alias bat="bat --theme=$bat_theme"
+  alias cat="bat"
+
+  alias delta="delta --syntax-theme=$delta_theme"
+
+  # To make sure git uses Delta, _with_ the theme we've decided on :)
+  export GIT_PAGER="delta --syntax-theme=$delta_theme"
+  # Oh, and since you can't use environment variables in your ~/.gitconfig, we're going to manually set the "system" gitconfig here based on $delta_theme, to make sure intractive git commands (e.g. `git add -p`) are also pretty 💅
+  git config --system interactive.diffFilter "delta --color-only --syntax-theme=$delta_theme"
+}
+setup_themes
+
+# Helper utils to changes themes
+dark() {
+  setup_themes dark
+}
+light() {
+  setup_themes light
+}
+reset_themes() {
+  setup_themes
+}
 
 #####################################################################
 # npm
