@@ -253,7 +253,7 @@
         ;; Click notification
         [:return_or_enter [:open "keysmith://run-macro/54216F6C-407F-49B2-8E00-7946BD6F6144"]]
         ;; Reply to notification (e.g. Slack)
-        [:quote [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
+        [:open_bracket [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
         ;; Add macOS text replacement
         [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Add Alfred text replacement
