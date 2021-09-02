@@ -505,6 +505,9 @@
         [:o :!Chyphen]
         ;; Zoom in
         [:p :!Cequal_sign]
+        
+        ;; "Love" the current Spotify song
+        [:quote :!CTOSquote]
       ]
     }
     {
