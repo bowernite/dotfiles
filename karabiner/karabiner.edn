@@ -508,7 +508,7 @@
         ;; Zoom in
         [:p :!Cequal_sign]
         
-        ;; "Love" the current Spotify song
+        ;; "Love"/like current Spotify song
         [:quote :!CTOSquote]
       ]
     }
