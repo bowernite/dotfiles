@@ -65,6 +65,14 @@ jesta() {
   yarn jest --coverage=false --maxWorkers=50% $@
   echo "✅ Done testing"
 }
+vj() {
+  if is_yarn_project; then
+    yarn
+  else
+    npm i
+  fi
+  jest
+}
 # "validate static"
 vs() { (
   # Exit and fail the function if any command in it fails. In a function, you have to add the parens to create a "subshell" in order for this to work. Without them, zsh itself crashes
