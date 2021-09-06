@@ -17,6 +17,7 @@ brew "duti"
 brew "fzf"
 brew "go"
 brew "hyperfine"
+brew "loom"
 brew "neovim"
 # Tool for making Karabiner config management more manageable and powerful
 brew "nvm"
