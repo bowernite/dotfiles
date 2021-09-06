@@ -31,7 +31,10 @@
     :alfred         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
     :open        "open %s"
     :opena       "open -a \"%s\" %s"
-    :openw       "open \"https://%s\""
+    ;; "Open website"
+    ;;; Techinically, BSD `open` can open a URL as the second arg, with the default browser. But, it has a funny behavior for certain URLs (hard to pinpoint what they have in common) -- it briefly opens `Finder`, _then_ the default browser. This can be annoying, as now Cmd-Tabbing quickly brings you back to Finder, instead of the last app you were actually interacting with
+    :openw       "open -a \"Google Chrome\" \"https://%s\""
+
     :quit        "killall \"%s\""
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
     :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
