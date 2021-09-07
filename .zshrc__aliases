@@ -242,3 +242,10 @@ c() {
   clear
   eval $@
 }
+
+# Video/ffmpeg shtuff
+gif() {
+  local input_vid_num="$1"
+  local output_file_name=${2:-"demo-$1.gif"}
+  ffmpeg -i "/Users/brett/Screenshots/📹 SS ${input_vid_num}.mov" -vf "fps=20,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Screenshots/$output_file_name" && gifsicle -O3 "/Users/brett/Screenshots/$output_file_name" -o "/Users/brett/Screenshots/$output_file_name"
+}
