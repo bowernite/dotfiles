@@ -4,8 +4,3143 @@
 (
     {
         on = 1;
-        replace = fdot;
-        with = "figured out";
+        replace = bfs;
+        with = briefs;
+    },
+        {
+        on = 1;
+        replace = bfn;
+        with = briefing;
+    },
+        {
+        on = 1;
+        replace = bfd;
+        with = briefed;
+    },
+        {
+        on = 1;
+        replace = bfl;
+        with = briefly;
+    },
+        {
+        on = 1;
+        replace = bf;
+        with = brief;
+    },
+        {
+        on = 1;
+        replace = wymb;
+        with = "what do you mean by";
+    },
+        {
+        on = 1;
+        replace = wym;
+        with = "what do you mean";
+    },
+        {
+        on = 1;
+        replace = fgug;
+        with = figuring;
+    },
+        {
+        on = 1;
+        replace = fgud;
+        with = figured;
+    },
+        {
+        on = 1;
+        replace = fgus;
+        with = figures;
+    },
+        {
+        on = 1;
+        replace = fgu;
+        with = figure;
+    },
+        {
+        on = 1;
+        replace = xa;
+        with = extra;
+    },
+        {
+        on = 1;
+        replace = png;
+        with = planning;
+    },
+        {
+        on = 1;
+        replace = pnd;
+        with = planned;
+    },
+        {
+        on = 1;
+        replace = pns;
+        with = plans;
+    },
+        {
+        on = 1;
+        replace = pn;
+        with = plan;
+    },
+        {
+        on = 1;
+        replace = adm;
+        with = "all of them";
+    },
+        {
+        on = 1;
+        replace = ndm;
+        with = "none of them";
+    },
+        {
+        on = 1;
+        replace = ncu;
+        with = synchronous;
+    },
+        {
+        on = 1;
+        replace = ancl;
+        with = asynchronously;
+    },
+        {
+        on = 1;
+        replace = ncl;
+        with = syncrhonously;
+    },
+        {
+        on = 1;
+        replace = ancu;
+        with = asynchronous;
+    },
+        {
+        on = 1;
+        replace = anc;
+        with = async;
+    },
+        {
+        on = 1;
+        replace = slvd;
+        with = solved;
+    },
+        {
+        on = 1;
+        replace = slvs;
+        with = solves;
+    },
+        {
+        on = 1;
+        replace = slvn;
+        with = solving;
+    },
+        {
+        on = 1;
+        replace = slv;
+        with = solve;
+    },
+        {
+        on = 1;
+        replace = slus;
+        with = solutions;
+    },
+        {
+        on = 1;
+        replace = slu;
+        with = solution;
+    },
+        {
+        on = 1;
+        replace = tjr;
+        with = theory;
+    },
+        {
+        on = 1;
+        replace = tjry;
+        with = theoretically;
+    },
+        {
+        on = 1;
+        replace = erod;
+        with = errored;
+    },
+        {
+        on = 1;
+        replace = eros;
+        with = errors;
+    },
+        {
+        on = 1;
+        replace = erog;
+        with = erroring;
+    },
+        {
+        on = 1;
+        replace = ero;
+        with = error;
+    },
+        {
+        on = 1;
+        replace = cusd;
+        with = caused;
+    },
+        {
+        on = 1;
+        replace = cusn;
+        with = causing;
+    },
+        {
+        on = 1;
+        replace = cus;
+        with = cause;
+    },
+        {
+        on = 1;
+        replace = srtl;
+        with = "sooner rather than later";
+    },
+        {
+        on = 1;
+        replace = fdn;
+        with = finding;
+    },
+        {
+        on = 1;
+        replace = fnd;
+        with = found;
+    },
+        {
+        on = 1;
+        replace = fds;
+        with = finds;
+    },
+        {
+        on = 1;
+        replace = fd;
+        with = find;
+    },
+        {
+        on = 1;
+        replace = ftnl;
+        with = fortunately;
+    },
+        {
+        on = 1;
+        replace = ftn;
+        with = fortunate;
+    },
+        {
+        on = 1;
+        replace = unfl;
+        with = unfortunately;
+    },
+        {
+        on = 1;
+        replace = unf;
+        with = unfortunate;
+    },
+        {
+        on = 1;
+        replace = tbf;
+        with = "to be fair";
+    },
+        {
+        on = 1;
+        replace = tbfk;
+        with = "to be frank";
+    },
+        {
+        on = 1;
+        replace = prfcs;
+        with = preferences;
+    },
+        {
+        on = 1;
+        replace = prfc;
+        with = preference;
+    },
+        {
+        on = 1;
+        replace = iwh;
+        with = "in which";
+    },
+        {
+        on = 1;
+        replace = ncel;
+        with = nicely;
+    },
+        {
+        on = 1;
+        replace = wkdys;
+        with = workdays;
+    },
+        {
+        on = 1;
+        replace = wkdy;
+        with = workday;
+    },
+        {
+        on = 1;
+        replace = mstl;
+        with = mostly;
+    },
+        {
+        on = 1;
+        replace = mst;
+        with = most;
+    },
+        {
+        on = 1;
+        replace = eyoe;
+        with = "everyone else";
+    },
+        {
+        on = 1;
+        replace = neoe;
+        with = "anyone else";
+    },
+        {
+        on = 1;
+        replace = imf;
+        with = "intermittent fasting";
+    },
+        {
+        on = 1;
+        replace = fctn;
+        with = "for certain";
+    },
+        {
+        on = 1;
+        replace = ctny;
+        with = certainly;
+    },
+        {
+        on = 1;
+        replace = ctnl;
+        with = certainly;
+    },
+        {
+        on = 1;
+        replace = ctn;
+        with = certain;
+    },
+        {
+        on = 1;
+        replace = wml;
+        with = weekly;
+    },
+        {
+        on = 1;
+        replace = rfld;
+        with = reflected;
+    },
+        {
+        on = 1;
+        replace = rfli;
+        with = reflections;
+    },
+        {
+        on = 1;
+        replace = rflg;
+        with = reflecting;
+    },
+        {
+        on = 1;
+        replace = rfls;
+        with = reflects;
+    },
+        {
+        on = 1;
+        replace = rfl;
+        with = reflect;
+    },
+        {
+        on = 1;
+        replace = kps;
+        with = keeps;
+    },
+        {
+        on = 1;
+        replace = kpt;
+        with = kept;
+    },
+        {
+        on = 1;
+        replace = kpg;
+        with = keeping;
+    },
+        {
+        on = 1;
+        replace = kp;
+        with = keep;
+    },
+        {
+        on = 1;
+        replace = lrngs;
+        with = learnings;
+    },
+        {
+        on = 1;
+        replace = lrnd;
+        with = learned;
+    },
+        {
+        on = 1;
+        replace = lrns;
+        with = learns;
+    },
+        {
+        on = 1;
+        replace = lrng;
+        with = learning;
+    },
+        {
+        on = 1;
+        replace = lrn;
+        with = learn;
+    },
+        {
+        on = 1;
+        replace = prfd;
+        with = preferred;
+    },
+        {
+        on = 1;
+        replace = prfn;
+        with = prefering;
+    },
+        {
+        on = 1;
+        replace = prfy;
+        with = preferably;
+    },
+        {
+        on = 1;
+        replace = prfl;
+        with = preferable;
+    },
+        {
+        on = 1;
+        replace = prfs;
+        with = prefers;
+    },
+        {
+        on = 1;
+        replace = prf;
+        with = prefer;
+    },
+        {
+        on = 1;
+        replace = afr;
+        with = afraid;
+    },
+        {
+        on = 1;
+        replace = brht;
+        with = brought;
+    },
+        {
+        on = 1;
+        replace = brns;
+        with = brings;
+    },
+        {
+        on = 1;
+        replace = brng;
+        with = bringing;
+    },
+        {
+        on = 1;
+        replace = brn;
+        with = bring;
+    },
+        {
+        on = 1;
+        replace = flpg;
+        with = "following up";
+    },
+        {
+        on = 1;
+        replace = jeij;
+        with = theirs;
+    },
+        {
+        on = 1;
+        replace = sjst;
+        with = "some sort";
+    },
+        {
+        on = 1;
+        replace = sjj;
+        with = somewhat;
+    },
+        {
+        on = 1;
+        replace = sjw;
+        with = somewhere;
+    },
+        {
+        on = 1;
+        replace = sjt;
+        with = sometimes;
+    },
+        {
+        on = 1;
+        replace = sji;
+        with = sometime;
+    },
+        {
+        on = 1;
+        replace = sjh;
+        with = somehow;
+    },
+        {
+        on = 1;
+        replace = sjfj;
+        with = "someone's";
+    },
+        {
+        on = 1;
+        replace = sjf;
+        with = someone;
+    },
+        {
+        on = 1;
+        replace = sj;
+        with = some;
+    },
+        {
+        on = 1;
+        replace = ery;
+        with = every;
+    },
+        {
+        on = 1;
+        replace = hrd;
+        with = "there'd";
+    },
+        {
+        on = 1;
+        replace = wlg;
+        with = walking;
+    },
+        {
+        on = 1;
+        replace = emrj;
+        with = "MR's";
+    },
+        {
+        on = 1;
+        replace = cu;
+        with = cool;
+    },
+        {
+        on = 1;
+        replace = rha;
+        with = "rather than";
+    },
+        {
+        on = 1;
+        replace = suf;
+        with = stuff;
+    },
+        {
+        on = 1;
+        replace = polr;
+        with = "path of least resistance";
+    },
+        {
+        on = 1;
+        replace = tbhn;
+        with = "to be honest";
+    },
+        {
+        on = 1;
+        replace = wjl;
+        with = "what'll";
+    },
+        {
+        on = 1;
+        replace = wel;
+        with = "we'll";
+    },
+        {
+        on = 1;
+        replace = cli;
+        with = CLI;
+    },
+        {
+        on = 1;
+        replace = nce;
+        with = nice;
+    },
+        {
+        on = 1;
+        replace = rmdis;
+        with = recommendations;
+    },
+        {
+        on = 1;
+        replace = sugi;
+        with = suggestion;
+    },
+        {
+        on = 1;
+        replace = sugn;
+        with = suggesting;
+    },
+        {
+        on = 1;
+        replace = lkd;
+        with = looked;
+    },
+        {
+        on = 1;
+        replace = rmndr;
+        with = reminder;
+    },
+        {
+        on = 1;
+        replace = rmndd;
+        with = reminded;
+    },
+        {
+        on = 1;
+        replace = rmndn;
+        with = reminding;
+    },
+        {
+        on = 1;
+        replace = rmnds;
+        with = reminds;
+    },
+        {
+        on = 1;
+        replace = rmnd;
+        with = remind;
+    },
+        {
+        on = 1;
+        replace = ptzn;
+        with = prioritizing;
+    },
+        {
+        on = 1;
+        replace = ptzi;
+        with = prioritization;
+    },
+        {
+        on = 1;
+        replace = dldn;
+        with = downloading;
+    },
+        {
+        on = 1;
+        replace = dldd;
+        with = downloaded;
+    },
+        {
+        on = 1;
+        replace = dlds;
+        with = downloads;
+    },
+        {
+        on = 1;
+        replace = dld;
+        with = download;
+    },
+        {
+        on = 1;
+        replace = urj;
+        with = "you're";
+    },
+        {
+        on = 1;
+        replace = nfn;
+        with = "not enough";
+    },
+        {
+        on = 1;
+        replace = rnw;
+        with = "right now";
+    },
+        {
+        on = 1;
+        replace = mvd;
+        with = moved;
+    },
+        {
+        on = 1;
+        replace = mvs;
+        with = moves;
+    },
+        {
+        on = 1;
+        replace = mvn;
+        with = moving;
+    },
+        {
+        on = 1;
+        replace = mve;
+        with = move;
+    },
+        {
+        on = 1;
+        replace = ds;
+        with = does;
+    },
+        {
+        on = 1;
+        replace = wya;
+        with = "where you at";
+    },
+        {
+        on = 1;
+        replace = asw;
+        with = "as well";
+    },
+        {
+        on = 1;
+        replace = rhty;
+        with = "right away";
+    },
+        {
+        on = 1;
+        replace = wktn;
+        with = "working out";
+    },
+        {
+        on = 1;
+        replace = wktd;
+        with = "worked out";
+    },
+        {
+        on = 1;
+        replace = wkts;
+        with = workouts;
+    },
+        {
+        on = 1;
+        replace = wkt;
+        with = workout;
+    },
+        {
+        on = 1;
+        replace = adjd;
+        with = adjusted;
+    },
+        {
+        on = 1;
+        replace = adjs;
+        with = adjusts;
+    },
+        {
+        on = 1;
+        replace = adjg;
+        with = adjusting;
+    },
+        {
+        on = 1;
+        replace = adj;
+        with = adjust;
+    },
+        {
+        on = 1;
+        replace = nn;
+        with = noon;
+    },
+        {
+        on = 1;
+        replace = mngh;
+        with = midnight;
+    },
+        {
+        on = 1;
+        replace = motn;
+        with = "middle of the night";
+    },
+        {
+        on = 1;
+        replace = cnrd;
+        with = centered;
+    },
+        {
+        on = 1;
+        replace = cnrs;
+        with = centers;
+    },
+        {
+        on = 1;
+        replace = cnrn;
+        with = centering;
+    },
+        {
+        on = 1;
+        replace = cnr;
+        with = center;
+    },
+        {
+        on = 1;
+        replace = mdl;
+        with = middle;
+    },
+        {
+        on = 1;
+        replace = jfj;
+        with = "here's";
+    },
+        {
+        on = 1;
+        replace = jf;
+        with = here;
+    },
+        {
+        on = 1;
+        replace = tydj;
+        with = "today's";
+    },
+        {
+        on = 1;
+        replace = tatn;
+        with = "time and time again";
+    },
+        {
+        on = 1;
+        replace = mcm;
+        with = "much more";
+    },
+        {
+        on = 1;
+        replace = rhw;
+        with = "right away";
+    },
+        {
+        on = 1;
+        replace = flwn;
+        with = following;
+    },
+        {
+        on = 1;
+        replace = flwd;
+        with = followed;
+    },
+        {
+        on = 1;
+        replace = flws;
+        with = follows;
+    },
+        {
+        on = 1;
+        replace = flw;
+        with = follow;
+    },
+        {
+        on = 1;
+        replace = flps;
+        with = "follow ups";
+    },
+        {
+        on = 1;
+        replace = wntn;
+        with = wanting;
+    },
+        {
+        on = 1;
+        replace = ovn;
+        with = overnight;
+    },
+        {
+        on = 1;
+        replace = hrj;
+        with = "there's";
+    },
+        {
+        on = 1;
+        replace = kdo;
+        with = "kind of";
+    },
+        {
+        on = 1;
+        replace = rpdn;
+        with = responding;
+    },
+        {
+        on = 1;
+        replace = rpdd;
+        with = responded;
+    },
+        {
+        on = 1;
+        replace = rpds;
+        with = responds;
+    },
+        {
+        on = 1;
+        replace = rpd;
+        with = respond;
+    },
+        {
+        on = 1;
+        replace = rpss;
+        with = responses;
+    },
+        {
+        on = 1;
+        replace = rps;
+        with = response;
+    },
+        {
+        on = 1;
+        replace = pelj;
+        with = "people's";
+    },
+        {
+        on = 1;
+        replace = ltr;
+        with = later;
+    },
+        {
+        on = 1;
+        replace = evng;
+        with = evening;
+    },
+        {
+        on = 1;
+        replace = aftn;
+        with = afternoon;
+    },
+        {
+        on = 1;
+        replace = rht;
+        with = right;
+    },
+        {
+        on = 1;
+        replace = rhgl;
+        with = roughly;
+    },
+        {
+        on = 1;
+        replace = impt;
+        with = implement;
+    },
+        {
+        on = 1;
+        replace = ocnl;
+        with = occasional;
+    },
+        {
+        on = 1;
+        replace = ocny;
+        with = occasionally;
+    },
+        {
+        on = 1;
+        replace = ocns;
+        with = occasions;
+    },
+        {
+        on = 1;
+        replace = ocn;
+        with = occasion;
+    },
+        {
+        on = 1;
+        replace = jw;
+        with = "just wondering";
+    },
+        {
+        on = 1;
+        replace = mvmts;
+        with = movements;
+    },
+        {
+        on = 1;
+        replace = mvmt;
+        with = movement;
+    },
+        {
+        on = 1;
+        replace = hwd;
+        with = "how'd";
+    },
+        {
+        on = 1;
+        replace = rhr;
+        with = rather;
+    },
+        {
+        on = 1;
+        replace = gnf;
+        with = "good enough";
+    },
+        {
+        on = 1;
+        replace = rdy;
+        with = ready;
+    },
+        {
+        on = 1;
+        replace = acmdd;
+        with = accommodated;
+    },
+        {
+        on = 1;
+        replace = acmds;
+        with = accommodates;
+    },
+        {
+        on = 1;
+        replace = acmdn;
+        with = accommodating;
+    },
+        {
+        on = 1;
+        replace = acmd;
+        with = accommodate;
+    },
+        {
+        on = 1;
+        replace = acmdi;
+        with = accommodation;
+    },
+        {
+        on = 1;
+        replace = acmd;
+        with = accomdate;
+    },
+        {
+        on = 1;
+        replace = hor;
+        with = hour;
+    },
+        {
+        on = 1;
+        replace = ors;
+        with = hours;
+    },
+        {
+        on = 1;
+        replace = jd;
+        with = just;
+    },
+        {
+        on = 1;
+        replace = hws;
+        with = "how's";
+    },
+        {
+        on = 1;
+        replace = fnle;
+        with = funnily;
+    },
+        {
+        on = 1;
+        replace = xpmtn;
+        with = experimenting;
+    },
+        {
+        on = 1;
+        replace = difns;
+        with = differences;
+    },
+        {
+        on = 1;
+        replace = difn;
+        with = difference;
+    },
+        {
+        on = 1;
+        replace = difg;
+        with = differing;
+    },
+        {
+        on = 1;
+        replace = gsro;
+        with = "gets rid of";
+    },
+        {
+        on = 1;
+        replace = ggro;
+        with = "getting rid of";
+    },
+        {
+        on = 1;
+        replace = gro;
+        with = "get rid of";
+    },
+        {
+        on = 1;
+        replace = tuk;
+        with = took;
+    },
+        {
+        on = 1;
+        replace = ay;
+        with = away;
+    },
+        {
+        on = 1;
+        replace = iot;
+        with = "in order to";
+    },
+        {
+        on = 1;
+        replace = tms;
+        with = teams;
+    },
+        {
+        on = 1;
+        replace = tm;
+        with = team;
+    },
+        {
+        on = 1;
+        replace = rsnb;
+        with = reasonable;
+    },
+        {
+        on = 1;
+        replace = rsng;
+        with = reasoning;
+    },
+        {
+        on = 1;
+        replace = rsns;
+        with = reasons;
+    },
+        {
+        on = 1;
+        replace = rsn;
+        with = reason;
+    },
+        {
+        on = 1;
+        replace = tly;
+        with = totally;
+    },
+        {
+        on = 1;
+        replace = xisd;
+        with = existed;
+    },
+        {
+        on = 1;
+        replace = xiss;
+        with = exists;
+    },
+        {
+        on = 1;
+        replace = xisn;
+        with = existing;
+    },
+        {
+        on = 1;
+        replace = xis;
+        with = exist;
+    },
+        {
+        on = 1;
+        replace = xics;
+        with = exercises;
+    },
+        {
+        on = 1;
+        replace = xicn;
+        with = exercising;
+    },
+        {
+        on = 1;
+        replace = xicd;
+        with = exercised;
+    },
+        {
+        on = 1;
+        replace = orln;
+        with = "on a related note";
+    },
+        {
+        on = 1;
+        replace = pwos;
+        with = passwords;
+    },
+        {
+        on = 1;
+        replace = pwo;
+        with = password;
+    },
+        {
+        on = 1;
+        replace = hro;
+        with = therefore;
+    },
+        {
+        on = 1;
+        replace = dm;
+        with = them;
+    },
+        {
+        on = 1;
+        replace = snshs;
+        with = screenshots;
+    },
+        {
+        on = 1;
+        replace = snsh;
+        with = screenshot;
+    },
+        {
+        on = 1;
+        replace = imgs;
+        with = images;
+    },
+        {
+        on = 1;
+        replace = tsp;
+        with = "the same page";
+    },
+        {
+        on = 1;
+        replace = noyg;
+        with = annoying;
+    },
+        {
+        on = 1;
+        replace = noy;
+        with = annoy;
+    },
+        {
+        on = 1;
+        replace = bk;
+        with = back;
+    },
+        {
+        on = 1;
+        replace = ntl;
+        with = until;
+    },
+        {
+        on = 1;
+        replace = nls;
+        with = unless;
+    },
+        {
+        on = 1;
+        replace = wjsv;
+        with = whatsoever;
+    },
+        {
+        on = 1;
+        replace = pgk;
+        with = "pretty good";
+    },
+        {
+        on = 1;
+        replace = eynj;
+        with = "everything's";
+    },
+        {
+        on = 1;
+        replace = eyn;
+        with = everything;
+    },
+        {
+        on = 1;
+        replace = eyij;
+        with = "every time's";
+    },
+        {
+        on = 1;
+        replace = nei;
+        with = anytime;
+    },
+        {
+        on = 1;
+        replace = neij;
+        with = "anytime's";
+    },
+        {
+        on = 1;
+        replace = neoj;
+        with = "anyone's";
+    },
+        {
+        on = 1;
+        replace = neyj;
+        with = "anyway's";
+    },
+        {
+        on = 1;
+        replace = ney;
+        with = anyway;
+    },
+        {
+        on = 1;
+        replace = nenj;
+        with = "anything's";
+    },
+        {
+        on = 1;
+        replace = nehj;
+        with = "anywhere's";
+    },
+        {
+        on = 1;
+        replace = eyoj;
+        with = "everyone's";
+    },
+        {
+        on = 1;
+        replace = eyo;
+        with = everyone;
+    },
+        {
+        on = 1;
+        replace = eyi;
+        with = "every time";
+    },
+        {
+        on = 1;
+        replace = gl;
+        with = "good luck";
+    },
+        {
+        on = 1;
+        replace = gitt;
+        with = Git;
+    },
+        {
+        on = 1;
+        replace = susy;
+        with = seriously;
+    },
+        {
+        on = 1;
+        replace = sus;
+        with = serious;
+    },
+        {
+        on = 1;
+        replace = bkr;
+        with = better;
+    },
+        {
+        on = 1;
+        replace = les;
+        with = likes;
+    },
+        {
+        on = 1;
+        replace = dif;
+        with = different;
+    },
+        {
+        on = 1;
+        replace = lsf;
+        with = "lots of";
+    },
+        {
+        on = 1;
+        replace = los;
+        with = lots;
+    },
+        {
+        on = 1;
+        replace = rlzs;
+        with = realizes;
+    },
+        {
+        on = 1;
+        replace = rlzd;
+        with = realized;
+    },
+        {
+        on = 1;
+        replace = rlzn;
+        with = realizing;
+    },
+        {
+        on = 1;
+        replace = rlzi;
+        with = realization;
+    },
+        {
+        on = 1;
+        replace = rlz;
+        with = realize;
+    },
+        {
+        on = 1;
+        replace = fnl;
+        with = final;
+    },
+        {
+        on = 1;
+        replace = fnly;
+        with = finally;
+    },
+        {
+        on = 1;
+        replace = hef;
+        with = herself;
+    },
+        {
+        on = 1;
+        replace = hif;
+        with = himself;
+    },
+        {
+        on = 1;
+        replace = orf;
+        with = ourselves;
+    },
+        {
+        on = 1;
+        replace = cmly;
+        with = completely;
+    },
+        {
+        on = 1;
+        replace = fld;
+        with = "for the";
+    },
+        {
+        on = 1;
+        replace = wlks;
+        with = walks;
+    },
+        {
+        on = 1;
+        replace = wlk;
+        with = walk;
+    },
+        {
+        on = 1;
+        replace = aos;
+        with = across;
+    },
+        {
+        on = 1;
+        replace = rnd;
+        with = around;
+    },
+        {
+        on = 1;
+        replace = brkg;
+        with = breaking;
+    },
+        {
+        on = 1;
+        replace = brks;
+        with = breaks;
+    },
+        {
+        on = 1;
+        replace = brk;
+        with = break;
+    },
+        {
+        on = 1;
+        replace = scns;
+        with = screens;
+    },
+        {
+        on = 1;
+        replace = scn;
+        with = screen;
+    },
+        {
+        on = 1;
+        replace = ibly;
+        with = incredibily;
+    },
+        {
+        on = 1;
+        replace = ibl;
+        with = incredible;
+    },
+        {
+        on = 1;
+        replace = stu;
+        with = stupid;
+    },
+        {
+        on = 1;
+        replace = fne;
+        with = funny;
+    },
+        {
+        on = 1;
+        replace = nrly;
+        with = normally;
+    },
+        {
+        on = 1;
+        replace = nrl;
+        with = normal;
+    },
+        {
+        on = 1;
+        replace = hg;
+        with = high;
+    },
+        {
+        on = 1;
+        replace = wjt;
+        with = whatnot;
+    },
+        {
+        on = 1;
+        replace = djd;
+        with = "and the";
+    },
+        {
+        on = 1;
+        replace = tgh;
+        with = tough;
+    },
+        {
+        on = 1;
+        replace = lt;
+        with = let;
+    },
+        {
+        on = 1;
+        replace = lats;
+        with = latest;
+    },
+        {
+        on = 1;
+        replace = ltn;
+        with = letting;
+    },
+        {
+        on = 1;
+        replace = atm;
+        with = "at the moment";
+    },
+        {
+        on = 1;
+        replace = ptys;
+        with = priorities;
+    },
+        {
+        on = 1;
+        replace = pty;
+        with = priority;
+    },
+        {
+        on = 1;
+        replace = ptrns;
+        with = patterns;
+    },
+        {
+        on = 1;
+        replace = snrs;
+        with = scenarios;
+    },
+        {
+        on = 1;
+        replace = snr;
+        with = scenario;
+    },
+        {
+        on = 1;
+        replace = irm;
+        with = "in recent memory";
+    },
+        {
+        on = 1;
+        replace = clsr;
+        with = closer;
+    },
+        {
+        on = 1;
+        replace = mol;
+        with = "more or less";
+    },
+        {
+        on = 1;
+        replace = psbt;
+        with = possibility;
+    },
+        {
+        on = 1;
+        replace = psby;
+        with = possibly;
+    },
+        {
+        on = 1;
+        replace = gnt;
+        with = "going to";
+    },
+        {
+        on = 1;
+        replace = ent;
+        with = "even though";
+    },
+        {
+        on = 1;
+        replace = nth;
+        with = nothing;
+    },
+        {
+        on = 1;
+        replace = jei;
+        with = their;
+    },
+        {
+        on = 1;
+        replace = lud;
+        with = "looks good";
+    },
+        {
+        on = 1;
+        replace = jic;
+        with = "just in case";
+    },
+        {
+        on = 1;
+        replace = tng;
+        with = thinking;
+    },
+        {
+        on = 1;
+        replace = ohs;
+        with = others;
+    },
+        {
+        on = 1;
+        replace = bck;
+        with = back;
+    },
+        {
+        on = 1;
+        replace = ricy;
+        with = ridiculously;
+    },
+        {
+        on = 1;
+        replace = ric;
+        with = ridiculous;
+    },
+        {
+        on = 1;
+        replace = flp;
+        with = "follow up";
+    },
+        {
+        on = 1;
+        replace = fel;
+        with = feel;
+    },
+        {
+        on = 1;
+        replace = slp;
+        with = sleep;
+    },
+        {
+        on = 1;
+        replace = kwn;
+        with = known;
+    },
+        {
+        on = 1;
+        replace = amc;
+        with = "as much";
+    },
+        {
+        on = 1;
+        replace = berl;
+        with = Berlin;
+    },
+        {
+        on = 1;
+        replace = bng;
+        with = being;
+    },
+        {
+        on = 1;
+        replace = snds;
+        with = sounds;
+    },
+        {
+        on = 1;
+        replace = urf;
+        with = yourself;
+    },
+        {
+        on = 1;
+        replace = shts;
+        with = somethings;
+    },
+        {
+        on = 1;
+        replace = shtj;
+        with = "something's";
+    },
+        {
+        on = 1;
+        replace = sht;
+        with = something;
+    },
+        {
+        on = 1;
+        replace = pus;
+        with = puts;
+    },
+        {
+        on = 1;
+        replace = putg;
+        with = putting;
+    },
+        {
+        on = 1;
+        replace = pu;
+        with = put;
+    },
+        {
+        on = 1;
+        replace = abx;
+        with = AkitaBox;
+    },
+        {
+        on = 1;
+        replace = knw;
+        with = knew;
+    },
+        {
+        on = 1;
+        replace = pmc;
+        with = "pretty much";
+    },
+        {
+        on = 1;
+        replace = eyw;
+        with = everywhere;
+    },
+        {
+        on = 1;
+        replace = eyd;
+        with = everyday;
+    },
+        {
+        on = 1;
+        replace = fug;
+        with = fucking;
+    },
+        {
+        on = 1;
+        replace = lngh;
+        with = "last night";
+    },
+        {
+        on = 1;
+        replace = nwmd;
+        with = "next weekend";
+    },
+        {
+        on = 1;
+        replace = lwmd;
+        with = "last weekend";
+    },
+        {
+        on = 1;
+        replace = sme;
+        with = "so many";
+    },
+        {
+        on = 1;
+        replace = tme;
+        with = "too many";
+    },
+        {
+        on = 1;
+        replace = hme;
+        with = "how many";
+    },
+        {
+        on = 1;
+        replace = smc;
+        with = "so much";
+    },
+        {
+        on = 1;
+        replace = hmc;
+        with = "how much";
+    },
+        {
+        on = 1;
+        replace = gog;
+        with = "good to go";
+    },
+        {
+        on = 1;
+        replace = svgg;
+        with = SVG;
+    },
+        {
+        on = 1;
+        replace = ariaa;
+        with = ARIA;
+    },
+        {
+        on = 1;
+        replace = othd;
+        with = "the other day";
+    },
+        {
+        on = 1;
+        replace = alf;
+        with = "a lot";
+    },
+        {
+        on = 1;
+        replace = wy;
+        with = why;
+    },
+        {
+        on = 1;
+        replace = wapp;
+        with = WhatsApp;
+    },
+        {
+        on = 1;
+        replace = gkc;
+        with = "good call";
+    },
+        {
+        on = 1;
+        replace = mns;
+        with = means;
+    },
+        {
+        on = 1;
+        replace = mins;
+        with = minutes;
+    },
+        {
+        on = 1;
+        replace = mng;
+        with = meaning;
+    },
+        {
+        on = 1;
+        replace = du;
+        with = does;
+    },
+        {
+        on = 1;
+        replace = omo;
+        with = "on my own";
+    },
+        {
+        on = 1;
+        replace = embs;
+        with = embarassess;
+    },
+        {
+        on = 1;
+        replace = embn;
+        with = embarrassing;
+    },
+        {
+        on = 1;
+        replace = emb;
+        with = embarrrass;
+    },
+        {
+        on = 1;
+        replace = embd;
+        with = embarrassed;
+    },
+        {
+        on = 1;
+        replace = wus;
+        with = "wasn't";
+    },
+        {
+        on = 1;
+        replace = wnd;
+        with = wanted;
+    },
+        {
+        on = 1;
+        replace = wms;
+        with = weeks;
+    },
+        {
+        on = 1;
+        replace = oaoa;
+        with = "over and over again";
+    },
+        {
+        on = 1;
+        replace = oao;
+        with = "over and over";
+    },
+        {
+        on = 1;
+        replace = cmb;
+        with = "come back";
+    },
+        {
+        on = 1;
+        replace = tmc;
+        with = "too much";
+    },
+        {
+        on = 1;
+        replace = duto;
+        with = "due to";
+    },
+        {
+        on = 1;
+        replace = fls;
+        with = feels;
+    },
+        {
+        on = 1;
+        replace = flts;
+        with = flights;
+    },
+        {
+        on = 1;
+        replace = flg;
+        with = feeling;
+    },
+        {
+        on = 1;
+        replace = flt;
+        with = flight;
+    },
+        {
+        on = 1;
+        replace = caup;
+        with = "caught up";
+    },
+        {
+        on = 1;
+        replace = fle;
+        with = fully;
+    },
+        {
+        on = 1;
+        replace = nds;
+        with = needs;
+    },
+        {
+        on = 1;
+        replace = ndd;
+        with = needed;
+    },
+        {
+        on = 1;
+        replace = yt;
+        with = yet;
+    },
+        {
+        on = 1;
+        replace = msj;
+        with = "make sure";
+    },
+        {
+        on = 1;
+        replace = uwn;
+        with = unknown;
+    },
+        {
+        on = 1;
+        replace = wlv;
+        with = "would've";
+    },
+        {
+        on = 1;
+        replace = alo;
+        with = "a lot of";
+    },
+        {
+        on = 1;
+        replace = tmpr;
+        with = temporary;
+    },
+        {
+        on = 1;
+        replace = ala;
+        with = "as long as";
+    },
+        {
+        on = 1;
+        replace = tkg;
+        with = taking;
+    },
+        {
+        on = 1;
+        replace = wks;
+        with = works;
+    },
+        {
+        on = 1;
+        replace = wkd;
+        with = worked;
+    },
+        {
+        on = 1;
+        replace = wkg;
+        with = working;
+    },
+        {
+        on = 1;
+        replace = wmds;
+        with = weekends;
+    },
+        {
+        on = 1;
+        replace = wmd;
+        with = weekend;
+    },
+        {
+        on = 1;
+        replace = wm;
+        with = week;
+    },
+        {
+        on = 1;
+        replace = wk;
+        with = work;
+    },
+        {
+        on = 1;
+        replace = arn;
+        with = "aren't";
+    },
+        {
+        on = 1;
+        replace = wjd;
+        with = "what'd";
+    },
+        {
+        on = 1;
+        replace = wed;
+        with = "we'd";
+    },
+        {
+        on = 1;
+        replace = ait;
+        with = "a bit";
+    },
+        {
+        on = 1;
+        replace = maw;
+        with = "might as well";
+    },
+        {
+        on = 1;
+        replace = fnf;
+        with = "fair enough";
+    },
+        {
+        on = 1;
+        replace = bscl;
+        with = basically;
+    },
+        {
+        on = 1;
+        replace = bsc;
+        with = basic;
+    },
+        {
+        on = 1;
+        replace = slty;
+        with = slightly;
+    },
+        {
+        on = 1;
+        replace = slt;
+        with = slight;
+    },
+        {
+        on = 1;
+        replace = cobk;
+        with = "come back";
+    },
+        {
+        on = 1;
+        replace = ckb;
+        with = "came back";
+    },
+        {
+        on = 1;
+        replace = ck;
+        with = came;
+    },
+        {
+        on = 1;
+        replace = altlb;
+        with = "a little bit";
+    },
+        {
+        on = 1;
+        replace = altl;
+        with = "a little";
+    },
+        {
+        on = 1;
+        replace = ltl;
+        with = little;
+    },
+        {
+        on = 1;
+        replace = dwn;
+        with = down;
+    },
+        {
+        on = 1;
+        replace = mc;
+        with = much;
+    },
+        {
+        on = 1;
+        replace = vmc;
+        with = "very much";
+    },
+        {
+        on = 1;
+        replace = tmsv;
+        with = themselves;
+    },
+        {
+        on = 1;
+        replace = tmsf;
+        with = themself;
+    },
+        {
+        on = 1;
+        replace = wjv;
+        with = "we've";
+    },
+        {
+        on = 1;
+        replace = akt;
+        with = "at that time";
+    },
+        {
+        on = 1;
+        replace = fttb;
+        with = "for the time being";
+    },
+        {
+        on = 1;
+        replace = rnty;
+        with = recently;
+    },
+        {
+        on = 1;
+        replace = rnt;
+        with = recent;
+    },
+        {
+        on = 1;
+        replace = uncm;
+        with = "under normal circumstances";
+    },
+        {
+        on = 1;
+        replace = amz;
+        with = amazing;
+    },
+        {
+        on = 1;
+        replace = icto;
+        with = "in comparison to";
+    },
+        {
+        on = 1;
+        replace = cprd;
+        with = compared;
+    },
+        {
+        on = 1;
+        replace = cprs;
+        with = compares;
+    },
+        {
+        on = 1;
+        replace = cpro;
+        with = comparison;
+    },
+        {
+        on = 1;
+        replace = cprn;
+        with = comparing;
+    },
+        {
+        on = 1;
+        replace = cpr;
+        with = compare;
+    },
+        {
+        on = 1;
+        replace = ignd;
+        with = ignored;
+    },
+        {
+        on = 1;
+        replace = igng;
+        with = ignoring;
+    },
+        {
+        on = 1;
+        replace = igns;
+        with = ignores;
+    },
+        {
+        on = 1;
+        replace = ign;
+        with = ignore;
+    },
+        {
+        on = 1;
+        replace = wntd;
+        with = wanted;
+    },
+        {
+        on = 1;
+        replace = wnts;
+        with = wants;
+    },
+        {
+        on = 1;
+        replace = sugs;
+        with = suggests;
+    },
+        {
+        on = 1;
+        replace = sugd;
+        with = suggested;
+    },
+        {
+        on = 1;
+        replace = sug;
+        with = suggest;
+    },
+        {
+        on = 1;
+        replace = snscn;
+        with = sunscreen;
+    },
+        {
+        on = 1;
+        replace = nde;
+        with = Node;
+    },
+        {
+        on = 1;
+        replace = idk;
+        with = "I don't know";
+    },
+        {
+        on = 1;
+        replace = dfl;
+        with = default;
+    },
+        {
+        on = 1;
+        replace = ttl;
+        with = title;
+    },
+        {
+        on = 1;
+        replace = moae;
+        with = "more of an effort";
+    },
+        {
+        on = 1;
+        replace = mwk;
+        with = Milwaukee;
+    },
+        {
+        on = 1;
+        replace = antoj;
+        with = "another one's";
+    },
+        {
+        on = 1;
+        replace = anh;
+        with = another;
+    },
+        {
+        on = 1;
+        replace = defy;
+        with = definitely;
+    },
+        {
+        on = 1;
+        replace = defn;
+        with = definite;
+    },
+        {
+        on = 1;
+        replace = baf;
+        with = "back and forth";
+    },
+        {
+        on = 1;
+        replace = rngn;
+        with = ranging;
+    },
+        {
+        on = 1;
+        replace = rng;
+        with = range;
+    },
+        {
+        on = 1;
+        replace = rhg;
+        with = rough;
+    },
+        {
+        on = 1;
+        replace = mak;
+        with = make;
+    },
+        {
+        on = 1;
+        replace = hnty;
+        with = honesty;
+    },
+        {
+        on = 1;
+        replace = hntl;
+        with = honestly;
+    },
+        {
+        on = 1;
+        replace = hnt;
+        with = honest;
+    },
+        {
+        on = 1;
+        replace = hsn;
+        with = "hasn't";
+    },
+        {
+        on = 1;
+        replace = govts;
+        with = governments;
+    },
+        {
+        on = 1;
+        replace = govt;
+        with = government;
+    },
+        {
+        on = 1;
+        replace = rlsy;
+        with = realistically;
+    },
+        {
+        on = 1;
+        replace = rls;
+        with = realistic;
+    },
+        {
+        on = 1;
+        replace = wcsns;
+        with = "worst case scenarios";
+    },
+        {
+        on = 1;
+        replace = wcsn;
+        with = "worst case scenario";
+    },
+        {
+        on = 1;
+        replace = wcss;
+        with = "worst cases";
+    },
+        {
+        on = 1;
+        replace = wcs;
+        with = "worst case";
+    },
+        {
+        on = 1;
+        replace = alm;
+        with = almost;
+    },
+        {
+        on = 1;
+        replace = igu;
+        with = "I guess";
+    },
+        {
+        on = 1;
+        replace = neo;
+        with = anyone;
+    },
+        {
+        on = 1;
+        replace = ner;
+        with = anymore;
+    },
+        {
+        on = 1;
+        replace = usln;
+        with = usefulness;
+    },
+        {
+        on = 1;
+        replace = usl;
+        with = useful;
+    },
+        {
+        on = 1;
+        replace = dntij;
+        with = "destination's";
+    },
+        {
+        on = 1;
+        replace = nghs;
+        with = nights;
+    },
+        {
+        on = 1;
+        replace = ngh;
+        with = night;
+    },
+        {
+        on = 1;
+        replace = akgd;
+        with = acknowledged;
+    },
+        {
+        on = 1;
+        replace = akgs;
+        with = acknowledges;
+    },
+        {
+        on = 1;
+        replace = akgn;
+        with = acknowledging;
+    },
+        {
+        on = 1;
+        replace = akg;
+        with = acknowledge;
+    },
+        {
+        on = 1;
+        replace = dnrs;
+        with = dinners;
+    },
+        {
+        on = 1;
+        replace = lchs;
+        with = lunches;
+    },
+        {
+        on = 1;
+        replace = bkfs;
+        with = breakfasts;
+    },
+        {
+        on = 1;
+        replace = hw;
+        with = how;
+    },
+        {
+        on = 1;
+        replace = clsd;
+        with = closed;
+    },
+        {
+        on = 1;
+        replace = snc;
+        with = since;
+    },
+        {
+        on = 1;
+        replace = dnr;
+        with = dinner;
+    },
+        {
+        on = 1;
+        replace = lch;
+        with = lunch;
+    },
+        {
+        on = 1;
+        replace = bkf;
+        with = breakfast;
+    },
+        {
+        on = 1;
+        replace = mrys;
+        with = "Mary's";
+    },
+        {
+        on = 1;
+        replace = mry;
+        with = Mary;
+    },
+        {
+        on = 1;
+        replace = hd;
+        with = had;
+    },
+        {
+        on = 1;
+        replace = min;
+        with = minute;
+    },
+        {
+        on = 1;
+        replace = nv;
+        with = never;
+    },
+        {
+        on = 1;
+        replace = lups;
+        with = "looks up";
+    },
+        {
+        on = 1;
+        replace = lupd;
+        with = "looked up";
+    },
+        {
+        on = 1;
+        replace = lupg;
+        with = "looking up";
+    },
+        {
+        on = 1;
+        replace = lup;
+        with = "look up";
+    },
+        {
+        on = 1;
+        replace = bkt;
+        with = "be right there";
+    },
+        {
+        on = 1;
+        replace = brts;
+        with = "Brett's";
+    },
+        {
+        on = 1;
+        replace = brt;
+        with = Brett;
+    },
+        {
+        on = 1;
+        replace = wrh;
+        with = worth;
+    },
+        {
+        on = 1;
+        replace = lof;
+        with = "lot of";
+    },
+        {
+        on = 1;
+        replace = spc;
+        with = especially;
+    },
+        {
+        on = 1;
+        replace = gmn;
+        with = German;
+    },
+        {
+        on = 1;
+        replace = gma;
+        with = Germany;
+    },
+        {
+        on = 1;
+        replace = gfod;
+        with = "going forward";
+    },
+        {
+        on = 1;
+        replace = igm;
+        with = "I'm gonna";
+    },
+        {
+        on = 1;
+        replace = nvm;
+        with = "never mind";
+    },
+        {
+        on = 1;
+        replace = img;
+        with = image;
+    },
+        {
+        on = 1;
+        replace = bg;
+        with = background;
+    },
+        {
+        on = 1;
+        replace = aor;
+        with = "and/or";
+    },
+        {
+        on = 1;
+        replace = bn;
+        with = been;
+    },
+        {
+        on = 1;
+        replace = hs;
+        with = has;
+    },
+        {
+        on = 1;
+        replace = whn;
+        with = within;
+    },
+        {
+        on = 1;
+        replace = fodd;
+        with = forwarded;
+    },
+        {
+        on = 1;
+        replace = utu;
+        with = "up to you";
+    },
+        {
+        on = 1;
+        replace = rmdi;
+        with = recommendation;
+    },
+        {
+        on = 1;
+        replace = rmdd;
+        with = recommended;
+    },
+        {
+        on = 1;
+        replace = rmdn;
+        with = recommending;
+    },
+        {
+        on = 1;
+        replace = rmds;
+        with = recommends;
+    },
+        {
+        on = 1;
+        replace = rmd;
+        with = recommend;
+    },
+        {
+        on = 1;
+        replace = wu;
+        with = was;
+    },
+        {
+        on = 1;
+        replace = itjr;
+        with = "in theory";
+    },
+        {
+        on = 1;
+        replace = itl;
+        with = "it'll";
+    },
+        {
+        on = 1;
+        replace = dh;
+        with = then;
+    },
+        {
+        on = 1;
+        replace = jej;
+        with = "they're";
+    },
+        {
+        on = 1;
+        replace = jos;
+        with = those;
+    },
+        {
+        on = 1;
+        replace = fetn;
+        with = forgetting;
+    },
+        {
+        on = 1;
+        replace = fets;
+        with = forgets;
+    },
+        {
+        on = 1;
+        replace = fos;
+        with = "for sure";
+    },
+        {
+        on = 1;
+        replace = jsn;
+        with = JSON;
+    },
+        {
+        on = 1;
+        replace = jes;
+        with = these;
+    },
+        {
+        on = 1;
+        replace = mkg;
+        with = making;
+    },
+        {
+        on = 1;
+        replace = mkd;
+        with = made;
+    },
+        {
+        on = 1;
+        replace = mks;
+        with = makes;
+    },
+        {
+        on = 1;
+        replace = byd;
+        with = "by default";
+    },
+        {
+        on = 1;
+        replace = rirms;
+        with = requirements;
+    },
+        {
+        on = 1;
+        replace = rirm;
+        with = requirement;
+    },
+        {
+        on = 1;
+        replace = rirn;
+        with = requiring;
+    },
+        {
+        on = 1;
+        replace = rird;
+        with = required;
+    },
+        {
+        on = 1;
+        replace = rirs;
+        with = requires;
+    },
+        {
+        on = 1;
+        replace = rir;
+        with = require;
+    },
+        {
+        on = 1;
+        replace = alty;
+        with = alternatively;
+    },
+        {
+        on = 1;
+        replace = sps;
+        with = suprises;
+    },
+        {
+        on = 1;
+        replace = spg;
+        with = surprising;
+    },
+        {
+        on = 1;
+        replace = inrn;
+        with = interesting;
+    },
+        {
+        on = 1;
+        replace = inry;
+        with = interestingly;
+    },
+        {
+        on = 1;
+        replace = inrs;
+        with = interests;
+    },
+        {
+        on = 1;
+        replace = inr;
+        with = interest;
+    },
+        {
+        on = 1;
+        replace = impa;
+        with = implementation;
+    },
+        {
+        on = 1;
+        replace = sjr;
+        with = sure;
+    },
+        {
+        on = 1;
+        replace = als;
+        with = "at least";
+    },
+        {
+        on = 1;
+        replace = irs;
+        with = IRS;
+    },
+        {
+        on = 1;
+        replace = owi;
+        with = otherwise;
+    },
+        {
+        on = 1;
+        replace = pls;
+        with = please;
+    },
+        {
+        on = 1;
+        replace = tods;
+        with = towards;
+    },
+        {
+        on = 1;
+        replace = fod;
+        with = forward;
+    },
+        {
+        on = 1;
+        replace = tod;
+        with = toward;
+    },
+        {
+        on = 1;
+        replace = apvd;
+        with = approved;
+    },
+        {
+        on = 1;
+        replace = apvs;
+        with = approves;
+    },
+        {
+        on = 1;
+        replace = apvn;
+        with = approving;
+    },
+        {
+        on = 1;
+        replace = apv;
+        with = approve;
+    },
+        {
+        on = 1;
+        replace = dng;
+        with = doing;
+    },
+        {
+        on = 1;
+        replace = msf;
+        with = myself;
+    },
+        {
+        on = 1;
+        replace = oths;
+        with = others;
+    },
+        {
+        on = 1;
+        replace = impg;
+        with = implementing;
+    },
+        {
+        on = 1;
+        replace = imps;
+        with = implements;
+    },
+        {
+        on = 1;
+        replace = impd;
+        with = implemented;
+    },
+        {
+        on = 1;
+        replace = mnt;
+        with = meant;
+    },
+        {
+        on = 1;
+        replace = wlt;
+        with = "wouldn't";
+    },
+        {
+        on = 1;
+        replace = mn;
+        with = mean;
+    },
+        {
+        on = 1;
+        replace = cmen;
+        with = commenting;
+    },
+        {
+        on = 1;
+        replace = cmed;
+        with = commented;
+    },
+        {
+        on = 1;
+        replace = cmes;
+        with = comments;
+    },
+        {
+        on = 1;
+        replace = cme;
+        with = comment;
+    },
+        {
+        on = 1;
+        replace = nd;
+        with = need;
+    },
+        {
+        on = 1;
+        replace = btmj;
+        with = "bottom's";
+    },
+        {
+        on = 1;
+        replace = btms;
+        with = bottoms;
+    },
+        {
+        on = 1;
+        replace = btm;
+        with = bottom;
+    },
+        {
+        on = 1;
+        replace = lf;
+        with = left;
+    },
+        {
+        on = 1;
+        replace = lvs;
+        with = leaves;
+    },
+        {
+        on = 1;
+        replace = lvn;
+        with = leaving;
+    },
+        {
+        on = 1;
+        replace = lv;
+        with = leaving;
+    },
+        {
+        on = 1;
+        replace = xpcd;
+        with = expected;
+    },
+        {
+        on = 1;
+        replace = ecld;
+        with = excluded;
+    },
+        {
+        on = 1;
+        replace = ecls;
+        with = excludes;
+    },
+        {
+        on = 1;
+        replace = eclg;
+        with = excluding;
+    },
+        {
+        on = 1;
+        replace = ecl;
+        with = exclude;
+    },
+        {
+        on = 1;
+        replace = iclg;
+        with = including;
+    },
+        {
+        on = 1;
+        replace = icld;
+        with = included;
+    },
+        {
+        on = 1;
+        replace = icls;
+        with = includes;
+    },
+        {
+        on = 1;
+        replace = icl;
+        with = include;
+    },
+        {
+        on = 1;
+        replace = sm;
+        with = seem;
+    },
+        {
+        on = 1;
+        replace = sms;
+        with = seems;
+    },
+        {
+        on = 1;
+        replace = eimr;
+        with = "(here, and elsewhere in this MR)";
+    },
+        {
+        on = 1;
+        replace = wht;
+        with = whether;
+    },
+        {
+        on = 1;
+        replace = acy;
+        with = actually;
+    },
+        {
+        on = 1;
+        replace = acl;
+        with = actual;
+    },
+        {
+        on = 1;
+        replace = dlf;
+        with = "the following";
+    },
+        {
+        on = 1;
+        replace = xty;
+        with = exactly;
+    },
+        {
+        on = 1;
+        replace = xt;
+        with = exact;
+    },
+        {
+        on = 1;
+        replace = fns;
+        with = functions;
+    },
+        {
+        on = 1;
+        replace = fna;
+        with = functionality;
+    },
+        {
+        on = 1;
+        replace = fnc;
+        with = function;
+    },
+        {
+        on = 1;
+        replace = kbs;
+        with = "that being said";
+    },
+        {
+        on = 1;
+        replace = ley;
+        with = likely;
+    },
+        {
+        on = 1;
+        replace = ja;
+        with = yeah;
+    },
+        {
+        on = 1;
+        replace = tlg;
+        with = traveling;
+    },
+        {
+        on = 1;
+        replace = tld;
+        with = TLD;
+    },
+        {
+        on = 1;
+        replace = tlvd;
+        with = traveled;
+    },
+        {
+        on = 1;
+        replace = tls;
+        with = travels;
+    },
+        {
+        on = 1;
+        replace = tlv;
+        with = travel;
+    },
+        {
+        on = 1;
+        replace = wri;
+        with = "worth it";
+    },
+        {
+        on = 1;
+        replace = en;
+        with = even;
+    },
+        {
+        on = 1;
+        replace = envs;
+        with = environments;
+    },
+        {
+        on = 1;
+        replace = aot;
+        with = about;
+    },
+        {
+        on = 1;
+        replace = wlc;
+        with = welcome;
+    },
+        {
+        on = 1;
+        replace = intd;
+        with = interested;
+    },
+        {
+        on = 1;
+        replace = whl;
+        with = while;
+    },
+        {
+        on = 1;
+        replace = co;
+        with = come;
+    },
+        {
+        on = 1;
+        replace = tu;
+        with = into;
+    },
+        {
+        on = 1;
+        replace = nt;
+        with = not;
     },
         {
         on = 1;
@@ -41,11 +3176,6 @@
         on = 1;
         replace = fmr;
         with = familiar;
-    },
-        {
-        on = 1;
-        replace = ig;
-        with = "I guess";
     },
         {
         on = 1;
@@ -114,23 +3244,8 @@
     },
         {
         on = 1;
-        replace = nems;
-        with = "anytime's";
-    },
-        {
-        on = 1;
         replace = neis;
         with = "neither's";
-    },
-        {
-        on = 1;
-        replace = nem;
-        with = anytime;
-    },
-        {
-        on = 1;
-        replace = neo;
-        with = anymore;
     },
         {
         on = 1;
@@ -171,11 +3286,6 @@
         on = 1;
         replace = ff;
         with = "feature flag";
-    },
-        {
-        on = 1;
-        replace = ntl;
-        with = until;
     },
         {
         on = 1;
@@ -244,11 +3354,6 @@
     },
         {
         on = 1;
-        replace = hrs;
-        with = "there's";
-    },
-        {
-        on = 1;
         replace = ep;
         with = empty;
     },
@@ -284,18 +3389,8 @@
     },
         {
         on = 1;
-        replace = wid;
-        with = "with the";
-    },
-        {
-        on = 1;
         replace = dle;
         with = "the one";
-    },
-        {
-        on = 1;
-        replace = rh;
-        with = right;
     },
         {
         on = 1;
@@ -319,11 +3414,6 @@
     },
         {
         on = 1;
-        replace = psy;
-        with = possibility;
-    },
-        {
-        on = 1;
         replace = sn;
         with = seen;
     },
@@ -331,21 +3421,6 @@
         on = 1;
         replace = si;
         with = see;
-    },
-        {
-        on = 1;
-        replace = nehs;
-        with = "anywhere's";
-    },
-        {
-        on = 1;
-        replace = antos;
-        with = "another one's";
-    },
-        {
-        on = 1;
-        replace = nens;
-        with = "anything's";
     },
         {
         on = 1;
@@ -399,11 +3474,6 @@
     },
         {
         on = 1;
-        replace = ign;
-        with = "I'm gonna";
-    },
-        {
-        on = 1;
         replace = sud;
         with = "sounds good";
     },
@@ -421,11 +3491,6 @@
         on = 1;
         replace = thv;
         with = "they've";
-    },
-        {
-        on = 1;
-        replace = jer;
-        with = "they're";
     },
         {
         on = 1;
@@ -451,16 +3516,6 @@
         on = 1;
         replace = otho;
         with = "other one";
-    },
-        {
-        on = 1;
-        replace = totho;
-        with = "the other one";
-    },
-        {
-        on = 1;
-        replace = wkds;
-        with = weekends;
     },
         {
         on = 1;
@@ -494,11 +3549,6 @@
     },
         {
         on = 1;
-        replace = eos;
-        with = "everyone's";
-    },
-        {
-        on = 1;
         replace = ucs;
         with = "use cases";
     },
@@ -506,11 +3556,6 @@
         on = 1;
         replace = ifo;
         with = information;
-    },
-        {
-        on = 1;
-        replace = eoe;
-        with = everyone;
     },
         {
         on = 1;
@@ -539,31 +3584,6 @@
     },
         {
         on = 1;
-        replace = wms;
-        with = works;
-    },
-        {
-        on = 1;
-        replace = wmg;
-        with = working;
-    },
-        {
-        on = 1;
-        replace = wmd;
-        with = worked;
-    },
-        {
-        on = 1;
-        replace = wm;
-        with = work;
-    },
-        {
-        on = 1;
-        replace = hwm;
-        with = "how much";
-    },
-        {
-        on = 1;
         replace = ne;
         with = any;
     },
@@ -579,16 +3599,6 @@
     },
         {
         on = 1;
-        replace = fos;
-        with = forgets;
-    },
-        {
-        on = 1;
-        replace = foet;
-        with = forget;
-    },
-        {
-        on = 1;
         replace = fow;
         with = "for a while";
     },
@@ -601,11 +3611,6 @@
         on = 1;
         replace = wos;
         with = worse;
-    },
-        {
-        on = 1;
-        replace = bjr;
-        with = better;
     },
         {
         on = 1;
@@ -654,21 +3659,6 @@
     },
         {
         on = 1;
-        replace = flgs;
-        with = flights;
-    },
-        {
-        on = 1;
-        replace = flg;
-        with = flight;
-    },
-        {
-        on = 1;
-        replace = les;
-        with = likes;
-    },
-        {
-        on = 1;
         replace = le;
         with = like;
     },
@@ -699,11 +3689,6 @@
     },
         {
         on = 1;
-        replace = pels;
-        with = "people's";
-    },
-        {
-        on = 1;
         replace = usn;
         with = using;
     },
@@ -729,18 +3714,8 @@
     },
         {
         on = 1;
-        replace = tm;
-        with = them;
-    },
-        {
-        on = 1;
         replace = tmr;
         with = tomorrow;
-    },
-        {
-        on = 1;
-        replace = ya;
-        with = yeah;
     },
         {
         on = 1;
@@ -804,11 +3779,6 @@
     },
         {
         on = 1;
-        replace = nt;
-        with = into;
-    },
-        {
-        on = 1;
         replace = ao;
         with = also;
     },
@@ -864,18 +3834,8 @@
     },
         {
         on = 1;
-        replace = sj;
-        with = some;
-    },
-        {
-        on = 1;
         replace = aft;
         with = after;
-    },
-        {
-        on = 1;
-        replace = js;
-        with = just;
     },
         {
         on = 1;
@@ -1129,11 +4089,6 @@
     },
         {
         on = 1;
-        replace = ptzg;
-        with = prioritizing;
-    },
-        {
-        on = 1;
         replace = ptzd;
         with = prioritized;
     },
@@ -1189,11 +4144,6 @@
     },
         {
         on = 1;
-        replace = wkd;
-        with = weekend;
-    },
-        {
-        on = 1;
         replace = dsn;
         with = "doesn't";
     },
@@ -1201,11 +4151,6 @@
         on = 1;
         replace = utd;
         with = "up to date";
-    },
-        {
-        on = 1;
-        replace = wev;
-        with = "we've";
     },
         {
         on = 1;
@@ -1284,11 +4229,6 @@
     },
         {
         on = 1;
-        replace = wk;
-        with = week;
-    },
-        {
-        on = 1;
         replace = wjr;
         with = were;
     },
@@ -1329,18 +4269,8 @@
     },
         {
         on = 1;
-        replace = fod;
-        with = forward;
-    },
-        {
-        on = 1;
         replace = gng;
         with = going;
-    },
-        {
-        on = 1;
-        replace = tos;
-        with = those;
     },
         {
         on = 1;
@@ -1474,11 +4404,6 @@
     },
         {
         on = 1;
-        replace = edy;
-        with = everyday;
-    },
-        {
-        on = 1;
         replace = tka;
         with = thank;
     },
@@ -1501,11 +4426,6 @@
         on = 1;
         replace = eur;
         with = "\\U20ac";
-    },
-        {
-        on = 1;
-        replace = tj;
-        with = then;
     },
         {
         on = 1;
@@ -1574,11 +4494,6 @@
     },
         {
         on = 1;
-        replace = arnt;
-        with = "aren't";
-    },
-        {
-        on = 1;
         replace = alta;
         with = alternate;
     },
@@ -1624,11 +4539,6 @@
     },
         {
         on = 1;
-        replace = tnkg;
-        with = thinking;
-    },
-        {
-        on = 1;
         replace = tnks;
         with = thinks;
     },
@@ -1641,11 +4551,6 @@
         on = 1;
         replace = wer;
         with = "we're";
-    },
-        {
-        on = 1;
-        replace = wel;
-        with = "we'll";
     },
         {
         on = 1;
@@ -1689,18 +4594,8 @@
     },
         {
         on = 1;
-        replace = hsty;
-        with = honesty;
-    },
-        {
-        on = 1;
         replace = dhst;
         with = dishonest;
-    },
-        {
-        on = 1;
-        replace = hst;
-        with = honest;
     },
         {
         on = 1;
@@ -1711,21 +4606,6 @@
         on = 1;
         replace = dpn;
         with = dependent;
-    },
-        {
-        on = 1;
-        replace = xid;
-        with = exercised;
-    },
-        {
-        on = 1;
-        replace = xis;
-        with = exercises;
-    },
-        {
-        on = 1;
-        replace = xig;
-        with = exercising;
     },
         {
         on = 1;
@@ -1781,21 +4661,6 @@
         on = 1;
         replace = cnsi;
         with = consistent;
-    },
-        {
-        on = 1;
-        replace = dfng;
-        with = differing;
-    },
-        {
-        on = 1;
-        replace = dfncs;
-        with = differences;
-    },
-        {
-        on = 1;
-        replace = dfnc;
-        with = difference;
     },
         {
         on = 1;
@@ -1859,11 +4724,6 @@
     },
         {
         on = 1;
-        replace = eyvm;
-        with = "every time";
-    },
-        {
-        on = 1;
         replace = jsdcs;
         with = JSDocs;
     },
@@ -1886,11 +4746,6 @@
         on = 1;
         replace = uwns;
         with = unknowns;
-    },
-        {
-        on = 1;
-        replace = unknown;
-        with = uwn;
     },
         {
         on = 1;
@@ -1994,21 +4849,6 @@
     },
         {
         on = 1;
-        replace = smhw;
-        with = somehow;
-    },
-        {
-        on = 1;
-        replace = smw;
-        with = somewhere;
-    },
-        {
-        on = 1;
-        replace = smtm;
-        with = sometime;
-    },
-        {
-        on = 1;
         replace = tigs;
         with = things;
     },
@@ -2024,11 +4864,6 @@
     },
         {
         on = 1;
-        replace = anw;
-        with = anyway;
-    },
-        {
-        on = 1;
         replace = ufl;
         with = "you'll";
     },
@@ -2041,16 +4876,6 @@
         on = 1;
         replace = oth;
         with = other;
-    },
-        {
-        on = 1;
-        replace = anth;
-        with = another;
-    },
-        {
-        on = 1;
-        replace = ursl;
-        with = yourself;
     },
         {
         on = 1;
@@ -2096,11 +4921,6 @@
         on = 1;
         replace = howre;
         with = "how're";
-    },
-        {
-        on = 1;
-        replace = hows;
-        with = "how's";
     },
         {
         on = 1;
@@ -2154,11 +4974,6 @@
     },
         {
         on = 1;
-        replace = hsnt;
-        with = "hasn't";
-    },
-        {
-        on = 1;
         replace = hdnt;
         with = "hadn't";
     },
@@ -2184,11 +4999,6 @@
     },
         {
         on = 1;
-        replace = uu;
-        with = you;
-    },
-        {
-        on = 1;
         replace = yr;
         with = year;
     },
@@ -2201,11 +5011,6 @@
         on = 1;
         replace = opent;
         with = OpenTelemetry;
-    },
-        {
-        on = 1;
-        replace = ure;
-        with = "you're";
     },
         {
         on = 1;
@@ -2246,11 +5051,6 @@
         on = 1;
         replace = thrds;
         with = Thursdays;
-    },
-        {
-        on = 1;
-        replace = heres;
-        with = "here's";
     },
         {
         on = 1;
@@ -2339,16 +5139,6 @@
     },
         {
         on = 1;
-        replace = intry;
-        with = interestingly;
-    },
-        {
-        on = 1;
-        replace = lnght;
-        with = "last night";
-    },
-        {
-        on = 1;
         replace = hpnd;
         with = happened;
     },
@@ -2434,11 +5224,6 @@
     },
         {
         on = 1;
-        replace = grmy;
-        with = Germany;
-    },
-        {
-        on = 1;
         replace = glgi;
         with = Gaggioli;
     },
@@ -2461,11 +5246,6 @@
         on = 1;
         replace = thtl;
         with = "that'll";
-    },
-        {
-        on = 1;
-        replace = wsn;
-        with = "wasn't";
     },
         {
         on = 1;
@@ -2526,11 +5306,6 @@
         on = 1;
         replace = fmal;
         with = family;
-    },
-        {
-        on = 1;
-        replace = envms;
-        with = environments;
     },
         {
         on = 1;
@@ -2601,16 +5376,6 @@
         on = 1;
         replace = bks;
         with = Bucks;
-    },
-        {
-        on = 1;
-        replace = dfnty;
-        with = definitely;
-    },
-        {
-        on = 1;
-        replace = dfnt;
-        with = definite;
     },
         {
         on = 1;
@@ -2724,21 +5489,6 @@
     },
         {
         on = 1;
-        replace = intrg;
-        with = interesting;
-    },
-        {
-        on = 1;
-        replace = intrs;
-        with = interests;
-    },
-        {
-        on = 1;
-        replace = intr;
-        with = interest;
-    },
-        {
-        on = 1;
         replace = svgs;
         with = SVGs;
     },
@@ -2834,11 +5584,6 @@
     },
         {
         on = 1;
-        replace = xpmtg;
-        with = experimenting;
-    },
-        {
-        on = 1;
         replace = xpmt;
         with = experiment;
     },
@@ -2879,11 +5624,6 @@
     },
         {
         on = 1;
-        replace = ethg;
-        with = everything;
-    },
-        {
-        on = 1;
         replace = td;
         with = "to-do";
     },
@@ -2891,11 +5631,6 @@
         on = 1;
         replace = addl;
         with = additional;
-    },
-        {
-        on = 1;
-        replace = ltst;
-        with = latest;
     },
         {
         on = 1;
@@ -2919,11 +5654,6 @@
     },
         {
         on = 1;
-        replace = impl;
-        with = implementation;
-    },
-        {
-        on = 1;
         replace = avlby;
         with = availability;
     },
@@ -2936,11 +5666,6 @@
         on = 1;
         replace = arpt;
         with = airport;
-    },
-        {
-        on = 1;
-        replace = espc;
-        with = especially;
     },
         {
         on = 1;
@@ -2989,11 +5714,6 @@
     },
         {
         on = 1;
-        replace = svg;
-        with = SVG;
-    },
-        {
-        on = 1;
         replace = dptm;
         with = disappointment;
     },
@@ -3029,11 +5749,6 @@
     },
         {
         on = 1;
-        replace = wldn;
-        with = "wouldn't";
-    },
-        {
-        on = 1;
         replace = wld;
         with = would;
     },
@@ -3066,11 +5781,6 @@
         on = 1;
         replace = "ad.";
         with = "adjustment period";
-    },
-        {
-        on = 1;
-        replace = ehr;
-        with = everywhere;
     },
         {
         on = 1;
@@ -3144,11 +5854,6 @@
     },
         {
         on = 1;
-        replace = itll;
-        with = "it'll";
-    },
-        {
-        on = 1;
         replace = ooo;
         with = OOO;
     },
@@ -3164,11 +5869,6 @@
     },
         {
         on = 1;
-        replace = owis;
-        with = otherwise;
-    },
-        {
-        on = 1;
         replace = ablt;
         with = ability;
     },
@@ -3176,11 +5876,6 @@
         on = 1;
         replace = nop;
         with = "no-op";
-    },
-        {
-        on = 1;
-        replace = emrps;
-        with = "MR's";
     },
         {
         on = 1;
@@ -3196,11 +5891,6 @@
         on = 1;
         replace = tys;
         with = TypeScript;
-    },
-        {
-        on = 1;
-        replace = flus;
-        with = "follow ups";
     },
         {
         on = 1;
@@ -3246,11 +5936,6 @@
         on = 1;
         replace = whr;
         with = where;
-    },
-        {
-        on = 1;
-        replace = flu;
-        with = "follow up";
     },
         {
         on = 1;
@@ -3314,11 +5999,6 @@
     },
         {
         on = 1;
-        replace = abt;
-        with = about;
-    },
-        {
-        on = 1;
         replace = imho;
         with = IMHO;
     },
@@ -3349,11 +6029,6 @@
     },
         {
         on = 1;
-        replace = acly;
-        with = actually;
-    },
-        {
-        on = 1;
         replace = imt;
         with = important;
     },
@@ -3379,11 +6054,6 @@
     },
         {
         on = 1;
-        replace = smt;
-        with = sometimes;
-    },
-        {
-        on = 1;
         replace = shes;
         with = "she's";
     },
@@ -3406,16 +6076,6 @@
         on = 1;
         replace = bc;
         with = because;
-    },
-        {
-        on = 1;
-        replace = sths;
-        with = "something's";
-    },
-        {
-        on = 1;
-        replace = sth;
-        with = something;
     },
         {
         on = 1;
@@ -3489,11 +6149,6 @@
     },
         {
         on = 1;
-        replace = git;
-        with = Git;
-    },
-        {
-        on = 1;
         replace = rrest;
         with = REST;
     },
@@ -3531,11 +6186,6 @@
         on = 1;
         replace = pgs;
         with = Postgres;
-    },
-        {
-        on = 1;
-        replace = json;
-        with = JSON;
     },
         {
         on = 1;
@@ -3594,18 +6244,8 @@
     },
         {
         on = 1;
-        replace = aria;
-        with = ARIA;
-    },
-        {
-        on = 1;
         replace = repl;
         with = REPL;
-    },
-        {
-        on = 1;
-        replace = sms;
-        with = SMS;
     },
         {
         on = 1;
@@ -3621,11 +6261,6 @@
         on = 1;
         replace = vsc;
         with = "VS Code";
-    },
-        {
-        on = 1;
-        replace = nodej;
-        with = "Node.js";
     },
         {
         on = 1;
@@ -3696,11 +6331,6 @@
         on = 1;
         replace = htm;
         with = HTML;
-    },
-        {
-        on = 1;
-        replace = whatsapp;
-        with = WhatsApp;
     },
         {
         on = 1;
@@ -3809,16 +6439,6 @@
     },
         {
         on = 1;
-        replace = marys;
-        with = "Mary's";
-    },
-        {
-        on = 1;
-        replace = mary;
-        with = Mary;
-    },
-        {
-        on = 1;
         replace = abramczyk;
         with = Abramczyk;
     },
@@ -3831,11 +6451,6 @@
         on = 1;
         replace = nba;
         with = NBA;
-    },
-        {
-        on = 1;
-        replace = sns;
-        with = sns;
     },
         {
         on = 1;
