@@ -512,7 +512,7 @@
         [:p :!Cequal_sign]
         
         ;; "Love"/like current Spotify song
-        [:quote :!CTOSquote]
+        [:open_bracket :!CTOSquote]
       ]
     }
     {
