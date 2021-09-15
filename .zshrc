@@ -127,13 +127,6 @@ export NVM_DIR="$HOME/.nvm"
 # [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
 # [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
-# Use `bat` for syntax highlighting in man pages
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
-
-# Enable zsh-syntax-highlighting.
-# NOTE: Per this package's documentation, this needs to be at the end of this file
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 # Skip all annoying commit hooks
 # WIP, not really tested yet
 export HUSKY_SKIP_HOOKS=1
@@ -163,3 +156,7 @@ fi
 
 # Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
 export GIT_MERGE_AUTOEDIT=no
+
+# Enable zsh-syntax-highlighting.
+# NOTE: Per this package's documentation, this needs to be at the end of this file
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
