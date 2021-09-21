@@ -104,7 +104,7 @@ vs() { (
   fi
 ); }
 # "validate all" (static plus Jest tests)
-va() { (
+v() { (
   # Exit and fail the function if any command in it fails. In a function, you have to add the parens to create a "subshell" in order for this to work. Without them, zsh itself crashes
   # https://stackoverflow.com/questions/40429865/how-to-exit-bash-function-if-error
   set -e
