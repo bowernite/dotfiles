@@ -54,6 +54,9 @@ alias gpom="git pull origin \$(git_main_branch) --no-edit"
 # `--no-edit` suppresses editing the commit message when doing the pull as a merge
 alias gpod="git pull origin \$(git_dev_branch) --no-edit"
 
+# Change "git diff" to ignore whitespace changes by default
+alias gd="git diff -w"
+
 # "git diff origin dev"
 alias gdod="git fetch && gd origin/\$(git_dev_branch)"
 # "git diff origin main"
@@ -108,9 +111,9 @@ alias grbn="git add . && grbc"
 alias gforget="git rm -r --cached . && git add ."
 
 # "git conflicts": Show all files with conflicts (does so by using `git diff`, because in the case of rebase/merge conflicts, only conflict files will be in the index)
-alias gconflicts="git diff --name-only | uniq"
+alias gconflicts="gd --name-only | uniq"
 # "git fix": Open all files with conflicts (in VS Code)
-alias gfix="git diff --name-only | uniq | xargs code"
+alias gfix="gd --name-only | uniq | xargs code"
 
 # "git summary": Show a summary of a commit (i.e. without the diff)
 alias gsm="git show --quiet"
