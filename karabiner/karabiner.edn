@@ -423,7 +423,7 @@
         [:f :grave_accent_and_tilde] ; `
         [:d :hyphen] ; -
         [:g :equal_sign] ; =
-        [:c :!Shyphen] ; _
+        [:c :!S4] ; $
 
         [:q :close_bracket] ; ]
         [:w :open_bracket] ; [
@@ -432,12 +432,12 @@
         [:z :!Sclose_bracket] ; }
         [:x :!S0] ; )
 
+        [:e :!Squote] ; "
         [:r :!S1] ; !
         [:t :!Sbackslash] ; |
-        [:e :!Squote] ; "
         [:v :!S7] ; &
 
-        [:b :!S4] ; $
+        [:b :!Shyphen] ; _
         [:caps_lock :!S8] ; *
         [:tab :!Speriod] ; >
         ;; [:j :!S6] ; ^
