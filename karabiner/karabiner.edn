@@ -406,9 +406,7 @@
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         ;; Search GitLab repos
-        blah
         [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
-        blah
         ;; My merge requests
         [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
       ]
