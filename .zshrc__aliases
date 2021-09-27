@@ -79,9 +79,10 @@ vs() { (
   # https://stackoverflow.com/questions/40429865/how-to-exit-bash-function-if-error
   set -e
 
+  local index_dirty=0
   if git_has_changes; then
-    echo "Uncommitted changes found; aborting."
-    return
+    echo "Uncommitted changes found; will not commit cleanup changes."
+    index_dirty=1
   fi
 
   if is_yarn_project; then
@@ -100,7 +101,9 @@ vs() { (
     "npx prettier -write --loglevel=error ."
 
   if git_has_changes; then
-    gcim "cleanup"
+    if [[ index_dirty -eq 0 ]]; then
+      gcim "cleanup"
+    fi
   fi
 ); }
 # "validate all" (static plus Jest tests)
@@ -109,9 +112,10 @@ v() { (
   # https://stackoverflow.com/questions/40429865/how-to-exit-bash-function-if-error
   set -e
 
+  local index_dirty=0
   if git_has_changes; then
-    echo "Uncommitted changes found; aborting."
-    return
+    echo "Uncommitted changes found; will not commit cleanup changes."
+    index_dirty=1
   fi
 
   if is_yarn_project; then
@@ -132,7 +136,9 @@ v() { (
     "npx prettier -write --loglevel=error ."
 
   if git_has_changes; then
-    gcim "cleanup"
+    if [[ index_dirty -eq 0 ]]; then
+      gcim "cleanup"
+    fi
   fi
 ); }
 
