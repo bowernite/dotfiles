@@ -442,11 +442,10 @@
         [:tab :!Speriod] ; >
         ;; [:j :!S6] ; ^
 
-        [:2 [:!Cslash :!St :!So :!Sd :!So :!Ssemicolon :spacebar]] ; -> // TODO:␣
-        [:1 [:!Cslash :!Sf :!Si :!Sx :!Sm :!Se :!Ssemicolon :spacebar]] ; -> // FIXME:␣
 
         ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
-        [:3 :!SO2] ; €
+        [:2 :!SO2] ; €
+        [:3 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
         [:4 [:slash :!S8 :!S8]] ; -> /**
 
