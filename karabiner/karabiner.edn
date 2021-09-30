@@ -170,8 +170,8 @@
         ; VPN
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Connect to configured default country VPN
-        [:2 [:opena "NordVPN Teams"]]
-        [:1 [:quit "NordVPN Teams"]]
+        [:2 [:opena "NordLayer"]]
+        [:1 [:quit "NordLayer"]]
 
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
