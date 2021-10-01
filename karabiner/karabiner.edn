@@ -340,7 +340,7 @@
         [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
         [:m [:openw "mail.google.com/mail/u/0"]]
-        [:h [:openw "https://mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=14222840464228211305&m=&d=0"]]
+        [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=14222840464228211305&m=&d=0"]]
         [:g [:openw "drive.google.com"]]
         ;; Money projections
         [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528"]]
