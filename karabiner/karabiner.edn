@@ -686,8 +686,8 @@
     :VSCode ["^com\\.microsoft\\.VSCode(Insiders)?$"]
     :Chrome [
       "^com\\.google\\.Chrome$",
-      "^org\\.chromium\\.Chromium$",
-      "^com\\.google\\.Chrome\\.canary$"
+      ;; "^org\\.chromium\\.Chromium$",
+      ;; "^com\\.google\\.Chrome\\.canary$"
     ]
     :Firefoxes [
       "^org\\.mozilla\\.firefox$",
