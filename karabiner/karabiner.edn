@@ -201,7 +201,7 @@
         ;; Search bluetooth devices to toggle
         [:b :!CTOSb]
         ;; [:b [:alfred "bluetooth list" "de.tilmanginzel.alfred.bluetooth"]]
-        ; AirPod connection and output. Using an external trigger doesn't work because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
+        ; AirPods
         ;; Connect and set to audio output device
         [:4 :!CSTO4]
         ;; Disconnect (from bluetooth)
@@ -739,6 +739,7 @@
 ;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
 ;;; CTOS (in use)
 ;;; CTOSF (not in use yet)
+;; Why it's necessary in Alfred: Using an external trigger doesn't work. One example of this is because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
 
 ; Plain Rule Ideas
   ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
