@@ -245,7 +245,8 @@
         ;; Hide notification(s)
         [:h :!CTOSh]
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
-        [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
+        [:m [:!TOSm]]
+        ;; [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
         ;; Quit app
         [:i :!CTOSi]
         ;; Hide app
@@ -737,8 +738,9 @@
 ; Hyper Keys
 ;; Sometimes need to use "hyper" keys (unlikely modifier combos) for different scenarios. i.e. if you want to use a Karabiner modifier (like z/z-mode) to trigger something in another app with a Keybinding (like Alfred or Keysmith)
 ;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
+;; NOTE: Tried to use the F modifier (fn key), but Alfred doesn't seem to play well with that 🤷🏼‍♂️
 ;;; CTOS (in use)
-;;; CTOSF (not in use yet)
+;;; TOS (in use)
 ;; Why it's necessary in Alfred: Using an external trigger doesn't work. One example of this is because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
 
 ; Plain Rule Ideas
