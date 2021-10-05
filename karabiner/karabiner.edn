@@ -334,9 +334,11 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:n [:openw "www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         ;; Jira - Board
-        [:j [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?projectKey=COCKPIT&rapidView=18"]]
+        [:j [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?projectKey=FEN&rapidView=30"]]
+        ;; Jira - Bugs
+        [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=29"]]
         ;; Jira - Backlog
-        [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
+        ;; [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
         ;; Work calendar
         [:y [:openw "calendar.google.com/calendar/u/1/r"]]
         ;; Work email
