@@ -98,6 +98,13 @@
           [:!CSquote :!CSclose_bracket]
       ]
     }
+    ;; {
+    ;;   ;; ⌘+\ is a common shortcut in apps to close a side panel on the left side. Instead of changing the keybinding in every app/website, just change it here and hope we never need ⌘+' in its original form 🤷‍♂️
+    ;;   :des "cmd+' -> cmd+\\"
+    ;;   :rules [
+    ;;     [:!CSslash :!Cbackslash]
+    ;;   ]
+    ;; }
     {
       :des "easier 'save as': ctrl+cmd+S shift+opt+cmd+S"
       :rules [
