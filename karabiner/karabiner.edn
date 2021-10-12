@@ -715,7 +715,7 @@
         [:!Ok :page_up]
       ]
     }
-    ;; TODO: Reconsider this. Is it too much of a pain to switch from Caps Lock down to z and x? Considering that's frequently where we'll be coming from
+    ;; TODO: Reconsider this. Is it too much of a pain to switch from Caps Lock down to z and x? Considering that's frequently where we'll be coming from. Could just go back to using tab... 
     {
       :des "z-x-mode (selection-mode: text nav with selection)"
       :rules [
