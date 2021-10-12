@@ -57,12 +57,22 @@
     :z-mode { :key :z }
     ;; Could move these to layers, if desirable. Won't be able to repeat the characters when holding the key anymore. Make sure to follow the process at the bottom of comma-mode
     :slash-mode { :key :slash }
+    ;; Was used for media at one point, no longer needed
     ;; :open_bracket-mode { :key :open_bracket }
-    :open_bracket-mode { :key :tab }
+    :tab-mode { :key :tab }
     :period-mode { :key :period }
   }
 
   :main [
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Manual layer triggers
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "simlayer: z-x-mode"
+      :rules [
+        [[:z :x] ["z-x-mode" 1] nil { :afterup ["z-x-mode" 0]}]
+      ]
+    }
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; General/simple
@@ -287,7 +297,7 @@
     {
       :des "quote-mode (media)"
       :rules [
-        :open_bracket-mode
+        :tab-mode
 
         [:j :volume_down]
         [:k :volume_up]
@@ -705,6 +715,31 @@
         [:!Ok :page_up]
       ]
     }
+    ;; TODO: Reconsider this. Is it too much of a pain to switch from Caps Lock down to z and x? Considering that's frequently where we'll be coming from
+    {
+      :des "z-x-mode (selection-mode: text nav with selection)"
+      :rules [
+        :z-x-mode
+
+        ; Char and word-wise nav
+        [:h :!Sleft_arrow]
+        [:j :!Sdown_arrow]
+        [:k :!Sup_arrow]
+        [:l :!Sright_arrow]
+        [:y :!OSleft_arrow]
+        [:o :!OSright_arrow]
+
+        ; To start and end of line
+        [:n :!CSleft_arrow :!Terminals]
+        [:m :!CSright_arrow :!Terminals]
+        ; Terminal doesn't support ⌘ like above, so gotta use its Cocoa keybindings
+        ;; We'll add this functionality if we need it. Don't know if it's even possible i.e. in iTerm to select with native keyboard commands
+        ;; [:n :!Ta :Terminals]
+        ;; [:m :!Te :Terminals]
+
+        ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
+      ]
+    }    
   ]
 
   :applications {
