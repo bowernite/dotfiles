@@ -57,7 +57,7 @@
     :z-mode { :key :z }
     ;; Could move these to layers, if desirable. Won't be able to repeat the characters when holding the key anymore. Make sure to follow the process at the bottom of comma-mode
     :slash-mode { :key :slash }
-    :tab-mode { :key :tab }
+    :open_bracket-mode { :key :open_bracket }
     :period-mode { :key :period }
   }
 
@@ -283,6 +283,35 @@
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
       ]
     }
+    {
+      :des "quote-mode (media)"
+      :rules [
+        :open_bracket-mode
+
+        [:j :volume_down]
+        [:k :volume_up]
+        [:m :mute]
+        [:comma :vk_consumer_previous]
+        [:period :vk_consumer_next]
+        [:spacebar :play_or_pause]
+
+        [:u :display_brightness_decrement]
+        [:i :display_brightness_increment]
+        [:h :second_brightness_decrement]
+        [:l :second_brightness_increment]
+
+        ; Random, not really "media"
+        ;; Show notification center
+        [:n :f12]
+        ;; Zoom out
+        [:o :!Chyphen]
+        ;; Zoom in
+        [:p :!Cequal_sign]
+        
+        ;; "Love"/like current Spotify song
+        ;; [:open_bracket :!CTOSquote]
+      ]
+    }
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Launchers
@@ -477,6 +506,8 @@
       ]
     }
     {
+      ;; NOTE: If using any of the original keys here (i.e. the ones that are being remapped) for things like layers and simlayers, they need to come **after** the layer's rule block. This is ostensibly because we can't remap the original key before it even has rules for its "mode"
+      ;;; (and, just using a layers based on the remapping doesn't seem to work either -- even if the remapping has no modifiers)
       :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
       :rules [
         ; ' key
@@ -486,6 +517,7 @@
         ; [ key
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
         ;; Depending on how little I end up using this going forward, it might even make sense to swap this and `. I use the backtick all the time, and it'd also be nice for jumping to Vim marks. Though I still need apostrophes when typing comments in an editor :(
+        ;; [:open_bracket :open_bracket :nil {:alone :quote}] ; [ -> '
         [:open_bracket :quote] ; [ -> '
         [:!Sopen_bracket :backslash] ; \
 
@@ -504,35 +536,6 @@
         ;; Available: Shift numbers 1, 2, 5, 6, 0
         ;; Available: Shift -, Shift = (only on Macbook keyboard)
         ;; Candidate: // TODO
-      ]
-    }
-    {
-      :des "tab-mode (media)"
-      :rules [
-        :tab-mode
-
-        [:j :volume_down]
-        [:k :volume_up]
-        [:m :mute]
-        [:comma :vk_consumer_previous]
-        [:period :vk_consumer_next]
-        [:spacebar :play_or_pause]
-
-        [:u :display_brightness_decrement]
-        [:i :display_brightness_increment]
-        [:h :second_brightness_decrement]
-        [:l :second_brightness_increment]
-
-        ; Random, not really "media"
-        ;; Show notification center
-        [:n :f12]
-        ;; Zoom out
-        [:o :!Chyphen]
-        ;; Zoom in
-        [:p :!Cequal_sign]
-        
-        ;; "Love"/like current Spotify song
-        [:open_bracket :!CTOSquote]
       ]
     }
     {
