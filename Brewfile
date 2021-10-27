@@ -17,13 +17,14 @@ brew "duti"
 brew "fzf"
 brew "go"
 brew "hyperfine"
-brew "loom"
 brew "neovim"
 # Tool for making Karabiner config management more manageable and powerful
 brew "nvm"
 # This does come with nvm, but doing it this way lets us leverage brew autoupdating
 brew "npm"
 brew "python"
+# No longer seems to come on macOS by default (since Monterrey), and is unfortunately necessary for the Alfred Trello workflow I use
+brew "php"
 brew "qmk/qmk/qmk"
 brew "ruby"
 # Formatter for shell scripts
