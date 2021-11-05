@@ -338,8 +338,8 @@
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:h [:opena "Google Chrome"] :!Chrome]
-        [:h :same_wind_app :Chrome]
+        [:j [:opena "Google Chrome"] :!Chrome]
+        [:j :same_wind_app :Chrome]
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives

@@ -81,3 +81,5 @@
 
 [delta "decorations"]
   file-decoration-style = none
+[init]
+	defaultBranch = main
