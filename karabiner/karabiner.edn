@@ -130,8 +130,9 @@
         [:!Cp :!COc :Finder]
         
         ; Messages
-        [:!Cj :!Ttab :Messages]
-        [:!Ck :!TStab :Messages]
+        ;; There's a `Go to Next Conversation`, but it's not ergonmic, and weirdly laggy. These staples work better for this purpose, it seems
+        [:!Cj :!CSclose_bracket :Messages]
+        [:!Ck :!CSopen_bracket :Messages]
 
         ; Calendar
         [:!Cj :!Cright_arrow :Calendar]
