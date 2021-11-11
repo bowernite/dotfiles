@@ -205,8 +205,11 @@ noremap <Down> <C-d>
 noremap <Up> <C-u>
 
 " Insert line below, without moving to it or entering Insert mode
-nnoremap <leader>k moO<esc>`o :delmar o<Enter>
-nnoremap <leader>j moo<esc>`o :delmar o<Enter>
+nnoremap <leader>k m`O<esc>``
+nnoremap <leader>j m`o<esc>``
+" Alternative, that avoids Vim duplicating the "comment status" of the duplicated line. Not a problem in VS Code (and this doesn't work in VS Code), so not using this for now
+" nnoremap <leader>k :set paste<CR>m`O<Esc>``:set nopaste<CR>
+" nnoremap <leader>j :set paste<CR>m`o<Esc>``:set nopaste<CR>
 
 " Insert line below and move to it, but stay in Normal mode
 nnoremap <CR> o<Space><backspace><esc>
