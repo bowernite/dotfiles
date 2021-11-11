@@ -293,10 +293,13 @@
         ;; Add macOS text replacement
         [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Add Alfred text replacement
-        [:8 [:open "keysmith://run-macro/C6D033A7-26A5-4638-B8F4-4B1013B76D8F"]]
+        ;; [:8 [:open "keysmith://run-macro/C6D033A7-26A5-4638-B8F4-4B1013B76D8F"]]
         [:n [:alfred "notes" "in.sball.searchnotes"]]
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
+        
+        [:7 :!Cdown_arrow]
+        [:8 :!Cup_arrow]
       ]
     }
     {
