@@ -22,7 +22,12 @@ install_dotfile() {
   local to="$HOME/$to_filename"
 
   if [ ! -e $to ]; then
-    echo "Creating $to ..."
+    if [ -h $to ]; then
+      echo "Symlink already exists for $to... Deleting"
+      rm $to
+    fi
+
+    echo "Creating $to..."
     ln -s $from $to
   fi
 }

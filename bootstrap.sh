@@ -52,8 +52,8 @@ install_dotfile ".zshrc__aliases"
 install_dotfile ".zshrc__private"
 install_dotfile ".gitconfig"
 install_dotfile ".gitignore_global"
-install_dotfile ".vimrc"
-install_dotfile ".vimrc__defaults"
+install_dotfile "vimrc" ".vimrc"
+install_dotfile "vimrc__defaults" ".vimrc__defaults"
 install_dotfile ".sandboxrc"
 
 ##############################################################
