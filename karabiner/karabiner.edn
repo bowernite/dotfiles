@@ -128,7 +128,7 @@
         ; Finder
         ;; More ergonomic "Copy as pathname"
         [:!Cp :!COc :Finder]
-        
+
         ; Messages
         ;; There's a `Go to Next Conversation`, but it's not ergonmic, and weirdly laggy. These staples work better for this purpose, it seems
         [:!Cj :!CSclose_bracket :Messages]
@@ -139,7 +139,7 @@
         [:!Ck :!Cleft_arrow :Calendar]
         ;; WIP: A command that triggers a menu item that doesn't have a shortcut (in this case, the "Show Notifications" item in Calendar). Inconsistent right now, as something the `return_or_enter` fires too quickly and doesn't register -- the left/right_arrows are meant to be a hack to delay it, but it's not really working. Trying Keysmith for now
         ;; [:!Cbackslash [:!CSslash :n :o :down_arrow :left_arrow :right_arrow :left_arrow :right_arrow :return_or_enter] :Calendar]
-        
+
         ; Notes
         ;; More ergonomic "Note List Search"
         [:!CSf :!COf :Notes]
@@ -323,7 +323,7 @@
         [:o :!Chyphen]
         ;; Zoom in
         [:p :!Cequal_sign]
-        
+
         ;; "Love"/like current Spotify song
         ;; [:open_bracket :!CTOSquote]
       ]
@@ -486,11 +486,7 @@
       :rules [
         :comma-mode
 
-        [:f :grave_accent_and_tilde] ; `
-        [:d :hyphen] ; -
-        [:g :equal_sign] ; =
-        [:c :!S4] ; $
-
+        ; Brackets
         [:q :close_bracket] ; ]
         [:w :open_bracket] ; [
         [:a :!Sopen_bracket] ; {
@@ -498,16 +494,19 @@
         [:z :!Sclose_bracket] ; }
         [:x :!S0] ; )
 
+        [:f :grave_accent_and_tilde] ; `
+        [:d :hyphen] ; -
+
+        [:c :!S4] ; $
         [:e :!Squote] ; "
         [:r :!S1] ; !
-        [:t :!Sbackslash] ; |
         [:v :!S7] ; &
 
-        [:b :!Shyphen] ; _
+        [:g :equal_sign] ; =
         [:caps_lock :!S8] ; *
-        [:tab :!Speriod] ; >
-        ;; [:j :!S6] ; ^
-
+        [:t :!Sequal_sign] ; >
+        [:b :!Shyphen] ; _
+        [:tab :!Sbackslash] ; |
 
         ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
         [:2 :!SO2] ; €
@@ -540,9 +539,6 @@
         ; / key
         ;; (could maybe do # here instead)
         [:!Sslash :!Sgrave_accent_and_tilde] ; -> ~
-        
-        ; > (shift + .) key
-        [:!Speriod :!Sequal_sign] ; -> +
 
         ; Shift + numbers (right side; left side are in semicolon-mode rules)
         [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
@@ -744,7 +740,7 @@
 
         ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
       ]
-    }    
+    }
   ]
 
   :applications {
