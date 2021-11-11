@@ -1,6 +1,8 @@
 #!/bin/bash
 
-: ${SANDBOXRC:="$HOME/.sandboxrc"}
+# NOTE: If this starts to break, it might have been because you changed .sandboxrc to be sandboxrc. Change it back (both in source code here and the filename itself) if broken
+
+: ${SANDBOXRC:="$HOME/sandboxrc"}
 
 # holds all hook descriptions in "cmd:hook" format
 sandbox_hooks=()
@@ -26,7 +28,7 @@ function sandbox() {
     sandbox_delete_hooks $cmd
     sandbox_init_$cmd # run user-defined sandbox
   else
-    (echo >&2 "sandbox '$cmd' not found.\nHave you defined sandbox_init_$cmd(){ ... } in your ~/.sandboxrc?")
+    (echo >&2 "sandbox '$cmd' not found.\nHave you defined sandbox_init_$cmd(){ ... } in your ~/sandboxrc?")
     return 1
   fi
 }
