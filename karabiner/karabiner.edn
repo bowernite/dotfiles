@@ -495,10 +495,10 @@
         [:x :!S0] ; )
 
         [:f :grave_accent_and_tilde] ; `
-        [:d :hyphen] ; -
+        [:d :!Squote] ; "
 
         [:c :!S4] ; $
-        [:e :!Squote] ; "
+        [:e :hyphen] ; -
         [:r :!S1] ; !
         [:v :!S7] ; &
 
