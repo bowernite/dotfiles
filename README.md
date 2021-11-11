@@ -23,7 +23,7 @@ On a brand new installation of macOS:
 1. `xcode-select --install` (install dev tools, like `git` and `make`)
 1. `` bash -c "`curl -fsSL https://raw.githubusercontent.com/babramczyk/dotfiles/master/remote-install.sh`" `` (clones this repo to the machine)
 1. `cd ~/src/personal/dotfiles && source bootstrap.sh`
-1. Add any sensitive data to [.zshrc\_\_private](.zshrc__private)
+1. Add any sensitive data to [zshrc\_\_private](zshrc__private)
 
 ```shell
 export __a_secret=

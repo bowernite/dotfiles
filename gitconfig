@@ -45,7 +45,7 @@
   unwip = "!git log -n 1 | grep -q -c -e \"--wip--\" && git reset HEAD~1"
 
   # Remove files from git that are now ignored
-  rig = !"git ls-files --ignored --exclude-standard | sed 's/.*/"&"/' | xargs git rm -r --cached"
+  rig = !"git ls-files --ignored --exclude-standard --cached | sed 's/.*/"&"/' | xargs git rm -r --cached"
 
   rev = !"git fetch && git diff origin/$(git dev-branch)"
 
@@ -74,7 +74,7 @@
   rebase = false
 
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/gitignore_global
 
 [delta]
   features = line-numbers decorations

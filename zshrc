@@ -5,11 +5,11 @@ dotfiles_dir=$HOME/src/personal/dotfiles
 ##############################################################
 
 # The generated file that comes from oh-my-zsh
-source $dotfiles_dir/.zshrc__generated
+source $dotfiles_dir/zshrc__generated
 # Private stuff (keys, company-specific, etc.)
-source $dotfiles_dir/.zshrc__private
-source $dotfiles_dir/.zshrc__aliases
-source $dotfiles_dir/.zshrc__git
+source $dotfiles_dir/zshrc__private
+source $dotfiles_dir/zshrc__aliases
+source $dotfiles_dir/zshrc__git
 
 ##############################################################
 # PATH shenanigans
@@ -118,7 +118,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
-# See .sandboxrc for details
+# See sandboxrc for details
 # Turning this off for now -- current position has a node requirement in package.json that prevents a lot of things from running if the correct node version isn't available. So for now, going to roll without sandboxd
 # source $dotfiles_dir/bin/sandboxd
 

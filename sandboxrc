@@ -1,5 +1,5 @@
 ##############################################################
-# .sandboxrc
+# sandboxrc
 #
 # File that helps sandboxd lazy load some things in the shell (e.g. nvm)
 #

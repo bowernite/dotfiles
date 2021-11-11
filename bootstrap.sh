@@ -46,15 +46,17 @@ sleep 2s
 ##############################################################
 log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
-install_dotfile ".zshrc"
-install_dotfile ".zshrc__generated"
-install_dotfile ".zshrc__aliases"
-install_dotfile ".zshrc__private"
-install_dotfile ".gitconfig"
-install_dotfile ".gitignore_global"
+install_dotfile "zshrc" ".zshrc"
+install_dotfile "zshrc__generated" ".zshrc__generated"
+install_dotfile "zshrc__aliases" ".zshrc__aliases"
+install_dotfile "zshrc__private" ".zshrc__private"
+install_dotfile "gitconfig" ".gitconfig"
+install_dotfile "gitignore_global" ".gitignore_global"
 install_dotfile "vimrc" ".vimrc"
 install_dotfile "vimrc__defaults" ".vimrc__defaults"
-install_dotfile ".sandboxrc"
+install_dotfile "sandboxrc" ".sandboxrc"
+
+exit
 
 ##############################################################
 # Karabiner symlinking
