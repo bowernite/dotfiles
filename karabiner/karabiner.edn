@@ -495,10 +495,10 @@
         [:x :!S0] ; )
 
         [:f :grave_accent_and_tilde] ; `
-        [:d :!Squote] ; "
+        [:d :hyphen] ; -
 
         [:c :!S4] ; $
-        [:e :hyphen] ; -
+        [:e :quote] ; '
         [:r :!S1] ; !
         [:v :!S7] ; &
 
@@ -533,7 +533,7 @@
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
         ;; Depending on how little I end up using this going forward, it might even make sense to swap this and `. I use the backtick all the time, and it'd also be nice for jumping to Vim marks. Though I still need apostrophes when typing comments in an editor :(
         ;; [:open_bracket :open_bracket :nil {:alone :quote}] ; [ -> '
-        [:open_bracket :quote] ; [ -> '
+        [:open_bracket :!Squote] ; [ -> "
         [:!Sopen_bracket :backslash] ; \
 
         ; / key
