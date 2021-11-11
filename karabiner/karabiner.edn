@@ -378,6 +378,7 @@
         [:7 [:opena "Karabiner-EventViewer"]]
         [:close_bracket [:opena "WhatsApp"]]
         [:h [:opena "WhatsApp"]]
+        [:g [:opena "Photos"]]
         [:t [:opena "Emmet Cheat Sheet"]]
         [:b [:opena "Books"]]
       ]
