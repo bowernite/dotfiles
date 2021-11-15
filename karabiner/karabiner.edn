@@ -359,7 +359,8 @@
         [:n [:opena "Notes"]]
         [:semicolon [:opena "iTerm"]]
         [:m [:opena "Messages"]]
-        [:i [:opena "Trello"]]
+        [:i [:opena "Trello"] :!Trello]
+        [:i :same_wind_app :Trello]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
         [:o [:opena "Wonder"]]
@@ -788,6 +789,9 @@
       "^org\\.chromium\\.Chromium$"
       "^com\\.google\\.Chrome\\.canary$"
       "^com\\.apple\\.Safari$"
+    ]
+    :Trello [
+      "^com\\.google\\.Chrome\\.app\\.ddcgpgedmbgolgiecdlmmpddfkanmkli$"
     ]
   }
 }
