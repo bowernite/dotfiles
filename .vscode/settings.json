@@ -11,10 +11,7 @@
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#ac6513",
     "activityBarBadge.foreground": "#e7e7e7",
-    "editorGroup.border": "#6513ac",
-    "panel.border": "#6513ac",
-    "sash.hoverBorder": "#6513ac",
-    "sideBar.border": "#6513ac"
+    "sash.hoverBorder": "#6513ac"
   },
   "peacock.color": "#4a0e7e",
   "[clojure]": {
