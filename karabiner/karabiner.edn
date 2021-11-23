@@ -513,11 +513,13 @@
         [:b :!Shyphen] ; _
         [:tab :!Sbackslash] ; |
 
+        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
-        [:2 :!SO2] ; €
-        [:3 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
+        [:3 :!SO2] ; €
         ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
         [:4 [:slash :!S8 :!S8]] ; -> /**
+        ;; Big ol' separator
+        [:1 [:!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde]]
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
