@@ -189,7 +189,8 @@ dark() {
 light() {
   setup_themes light
 }
-reset_themes() {
+# Alias for "Theme"
+t() {
   setup_themes
 }
 
