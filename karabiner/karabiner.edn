@@ -146,12 +146,15 @@
         ;; Need to specify this as a one-off, since a normal Shift mapping won't work for our semicolon-mode
         [:!Cf :!COf [:Notes :semicolon-mode]]
 
-        ; In Chrome, return focus to the document (Chrome doesn't provide any way to do this natively)
-        ; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
+        ; Chrome
+        ;; In Chrome, return focus to the document (Chrome doesn't provide any way to do this natively)
+        ;; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
         ;; [:!Cj [:!Cl :j :return_or_enter :g :!Sf] :Chrome]
         [:!Cj [:!Cl :j :return_or_enter] :Chrome]
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
+        ;; More ergonomic tab search
+        [:!Ci :!CSa]
 
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Wopen_bracket :!To :Terminals]
