@@ -272,18 +272,20 @@
         ;; [:o [:alfred "query bitwarden" "com.lisowski-development.alfred.bitwarden"]]
         [:semicolon [:alfred "jira" "jira.steyep"]]
         ;; Hide notification(s)
-        [:h :!CTOSh]
+        [:i :!CTOSi]
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
         ;; Google Maps search
-        [:m [:!TOSm]]
+        [:m :!TOSm]
         ;; [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
         ;; Quit app
-        [:i :!CTOSi]
+        [:y :!CTOSy]
         ;; Hide app
         ;; [:semicolon :!CTOSsemicolon]
         ;; MDN search ("feeling lucky" Google search on MDN)
         ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
         [:slash :!CTOSm]
+        ;; Query screenshots folder
+        [:h :!TOSh]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
