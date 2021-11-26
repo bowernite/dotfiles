@@ -283,7 +283,7 @@
         [:m :!TOSm]
         ;; [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
         ;; Quit app
-        [:y :!CTOSy]
+        [:6 :!CTOSy]
         ;; Hide app
         ;; [:semicolon :!CTOSsemicolon]
         ;; MDN search ("feeling lucky" Google search on MDN)
