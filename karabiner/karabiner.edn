@@ -270,16 +270,17 @@
         ;;; Have to use a hotkey, since the Bitwarden workflow can't "show more" properly when the workflow was triggered with an External Trigger
         [:o [:!CTOSo]]
         ;; [:o [:alfred "query bitwarden" "com.lisowski-development.alfred.bitwarden"]]
-        [:j [:alfred "jira" "jira.steyep"]]
+        [:semicolon [:alfred "jira" "jira.steyep"]]
         ;; Hide notification(s)
         [:h :!CTOSh]
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
+        ;; Google Maps search
         [:m [:!TOSm]]
         ;; [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
         ;; Quit app
         [:i :!CTOSi]
         ;; Hide app
-        [:semicolon :!CTOSsemicolon]
+        ;; [:semicolon :!CTOSsemicolon]
         ;; MDN search ("feeling lucky" Google search on MDN)
         ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
         [:slash :!CTOSm]
@@ -300,6 +301,8 @@
         
         [:7 :!Cdown_arrow]
         [:8 :!Cup_arrow]
+        ;; macOS screen recording
+        [:j :!CS5]
       ]
     }
     {
