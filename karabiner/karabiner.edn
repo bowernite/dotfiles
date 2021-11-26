@@ -154,9 +154,9 @@
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
         ;; More ergonomic tab search
-        [:!Ck :!CSa]
+        [:!Ck :!CSa :Chrome]
         ;; Replacement for ⌘K (on some sites, this is a shortcut for search)
-        [:!Ci :!Ck]
+        [:!Ci :!Ck :Chrome]
 
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Wopen_bracket :!To :Terminals]
