@@ -338,7 +338,7 @@
         [:p :!Cequal_sign]
 
         ;; Love/like current Spotify song
-        ;; [:open_bracket :!CTOSquote]
+        [:open_bracket :!CTOSquote]
       ]
     }
 
