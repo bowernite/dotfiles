@@ -337,7 +337,7 @@
         ;; Zoom in
         [:p :!Cequal_sign]
 
-        ;; "Love"/like current Spotify song
+        ;; Love/like current Spotify song
         ;; [:open_bracket :!CTOSquote]
       ]
     }
