@@ -378,7 +378,8 @@
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "Alfred Preferences"]]
-        [:open_bracket [:opena "Preview"]]
+        [:open_bracket [:opena "Preview"] :!Preview]
+        [:open_bracket :same_wind_app :Preview]
         [:p [:opena "Reminders"]]
         ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
         [:delete_or_backspace [:opena "Preview"]]
@@ -784,6 +785,7 @@
     :Notes ["^com\\.apple\\.Notes$"]
     :Messages ["^com\\.apple\\.MobileSMS$"]
     :Calendar ["^com\\.apple\\.iCal$"]
+    :Preview ["^com\\.apple\\.Preview$"]
     :Debuggers [
       "^org\\.mozilla\\.firefox$"
     "^org\\.mozilla\\.firefoxdeveloperedition$"
