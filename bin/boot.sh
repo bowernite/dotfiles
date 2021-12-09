@@ -6,11 +6,11 @@
 # The `sleep`s are to prevent VS Code from opening them all in one Workspace together (one window instead of separately)
 # -g makes it not go into the foreground, -j opens it hidden. Doesn't seem to work if the app is already open
 open -gj -a "Visual Studio Code" ~/Dropbox/wiki
-sleep 0.5
+sleep 2
 open -gj -a "Visual Studio Code" ~/src/personal/dotfiles
-sleep 0.5
+sleep 2
 open -gj -a "Visual Studio Code" ~/src/work/wonder-web
-sleep 0.5
+sleep 2
 open -gj -a "Visual Studio Code" ~/src/personal/qmk_firmware
 
 open -gj -a "Trello"
