@@ -306,8 +306,9 @@
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
 
-        [:7 :!Cdown_arrow]
-        [:8 :!Cup_arrow]
+        [:7 :page_down]
+        [:8 :page_up]
+
         ;; macOS screen recording
         [:j :!CS5]
       ]
@@ -699,8 +700,8 @@
         ; Char and word-wise deletion
         [:!Wu :!Odelete_or_backspace]
         [:!Wi :delete_or_backspace]
-        [:!W7 :!Odelete_forward]
-        [:!W8 :delete_forward]
+        [:!W7 :!Cdown_arrow]
+        [:!W8 :!Cup_arrow]
 
         ; To start and end of line
         [:!W#SRn :!Cleft_arrow :!Terminals]
