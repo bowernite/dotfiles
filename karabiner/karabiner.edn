@@ -729,10 +729,6 @@
 
         ; Clear everything
         [:!Wdelete_or_backspace [:!Ca :delete_or_backspace]]
-
-        ; Page up/down
-        [:!Oj :page_down]
-        [:!Ok :page_up]
       ]
     }
     ;; TODO: Reconsider this. Is it too much of a pain to switch from Caps Lock down to z and x? Considering that's frequently where we'll be coming from. Could just go back to using tab... Or make z-x-mode responsible for media and flip them
@@ -756,6 +752,9 @@
         ;; We'll add this functionality if we need it. Don't know if it's even possible i.e. in iTerm to select with native keyboard commands
         ;; [:n :!Ta :Terminals]
         ;; [:m :!Te :Terminals]
+        
+        [:7 :!CSdown_arrow]
+        [:8 :!CSup_arrow]
 
         ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
       ]
