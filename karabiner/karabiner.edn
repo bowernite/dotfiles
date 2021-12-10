@@ -305,7 +305,7 @@
         [:n [:alfred "notes" "in.sball.searchnotes"]]
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
-        
+
         [:7 :!Cdown_arrow]
         [:8 :!Cup_arrow]
         ;; macOS screen recording
@@ -524,9 +524,10 @@
         [:b :!Shyphen] ; _
         [:tab :!Sbackslash] ; |
 
-        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
-        [:3 :!SO2] ; €
+        [:grave_accent_and_tilde :!SO2] ; €
+        [:3 [:spacebar :slash :spacebar]]
+        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
         [:4 [:slash :!S8 :!S8]] ; -> /**
         ;; Big ol' separator
@@ -563,9 +564,8 @@
         [:!S8 [:equal_sign :equal_sign :equal_sign]] ; ===
         [:!S9 [:!S1 :equal_sign :equal_sign]] ; !==
 
-        ;; Available: Shift numbers 1, 2, 5, 6, 0
+        ;; Available: Shift numbers 5, 6, 0
         ;; Available: Shift -, Shift = (only on Macbook keyboard)
-        ;; Candidate: // TODO
       ]
     }
     {
