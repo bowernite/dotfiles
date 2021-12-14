@@ -311,6 +311,8 @@
 
         ;; macOS screen recording
         [:j :!CS5]
+        ; Copy screenshot of full screen
+        [:a :!CTOSd]
       ]
     }
     {
