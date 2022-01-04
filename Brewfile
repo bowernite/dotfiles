@@ -54,6 +54,7 @@ brew "gnutls"
 brew "gawk"
 brew "gzip"
 brew "make"
+brew "pngpaste"
 
 #######################################
 # Casks
