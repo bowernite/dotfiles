@@ -11,6 +11,8 @@ tap "domt4/autoupdate"
 brew "bitwarden-cli"
 # Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
+# More lightweight Docker / container runtimes
+brew "colima"
 brew "dockutil"
 # Tool for managing default apps for each extension on macos
 brew "duti"
