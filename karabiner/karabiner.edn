@@ -756,8 +756,8 @@
         ;; [:n :!Ta :Terminals]
         ;; [:m :!Te :Terminals]
         
-        [:7 :!CSdown_arrow]
-        [:8 :!CSup_arrow]
+        [:9 :!CSdown_arrow]
+        [:0 :!CSup_arrow]
 
         ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
       ]
