@@ -701,10 +701,10 @@
         [:!Wi :delete_or_backspace]
         
         ; Scrolling (full pages, and entire "document")
-        [:!W6 :!Cdown_arrow]
         [:!W7 :page_down]
         [:!W8 :page_up]
-        [:!W9 :!Cup_arrow]
+        [:!W9 :!Cdown_arrow]
+        [:!W0 :!Cup_arrow]
 
         ; To start and end of line
         [:!W#SRn :!Cleft_arrow :!Terminals]
