@@ -405,7 +405,6 @@
 
         ; Work
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:n [:openw "www.notion.so/wonderme/Product-Engineering-Team-831260e699944dc8b51f24382bf7bc40"]]
         ;; Jira - Board
         [:j [:openw "wonder-me.atlassian.net/jira/software/c/projects/FEN/boards/35"]]
         ;; Jira - Bugs
@@ -419,6 +418,7 @@
         ;; Add custom emojis to Slack
         [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
+        [:n [:openw "www.notion.so"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
         [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
