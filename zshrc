@@ -34,6 +34,7 @@ PATH="/usr/local/sbin:$PATH"
 
 # For making GNU commands the default over the macOS/BSD ones
 # I'm not actually sure one is better than the other. Though in `sed`'s case specifically, I wasted some time because the BSD version didn't have the options I needed/didn't match an answer I found online. So I don't know, maybe I'll change this back one day, or pick and choose when I actually want to make the GNU version the default. But for now, it's all I've specified in the `Brewfile`
+# test
 ## This one's huge, and just has a ton of basic commands
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
