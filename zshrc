@@ -29,6 +29,9 @@ PATH="$HOME/go/bin:${PATH}"
 PATH="/usr/local/opt/ruby/bin:$PATH"
 PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 
+# Homebrew
+PATH="/usr/local/sbin:$PATH"
+
 # For making GNU commands the default over the macOS/BSD ones
 # I'm not actually sure one is better than the other. Though in `sed`'s case specifically, I wasted some time because the BSD version didn't have the options I needed/didn't match an answer I found online. So I don't know, maybe I'll change this back one day, or pick and choose when I actually want to make the GNU version the default. But for now, it's all I've specified in the `Brewfile`
 ## This one's huge, and just has a ton of basic commands
