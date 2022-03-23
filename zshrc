@@ -15,21 +15,21 @@ source $dotfiles_dir/zshrc__git
 # PATH shenanigans
 ##############################################################
 
-# Setting PATH for Python 3.8
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+# Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
+## See: https://docs.brew.sh/Homebrew-and-Python
+PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Setting PATH for mongodb
-PATH="$HOME/mongodb/bin:${PATH}"
+PATH="$HOME/mongodb/bin:$PATH"
 
 # Setting PATH for Go executables
-PATH="$HOME/go/bin:${PATH}"
+PATH="$HOME/go/bin:$PATH"
 
 # Setting PATH for ruby and its gem executables
 PATH="/usr/local/opt/ruby/bin:$PATH"
 PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 
-# Homebrew
+# Homebrew recommended this be included in path
 PATH="/usr/local/sbin:$PATH"
 
 # For making GNU commands the default over the macOS/BSD ones
