@@ -406,9 +406,9 @@
         ; Work
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Jira - Board
-        [:j [:openw "wonder-me.atlassian.net/jira/software/c/projects/FEN/boards/35"]]
+        ;; [:j [:openw "wonder-me.atlassian.net/jira/software/c/projects/FEN/boards/35"]]
         ;; Jira - Bugs
-        [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=29"]]
+        ;; [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=29"]]
         ;; Jira - Backlog
         ;; [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
         ;; Work calendar
@@ -416,7 +416,7 @@
         ;; Work email
         [:k [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
-        [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
+        ;; [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
 
         [:n [:openw "www.notion.so"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
