@@ -373,7 +373,7 @@
         [:i :same_wind_app :Trello]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
-        [:o [:opena "Wonder"]]
+        [:o [:opena "Gather"]]
         [:y [:opena "Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
