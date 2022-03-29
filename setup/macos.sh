@@ -2,8 +2,6 @@
 #  macOS: Configure macOS settings
 ##############################################################
 
-# TODO: Touchbar preferences
-
 source ~/src/personal/dotfiles/bin/utils.sh
 
 # Ask for the administrator password upfront

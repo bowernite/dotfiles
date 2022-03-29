@@ -45,7 +45,7 @@ gci() {
 }
 # Commit lazy, with a message
 # NOTE: A copy of this logic (without using zsh aliases) exists as an executable in `bin` in this repository. See that script for details why
-alias gcim="gci -m"
+# alias gcim="gci -m"
 
 # "git pull origin main"
 # `--no-edit` suppresses editing the commit message when doing the pull as a merge
