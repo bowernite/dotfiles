@@ -24,7 +24,7 @@ alias oldbrew=/usr/local/bin/brew
 
 # Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
 ## See: https://docs.brew.sh/Homebrew-and-Python
-PATH="/usr/local/opt/python/libexec/bin:$PATH"
+PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
 # Setting PATH for mongodb
 PATH="$HOME/mongodb/bin:$PATH"
@@ -42,15 +42,15 @@ PATH="/usr/local/sbin:$PATH"
 # For making GNU commands the default over the macOS/BSD ones
 # I'm not actually sure one is better than the other. Though in `sed`'s case specifically, I wasted some time because the BSD version didn't have the options I needed/didn't match an answer I found online. So I don't know, maybe I'll change this back one day, or pick and choose when I actually want to make the GNU version the default. But for now, it's all I've specified in the `Brewfile`
 ## This one's huge, and just has a ton of basic commands
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-which/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gawk/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnutls/bin:$PATH"
-PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-indent/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnutls/bin:$PATH"
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 export PATH
 
