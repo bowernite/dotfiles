@@ -15,6 +15,13 @@ source $dotfiles_dir/zshrc__git
 # PATH shenanigans
 ##############################################################
 
+# New M1 homebrew
+PATH="/opt/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Old Intel homebrew executable
+alias oldbrew=/usr/local/bin/brew
+
 # Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
 ## See: https://docs.brew.sh/Homebrew-and-Python
 PATH="/usr/local/opt/python/libexec/bin:$PATH"
