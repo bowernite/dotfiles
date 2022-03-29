@@ -3,6 +3,8 @@
 #######################################
 
 tap "domt4/autoupdate"
+tap "qmk/qmk"
+tap "yqrashawn/goku"
 
 #######################################
 # Formulae
@@ -11,7 +13,7 @@ tap "domt4/autoupdate"
 brew "bitwarden-cli"
 # Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
-# More lightweight Docker / container runtimes
+# More Docker / container runtimes
 brew "colima"
 brew "dockutil"
 # Tool for managing default apps for each extension on macos
@@ -33,6 +35,7 @@ brew "ruby"
 brew "shfmt"
 brew "yarn"
 brew "yqrashawn/goku/goku"
+brew "zsh-syntax-highlighting"
 
 ####################
 # Utils /
@@ -65,6 +68,7 @@ brew "pngpaste"
 cask "alfred"
 cask "bartender"
 cask "bitwarden"
+cask "cold-turkey-blocker"
 cask "docker"
 cask "dropbox"
 cask "firefox"
@@ -73,7 +77,6 @@ cask "google-chrome"
 cask "iterm2"
 cask "karabiner-elements"
 cask "monitorcontrol"
-cask "postman"
 cask "rectangle"
 cask "spotify"
 cask "slack"
