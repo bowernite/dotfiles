@@ -157,9 +157,10 @@ if [[ -z $has_aliased_npx ]]; then
 fi
 
 # Symlink local executables into a path-accessible place
-if [[ ! -L "/usr/local/bin/gcim" ]]; then
-  ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
-fi
+## NOTE: See that file in this repo for notes on why we're not symlinking this for the time being
+# if [[ ! -L "/usr/local/bin/gcim" ]]; then
+#   ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
+# fi
 
 # Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
 export GIT_MERGE_AUTOEDIT=no

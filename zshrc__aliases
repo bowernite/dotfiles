@@ -170,7 +170,7 @@ setup_themes() {
   alias bat="bat --theme=$bat_theme"
   alias cat="bat"
 
-  alias delta="delta --syntax-theme=$delta_theme"
+  # alias delta="delta --syntax-theme=$delta_theme"
 
   # To make sure git uses Delta, _with_ the theme we've decided on :)
   export GIT_PAGER="delta --syntax-theme=$delta_theme"
