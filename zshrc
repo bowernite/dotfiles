@@ -159,6 +159,7 @@ fi
 # Symlink local executables into a path-accessible place
 if [[ ! -L "/usr/local/bin/gcim" ]]; then
   ln -s "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
+
 fi
 
 # Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
