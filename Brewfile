@@ -15,6 +15,9 @@ brew "bitwarden-cli"
 brew "bluetoothconnector"
 # More Docker / container runtimes
 brew "colima"
+# Pretty diffs 😍
+brew "delta"
+# Util for managing dock with the command line. Used in bootstrap scripts to set dock icons
 brew "dockutil"
 # Tool for managing default apps for each extension on macos
 brew "duti"
