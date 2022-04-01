@@ -83,3 +83,5 @@
   file-decoration-style = none
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only --syntax-theme=GitHub
