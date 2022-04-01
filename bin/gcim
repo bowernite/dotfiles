@@ -1,3 +1,5 @@
+# NOTE: After moving to Apple Silicon mac, symlinking this to /usr/local/bin/gcm doesn't seem to make it accessible in $PATH. So we're just copy-pasting the contents (as of 4/1/22) as a quick fix. AKA changes to this file won't do anything -- they need to be replicated directly to the copy of this file at /usr/local/bin/gcim
+
 # Copy of logic for the `gcim` shell alias. This exists as an executable (and is symlinked into `/usr/local/bin` in zshrc) so that VS Code tasks have access to it, as it doesn't seem to have access to our custom shell aliases
 if git diff --cached --quiet; then
   # No files are staged -- commit all unstaged changes
