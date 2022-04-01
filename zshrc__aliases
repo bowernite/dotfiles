@@ -175,7 +175,8 @@ setup_themes() {
   # To make sure git uses Delta, _with_ the theme we've decided on :)
   export GIT_PAGER="delta --syntax-theme=$delta_theme"
   # Oh, and since you can't use environment variables in your ~/gitconfig, we're going to manually set the "system" gitconfig here based on $delta_theme, to make sure intractive git commands (e.g. `git add -p`) are also pretty 💅
-  git config --system interactive.diffFilter "delta --color-only --syntax-theme=$delta_theme"
+  # NOTE: Since moving to Apple Silicon mac, using --system here (like I want to do, since it doesn't touch our global and git-tracked gitconfig) requires sudo access. Which we can't do, because then we need a password everytime we start up a new shell
+  git config --global interactive.diffFilter "delta --color-only --syntax-theme=$delta_theme"
 
   # Use `bat` for syntax highlighting in man pages
   export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
