@@ -417,6 +417,8 @@
         [:k [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
         ;; [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
+        ;; Level (reimbursements)
+        [:l [:open "keysmith://run-macro/016BFA39-CABE-4E33-9045-73BA6F72CB5E"]]
 
         [:n [:openw "www.notion.so"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
