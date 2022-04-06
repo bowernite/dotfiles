@@ -127,6 +127,9 @@ git_dev_branch() {
     echo development
   elif [[ -n $(git branch --list main) ]]; then
     echo main
+  # Gather uses this
+  elif [[ -n $(git branch --list staging) ]]; then
+    echo staging
   else
     echo master
   fi
