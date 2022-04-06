@@ -2,7 +2,8 @@
 alias gcob="git co -b"
 
 # "git start": Starts a new branch from the latest version of the development branch
-alias gs="gcod && gcob"
+# If I need this again, it needs a new name. It wiped out my work one time 😭
+# alias gs="gcod && gcob"
 
 # "git checkout main/dev"
 # Also resets to HEAD, since that's pretty much always what I want when switching to one of these branches. Could also `git fetch` here before resetting to HEAD, but not sure if that's desirable yet + not necessary when in VS Code, since it fetches automatically in the background
