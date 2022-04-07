@@ -268,6 +268,6 @@ gif() {
 }
 compress_vid() {
   local input_file="$1"
-  local output_file_name="${2}.mov"
+  local output_file_name="${2}.mp4"
   ffmpeg -i $input_file -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name"
 }
