@@ -255,8 +255,19 @@ c() {
 }
 
 # Video/ffmpeg shtuff
-gif() {
+## The two gif ones make a way bigger file than normal. The problem seems to be with our gifsicle usage, as the `compress_vid` util successfully makes a very small file
+demo_gif() {
   local input_vid_num="$1"
-  local output_file_name=${2:-"demo-$1.gif"}
+  local output_file_name="${2:-"demo-$1"}.gif"
   ffmpeg -i "/Users/brett/Screenshots/📹 SS ${input_vid_num}.mov" -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Screenshots/$output_file_name" && gifsicle -O3 "/Users/brett/Screenshots/$output_file_name" -o "/Users/brett/Screenshots/$output_file_name"
+}
+gif() {
+  local input_file="$1"
+  local output_file_name="${2}.gif"
+  ffmpeg -i $input_file -vf "fps=10,scale=300:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name" && gifsicle -O3 "/Users/brett/Downloads/$output_file_name" -o "/Users/brett/Downloads/$output_file_name"
+}
+compress_vid() {
+  local input_file="$1"
+  local output_file_name="${2}.mov"
+  ffmpeg -i $input_file -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name"
 }
