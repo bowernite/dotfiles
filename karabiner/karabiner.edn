@@ -526,14 +526,18 @@
         [:b :!Shyphen] ; _
         [:tab :!Sbackslash] ; |
 
-        ;; This could stay or go, doesn't really matter, I have a text replacement for it anyway
-        [:grave_accent_and_tilde :!SO2] ; €
+        ;; Euro: This could stay or go, doesn't really matter, I have a text replacement for it anyway
+        ;; [:grave_accent_and_tilde :!SO2] ; €
         [:3 [:spacebar :slash :spacebar]]
         [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
         [:4 [:slash :!S8 :!S8]] ; -> /**
-        ;; Big ol' separator
-        [:1 [:!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde]]
+
+        ;; ;; Big ol' separator
+        ;; [:1 [:!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde]]
+        [:1 [:hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen]]
+        ;; Notion separator / line (steals text focus right now...)
+        [:grave_accent_and_tilde [:hyphen :hyphen :hyphen]]
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
