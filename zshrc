@@ -1,8 +1,8 @@
 dotfiles_dir=$HOME/src/personal/dotfiles
 
-##############################################################
+#####################################################################
 # Imports
-##############################################################
+#####################################################################
 
 # The generated file that comes from oh-my-zsh
 source $dotfiles_dir/zshrc__generated
@@ -11,9 +11,9 @@ source $dotfiles_dir/zshrc__private
 source $dotfiles_dir/zshrc__aliases
 source $dotfiles_dir/zshrc__git
 
-##############################################################
+#####################################################################
 # PATH shenanigans
-##############################################################
+#####################################################################
 
 # New M1 homebrew
 PATH="/opt/homebrew/bin:$PATH"
@@ -51,9 +51,9 @@ PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 
 export PATH
 
-##############################################################
+#####################################################################
 # Shell prompt
-##############################################################
+#####################################################################
 
 # Puts a new line after all prompts
 precmd() {
@@ -77,9 +77,19 @@ function random_emoji() {
 
 PROMPT="$PROMPT"$'\n'"  "
 
-##############################################################
+#####################################################################
+# Git
+#####################################################################
+
+# Enable git auto-completion
+## Source: https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+autoload -Uz compinit && compinit
+
+#####################################################################
 # FZF
-##############################################################
+#####################################################################
 
 # fzf autocompletion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -104,9 +114,9 @@ _fzf_compgen_path() {
   # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 
-##############################################################
+#####################################################################
 # Navigation
-##############################################################
+#####################################################################
 
 # When typing a command that can't be executed, and the command is the name of the directory, cd into it. Also works with autocomplete
 # Source: http://zsh.sourceforge.net/Doc/Release/Options.html
@@ -119,9 +129,9 @@ cdpath=($HOME/src $HOME/src/work $HOME/src/personal $HOME/playground $HOME/Dropb
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
   'local-directories named-directories path-directories'
 
-##############################################################
+#####################################################################
 # Miscellaneous setup
-##############################################################
+#####################################################################
 
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
