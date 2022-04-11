@@ -31,6 +31,7 @@
     :alfred         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
     :open        "open %s"
     :opena       "open -a \"%s\" %s"
+    :osa         "osascript -e '%s'"
     ;; "Open website"
     ;;; Techinically, BSD `open` can open a URL as the second arg, with the default browser. But, it has a funny behavior for certain URLs (hard to pinpoint what they have in common) -- it briefly opens `Finder`, _then_ the default browser. This can be annoying, as now Cmd-Tabbing quickly brings you back to Finder, instead of the last app you were actually interacting with
     :openw       "open -a \"Google Chrome\" \"https://%s\""
@@ -261,10 +262,11 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Emoji picker
         [:k [:alfred "pick emoji" "com.github.jsumners.alfred-emoji"]]
-        ;; Translate German to English
-        [:comma :!CTOcomma]
-        ;; Translate English to German
-        [:period :!CTOperiod]
+        ;; [:comma :!CTw]
+        ;; "Get Out Button": Hide all windows
+        [:comma :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch]
+        ;; Sleep
+        [:period [:osa "tell application \"Finder\" to sleep"]]
         ;; umlaut (uses macOS's option+u for this)
         [:quote :!Ou]
         ;; Unicode symbol search
