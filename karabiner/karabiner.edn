@@ -422,7 +422,7 @@
         ;; Level (reimbursements)
         [:l [:open "keysmith://run-macro/016BFA39-CABE-4E33-9045-73BA6F72CB5E"]]
 
-        [:n [:openw "www.notion.so"]]
+        [:n [:openw "www.notion.so/Notes-420ab1675f494be2a0c34fd8fe1c8025"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
         [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
