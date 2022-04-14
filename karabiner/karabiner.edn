@@ -277,7 +277,6 @@
         ;;; Have to use a hotkey, since the Bitwarden workflow can't "show more" properly when the workflow was triggered with an External Trigger
         [:o [:!CTOSo]]
         ;; [:o [:alfred "query bitwarden" "com.lisowski-development.alfred.bitwarden"]]
-        ;; [:semicolon [:alfred "jira" "jira.steyep"]]
         ;; Hide notification(s)
         [:i :!CTOSi]
         [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
