@@ -86,8 +86,10 @@ alias gpr="git pull --rebase"
 # Quick committs with `gitupdate` go package
 alias gup="gitupdate ."
 
-# "git publish": See .gitcnofig alias for details
+# "git publish": Pushes a branch to remote. See .gitconfig for implementation
 alias gpub="git publish"
+# "git unpublish"
+alias gunpub="git unpublish"
 
 # "git fixup": Quick fixup commits
 # This one does all files, or just the ones staged, if any
