@@ -424,8 +424,8 @@
         [:period [:open "keysmith://run-macro/016BFA39-CABE-4E33-9045-73BA6F72CB5E"]]
 
         [:l [:openw "trello.com/b/NqI34mI2/%E2%8F%B3-later"]]
-        ;; [:n [:openw "www.notion.so/Notes-420ab1675f494be2a0c34fd8fe1c8025"]]
-        [:n [[:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]]
+        [:n [:openw "www.notion.so/Notes-420ab1675f494be2a0c34fd8fe1c8025"]]
+        ;; [:n [[:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
         [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
