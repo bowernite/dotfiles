@@ -86,4 +86,4 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only --syntax-theme=Monokai Extended
+	diffFilter = delta --color-only --syntax-theme=GitHub
