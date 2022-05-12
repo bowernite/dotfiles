@@ -572,7 +572,7 @@
 
         ; Shift + numbers (right side; left side are in semicolon-mode rules)
         [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
-        [:!S8 [:spacebar:equal_sign :equal_sign :equal_sign :spacebar]] ; ␣===␣
+        [:!S8 [:spacebar :equal_sign :equal_sign :equal_sign :spacebar]] ; ␣===␣
         [:!S9 [:spacebar :!S1 :equal_sign :equal_sign :spacebar]] ; ␣!==␣
 
         ;; Available: Shift numbers 5, 6, 0
