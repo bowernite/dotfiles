@@ -380,7 +380,7 @@
         [:y [:opena "Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
-        [:period [:opena "Alfred Preferences"]]
+        [:period [:opena "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app"]]
         [:open_bracket [:opena "Preview"] :!Preview]
         [:open_bracket :same_wind_app :Preview]
         [:p [:opena "Reminders"]]
