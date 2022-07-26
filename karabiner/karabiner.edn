@@ -62,18 +62,19 @@
     ;; :open_bracket-mode { :key :open_bracket }
     :tab-mode { :key :tab }
     :period-mode { :key :period }
+    :z-x-mode { :key :3 }
   }
 
   :main [
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; Manual layer triggers
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    {
-      :des "simlayer: z-x-mode"
-      :rules [
-        [[:z :x] ["z-x-mode" 1] nil { :afterup ["z-x-mode" 0]}]
-      ]
-    }
+    ;; {
+    ;;   :des "simlayer: z-x-mode"
+    ;;   :rules [
+    ;;     [[:z :x] ["z-x-mode" 1] nil { :afterup ["z-x-mode" 0]}]
+    ;;   ]
+    ;; }
 
     ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
     ; General/simple
