@@ -11,7 +11,8 @@
     "activityBar.inactiveForeground": "#e7e7e799",
     "activityBarBadge.background": "#ac6513",
     "activityBarBadge.foreground": "#e7e7e7",
-    "sash.hoverBorder": "#6513ac"
+    "sash.hoverBorder": "#6513ac",
+    "commandCenter.border": "#e7e7e799"
   },
   "peacock.color": "#4a0e7e",
   "[clojure]": {
