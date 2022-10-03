@@ -27,8 +27,8 @@
   }
 
   :templates {
-    :launch      "osascript -e 'tell application \"Alfred 4\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
-    :alfred         "open /Applications/Alfred\\ 4.app && osascript -e 'tell application \"Alfred 4\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
+    :launch      "osascript -e 'tell application \"Alfred 5\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
+    :alfred         "open /Applications/Alfred\\ 5.app && osascript -e 'tell application \"Alfred 5\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
     :open        "open %s"
     :opena       "open -a \"%s\" %s"
     :osa         "osascript -e '%s'"
