@@ -535,15 +535,14 @@
         ;; Euro: This could stay or go, doesn't really matter, I have a text replacement for it anyway
         ;; [:grave_accent_and_tilde :!SO2] ; €
         [:3 [:spacebar :slash :spacebar]]
-        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
-        ;; Not sure if this is even better than just omitting it ¯\_(ツ)_/¯
-        [:4 [:slash :!S8 :!S8]] ; -> /**
+        [:2 [:type "> **Note:** "]]
+        [:4 [:type "/**"]]
 
         ;; ;; Big ol' separator
-        ;; [:1 [:!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde :!Sgrave_accent_and_tilde]]
-        [:1 [:hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen]]
+        [:1 [:type "——————————————————————————————"]]
         ;; Notion separator / line (steals text focus right now...)
-        [:grave_accent_and_tilde [:hyphen :hyphen :hyphen]]
+        ;; [:grave_accent_and_tilde [:hyphen :hyphen :hyphen]]
+        [:grave_accent_and_tilde [:type "---"]]
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
@@ -580,12 +579,9 @@
         [:!Sslash :!Sgrave_accent_and_tilde] ; -> ~
 
         ; Shift + numbers (right side; left side are in semicolon-mode rules)
-        ;; Code block
-        [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
-        ;; Triple equals
-        [:!S8 [:spacebar :equal_sign :equal_sign :equal_sign :spacebar]] ; ␣===␣
-        ;; Triple not equals
-        [:!S9 [:spacebar :!S1 :equal_sign :equal_sign :spacebar]] ; ␣!==␣
+        [:!S7 [:type "```"]]
+        [:!S8 [:type " === "]]
+        [:!S9 [:type " !== "]]
 
         ;; Available: Shift numbers 5, 6, 0
         ;; Available: Shift -, Shift = (only on Macbook keyboard)
