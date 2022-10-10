@@ -562,7 +562,7 @@
         [:!Squote [:type " — "]]
         ;; Started running into issues here in 2022, where sometimes the first dash got typed before the first space, which would break up the em-dash
         ;; [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
-        ;; This works, and maybe a bit faster / snappier. But then we screw up our clipboard. There's probably a way where we can afterwords go into Alfred and pop this off the clipboard history. Maybe someday...
+        ;; This works, and maybe a bit faster / snappier. But then we screw up our clipboard. There's probably a way where we can afterwords go into Alfred and pop this off the clipboard history. If we do, probably make a `:type2` shortcut, or something like that. Maybe someday...
         ;; [:!Squote [:osa "tell application \"System Events\"\n  set the clipboard to \" — \"\n  keystroke \"v\" using command down\n  end tell"]]
         ;; This is using an Alfred shortcut. But it's kind of slow
         ;; [:!Squote :!TOCquote]
