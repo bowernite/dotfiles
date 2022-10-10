@@ -556,9 +556,17 @@
       ;;; (and, just using a layers based on the remapping doesn't seem to work either -- even if the remapping has no modifiers)
       :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
       :rules [
-        ; ' key
+        ;; ' key
         [:quote :!Sslash] ; [ -> ?
-        [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
+
+        ; Em-dash (or, how to type multi-character snippets in the best way possible)
+        [:!Squote [:type " — "]]
+        ;; Started running into issues here in 2022, where sometimes the first dash got typed before the first space, which would break up the em-dash
+        ;; [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
+        ;; This works, and maybe a bit faster / snappier. But then we screw up our clipboard. There's probably a way where we can afterwords go into Alfred and pop this off the clipboard history. Maybe someday...
+        ;; [:!Squote [:osa "tell application \"System Events\"\n  set the clipboard to \" — \"\n  keystroke \"v\" using command down\n  end tell"]]
+        ;; This is using an Alfred shortcut. But it's kind of slow
+        ;; [:!Squote :!TOCquote]
 
         ; [ key
         ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
