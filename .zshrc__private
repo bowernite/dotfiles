@@ -1,0 +1,1 @@
+GATHER_AC_ZSH_SETUP_PATH=/Users/brett/Library/Caches/gather-cli/autocomplete/zsh_setup && test -f $GATHER_AC_ZSH_SETUP_PATH && source $GATHER_AC_ZSH_SETUP_PATH # gather          autocomplete setup

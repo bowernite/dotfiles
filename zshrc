@@ -1,13 +1,11 @@
 dotfiles_dir=$HOME/src/personal/dotfiles
 
 #####################################################################
-# Imports
-#####################################################################
 
 # The generated file that comes from oh-my-zsh
 source $dotfiles_dir/zshrc__generated
 # Private stuff (keys, company-specific, etc.)
-source $dotfiles_dir/zshrc__private
+source $dotfiles_dir/.zshrc__private
 source $dotfiles_dir/zshrc__aliases
 source $dotfiles_dir/zshrc__git
 
@@ -130,6 +128,26 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
   'local-directories named-directories path-directories'
 
 #####################################################################
+# zsh plugins
+#####################################################################
+
+# Install Zinit (added by Zinit's installer)
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load specific plugins
+zinit load wfxr/forgit
+
+#####################################################################
 # Miscellaneous setup
 #####################################################################
 
@@ -141,7 +159,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 
 export NVM_DIR="$HOME/.nvm"
 # Normally, nvm wants us to run these lines to load nvm on shell startup. But instead, we're using sandboxd to lazy load nvm logic to keep shell startup snappy af
-[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+[ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"                                       # This loads nvm
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 # Skip all annoying commit hooks
