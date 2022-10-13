@@ -145,7 +145,8 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 # Load specific plugins
-zinit load wfxr/forgit
+## Off for now, until we need it
+# zinit load wfxr/forgit
 
 #####################################################################
 # Miscellaneous setup
