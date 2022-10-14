@@ -471,11 +471,13 @@
         [:w [:opena "Visual Studio Code" "~/Dropbox/wiki"]]
         [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:q [:open "~/src/personal/qmk_firmware/keyboards/preonic/keymaps/babramczyk/keymap.c"]]
+        
+        ;; Board / do (work)
+        [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        ;; GitHub
-        [:r [:openw "github.com/gathertown/gather-town"]]
+        [:r [:openw "github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
         ;; [:v [:openw "gitlab.com/wonder.me/wonder-web/"]]
 
