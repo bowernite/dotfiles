@@ -489,11 +489,11 @@
 
         ;; URLs
         ;;; Local
-        [:z [:openw "app.wonder.loc/?spaceId=e4a4a98b-66d5-4684-aacc-e9fa52bfa258"]]
+        [:z [:open "http://localhost:8080/app/YJ9Ybq2C21lzskuW/Office"]]
         ;;; Staging
-        [:a [:openw "app.wonder.ac/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
+        ;; [:a [:openw "app.wonder.ac/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
         ;;; Prod
-        [:x [:openw "app.wonder.me/?spaceId=686f1f74-59a1-41d0-9832-a74eb4888462"]]
+        ;; [:x [:openw "app.wonder.me/?spaceId=686f1f74-59a1-41d0-9832-a74eb4888462"]]
 
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
