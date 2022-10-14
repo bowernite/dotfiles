@@ -538,6 +538,7 @@
         ;; [:grave_accent_and_tilde :!SO2] ; €
         [:3 [:spacebar :slash :spacebar]]
         [:2 [:type "> **Note:** "]]
+        ;; Block comment
         [:4 [:type "/**"]]
 
         ;; ;; Big ol' separator
