@@ -262,7 +262,7 @@
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Emoji picker
-        [:k [:alfred "pick emoji" "com.github.jsumners.alfred-emoji"]]
+        [:k :!CTOSk]
         ;; [:comma :!CTw]
         ;; "Get Out Button": Hide all windows
         [:comma :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch]
