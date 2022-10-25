@@ -488,10 +488,10 @@
         ;; [:c [:openw "gitlab.com/wonder.me/wonder-backend/"]]
 
         ;; URLs
-        ;;; Local
+        ;;; Local (browser)
         [:z [:open "http://localhost:8080/app/YJ9Ybq2C21lzskuW/Office"]]
-        ;;; Staging
-        ;; [:a [:openw "app.wonder.ac/?spaceId=e33614aa-628a-46e4-bc53-f53e8b71873e"]]
+        ;;; Desktop
+        [:a [:open "~/src/work/gather-town/modules/gather-electron/node_modules/electron/dist/Electron.app"]]
         ;;; Prod
         ;; [:x [:openw "app.wonder.me/?spaceId=686f1f74-59a1-41d0-9832-a74eb4888462"]]
 
