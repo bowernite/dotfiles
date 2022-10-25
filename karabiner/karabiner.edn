@@ -366,7 +366,7 @@
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
 
-        [:l [:opena "Slack"]]
+        ;; [:l [:opena "Slack"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
