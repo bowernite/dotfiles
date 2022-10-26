@@ -474,6 +474,8 @@
         
         ;; Board / do (work)
         [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
+        ;; Current project
+        [:c [:open "https://linear.app/gather-town/project/native-os-notifications-41df8e0d0b06"]]
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
