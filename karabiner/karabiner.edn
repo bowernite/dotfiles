@@ -491,7 +491,7 @@
 
         ;; URLs
         ;;; Local (browser)
-        [:z [:open "http://localhost:8080/app/YJ9Ybq2C21lzskuW/Office"]]
+        [:z [:opena "[Local] Gather"]]
         ;;; Desktop
         [:a [:open "~/src/work/gather-town/modules/gather-electron/node_modules/electron/dist/Electron.app"]]
         ;;; Prod
