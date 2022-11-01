@@ -416,7 +416,7 @@
         ;; Jira - Backlog
         ;; [:slash [:openw "wonder-me.atlassian.net/secure/RapidBoard.jspa?rapidView=18&projectKey=COCKPIT&view=planning.nodetail&issueLimit=100"]]
         ;; Work calendar
-        [:y [:openw "calendar.google.com/calendar/u/1/r"]]
+        [:y [:openw "calendar.google.com/calendar/u/1/r/day"]]
         ;; Work email
         [:k [:openw "mail.google.com/mail/u/1"]]
         ;; Add custom emojis to Slack
