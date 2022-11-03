@@ -271,3 +271,15 @@ compress_vid() {
   local output_file_name="${2}.mp4"
   ffmpeg -i $input_file -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name"
 }
+
+# Find out which processing are using ports
+# Source: https://stackoverflow.com/a/30029855/20292417
+listening() {
+  if [ $# -eq 0 ]; then
+    sudo lsof -iTCP -sTCP:LISTEN -n -P
+  elif [ $# -eq 1 ]; then
+    sudo lsof -iTCP -sTCP:LISTEN -n -P | grep -i --color $1
+  else
+    echo "Usage: listening [pattern]"
+  fi
+}
