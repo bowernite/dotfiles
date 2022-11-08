@@ -265,9 +265,9 @@
         [:k :!CTOSk]
         ;; [:comma :!CTw]
         ;; "Get Out Button": Hide all windows
-        [:comma :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch :!Ch]
-        ;; Sleep
-        [:period [:osa "tell application \"Finder\" to sleep"]]
+        [:comma :!COScomma]
+        ;; Hide all windows and sleep
+        [:period :!COSperiod]
         ;; umlaut (uses macOS's option+u for this)
         [:quote :!Ou]
         ;; Unicode symbol search
@@ -544,10 +544,10 @@
         [:4 [:type "/**"]]
 
         ;; ;; Big ol' separator
-        [:1 [:type "——————————————————————————————"]]
+        [:grave_accent_and_tilde [:type "——————————————————————————————"]]
         ;; Notion separator / line (steals text focus right now...)
         ;; [:grave_accent_and_tilde [:hyphen :hyphen :hyphen]]
-        [:grave_accent_and_tilde [:type "---"]]
+        [:1 [:type "---"]]
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
