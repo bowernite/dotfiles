@@ -116,9 +116,9 @@ alias grbn="git add . && grbc"
 alias gforget="git rm -r --cached . && git add ."
 
 # "git conflicts": Show all files with conflicts (does so by using `git diff`, because in the case of rebase/merge conflicts, only conflict files will be in the index)
-alias gconflicts="gd --name-only | uniq"
+alias gconflicts="git diff --name-only | uniq"
 # "git fix": Open all files with conflicts (in VS Code)
-alias gfix="gd --name-only | uniq | xargs code"
+alias gfix="git diff --name-only | uniq | xargs code"
 
 # "git summary": Show a summary of a commit (i.e. without the diff)
 alias gsm="git show --quiet"
