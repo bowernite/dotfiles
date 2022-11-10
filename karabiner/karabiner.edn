@@ -393,8 +393,10 @@
         ; Less common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:9 [:opena "Activity Monitor"]]
-        [:8 [:opena "Karabiner-Elements"]]
-        [:7 [:opena "Karabiner-EventViewer"]]
+        ;; [:8 [:opena "Karabiner-Elements"]]
+        [:8 [:opena "Linear"]]
+        ;; [:7 [:opena "Karabiner-EventViewer"]]
+        [:7 [:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]
         [:close_bracket [:opena "WhatsApp"]]
         [:h [:opena "WhatsApp"]]
         [:g [:opena "Photos"]]
@@ -473,10 +475,10 @@
         [:q [:open "~/src/personal/qmk_firmware/keyboards/preonic/keymaps/babramczyk/keymap.c"]]
         
         ;; Board / do (work)
-        [:c [:opena "Linear"]]
-        ;; [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
+        ;; [:c [:opena "Linear"]]
+        [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
         ;; Current project
-        ;; [:c [:open "https://linear.app/gather-town/project/native-os-notifications-41df8e0d0b06"]]
+        [:c [:open "https://linear.app/gather-town/project/native-os-notifications-41df8e0d0b06"]]
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
