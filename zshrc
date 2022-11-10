@@ -146,7 +146,7 @@ autoload -Uz _zinit
 
 # Load specific plugins
 ## Off for now, until we need it
-# zinit load wfxr/forgit
+zinit load wfxr/forgit
 
 #####################################################################
 # Miscellaneous setup
