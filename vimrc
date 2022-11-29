@@ -130,7 +130,7 @@ set smartcase
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Wrapping
 
-set wrap                " wrap long lines by default
+" set wrap                " wrap long lines by default
 set linebreak           " when wrapping, break on word boundaries
 " auto wrap text at the given number of chars
 " this is 0 right now to wrap at the window width. if we want to give up on soft wrapping at some point, and just actually wrap lines at a given number of chars in the future, we can set that here
