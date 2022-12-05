@@ -366,14 +366,14 @@
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
 
-        ;; [:l [:opena "Slack"]]
+        [:l [:opena "Slack"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:n [:opena "Notes"]]
         [:semicolon [:opena "iTerm"]]
         [:m [:opena "Messages"]]
-        ;; [:i [:opena "Trello"] :!Trello]
+        [:i [:opena "Trello"] :!Trello]
         [:i :same_wind_app :Trello]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
