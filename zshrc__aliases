@@ -202,6 +202,7 @@ t() {
 alias ni="npm install"
 alias nid="npm install -D"
 alias nip="npm install -P"
+alias ns="npm start"
 
 #####################################################################
 # yarn
