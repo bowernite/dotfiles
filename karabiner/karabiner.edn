@@ -433,7 +433,8 @@
         ;; [:n [:opena "/System/Volumes/Data/Applications/Notion.app"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
-        [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
+        ;; [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
+        [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/White Noise.app"]]
         [:g [:openw "drive.google.com"]]
         ;; Money projections
         [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528"]]
