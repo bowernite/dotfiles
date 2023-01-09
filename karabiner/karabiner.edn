@@ -545,15 +545,17 @@
         ;; Euro: This could stay or go, doesn't really matter, I have a text replacement for it anyway
         ;; [:grave_accent_and_tilde :!SO2] ; €
         [:3 [:spacebar :slash :spacebar]]
-        [:2 [:type "> **Note:** "]]
+        ;; [:2 [:type "> **Note:** "]]
+        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; Block comment
-        [:4 [:type "/**"]]
+        ;; [:4 [:type "/**"]]
+        [:4 [:slash :!S8 :!S8]] ; -> /**
+
 
         ;; ;; Big ol' separator
-        [:grave_accent_and_tilde [:type "——————————————————————————————"]]
-        ;; Notion separator / line (steals text focus right now...)
-        ;; [:grave_accent_and_tilde [:hyphen :hyphen :hyphen]]
-        [:1 [:type "---"]]
+        [:grave_accent_and_tilde [:hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen]]
+        ;; Notion separator / line
+        [:1 [:hyphen :hyphen :hyphen]]
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
@@ -570,9 +572,10 @@
         [:quote :!Sslash] ; [ -> ?
 
         ; Em-dash (or, how to type multi-character snippets in the best way possible)
-        [:!Squote [:type " — "]]
+        ;; This way is a bit delayed, but is reliable
+        ;; [:!Squote [:type " — "]]
         ;; Started running into issues here in 2022, where sometimes the first dash got typed before the first space, which would break up the em-dash
-        ;; [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
+        [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
         ;; This works, and maybe a bit faster / snappier. But then we screw up our clipboard. There's probably a way where we can afterwords go into Alfred and pop this off the clipboard history. If we do, probably make a `:type2` shortcut, or something like that. Maybe someday...
         ;; [:!Squote [:osa "tell application \"System Events\"\n  set the clipboard to \" — \"\n  keystroke \"v\" using command down\n  end tell"]]
         ;; This is using an Alfred shortcut. But it's kind of slow
@@ -590,9 +593,12 @@
         [:!Sslash :!Sgrave_accent_and_tilde] ; -> ~
 
         ; Shift + numbers (right side; left side are in semicolon-mode rules)
-        [:!S7 [:type "```"]]
-        [:!S8 [:type " === "]]
-        [:!S9 [:type " !== "]]
+        ;; Code block
+        [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
+        ;; Triple equals
+        [:!S8 [:spacebar :equal_sign :equal_sign :equal_sign :spacebar]] ; ␣===␣
+        ;; Triple not equals
+        [:!S9 [:spacebar :!S1 :equal_sign :equal_sign :spacebar]] ; ␣!==␣
 
         ;; Available: Shift numbers 5, 6, 0
         ;; Available: Shift -, Shift = (only on Macbook keyboard)
