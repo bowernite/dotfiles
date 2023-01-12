@@ -111,13 +111,6 @@
           [:!CSquote :!CSclose_bracket]
       ]
     }
-    ;; {
-    ;;   ;; ⌘+\ is a common shortcut in apps to close a side panel on the left side. Instead of changing the keybinding in every app/website, just change it here and hope we never need ⌘+' in its original form 🤷‍♂️
-    ;;   :des "cmd+' -> cmd+\\"
-    ;;   :rules [
-    ;;     [:!CSslash :!Cbackslash]
-    ;;   ]
-    ;; }
     {
       :des "easier 'save as': ctrl+cmd+S shift+opt+cmd+S"
       :rules [
@@ -768,9 +761,12 @@
 
         ; Clear everything
         [:!Wdelete_or_backspace [:!Ca :delete_or_backspace]]
+        
+        ; Other stuff
+        ;; Cmd+\ replacement (i.e. when on a keyboard with no backspace key). This is a common shortcut on apps to toggle UI / a panel
+        [:!Wopen_bracket :!Cbackslash]
       ]
     }
-    ;; TODO: Reconsider this. Is it too much of a pain to switch from Caps Lock down to z and x? Considering that's frequently where we'll be coming from. Could just go back to using tab... Or make z-x-mode responsible for media and flip them
     {
       :des "z-x-mode (selection-mode: text nav with selection)"
       :rules [
