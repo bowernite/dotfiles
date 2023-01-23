@@ -96,7 +96,7 @@ if ! command -v npx &>/dev/null; then
 fi
 
 echo "Installing global npm packages"
-yarn global add concurrently
+npm i -g concurrently
 
 # Install oh-my-zsh
 # Check if $ZSH variable doesn't exist (hence, oh-my-zsh is already installed)
