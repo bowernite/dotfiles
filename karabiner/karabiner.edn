@@ -764,7 +764,8 @@
         
         ; Other stuff
         ;; Cmd+\ replacement (i.e. when on a keyboard with no backspace key). This is a common shortcut on apps to toggle UI / a panel
-        [:!Wopen_bracket :!Cbackslash]
+        ;;; Can't do Terminals or code editors, since it clashes with a Vim keybinding I have (at the time of writing "go back")
+        [:!Wopen_bracket :!Cbackslash [:!Terminals :!VSCode]]
       ]
     }
     {
