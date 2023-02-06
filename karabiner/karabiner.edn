@@ -207,7 +207,7 @@
         ; Copy screenshot of selected area
         [:c :!CTS4]
         ; Copy screenshot of full screen
-        [:d :!CTOSd]
+        [:d :!CTS5]
 
         ; Rectangle
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
