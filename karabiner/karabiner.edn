@@ -377,11 +377,13 @@
         [:period [:opena "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app"]]
         [:open_bracket [:opena "Preview"] :!Preview]
         [:open_bracket :same_wind_app :Preview]
-        [:p [:opena "Reminders"]]
         ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
         [:delete_or_backspace [:opena "Preview"]]
         [:slash [:opena "Finder"]]
         [:0 [:opena "Bitwarden"]]
+        
+        ; NOTE: `xp` is far too common in language. Avoid using `p` for this mode
+        ;; [:p [:opena "Reminders"]]
 
         ; Less common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
