@@ -480,9 +480,9 @@
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        [:r [:openw "github.com/gathertown/gather-town/pulls"]]
+        [:r [:opena "Arc" "https://github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
-        [:v [:openw "github.com/pulls"]]
+        [:v [:openw "Arc" "https://github.com/pulls"]]
 
         ;; Backend
         ;; [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
