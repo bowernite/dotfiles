@@ -350,8 +350,10 @@
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:j [:opena "Google Chrome"] :!Chrome]
-        [:j :same_wind_app :Chrome]
+        ;; [:j [:opena "Google Chrome"] :!Chrome]
+        [:j [:opena "Arc"] :!Arc]
+        ;; [:j :same_wind_app :Chrome]
+        [:j :same_wind_app :Arc]
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives
@@ -806,6 +808,9 @@
       "^com\\.google\\.Chrome$",
       ;; "^org\\.chromium\\.Chromium$",
       ;; "^com\\.google\\.Chrome\\.canary$"
+    ]
+    :Arc [
+      "^company\\.thebrowser\\.Browser$",
     ]
     :Firefoxes [
       "^org\\.mozilla\\.firefox$",
