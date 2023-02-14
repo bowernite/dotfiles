@@ -193,7 +193,6 @@ export NVM_DIR="$HOME/.nvm"
 export HUSKY_SKIP_HOOKS=1
 if [[ -z $has_aliased_npx ]]; then
   npx() {
-    echo 'in the function'
     # shfmt doesn't like this ¯\_(ツ)_/¯
     # local -i i=$argv[(i)^-*]
     # $argv[i] is the first non-option argument (or empty if there is none).
@@ -201,8 +200,6 @@ if [[ -z $has_aliased_npx ]]; then
     case $argv[i] in
     commitlint | lint-staged) is_bad=1 ;;
     esac
-    echo 'is bad'
-    echo $is_bad
     if [[ $is_bad == 0 ]]; then
       command npx "$@"
     fi
