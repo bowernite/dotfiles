@@ -672,6 +672,9 @@
 
         ;; Enter a simulated caps lock mode, instead of triggering actual caps lock. See the mode below for details
         [:caps_lock ["caps-lock-mode" 1]]
+        
+        ;; Make sure we can quickly type spacebar after this key, and get both keys' results
+        [:spacebar [:!Ssemicolon :spacebar]]
       ]
     }
     ;; This mode is necessary, since while in the hardware-defined caps lock "mode", the caps lock key is always the key to exit it -- which prevents the key from being escape/control like it normally is. This causes a weird scenario, where when we're using the hardware's caps lock, the caps lock key customizations are taken away from us, which can be disorienting
