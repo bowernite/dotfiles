@@ -196,12 +196,15 @@
 
         ;; Simulates a right click
         [:3 :!Sf10]
+        
+        ;; Dictation
+        [:4 :!CTOS4]
 
         ; VPN
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Connect to configured default country VPN
-        [:2 [:opena "NordVPN Teams"]]
-        [:1 [:quit "NordLayer"]]
+        ;; [:2 [:opena "NordVPN Teams"]]
+        ;; [:1 [:quit "NordLayer"]]
 
         ; Screenshots
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
