@@ -10,7 +10,6 @@ tap "yqrashawn/goku"
 # Formulae
 #######################################
 
-brew "bitwarden-cli"
 # Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
 # More Docker / container runtimes
