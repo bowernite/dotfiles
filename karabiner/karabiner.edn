@@ -372,9 +372,9 @@
         [:n [:opena "Notes"]]
         [:semicolon [:opena "iTerm"]]
         [:m [:opena "Messages"]]
-        ;; [:i [:opena "Trello"] :!Trello]
-        ;; [:i :same_wind_app :Trello]
-        [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
+        [:i [:opena "Trello"] :!Trello]
+        [:i :same_wind_app :Trello]
+        ;; [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
         [:o [:opena "/Applications/Gather.app"]]
