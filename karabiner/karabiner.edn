@@ -34,8 +34,8 @@
     :osa         "osascript -e '%s'"
     ;; "Open website"
     ;;; Techinically, BSD `open` can open a URL as the second arg, with the default browser. But, it has a funny behavior for certain URLs (hard to pinpoint what they have in common) -- it briefly opens `Finder`, _then_ the default browser. This can be annoying, as now Cmd-Tabbing quickly brings you back to Finder, instead of the last app you were actually interacting with
-    ;; :openw       "open -a \"Google Chrome\" \"https://%s\""
-    :openw       "open -a \"Arc\" \"https://%s\""
+    :openw       "open -a \"Google Chrome\" \"https://%s\""
+    ;; :openw       "open -a \"Arc\" \"https://%s\""
 
     :quit        "killall \"%s\""
     :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
@@ -353,10 +353,10 @@
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; [:j [:opena "Google Chrome"] :!Chrome]
-        [:j [:opena "Arc"] :!Arc]
-        ;; [:j :same_wind_app :Chrome]
-        [:j :same_wind_app :Arc]
+        [:j [:opena "Google Chrome"] :!Chrome]
+        [:j :same_wind_app :Chrome]
+        ;; [:j [:opena "Arc"] :!Arc]
+        ;; [:j :same_wind_app :Arc]
         [:k [:opena "Visual Studio Code"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives
@@ -487,9 +487,9 @@
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        [:r [:opena "Arc" "https://github.com/gathertown/gather-town/pulls"]]
+        [:r [:opena "Google Chrome" "https://github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
-        [:v [:opena "Arc" "https://github.com/pulls"]]
+        [:v [:opena "Google Chrome" "https://github.com/pulls"]]
 
         ;; Backend
         ;; [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
