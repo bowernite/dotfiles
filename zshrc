@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 dotfiles_dir=$HOME/src/personal/dotfiles
 
 #####################################################################
@@ -218,3 +221,6 @@ export GIT_MERGE_AUTOEDIT=no
 
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
