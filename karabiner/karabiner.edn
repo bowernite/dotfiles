@@ -236,7 +236,8 @@
         ;; [:b [:alfred "bluetooth list" "de.tilmanginzel.alfred.bluetooth"]]
         ; AirPods
         ;; Connect and set to audio output device
-        [:4 :!CSTO4]
+        ;; [:4 :!CSTO4]
+        [:4 [:open "keysmith://run-macro/4FB314D1-C2AE-46A0-8D6B-A94034D0023C"]]
         ;; Disconnect (from bluetooth)
         [:5 :!CSTO5]
         [:tab [:alfred "search" "com.sindresorhus.npms"]]
