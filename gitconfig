@@ -16,6 +16,8 @@
               echo develop; \
           elif [[ -n $(git branch --list development) ]]; then \
               echo development; \
+          elif [[ -n $(git branch --list main) ]]; then \
+              echo main \
           elif [[ -n $(git branch --list staging) ]]; then \
               echo staging; \
           else \
