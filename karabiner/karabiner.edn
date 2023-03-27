@@ -366,7 +366,10 @@
         ;; [:v [:opena "Visual Studio Code"] :!VSCode]
         ;; [:v :same_wind_app :VSCode]
 
-        [:l [:opena "Slack"]]
+        ;; [:l [:opena "Slack"]]
+        ;; [:l :!COd]
+        ;; [:l :!CTq]
+        [:l [:osa "tell application \"System Events\" to sleep"]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
