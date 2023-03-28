@@ -369,7 +369,9 @@
         ;; [:l [:opena "Slack"]]
         ;; [:l :!COd]
         ;; [:l :!CTq]
-        [:l [:osa "tell application \"System Events\" to sleep"]]
+        ;; [:l [:osa "tell application \"System Events\" to sleep"]]
+        ;; [:l [:osa "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       delay 1\n       tell application \"System Events\" to sleep"]]
+        [:l [:osa "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       do shell script \"pmset sleepnow\""]]
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
