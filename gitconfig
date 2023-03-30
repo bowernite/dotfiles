@@ -78,7 +78,7 @@
   rebase = false
 
 [core]
-  excludesfile = ~/gitignore_global
+  excludesfile = ~/.gitignore_global
 
 [delta]
   features = line-numbers decorations
