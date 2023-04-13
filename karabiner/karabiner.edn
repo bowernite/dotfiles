@@ -441,7 +441,6 @@
         ;; [:n [:opena "/System/Volumes/Data/Applications/Notion.app"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
-        ;; [:h [:openw "mynoise.net/NoiseMachines/whiteNoiseGenerator.php?l=50464238343027242118&d=0"]]
         [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/White Noise.app"]]
         [:g [:openw "drive.google.com"]]
         ;; Money projections
@@ -499,6 +498,7 @@
         [:r [:opena "Google Chrome" "https://github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
         [:v [:opena "Google Chrome" "https://github.com/pulls"]]
+        [:t [:opena "Google Chrome" "https://github.com/notifications?query=reason%3Amention"]]
 
         ;; Backend
         ;; [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
@@ -517,9 +517,9 @@
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         ;; Search GitLab repos
-        [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
+        ;; [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         ;; My merge requests
-        [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
+        ;; [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
       ]
     }
 
