@@ -256,16 +256,21 @@
       :des "z-mode (macros)"
       :rules [
         :z-mode
+        
+        ; "Get out"
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Hide all windows
+        [:l :!COSl]
+        ;; Soft get out: Hide all windows and sleep display
+        [:comma :!COScomma]
+        ;; Hard get out: Hide all windows and sleep entire Mac (disconnects from bluetooth, suspends apps, etc.)
+        [:period :!COSperiod]
 
         ; Alfred
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Emoji picker
         [:k :!CTOSk]
         ;; [:comma :!CTw]
-        ;; "Get Out Button": Hide all windows
-        [:comma :!COScomma]
-        ;; Hide all windows and sleep
-        [:period :!COSperiod]
         ;; umlaut (uses macOS's option+u for this)
         [:quote :!Ou]
         ;; Unicode symbol search
@@ -278,7 +283,7 @@
         ;; [:o [:alfred "query bitwarden" "com.lisowski-development.alfred.bitwarden"]]
         ;; Hide notification(s)
         [:i :!CTOSi]
-        [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
+        ;; [:l [:alfred "upcoming calendar events" "net.deanishe.alfred.gcal"]]
         ;; Google Maps search
         [:m :!TOSm]
         ;; [:m [:alfred "query text replacements" "dev.abramczyk.macos-text-replacement"]]
