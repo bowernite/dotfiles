@@ -560,7 +560,9 @@
 
         ;; Euro: This could stay or go, doesn't really matter, I have a text replacement for it anyway
         ;; [:grave_accent_and_tilde :!SO2] ; €
-        [:3 [:spacebar :slash :spacebar]]
+        [:3 [:spacebar :slash :spacebar] :!Trello]
+        [:3 :slash :Trello]
+        ;; [:3 [:osa "tell application \"System Events\" to keystroke \" \" & keystroke \"/\" & delay 0.5 & keystroke \" \""]] / 
         ;; [:2 [:type "> **Note:** "]]
         [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
         ;; Block comment
