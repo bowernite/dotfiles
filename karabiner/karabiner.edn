@@ -500,10 +500,11 @@
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        [:r [:opena "Google Chrome" "https://github.com/gathertown/gather-town/pulls"]]
+        [:r [:open "https://github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
-        [:v [:opena "Google Chrome" "https://github.com/pulls"]]
-        [:t [:opena "Google Chrome" "https://github.com/notifications?query=reason%3Amention"]]
+        ;; [:v [:open "https://github.com/pulls"]]
+        [:v [:open "https://app.graphite.dev/"]]
+        [:t [:open "https://github.com/notifications?query=reason%3Amention"]]
 
         ;; Backend
         ;; [:3 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/wonder-backend"]]
