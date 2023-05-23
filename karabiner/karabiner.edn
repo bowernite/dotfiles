@@ -508,8 +508,8 @@
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
         [:r [:open "https://github.com/gathertown/gather-town/pulls"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
-        ;; [:v [:open "https://github.com/pulls"]]
-        [:v [:open "https://app.graphite.dev/"]]
+        [:v [:open "https://github.com/pulls"]]
+        ;; [:v [:open "https://app.graphite.dev/"]]
         [:t [:open "https://github.com/notifications?query=reason%3Amention"]]
 
         ;; Backend
