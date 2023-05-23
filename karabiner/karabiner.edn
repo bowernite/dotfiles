@@ -157,6 +157,8 @@
         ;; Swap ⌘T with ⌘K (since the former is much more used, and the latter is more ergonomic)
         [:!Ct :!Ck :Chrome]
         [:!Ck :!Ct :Chrome]
+        [:!CSt :!CSk :Chrome]
+        [:!CSk :!CSt :Chrome]
 
         ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
         [:!Wopen_bracket :!To :Terminals]
