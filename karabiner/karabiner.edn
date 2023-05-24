@@ -770,11 +770,14 @@
         
         ; Scrolling (full pages, and entire "document")
         [:!W6 :!CTOS6]
-        [:!W7 :page_down]
-        [:!W8 :page_up]
+        [:!W7 :!CTOS7]
+        [:!W8 :!CTOS8]
         [:!W9 :!CTOS9]
         [:!Wp :!Cdown_arrow]
         [:!W0 :!Cup_arrow]
+        ;; VS Code needs focus for scrolling, so use the typical page up and page down keys
+        [:!W7 :page_down :VSCode]
+        [:!W8 :page_up :VSCode]
 
         ; To start and end of line
         [:!W#SRn :!Cleft_arrow :!Terminals]
