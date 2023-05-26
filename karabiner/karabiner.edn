@@ -126,14 +126,10 @@
         ;; More ergonomic "Copy as pathname"
         [:!Cp :!COc :Finder]
 
-        ; Messages
-        ;; There's a `Go to Next Conversation`, but it's not ergonmic, and weirdly laggy. These staples work better for this purpose, it seems
-        [:!CSclose_bracket :!CSclose_bracket :Messages]
-        [:!CSopen_bracket :!CSopen_bracket :Messages]
-
         ; Calendar
-        [:!Cj :!Cright_arrow :Calendar]
-        [:!Ck :!Cleft_arrow :Calendar]
+        [:!CSquote :!Cright_arrow :Calendar]
+        [:!CSopen_bracket :!Cleft_arrow :Calendar]
+
         ;; WIP: A command that triggers a menu item that doesn't have a shortcut (in this case, the "Show Notifications" item in Calendar). Inconsistent right now, as something the `return_or_enter` fires too quickly and doesn't register -- the left/right_arrows are meant to be a hack to delay it, but it's not really working. Trying Keysmith for now
         ;; [:!Cbackslash [:!CSslash :n :o :down_arrow :left_arrow :right_arrow :left_arrow :right_arrow :return_or_enter] :Calendar]
 
