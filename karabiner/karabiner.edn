@@ -110,7 +110,10 @@
       :des "cmd+quote, cmd+shift+quote -> cmd+close_bracket, cmd+shift+close_bracket"
       :rules [
           [:!Cquote :!Cclose_bracket]
-          [:!CSquote :!CSclose_bracket]
+          ;; NOTE: We need to turn off these "simple / generic" rules for app-specific overrides that we do below, as it prevents them from remapping what we're doing here
+          ;;; i.e. in this case, Calendar needs to override :!CSquote
+          ;; There might be a better way around this that allows chained overrides, but this works fine for now
+          [:!CSquote :!CSclose_bracket [:!Calendar]]
       ]
     }
     {
