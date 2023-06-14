@@ -170,8 +170,8 @@
         [:!Cescape :!CTescape]
         
         ; Homerow scroll shortcut easier, except in VS Code, where ⌘K is a chord beginning we use quite often
-        [:!Ck :!CSk :!VSCode]
-        [:!CSk :!Ck :!VSCode]
+        ;; [:!Ck :!CSk :!VSCode]
+        ;; [:!CSk :!Ck :!VSCode]
       ]
     }
     {
