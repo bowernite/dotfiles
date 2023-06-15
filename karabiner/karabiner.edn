@@ -146,7 +146,7 @@
         ;; In Chrome, return focus to the document (Chrome doesn't provide any way to do this natively)
         ;; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
         ;; [:!Cj [:!Cl :j :return_or_enter :g :!Sf] :Chrome]
-        [:!CSj [:!Cl :j :return_or_enter] :Chrome]
+        ;; [:!CSj [:!Cl :j :return_or_enter] :Chrome]
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
         ;; More ergonomic tab search
