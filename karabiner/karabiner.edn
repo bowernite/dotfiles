@@ -463,7 +463,7 @@
         [:open_bracket [:openw "www.linkedin.com/in/brett-abramczyk/"]]
         [:u [:openw "youtube.com"]]
         [:o [:openw "amazon.com"]]
-        [:v [:openw "voice.google.com"]]
+        [:v [:openw "voice.google.com/u/0/messages"]]
         ;; [:r [:openw "trello.com/b/32pWVaoh/%F0%9F%87%A9%F0%9F%87%AA-berlin-livin"]]
         [:8 [:openw "google.com/maps"]]
 
