@@ -284,3 +284,9 @@ listening() {
     echo "Usage: listening [pattern]"
   fi
 }
+
+# Serves a folder over port 8080
+serve() {
+  local port="${1:-8000}"
+  python3 -m http.server $port
+}
