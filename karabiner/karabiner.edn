@@ -535,6 +535,10 @@
         ;; [:t [:alfred "search repos" "com.lukewaite.alfred-gitlab"]]
         ;; My merge requests
         ;; [:m [:alfred "my merge requests" "dev.abramczyk.gitlab"]]
+        
+        ;; Recruiters
+        [:1 [:alfred "recruiter message 1" "dev.abramczyk.shortcuts"]]
+        [:2 [:alfred "recruiter message 2" "dev.abramczyk.shortcuts"]]
       ]
     }
 
