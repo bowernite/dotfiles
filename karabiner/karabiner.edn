@@ -207,8 +207,8 @@
         [:3 :!Sf10]
         
         ;; Dictation
-        [:2 :!CTOS2]
-
+        ;; [:2 :!CTOS2]
+        
         ; VPN
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Connect to configured default country VPN
@@ -255,6 +255,8 @@
         [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
         [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
         [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
+        ;; 2FA / MFA
+        [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
 
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
