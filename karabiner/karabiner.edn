@@ -306,7 +306,7 @@
         ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
         [:slash :!CTOSm]
         ;; Query screenshots folder
-        [:h :!TOSh]
+        ;; [:h :!TOSh]
         ;; npms: search npm packages
         [:semicolon [:alfred "search" "com.sindresorhus.npms"]]
 
@@ -325,9 +325,14 @@
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
 
         ;; macOS screen recording
-        [:j :!CS5]
+        ;; [:j :!CS5]
         ;; Copy screenshot of full screen
         [:q :!CTOSd]
+        
+        ; Send message / iMessage
+        [:j [:!CTOSj]]
+        ;; Mary
+        [:7 [:!CTOSh]]
       ]
     }
     {
