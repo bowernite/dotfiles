@@ -336,7 +336,7 @@
       ]
     }
     {
-      :des "quote-mode (media)"
+      :des "tab-mode (media)"
       :rules [
         :tab-mode
 
