@@ -55,6 +55,7 @@ install_dotfile "gitignore_global" ".gitignore_global"
 install_dotfile "vimrc" ".vimrc"
 install_dotfile "vimrc__defaults" ".vimrc__defaults"
 install_dotfile "sandboxrc" ".sandboxrc"
+install_dotfile "yabairc" ".yabairc"
 
 exit
 
