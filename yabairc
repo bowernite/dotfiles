@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Caleb's config: https://github.com/cfoust/cawnfig/blob/main/configs/yabai/config
+
+# global settings
+yabai -m config mouse_follows_focus          off
+yabai -m config focus_follows_mouse          autofocus
+
+yabai -m config window_opacity               off
+yabai -m config window_opacity_duration      0.0
+yabai -m config window_shadow                on
+
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.90
