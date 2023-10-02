@@ -4,7 +4,7 @@
 
 # global settings
 yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          autofocus
+yabai -m config focus_follows_mouse          off
 
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
@@ -12,3 +12,16 @@ yabai -m config window_shadow                on
 
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
+
+# Set all padding and gaps to 20pt (default: 0)
+# yabai -m config top_padding    20
+# yabai -m config bottom_padding 20
+# yabai -m config left_padding   20
+# yabai -m config right_padding  20
+# yabai -m config window_gap     20
+# chatgpt generated
+yabai -m config window_gap 5
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
