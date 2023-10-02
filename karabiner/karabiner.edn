@@ -333,6 +333,9 @@
         [:j [:!CTOSj]]
         ;; Mary
         [:7 [:!CTOSh]]
+        
+        ; Toggle bsp window tiling
+        [:0 "yabai -m config layout ~='float' || yabai -m config layout bsp"]
       ]
     }
     {
