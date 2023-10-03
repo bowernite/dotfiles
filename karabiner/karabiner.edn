@@ -404,7 +404,8 @@
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:n [:opena "Notes"]]
-        [:semicolon [:opena "iTerm"]]
+        ;; [:semicolon [:opena "iTerm"]]
+        [:semicolon [:opena "Kitty"]]
         [:m [:opena "Messages"]]
         [:i [:opena "Trello"] :!Trello]
         [:i :same_wind_app :Trello]
