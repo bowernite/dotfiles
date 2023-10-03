@@ -43,6 +43,9 @@
     :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
     :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
     :wait        "osascript -e 'delay %s'"
+
+    :yabai       "/opt/homebrew/bin/yabai %s"
+    
     ; Doesn't work :(
     ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
   }
@@ -64,6 +67,7 @@
     :tab-mode { :key :tab }
     :period-mode { :key :period }
     :z-x-mode { :key :3 }
+    :8-mode { :key :8 }
   }
 
   :main [
@@ -854,6 +858,14 @@
         [:0 :!CSup_arrow]
 
         ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
+      ]
+    }
+    {
+      :des "8-mode (yabai playground)"
+      :rules [
+        :8-mode
+
+        [:a [:yabai "-m window --toggle zoom-fullscreen"]]
       ]
     }
   ]

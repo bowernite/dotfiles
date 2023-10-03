@@ -1,27 +1,40 @@
 #!/usr/bin/env sh
 
 # Caleb's config: https://github.com/cfoust/cawnfig/blob/main/configs/yabai/config
+# https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config layout bsp
 
 # global settings
-yabai -m config mouse_follows_focus          off
-yabai -m config focus_follows_mouse          off
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
 
-yabai -m config window_opacity               off
-yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                on
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 0.0
+yabai -m config window_shadow on
 
-yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.90
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.90
 
-# Set all padding and gaps to 20pt (default: 0)
-# yabai -m config top_padding    20
-# yabai -m config bottom_padding 20
-# yabai -m config left_padding   20
-# yabai -m config right_padding  20
-# yabai -m config window_gap     20
-# chatgpt generated
-yabai -m config window_gap 5
-yabai -m config top_padding 10
-yabai -m config bottom_padding 10
-yabai -m config left_padding 10
-yabai -m config right_padding 10
+# padding set to 12px
+yabai -m config top_padding 12
+yabai -m config bottom_padding 12
+yabai -m config left_padding 12
+yabai -m config right_padding 12
+yabai -m config window_gap 12
+
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+
+# move windows by dragging from anywhere, while holding ⌥ (option key)
+yabai -m config mouse_modifier alt
+
+yabai -m signal --add event=window_created action="yabai -m window --toggle zoom-fullscreen"
