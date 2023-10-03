@@ -1,3 +1,9 @@
+# "Import" all of our global utils that we have in separate files
+for file in ./bin/global-utils/*; do
+  chmod +x $file
+  source $file
+done
+
 #####################################################################
 # Dev Utils
 #####################################################################
