@@ -1,5 +1,5 @@
 # "Import" all of our global utils that we have in separate files
-for file in ./bin/global-utils/*; do
+for file in /Users/brett/src/personal/dotfiles/bin/global-utils/*.sh; do
   chmod +x $file
   source $file
 done
