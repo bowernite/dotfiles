@@ -37,4 +37,5 @@ yabai -m rule --add app="^QuickTime Player$" manage=off
 # move windows by dragging from anywhere, while holding ⌥ (option key)
 yabai -m config mouse_modifier alt
 
-yabai -m signal --add event=window_created action="yabai -m window --toggle zoom-fullscreen"
+# FIXME: This triggers for transient windows. We only want actual application windows
+# yabai -m signal --add event=window_created action="yabai -m window --toggle zoom-fullscreen"
