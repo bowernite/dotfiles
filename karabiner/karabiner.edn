@@ -867,6 +867,14 @@
         :8-mode
 
         [:a [:yabai "-m window --toggle zoom-fullscreen"]]
+        
+        ; Tile
+        [:t [:yabai "-m config layout bsp"]]
+        ;; [:f [:yabai "-m config layout float"]]
+        ;; [:s [:yabai "-m config layout stack"]]
+        
+        ; Exit
+        [:x ["/Users/brett/src/personal/dotfiles/bin/yabai/exit-tiling.sh"]]
       ]
     }
   ]
