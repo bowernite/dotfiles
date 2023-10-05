@@ -12,6 +12,8 @@ tap "yqrashawn/goku"
 
 # Tool for connecting to bluetooth devices (installed for Alfred workflow for AirPods connections)
 brew "bluetoothconnector"
+# Clicking on windows
+# brew "cliclick"
 # More Docker / container runtimes
 brew "colima"
 # Pretty diffs 😍

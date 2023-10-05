@@ -257,7 +257,7 @@
         [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
         ;; Duplicate, for one-handed purposes
         [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
-        [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
+        ;; [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
         [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
         ;; 2FA / MFA
         [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
@@ -265,6 +265,8 @@
         ; Keysmith
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:caps_lock [:open "keysmith://run-macro/F8C058F7-FE8E-4A61-8B04-56FB04D431FF"]]
+        ;; Generic window click to escape focus
+        [:e [:open "keysmith://run-macro/EB647FDB-EDCB-495D-9368-A74C089A1EE7"]]
       ]
     }
     {
