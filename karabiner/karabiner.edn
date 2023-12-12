@@ -458,7 +458,7 @@
         ;; Personal calendar
         ;; [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
         ;; Work email
-        [:k [:openw "mail.google.com/mail/u/1"]]
+        [:k [:openw "mail.google.com/mail/u/4"]]
         ;; Add custom emojis to Slack
         ;; [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
         ;; Level (reimbursements)
@@ -521,11 +521,11 @@
         [:e [:open "https://linear.app/gather-town/inbox"]]
         
         ;; Work calendar
-        [:c [:open "https://calendar.google.com/calendar/u/1/r/day"]]
+        [:c [:open "https://calendar.google.com/calendar/u/4"]]
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        [:r [:open "https://github.com/gathertown/gather-town/pulls"]]
+        [:r [:open "https://github.com/LedgerInvesting/ledger"]]
         [:f [:opena "Visual Studio Code" "~/src/work/gather-town"]]
         [:v [:open "https://github.com/pulls"]]
         ;; [:v [:open "https://app.graphite.dev/"]]
