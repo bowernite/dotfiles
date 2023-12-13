@@ -3,7 +3,12 @@
 /#####################################################################
 # My Yabai config
 #
-#
+# I tried it for a while, and then stopped using it. A tiling window
+# manager is interesting in theory, but I never quite found a
+# workflow that worked for me. Would need an easy way to toggle it
+# on/off, or to use separate workspaces, i.e. with a karabiner
+# shortcut. I think I was somewhat close, but for now, Rectangle
+# is find 🤷🏼
 #####################################################################
 
 # Caleb's config: https://github.com/cfoust/cawnfig/blob/main/configs/yabai/config
