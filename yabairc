@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+/#####################################################################
+# My Yabai config
+#
+#
+#####################################################################
+
 # Caleb's config: https://github.com/cfoust/cawnfig/blob/main/configs/yabai/config
 # https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
 
