@@ -154,7 +154,7 @@
         ; A backup (open preferences, then close the preferences tab)
         ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
         ;; More ergonomic tab search
-        [:!CSi :!CSa :Chrome]
+        [:!CSu :!CSa :Chrome]
         ;; Replacement for ⌘K (on some sites, this is a shortcut for search)
         ;; [:!CSi :!Ck :Chrome]
         ;; Swap ⌘T with ⌘; (since the former is much more used, and the latter is more ergonomic)
