@@ -35,6 +35,10 @@ export __a_secret=
 
 I try to automate everything I can, but here's everything I haven't yet (or won't at all).
 
+### Activate license keys
+
+Go through all apps in saved Bitwarden `License Keys` note, and activate necessary apps with them.
+
 ### One-offs 1️⃣
 
 - [ ] Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
