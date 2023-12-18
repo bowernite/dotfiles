@@ -71,6 +71,7 @@ Keyboard remapping is done with the Karabiner-Elements app.
   - [ ] Global Alfred hotkey
   - [ ] Theme (set one for dark theme and one for light theme, based on macOS dark/light)
   - [ ] Set auto-expansion for snippets (top right checkbox in Snippets settings)
+  - [ ] Set Clipboard History preservation (probably to the max time limit)
 - [ ] Make sure Alfred and its workflows have proper OS access. In Alfred's preferences, go to `General` > `Permissions` > `Request Permissions`, and let Alfred guide you 🧙‍♂️
 - [ ] Exclude all `node_modules` from Spotlight: `System Preferences` > `Spotlight` > `Privacy`: Drag folders from Finder into the drop area. You can easily find these by triggering Alfred and querying for `node_modules`
 
