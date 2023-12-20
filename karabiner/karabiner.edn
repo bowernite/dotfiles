@@ -126,6 +126,13 @@
         [:!CTs :!SOCs :!VSCode]
       ]
     }
+    ; Doesn't work, tbh Ctrl+F2 doesn't even work, it focuses the top left 🤷🏼‍♂️
+    ;; {
+    ;;   :des "easier focus top-right menu bar"
+    ;;   :rules [
+    ;;     [:!CTslash :!TFf2]
+    ;;   ]
+    ;; }
     {
       :des "app-specific"
       :rules [
