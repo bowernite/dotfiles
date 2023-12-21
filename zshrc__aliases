@@ -233,6 +233,20 @@ alias bupg="brew upgrade"
 alias bun="brew uninstall"
 
 #####################################################################
+# builtins
+#####################################################################
+
+alias l="ls -lh --group-directories-first"
+
+# List directories
+alias lsd="ls -d */"
+
+# Change ping to stop after 5 pings
+alias ping="ping -c 5"
+
+alias wh=which
+
+#####################################################################
 # Miscellaneous
 #####################################################################
 
@@ -240,14 +254,8 @@ alias bun="brew uninstall"
 alias goto="vim -o \`fzf\`"
 alias ls="exa"
 
-# List directories
-alias lsd="ls -d */"
-
 # Log ip to console
 alias myip="curl http://ipecho.net/plain; echo"
-
-# Change ping to stop after 5 pings
-alias ping="ping -c 5"
 
 # I do these all the time when I'm mucking around with zsh/my .zshrc
 alias z="exec zsh"
@@ -258,8 +266,6 @@ alias alg="alias | grep"
 # "bundle id": Given the path to an app, gives the app's bundle id
 # Source: https://superuser.com/questions/346369/getting-the-bundle-identifier-of-an-os-x-application-in-a-shell-script
 alias bid="mdls -name kMDItemCFBundleIdentifier -r"
-
-alias wh=which
 
 # Clears the screen and runs the succeeding command(s)
 c() {
