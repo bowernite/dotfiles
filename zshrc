@@ -232,4 +232,3 @@ export GIT_MERGE_AUTOEDIT=no
 
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file
-
