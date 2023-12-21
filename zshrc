@@ -187,9 +187,9 @@ compdef _gt_yargs_completions gt
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
-#####################################################################
-# Miscellaneous setup
-#####################################################################
+# #####################################################################
+# # Miscellaneous setup
+# #####################################################################
 
 # Load sandboxd to lazy load some things
 # Source: https://github.com/benvan/sandboxd
@@ -232,6 +232,3 @@ export GIT_MERGE_AUTOEDIT=no
 
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
