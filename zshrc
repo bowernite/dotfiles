@@ -24,6 +24,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ## See: https://docs.brew.sh/Homebrew-and-Python
 PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
+# So that `pipx` executables are in the path
+PATH="$HOME/.local/bin:$PATH"
+
 # Setting PATH for mongodb
 PATH="$HOME/mongodb/bin:$PATH"
 
@@ -175,6 +178,14 @@ _gt_yargs_completions()
 }
 compdef _gt_yargs_completions gt
 ###-end-gt-completions-###
+
+#####################################################################
+# Python sheeeit
+#####################################################################
+
+# Enable autocompletions for poetry
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
 
 #####################################################################
 # Miscellaneous setup
