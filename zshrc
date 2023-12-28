@@ -20,10 +20,6 @@ source $dotfiles_dir/zshrc__git
 PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
-## See: https://docs.brew.sh/Homebrew-and-Python
-PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-
 # So that `pipx` executables are in the path
 PATH="$HOME/.local/bin:$PATH"
 
@@ -186,6 +182,14 @@ compdef _gt_yargs_completions gt
 # Enable autocompletions for poetry
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
+
+# Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
+## See: https://docs.brew.sh/Homebrew-and-Python
+# PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
+# Temporary, because a work project requires python 3.10
+PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+alias python3="/opt/homebrew/opt/python@3.10/bin/python3.10"
 
 # #####################################################################
 # # Miscellaneous setup
