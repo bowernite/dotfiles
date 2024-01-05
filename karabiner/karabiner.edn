@@ -299,7 +299,7 @@
         [:m :!TOSm]
         ;; MDN search ("feeling lucky" Google search on MDN)
         ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
-        [:slash :!CTOSm]
+        [:l :!CTOSm]
         ;; Add macOS text replacement
         [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Apple Notes search / creation
@@ -316,6 +316,8 @@
         [:period [:opena "Remotasks Helper"]]
         ;; Timers
         [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
+        ;; Start tasking
+        [:slash :!CTs]
 
         ; Not really used / reference
         ;; umlaut (uses macOS's option+u for this)
@@ -325,7 +327,7 @@
         ; "Get out"
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Hide all windows
-        [:l :!COSl]
+        ;; [:l :!COSl]
         ;; Soft get out: Hide all windows and sleep display
         ;; [:comma :!COScomma]
         ;; Hard get out: Hide all windows and sleep entire Mac (disconnects from bluetooth, suspends apps, etc.)
