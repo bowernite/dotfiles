@@ -13,7 +13,10 @@ Session.vim
 *.ignored/
 *.ignored.*
 .eslintcache
-.vscode/
+
+.vscode/*
+# A pattern that can be used to help teams keep a "template" for initial / recommended settings, since VS Code doesn't allow composability here
+!.vscode/*.example.json
 
 # Custom pull request template (i.e. for Graphite)
 pull_request_template.md
