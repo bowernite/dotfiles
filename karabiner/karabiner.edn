@@ -413,7 +413,7 @@
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
         [:o [:opena "/Applications/Gather.app"]]
-        [:y [:opena "Calendar"]]
+        [:y [:opena "Notion Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app"]]
