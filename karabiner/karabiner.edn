@@ -523,8 +523,8 @@
 
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
-        [:r [:open "https://github.com/LedgerInvesting/ledger/pulls"]]
-        [:f [:opena "Visual Studio Code" "~/src/work/ledger"]]
+        [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
+        [:f [:opena "Visual Studio Code" "~/src/work/platform"]]
         [:v [:open "https://github.com/pulls"]]
         ;; [:v [:open "https://app.graphite.dev/"]]
         [:t [:open "https://github.com/notifications?query=reason%3Amention"]]
