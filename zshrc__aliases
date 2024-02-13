@@ -251,6 +251,8 @@ alias wh=which
 # Miscellaneous
 #####################################################################
 
+alias b="butterfish"
+
 # Open fzf files with vim by default
 alias goto="vim -o \`fzf\`"
 alias ls="exa"
