@@ -489,7 +489,7 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; [:i [:openw "accounts.intuit.com/index.html?offering_id=Intuit.ifs.mint"]]
         ;; Mint
-        [:i [:open "keysmith://run-macro/7FBA7681-5813-4EF3-98AE-D36B97AAFF92"]]
+        ;; [:i [:open "keysmith://run-macro/7FBA7681-5813-4EF3-98AE-D36B97AAFF92"]]
         ;; N26
         [:6 [:open "keysmith://run-macro/BADD1A95-B3BB-4561-B90E-1738B351CAEF"]]
         ;; [:6 [:open "/Users/brett/Applications/Chrome\\ Apps.localized/N26.app"]]
