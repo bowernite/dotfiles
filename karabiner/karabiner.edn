@@ -386,7 +386,7 @@
         [:j :same_wind_app :Chrome]
         ;; [:j [:opena "Arc"] :!Arc]
         ;; [:j :same_wind_app :Arc]
-        [:k [:opena "/Applications/Visual Studio Code.app"] :!VSCode]
+        [:k [:opena "/Applications/Cursor.app"] :!VSCode]
         [:k :same_wind_app :VSCode]
         ; Some same/left hand alternatives
         ;; [:c [:opena "Google Chrome"] :!Chrome]
@@ -505,8 +505,8 @@
         :period-mode
 
         ;; Personal
-        [:s [:opena "Visual Studio Code" "~/src/personal/dotfiles"]]
-        [:w [:opena "Visual Studio Code" "~/src/personal/wiki"]]
+        [:s [:opena "Cursor" "~/src/personal/dotfiles"]]
+        [:w [:opena "Cursor" "~/src/personal/wiki"]]
         [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:q [:open "~/src/personal/qmk_firmware/keyboards/preonic/keymaps/babramczyk/keymap.c"]]
         
@@ -524,7 +524,7 @@
         ;; Main repo
         [:4 [:alfred "open in iTerm" "dev.abramczyk.search-folders" "~/src/work/gather-town"]]
         [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
-        [:f [:opena "Visual Studio Code" "~/src/work/ledger"]]
+        [:f [:opena "Cursor" "~/src/work/ledger"]]
         [:v [:open "https://github.com/pulls"]]
         ;; [:v [:open "https://app.graphite.dev/"]]
         [:t [:open "https://github.com/notifications?query=reason%3Amention"]]
@@ -879,7 +879,7 @@
   ]
 
   :applications {
-    :VSCode ["^com\\.microsoft\\.VSCode(Insiders)?$"]
+    :VSCode ["^com\\.microsoft\\.VSCode(Insiders)?$", "^com.todesktop.230313mzl4w4u92$"]
     :Chrome [
       "^com\\.google\\.Chrome$",
       ;; "^org\\.chromium\\.Chromium$",
