@@ -309,7 +309,7 @@
         ;; Apple Notes search / creation
         ;; [:n [:alfred "notes" "in.sball.searchnotes"]]
         ;; Bear Search
-        [:n [:alfred "search bear" "com.drgrib.bear"]]
+        [:n [:alfred "create or search" "com.drgrib.bear"]]
         ; Send message / iMessage
         [:j [:!CTOSj]]
         ;; Mary
