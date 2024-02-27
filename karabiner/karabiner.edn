@@ -136,6 +136,10 @@
     {
       :des "app-specific"
       :rules [
+        ; Bear
+        ;; More ergonomic Notes search
+        [:!Cp :!CSf :Bear]
+        
         ; Finder
         ;; More ergonomic "Copy as pathname"
         [:!Cp :!COc :Finder]
@@ -303,7 +307,9 @@
         ;; Add macOS text replacement
         [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Apple Notes search / creation
-        [:n [:alfred "notes" "in.sball.searchnotes"]]
+        ;; [:n [:alfred "notes" "in.sball.searchnotes"]]
+        ;; Bear Search
+        [:n [:alfred "search bear" "com.drgrib.bear"]]
         ; Send message / iMessage
         [:j [:!CTOSj]]
         ;; Mary
@@ -322,7 +328,6 @@
         [:7 :!CTOSy]
         ;; Force quit
         [:6 :!COescape]
-        
 
         ; Not really used / reference
         ;; umlaut (uses macOS's option+u for this)
@@ -406,7 +411,7 @@
 
         ; Also common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:n [:opena "Notes"]]
+        [:n [:opena "Bear"]]
         ;; [:semicolon [:opena "iTerm"]]
         [:semicolon [:opena "Kitty"]]
         [:m [:opena "Messages"]]
@@ -906,6 +911,7 @@
     :iTerm ["^com\\.googlecode\\.iterm2$"]
     :Finder ["^com\\.apple\\.finder$"]
     :Notes ["^com\\.apple\\.Notes$"]
+    :Bear ["^net\\.shinyfrog\\.bear$"]
     :Messages ["^com\\.apple\\.MobileSMS$"]
     :Calendar ["^com\\.apple\\.iCal$"]
     :Preview ["^com\\.apple\\.Preview$"]
