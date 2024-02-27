@@ -307,7 +307,7 @@
         ; Send message / iMessage
         [:j [:!CTOSj]]
         ;; Mary
-        [:7 [:!CTOSh]]
+        [:8 [:!CTOSh]]
         
         ; Limbo / WIP
         ;; Screen capture tools
@@ -318,12 +318,14 @@
         [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
         ;; Start tasking
         [:slash :!CTs]
+        ;; Quit app
+        [:7 :!CTOSy]
+        ;; Force quit
+        [:6 :!COescape]
 
         ; Not really used / reference
         ;; umlaut (uses macOS's option+u for this)
         [:quote :!Ou]
-        ;; Quit app
-        [:6 :!CTOSy]
         ; "Get out"
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Hide all windows
