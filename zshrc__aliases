@@ -259,8 +259,8 @@ alias wh=which
 
 alias b="butterfish"
 alias bp="butterfish prompt"
-alias bg="butterfish generate"
-alias bge="butterfish generate -f"
+alias bg="butterfish gencmd"
+alias bge="butterfish gencmd -f"
 alias bsum="butterfish summarize"
 alias bexec="butterfish exec"
 # model=4
