@@ -1,3 +1,5 @@
+alias g="gt"
+
 # "git checkout branch"
 alias gcob="git co -b"
 

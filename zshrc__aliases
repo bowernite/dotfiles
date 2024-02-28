@@ -254,10 +254,21 @@ alias ping="ping -c 5"
 alias wh=which
 
 #####################################################################
-# Miscellaneous
+# Butterfish
 #####################################################################
 
 alias b="butterfish"
+alias bp="butterfish prompt"
+alias bg="butterfish generate"
+alias bge="butterfish generate -f"
+alias bsum="butterfish summarize"
+alias bexec="butterfish exec"
+# model=4
+#   - -f to execute
+
+#####################################################################
+# Miscellaneous
+#####################################################################
 
 # Open fzf files with vim by default
 alias goto="vim -o \`fzf\`"
