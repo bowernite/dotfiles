@@ -882,7 +882,7 @@
         ;; Show hidden menu bar items
         [:h :!CTSh]
         ;; Focus CleanShot
-        [:o :!CTSo]
+        [:j :!CTSj]
         
         ; WIP / purgatory
         ;; Hide left application menu
