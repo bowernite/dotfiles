@@ -873,7 +873,7 @@
         ; Left, right, corners
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         ;; Left
-        [:a :!TOq]
+        [:a :!TOa]
         ;; Top left
         [:q :!TOq]
         ;; Bottom left

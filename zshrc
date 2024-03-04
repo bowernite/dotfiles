@@ -13,6 +13,8 @@ source $dotfiles_dir/zshrc__git
 # PATH shenanigans
 #####################################################################
 
+PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+
 # New M1 homebrew
 PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -184,9 +186,6 @@ autoload -Uz compinit && compinit
 ## See: https://docs.brew.sh/Homebrew-and-Python
 # PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 
-# Temporary, because a work project requires python 3.10
-PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
-alias python3="/opt/homebrew/opt/python@3.10/bin/python3.10"
 
 # #####################################################################
 # # Miscellaneous setup
