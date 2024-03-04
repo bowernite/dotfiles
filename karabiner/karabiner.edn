@@ -67,7 +67,7 @@
     :tab-mode { :key :tab }
     :period-mode { :key :period }
     :3-mode { :key :3 }
-    :4-mode { :key :4 }
+    :8-mode { :key :8 }
   }
 
   :main [
@@ -126,13 +126,6 @@
         [:!CTs :!SOCs :!VSCode]
       ]
     }
-    ; Doesn't work, tbh Ctrl+F2 doesn't even work, it focuses the top left 🤷🏼‍♂️
-    ;; {
-    ;;   :des "easier focus top-right menu bar"
-    ;;   :rules [
-    ;;     [:!CTslash :!TFf2]
-    ;;   ]
-    ;; }
     {
       :des "app-specific"
       :rules [
@@ -217,67 +210,69 @@
       :des "slash-mode (macros)"
       :rules [
         :slash-mode
-
-        ;; Simulates a right click
-        [:3 :!Sf10]
-        
-        ;; Dictation
-        ;; [:2 :!CTOS2]
-        
-        ; VPN
+        ; Solidified
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; Connect to configured default country VPN
-        ;; [:2 [:opena "NordVPN Teams"]]
-        ;; [:1 [:quit "NordLayer"]]
-
         ; Screenshots
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Copy screenshot of selected area
+        ;; Copy screenshot of selected area
         [:c :!CTS4]
-        ; Copy screenshot of full screen
+        ;; Copy screenshot of full screen
         [:d :!CTS5]
-
-        ; Rectangle
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Window resizing
+        ;; Maximize window (rectangle)
         [:a :!TOa]
+        ;; Center Window (rectangle)
         [:s :!TOs]
-        ; Left/right half of current monitor
-        [:q :!TOh]
-        [:w :!TOl]
-        ; Move to next/prev monitor
-        [:z :!CTOh]
-        [:x :!CTOl]
-
-        ; Alfred
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:h [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
-        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        ;; 2FA / MFA
+        [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
+        ;; Alfred: Recent Browser history
         [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
-        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        ;; Alfred: Create reminder (Apple)
+        [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
+        ;; Alfred: Add to Trello inbox
+        [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
+        
+        ; WIP / Use more
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; CleanShot
+        ;; Scrolling capture
+        [:3 :!CTOS3]
+        ;; Focus CleanShot (in menu bar)
+        [:x :!CTSj]
+        ; Menu bar items (Bartender)
+        ;; Search menu bar items
+        [:z :!CTSk]
+        ;; Focus menu bar
+        ;; [:l :!CTSl]
+        ;; Show all menu bar items
+        ;; [:a :!CTSy]
+        ;; Show hidden menu bar items
+        [:w :!CTSh]
+        ;; WIP / purgatory
+        ;; Hide left application menu
+        ;; [:0 :!CTS0]
         ;; Search bluetooth devices to toggle
         [:b :!CTOSb]
-        ;; [:b [:alfred "bluetooth list" "de.tilmanginzel.alfred.bluetooth"]]
+        ;; Alfred: Search npm packages
+        [:tab [:alfred "search" "com.sindresorhus.npms"]]
+
+        ; Purgatory
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Generic window click to escape focus
+        ;; [:e [:open "keysmith://run-macro/EB647FDB-EDCB-495D-9368-A74C089A1EE7"]]
         ; AirPods
         ;; Connect and set to audio output device
         ;; [:4 :!CTOS4]
         [:4 [:open "keysmith://run-macro/4FB314D1-C2AE-46A0-8D6B-A94034D0023C"]]
         ;; Disconnect (from bluetooth)
         [:5 :!CTOS5]
-        [:tab [:alfred "search" "com.sindresorhus.npms"]]
-        [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
-        ;; Duplicate, for one-handed purposes
-        [:period [:alfred "add to inbox" "com.mikomagni.trello"]]
-        ;; [:e [:alfred "convert colors" "io.github.g1eny0ung.alfred.colors.workflow"]]
-        [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
-        ;; 2FA / MFA
-        [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
-
-        ; Keysmith
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:caps_lock [:open "keysmith://run-macro/F8C058F7-FE8E-4A61-8B04-56FB04D431FF"]]
-        ;; Generic window click to escape focus
-        ;; [:e [:open "keysmith://run-macro/EB647FDB-EDCB-495D-9368-A74C089A1EE7"]]
+        ;; Simulates a right click
+        ;; [:3 :!Sf10]
+        ;; Dictation
+        ;; [:2 :!CTOS2]
+        ;; Alfred: Chrome bookmarks
+        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        ;; Alfred: Chrome history
+        [:h [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
       ]
     }
     {
@@ -870,24 +865,72 @@
       ]
     }
     {
-      :des "4-mode (menu bar + open for others)"
+      :des "8-mode (window manager)"
       :rules [
-        :4-mode
+        :8-mode
         
-        ;; Search menu bar items
-        [:k :!CTSk]
-        ;; Focus menu bar
-        [:l :!CTSl]
-        ;; Show all menu bar items
-        [:y :!CTSy]
-        ;; Show hidden menu bar items
-        [:h :!CTSh]
-        ;; Focus CleanShot
-        [:j :!CTSj]
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Left, right, corners
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Left
+        [:a :!TOq]
+        ;; Top left
+        [:q :!TOq]
+        ;; Bottom left
+        [:z :!TOz]
+        ;; Right
+        [:d :!TOd]
+        ;; Top right
+        [:e :!TOe]
+        ;; Bottom right
+        [:c :!TOc]
         
-        ; WIP / purgatory
-        ;; Hide left application menu
-        [:0 :!CTS0]
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Top/bottom
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Top
+        [:w :!TOw]
+        ;; Bottom
+        [:x :!TOx]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Center and maximizing
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Center
+        [:f :!TOf]
+        ;; Maximize
+        [:s :!TOs]
+        
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Thirds
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; First third
+        [:1 :!TO1]
+        ;; Second third
+        [:3 :!TO3]
+        ;; Last third
+        [:5 :!TO5]
+        ;; First two thirds
+        [:2 :!TO2]
+        ;; Last two thirds
+        [:4 :!TO4]
+        
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Displays
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Next display (right)
+        [:t :!TOt]
+        [:v :!TOt]
+        ;; Prev display (left)
+        [:r :!TOr]
+        
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Window size
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Smaller
+        [:tab :!TOtab]
+        ;; Larger
+        [:caps_lock :!TOcaps_lock]
       ]
     }
   ]
