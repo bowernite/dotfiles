@@ -465,12 +465,12 @@
         [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
         ;; Work email
         [:semicolon [:openw "mail.google.com/mail/u/3"]]
-        [:k [:openw "chat.openai.com"]]
         ;; Add custom emojis to Slack
         ;; [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
         ;; Level (reimbursements)
         [:period [:open "keysmith://run-macro/016BFA39-CABE-4E33-9045-73BA6F72CB5E"]]
 
+        [:k [:openw "chat.openai.com"]]
         [:l [:openw "trello.com/b/NqI34mI2/%E2%8F%B3-later"]]
         ;; [:n [:openw "www.notion.so/Notes-420ab1675f494be2a0c34fd8fe1c8025"]]
         ;; [:n [[:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]]
