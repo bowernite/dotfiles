@@ -464,7 +464,8 @@
         ;; Personal calendar
         [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
         ;; Work email
-        [:k [:openw "mail.google.com/mail/u/3"]]
+        [:semicolon [:openw "mail.google.com/mail/u/3"]]
+        [:k [:openw "chat.openai.com"]]
         ;; Add custom emojis to Slack
         ;; [:e [:openw "wonderdotme.slack.com/customize/emoji?utm_source=in-prod&utm_medium=inprod-customize_link-slack_menu-click"]]
         ;; Level (reimbursements)
