@@ -218,9 +218,9 @@
         ;; Copy screenshot of full screen
         [:d :!CTS5]
         ;; Maximize window (rectangle)
-        [:a :!TOa]
+        [:a :!TOs]
         ;; Center Window (rectangle)
-        [:s :!TOs]
+        [:s :!TOf]
         ;; 2FA / MFA
         [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
         ;; Alfred: Recent Browser history
