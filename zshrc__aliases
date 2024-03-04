@@ -258,13 +258,13 @@ alias wh=which
 #####################################################################
 
 alias b="butterfish"
-alias bp="butterfish prompt"
+alias bsh="butterfish shell -m 'gpt-4-turbo-preview'"
+alias chat="bsh"
+alias bp="butterfish prompt -m='gpt-4-turbo-preview'"
 alias bg="butterfish gencmd"
 alias bge="butterfish gencmd -f"
 alias bsum="butterfish summarize"
 alias bexec="butterfish exec"
-# model=4
-#   - -f to execute
 
 #####################################################################
 # Miscellaneous
