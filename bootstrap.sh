@@ -145,7 +145,7 @@ function clone_repo() {
   local repo_name=$1
   local target_dir="$HOME/src/personal/$repo_name"
   if [[ ! -d $target_dir ]]; then
-    git clone "https://github.com/babramczyk/$repo_name.git" $target_dir
+    git clone "https://github.com/bowernite/$repo_name.git" $target_dir
   fi
 }
 
