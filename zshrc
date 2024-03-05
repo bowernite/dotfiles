@@ -5,9 +5,9 @@ dotfiles_dir=$HOME/src/personal/dotfiles
 # The generated file that comes from oh-my-zsh
 source $dotfiles_dir/zshrc__generated
 # Private stuff (keys, company-specific, etc.)
+source $dotfiles_dir/zshrc__git
 source $dotfiles_dir/zshrc__private/zshrc__private
 source $dotfiles_dir/zshrc__aliases
-source $dotfiles_dir/zshrc__git
 
 #####################################################################
 # PATH shenanigans

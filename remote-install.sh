@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SOURCE="https://github.com/babramczyk/dotfiles"
+SOURCE="https://github.com/bowernite/dotfiles"
 TARBALL="$SOURCE/tarball/master"
 TARGET="$HOME/src/personal/dotfiles"
 TAR_CMD="tar -xzv -C "$TARGET" --strip-components=1 --exclude='{gitignore}'"

@@ -1,3 +1,10 @@
+function git_show_modified_files() {
+  if [[ $(git status --porcelain) ]]; then
+    echo -e "\n📝 \033[0;33mModified files:\033[0m"
+    git status --porcelain
+  fi
+}
+
 alias g="gt"
 
 # "git checkout branch"
