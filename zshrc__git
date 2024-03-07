@@ -2,6 +2,15 @@ function git_show_modified_files() {
   if [[ $(git status --porcelain) ]]; then
     echo -e "\n📝 \033[0;33mModified files:\033[0m"
     git status --porcelain
+
+    echo -e "\nDo you want to commit all modified files? (y/n)"
+    read -k 1 -s answer
+    echo $answer
+    if [[ $answer == "y" ]]; then
+      git add .
+      git commit -m "lint & format"
+      echo -e "\n✍️🏼 \033[0;32mAll modified files have been committed.\033[0m"
+    fi
   fi
 }
 
