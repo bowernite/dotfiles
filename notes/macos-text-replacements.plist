@@ -4,6 +4,216 @@
 (
         {
         on = 1;
+        replace = moicj;
+        with = "MOIC's";
+    },
+        {
+        on = 1;
+        replace = moic;
+        with = MOIC;
+    },
+        {
+        on = 1;
+        replace = fjadd;
+        with = "2940 E Rhode Island Ave\\nMilwaukee, WI 53207";
+    },
+        {
+        on = 1;
+        replace = ptls;
+        with = PTLs;
+    },
+        {
+        on = 1;
+        replace = ptl;
+        with = PTL;
+    },
+        {
+        on = 1;
+        replace = nrnj;
+        with = "internet's";
+    },
+        {
+        on = 1;
+        replace = difcs;
+        with = differences;
+    },
+        {
+        on = 1;
+        replace = difc;
+        with = difference;
+    },
+        {
+        on = 1;
+        replace = njr;
+        with = number;
+    },
+        {
+        on = 1;
+        replace = envmj;
+        with = "environment's";
+    },
+        {
+        on = 1;
+        replace = envms;
+        with = environments;
+    },
+        {
+        on = 1;
+        replace = apii;
+        with = API;
+    },
+        {
+        on = 1;
+        replace = oos;
+        with = OOS;
+    },
+        {
+        on = 1;
+        replace = "fkk,";
+        with = "\\Ud83d\\Ude14";
+    },
+        {
+        on = 1;
+        replace = fkkh;
+        with = "\\Ud83d\\Udc9b";
+    },
+        {
+        on = 1;
+        replace = idkw;
+        with = "I don't know";
+    },
+        {
+        on = 1;
+        replace = pth;
+        with = Python;
+    },
+        {
+        on = 1;
+        replace = "@@w";
+        with = "brett.abramczyk@ledgerinvesting.com";
+    },
+        {
+        on = 1;
+        replace = sdyj;
+        with = "Saturday's";
+    },
+        {
+        on = 1;
+        replace = hdyj;
+        with = "Thursday's";
+    },
+        {
+        on = 1;
+        replace = hdys;
+        with = Thursdays;
+    },
+        {
+        on = 1;
+        replace = chgpt;
+        with = ChatGPT;
+    },
+        {
+        on = 1;
+        replace = gpts;
+        with = GPTs;
+    },
+        {
+        on = 1;
+        replace = gptj;
+        with = "GPT's";
+    },
+        {
+        on = 1;
+        replace = gpt;
+        with = GPT;
+    },
+        {
+        on = 1;
+        replace = "#ht";
+        with = 2622496627;
+    },
+        {
+        on = 1;
+        replace = "#hr";
+        with = 12622496627;
+    },
+        {
+        on = 1;
+        replace = ttl;
+        with = TTL;
+    },
+        {
+        on = 1;
+        replace = jwtj;
+        with = JWTj;
+    },
+        {
+        on = 1;
+        replace = jwts;
+        with = JWTs;
+    },
+        {
+        on = 1;
+        replace = jwt;
+        with = JWT;
+    },
+        {
+        on = 1;
+        replace = bhd;
+        with = behind;
+    },
+        {
+        on = 1;
+        replace = dptis;
+        with = descriptions;
+    },
+        {
+        on = 1;
+        replace = dptij;
+        with = "description's";
+    },
+        {
+        on = 1;
+        replace = dpti;
+        with = description;
+    },
+        {
+        on = 1;
+        replace = "#h";
+        with = "(262) 249-6627";
+    },
+        {
+        on = 1;
+        replace = dfrd;
+        with = differed;
+    },
+        {
+        on = 1;
+        replace = dfrn;
+        with = differing;
+    },
+        {
+        on = 1;
+        replace = dfrs;
+        with = differs;
+    },
+        {
+        on = 1;
+        replace = dfr;
+        with = differ;
+    },
+        {
+        on = 1;
+        replace = nhr;
+        with = neither;
+    },
+        {
+        on = 1;
+        replace = nhrj;
+        with = "neither's";
+    },
+        {
+        on = 1;
         replace = cjc;
         with = CT;
     },
@@ -126,11 +336,6 @@
         on = 1;
         replace = "let's";
         with = "let's";
-    },
-        {
-        on = 1;
-        replace = dnd;
-        with = DND;
     },
         {
         on = 1;
@@ -354,11 +559,6 @@
     },
         {
         on = 1;
-        replace = fjaddri;
-        with = "2141 S Robinson Ave, Apt 202  Go to the main building (perpendicular to the other three), entrance facing the courtyard. Dial 922 in the keypad and hit CALL";
-    },
-        {
-        on = 1;
         replace = amks;
         with = "Abramczyk's";
     },
@@ -536,11 +736,6 @@
         on = 1;
         replace = rowenna;
         with = Rowenna;
-    },
-        {
-        on = 1;
-        replace = fjadd;
-        with = "2141 S Robinson Ave, Apt A202\\nMilwaukee WI, 53207";
     },
         {
         on = 1;
@@ -1824,21 +2019,6 @@
     },
         {
         on = 1;
-        replace = dcis;
-        with = descriptions;
-    },
-        {
-        on = 1;
-        replace = dcij;
-        with = "description's";
-    },
-        {
-        on = 1;
-        replace = dci;
-        with = description;
-    },
-        {
-        on = 1;
         replace = dltb;
         with = deletable;
     },
@@ -2381,11 +2561,6 @@
         on = 1;
         replace = fkkj;
         with = "\\Ud83d\\Ude02";
-    },
-        {
-        on = 1;
-        replace = fkkh;
-        with = "\\Ud83d\\Ude14";
     },
         {
         on = 1;
@@ -3081,11 +3256,6 @@
         on = 1;
         replace = visd;
         with = existed;
-    },
-        {
-        on = 1;
-        replace = vis;
-        with = exist;
     },
         {
         on = 1;
@@ -4864,16 +5034,6 @@
     },
         {
         on = 1;
-        replace = hdrs;
-        with = headers;
-    },
-        {
-        on = 1;
-        replace = hdr;
-        with = header;
-    },
-        {
-        on = 1;
         replace = iptn;
         with = inputting;
     },
@@ -5606,11 +5766,6 @@
         on = 1;
         replace = jvs;
         with = JavaScript;
-    },
-        {
-        on = 1;
-        replace = ptl;
-        with = potential;
     },
         {
         on = 1;
@@ -7379,11 +7534,6 @@
     },
         {
         on = 1;
-        replace = "@@w";
-        with = "brett@wonder.me";
-    },
-        {
-        on = 1;
         replace = cmcj;
         with = "communication's";
     },
@@ -8544,11 +8694,6 @@
     },
         {
         on = 1;
-        replace = ptls;
-        with = potentials;
-    },
-        {
-        on = 1;
         replace = hmm;
         with = hmmmm;
     },
@@ -8846,36 +8991,6 @@
         on = 1;
         replace = dmc;
         with = document;
-    },
-        {
-        on = 1;
-        replace = "#gr";
-        with = 4915150787992;
-    },
-        {
-        on = 1;
-        replace = "#mgr";
-        with = 4915156183810;
-    },
-        {
-        on = 1;
-        replace = "#mgt";
-        with = 15156183810;
-    },
-        {
-        on = 1;
-        replace = "#mg";
-        with = "+49 151 56183810";
-    },
-        {
-        on = 1;
-        replace = "#g";
-        with = "+49 151 50787992";
-    },
-        {
-        on = 1;
-        replace = "#gt";
-        with = 015150787992;
     },
         {
         on = 1;
@@ -12344,16 +12459,6 @@
     },
         {
         on = 1;
-        replace = difns;
-        with = differences;
-    },
-        {
-        on = 1;
-        replace = difn;
-        with = difference;
-    },
-        {
-        on = 1;
         replace = difg;
         with = differing;
     },
@@ -13134,18 +13239,8 @@
     },
         {
         on = 1;
-        replace = idk;
-        with = "I don't know";
-    },
-        {
-        on = 1;
         replace = dfl;
         with = default;
-    },
-        {
-        on = 1;
-        replace = ttl;
-        with = title;
     },
         {
         on = 1;
@@ -13809,11 +13904,6 @@
     },
         {
         on = 1;
-        replace = envs;
-        with = environments;
-    },
-        {
-        on = 1;
         replace = wlc;
         with = welcome;
     },
@@ -13901,11 +13991,6 @@
         on = 1;
         replace = eis;
         with = "either's";
-    },
-        {
-        on = 1;
-        replace = neis;
-        with = "neither's";
     },
         {
         on = 1;
@@ -15649,11 +15734,6 @@
     },
         {
         on = 1;
-        replace = "ad.";
-        with = "adjustment period";
-    },
-        {
-        on = 1;
         replace = ptt;
         with = patient;
     },
@@ -15904,11 +15984,6 @@
     },
         {
         on = 1;
-        replace = pyth;
-        with = Python;
-    },
-        {
-        on = 1;
         replace = php;
         with = PHP;
     },
@@ -15966,11 +16041,6 @@
         on = 1;
         replace = bem;
         with = BEM;
-    },
-        {
-        on = 1;
-        replace = api;
-        with = API;
     },
         {
         on = 1;
