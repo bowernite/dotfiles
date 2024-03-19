@@ -14,4 +14,3 @@
 bin/sudo_askpass.sh
 /private
 .vscode/settings.json
-karabiner/karabiner.edn

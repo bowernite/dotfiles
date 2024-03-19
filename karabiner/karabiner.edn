@@ -1,0 +1,999 @@
+{
+  :profiles {
+    :Goku {
+      :default true
+      :sim 40
+      :delay 500
+      :alone 250
+      :held 250
+    }
+  }
+  :simlayer-threshold 210
+
+  :tos {
+    :same_wind_app      {:key :grave_accent_and_tilde :modi [:left_command] :lazy true}
+    :prev_app           {:key :tab :modi [:left_command] :lazy true}
+    :left_paren         {:key :9 :modi [:left_shift] :lazy true}
+    :right_paren        {:key :0 :modi [:left_shift] :lazy true}
+    :left_control_lazy  {:key :left_control :lazy true}
+    :right_control_lazy  {:key :right_control :lazy true}
+    :left_cmd_lazy      {:key :left_command :lazy true}
+    :second_brightness_decrement {:key :!Tdisplay_brightness_decrement }
+    :second_brightness_increment {:key :!Tdisplay_brightness_increment }
+  }
+
+  :modifiers {
+    :ro :right_option
+  }
+
+  :templates {
+    :launch      "osascript -e 'tell application \"Alfred 5\" to run trigger \"launch%s\" in workflow \"yqrashawn.workflow.launcher\" with argument \"\"'"
+    :alfred         "open /Applications/Alfred\\ 5.app && osascript -e 'tell application \"Alfred 5\" to run trigger \"%s\" in workflow \"%s\" with argument \"%s\"'"
+    :open        "open %s"
+    :opena       "open -a \"%s\" %s"
+    :acript      "osascript -e ''"
+    ;; "Open website"
+    ;;; Techinically, BSD `open` can open a URL as the second arg, with the default browser. But, it has a funny behavior for certain URLs (hard to pinpoint what they have in common) -- it briefly opens `Finder`, _then_ the default browser. This can be annoying, as now Cmd-Tabbing quickly brings you back to Finder, instead of the last app you were actually interacting with
+    :openw       "open -a \"Google Chrome\" \"https://%s\""
+    ;; :openw       "open -a \"Arc\" \"https://%s\""
+
+    :quit        "killall \"%s\""
+    :show        "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'\n"
+    :toggle      "osascript -e 'set appName to \"%s\"\nset startIt to false\ntell application \"System Events\"\n  if not (exists process appName) then\n    set startIt to true\n  else if frontmost of process appName then\n    set visible of process appName to false\n  else\n    set frontmost of process appName to true\n  end if\nend tell\nif startIt then\n  tell application appName to activate\nend if'"
+    :type        "osascript -e 'tell application \"System Events\" to keystroke \"%s\" as text'"
+    :unicode      "osascript -e 'tell application \"System Events\" to keystroke (\"%s\" as Unicode text)'"
+    :wait        "osascript -e 'delay %s'"
+
+    :yabai       "/opt/homebrew/bin/yabai %s"
+
+    ; Doesn't work :(
+    ; :emoji       "osascipt -e 'set the clipboard to \"%s\" \n tell application \"System Events\" to keystroke \"v\" using command down'"
+  }
+
+  ;; Layers: Pro is that you can hold down for a while without . Con is that if you type another character quickly, it'll trigger the layer rule instead of just the first key and second key in succession. Another con is that you can't use that key in other layers (only tested for semicolon-mode, which might be an edge case since we're doing that manually)
+  ;; Simlayers: Pro is that you never have to worry about typing too quickly and accidentally triggering a layer's rule, when you're just trying to type. Con is that it slows down the character getting registered (I think by the `:simlayer-threshold` below)
+
+  :layers {
+    :comma-mode { :key :comma }
+  }
+  :simlayers {
+    :q-mode { :key :q }
+    :x-mode { :key :x }
+    :z-mode { :key :z }
+    ;; Could move these to layers, if desirable. Won't be able to repeat the characters when holding the key anymore. Make sure to follow the process at the bottom of comma-mode
+    :slash-mode { :key :slash }
+    ;; Was used for media at one point, no longer needed
+    ;; :open_bracket-mode { :key :open_bracket }
+    :tab-mode { :key :tab }
+    :period-mode { :key :period }
+    :3-mode { :key :3 }
+    :8-mode { :key :8 }
+  }
+
+  :main [
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Manual layer triggers
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ;; {
+    ;;   :des "simlayer: z-x-mode"
+    ;;   :rules [
+    ;;     [[:z :x] ["z-x-mode" 1] nil { :afterup ["z-x-mode" 0]}]
+    ;;   ]
+    ;; }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; General/simple
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "swap : and ;"
+      :rules [
+        [
+          :semicolon
+          ["semicolon-mode" 1] nil
+          { :afterup ["semicolon-mode" 0] :alone :!Ssemicolon}
+        ]
+        [:!Ssemicolon :semicolon]
+      ]
+    }
+    {
+      :des "left cmd -> cmd+tab"
+      ;; :rules [[:left_command :left_command nil {:alone :!Ctab}]]
+      :rules [[:left_command :left_command nil {:alone :!Cj}]]
+    }
+    {
+      :des "left shift -> cmd+b (bold)"
+      :rules [[:left_shift :left_shift nil {:alone :!Cb}]]
+    }
+    {
+      :des "enter -> enter (alone) left_control (held)"
+      :rules [
+        [:##return_or_enter :left_control_lazy nil {:alone :return_or_enter}]
+      ]
+    }
+    {
+      :des "cmd+quote, cmd+shift+quote -> cmd+close_bracket, cmd+shift+close_bracket"
+      :rules [
+          [:!Cquote :!Cclose_bracket]
+          ;; NOTE: We need to turn off these "simple / generic" rules for app-specific overrides that we do below, as it prevents them from remapping what we're doing here
+          ;;; i.e. in this case, Calendar needs to override :!CSquote
+          ;; There might be a better way around this that allows chained overrides, but this works fine for now
+          [:!CSquote :!CSclose_bracket [:!Calendar]]
+      ]
+    }
+    {
+      :des "lock screen utils"
+      :rules [
+        ;; Do it in Alfred, I guess...
+        ;; [:!CTw :!CTS4]
+        [:!CSs :!COSl]
+      ]
+    }
+    {
+      :des "app-specific"
+      :rules [
+        ; Bear
+        ;; More ergonomic Notes search
+        [:!Cp :!CSf :Bear]
+
+        ; Finder
+        ;; More ergonomic "Copy as pathname"
+        [:!Cp :!COc :Finder]
+
+        ; Calendar
+        [:!CSquote :!Cright_arrow :Calendar]
+        [:!CSopen_bracket :!Cleft_arrow :Calendar]
+
+        ;; WIP: A command that triggers a menu item that doesn't have a shortcut (in this case, the "Show Notifications" item in Calendar). Inconsistent right now, as something the `return_or_enter` fires too quickly and doesn't register -- the left/right_arrows are meant to be a hack to delay it, but it's not really working. Trying Keysmith for now
+        ;; [:!Cbackslash [:!CSslash :n :o :down_arrow :left_arrow :right_arrow :left_arrow :right_arrow :return_or_enter] :Calendar]
+
+        ; Notes
+        ;; More ergonomic "Note List Search"
+        [:!CSf :!COf :Notes]
+        ;; Need to specify this as a one-off, since a normal Shift mapping won't work for our semicolon-mode
+        [:!Cf :!COf [:Notes :semicolon-mode]]
+
+        ; Chrome
+        ;; In Chrome, return focus to the document (Chrome doesn't provide any way to do this natively)
+        ;; Keybindings do this: 1) Focus the omnibar 2) type `j`, then `↵`. This runs a "search" I have in Chrome that runs Javascript that focuses the root "frame" of the document. Running Javascript altogether will focus the document, and focusing the root frame helps return focus after an <iframe> has stolen it
+        ;; [:!Cj [:!Cl :j :return_or_enter :g :!Sf] :Chrome]
+        ;; [:!CSj [:!Cl :j :return_or_enter] :Chrome]
+        ; A backup (open preferences, then close the preferences tab)
+        ; [:!Oreturn_or_enter [:!Ccomma :!Cw]]
+        ;; More ergonomic tab search
+        [:!CSu :!CSa :Chrome]
+        ;; Replacement for ⌘K (on some sites, this is a shortcut for search)
+        ;; [:!CSi :!Ck :Chrome]
+        ;; Swap ⌘T with ⌘; (since the former is much more used, and the latter is more ergonomic)
+        [:!Ct :!Csemicolon :Chrome]
+        [:!Csemicolon :!Ct :Chrome]
+        [:!CSt :!CSsemicolon :Chrome]
+        [:!CSsemicolon :!CSt :Chrome]
+
+        ; Allow our custom Vim jump navigation with brackets in the terminal. This needs to be done specially for the terminal, since <C-[> specifically means ESC in the terminal
+        [:!Wopen_bracket :!To :Terminals]
+        [:!Wclose_bracket :!Ti :Terminals]
+        ;; Allow forward Vim jump navigation on Preonic keyboard, where we don't have a ] accessible
+        [:!Wquote :!Ti :Terminals]
+        [:!Wquote :!Wclose_bracket :CodeLike]
+
+        ; Cmd+Esc to stop screenshot video
+        [:!Cescape :!CTescape]
+
+        ; Homerow scroll shortcut easier, except in VS Code, where ⌘K is a chord beginning we use quite often
+        ;; [:!Ck :!CSk :!CodeLike]
+        ;; [:!CSk :!Ck :!CodeLike]
+      ]
+    }
+    {
+      :des "iTerm"
+      :rules [
+        :iTerm
+
+        ;; More ergonomic Copy Mode
+        ;;; Ctrl-v, to mirror Vim's visual mode (somewhat)
+        [:!Tv :!CSc]
+
+        ; Panes
+        ;;;;;
+        ; Navigating between panes
+        [:!CSh :!Copen_bracket]
+        [:!CSl :!Cclose_bracket]
+        ; Split pane right
+        [:!Csemicolon :!Cd]
+        ; Split pane down
+        [:!CSsemicolon :!CSd]
+      ]
+    }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Macros
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "slash-mode (macros)"
+      :rules [
+        :slash-mode
+        ; Solidified
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Screenshots
+        ;; Copy screenshot of selected area
+        [:c :!CTS4]
+        ;; Copy screenshot of full screen
+        [:d :!CTS5]
+        ;; Maximize window (rectangle)
+        [:a :!TOs]
+        ;; Center Window (rectangle)
+        [:s :!TOf]
+        ;; 2FA / MFA
+        [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
+        ;; Alfred: Recent Browser history
+        [:r [:alfred "recent history" "com.thomasupton.chrome-history"]]
+        ;; Alfred: Create reminder (Apple)
+        [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
+        ;; Alfred: Add to Trello inbox
+        [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
+
+        ; WIP / Use more
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; CleanShot
+        ;; Scrolling capture
+        [:3 :!CTOS3]
+        ;; Focus CleanShot (in menu bar)
+        [:x :!CTSj]
+        ; Menu bar items (Bartender)
+        ;; Search menu bar items
+        [:z :!CTSk]
+        ;; Focus menu bar
+        [:1 :!CTS1]
+        ;; Show all menu bar items
+        ;; [:a :!CTSy]
+        ;; Show hidden menu bar items
+        [:w :!CTSh]
+        ;; WIP / purgatory
+        ;; Hide left application menu
+        ;; [:0 :!CTS0]
+        ;; Search bluetooth devices to toggle
+        [:b :!CTOSb]
+        ;; Alfred: Search npm packages
+        [:tab [:alfred "search" "com.sindresorhus.npms"]]
+
+        ; Purgatory
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Generic window click to escape focus
+        ;; [:e [:open "keysmith://run-macro/EB647FDB-EDCB-495D-9368-A74C089A1EE7"]]
+        ; AirPods
+        ;; Connect and set to audio output device
+        ;; [:4 :!CTOS4]
+        [:4 [:open "keysmith://run-macro/4FB314D1-C2AE-46A0-8D6B-A94034D0023C"]]
+        ;; Disconnect (from bluetooth)
+        [:5 :!CTOS5]
+        ;; Simulates a right click
+        ;; [:3 :!Sf10]
+        ;; Dictation
+        ;; [:2 :!CTOS2]
+        ;; Alfred: Chrome bookmarks
+        [:t [:alfred "bookmarks" "com.apple.alfred.workflow.chromium-hist"]]
+        ;; Alfred: Chrome history
+        [:h [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
+        ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+      ]
+    }
+    {
+      :des "z-mode (macros)"
+      :rules [
+        :z-mode
+
+        ; Solidified
+        ;; Emoji picker
+        [:k :!CTOSk]
+        ;; Unicode symbol search
+        [:u [:alfred "search" "pw.symbols-search"]]
+        ;; Passwords (Chrome)
+        [:p [:alfred "get passwords" "com.github.sadovnychyi.chromepasswords"]]
+        ;; Passwords (password manager)
+        ;;; Have to use a hotkey, since the Bitwarden workflow can't "show more" properly when the workflow was triggered with an External Trigger
+        [:o [:!CTOSo]]
+        ;; Hide notification(s)
+        [:i :!CTOSi]
+        ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
+        ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
+        ;; Google Maps search
+        [:m :!TOSm]
+        ;; MDN search ("feeling lucky" Google search on MDN)
+        ;;; (Alfred doesn't let me register :!CTOSslash..? ¯\_(ツ)_/¯)
+        [:l :!CTOSm]
+        ;; Add macOS text replacement
+        [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
+        ;; Apple Notes search / creation
+        ;; [:n [:alfred "notes" "in.sball.searchnotes"]]
+        ;; Bear Search
+        [:n [:alfred "create or search" "com.drgrib.bear"]]
+        ; Send message / iMessage
+        [:j [:!CTOSj]]
+        ;; Mary
+        [:8 [:!CTOSh]]
+
+        ; Limbo / WIP
+        ;; Screen capture tools
+        [:h :!CS5]
+        [:comma [:opena "Remotasks"]]
+        [:period [:opena "Remotasks Helper"]]
+        ;; Timers
+        [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
+        ;; Start tasking
+        [:slash :!CTOs]
+        ;; Quit app
+        [:7 :!CTOSy]
+        ;; Force quit
+        [:6 :!COescape]
+
+        ; Not really used / reference
+        ;; umlaut (uses macOS's option+u for this)
+        [:quote :!Ou]
+        ; "Get out"
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Hide all windows
+        ;; [:l :!COSl]
+        ;; Soft get out: Hide all windows and sleep display
+        ;; [:comma :!COScomma]
+        ;; Hard get out: Hide all windows and sleep entire Mac (disconnects from bluetooth, suspends apps, etc.)
+        ;; [:period :!COSperiod]
+        ;; npms: search npm packages
+        ;; [:semicolon [:alfred "search" "com.sindresorhus.npms"]]
+        ;; Click notification
+        [:return_or_enter [:open "keysmith://run-macro/54216F6C-407F-49B2-8E00-7946BD6F6144"]]
+        ;; Reply to notification (e.g. Slack)
+        [:open_bracket [:open "keysmith://run-macro/E2756098-1FF9-4D86-BF83-B08F4E27942F"]]
+        ; Toggle bsp window tiling
+        ;; [:0 "yabai -m config layout ~='float' || yabai -m config layout bsp"]
+      ]
+    }
+    {
+      :des "tab-mode (media)"
+      :rules [
+        :tab-mode
+
+        [:j :volume_down]
+        [:k :volume_up]
+        [:m :mute]
+        [:comma :vk_consumer_previous]
+        [:period :vk_consumer_next]
+        [:spacebar :play_or_pause]
+
+        [:u :display_brightness_decrement]
+        [:i :display_brightness_increment]
+        [:h :second_brightness_decrement]
+        [:l :second_brightness_increment]
+
+        ; Random, not really "media"
+        ;; Show notification center
+        [:n :f12]
+        ;; Zoom out
+        [:o :!Chyphen]
+        ;; Zoom in
+        [:p :!Cequal_sign]
+
+        ;; Love/like current Spotify song
+        [:open_bracket :!CTOSquote]
+      ]
+    }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Launchers
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "x-mode (app launcher)"
+      :rules [
+        :x-mode
+
+        ;  Most common apps
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:j [:opena "/Applications/Google Chrome.app"] :!Chrome]
+        [:j :same_wind_app :Chrome]
+        ;; [:j [:opena "Arc"] :!Arc]
+        ;; [:j :same_wind_app :Arc]
+        [:k [:opena "/Applications/Cursor.app"] :!Cursor]
+        [:k :same_wind_app :Cursor]
+        ; Some same/left hand alternatives
+        ;; [:c [:opena "Google Chrome"] :!Chrome]
+        ;; [:c :same_wind_app :Chrome]
+        ;; [:v [:opena "Visual Studio Code"] :!CodeLike]
+        ;; [:v :same_wind_app :CodeLike]
+
+        [:l [:opena "Slack"]]
+        ;; [:l :!COd]
+        ;; [:l :!CTq]
+        ;; [:l [:ascript "tell application \"System Events\" to sleep"]]
+        ;; [:l [:ascript "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       delay 1\n       tell application \"System Events\" to sleep"]]
+        ;; [:l [:ascript "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       do shell script \"pmset sleepnow\""]]
+
+        ; Also common
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:n [:opena "Bear"]]
+        ;; [:semicolon [:opena "iTerm"]]
+        [:semicolon [:opena "Kitty"]]
+        [:m [:opena "Messages"]]
+        [:i [:opena "Trello"] :!Trello]
+        [:i :same_wind_app :Trello]
+        ;; [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
+        [:u [:opena "Spotify"]]
+        ;; Office/Zoom
+        [:o [:opena "/Applications/Gather.app"]]
+        [:y [:opena "Notion Calendar"]]
+        [:quote [:opena "Keysmith"]]
+        [:comma [:opena "System Preferences"]]
+        [:period [:opena "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app"]]
+        [:open_bracket [:opena "Preview"] :!Preview]
+        [:open_bracket :same_wind_app :Preview]
+        ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
+        [:delete_or_backspace [:opena "Preview"]]
+        [:slash [:opena "Finder"]]
+        [:0 [:opena "Bitwarden"]]
+
+        ; NOTE: `xp` is far too common in language. Avoid using `p` for this mode
+        ;; [:p [:opena "Reminders"]]
+
+        ; Less common
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:9 [:opena "Activity Monitor"]]
+        ;; [:8 [:opena "Karabiner-Elements"]]
+        [:8 [:opena "Linear"]]
+        ;; [:7 [:opena "Karabiner-EventViewer"]]
+        [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]
+        [:7 [:opena "WhatsApp"]]
+        ;; [:g [:opena "Photos"]]
+        ;; [:b [:opena "Books"]]
+        [:t [:opena "Emmet Cheat Sheet"]]
+      ]
+    }
+    {
+      :des "q-mode (websites)"
+      :rules [
+        :q-mode
+
+        ; Solidified
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Personal calendar
+        [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
+        ;; Work email
+        [:semicolon [:openw "mail.google.com/mail/u/3"]]
+        [:l [:openw "trello.com/b/NqI34mI2/%E2%8F%B3-later"]]
+        [:m [:openw "mail.google.com/mail/u/0"]]
+        ;; White noise
+        [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/White Noise.app"]]
+        [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit#gid=229770528"]]
+        ;; Money projections
+        [:f [:openw "fast.com/"]]
+        [:u [:openw "youtube.com"]]
+        [:o [:openw "amazon.com"]]
+        [:v [:openw "voice.google.com/u/0/messages"]]
+        [:b [:openw "schwab.com"]]
+        [:0 [:openw "capitalone.com"]]
+
+        ; WIP / Use more
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:k [:openw "chat.openai.com"]]
+        [:8 [:openw "google.com/maps"]]
+        [:period [:opena "Google Chrome" "chrome://password-manager/passwords"]]
+        [:comma [:opena "Google Chrome" "chrome://bookmarks"]]
+
+        ; Purgatory
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ]
+    }
+    {
+      :des "period-mode (repos, files, work stuff)"
+      :rules [
+        :period-mode
+
+        ; Solidified
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:s [:opena "Cursor" "~/src/personal/dotfiles"]]
+        [:w [:opena "Cursor" "~/src/personal/hammerspoon"]]
+        ;; Work calendar
+        [:c [:open "https://calendar.google.com/calendar/u/3"]]
+        [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
+        [:f [:opena "Cursor" "~/src/work/ledger/ldgr"]]
+        [:v [:open "https://github.com/LedgerInvesting/platform/pulls/bowernite"]]
+
+        ; WIP / Use more
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
+        [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
+        ;; Search local repos
+        [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+
+        ; Purgatory
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+      ]
+    }
+
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; Text and input
+    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    {
+      :des "comma-mode/symbol-mode (symbols and snippets)"
+      :rules [
+        :comma-mode
+
+        ; Brackets
+        [:q :close_bracket] ; ]
+        [:w :open_bracket] ; [
+        [:a :!Sopen_bracket] ; {
+        [:s :!S9] ; (
+        [:z :!Sclose_bracket] ; }
+        [:x :!S0] ; )
+
+        [:f :grave_accent_and_tilde] ; `
+        [:d :hyphen] ; -
+
+        [:c :!S4] ; $
+        [:e :!Squote] ; "
+        [:r :!S1] ; !
+        [:v :!S7] ; &
+
+        [:g :equal_sign] ; =
+        [:caps_lock :!S8] ; *
+        [:t :!Sequal_sign] ; >
+        [:b :!Shyphen] ; _
+        [:tab :!Sbackslash] ; |
+
+        ;; Euro: This could stay or go, doesn't really matter, I have a text replacement for it anyway
+        ;; [:grave_accent_and_tilde :!SO2] ; €
+        [:3 [:spacebar :slash :spacebar] :!Trello]
+        [:3 :slash :Trello]
+        ;; [:3 [:ascript "tell application \"System Events\" to keystroke \" \" & keystroke \"/\" & delay 0.5 & keystroke \" \""]] /
+        ;; [:2 [:type "> **Note:** "]]
+        [:2 [:!Speriod :spacebar :!S8 :!S8 :!Sn :o :t :e :!Ssemicolon :!S8 :!S8 :spacebar]] ; -> > **Note:**␣
+        ;; Block comment
+        ;; [:4 [:type "/**"]]
+        [:4 [:slash :!S8 :!S8]] ; -> /**
+
+
+        ;; ;; Big ol' separator
+        [:grave_accent_and_tilde [:hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen]]
+        ;; Notion separator / line
+        [:1 [:hyphen :hyphen :hyphen]]
+
+        ;; Spacebar is the only key I type very quickly after comma
+        ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
+        ;; It also allows us to hold down comma without a repeat -- we don't need comma repeats, and we might hold down comma before we've decided what key we're going to press for a symbol
+        [:spacebar [:comma :spacebar]]
+      ]
+    }
+    {
+      ;; NOTE: If using any of the original keys here (i.e. the ones that are being remapped) for things like layers and simlayers, they need to come **after** the layer's rule block. This is ostensibly because we can't remap the original key before it even has rules for its "mode"
+      ;;; (and, just using a layers based on the remapping doesn't seem to work either -- even if the remapping has no modifiers)
+      :des "replaced symbol keys, that are no longer necessary since we have a 'symbol mode'"
+      :rules [
+        ;; ' key
+        [:quote :!Sslash] ; [ -> ?
+
+        ; Em-dash (or, how to type multi-character snippets in the best way possible)
+        ;; This way is a bit delayed, but is reliable
+        ;; [:!Squote [:type " — "]]
+        ;; Started running into issues here in 2022, where sometimes the first dash got typed before the first space, which would break up the em-dash
+        [:!Squote [:spacebar :hyphen :hyphen :spacebar]] ; ␣--␣
+        ;; This works, and maybe a bit faster / snappier. But then we screw up our clipboard. There's probably a way where we can afterwords go into Alfred and pop this off the clipboard history. If we do, probably make a `:type2` shortcut, or something like that. Maybe someday...
+        ;; [:!Squote [:ascript "tell application \"System Events\"\n  set the clipboard to \" — \"\n  keystroke \"v\" using command down\n  end tell"]]
+        ;; This is using an Alfred shortcut. But it's kind of slow
+        ;; [:!Squote :!TOCquote]
+
+        ; [ key
+        ;; Apostrophes are less and less useful as I add any words that include one to my macOS text replacement dictionary. So move it up a bit, to make room for the much more commonly used `?`
+        ;; Depending on how little I end up using this going forward, it might even make sense to swap this and `. I use the backtick all the time, and it'd also be nice for jumping to Vim marks. Though I still need apostrophes when typing comments in an editor :(
+        ;; [:open_bracket :open_bracket :nil {:alone :quote}] ; [ -> '
+        [:open_bracket :quote] ; [ -> '
+        [:!Sopen_bracket :backslash] ; \
+
+        ; / key
+        ;; (could maybe do # here instead)
+        [:!Sslash :!Sgrave_accent_and_tilde] ; -> ~
+
+        ; Shift + numbers (right side; left side are in semicolon-mode rules)
+        ;; Code block
+        [:!S7 [:grave_accent_and_tilde :grave_accent_and_tilde :grave_accent_and_tilde]] ; ```
+        ;; Triple equals
+        [:!S8 [:spacebar :equal_sign :equal_sign :equal_sign :spacebar]] ; ␣===␣
+        ;; Triple not equals
+        [:!S9 [:spacebar :!S1 :equal_sign :equal_sign :spacebar]] ; ␣!==␣
+
+        ;; Available: Shift numbers 5, 6, 0
+        ;; Available: Shift -, Shift = (only on Macbook keyboard)
+      ]
+    }
+    {
+      ;; Just mapping semicolon to shift gets tricky sometimes, with rules conflicting. So, this way, we get more fine-grained control, and can do things like using the caps lock key in this mode for actual caps lock
+      :des "semicolon-mode (simulated 'shift mode')"
+      :rules [
+        :semicolon-mode
+
+        [:grave_accent_and_tilde :!Sgrave_accent_and_tilde] ; -> ~
+        ;; Replaced ! with ^, since we have ! in symbol mode
+        [:1 :!S6]
+        [:2 :!S2]
+        [:3 :!S3]
+        ;; Replaced $ with %, since we have $ in symbol mode
+        [:4 :!S5]
+        [:5 :!S5]
+        [:tab :!Stab]
+        [:q :!Sq]
+        [:w :!Sw]
+        [:e :!Se]
+        [:r :!Sr]
+        [:t :!St]
+        [:y :!Sy]
+        [:u :!Su]
+        [:i :!Si]
+        [:o :!So]
+        [:p :!Sp]
+        [:a :!Sa]
+        [:s :!Ss]
+        [:d :!Sd]
+        [:f :!Sf]
+        [:g :!Sg]
+        [:h :!Sh]
+        [:j :!Sj]
+        [:k :!Sk]
+        [:l :!Sl]
+        [:z :!Sz]
+        [:x :!Sx]
+        [:c :!Sc]
+        [:v :!Sv]
+        [:b :!Sb]
+        [:n :!Sn]
+        [:m :!Sm]
+
+        ; Combination with other modifiers
+        ;
+        ; Only have keys on the left side of the keyboard for now, as that's the only time I'd be using the "right shift"/semicolon for command combos. Also, only ⌘ combos handled for now
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Best we can do right now to keep the semicolon as a shift modifier with other keys (like command). Not perfect, since you have to hold down the semicolon before any other modifier
+        [:!Cq :!CSq]
+        [:!Cw :!CSw]
+        [:!Ce :!CSe]
+        [:!Cr :!CSr]
+        [:!Ct :!CSt]
+        [:!Ca :!CSa]
+        [:!Cs :!CSs]
+        [:!Cd :!CSd]
+        [:!Cf :!CSf]
+        [:!Cg :!CSg]
+        [:!Cz :!CSz]
+        [:!Cx :!CSx]
+        [:!Cc :!CSc]
+        [:!Cv :!CSv]
+        [:!Cb :!CSb]
+        [:!C1 :!CS1]
+        [:!C2 :!CS2]
+        [:!C3 :!CS3]
+        [:!C4 :!CS4]
+        [:!C5 :!CS5]
+
+        ;; Enter a simulated caps lock mode, instead of triggering actual caps lock. See the mode below for details
+        [:caps_lock ["caps-lock-mode" 1]]
+
+        ;; Make sure we can quickly type spacebar after this key, and get both keys' results
+        [:spacebar [:!Ssemicolon :spacebar]]
+      ]
+    }
+    ;; This mode is necessary, since while in the hardware-defined caps lock "mode", the caps lock key is always the key to exit it -- which prevents the key from being escape/control like it normally is. This causes a weird scenario, where when we're using the hardware's caps lock, the caps lock key customizations are taken away from us, which can be disorienting
+    ;; So instead, we have a Goku layer for it -- letters pressed during this mode will be capital, and we still have our escape/control functionality for the actual caps lock key
+    {
+      :des "caps-lock-mode"
+      :rules [
+        :caps-lock-mode
+
+        [:caps_lock :right_control_lazy nil {:alone  ["caps-lock-mode" 0]}]
+
+        [:q :!Sq]
+        [:w :!Sw]
+        [:e :!Se]
+        [:r :!Sr]
+        [:t :!St]
+        [:y :!Sy]
+        [:u :!Su]
+        [:i :!Si]
+        [:o :!So]
+        [:p :!Sp]
+        [:a :!Sa]
+        [:s :!Ss]
+        [:d :!Sd]
+        [:f :!Sf]
+        [:g :!Sg]
+        [:h :!Sh]
+        [:j :!Sj]
+        [:k :!Sk]
+        [:l :!Sl]
+        [:z :!Sz]
+        [:x :!Sx]
+        [:c :!Sc]
+        [:v :!Sv]
+        [:b :!Sb]
+        [:n :!Sn]
+        [:m :!Sm]
+      ]
+    }
+    ;; This has to come later, so we can remap with caps lock in shift and caps lock modes
+    {
+      :des "caps lock -> escape (alone) left_control (held)"
+      :rules [
+        ; Using right_ctrl lets us use left_control as a hyper key
+        [:#CTOSFQWEcaps_lock :right_control_lazy nil {:alone :escape}]
+      ]
+    }
+    {
+      :des "text nav and manipulation (with left ctrl/caps lock)"
+      :rules [
+        ; Char and word-wise nav
+        [:!W#SRh :left_arrow]
+        [:!W#SRj :down_arrow]
+        [:!W#SRk :up_arrow]
+        [:!W#SRl :right_arrow]
+        [:!W#SRy :!Oleft_arrow]
+        [:!W#SRo :!Oright_arrow]
+
+        ; Char and word-wise deletion
+        [:!Wu :!Odelete_or_backspace]
+        [:!Wi :delete_or_backspace]
+
+        ; Scrolling (full pages, and entire "document")
+        [:!W6 :!CTOS6]
+        [:!W7 :page_down :CodeLike]
+        [:!W7 :page_down :Terminals]
+        [:!W8 :page_up :CodeLike]
+        [:!W8 :page_up :Terminals]
+        ;; [:!W7 :!CTOS7]
+        ;; [:!W8 :!CTOS8]
+        [:!W9 :!CTOS9]
+        [:!Wp :!Cdown_arrow]
+        [:!W0 :!Cup_arrow]
+        ;; VS Code needs focus for scrolling, so use the typical page up and page down keys
+        ;; [:!W7 :page_down :CodeLike]
+        ;; [:!W8 :page_up :CodeLike]
+
+        ; To start and end of line
+        [:!W#SRn :!Cleft_arrow :!Terminals]
+        [:!W#SRm :!Cright_arrow :!Terminals]
+        ; Terminal doesn't support ⌘ like above, so gotta use its Cocoa keybindings
+        [:!Wn :!Ta :Terminals]
+        [:!Wm :!Te :Terminals]
+
+        ; Line deletion
+        ; Use Cocoa emacs bindings for apps that doesn't support ⌘+⌦ (i.e. Notes, Terminal)
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Delete line backward
+        [:!Wcomma :!Cdelete_or_backspace [:!Terminals]]
+        [:!Wcomma :!Tu [:Terminals]]
+        ; Delete line forward
+        ; Ideally this would just be ⌘+⌦, but that's not respected everywhere (e.g. browser textareas, VS Code's integrated terminals)
+        [:!Wperiod [:!CSright_arrow :delete_or_backspace] [:!Notes :!Terminals :!CodeLike]]
+        [:!Wperiod :!Tk]
+        ; Delete full line
+        [:!Wslash [:!Cright_arrow :!Cdelete_or_backspace] [:!Terminals :!CodeLike]]
+        ; Terminals don't support ⌘+← or ⌘+⌦. So instead, we rely on the original Cocoa Emacs commands for them
+        [:!Wslash [:!Te :!Tu] :Terminals]
+        ; For VS Code, it's trickier -- you want to preserve indentation, but also want it to behave nicely in the integrated terminal…
+        [:!Wslash [:!Cright_arrow :!Cdelete_or_backspace] :CodeLike]
+
+        ; Clear everything
+        [:!Wdelete_or_backspace [:!Ca :delete_or_backspace]]
+
+        ; Other stuff
+        ;; Cmd+\ replacement (i.e. when on a keyboard with no backspace key). This is a common shortcut on apps to toggle UI / a panel
+        ;;; Can't do Terminals or code editors, since it clashes with a Vim keybinding I have (at the time of writing "go back")
+        [:!Wopen_bracket :!Cbackslash [:!Terminals :!CodeLike]]
+      ]
+    }
+    {
+      :des "3-mode (selection-mode: text nav with selection)"
+      :rules [
+        :3-mode
+
+        ; Char and word-wise nav
+        [:h :!Sleft_arrow]
+        [:j :!Sdown_arrow]
+        [:k :!Sup_arrow]
+        [:l :!Sright_arrow]
+        [:y :!OSleft_arrow]
+        [:o :!OSright_arrow]
+
+        ; To start and end of line
+        [:n :!CSleft_arrow :!Terminals]
+        [:m :!CSright_arrow :!Terminals]
+        ; Terminal doesn't support ⌘ like above, so gotta use its Cocoa keybindings
+        ;; We'll add this functionality if we need it. Don't know if it's even possible i.e. in iTerm to select with native keyboard commands
+        ;; [:n :!Ta :Terminals]
+        ;; [:m :!Te :Terminals]
+
+        [:9 :!CSdown_arrow]
+        [:0 :!CSup_arrow]
+
+        ;; TODO: Do m and n's functionality above in succession to select the whole line 😲
+      ]
+    }
+    {
+      :des "8-mode (window manager)"
+      :rules [
+        :8-mode
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Left, right, corners
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Left
+        [:a :!TOa]
+        ;; Top left
+        [:q :!TOq]
+        ;; Bottom left
+        [:z :!TOz]
+        ;; Right
+        [:d :!TOd]
+        ;; Top right
+        [:e :!TOe]
+        ;; Bottom right
+        [:c :!TOc]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Top/bottom
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Top
+        [:w :!TOw]
+        ;; Bottom
+        [:x :!TOx]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Center and maximizing
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Center
+        [:s :!TOf]
+        ;; Maximize
+        [:f :!TOs]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Thirds
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; First third
+        [:1 :!TO1]
+        ;; Second third
+        [:3 :!TO3]
+        ;; Last third
+        [:5 :!TO5]
+        ;; First two thirds
+        [:2 :!TO2]
+        ;; Last two thirds
+        [:4 :!TO4]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Displays
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Next display (right)
+        [:t :!TOt]
+        [:v :!TOt]
+        ;; Prev display (left)
+        [:r :!TOr]
+
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ; Window size
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Smaller
+        [:tab :!TOtab]
+        ;; Larger
+        [:caps_lock :!TOcaps_lock]
+      ]
+    }
+  ]
+
+  :applications {
+    :VSCode [
+      "^com\\.microsoft\\.VSCode(Insiders)?$",
+      "^com\\.microsoft\\.VSCode$%"
+    ]
+    :Cursor [
+      "^com.todesktop.230313mzl4w4u92$"
+    ]
+    :CodeLike [
+      "^com\\.microsoft\\.VSCode(Insiders)?$",
+      "^com\\.microsoft\\.VSCode$%",
+      "^com.todesktop.230313mzl4w4u92$"
+    ]
+    :Chrome [
+      "^com\\.google\\.Chrome$",
+      ;; "^org\\.chromium\\.Chromium$",
+      ;; "^com\\.google\\.Chrome\\.canary$"
+    ]
+    :Arc [
+      "^company\\.thebrowser\\.Browser$",
+    ]
+    :Firefoxes [
+      "^org\\.mozilla\\.firefox$",
+      "^org\\.mozilla\\.firefoxdeveloperedition$"
+    ]
+    :Terminals [
+      "^com\\.apple\\.Terminal$"
+      "^com\\.googlecode\\.iterm2$"
+      "^co\\.zeit\\.hyperterm$"
+      "^co\\.zeit\\.hyper$"
+      "^io\\.alacritty$"
+      "^net\\.kovidgoyal\\.kitty$"
+    ]
+    :iTerm ["^com\\.googlecode\\.iterm2$"]
+    :Finder ["^com\\.apple\\.finder$"]
+    :Notes ["^com\\.apple\\.Notes$"]
+    :Bear ["^net\\.shinyfrog\\.bear$"]
+    :Messages ["^com\\.apple\\.MobileSMS$"]
+    :Calendar ["^com\\.apple\\.iCal$"]
+    :Preview ["^com\\.apple\\.Preview$"]
+    :Debuggers [
+      "^org\\.mozilla\\.firefox$"
+    "^org\\.mozilla\\.firefoxdeveloperedition$"
+    "^com\\.google\\.Chrome$"
+    "^org\\.chromium\\.Chromium$"
+    "^com\\.google\\.Chrome\\.canary$"
+    "^com\\.apple\\.Safari$"
+    "^com\\.microsoft\\.VSCode(Insiders)?$"]
+    :Alfred ["^com\\.runningwithcrayons\\.Alfred$"]
+    :Keybase ["^keybase\\.Electron$"]
+    :Browsers [
+      "^org\\.mozilla\\.firefox$"
+      "^org\\.mozilla\\.firefoxdeveloperedition$"
+      "^com\\.google\\.Chrome$"
+      "^org\\.chromium\\.Chromium$"
+      "^com\\.google\\.Chrome\\.canary$"
+      "^com\\.apple\\.Safari$"
+    ]
+    :Trello [
+      "^com\\.google\\.Chrome\\.app\\.ddcgpgedmbgolgiecdlmmpddfkanmkli$"
+    ]
+  }
+}
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; Notes, ideas, and reference
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; Hyper Keys
+;; Sometimes need to use "hyper" keys (unlikely modifier combos) for different scenarios. i.e. if you want to use a Karabiner modifier (like z/z-mode) to trigger something in another app with a Keybinding (like Alfred or Keysmith)
+;; For these, use this list in the following order. If a letter to go with the hyper key combo is taken, go to the next
+;; NOTE: Tried to use the F modifier (fn key), but Alfred doesn't seem to play well with that 🤷🏼‍♂️
+;;; CTOS (in use)
+;;; TOS (in use)
+;; Why it's necessary in Alfred: Using an external trigger doesn't work. One example of this is because it spawns the Alfred search bar (https://www.alfredforum.com/topic/16568-external-trigger-is-showing-search-bar-when-not-necessary/?do=findComment&comment=84848)
+
+; Plain Rule Ideas
+  ; Using simultaneous keypresses to enter some kind of modal/context. ⎋ exits it (see Shawn's "in-context" mode) (this is pretty cool. Plus, I don't think simultaenous rules end up creating lag. Could use it for a lot of things. Examples `s+d`, `j+k`)
+  ; Using simultaneous keypresses for singular actions (might be cool, though something to keep an eye on is the difficulty of pressing the keys simultaneously)
+
+; Hyper key ideas: (only when used alone -- see Shawn's usage for "left option when used alone")
+  ; Left control
+  ; Left option
+
+; Simlayer ideas:
+  ; Having simlayers dependent on the app (Shawn) (`s` mode in VS Code, `s` mode in Chrome, etc.)
+  ; Using a simlayer for the ctrl key, e.g. `a` (cool, but a simlayer on `a` is going to be hella annoying)
+  ; Using a simlayer for ⌘+⇧ (Nikita) (useful for ergonomics)
+  ; Using a simlayer for ⌘ (Nikita) (useful for ergonomics)
+  ; Using a simlayer for media controls (Nikita)
+  ; Using a simlayer to control Chrome debug mode (Shawn) (cool because their keyboard shortcuts are lacking sometimes)
+
+; Simlayer key ideas
+  ; tilde
+  ; backslash
+  ; tab
+  ; comma
+  ; right shift
+  ; q, w, x, z, j, numbers
+  ; https://en.wikipedia.org/wiki/Letter_frequency
+
+; Goku Syntax
+;; !  | means mandatory -   modifier(s) alone when pressend change behavior
+;; #  | means optional  -   modifiers are optional (but atleast one necessary)
+;; ## | optional any
+;; !! | command + control + optional + shift (hyper)
+;; C  | left_command (Emacs: hyper)
+;; T  | left_control (Emacs: control)
+;; O  | left_option (Emacs: meta)
+;; S  | left_shift
+;; F  | fn (Emacs: super)
+;; Q  | right_command (Emacs: control)
+;; W  | right_control (Emacs: control)
+;; E  | right_option (Emacs: )
+;; R  | right_shift
