@@ -391,7 +391,7 @@
         [:j :same_wind_app :Chrome]
         ;; [:j [:opena "Arc"] :!Arc]
         ;; [:j :same_wind_app :Arc]
-        [:k [:opena "/Applications/Cursor.app"] :!Cursor]
+        [:k [:opena "Cursor"] :!Cursor]
         [:k :same_wind_app :Cursor]
         ; Some same/left hand alternatives
         ;; [:c [:opena "Google Chrome"] :!Chrome]
