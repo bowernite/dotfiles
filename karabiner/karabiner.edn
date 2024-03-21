@@ -387,7 +387,7 @@
 
         ;  Most common apps
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:j [:opena "/Applications/Google Chrome.app"] :!Chrome]
+        [:j [:opena "Google Chrome"] :!Chrome]
         [:j :same_wind_app :Chrome]
         ;; [:j [:opena "Arc"] :!Arc]
         ;; [:j :same_wind_app :Arc]
