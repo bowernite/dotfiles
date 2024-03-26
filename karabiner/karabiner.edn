@@ -417,7 +417,7 @@
         ;; [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
-        [:o [:opena "zoom.us"]]
+        [:o [:opena "zoom.us"]] 
         [:y [:opena "Notion Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
