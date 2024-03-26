@@ -318,7 +318,8 @@
         [:comma [:opena "Remotasks"]]
         [:period [:opena "Remotasks Helper"]]
         ;; Timers
-        [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
+        ;; [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
+        [:semicolon :!CTSsemicolon]
         ;; Start tasking
         [:slash :!CTOs]
         ;; Quit app
