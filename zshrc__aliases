@@ -168,8 +168,16 @@ setup_themes() {
     ;;
   *)
     # Decide the theme based on macOS dark mode
-    local bat_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo OneHalfDark || echo GitHub)"
-    local delta_theme="$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo Monokai Extended || echo GitHub)"
+    if [[ -z $bat_theme || -z $delta_theme ]]; then
+      local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo "dark" || echo "light")
+      if [[ $macos_theme == "dark" ]]; then
+        bat_theme="OneHalfDark"
+        delta_theme="Monokai Extended"
+      else
+        bat_theme="GitHub"
+        delta_theme="GitHub"
+      fi
+    fi
     ;;
   esac
 
