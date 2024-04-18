@@ -20,3 +20,6 @@ Session.vim
 
 # Custom pull request template (i.e. for Graphite)
 pull_request_template.md
+
+# Cursor IDE rules
+.cursorrules
