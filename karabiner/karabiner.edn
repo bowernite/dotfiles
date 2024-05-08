@@ -125,7 +125,8 @@
       :rules [
         ;; Do it in Alfred, I guess...
         ;; [:!CTw :!CTS4]
-        [:!CSs :!COSl]
+        ;; Hide all apps
+        ;; [:!CSs :!COSl]
       ]
     }
     {
