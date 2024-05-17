@@ -419,7 +419,7 @@
         ;; [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
         [:u [:opena "Spotify"]]
         ;; Office/Zoom
-        [:o [:opena "zoom.us"]]
+        [:o [:opena "Gather"]]
         [:y [:opena "Notion Calendar"]]
         [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
@@ -436,7 +436,7 @@
 
         ; Less common
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:9 [:opena "Activity Monitor"]]
+        [:9 [:opena "zoom.us"]]
         ;; [:8 [:opena "Karabiner-Elements"]]
         [:8 [:opena "Linear"]]
         ;; [:7 [:opena "Karabiner-EventViewer"]]
@@ -444,7 +444,7 @@
         [:7 [:opena "WhatsApp"]]
         ;; [:g [:opena "Photos"]]
         ;; [:b [:opena "Books"]]
-        [:t [:opena "Emmet Cheat Sheet"]]
+        [:t [:opena "Activity Monitor"]]
       ]
     }
     {
