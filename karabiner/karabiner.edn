@@ -499,7 +499,7 @@
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:b [:open "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
+        [:b [:opena "Cursor" "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
