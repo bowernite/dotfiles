@@ -386,42 +386,20 @@
       :des "x-mode (app launcher)"
       :rules [
         :x-mode
-
-        ;  Most common apps
+        
+        ; Solidified
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:j [:opena "Google Chrome"] :!Chrome]
         [:j :same_wind_app :Chrome]
-        ;; [:j [:opena "Arc"] :!Arc]
-        ;; [:j :same_wind_app :Arc]
         [:k [:opena "Cursor"] :!Cursor]
         [:k :same_wind_app :Cursor]
-        ; Some same/left hand alternatives
-        ;; [:c [:opena "Google Chrome"] :!Chrome]
-        ;; [:c :same_wind_app :Chrome]
-        ;; [:v [:opena "Visual Studio Code"] :!CodeLike]
-        ;; [:v :same_wind_app :CodeLike]
-
         [:l [:opena "Slack"]]
-        ;; [:l :!COd]
-        ;; [:l :!CTq]
-        ;; [:l [:ascript "tell application \"System Events\" to sleep"]]
-        ;; [:l [:ascript "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       delay 1\n       tell application \"System Events\" to sleep"]]
-        ;; [:l [:ascript "tell application \"System Events\" to keystroke \"q\" using {control down, command down}\n       do shell script \"pmset sleepnow\""]]
-
-        ; Also common
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:n [:opena "Bear"]]
-        ;; [:semicolon [:opena "iTerm"]]
         [:semicolon [:opena "Kitty"]]
         [:m [:opena "Messages"]]
         [:i [:opena "Trello"] :!Trello]
         [:i :same_wind_app :Trello]
-        ;; [:i [:openw "trello.com/b/TmHuRkdh/%F0%9F%91%A8%F0%9F%92%BB-to-do"]]
-        [:u [:opena "Spotify"]]
-        ;; Office/Zoom
-        [:o [:opena "Gather"]]
         [:y [:opena "Notion Calendar"]]
-        [:quote [:opena "Keysmith"]]
         [:comma [:opena "System Preferences"]]
         [:period [:opena "/Applications/Alfred 5.app/Contents/Preferences/Alfred Preferences.app"]]
         [:open_bracket [:opena "Preview"] :!Preview]
@@ -429,22 +407,24 @@
         ;; Duplicate for Preonic, since I don't have an `open_bracket` on that keyboard
         [:delete_or_backspace [:opena "Preview"]]
         [:slash [:opena "Finder"]]
+        [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]
+        
+        ; WIP / Use more
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        [:u [:opena "Spotify"]]
+        [:o [:opena "Gather"]]
+        [:quote [:opena "Keysmith"]]
         [:0 [:opena "Bitwarden"]]
+        [:9 [:opena "zoom.us"]]
+        [:8 [:opena "Linear"]]
+        [:7 [:opena "WhatsApp"]]
+        [:t [:opena "Activity Monitor"]]
+        
+        ; Purgatory
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
         ; NOTE: `xp` is far too common in language. Avoid using `p` for this mode
         ;; [:p [:opena "Reminders"]]
-
-        ; Less common
-        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:9 [:opena "zoom.us"]]
-        ;; [:8 [:opena "Karabiner-Elements"]]
-        [:8 [:opena "Linear"]]
-        ;; [:7 [:opena "Karabiner-EventViewer"]]
-        [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]
-        [:7 [:opena "WhatsApp"]]
-        ;; [:g [:opena "Photos"]]
-        ;; [:b [:opena "Books"]]
-        [:t [:opena "Activity Monitor"]]
       ]
     }
     {
