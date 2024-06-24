@@ -453,7 +453,7 @@
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:k [:openw "chat.openai.com"]]
+        [:k [:openw "chat.openai.com/?model=gpt-4o"]]
         [:8 [:openw "google.com/maps"]]
         [:period [:opena "Google Chrome" "chrome://password-manager/passwords"]]
         [:comma [:opena "Google Chrome" "chrome://bookmarks"]]
