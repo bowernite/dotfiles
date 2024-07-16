@@ -34,7 +34,7 @@
     :acript      "osascript -e ''"
     ;; "Open website"
     ;;; Techinically, BSD `open` can open a URL as the second arg, with the default browser. But, it has a funny behavior for certain URLs (hard to pinpoint what they have in common) -- it briefly opens `Finder`, _then_ the default browser. This can be annoying, as now Cmd-Tabbing quickly brings you back to Finder, instead of the last app you were actually interacting with
-    :openw       "open -a \"Google Chrome\" \"https://%s\""
+    :openw       "open -a \"Google Chrome\" \"http://%s\""
     ;; :openw       "open -a \"Arc\" \"https://%s\""
 
     :quit        "killall \"%s\""
@@ -482,6 +482,7 @@
         ; Solidified
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
         [:s [:opena "Cursor" "~/src/personal/dotfiles"]]
+        [:b [:opena "Cursor" "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:w [:opena "Cursor" "~/src/personal/hammerspoon"]]
         ;; Work calendar
         [:c [:open "https://calendar.google.com/calendar/u/1"]]
@@ -491,10 +492,10 @@
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:b [:opena "Cursor" "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        [:a [:openw "localhost:3000"]]
 
         ; Purgatory
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
