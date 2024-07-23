@@ -495,7 +495,9 @@
         [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
+        ;; App URLs
         [:a [:openw "localhost:3000"]]
+        [:z [:openw "ldgr.app/dashboard"]]
 
         ; Purgatory
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
