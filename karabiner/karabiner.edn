@@ -449,7 +449,7 @@
         ;; Personal calendar
         [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
         ;; Work email
-        [:semicolon [:openw "mail.google.com/mail/u/1"]]
+        [:semicolon [:openw "mail.google.com/mail/u/3"]]
         [:l [:openw "trello.com/b/NqI34mI2/%E2%8F%B3-later"]]
         [:m [:openw "mail.google.com/mail/u/0"]]
         ;; White noise
@@ -485,7 +485,7 @@
         [:b [:opena "Cursor" "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:w [:opena "Cursor" "~/src/personal/hammerspoon"]]
         ;; Work calendar
-        [:c [:open "https://calendar.google.com/calendar/u/1"]]
+        [:c [:open "https://calendar.google.com/calendar/u/3"]]
         [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
         [:f [:opena "Cursor" "~/src/work/ledger/ldgr"]]
         [:v [:open "https://github.com/LedgerInvesting/platform/pulls/bowernite"]]
