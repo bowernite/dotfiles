@@ -147,7 +147,7 @@ alias gsmo="gsm --oneline"
 # Pull in latest dev, and run any on-pull scripts in the repo
 gsn() {
   gt sn
-  
+
   local repo_root="$(git repo-root)"
   local brett_dir="$repo_root/.brett"
   local on_pull_script="$brett_dir/bin/on-pull.sh"
@@ -179,4 +179,16 @@ git_dev_branch() {
 git_has_changes() {
   git update-index -q --refresh
   ! git diff-index --quiet HEAD --
+}
+
+#####################################################################
+# Graphite
+#####################################################################
+gsubmit() {
+  if [[ " $* " == *" --squash "* ]]; then
+    g squash --no-edit
+  fi
+
+  local other_flags=("${@/--squash/}")
+  g submit --publish --no-edit-description --ai ${other_flags[@]}
 }
