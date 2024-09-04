@@ -184,11 +184,12 @@ git_has_changes() {
 #####################################################################
 # Graphite
 #####################################################################
-gsubmit() {
+submit() {
   if [[ " $* " == *" --squash "* ]]; then
     g squash --no-edit
   fi
 
   local other_flags=("${@/--squash/}")
-  g submit --publish --no-edit-description --ai ${other_flags[@]}
+  # g submit --publish --no-edit-description --ai ${other_flags[@]}
+  g submit --publish --ai ${other_flags[@]}
 }
