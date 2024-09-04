@@ -54,13 +54,6 @@ export PATH
 # Shell prompt
 #####################################################################
 
-# Puts a new line after all prompts
-precmd() {
-  precmd() {
-    echo
-  }
-}
-
 # Two-line prompt with emoji
 # This is off for now... it go annoying with the emojis that were sometimes wider than one character, depending on the terminal that was rendering it. Maybe one day I'll turn it back on and move the emoji or just use emojis that are always one character wide (e.g. 😀)
 # Source: https://github.com/kentcdodds/dotfiles/blob/master/.zshrc
@@ -75,6 +68,13 @@ function random_emoji() {
 # PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
 
 PROMPT="$PROMPT"$'\n'"  "
+
+# Sets the window / tab title
+precmd() {
+  # Add a new line after each prompt
+  echo
+}
+ZSH_THEME_TERM_TITLE_IDLE="%1~"
 
 #####################################################################
 # Git
