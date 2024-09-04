@@ -134,16 +134,16 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
 
 # Install Zinit (added by Zinit's installer)
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
+  print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+  command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" &&
+    print -P "%F{33} %F{34}Installation successful.%f%b" ||
+    print -P "%F{160} The clone has failed.%f%b"
 fi
 
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
+[[ -v _comps ]] && _comps[zinit]=_zinit
 
 # Load specific plugins
 ## Off for now, until we need it
@@ -162,12 +162,11 @@ autoload -Uz _zinit
 # Installation: /opt/homebrew/bin/gt completion >> ~/.zshrc
 #    or /opt/homebrew/bin/gt completion >> ~/.zprofile on OSX.
 #
-_gt_yargs_completions()
-{
+_gt_yargs_completions() {
   local reply
   local si=$IFS
   IFS=$'
-' reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /opt/homebrew/bin/gt --get-yargs-completions "${words[@]}"))
+' reply=($(COMP_CWORD="$((CURRENT - 1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /opt/homebrew/bin/gt --get-yargs-completions "${words[@]}"))
   IFS=$si
   _describe 'values' reply
 }
@@ -185,7 +184,6 @@ autoload -Uz compinit && compinit
 # Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
 ## See: https://docs.brew.sh/Homebrew-and-Python
 # PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
-
 
 # #####################################################################
 # # Miscellaneous setup
