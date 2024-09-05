@@ -156,30 +156,32 @@ v() { (
 # Can also pass in a theme instead of inferring from macOS dark mode
 setup_themes() {
   local theme=$1
+  local bat_theme
+  local delta_theme
 
-  case "$theme" in
-  "dark")
-    local bat_theme="OneHalfDark"
-    local delta_theme="Monokai Extended"
-    ;;
-  "light")
-    local bat_theme="GitHub"
-    local delta_theme="GitHub"
-    ;;
-  *)
-    # Decide the theme based on macOS dark mode
-    if [[ -z $bat_theme || -z $delta_theme ]]; then
-      local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle &>/dev/null && echo "dark" || echo "light")
-      if [[ $macos_theme == "dark" ]]; then
-        bat_theme="OneHalfDark"
-        delta_theme="Monokai Extended"
-      else
-        bat_theme="GitHub"
-        delta_theme="GitHub"
-      fi
+  set_dark_theme() {
+    bat_theme="OneHalfDark"
+    delta_theme="Monokai Extended"
+  }
+
+  set_light_theme() {
+    bat_theme="GitHub"
+    delta_theme="GitHub"
+  }
+
+  if [[ "$theme" == "dark" ]]; then
+    set_dark_theme
+  elif [[ "$theme" == "light" ]]; then
+    set_light_theme
+  else
+    local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle 2>/dev/null && echo "dark" || echo "light")
+
+    if [[ "$macos_theme" == "dark" ]] || [[ "$TERM" == "xterm-kitty" ]]; then
+      set_dark_theme
+    else
+      set_light_theme
     fi
-    ;;
-  esac
+  fi
 
   alias bat="bat --theme=$bat_theme"
   alias cat="bat"
@@ -266,9 +268,10 @@ alias wh=which
 #####################################################################
 
 alias b="butterfish"
-alias bsh="butterfish shell -m 'gpt-4-turbo-preview'"
+alias bsh="butterfish shell -m 'gpt-4o'"
 alias chat="bsh"
-alias bp="butterfish prompt -m='gpt-4-turbo-preview'"
+alias bp="butterfish prompt -m 'gpt-4o'"
+alias ask="bp"
 alias bg="butterfish gencmd"
 alias bge="butterfish gencmd -f"
 alias bsum="butterfish summarize"
