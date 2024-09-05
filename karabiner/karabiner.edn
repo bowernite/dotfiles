@@ -496,8 +496,9 @@
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         ;; App URLs
+        [:q [:openw "dev.ldgr.app"]]
         [:a [:openw "localhost:3000"]]
-        [:z [:openw "ldgr.app/dashboard"]]
+        [:z [:openw "ldgr.app"]]
 
         ; Purgatory
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
