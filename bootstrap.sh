@@ -46,16 +46,16 @@ sleep 2s
 ##############################################################
 log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
-install_dotfile "zshrc" ".zshrc"
-install_dotfile "zshrc__generated" ".zshrc__generated"
-install_dotfile "zshrc__aliases" ".zshrc__aliases"
-install_dotfile "zshrc__private/zshrc__private" ".zshrc__private"
-install_dotfile "gitconfig" ".gitconfig"
-install_dotfile "gitignore_global" ".gitignore_global"
-install_dotfile "vimrc" ".vimrc"
-install_dotfile "vimrc__defaults" ".vimrc__defaults"
-install_dotfile "sandboxrc" ".sandboxrc"
-install_dotfile "yabairc" ".yabairc"
+install_dotfile "zsh/zshrc" ".zshrc"
+install_dotfile "zsh/zshrc__generated" ".zshrc__generated"
+install_dotfile "zsh/zshrc__aliases" ".zshrc__aliases"
+install_dotfile "zsh/zshrc__private" ".zshrc__private"
+install_dotfile "git/gitconfig" ".gitconfig"
+install_dotfile "git/gitignore_global" ".gitignore_global"
+install_dotfile "vim/vimrc" ".vimrc"
+install_dotfile "vim/vimrc__defaults" ".vimrc__defaults"
+install_dotfile "shell/sandboxrc" ".sandboxrc"
+install_dotfile "shell/yabairc" ".yabairc"
 
 exit
 
