@@ -2,7 +2,7 @@
 .cfg
 
 # Other ignores
-/zshrc__private
+/zsh/private
 /bin/.out/*
 !/bin/.out/.gitkeep
 /karabiner/automatic_backups/
