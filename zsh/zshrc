@@ -11,6 +11,9 @@ source $dotfiles_dir/zsh/zshrc__aliases
 # Private stuff (keys, company-specific, etc.)
 source $dotfiles_dir/zsh/private/zshrc__private
 
+echo "source $dotfiles_dir/zsh/zshrc__playground"
+source $dotfiles_dir/zsh/zshrc__playground
+
 #####################################################################
 # PATH shenanigans
 #####################################################################
