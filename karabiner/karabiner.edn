@@ -141,10 +141,6 @@
     {
       :des "app-specific"
       :rules [
-        ; Bear
-        ;; More ergonomic Notes search
-        [:!Cp :!CSf :Bear]
-
         ; Finder
         ;; More ergonomic "Copy as pathname"
         [:!Cp :!COc :Finder]
