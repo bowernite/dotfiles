@@ -194,6 +194,36 @@
       ]
     }
     {
+      :des "Notion"
+      :rules [
+        :Notion
+        
+        ;; Text styles
+        [:!C1 :!CO1]
+        [:!C2 :!CO2]
+        [:!C3 :!CO3]
+        [:!C4 :!CO4]
+        [:!C5 :!CO5]
+        [:!C6 :!CO6]
+        [:!C7 :!CO7]
+        [:!C8 :!CO8]
+        [:!C9 :!CO9]
+        [:!C0 :!CO0]
+        
+        ;; Strikethrough (matches Bear)
+        [:!CSu :!CSs]
+        ;; Highlight (matches Bear)
+        [:!CSm :!CSh]
+        
+        ;; Moving blocks
+        ;; (⚠️ doesn't work right now)
+        [:!CTh :!CSleft_arrow]
+        [:!CTj :!CSdown_arrow]
+        [:!CTk :!CSup_arrow]
+        [:!CTl :!CSright_arrow]
+      ]
+    }
+    {
       :des "iTerm"
       :rules [
         :iTerm
@@ -910,6 +940,7 @@
       "^net\\.kovidgoyal\\.kitty$"
     ]
     :iTerm ["^com\\.googlecode\\.iterm2$"]
+    :Notion ["^com\\.google\\.Chrome\\.app\\.beklimmaoppgobhjclldbbiiejdemdhm$"]
     :Finder ["^com\\.apple\\.finder$"]
     :Notes ["^com\\.apple\\.Notes$"]
     :Bear ["^net\\.shinyfrog\\.bear$"]
