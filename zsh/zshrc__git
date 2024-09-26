@@ -183,10 +183,34 @@ git_has_changes() {
   git update-index -q --refresh
   ! git diff-index --quiet HEAD --
 }
+# "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
+# Usage: diff [compare_branch] [--dev] [--origin-dev]
+#   - If no compare_branch is provided, it automatically finds the parent branch
+#   - If --dev is provided, it compares against the dev branch
+#   - If --origin-dev is provided, it compares against the origin dev branch
+diff() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local compare_branch
+
+  if [[ "$1" == "--dev" ]]; then
+    compare_branch=$(git_dev_branch)
+  elif [[ "$1" == "--origin/dev" ]]; then
+    compare_branch="origin/$(git_dev_branch)"
+  else
+    compare_branch=${1:-$(git show-branch -a 2>/dev/null | grep '\*' | grep -v "$current_branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//')}
+  fi
+
+  local merge_base=$(git merge-base "$current_branch" "$compare_branch")
+
+  echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
+
+  git diff "$merge_base" "$current_branch"
+}
 
 #####################################################################
 # Graphite
 #####################################################################
+
 submit() {
   if [[ " $* " == *" --squash "* ]]; then
     g squash --no-edit
