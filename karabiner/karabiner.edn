@@ -513,12 +513,12 @@
         ;; Work calendar
         [:c [:open "https://calendar.google.com/calendar/u/3"]]
         [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
-        [:f [:opena "Cursor" "~/src/work/ledger/ldgr"]]
+        [:f [:opena "Cursor" "~/src/work/ledger/ldgr/apps/platform"]]
+        [:d [:opena "Cursor" "~/src/work/ledger/ldgr/api"]]
         [:v [:open "https://github.com/LedgerInvesting/platform/pulls/bowernite"]]
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:d [:openw "linear.app/gather-town/my-issues/assigned"]]
         ;; Search local repos
         [:g [:alfred "search repos" "net.deanishe.alfred-git-repos"]]
         ;; App URLs
