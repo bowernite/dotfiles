@@ -340,12 +340,9 @@ serve() {
   python3 -m http.server $port
 }
 
-# Opens a file or directory in the specified editor (defaults to "cursor")
-# Usage: edit [editor] [file/directory]
-# Example: edit vim myfile.txt
-# Example: edit code myproject/
-# Example: edit myfile.txt (opens in default editor, "cursor")
+# "edit": Opens a file or directory in the default editor
 edit() {
-  local editor="${1:-"cursor"}"
-  $editor $@
+  local editor="cursor"
+  local target="${1:-.}"
+  $editor $target
 }
