@@ -211,7 +211,9 @@
         [:!C0 :!CO0]
         
         ;; Strikethrough (matches Bear)
-        [:!CSu :!CSs]
+        ;; [:!CSu :!CSs]
+        ;; ;;; Replacement for going up a level
+        ;; [:!CTu :!CSu]
         ;; Highlight (matches Bear)
         [:!CSm :!CSh]
         
