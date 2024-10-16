@@ -96,7 +96,19 @@ alias gundo="git reset HEAD~"
 alias gundos="git reset HEAD~ --soft"
 
 # "git abandon": See gitconfig alias for details
-alias gab="git abandon"
+gab() {
+  echo
+  echo "\033[1;33m⚠️ Warning: This will delete the current branch, and it will be lost forever.\033[0m"
+  echo "\033[1;34m🤔 Are you sure you want to proceed? (y/N)\033[0m"
+  read -k 1 response
+  if [[ $response =~ ^[Yy]$ ]]; then
+    echo
+    git abandon
+  else
+    echo
+    echo "\033[1;31m❌ Operation cancelled.\033[0m"
+  fi
+}
 
 # "git branch modify": Rename a branch
 alias gbm="git branch -m"
