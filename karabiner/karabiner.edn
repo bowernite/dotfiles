@@ -282,7 +282,7 @@
         ;; Focus CleanShot (in menu bar)
         [:x :!CTSj]
         ;; Record video
-        [:e :!CTS5]
+        [:e :!CS5]
         ;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Menu bar items (Bartender)
         ;; Search menu bar items
