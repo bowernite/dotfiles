@@ -255,11 +255,6 @@
         :slash-mode
         ; Solidified
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; Screenshots
-        ;; Copy screenshot of selected area
-        [:c :!CTS4]
-        ;; Copy screenshot of full screen
-        [:d :!CTS5]
         ;; Maximize window (rectangle)
         [:a :!TOs]
         ;; Center Window (rectangle)
@@ -272,14 +267,23 @@
         [:g [:alfred "create reminder" "com.surrealroad.alfred-reminder"]]
         ;; Alfred: Add to Trello inbox
         [:f [:alfred "add to inbox" "com.mikomagni.trello"]]
+        ; Screenshots / CleanShot
+        ;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; Copy screenshot of selected area
+        [:c :!CTS4]
+        ;; Copy screenshot of full screen
+        [:d :!CTS5]
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ; CleanShot
+        ; Screenshots / CleanShot
         ;; Scrolling capture
         [:3 :!CTOS3]
         ;; Focus CleanShot (in menu bar)
         [:x :!CTSj]
+        ;; Record video
+        [:e :!CTS5]
+        ;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Menu bar items (Bartender)
         ;; Search menu bar items
         [:z :!CTSk]
@@ -354,8 +358,6 @@
         [:8 [:!CTOSh]]
 
         ; Limbo / WIP
-        ;; Screen capture tools
-        [:h :!CS5]
         [:comma [:opena "Remotasks"]]
         [:period [:opena "Remotasks Helper"]]
         ;; Timers
