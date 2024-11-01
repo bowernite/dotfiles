@@ -479,9 +479,9 @@
         ;; Personal calendar
         [:y [:openw "calendar.google.com/calendar/u/0/r/month"]]
         ;; Work email
-        [:semicolon [:openw "mail.google.com/mail/u/3"]]
+        [:semicolon [:openw "mail.google.com/mail/u/1"]]
         [:l [:openw "trello.com/b/NqI34mI2/%E2%8F%B3-later"]]
-        [:m [:openw "mail.google.com/mail/u/0"]]
+        [:m [:openw "mail.google.com/mail/u/1"]]
         ;; White noise
         [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/White Noise.app"]]
         [:p [:openw "docs.google.com/spreadsheets/d/1lMo3BA_I2MRrxaTjVNOaowP0ziiGrmTWvwBGYcxj6Ac/edit?gid=1906295637#gid=1906295637"]]
@@ -515,7 +515,7 @@
         [:b [:opena "Cursor" "~/src/personal/dotfiles/karabiner/karabiner.edn"]]
         [:w [:opena "Cursor" "~/src/personal/hammerspoon"]]
         ;; Work calendar
-        [:c [:open "https://calendar.google.com/calendar/u/3"]]
+        [:c [:open "https://calendar.google.com/calendar/u/1"]]
         [:r [:open "https://github.com/LedgerInvesting/platform/pulls"]]
         [:f [:opena "Cursor" "~/src/work/ledger/ldgr/apps/platform"]]
         [:d [:opena "Cursor" "~/src/work/ledger/ldgr/api"]]
