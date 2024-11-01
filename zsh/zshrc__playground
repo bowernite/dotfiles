@@ -1,4 +1,12 @@
 lock_screen_timer() {
+  # Check if --test flag is passed
+  if [ "$1" = "--test" ]; then
+    osascript -e 'display notification "Testing lock screen timer" with title "Test"'
+    sleep 3
+    pmset displaysleepnow
+    return
+  fi
+
   # Default to 25 minutes if no argument is provided
   local minutes=${1:-25}
   local remaining_minutes=$minutes
