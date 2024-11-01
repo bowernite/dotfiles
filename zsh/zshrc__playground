@@ -1,15 +1,39 @@
 lock_screen_timer() {
   # Default to 25 minutes if no argument is provided
   local minutes=${1:-25}
+  local remaining_minutes=$minutes
+  local total_blocks=20
+  local filled_char="█"
+  local empty_char="░"
 
-  # Convert minutes to seconds
-  local total_time=$((minutes * 60))
-  # Set the warning time to 1 minute before lock
-  local warning_time=$((total_time - 60))
+  while [ $remaining_minutes -gt 0 ]; do
+    # Calculate progress bar
+    local filled_blocks=$(((remaining_minutes * total_blocks) / minutes))
+    local empty_blocks=$((total_blocks - filled_blocks))
+    local progress_bar=""
 
-  # Send a notification 1 minute before lock
-  (sleep $warning_time && osascript -e 'display notification "Your screen will lock in 1 minute" with title "Warning"') &
+    # Build progress bar string
+    for ((i = 0; i < filled_blocks; i++)); do
+      progress_bar+=$filled_char
+    done
+    for ((i = 0; i < empty_blocks; i++)); do
+      progress_bar+=$empty_char
+    done
 
-  # Lock the screen after specified minutes
-  (sleep $total_time && pmset displaysleepnow) &
+    # Clear previous line and show progress
+    echo -ne "\r\033[K"
+    if [ $remaining_minutes -eq 1 ]; then
+      echo -ne "⏰ $progress_bar 1 minute remaining!"
+      osascript -e 'display notification "Your screen will lock in 1 minute! ⚠️" with title "Warning"'
+    else
+      echo -ne "⏰ $progress_bar $remaining_minutes minutes remaining"
+    fi
+
+    sleep 60
+    remaining_minutes=$((remaining_minutes - 1))
+  done
+  echo # Add newline at end
+
+  # Lock the screen
+  pmset displaysleepnow
 }
