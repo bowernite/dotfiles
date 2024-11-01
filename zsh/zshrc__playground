@@ -1,0 +1,15 @@
+lock_screen_timer() {
+  # Default to 25 minutes if no argument is provided
+  local minutes=${1:-25}
+
+  # Convert minutes to seconds
+  local total_time=$((minutes * 60))
+  # Set the warning time to 1 minute before lock
+  local warning_time=$((total_time - 60))
+
+  # Send a notification 1 minute before lock
+  (sleep $warning_time && osascript -e 'display notification "Your screen will lock in 1 minute" with title "Warning"') &
+
+  # Lock the screen after specified minutes
+  (sleep $total_time && pmset displaysleepnow) &
+}
