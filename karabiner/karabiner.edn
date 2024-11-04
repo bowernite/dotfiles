@@ -410,7 +410,7 @@
 
         ; Random, not really "media"
         ;; Show notification center
-        [:n :f12]
+        [:n :!TOn]
         ;; Zoom out
         [:o :!Chyphen]
         ;; Zoom in
