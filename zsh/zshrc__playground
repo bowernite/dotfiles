@@ -1,18 +1,30 @@
-lock_screen_timer() {
-  # Check if --test flag is passed
-  if [ "$1" = "--test" ]; then
-    osascript -e 'display notification "Testing lock screen timer" with title "Test"'
-    sleep 3
-    pmset displaysleepnow
-    return
+focus() {
+  # Default to 25 minutes if no argument is provided
+  local minutes=25
+  local focus_task=""
+
+  # If first arg is a number, use it as minutes
+  if [[ $1 =~ ^[0-9]+$ ]]; then
+    minutes=$1
+    focus_task=$2
+  else
+    # If first arg exists but isn't a number, it's the task
+    focus_task=$1
   fi
 
-  # Default to 25 minutes if no argument is provided
-  local minutes=${1:-25}
   local remaining_minutes=$minutes
   local total_blocks=20
   local filled_char="█"
   local empty_char="░"
+
+  # Clear screen and show initial focus message
+  clear
+  if [ -z "$focus_task" ]; then
+    echo "😑 Currently focusing"
+  else
+    echo "🎯 Focusing on: $focus_task"
+  fi
+  echo "───────────────────────────────────"
 
   while [ $remaining_minutes -gt 0 ]; do
     # Calculate progress bar
@@ -30,11 +42,10 @@ lock_screen_timer() {
 
     # Clear previous line and show progress
     echo -ne "\r\033[K"
-    if [ $remaining_minutes -eq 1 ]; then
-      echo -ne "⏰ $progress_bar 1 minute remaining!"
-      osascript -e 'display notification "Your screen will lock in 1 minute! ⚠️" with title "Warning"'
-    else
-      echo -ne "⏰ $progress_bar $remaining_minutes minutes remaining"
+    echo -ne "\n⏰ $progress_bar $remaining_minutes minute(s) remaining"
+
+    if [ $remaining_minutes -eq 2 ]; then
+      osascript -e "display notification \"Your screen will lock in 2 minutes! ⚠️\" with title \"$focus_task\""
     fi
 
     sleep 60
