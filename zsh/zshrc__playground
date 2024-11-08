@@ -22,7 +22,7 @@ focus() {
   if [ -z "$focus_task" ]; then
     echo "😑 Currently focusing"
   else
-    echo "🎯 Focusing on: $focus_task"
+    echo "🎯 $focus_task"
   fi
   echo "───────────────────────────────────"
 
