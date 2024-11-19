@@ -16,6 +16,10 @@ focus() {
   local total_blocks=20
   local filled_char="█"
   local empty_char="░"
+  
+  # Start an equivalent timer in Clock.app
+  # osascript -e "tell application \"Clock\" to start timer with duration $minutes minutes"
+  osascript -e 'tell application "Alfred 5" to run trigger "timer" in workflow "com.vitorgalvao.alfred.shriekingchimes" with argument "'$((minutes * 60))'"'
 
   # Clear screen and show initial focus message
   clear
