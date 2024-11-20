@@ -350,8 +350,8 @@
         [:y [:open "keysmith://run-macro/BE39EF3D-2ACD-426B-98A1-3C04C94D1B20"]]
         ;; Apple Notes search / creation
         ;; [:n [:alfred "notes" "in.sball.searchnotes"]]
-        ;; Bear Search
-        [:n [:alfred "create or search" "com.drgrib.bear"]]
+        ;; Obsidian Search
+        [:n [:alfred "search" "de.chris-grieser.shimmering-obsidian"]]
         ; Send message / iMessage
         [:j [:!CTOSj]]
         ;; Mary
