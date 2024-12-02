@@ -141,6 +141,10 @@
     {
       :des "app-specific"
       :rules [
+        ; Notion Calendar
+        ;; Replace hiding with quitting, since Notion Calendar has a bug sometimes where it won't hide
+        [:!Ch :!Cq :NotionCalendar]
+        
         ; Finder
         ;; More ergonomic "Copy as pathname"
         [:!Cp :!COc :Finder]
@@ -911,6 +915,7 @@
   ]
 
   :applications {
+    :NotionCalendar ["^com\\.cron\\.electron$"]
     :VSCode [
       "^com\\.microsoft\\.VSCode(Insiders)?$",
       "^com\\.microsoft\\.VSCode$%"
