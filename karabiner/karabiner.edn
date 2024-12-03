@@ -770,10 +770,15 @@
 
         ; Scrolling (full pages, and entire "document")
         [:!W6 :!CTOS6]
-        [:!W7 :page_down :CodeLike]
-        [:!W7 :page_down :Terminals]
-        [:!W8 :page_up :CodeLike]
-        [:!W8 :page_up :Terminals]
+        [:!W7 :page_down]
+        [:!W7 :page_down]
+        [:!W8 :page_up]
+        [:!W8 :page_up]
+        ;; Not sure why I had this only scoped to CodeLike and Terminals...?
+        ;; [:!W7 :page_down :CodeLike]
+        ;; [:!W7 :page_down :Terminals]
+        ;; [:!W8 :page_up :CodeLike]
+        ;; [:!W8 :page_up :Terminals]
         ;; [:!W7 :!CTOS7]
         ;; [:!W8 :!CTOS8]
         [:!W9 :!CTOS9]
