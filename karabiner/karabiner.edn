@@ -143,7 +143,7 @@
       :rules [
         ; Linear
         ;; Edit description
-        [:!Ci :!TSi]
+        [:!Ci :!TSi :Linear]
         
         ; Notion Calendar
         ;; Replace hiding with quitting, since Notion Calendar has a bug sometimes where it won't hide
@@ -924,6 +924,7 @@
   ]
 
   :applications {
+    :Linear ["^com\\.linear$"]
     :NotionCalendar ["^com\\.cron\\.electron$"]
     :VSCode [
       "^com\\.microsoft\\.VSCode(Insiders)?$",
