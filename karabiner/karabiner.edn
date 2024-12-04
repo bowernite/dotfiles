@@ -141,6 +141,10 @@
     {
       :des "app-specific"
       :rules [
+        ; Linear
+        ;; Edit description
+        [:!Ci :!TSi]
+        
         ; Notion Calendar
         ;; Replace hiding with quitting, since Notion Calendar has a bug sometimes where it won't hide
         [:!Ch :!Cq :NotionCalendar]
