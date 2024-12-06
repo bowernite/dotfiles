@@ -345,8 +345,8 @@
         ;; Passwords (password manager)
         ;;; Have to use a hotkey, since the Bitwarden workflow can't "show more" properly when the workflow was triggered with an External Trigger
         [:o [:!CTOSo]]
-        ;; Hide notification(s) (Alfred "Notifications" workflow)
-        [:i :!CTOSi]
+        ;; Hide notification(s) (Alfred "Banner Be Gone" workflow by Vitor Galvao)
+        [:i :!CTOi]
         ;; Hide notifications alternative. This one involves moving the mouse and clicking the notification close button of the top notification. A bit weird visually, plus it takes focus away from the frontmost app 😕
         ;; [:h [:open "keysmith://run-macro/BB7C7C9C-FA43-4C3C-9B47-E874047A3AAA"]]
         ;; Google Maps search
