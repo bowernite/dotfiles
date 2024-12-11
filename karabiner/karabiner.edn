@@ -141,6 +141,12 @@
     {
       :des "app-specific"
       :rules [
+        ; Gather
+        ;; Toggle Mic
+        [:!Cd :!CSa :Gather]
+        ;; Toggle Camera
+        [:!Ce :!CSv :Gather]
+        
         ; Linear
         ;; Edit description
         [:!Ci :!TSi :Linear]
@@ -924,6 +930,7 @@
   ]
 
   :applications {
+    :Gather ["^com\\.gather\\.Gather$"]
     :Linear ["^com\\.linear$"]
     :NotionCalendar ["^com\\.cron\\.electron$"]
     :VSCode [
