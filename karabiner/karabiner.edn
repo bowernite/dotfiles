@@ -593,8 +593,8 @@
 
         ;; ;; Big ol' separator
         [:grave_accent_and_tilde [:hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen :hyphen]]
-        ;; Notion separator / line
-        [:1 [:hyphen :hyphen :hyphen]]
+        ;; Markdown separator / line
+        [:1 [:!S8 :!S8 :!S8]] ; -> ***
 
         ;; Spacebar is the only key I type very quickly after comma
         ;; By mapping this specific case, this allows us to use this mode as a `layer`, which allows us to release comma before we release the key we're using for an actual symbol, which lets us type these symbols quicker and with more ease :)
