@@ -23,6 +23,13 @@ source $dotfiles_dir/setup/make-spotlight-index-markdown.sh
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
+#####################################################################
+# Launch Agents
+#####################################################################
+
+launchctl load ~/Library/LaunchAgents/com.user.set-terminal-dark-light-theme.plist
+# To unload: launchctl unload ~/Library/LaunchAgents/com.user.set-terminal-dark-light-theme.plist
+
 ##############################################################
 # General/UI/UX
 ##############################################################
