@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.user.switchkittytheme</string>
+    <string>com.user.set-terminal-dark-light-theme</string>
     <key>ProgramArguments</key>
     <array>
         <string>/Users/brett/src/personal/dotfiles/macos/launch_agents/set-terminal-dark-light-themes.sh</string>
