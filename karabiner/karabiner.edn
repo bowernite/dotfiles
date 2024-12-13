@@ -122,10 +122,10 @@
     {
       :des "cmd+quote, cmd+shift+quote -> cmd+close_bracket, cmd+shift+close_bracket"
       :rules [
-          [:!Cquote :!Cclose_bracket]
-          ;; NOTE: We need to turn off these "simple / generic" rules for app-specific overrides that we do below, as it prevents them from remapping what we're doing here
+          ;; NOTE: We need to turn off these "simple / generic" rules for app specific overrides that we do below, as it prevents them from remapping what we're doing here
           ;;; i.e. in this case, Calendar needs to override :!CSquote
           ;; There might be a better way around this that allows chained overrides, but this works fine for now
+          [:!Cquote :!Cclose_bracket [:!Reminders]]
           [:!CSquote :!CSclose_bracket [:!Calendar]]
       ]
     }
@@ -141,6 +141,10 @@
     {
       :des "app-specific"
       :rules [
+        ; Reminders
+        ;; NOTE: See above for turning off default !Cquote override for Reminders. Notes up there
+        [:!Cquote :!COs :Reminders]
+        
         ; Gather
         ;; Toggle Mic
         [:!Cd :!CSa :Gather]
@@ -930,6 +934,7 @@
   ]
 
   :applications {
+    :Reminders ["^com\\.apple\\.reminders$"]
     :Gather ["^com\\.gather\\.Gather$"]
     :Linear ["^com\\.linear$"]
     :NotionCalendar ["^com\\.cron\\.electron$"]
