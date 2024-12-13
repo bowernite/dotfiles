@@ -468,23 +468,22 @@
         [:delete_or_backspace [:opena "Preview"]]
         [:slash [:opena "Finder"]]
         [:h [:opena "/Users/brett/Applications/Chrome Apps.localized/Notion.app"]]
+        [:o [:opena "Gather"]]
+        [:u [:opena "Spotify"]]
+        [:8 [:opena "Linear"]]
+        [:quote [:opena "Reminders"]]
         
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        [:u [:opena "Spotify"]]
-        [:o [:opena "Gather"]]
-        [:quote [:opena "Keysmith"]]
+        [:7 [:opena "Keysmith"]]
         [:0 [:opena "Bitwarden"]]
         [:9 [:opena "zoom.us"]]
-        [:8 [:opena "Linear"]]
-        [:7 [:opena "Figma"]]
         [:t [:opena "Activity Monitor"]]
         
         ; Purgatory
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
         ; NOTE: `xp` is far too common in language. Avoid using `p` for this mode
-        ;; [:p [:opena "Reminders"]]
       ]
     }
     {
