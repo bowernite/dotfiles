@@ -7,8 +7,12 @@
 # Get current macOS appearance
 MODE=$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')
 
-LIGHT_THEME="1984 Light"
-DARK_THEME="GitHub Dark"
+# High contrast
+LIGHT_THEME="Modus Operandi"
+
+# High contrast (tinted is for navy blue background)
+DARK_THEME="Modus Vivendi Tinted"
+# DARK_THEME="GitHub Dark"
 
 if [ "$MODE" = "true" ]; then
   /Applications/kitty.app/Contents/MacOS/kitten themes --reload-in=all "$DARK_THEME"
