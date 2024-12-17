@@ -160,15 +160,18 @@ setup_themes() {
   local theme=$1
   local bat_theme
   local delta_theme
+  local kitty_theme
 
   set_dark_theme() {
     bat_theme="OneHalfDark"
     delta_theme="Monokai Extended"
+    kitty_theme="Pencil Dark"
   }
 
   set_light_theme() {
     bat_theme="GitHub"
     delta_theme="GitHub"
+    kitty_theme="Pencil Light"
   }
 
   if [[ "$theme" == "dark" ]]; then
@@ -178,7 +181,7 @@ setup_themes() {
   else
     local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle 2>/dev/null && echo "dark" || echo "light")
 
-    if [[ "$macos_theme" = "dark" ]] || [[ "$TERM" = "xterm-kitty" ]]; then
+    if [[ "$macos_theme" = "dark" ]]; then
       set_dark_theme
     else
       set_light_theme
@@ -198,6 +201,8 @@ setup_themes() {
 
   # Use `bat` for syntax highlighting in man pages
   export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
+
+  kitten themes --reload-in=all $kitty_theme
 }
 setup_themes
 
