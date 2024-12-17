@@ -4,6 +4,9 @@
 # Set the terminal theme based on the macOS appearance
 ################################################################################
 
+echo "Setting terminal theme based on macOS appearance"
+logger -t "com.user.set-terminal-dark-light-theme" "Setting terminal theme based on macOS appearance"
+
 # Get current macOS appearance
 MODE=$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')
 
