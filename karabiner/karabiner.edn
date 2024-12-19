@@ -153,7 +153,7 @@
         
         ; Linear
         ;; Edit description
-        [:!Ci :!TSi :Linear]
+        [:!Ce :!TSi :Linear]
         
         ; Notion Calendar
         ;; Replace hiding with quitting, since Notion Calendar has a bug sometimes where it won't hide
