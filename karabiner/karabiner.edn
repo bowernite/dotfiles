@@ -509,7 +509,7 @@
         [:v [:openw "voice.google.com/u/0/messages"]]
         [:b [:openw "schwab.com"]]
         [:0 [:openw "capitalone.com"]]
-        [:k [:openw "chat.openai.com/?model=gpt-4o"]]
+        [:k [:openw "chatgpt.com/?model=gpt-4o"]]
 
         ; WIP / Use more
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
