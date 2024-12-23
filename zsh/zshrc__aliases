@@ -179,9 +179,10 @@ setup_themes() {
   elif [[ "$theme" == "light" ]]; then
     set_light_theme
   else
-    local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle 2>/dev/null && echo "dark" || echo "light")
+    local macos_theme=$(defaults read -globalDomain AppleInterfaceStyle 2>/dev/null && echo "Dark" || echo "Light")
 
-    if [[ "$macos_theme" = "dark" ]]; then
+    # NOTE: The `=~` is necessary, since it seems like the string above contains something else (e.g. a newline character..?)
+    if [[ $macos_theme =~ "Dark" ]]; then
       set_dark_theme
     else
       set_light_theme
