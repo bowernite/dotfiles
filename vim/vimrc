@@ -26,12 +26,30 @@ call plug#begin('~/.vim/plugged')
   Plug 'bkad/camelcasemotion'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+
+  Plug 'projekt0n/github-nvim-theme'
+  Plug 'endel/vim-github-colorscheme'
+  Plug 'morhetz/gruvbox'
 call plug#end()
 
+" General settings
 let g:previm_open_cmd = 'open -a "Google Chrome"'
-let g:jsx_ext_required = 0 " allow JSX in .js files
+let g:jsx_ext_required = 0 " Allow JSX in .js files
 let g:camelcasemotion_key = '<leader>'
-let g:airline_theme='light'
+
+" Automatically switch color scheme and airline theme based on macOS theme
+if executable('defaults')
+  let theme = system('defaults read -g AppleInterfaceStyle 2>/dev/null')
+  if theme =~ 'Dark'
+    set background=dark
+    colorscheme gruvbox
+    let g:airline_theme = 'dark'
+  else
+    colorscheme github
+    let g:airline_theme = 'light'
+  endif
+endif
+
 
 autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 
