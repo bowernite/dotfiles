@@ -224,6 +224,12 @@
       ]
     }
     {
+      :des "Option key (special characters)"
+      :rules [
+        [:!O0 :!OS8]
+      ]
+    }
+    {
       :des "Notion"
       :rules [
         :Notion
