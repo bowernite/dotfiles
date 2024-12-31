@@ -91,8 +91,8 @@
         ;;; (not applicable, since switching): Can't do Terminals or code editors, since it clashes with a Vim keybinding I have (at the time of writing "go back")
         ;; [:!Wopen_bracket :!Cbackslash [:!Terminals :!CodeLike]]
         ;; NOTE: App-specific overrides need to come before the generic override at the bottom, if this is to work
-        [:!Oopen_bracket :!COs :Reminders]
-        [:!Oopen_bracket :!Cbackslash]
+        [:!Wopen_bracket :!COs :Reminders]
+        [:!Wopen_bracket :!Cbackslash]
         
         ;; (:!Oquote is "open right sidebar". For now, we don't need a remapping for this, at least until we notice some pattern in other apps of a keybinding for this)
       ]
