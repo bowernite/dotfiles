@@ -2,6 +2,14 @@ focus() {
   # Default to 25 minutes if no argument is provided
   local minutes=25
   local focus_task=""
+  local test_mode=false
+
+  # Check for test flag
+  if [[ "$1" == "--test" ]]; then
+    test_mode=true
+    minutes=0.0833 # 5 seconds in minutes
+    shift # Remove --test from args
+  fi
 
   # If first arg is a number, use it as minutes
   if [[ $1 =~ ^[0-9]+$ ]]; then
@@ -30,9 +38,15 @@ focus() {
   fi
   echo "───────────────────────────────────"
 
-  while [ $remaining_minutes -gt 0 ]; do
+  # Use 5 seconds for test mode
+  local sleep_duration=60
+  if [ "$test_mode" = true ]; then
+    sleep_duration=5
+  fi
+
+  while [ $(echo "$remaining_minutes > 0" | bc -l) -eq 1 ]; do
     # Calculate progress bar
-    local filled_blocks=$(((remaining_minutes * total_blocks) / minutes))
+    local filled_blocks=$(echo "$remaining_minutes * $total_blocks / $minutes" | bc -l | awk '{print int($1)}')
     local empty_blocks=$((total_blocks - filled_blocks))
     local progress_bar=""
 
@@ -48,12 +62,12 @@ focus() {
     echo -ne "\r\033[K"
     echo -ne "\n⏰ $progress_bar $remaining_minutes minute(s) remaining"
 
-    if [ $remaining_minutes -eq 2 ]; then
+    if [ $(echo "$remaining_minutes >= 2 && $remaining_minutes < 3" | bc -l) -eq 1 ]; then
       osascript -e "display notification \"Your screen will lock in 2 minutes! ⚠️\" with title \"$focus_task\""
     fi
 
-    sleep 60
-    remaining_minutes=$((remaining_minutes - 1))
+    sleep $sleep_duration
+    remaining_minutes=$(echo "$remaining_minutes - ($sleep_duration / 60)" | bc -l)
   done
   echo # Add newline at end
 
