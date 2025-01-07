@@ -1,17 +1,23 @@
 alias countdown="~/src/personal/dotfiles/macos/swiftbar-plugins/countdown_timer.1s.rb"
 
 focus() {
+  local log_file=~/src/personal/dotfiles/macos/swiftbar-plugins/bash.log
+
   # Default to 25 minutes if no argument is provided
   local minutes=25
   local focus_task=""
 
-  # If first arg is a number, use it as minutes
+  # Log variables to file
+  echo "$*" >> "$log_file"
+
+  # If first arg is a number, use it as minutes and remaining args as task
   if [[ $1 =~ ^[0-9]+$ ]]; then
     minutes=$1
-    focus_task=$2
+    shift
+    focus_task="$*"
   else
-    # If first arg exists but isn't a number, it's the task
-    focus_task=$1
+    # Otherwise use all args as task
+    focus_task="$*"
   fi
 
   local remaining_minutes=$minutes
