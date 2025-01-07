@@ -8,7 +8,7 @@ focus() {
   local focus_task=""
 
   # Log variables to file
-  echo "$*" >> "$log_file"
+  echo "$*" >>"$log_file"
 
   # If first arg is a number, use it as minutes and remaining args as task
   if [[ $1 =~ ^[0-9]+$ ]]; then
@@ -24,6 +24,9 @@ focus() {
   local total_blocks=20
   local filled_char="█"
   local empty_char="░"
+
+  # Handle Ctrl+C by canceling the timer
+  trap 'countdown 0; exit' INT
 
   # Start an equivalent timer in Clock.app
   # osascript -e "tell application \"Clock\" to start timer with duration $minutes minutes"
