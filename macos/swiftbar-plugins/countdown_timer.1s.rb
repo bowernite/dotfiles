@@ -36,12 +36,12 @@ if ARGV.count == 0
 
   remain = 0 if remain < 0
 
-  color = nil
+  emoji = nil
 
   if remain < 2 * 60 && remain != 0
-    color = "red"
+    emoji = "🔴"
   elsif remain < 5 * 60 && remain != 0
-    color = "orange"
+    emoji = "🟡"
   end
 
   h = (remain / 3600).to_i
@@ -59,7 +59,7 @@ if ARGV.count == 0
   else
     str << "%02i:%02i" % [m, s]
   end
-  str << "| color=#{color}" if color
+  str << " #{emoji}" if emoji
 
   puts str
 
