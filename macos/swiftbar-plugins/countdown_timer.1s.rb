@@ -62,6 +62,9 @@ if ARGV.count == 0
   str << "| color=#{color}" if color
 
   puts str
+
+  # Adds menu bar item to cancel the timer
+  puts "---\nCancel Timer | bash=#{__FILE__} param1=0 terminal=false"
 else
   case ARGV.first
   when '0'
