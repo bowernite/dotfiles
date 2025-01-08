@@ -1,6 +1,10 @@
 alias countdown="~/src/personal/dotfiles/macos/swiftbar-plugins/countdown_timer.1s.rb"
 
 focus() {
+  countdown $*
+}
+
+focus__in-terminal() {
   local log_file=~/src/personal/dotfiles/macos/swiftbar-plugins/bash.log
 
   # Default to 25 minutes if no argument is provided
