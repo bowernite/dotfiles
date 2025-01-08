@@ -39,11 +39,12 @@ if is_refresh
   end
 
   if seconds_remaining.to_i == 0
-    system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
+    # system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
+    system %(pmset displaysleepnow)
   end
-  if seconds_remaining.to_i <= 0
-    hide_timer
-  end
+  # if seconds_remaining.to_i <= 0
+  #   hide_timer
+  # end
 
   seconds_remaining = 0 if seconds_remaining < 0
 
