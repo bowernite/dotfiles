@@ -58,7 +58,7 @@ if is_refresh
     end_time = Time.now + locked_out_for
     while Time.now <= end_time
       lock_screen
-      sleep 1 # Check every second
+      sleep 2 # Keep checking on an interval
     end
   end
   if seconds_remaining.to_i < 0
