@@ -396,8 +396,6 @@
         ;; Timers
         ;; [:semicolon [:alfred "timer with arg" "com.vitorgalvao.alfred.shriekingchimes"]]
         [:semicolon :!CTSsemicolon]
-        ;; Start tasking
-        [:slash :!CTOs]
         ;; Quit app
         [:7 :!CTOSy]
         ;; Force quit
@@ -410,6 +408,8 @@
         ; Available
         ;; [:comma] ; Was used for Remotasks
         ;; [:period] ; Was used for Remotasks
+        ;;; Start tasking (archive)
+        ;; [:slash :!CTOs]
         
         ; "Get out"
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
