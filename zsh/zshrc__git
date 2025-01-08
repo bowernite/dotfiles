@@ -31,10 +31,24 @@ alias gcob="git co -b"
 # Also prunes local branches that have been merged
 # alias gcom="git co \$(git_main_branch) && groh && gbda"
 # alias gcod="git co \$(git_dev_branch) && groh && gbda"
-alias gcom="git co \$(git_main_branch) && groh"
-alias gcod="git co \$(git_dev_branch) && groh"
+gcom() {
+  if git_has_changes; then
+    echo -e "\n⚠️ \033[0;33mLocal changes would be lost. Please stash them first.\033[0m"
+    return 1
+  fi
+  git co $(git_main_branch) && git reset --soft origin/HEAD
+}
+
+gcod() {
+  if git_has_changes; then
+    echo -e "\n⚠️ \033[0;33mLocal changes would be lost. Please stash them first.\033[0m"
+    return 1
+  fi
+
+  git co $(git_dev_branch) && git reset --soft origin/HEAD
+}
 # Should probably only use these when trying to check out files from origin/dev or origin/main
-# NOTE: Doing this (at least when the local version of the branch is not up-to-date, will put Git in a "detached head" state -- not just reset the local branch to origin's HEAD)
+# NOTE: Doing this (at least when the local version of the branch is not up-to-date) will put Git in a "detached head" state -- not just reset the local branch to origin's HEAD)
 alias gcoom="git co origin/\$(git_main_branch)"
 alias gcood="git co origin/\$(git_dev_branch)"
 
