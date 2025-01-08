@@ -12,45 +12,56 @@
 
 fn = File.join(File.dirname($0), '.countdown')
 
-if ARGV.count == 0
+def hide_timer
+  puts ""
+  exit 0
+end
+
+# This is just a refresh, not a new instance of a timer
+is_refresh = ARGV.count == 0
+if is_refresh
   task = nil
 
   if File.file?(fn)
     lines = File.read(fn).lines
 
-    time = Time.at(lines.first.to_i)
+    finish_timestamp = Time.at(lines.first.to_i)
     task = lines[1] if lines.count > 1
   else
-    time = Time.at(0)
+    finish_timestamp = Time.at(0)
   end
 
-  remain = time - Time.now
+  seconds_remaining = finish_timestamp - Time.now
+  
+  # TODO: Move back to being 120s. This is just for testing.
+  if seconds_remaining.to_i == 5
+    system %(osascript -e 'display notification "2 minutes remaining! ⚠️" with title "#{task || "Timer"}"')
+  end
 
-  if remain.to_i == 0
+  if seconds_remaining.to_i == 0
     system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
   end
-  if remain.to_i <= 0
-    puts ""
-    exit 0
+  if seconds_remaining.to_i <= 0
+    hide_timer
   end
 
-  remain = 0 if remain < 0
+  seconds_remaining = 0 if seconds_remaining < 0
 
   emoji = nil
 
-  if remain < 2 * 60 && remain != 0
+  if seconds_remaining < 2 * 60 && seconds_remaining != 0
     emoji = "🔴"
-  elsif remain < 5 * 60 && remain != 0
+  elsif seconds_remaining < 5 * 60 && seconds_remaining != 0
     emoji = "🟡"
   end
 
-  h = (remain / 3600).to_i
-  remain -= h * 3600
+  h = (seconds_remaining / 3600).to_i
+  seconds_remaining -= h * 3600
 
-  m = (remain / 60).to_i
-  remain -= m * 60
+  m = (seconds_remaining / 60).to_i
+  seconds_remaining -= m * 60
 
-  s = remain
+  s = seconds_remaining
 
   str = ""
   str << "#{task}: " if task
@@ -65,23 +76,25 @@ if ARGV.count == 0
 
   # Adds menu bar item to cancel the timer
   puts "---\nCancel Timer | bash=#{__FILE__} param1=0 terminal=false"
+
+# This is a new instance of a timer
 else
   case ARGV.first
   when '0'
-    time = 0
+    finish_timestamp = 0
   when /^(\d+)s$/
-    time = Time.now + $1.to_i
+    finish_timestamp = Time.now + $1.to_i
   when /^(\d+)m$/
-    time = Time.now + $1.to_i * 60
+    finish_timestamp = Time.now + $1.to_i * 60
   when /^(\d+)h$/
-    time = Time.now + $1.to_i * 3600
+    finish_timestamp = Time.now + $1.to_i * 3600
   else
     puts "Error: Invalid argument '#{ARGV.first}'"
     exit 1
   end
 
   str = ""
-  str << time.to_i.to_s
+  str << finish_timestamp.to_i.to_s
 
   if ARGV.count > 1
     str << "\n"
