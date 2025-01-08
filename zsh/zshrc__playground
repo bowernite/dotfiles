@@ -60,9 +60,9 @@ focus() {
     echo -ne "\r\033[K"
     echo -ne "\n⏰ $progress_bar $remaining_minutes minute(s) remaining"
 
-    if [ $remaining_minutes -eq 2 ]; then
-      osascript -e "display notification \"Your screen will lock in 2 minutes! ⚠️\" with title \"$focus_task\""
-    fi
+    # if [ $remaining_minutes -eq 2 ]; then
+    #   osascript -e "display notification \"Your screen will lock in 2 minutes! ⚠️\" with title \"$focus_task\""
+    # fi
 
     sleep 60
     remaining_minutes=$((remaining_minutes - 1))
@@ -70,5 +70,5 @@ focus() {
   echo # Add newline at end
 
   # Lock the screen
-  pmset displaysleepnow
+  # pmset displaysleepnow
 }
