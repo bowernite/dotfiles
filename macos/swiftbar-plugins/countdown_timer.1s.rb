@@ -10,7 +10,7 @@
 
 # NOTE: The above is the original plugin. I've made my own modifications. Also, note that that repository above doesn't seem to be fully updated to what you get when you actually install the plugin.
 
-fn = File.join(File.dirname($0), '.countdown')
+filename = File.join(File.dirname($0), '.countdown')
 
 def hide_timer
   puts ""
@@ -22,8 +22,8 @@ is_refresh = ARGV.count == 0
 if is_refresh
   task = nil
 
-  if File.file?(fn)
-    lines = File.read(fn).lines
+  if File.file?(filename)
+    lines = File.read(filename).lines
 
     finish_timestamp = Time.at(lines.first.to_i)
     task = lines[1] if lines.count > 1
@@ -40,11 +40,12 @@ if is_refresh
 
   if seconds_remaining.to_i == 0
     # system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
-    system %(pmset displaysleepnow)
+
+    # system %(pmset displaysleepnow)
   end
-  # if seconds_remaining.to_i <= 0
-  #   hide_timer
-  # end
+  if seconds_remaining.to_i < 0
+    hide_timer
+  end
 
   seconds_remaining = 0 if seconds_remaining < 0
 
@@ -76,11 +77,13 @@ if is_refresh
   puts str
 
   # Adds menu bar item to cancel the timer
-  puts "---\nCancel Timer | bash=#{__FILE__} param1=0 terminal=false"
+  puts "---\nCancel Timer | bash=#{__FILE__} param1=-1 terminal=false"
 
 # This is a new instance of a timer
 else
   case ARGV.first
+  when '-1'
+    finish_timestamp = 0
   when '0'
     finish_timestamp = 0
   when /^(\d+)s$/
@@ -102,5 +105,5 @@ else
     str << ARGV.drop(1).join(' ')
   end
 
-  File.write(fn, str)
+  File.write(filename, str)
 end
