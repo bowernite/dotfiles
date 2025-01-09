@@ -8,6 +8,10 @@ focus() {
   fi
 }
 
+lockout() {
+  countdown "0,${1}"
+}
+
 focus__in-terminal() {
   local log_file=~/src/personal/dotfiles/macos/swiftbar-plugins/bash.log
 
