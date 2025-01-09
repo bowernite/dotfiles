@@ -104,10 +104,10 @@ else
     finish_timestamp = 0
   when '0'
     finish_timestamp = 0
-  when /^(\d+)(s|m|h)(,(\d+)(s|m|h))?$/
+  when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
     # Parse timer duration
     timer_value = $1.to_i
-    timer_unit = $2
+    timer_unit = $2 || 'm' # Default to minutes if no unit specified
     
     timer_seconds = case timer_unit
       when 's' then timer_value
@@ -120,7 +120,7 @@ else
     # Parse optional lockout duration
     lockout_seconds = if $3
       lockout_value = $4.to_i
-      lockout_unit = $5
+      lockout_unit = $5 || 'm' # Default to minutes if no unit specified
       
       case lockout_unit
         when 's' then lockout_value
