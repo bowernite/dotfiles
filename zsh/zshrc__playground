@@ -1,7 +1,11 @@
 alias countdown="~/src/personal/dotfiles/macos/swiftbar-plugins/countdown_timer.1s.rb"
 
 focus() {
-  countdown $*
+  if [ $# -eq 0 ]; then
+    countdown Focus
+  else
+    countdown $*
+  fi
 }
 
 focus__in-terminal() {
