@@ -45,14 +45,14 @@ if is_refresh
     finish_timestamp = Time.at(0)
   end
 
-  seconds_remaining = finish_timestamp - Time.now
+  seconds_remaining = (finish_timestamp - Time.now).to_i
   
   # TODO: Move back to being 120s. This is just for testing.
-  if seconds_remaining.to_i == 120
+  if seconds_remaining == 120
     system %(osascript -e 'display notification "2 minutes remaining! ⚠️" with title "#{task || "Timer"}"')
   end
 
-  if seconds_remaining.to_i == 0
+  if seconds_remaining == 0
     # system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
 
     lock_screen
@@ -65,7 +65,7 @@ if is_refresh
       sleep 2 # Keep checking on an interval
     end
   end
-  if seconds_remaining.to_i < 0
+  if seconds_remaining < 0
     hide_timer
   end
 
@@ -79,10 +79,10 @@ if is_refresh
     emoji = "🟡"
   end
 
-  h = (seconds_remaining / 3600).to_i
+  h = seconds_remaining / 3600
   seconds_remaining -= h * 3600
 
-  m = (seconds_remaining / 60).to_i
+  m = seconds_remaining / 60
   seconds_remaining -= m * 60
 
   s = seconds_remaining
