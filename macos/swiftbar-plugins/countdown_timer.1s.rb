@@ -46,6 +46,41 @@ def parse_data_from_file(filename)
   end
 end
 
+def parse_duration(value, unit)
+  unit ||= 'm' # Default to minutes if no unit specified
+  case unit
+    when 's' then value
+    when 'm' then value * 60
+    when 'h' then value * 3600
+  end
+end
+
+def parse_args(args)
+  case args.first
+  when '-1', '0'
+    [0, nil, nil]
+  when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
+    timer_value = $1.to_i
+    timer_unit = $2
+    timer_seconds = parse_duration(timer_value, timer_unit)
+    finish_timestamp = Time.now + timer_seconds
+    
+    # Parse optional lockout duration
+    lockout_seconds = if $4
+      lockout_value = $4.to_i
+      lockout_unit = $5
+      parse_duration(lockout_value, lockout_unit)
+    end
+
+    task = args.count > 1 ? args.drop(1).join(' ') : nil
+    
+    [finish_timestamp, lockout_seconds, task]
+  else
+    puts "Error: Invalid argument '#{args.first}'"
+    exit 1
+  end
+end
+
 # This is just a refresh, not a new instance of a timer
 is_refresh = ARGV.count == 0
 if is_refresh
@@ -114,50 +149,12 @@ if is_refresh
 
 # This is a new instance of a timer
 else
-  case ARGV.first
-  when '-1'
-    finish_timestamp = 0
-  when '0'
-    finish_timestamp = 0
-  when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
-    # Parse timer duration
-    timer_value = $1.to_i
-    timer_unit = $2 || 'm' # Default to minutes if no unit specified
-    
-    timer_seconds = case timer_unit
-      when 's' then timer_value
-      when 'm' then timer_value * 60
-      when 'h' then timer_value * 3600
-    end
-    
-    finish_timestamp = Time.now + timer_seconds
-    
-    # Parse optional lockout duration
-    # ($3 is the entire match, including the comma)
-    lockout_seconds = if $4 
-      lockout_value = $4.to_i
-      lockout_unit = $5 || 'm' # Default to minutes if no unit specified
-      
-      case lockout_unit
-        when 's' then lockout_value
-        when 'm' then lockout_value * 60
-        when 'h' then lockout_value * 3600
-      end
-    end
-  else
-    puts "Error: Invalid argument '#{ARGV.first}'"
-    exit 1
-  end
+  finish_timestamp, lockout_seconds, task = parse_args(ARGV)
 
   data = []
   data << "finish_timestamp=#{finish_timestamp.to_i}"
   data << "lockout_duration=#{lockout_seconds}" if lockout_seconds
-  
-  # Add task if provided
-  if ARGV.count > 1
-    task = ARGV.drop(1).join(' ')
-    data << "task=#{task}"
-  end
+  data << "task=#{task}" if task
 
   File.write(filename, data.join("\n"))
 end
