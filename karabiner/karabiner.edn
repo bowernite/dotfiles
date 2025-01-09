@@ -290,10 +290,6 @@
         :slash-mode
         ; Solidified
         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-        ;; Maximize window (rectangle)
-        [:a :!TOs]
-        ;; Center Window (rectangle)
-        [:s :!TOf]
         ;; 2FA / MFA
         [:2 [:alfred "2fa" "cn.alanhe.read-code"]]
         ;; Alfred: Recent Browser history
@@ -321,7 +317,7 @@
         ;;;;;;;;;;;;;;;;;;;;;;;;;
         ; Menu bar items (Bartender)
         ;; Search menu bar items
-        [:z :!CTSk]
+        [:s :!CTSk]
         ;; Focus menu bar
         [:1 :!CTS1]
         ;; Show all menu bar items
@@ -355,6 +351,10 @@
         ;; Alfred: Chrome history
         [:h [:alfred "history" "com.apple.alfred.workflow.chromium-hist"]]
         ; [:b [:alfred "battery" "com.aronhafner.alfred-battery" "level"]]
+        
+        ; Available
+        ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+        ;; a, s
       ]
     }
     {
