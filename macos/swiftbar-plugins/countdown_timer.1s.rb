@@ -64,17 +64,23 @@ def parse_args(args)
   case args.first
   when '-1', '0'
     [0, nil, nil]
-  when /^(?:(\d+)(s|m|h)?)?(?:([,])?(\d+)(s|m|h)?)?$/
+  when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
+    # Capture all regex matches before any further processing
+    timer_value = $1
+    timer_unit = $2
+    lockout_value = $4
+    lockout_unit = $5
+    
     # Parse timer value if provided, otherwise use default
-    timer_value = $1 ? $1.to_i : default_timer[/\d+/].to_i
-    timer_unit = $2 || default_timer[/[smh]/]
+    timer_value = timer_value ? timer_value.to_i : default_timer[/\d+/].to_i
+    timer_unit = timer_unit || default_timer[/[smh]/]
     timer_seconds = parse_duration(timer_value, timer_unit)
     finish_timestamp = Time.now + timer_seconds + 2
-    
+
     # Parse optional lockout duration
-    lockout_seconds = if $4
-      lockout_value = $4.to_i
-      lockout_unit = $5
+    lockout_seconds = if lockout_value
+      lockout_value = lockout_value.to_i
+      lockout_unit = lockout_unit || default_lockout[/[smh]/]
       parse_duration(lockout_value, lockout_unit)
     else
       # Use default lockout when not specified
@@ -123,7 +129,7 @@ if is_refresh
     lock_screen
     
     # Keep the user locked out for a while
-    _lockout = Time.now + locked_out_for
+    end_time = Time.now + locked_out_for
     while Time.now <= end_time
       lock_screen
       sleep 2 # Keep checking on an interval
