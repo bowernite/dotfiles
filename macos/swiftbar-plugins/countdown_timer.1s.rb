@@ -32,11 +32,15 @@ if is_refresh
   locked_out_for = nil
 
   if File.file?(filename)
-    lines = File.read(filename).lines
+    data = {}
+    File.read(filename).each_line do |line|
+      key, value = line.strip.split('=', 2)
+      data[key] = value if key && value
+    end
 
-    finish_timestamp = Time.at(lines.first.to_i)
-    task = lines[1] if lines.count > 1
-    locked_out_for = lines[2].to_i if lines.count > 2
+    finish_timestamp = Time.at(data['finish_timestamp'].to_i)
+    task = data['task']
+    locked_out_for = data['lockout_duration'].to_i if data['lockout_duration']
   else
     finish_timestamp = Time.at(0)
   end
@@ -134,18 +138,15 @@ else
     exit 1
   end
 
-  str = ""
-  str << finish_timestamp.to_i.to_s
-  
-  # Write lockout duration if specified
-  str << "\n#{lockout_seconds}" if lockout_seconds
+  data = []
+  data << "finish_timestamp=#{finish_timestamp.to_i}"
+  data << "lockout_duration=#{lockout_seconds}" if lockout_seconds
   
   # Add task if provided
   if ARGV.count > 1
-    str << "\n"
     task = ARGV.drop(1).join(' ')
-    str << task
+    data << "task=#{task}"
   end
 
-  File.write(filename, str)
+  File.write(filename, data.join("\n"))
 end
