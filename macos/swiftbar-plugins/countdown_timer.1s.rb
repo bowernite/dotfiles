@@ -25,6 +25,10 @@ def sleep_screen
   system "pmset displaysleepnow"
 end
 
+def show_notification(title, message)
+  system "osascript -e 'display notification \"#{message}\" with title \"#{title}\""
+end
+
 # This is just a refresh, not a new instance of a timer
 is_refresh = ARGV.count == 0
 if is_refresh
@@ -47,13 +51,15 @@ if is_refresh
 
   seconds_remaining = (finish_timestamp - Time.now).to_i
   
-  # TODO: Move back to being 120s. This is just for testing.
+  if seconds_remaining == 300
+    show_notification("5 minutes remaining! ⚠️", "#{task || "Timer"}")
+  end
   if seconds_remaining == 120
-    system %(osascript -e 'display notification "2 minutes remaining! ⚠️" with title "#{task || "Timer"}"')
+    show_notification("2 minutes remaining! ⚠️", "#{task || "Timer"}")
   end
 
   if seconds_remaining == 0
-    # system %(osascript -e 'display notification "Time\'s up!" with title "Time\'s up!" sound name "Glass"')
+    # show_notification("Time's up!", "Time's up!")
 
     lock_screen
     
