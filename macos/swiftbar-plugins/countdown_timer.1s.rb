@@ -56,29 +56,47 @@ def parse_duration(value, unit)
 end
 
 def parse_args(args)
+  # Default timer values
+  default_timer = "25m"
+  default_lockout = "5s"
+  args = [default_timer + "," + default_lockout] if args.empty?
+
   case args.first
   when '-1', '0'
     [0, nil, nil]
-  when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
-    timer_value = $1.to_i
-    timer_unit = $2
+  when /^(?:(\d+)(s|m|h)?)?(?:([,])?(\d+)(s|m|h)?)?$/
+    # Parse timer value if provided, otherwise use default
+    timer_value = $1 ? $1.to_i : default_timer[/\d+/].to_i
+    timer_unit = $2 || default_timer[/[smh]/]
     timer_seconds = parse_duration(timer_value, timer_unit)
-    timer_seconds += 2 # For some reason, without this, we always seem to be 2 seconds too short..?
-    finish_timestamp = Time.now + timer_seconds
+    finish_timestamp = Time.now + timer_seconds + 2
     
     # Parse optional lockout duration
     lockout_seconds = if $4
       lockout_value = $4.to_i
       lockout_unit = $5
       parse_duration(lockout_value, lockout_unit)
+    else
+      # Use default lockout when not specified
+      lockout_value = default_lockout[/\d+/].to_i
+      lockout_unit = default_lockout[/[smh]/]
+      parse_duration(lockout_value, lockout_unit)
     end
 
     task = args.count > 1 ? args.drop(1).join(' ') : nil
-    
     [finish_timestamp, lockout_seconds, task]
   else
-    puts "Error: Invalid argument '#{args.first}'"
-    exit 1
+    # First arg must be task name - use default timer and lockout
+    timer_value = default_timer[/\d+/].to_i
+    timer_unit = default_timer[/[smh]/]
+    timer_seconds = parse_duration(timer_value, timer_unit)
+    finish_timestamp = Time.now + timer_seconds + 2
+
+    lockout_value = default_lockout[/\d+/].to_i
+    lockout_unit = default_lockout[/[smh]/]
+    lockout_seconds = parse_duration(lockout_value, lockout_unit)
+    
+    [finish_timestamp, lockout_seconds, args.join(' ')]
   end
 end
 
@@ -105,8 +123,7 @@ if is_refresh
     lock_screen
     
     # Keep the user locked out for a while
-    locked_out_for ||= 5 # Default to 5 seconds if not specified
-    end_time = Time.now + locked_out_for
+    _lockout = Time.now + locked_out_for
     while Time.now <= end_time
       lock_screen
       sleep 2 # Keep checking on an interval
