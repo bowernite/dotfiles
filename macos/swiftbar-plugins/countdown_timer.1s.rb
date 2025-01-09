@@ -118,7 +118,8 @@ else
     finish_timestamp = Time.now + timer_seconds
     
     # Parse optional lockout duration
-    lockout_seconds = if $3
+    # ($3 is the entire match, including the comma)
+    lockout_seconds = if $4 
       lockout_value = $4.to_i
       lockout_unit = $5 || 'm' # Default to minutes if no unit specified
       
@@ -135,15 +136,15 @@ else
 
   str = ""
   str << finish_timestamp.to_i.to_s
-
+  
+  # Write lockout duration if specified
+  str << "\n#{lockout_seconds}" if lockout_seconds
+  
+  # Add task if provided
   if ARGV.count > 1
     str << "\n"
     task = ARGV.drop(1).join(' ')
     str << task
-    
-    if lockout_seconds
-      str << "\n#{lockout_seconds}"
-    end
   end
 
   File.write(filename, str)
