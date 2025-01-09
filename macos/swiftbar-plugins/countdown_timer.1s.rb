@@ -29,12 +29,7 @@ def show_notification(title, message)
   system "osascript -e 'display notification \"#{message}\" with title \"#{title}\""
 end
 
-# This is just a refresh, not a new instance of a timer
-is_refresh = ARGV.count == 0
-if is_refresh
-  task = nil
-  locked_out_for = nil
-
+def parse_data_from_file(filename)
   if File.file?(filename)
     data = {}
     File.read(filename).each_line do |line|
@@ -45,9 +40,19 @@ if is_refresh
     finish_timestamp = Time.at(data['finish_timestamp'].to_i)
     task = data['task']
     locked_out_for = data['lockout_duration'].to_i if data['lockout_duration']
+    [finish_timestamp, task, locked_out_for]
   else
-    finish_timestamp = Time.at(0)
+    [Time.at(0), nil, nil]
   end
+end
+
+# This is just a refresh, not a new instance of a timer
+is_refresh = ARGV.count == 0
+if is_refresh
+  task = nil
+  locked_out_for = nil
+
+  finish_timestamp, task, locked_out_for = parse_data_from_file(filename)
 
   seconds_remaining = (finish_timestamp - Time.now).to_i
   
