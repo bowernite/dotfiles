@@ -63,6 +63,7 @@ def parse_args(args)
     timer_value = $1.to_i
     timer_unit = $2
     timer_seconds = parse_duration(timer_value, timer_unit)
+    timer_seconds += 2 # For some reason, without this, we always seem to be 2 seconds too short..?
     finish_timestamp = Time.now + timer_seconds
     
     # Parse optional lockout duration
@@ -117,21 +118,15 @@ if is_refresh
 
   seconds_remaining = 0 if seconds_remaining < 0
 
-  emoji = nil
+  seconds_decremented = seconds_remaining
+  
+  h = seconds_decremented / 3600
+  seconds_decremented -= h * 3600
 
-  if seconds_remaining < 2 * 60 && seconds_remaining != 0
-    emoji = "🔴"
-  elsif seconds_remaining < 5 * 60 && seconds_remaining != 0
-    emoji = "🟡"
-  end
+  m = seconds_decremented / 60
+  seconds_decremented -= m * 60
 
-  h = seconds_remaining / 3600
-  seconds_remaining -= h * 3600
-
-  m = seconds_remaining / 60
-  seconds_remaining -= m * 60
-
-  s = seconds_remaining
+  s = seconds_decremented
 
   str = ""
   str << "#{task}: " if task
@@ -140,6 +135,14 @@ if is_refresh
   else
     str << "%02i:%02i" % [m, s]
   end
+
+  emoji = nil
+  if seconds_remaining < 2 * 60 && seconds_remaining != 0
+    emoji = "🔴"
+  elsif seconds_remaining < 5 * 60 && seconds_remaining != 0
+    emoji = "🟡"
+  end
+
   str << " #{emoji}" if emoji
 
   puts str
