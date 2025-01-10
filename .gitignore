@@ -15,6 +15,6 @@ bin/sudo_askpass.sh
 /private
 .vscode/settings.json
 notes/macos-text-replacements.plist
-
 /macos/swiftbar-plugins/bash.log
 /macos/swiftbar-plugins/.countdown
+/karabiner/karabiner.edn
