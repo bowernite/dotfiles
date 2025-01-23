@@ -47,7 +47,7 @@ brew "zsh-syntax-highlighting"
 brew "bat"
 brew "coreutils"
 # Better `ls` util
-brew "exa"
+brew "eza"
 # Better "find" util
 brew "fd"
 brew "findutils"

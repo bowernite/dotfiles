@@ -291,7 +291,7 @@ alias bexec="butterfish exec"
 
 # Open fzf files with vim by default
 alias goto="vim -o \`fzf\`"
-alias ls="exa"
+alias ls="eza"
 
 # Log ip to console
 alias myip="curl http://ipecho.net/plain; echo"
