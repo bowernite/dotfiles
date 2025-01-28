@@ -26,7 +26,7 @@ def sleep_screen
 end
 
 def show_notification(title, message)
-  system "osascript -e 'display notification \"#{message}\" with title \"#{title}\""
+  system "osascript -e 'display notification \"#{message}\" with title \"#{title}\"'"
 end
 
 def parse_data_from_file(filename)
