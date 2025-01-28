@@ -36,7 +36,7 @@ gcom() {
     echo -e "\n⚠️ \033[0;33mLocal changes would be lost. Please stash them first.\033[0m"
     return 1
   fi
-  git co $(git_main_branch) && git reset --soft origin/HEAD
+  git co $(git_main_branch) && git reset --hard origin/HEAD
 }
 
 gcod() {
@@ -45,7 +45,7 @@ gcod() {
     return 1
   fi
 
-  git co $(git_dev_branch) && git reset --soft origin/HEAD
+  git co $(git_dev_branch) && git reset --hard origin/HEAD
 }
 # Should probably only use these when trying to check out files from origin/dev or origin/main
 # NOTE: Doing this (at least when the local version of the branch is not up-to-date) will put Git in a "detached head" state -- not just reset the local branch to origin's HEAD)
