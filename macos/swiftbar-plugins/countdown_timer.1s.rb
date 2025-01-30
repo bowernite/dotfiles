@@ -58,7 +58,7 @@ end
 def parse_args(args)
   # Default timer values
   default_timer = "25m"
-  default_lockout = "5s"
+  default_lockout = "60s"
   args = [default_timer + "," + default_lockout] if args.empty?
 
   case args.first
@@ -116,6 +116,9 @@ if is_refresh
 
   seconds_remaining = (finish_timestamp - Time.now).to_i
   
+  if seconds_remaining == 5
+    show_notification("5 seconds remaining! ⚠️", "#{task || "Timer"}")
+  end
   if seconds_remaining == 300
     show_notification("5 minutes remaining! ⚠️", "#{task || "Timer"}")
   end
