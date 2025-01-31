@@ -58,7 +58,7 @@ end
 def parse_args(args)
   # Default timer values
   default_timer = "25m"
-  default_lockout = "60s"
+  default_lockout = "90s"
   args = [default_timer + "," + default_lockout] if args.empty?
 
   case args.first
