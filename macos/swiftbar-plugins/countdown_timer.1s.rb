@@ -12,8 +12,8 @@
 
 filename = File.join(File.dirname($0), '.countdown')
 
-def hide_timer
-  puts ""
+def end_timer
+  puts "⚠️ 0:00 | color=yellow"
   exit 0
 end
 
@@ -139,7 +139,7 @@ if is_refresh
     end
   end
   if seconds_remaining < 0
-    hide_timer
+    end_timer
   end
 
   seconds_remaining = 0 if seconds_remaining < 0
