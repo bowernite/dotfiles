@@ -75,6 +75,7 @@ def parse_args(args)
     timer_value = timer_value ? timer_value.to_i : default_timer[/\d+/].to_i
     timer_unit = timer_unit || default_timer[/[smh]/]
     timer_seconds = parse_duration(timer_value, timer_unit)
+    # Add an extra second, to account for delay in SwiftBar actually showing the timer
     finish_timestamp = Time.now + timer_seconds + 1
 
     # Parse optional lockout duration
