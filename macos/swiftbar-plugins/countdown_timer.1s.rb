@@ -75,7 +75,7 @@ def parse_args(args)
     timer_value = timer_value ? timer_value.to_i : default_timer[/\d+/].to_i
     timer_unit = timer_unit || default_timer[/[smh]/]
     timer_seconds = parse_duration(timer_value, timer_unit)
-    finish_timestamp = Time.now + timer_seconds + 2
+    finish_timestamp = Time.now + timer_seconds + 1
 
     # Parse optional lockout duration
     lockout_seconds = if lockout_value
