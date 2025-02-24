@@ -1,3 +1,5 @@
+source ~/src/personal/dotfiles/zsh/zshrc__graphite
+
 function git_show_modified_files() {
   local ask_to_commit=${1:-true}
   if [[ $(git status --porcelain) ]]; then
@@ -210,39 +212,35 @@ git_has_changes() {
   ! git diff-index --quiet HEAD --
 }
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
-# Usage: diff [compare_branch] [--dev] [--origin-dev]
+# Usage: diff [compare_branch] [--dev] [--origin-dev] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
+#   - Any additional arguments are passed to git diff
 diff() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
+  local other_args=()
 
   if [[ "$1" == "--dev" ]]; then
     compare_branch=$(git_dev_branch)
+    shift
   elif [[ "$1" == "--origin/dev" ]]; then
     compare_branch="origin/$(git_dev_branch)"
+    shift
+  elif [[ -n "$1" && "$1" != -* ]]; then
+    compare_branch="$1"
+    shift
   else
-    compare_branch=${1:-$(git show-branch -a 2>/dev/null | grep '\*' | grep -v "$current_branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//')}
+    compare_branch=$(git show-branch -a 2>/dev/null | grep '\*' | grep -v "$current_branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//')
   fi
+
+  # Collect remaining args
+  other_args=("$@")
 
   local merge_base=$(git merge-base "$current_branch" "$compare_branch")
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
-  git diff "$merge_base" "$current_branch"
-}
-
-#####################################################################
-# Graphite
-#####################################################################
-
-submit() {
-  if [[ " $* " == *" --squash "* ]]; then
-    g squash --no-edit
-  fi
-
-  local other_flags=("${@/--squash/}")
-  # g submit --publish --no-edit-description --ai ${other_flags[@]}
-  g submit --publish --ai ${other_flags[@]}
+  git diff "$merge_base" "$current_branch" "${other_args[@]}"
 }
