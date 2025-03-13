@@ -13,7 +13,8 @@
 filename = File.join(File.dirname($0), '.countdown')
 
 def end_timer
-  puts "⚠️ 0:00 | color=yellow"
+  puts ""
+  # puts "⚠️ 0:00 | color=yellow"
   exit 0
 end
 
