@@ -60,7 +60,7 @@ def parse_args(args)
   # Default timer values
   default_timer = "25m"
   default_lockout = "90s"
-  args = [default_timer + "," + default_lockout] if args.empty?
+  args = [default_timer + "," + default_lockout] if args.empty? or args.first == "RESET_TIMER"
 
   case args.first
   when '-1', '0'
@@ -175,8 +175,8 @@ if is_refresh
 
   puts str
 
-  # Adds menu bar item to cancel the timer
-  puts "---\nCancel Timer | bash=#{__FILE__} param1=-1 terminal=false"
+  # Adds menu bar item to reset the timer
+  puts "---\nReset Timer | bash=#{__FILE__} param1=\"RESET_TIMER\" terminal=false"
 
 # This is a new instance of a timer
 else
