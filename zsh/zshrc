@@ -11,6 +11,8 @@ source $dotfiles_dir/zsh/zshrc__aliases
 # Private stuff (keys, company-specific, etc.)
 source $dotfiles_dir/zsh/private/zshrc__private
 
+source $dotfiles_dir/zsh/zshrc__focus
+
 source $dotfiles_dir/zsh/zshrc__playground
 
 #####################################################################
