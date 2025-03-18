@@ -190,7 +190,7 @@ setup_themes() {
   fi
 
   alias bat="bat --theme=$bat_theme"
-  alias cat="bat"
+  # alias cat="bat"
 
   alias delta="delta --syntax-theme=$delta_theme"
 
