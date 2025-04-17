@@ -19,6 +19,7 @@ fi
 
 if [ -z "$CMD" ]; then
   echo "No git, curl or wget available. Aborting."
+  exit 1
 else
   echo "Installing dotfiles..."
   mkdir -p "$TARGET"
