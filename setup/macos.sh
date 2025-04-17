@@ -20,7 +20,7 @@ done 2>/dev/null &
 source $dotfiles_dir/setup/make-spotlight-index-markdown.sh
 
 # Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
+# settings we're about to change
 osascript -e 'tell application "System Preferences" to quit'
 
 #####################################################################
@@ -61,7 +61,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Disable the “Are you sure you want to open this application?” dialog
+# Disable the "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable auto-correct
@@ -88,7 +88,7 @@ sudo pmset -a standbydelay 86400
 # Never go into computer sleep mode
 sudo systemsetup -setcomputersleep Off >/dev/null
 
-# Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
+# Remove duplicates in the "Open With" menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Disable automatic termination of inactive apps
@@ -129,7 +129,7 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Enable “focus follows mouse” for Terminal.app and all X11 apps
+# Enable "focus follows mouse" for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
 #defaults write com.apple.terminal FocusFollowsMouse -bool true
 #defaults write org.x.X11 wm_ffm -bool true
@@ -432,27 +432,23 @@ fi
 # Apply
 ##############################################################
 
-# Kill affected apps
-for app in "Activity Monitor" \
-  "Address Book" \
-  "Calendar" \
-  "cfprefsd" \
-  "Contacts" \
-  "Dock" \
-  "Flux" \
-  "Finder" \
-  "Google Chrome" \
-  "Mail" \
-  "Messages" \
-  "Photos" \
-  "Rectangle" \
-  "Safari" \
-  "SystemUIServer" \
-  "Terminal"; do
-  # `2>/dev/null` swallows the stderr error message
-  # `|| true` makes sure error/exit code is swallowed, and the script can continue
+# Kill affected apps - only use sudo for system apps that require it
+for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "Photos" "Mail" "Messages" "Safari"; do
+  killall "${app}" 2>/dev/null || true
+done
+
+# System apps that might need sudo to terminate
+for app in "Dock" "Finder" "SystemUIServer"; do
   sudo killall "${app}" 2>/dev/null || true
 done
+
+# Third-party apps
+for app in "Flux" "Google Chrome" "Rectangle" "Terminal"; do
+  killall "${app}" 2>/dev/null || true
+done
+
+# Kill the preferences daemon to ensure changes take effect
+sudo killall "cfprefsd" 2>/dev/null || true
 
 echo
 echo

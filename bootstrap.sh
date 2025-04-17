@@ -119,9 +119,9 @@ go get -u github.com/nikitavoloboev/gitupdate
 # Used by VS Code Go extensions
 go get -v github.com/ramya-rao-a/go-outline
 go get -v golang.org/x/tools/gopls
-github.com/uudashr/gopkgs/v2/cmd/gopkgs
-github.com/go-delve/delve/cmd/dlv
-golang.org/x/lint/golint
+go get -v github.com/uudashr/gopkgs/v2/cmd/gopkgs
+go get -v github.com/go-delve/delve/cmd/dlv
+go get -v golang.org/x/lint/golint
 
 # Vim plugins with vim-plug
 if [[ ! -e ~/.vim/autoload/plug.vim ]]; then

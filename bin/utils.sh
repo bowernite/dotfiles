@@ -21,6 +21,12 @@ install_dotfile() {
   local from="$dotfiles_dir/$from_filename"
   local to="$HOME/$to_filename"
 
+  # Check if source file exists
+  if [[ ! -e "$from" ]]; then
+    echo "Source file $from does not exist. Skipping symlink creation."
+    return 1
+  fi
+
   if [ ! -e "$to" ]; then
     if [ -h "$to" ]; then
       echo "Symlink already exists for $to... Deleting"
