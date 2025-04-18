@@ -352,5 +352,13 @@ serve() {
 edit() {
   local editor="cursor"
   local target="${1:-.}"
+  
+  # Create directory if it doesn't exist
+  if [[ ! -e "$target" ]]; then
+    echo "🔍 Target '$target' doesn't exist. Creating directory..."
+    mkdir -p "$target"
+    echo "📁 Directory created successfully!"
+  fi
+  
   $editor $target
 }
