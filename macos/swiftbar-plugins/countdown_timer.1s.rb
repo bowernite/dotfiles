@@ -26,8 +26,16 @@ def sleep_screen
   system "pmset displaysleepnow"
 end
 
-def show_notification(title, message)
-  system "osascript -e 'display notification \"#{message}\" with title \"#{title}\"'"
+def show_macos_notification(title, message)
+  # Show standard macOS notification
+  system "osascript -e 'display notification \"#{message || "Timer"}\" with title \"#{title}\"'"
+end
+
+def show_hammerspoon_alert(title, message, duration)
+  # Show Hammerspoon alert
+  alert_message = message && !message.empty? ? "#{title}: #{message}" : title
+  alert_message = alert_message.gsub('"', '\\"') # Escape double quotes for shell and Lua
+  system "hs -c \"hs.alert.show('#{alert_message}', #{duration})\""
 end
 
 def parse_data_from_file(filename)
@@ -118,14 +126,17 @@ if is_refresh
 
   seconds_remaining = (finish_timestamp - Time.now).to_i
   
-  if seconds_remaining == 5
-    show_notification("5 seconds remaining! ⚠️", "#{task || "Timer"}")
-  end
   if seconds_remaining == 300
-    show_notification("5 minutes remaining! ⚠️", "#{task || "Timer"}")
+    title = "5 minutes remaining! ⚠️"
+    message = task
+    # show_macos_notification(title, message)
+    show_hammerspoon_alert(title, message, 5)
   end
   if seconds_remaining == 120
-    show_notification("2 minutes remaining! ⚠️", "#{task || "Timer"}")
+    title = "2 minutes remaining! ⚠️"
+    message = task
+    # show_macos_notification(title, message)
+    show_hammerspoon_alert(title, message, 10)
   end
 
   if seconds_remaining == 0
