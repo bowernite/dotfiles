@@ -35,7 +35,8 @@ def show_hammerspoon_alert(title, message, duration)
   # Show Hammerspoon alert
   alert_message = message && !message.empty? ? "#{title}: #{message}" : title
   alert_message = alert_message.gsub('"', '\\"') # Escape double quotes for shell and Lua
-  system "hs -c \"hs.alert.show('#{alert_message}', #{duration})\""
+  # Redirect stdout to /dev/null to prevent hs output (UUID) from showing in SwiftBar
+  system "hs -c \"hs.alert.show('#{alert_message}', #{duration})\" > /dev/null"
 end
 
 def parse_data_from_file(filename)
