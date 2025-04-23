@@ -141,7 +141,21 @@ if is_refresh
   end
 
   if seconds_remaining == 0
-    # show_notification("Time's up!", "Time's up!")
+    # It seems like putting in a new thread makes this more reliable. Otherwise, when the screen is locked, swiftbar doesn't seem to have priority, and sometimes doesn't show the notification.
+    Thread.new do
+      unlock_time = Time.now + locked_out_for
+      minutes = locked_out_for / 60
+      seconds = locked_out_for % 60
+      formatted_duration = if seconds >= 120
+        "#{minutes} minutes"
+      elsif seconds >= 60
+        "1 minute"
+      else
+        "#{seconds} second(s)"
+      end
+      formatted_time = unlock_time.strftime("%-I:%M:%S%P")
+      show_macos_notification("Unlocking at #{formatted_time}", "#{formatted_duration}")
+    end
 
     lock_screen
     
