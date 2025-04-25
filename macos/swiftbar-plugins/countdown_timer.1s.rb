@@ -142,7 +142,6 @@ if is_refresh
 
   if seconds_remaining == 0
     # It seems like putting in a new thread makes this more reliable. Otherwise, when the screen is locked, swiftbar doesn't seem to have priority, and sometimes doesn't show the notification.
-    
     Thread.new do
       unlock_time = Time.now + locked_out_for
       minutes = locked_out_for / 60
