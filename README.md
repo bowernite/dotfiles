@@ -41,6 +41,7 @@ Go through all apps in saved Bitwarden `License Keys` note, and activate necessa
 
 ### One-offs 1️⃣
 
+- [ ] Set up SMS (On iPhone: Settings > Text Message Forwarding)
 - [ ] Allow Apple Watch to unlock Mac (Settings > Touch ID and Password)
 - [ ] Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
 - [ ] Save Trello (and Slack) as "apps" from Chrome (overflow menu > `More Tools` > `Create shortcut…` > check `Open as new window`)
