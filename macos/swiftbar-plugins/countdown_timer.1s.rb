@@ -72,7 +72,7 @@ def parse_args(args)
   args = [default_timer + "," + default_lockout] if args.empty? or args.first == "RESET_TIMER"
 
   case args.first
-  when '-1', '0'
+  when '-1', '0', 'CANCEL_TIMER'
     [0, nil, nil]
   when /^(\d+)(s|m|h)?(,(\d+)(s|m|h)?)?$/
     # Capture all regex matches before any further processing
@@ -203,6 +203,8 @@ if is_refresh
 
   # Adds menu bar item to reset the timer
   puts "---\nReset Timer | bash=#{__FILE__} param1=\"RESET_TIMER\" terminal=false"
+  # Adds menu bar item to cancel the timer
+  puts "Cancel Timer | bash=#{__FILE__} param1=\"CANCEL_TIMER\" terminal=false"
 
 # This is a new instance of a timer
 else
