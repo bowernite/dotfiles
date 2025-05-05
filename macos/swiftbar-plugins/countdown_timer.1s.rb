@@ -69,6 +69,7 @@ def parse_args(args)
   # Default timer values
   default_timer = "25m"
   default_lockout = "90s"
+  default_unit = 'm'  # Default unit when unit is omitted
   args = [default_timer + "," + default_lockout] if args.empty? or args.first == "RESET_TIMER"
 
   case args.first
@@ -83,7 +84,7 @@ def parse_args(args)
     
     # Parse timer value if provided, otherwise use default
     timer_value = timer_value ? timer_value.to_i : default_timer[/\d+/].to_i
-    timer_unit = timer_unit || default_timer[/[smh]/]
+    timer_unit = timer_unit || default_unit
     timer_seconds = parse_duration(timer_value, timer_unit)
     # Add an extra second, to account for delay in SwiftBar actually showing the timer
     finish_timestamp = Time.now + timer_seconds + 1
@@ -91,7 +92,7 @@ def parse_args(args)
     # Parse optional lockout duration
     lockout_seconds = if lockout_value
       lockout_value = lockout_value.to_i
-      lockout_unit = lockout_unit || default_lockout[/[smh]/]
+      lockout_unit = lockout_unit || default_unit
       parse_duration(lockout_value, lockout_unit)
     else
       # Use default lockout when not specified
