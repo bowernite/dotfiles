@@ -40,4 +40,85 @@ function run_validation() {
   else
     log_validation_result "success" "$component_action succeeded"
   fi
-} 
+}
+
+# show_validation_result displays the final result of the validation process.
+# It takes two parameters:
+# - validation_status: The overall status of the validation ("success" or "failed").
+# - failed_components: An array of components that failed validation.
+function show_validation_result() {
+  local validation_status="$1"
+  local failed_components=("${@:2}") # Capture all arguments after the first one as an array
+  echo -e "\n\n\n========================================\n"
+  if [[ $validation_status == "success" ]]; then
+    echo -e "✅ \033[1;32mValidation completed successfully.\033[0m"
+  else
+    echo -e "❌ \033[1;31mValidation failed.\033[0m"
+    # echo "Failed components:"
+    # for component in "${failed_components[@]}"; do
+    #   echo -e "• $component"
+    # done
+  fi
+}
+
+# change_directory_or_run_command changes to the specified directory and optionally runs a command.
+# It takes at least one parameter:
+# - target_directory: The directory to change to.
+# - Any additional parameters are treated as a command to run in that directory.
+function change_directory_or_run_command() {
+  local target_directory="$1"
+  shift
+  if [ $# -eq 0 ]; then
+    cd "$target_directory"
+  else
+    (cd "$target_directory" && $*)
+  fi
+}
+
+# validate_repo executes linting and formatting on changed files.
+# It takes commands with optional names in the format "NAME::command".
+# Commands without names will use a default label.
+function validate_repo() {
+  local -a names=()
+  local -a actual_commands=()
+  
+  # Parse each command string
+  for cmd in "$@"; do
+    if [[ "$cmd" == *"::"* ]]; then
+      names+=("${cmd%%::*}")
+      actual_commands+=("${cmd#*::}")
+    else
+      # If no name provided, use a generic one
+      names+=("CMD")
+      actual_commands+=("$cmd")
+    fi
+  done
+  
+  # Run all commands concurrently with names
+  concurrently -n "$(IFS=,; echo "${names[*]}")" -c "bgYellow,bgMagenta,bgBlue,bgGreen,bgCyan" "${actual_commands[@]}" &&
+    echo -e "\n\033[0;32mGood to go.\033[0m" ||
+    (echo -e "\n\033[0;31mThere be errors.\033[0m" && exit 1)
+}
+
+# run_node_bin is a utility function to find the best command to run a node binary
+# It takes one parameter:
+# - bin_name: The name of the binary to find (e.g., "eslint", "prettier")
+# It returns a string with the command to run the binary
+function run_node_bin() {
+  local bin_name="$1"
+  
+  # Check for available package managers and binary runners
+  if command -v npx &>/dev/null; then
+    echo "npx $bin_name"
+  elif command -v bun &>/dev/null; then
+    echo "bun $bin_name"
+  elif command -v yarn &>/dev/null && [[ -f package.json ]] && grep -q '"packageManager": "yarn' package.json 2>/dev/null; then
+    echo "yarn $bin_name"
+  elif [[ -f ./node_modules/.bin/$bin_name ]]; then
+    # Use the local node_modules binary if it exists
+    echo "./node_modules/.bin/$bin_name"
+  else
+    # Fallback to npx as the most universal solution
+    echo "npx $bin_name"
+  fi
+}
