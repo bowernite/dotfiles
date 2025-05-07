@@ -41,6 +41,7 @@ Go through all apps in saved Bitwarden `License Keys` note, and activate necessa
 
 ### One-offs 1️⃣
 
+- [ ] Use Touch ID for purchases (Settings > Name > Media & Purchases)
 - [ ] Set up SMS (On iPhone: Settings > Text Message Forwarding)
 - [ ] Allow Apple Watch to unlock Mac (Settings > Touch ID and Password)
 - [ ] Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
