@@ -211,6 +211,59 @@ git_has_changes() {
   git update-index -q --refresh
   ! git diff-index --quiet HEAD --
 }
+
+###########################################################
+# Finds the parent branch of the current branch
+# Attempts to determine which branch the current branch was forked from
+# Uses the following strategies in order:
+# 1. Find the best common ancestor using merge-base with candidate branches
+# 2. Default to the dev branch if all else fails
+###########################################################
+git_parent_branch() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local current_branch_start=$(git rev-list --max-parents=0 "$current_branch" 2>/dev/null | head -n1)
+  
+  # If branch has its own root commit, it's not branched from anywhere in this repo
+  if [[ -n "$current_branch_start" && "$current_branch_start" != $(git rev-list --max-parents=0 HEAD 2>/dev/null) ]]; then
+    git_dev_branch
+    return
+  fi
+  
+  # Get local branches excluding the current one
+  local branches=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -v "^$current_branch$")
+  
+  # Find the best candidate by looking for most recent common ancestor
+  local best_branch=""
+  local best_commit=""
+  local best_count=0
+  
+  for branch in $branches; do
+    # Find merge-base (common ancestor) and count commits since then
+    local base=$(git merge-base "$current_branch" "$branch" 2>/dev/null)
+    if [[ -z "$base" ]]; then
+      continue
+    fi
+    
+    # Count commits from base to branch (fewer commits = closer relationship)
+    local count=$(git rev-list --count "$base..$branch" 2>/dev/null)
+    
+    # Use the branch that has the closest relationship (fewest commits since diverging)
+    if [[ -z "$best_branch" || "$count" -lt "$best_count" ]]; then
+      best_branch="$branch"
+      best_commit="$base"
+      best_count="$count"
+    fi
+  done
+  
+  if [[ -n "$best_branch" ]]; then
+    echo "$best_branch"
+    return
+  fi
+  
+  # If everything fails, default to the development branch
+  git_dev_branch
+}
+
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
 # Usage: diff [compare_branch] [--dev] [--origin-dev] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
@@ -232,7 +285,7 @@ diff() {
     compare_branch="$1"
     shift
   else
-    compare_branch=$(git show-branch -a 2>/dev/null | grep '\*' | grep -v "$current_branch" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//')
+    compare_branch=$(git_parent_branch)
   fi
 
   # Collect remaining args
