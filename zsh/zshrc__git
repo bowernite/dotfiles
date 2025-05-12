@@ -295,5 +295,5 @@ diff() {
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
-  git diff "$merge_base" "$current_branch" "${other_args[@]}"
+  git diff "$merge_base" "$current_branch" ":(exclude)package-lock.json" "${other_args[@]}"
 }
