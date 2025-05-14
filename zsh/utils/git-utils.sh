@@ -25,8 +25,7 @@ function show_changed_files_preview() {
   local pattern="$1"
   local base_branch="${2:-origin/$(git_dev_branch)}"
   
-  GIT_PAGER=cat
-  local preview=$(git diff --color=always --name-status $base_branch...HEAD -- $(git diff --name-only $base_branch...HEAD | grep -E "$pattern") | grep -E '^[MA]\s')
+  local preview=$(GIT_PAGER=cat git diff --color=always --name-status $base_branch...HEAD -- $(git diff --name-only $base_branch...HEAD | grep -E "$pattern") | grep -E '^[MA]\s')
   echo "💅 Changed files to be validated:"
   echo -e "$preview"
   echo
