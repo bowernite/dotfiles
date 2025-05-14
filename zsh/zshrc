@@ -248,3 +248,5 @@ esac
 # pnpm end
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
