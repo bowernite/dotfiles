@@ -15,6 +15,8 @@ source $dotfiles_dir/zsh/zshrc__focus
 
 source $dotfiles_dir/zsh/zshrc__playground
 
+source $dotfiles_dir/zsh/zshrc__devenv
+
 #####################################################################
 # PATH shenanigans
 #####################################################################
@@ -232,9 +234,6 @@ fi
 
 # Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
 export GIT_MERGE_AUTOEDIT=no
-
-# Prevent applications from automatically opening a browser when starting locally (e.g. Vite)
-export BROWSER=none
 
 # Enable zsh-syntax-highlighting.
 # NOTE: Per this package's documentation, this needs to be at the end of this file
