@@ -265,7 +265,7 @@ git_parent_branch() {
 }
 
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
-# Usage: diff [compare_branch] [--dev] [--origin-dev] [git_diff_args...]
+# Usage: diff [--dev] [--origin-dev] [compare_branch] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
@@ -274,26 +274,47 @@ diff() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
   local other_args=()
+  local has_branch=false
 
-  if [[ "$1" == "--dev" ]]; then
-    compare_branch=$(git_dev_branch)
-    shift
-  elif [[ "$1" == "--origin/dev" ]]; then
-    compare_branch="origin/$(git_dev_branch)"
-    shift
-  elif [[ -n "$1" && "$1" != -* ]]; then
-    compare_branch="$1"
-    shift
-  else
+  # Process options first
+  while [[ $# -gt 0 ]]; do
+    case "$1" in
+      --dev)
+        compare_branch=$(git_dev_branch)
+        shift
+        ;;
+      --origin/dev)
+        compare_branch="origin/$(git_dev_branch)"
+        shift
+        ;;
+      -*)
+        # This is a git diff option, add to other_args
+        other_args+=("$1")
+        shift
+        ;;
+      *)
+        # This is likely the compare branch
+        if [[ -z "$compare_branch" && "$has_branch" == "false" ]]; then
+          compare_branch="$1"
+          has_branch=true
+          shift
+        else
+          # Any other non-option arguments
+          other_args+=("$1")
+          shift
+        fi
+        ;;
+    esac
+  done
+
+  # If no compare branch was specified, find the parent branch
+  if [[ -z "$compare_branch" ]]; then
     compare_branch=$(git_parent_branch)
   fi
-
-  # Collect remaining args
-  other_args=("$@")
 
   local merge_base=$(git merge-base "$current_branch" "$compare_branch")
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
-  git diff "$merge_base" "$current_branch" ":(exclude)package-lock.json" "${other_args[@]}"
+  git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
 }
