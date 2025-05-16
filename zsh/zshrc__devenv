@@ -74,6 +74,7 @@ export BABEL_CACHE_PATH="$HOME/.cache/babel.json"
 # Enhanced Error Reporting
 # Commented out as it was making eslint logs too verbose
 # export DEBUG="*,-babel*,-express:*,-nodemon*,-send,-compression"
+export DEBUG=
 # export DEBUG_DEPTH=10
 
 # Jest testing optimizations
