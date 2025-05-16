@@ -1,0 +1,56 @@
+/* General container that wraps response messages */
+.anysphere-markdown-container-root {
+  font-size: 18px !important;
+  line-height: normal !important;
+}
+
+/* The 'Thinking' and Tool Call messages */
+.composer-tool-former-message,
+.composer-tool-former-message *,
+.composer-tool-former-message[style],
+.composer-tool-former-message *[style],
+.collapsible-header-text,
+.collapsible-header-text *,
+.collapsible-header-text[style],
+.collapsible-header-text *[style] {
+  font-size: 16px !important;
+  line-height: normal !important;
+}
+
+/* Pills above message that show context, e.g. attached files, images, rules, etc. */
+.context-pill,
+.context-pill *,
+.context-pill[style],
+.context-pill *[style], */
+/* Model picker */
+/* [class^="composer-unified-dropdown"],
+[class^="composer-unified-dropdown"] *,
+[class^="composer-unified-dropdown"][style],
+[class^="composer-unified-dropdown"] *[style] {
+  font-size: 14px !important;
+  line-height: normal !important;
+}
+
+/* 🤷‍♂️ */
+.markdown-block-code * {
+  font-size: 18px !important;
+  line-height: normal !important;
+}
+
+/* 🤷‍♂️ */
+.aislash-editor-input,
+.aislash-editor-input-readonly,
+.aislash-editor-placeholder,
+.anysphere.cursor-retrieval,
+.aiEditorBox-anysphere,
+.aichat-code-block-anysphere,
+.composer-code-block-anysphere,
+.aicmdk-context-code-block-anysphere,
+.monaco-diff-editor .monaco-editor .view-lines,
+.monaco-diff-editor .monaco-editor .view-overlays,
+.monaco-mouse-cursor-text *,
+.composer-message-codeblock .monaco-editor .view-lines,
+.composer-message-codeblock .monaco-editor .view-overlays {
+  font-size: 16px !important;
+  line-height: normal !important;
+}
