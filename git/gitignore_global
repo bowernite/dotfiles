@@ -27,3 +27,6 @@ pull_request_template.md
 .cursor/*
 
 .brett/*
+
+# Logs
+logs/*
