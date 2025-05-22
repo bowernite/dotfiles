@@ -216,11 +216,22 @@ git_has_changes() {
 # Finds the parent branch of the current branch
 # Attempts to determine which branch the current branch was forked from
 # Uses the following strategies in order:
-# 1. Find the best common ancestor using merge-base with candidate branches
-# 2. Default to the dev branch if all else fails
+# 1. Try to get parent branch from Graphite if available
+# 2. Find the best common ancestor using merge-base with candidate branches
+# 3. Default to the dev branch if all else fails
 ###########################################################
 git_parent_branch() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  
+  # First, try to get parent branch from Graphite if it's tracked
+  if command -v gt >/dev/null 2>&1; then
+    local graphite_parent=$(gt parent 2>/dev/null)
+    if [[ -n "$graphite_parent" ]]; then
+      echo "$graphite_parent"
+      return
+    fi
+  fi
+  
   local current_branch_start=$(git rev-list --max-parents=0 "$current_branch" 2>/dev/null | head -n1)
   
   # If branch has its own root commit, it's not branched from anywhere in this repo
