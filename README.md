@@ -69,8 +69,8 @@ Keyboard remapping is done with the Karabiner-Elements app.
 ### Alfred 🎩
 
 - [ ] Activate Powerpack with license key (without this, it won't look at the folder you're pointing at for synced settings, so this comes first)
-- [ ] Sync settings with Dropbox using the "second mac" instructions [here](https://www.alfredapp.com/help/advanced/sync/)
 - [ ] Set non-synced settings
+  - [ ] Web Bookmarks: Enable for Chrome, choose the correct profile
   - [ ] Global Alfred hotkey
   - [ ] Theme (set one for dark theme and one for light theme, based on macOS dark/light)
   - [ ] Set auto-expansion for snippets (top right checkbox in Snippets settings)
