@@ -57,8 +57,6 @@ install_dotfile "vim/vimrc__defaults" ".vimrc__defaults"
 install_dotfile "shell/sandboxrc" ".sandboxrc"
 install_dotfile "shell/yabairc" ".yabairc"
 
-exit
-
 ##############################################################
 # Karabiner symlinking
 ##############################################################
@@ -68,21 +66,47 @@ kb_root_dir="$HOME/.config/karabiner"
 kb_dotfiles_dir="$dotfiles_dir/karabiner"
 
 [[ -d "$HOME/.config" ]] || mkdir "$HOME/.config"
-[[ -d "${kb_root_dir}" ]] && rm -rf "${kb_root_dir}"
-ln -sf "${kb_dotfiles_dir}" "${kb_root_dir}"
+
+# Remove existing Karabiner directory/symlink if it exists
+if [[ -L "$kb_root_dir" ]]; then
+  echo "Removing existing Karabiner symlink: $kb_root_dir"
+  rm "$kb_root_dir"
+elif [[ -d "$kb_root_dir" ]]; then
+  echo "Removing existing Karabiner directory: $kb_root_dir"
+  rm -rf "$kb_root_dir"
+fi
+
+echo "Creating Karabiner symlink: $kb_root_dir -> $kb_dotfiles_dir"
+ln -sf "$kb_dotfiles_dir" "$kb_root_dir"
 if [[ $? != 0 ]]; then
   echo "🚨 unable to link Karabiner Root directory to the dotfiles directory (${kb_root_dir} to ${kb_dotfiles_dir})"
   return 1
 fi
 
-# Goku symlinks
-if [[ ! -L ~/.config/karabiner.edn ]]; then
-  ln -s "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
+# Goku symlinks - remove existing before creating new ones
+if [[ -L ~/.config/karabiner.edn ]]; then
+  echo "Removing existing karabiner.edn symlink"
+  rm ~/.config/karabiner.edn
+elif [[ -e ~/.config/karabiner.edn ]]; then
+  echo "Removing existing karabiner.edn file"
+  rm ~/.config/karabiner.edn
 fi
+
+echo "Creating karabiner.edn symlink"
+ln -s "$dotfiles_dir/karabiner/karabiner.edn" ~/.config/karabiner.edn
+
 touch "$dotfiles_dir/karabiner/goku.log"
-if [[ ! -L ~/Library/Logs/goku.log ]]; then
-  ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
+
+if [[ -L ~/Library/Logs/goku.log ]]; then
+  echo "Removing existing goku.log symlink"
+  rm ~/Library/Logs/goku.log
+elif [[ -e ~/Library/Logs/goku.log ]]; then
+  echo "Removing existing goku.log file"
+  rm ~/Library/Logs/goku.log
 fi
+
+echo "Creating goku.log symlink"
+ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
 
 ##############################################################
 # Software installs (homebrew, npm/yarn, etc.)

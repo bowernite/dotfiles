@@ -6,7 +6,7 @@
     <string>com.user.set-terminal-dark-light-theme</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/brett/src/personal/dotfiles/macos/launch_agents/set-terminal-dark-light-themes.sh</string>
+        <string>/Users/joseph.abramczyk/src/personal/dotfiles/macos/launch_agents/set-terminal-dark-light-themes.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>

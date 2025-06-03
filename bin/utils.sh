@@ -27,17 +27,20 @@ install_dotfile() {
     return 1
   fi
 
-  if [ ! -e "$to" ]; then
-    if [ -h "$to" ]; then
-      echo "Symlink already exists for $to... Deleting"
-      rm "$to"
-    fi
-
-    echo "Creating $to..."
-    ln -s "$from" "$to"
-  else
-    log "File $to already exists. Skipping symlink creation."
+  # Remove existing symlink if it exists (whether broken or working)
+  if [[ -L "$to" ]]; then
+    echo "Removing existing symlink: $to"
+    rm "$to"
   fi
+  
+  # Remove existing file/directory if it exists and is not a symlink
+  if [[ -e "$to" ]]; then
+    echo "File/directory already exists at $to. Removing to create symlink."
+    rm -rf "$to"
+  fi
+
+  echo "Creating symlink: $to -> $from"
+  ln -s "$from" "$to"
 }
 
 ##############################################################

@@ -51,4 +51,4 @@ yabai -m config mouse_modifier alt
 # FIXME: This triggers for transient windows. We only want actual application windows
 # yabai -m signal --add event=window_created action="yabai -m window --toggle zoom-fullscreen"
 
-# yabai -m signal --add event=window_moved action="bash '/Users/brett/src/personal/dotfiles/bin/yabai/preserve-maximize.sh'"
+# yabai -m signal --add event=window_moved action="bash '$HOME/src/personal/dotfiles/bin/yabai/preserve-maximize.sh'"

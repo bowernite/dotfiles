@@ -1,5 +1,5 @@
 # WIP boot script
-# launchctl plist file located at: /Users/brett/Library/LaunchAgents/com.user.loginscript.plist
+# launchctl plist file located at: $HOME/Library/LaunchAgents/com.user.loginscript.plist
 
 # Created by following instructions here: https://stackoverflow.com/questions/6442364/running-script-upon-login-mac/13372744#13372744
 
