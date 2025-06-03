@@ -1,7 +1,7 @@
 source $dotfiles_dir/zsh/zshrc__locations
 
 # "Import" all of our global utils that we have in separate files
-for file in /Users/brett/src/personal/dotfiles/bin/global-utils/*.sh; do
+for file in $HOME/src/personal/dotfiles/bin/global-utils/*.sh; do
   chmod +x $file
   source $file
 done
@@ -317,17 +317,17 @@ c() {
 demo_gif() {
   local input_vid_num="$1"
   local output_file_name="${2:-"demo-$1"}.gif"
-  ffmpeg -i "/Users/brett/Screenshots/📹 SS ${input_vid_num}.mov" -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Screenshots/$output_file_name" && gifsicle -O3 "/Users/brett/Screenshots/$output_file_name" -o "/Users/brett/Screenshots/$output_file_name"
+  ffmpeg -i "$HOME/Screenshots/📹 SS ${input_vid_num}.mov" -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$HOME/Screenshots/$output_file_name" && gifsicle -O3 "$HOME/Screenshots/$output_file_name" -o "$HOME/Screenshots/$output_file_name"
 }
 gif() {
   local input_file="$1"
   local output_file_name="${2}.gif"
-  ffmpeg -i $input_file -vf "fps=10,scale=300:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name" && gifsicle -O3 "/Users/brett/Downloads/$output_file_name" -o "/Users/brett/Downloads/$output_file_name"
+  ffmpeg -i $input_file -vf "fps=10,scale=300:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$HOME/Downloads/$output_file_name" && gifsicle -O3 "$HOME/Downloads/$output_file_name" -o "$HOME/Downloads/$output_file_name"
 }
 compress_vid() {
   local input_file="$1"
   local output_file_name="${2}.mp4"
-  ffmpeg -i $input_file -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "/Users/brett/Downloads/$output_file_name"
+  ffmpeg -i $input_file -vf "fps=10,scale=600:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" "$HOME/Downloads/$output_file_name"
 }
 
 # Find out which processing are using ports

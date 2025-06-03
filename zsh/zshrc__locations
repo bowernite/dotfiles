@@ -1,1 +1,1 @@
-export obsidian_dir="/Users/brett/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault"
+export obsidian_dir="$HOME/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian Vault"

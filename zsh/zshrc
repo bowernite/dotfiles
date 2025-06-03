@@ -239,7 +239,7 @@ export GIT_MERGE_AUTOEDIT=no
 # NOTE: Per this package's documentation, this needs to be at the end of this file
 
 # pnpm
-export PNPM_HOME="/Users/brett/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
