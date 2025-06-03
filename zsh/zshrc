@@ -91,7 +91,7 @@ ZSH_THEME_TERM_TITLE_IDLE="%1~"
 ## Source: https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 #####################################################################
 # FZF
@@ -186,7 +186,7 @@ compdef _gt_yargs_completions gt
 
 # Enable autocompletions for poetry
 fpath+=~/.zfunc
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -u
 
 # Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
 ## See: https://docs.brew.sh/Homebrew-and-Python

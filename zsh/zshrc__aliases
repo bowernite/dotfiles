@@ -203,7 +203,10 @@ setup_themes() {
   # Use `bat` for syntax highlighting in man pages
   export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
 
-  kitten themes --reload-in=all $kitty_theme
+  # Only run kitten if it's available and kitty is installed
+  if command -v kitten >/dev/null 2>&1 && [[ -d "/Applications/kitty.app" ]]; then
+    kitten themes --reload-in=all $kitty_theme
+  fi
 }
 setup_themes
 
