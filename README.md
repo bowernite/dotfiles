@@ -41,19 +41,19 @@ Go through all apps in saved Bitwarden `License Keys` note, and activate necessa
 
 ### One-offs 1️⃣
 
+- [ ] Set up SwiftBar. Set plugin directory. Make sure `bash` plugin enabled, as well as any you use.
+- [ ] Save Trello (and Slack) as "apps" from Chrome (overflow menu > `More Tools` > `Create shortcut…` > check `Open as new window`)
+- [ ] Rectangle ◻️: Open up Rectangle, and configure it how you'd like
+- [ ] Bartender ️🍸: Open up Bartender, and configure it how you'd like
+- [ ] Set `user.email` in `~/src/work/.gitconfig` to work GitHub/GitLab account email (if applicable)
+
+### macOS
+
 - [ ] Mirror / set up all `Login Items` (apps to open at startup)
 - [ ] Use Touch ID for purchases (Settings > Name > Media & Purchases)
 - [ ] Set up SMS (On iPhone: Settings > Text Message Forwarding)
 - [ ] Allow Apple Watch to unlock Mac (Settings > Touch ID and Password)
 - [ ] Turn off Spotlight keyboard shortcut (Alfred instead). `System Preferences` > `Keyboard` > `Shortcuts` > `Spotlight` > Uncheck spotlight search
-- [ ] Save Trello (and Slack) as "apps" from Chrome (overflow menu > `More Tools` > `Create shortcut…` > check `Open as new window`)
-- [ ] Rectangle ◻️: Open up Rectangle, and configure it how you'd like
-- [ ] Bartender ️🍸: Open up Bartender, and configure it how you'd like
-- [ ] Set `user.email` in `~/src/work/.gitconfig` to work GitHub/GitLab account email (if applicable)
-- [ ] Follow [the instructions here](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8) to set up iTerm theming based on macOS dark mode
-  - [ ] Use the script at the bottom of the page
-  - [ ] Install [GitHub themes](https://github.com/fcaldera/github-primer-iterm2) using [these instructions](https://github.com/fcaldera/github-primer-iterm2)
-  - [ ] In the script, change the dark and light themes to `GitHub Dark` and `GitHub Light` (found [])
 
 ### Keyboard ⌨️
 
@@ -101,6 +101,11 @@ Keyboard remapping is done with the Karabiner-Elements app.
 <details>
    Terminal's preferences are weird and nested, and I don't want to deal with that right now, and who knows, maybe I switch to iTerm one day 😅. So this is fine for now.
 </details>
+
+- [ ] Follow [the instructions here](https://gist.github.com/jamesmacfie/2061023e5365e8b6bfbbc20792ac90f8) to set up iTerm theming based on macOS dark mode
+  - [ ] Use the script at the bottom of the page
+  - [ ] Install [GitHub themes](https://github.com/fcaldera/github-primer-iterm2) using [these instructions](https://github.com/fcaldera/github-primer-iterm2)
+  - [ ] In the script, change the dark and light themes to `GitHub Dark` and `GitHub Light` (found [])
 
 ### GitHub 🐙
 
