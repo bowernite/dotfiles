@@ -139,13 +139,13 @@ if [[ ! -e ~/.fzf.zsh ]]; then
 fi
 
 echo "Installing go packages"
-go get -u github.com/nikitavoloboev/gitupdate
+go install github.com/nikitavoloboev/gitupdate@latest
 # Used by VS Code Go extensions
-go get -v github.com/ramya-rao-a/go-outline
-go get -v golang.org/x/tools/gopls
-go get -v github.com/uudashr/gopkgs/v2/cmd/gopkgs
-go get -v github.com/go-delve/delve/cmd/dlv
-go get -v golang.org/x/lint/golint
+go install github.com/ramya-rao-a/go-outline@latest
+go install golang.org/x/tools/gopls@latest
+go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install golang.org/x/lint/golint@latest
 
 # Vim plugins with vim-plug
 if [[ ! -e ~/.vim/autoload/plug.vim ]]; then
