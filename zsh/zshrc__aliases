@@ -279,14 +279,19 @@ alias wh=which
 #####################################################################
 
 alias b="butterfish"
-alias bsh="butterfish shell -m 'gpt-4o'"
+
+alias bshell="butterfish shell -m 'gpt-4o' --autosuggest-model='gpt-4o-mini'"
 alias chat="bsh"
+
 alias bp="butterfish prompt -m 'gpt-4o'"
 alias ask="bp"
-alias bg="butterfish gencmd"
-alias bge="butterfish gencmd -f"
-alias bsum="butterfish summarize"
-alias bexec="butterfish exec"
+
+alias gen="butterfish gencmd"
+alias d="butterfish gencmd -f"
+
+# Other commands (for my own reference)
+# alias bsum="butterfish summarize"
+# alias bexec="butterfish exec"
 
 #####################################################################
 # Miscellaneous
