@@ -254,6 +254,7 @@ alias py="python3"
 # Homebrew
 #####################################################################
 
+alias bs="brew search"
 alias bi="brew install"
 alias bb="brew bundle"
 alias bupd="brew update"
