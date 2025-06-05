@@ -41,6 +41,7 @@ Go through all apps in saved Bitwarden `License Keys` note, and activate necessa
 
 ### One-offs 1️⃣
 
+- [ ] Mirror / set up all `Login Items` (apps to open at startup)
 - [ ] Use Touch ID for purchases (Settings > Name > Media & Purchases)
 - [ ] Set up SMS (On iPhone: Settings > Text Message Forwarding)
 - [ ] Allow Apple Watch to unlock Mac (Settings > Touch ID and Password)
