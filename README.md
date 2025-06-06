@@ -88,6 +88,11 @@ Keyboard remapping is done with the Karabiner-Elements app.
 1. Open the `OpenType-PS` directory
 1. Double click on all the fonts, and click `Install Font` for each
 
+#### Other fonts to check
+
+- [ ] Bear Sans UI
+- [ ] Roboto
+
 ### Terminal 💻
 
 - [ ] Configure vanilla macOS Terminal app:
