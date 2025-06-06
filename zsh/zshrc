@@ -251,3 +251,4 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 # Disable eslint debug output when running lint commands
 alias lint="DEBUG= npx eslint"
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"

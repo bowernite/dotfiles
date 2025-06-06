@@ -192,6 +192,8 @@ git_dev_branch() {
     echo develop
   elif [[ -n $(git branch --list development) ]]; then
     echo development
+  elif [[ -n $(git branch --list dev) ]]; then
+    echo dev
   elif [[ -n $(git branch --list main) ]]; then
     echo main
   # Gather uses this
