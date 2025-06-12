@@ -120,6 +120,10 @@ _fzf_compgen_path() {
   # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 
+# In fzf-history-search, bind ctrl-d to delete the selected command from history
+# 6/12/25: Doesn't work 🤷‍♂️
+# export FZF_CTRL_R_OPTS="--bind 'alt+bs:execute(sed -i \"\" \"\$d\" \$HISTFILE)+reload:fc -pa \$HISTFILE; fc -rl 1 | awk \"{ cmd=\$0; sub(/^[ \\t]*[0-9]+\\**[ \\t]+/, \\\"\\\", cmd); if (!seen[cmd]++) print \$0 }\"' --header 'ALT+Backspace to delete'"
+
 #####################################################################
 # Navigation
 #####################################################################
@@ -241,8 +245,8 @@ export GIT_MERGE_AUTOEDIT=no
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
