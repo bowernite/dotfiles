@@ -298,6 +298,8 @@ alias d="butterfish gencmd -f"
 # Miscellaneous
 #####################################################################
 
+alias cold_turkey="/Applications/Cold\ Turkey\ Blocker.app/Contents/MacOS/Cold\ Turkey\ Blocker"
+
 # Open fzf files with vim by default
 alias goto="vim -o \`fzf\`"
 alias ls="eza"
@@ -361,13 +363,13 @@ serve() {
 edit() {
   local editor="cursor"
   local target="${1:-.}"
-  
+
   # Create directory if it doesn't exist
   if [[ ! -e "$target" ]]; then
     echo "🔍 Target '$target' doesn't exist. Creating directory..."
     mkdir -p "$target"
     echo "📁 Directory created successfully!"
   fi
-  
+
   $editor $target
 }
