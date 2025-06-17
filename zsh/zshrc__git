@@ -1,20 +1,38 @@
 source ~/src/personal/dotfiles/zsh/zshrc__graphite
 
 function git_show_modified_files() {
-  local ask_to_commit=${1:-true}
   if [[ $(git status --porcelain) ]]; then
     echo -e "\n📝 \033[0;33mModified files:\033[0m"
     git status --porcelain
+  fi
+}
 
-    if [[ "$ask_to_commit" == true ]]; then
+function git_commit_lint() {
+  local auto_commit=${1:-false}
+  
+  if [[ $(git status --porcelain) ]]; then
+    local should_commit="false"
+    
+    if [[ "$auto_commit" == "true" ]]; then
+      should_commit="true"
+    else
+      # Prompt for commit
       echo -e "\nDo you want to commit all modified files? (y/n)"
       read -k 1 -s answer
       echo $answer
       if [[ $answer == "y" ]]; then
-        git add .
-        git commit -m "lint & format"
-        echo -e "\n✍️🏼 \033[0;32mAll modified files have been committed.\033[0m"
+        should_commit="true"
       fi
+    fi
+    
+    if [[ "$should_commit" == "true" ]]; then
+      git add .
+      git commit -m "lint & format"
+      local message="All modified files have been committed."
+      if [[ "$auto_commit" == "true" ]]; then
+        message="Auto-committed all modified files."
+      fi
+      echo -e "\n✍️🏼 \033[0;32m${message}\033[0m"
     fi
   fi
 }
