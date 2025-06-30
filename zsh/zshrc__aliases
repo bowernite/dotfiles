@@ -1,7 +1,7 @@
 source $dotfiles_dir/zsh/zshrc__locations
 
 # "Import" all of our global utils that we have in separate files
-for file in $HOME/src/personal/dotfiles/bin/global-utils/*.sh; do
+for file in $HOME/src/personal/dotfiles/bin/global-utils/*.sh(N); do
   chmod +x $file
   source $file
 done
