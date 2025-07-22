@@ -2,7 +2,8 @@
 # Git utilities
 #####################################################################
 
-# get_changed_files returns a list of changed files between the current branch and a base branch.
+# get_changed_files returns a list of changed files between the current branch and a base branch,
+# including staged changes and working directory changes.
 # It takes two parameters:
 # - pattern: A grep regex pattern to filter files by extension
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
@@ -10,11 +11,20 @@ function get_changed_files() {
   local pattern="$1"
   local base_branch="${2:-origin/$(git_parent_branch)}"
   
-  git diff --name-status $base_branch...HEAD | \
-    awk '{if ($1 != "D" && ($1 == "M" || $1 == "A")) {print $2}}' | \
-    xargs git ls-files -- | \
-    grep -F -x -f - <(git ls-tree -r --name-only HEAD) | \
-    grep -E "$pattern"
+  # Get committed changes, staged changes, and working directory changes
+  local changed_files
+  changed_files=$({
+    git diff --name-status $base_branch...HEAD 2>/dev/null
+    git diff --name-status --cached 2>/dev/null
+    git diff --name-status 2>/dev/null
+  } | \
+    awk '{if ($1 != "D" && ($1 == "M" || $1 == "A" || $1 == "R" || $1 == "T" || $1 == "C")) {print $NF}}' | \
+    sort | uniq)
+  
+  # Only run git ls-files if we have files to check (handles macOS xargs without -r flag)
+  if [[ -n "$changed_files" ]]; then
+    echo "$changed_files" | xargs git ls-files -- 2>/dev/null | grep -E "$pattern"
+  fi
 }
 
 # show_changed_files_preview prints a preview of changed files with their status.
