@@ -205,7 +205,8 @@ setup_themes() {
 
   # Only run kitten if it's available and kitty is installed
   if command -v kitten >/dev/null 2>&1 && [[ -d "/Applications/kitty.app" ]]; then
-    kitten themes --reload-in=all $kitty_theme
+    # 7/22/25: Disabling for now, as it seems like Kitty has this built in now..?
+    # kitten themes --reload-in=all $kitty_theme
   fi
 }
 setup_themes
