@@ -21,6 +21,9 @@ source $dotfiles_dir/zsh/zshrc__devenv
 # PATH shenanigans
 #####################################################################
 
+# User binaries (including kitty)
+export PATH="$HOME/bin:$PATH"
+
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
