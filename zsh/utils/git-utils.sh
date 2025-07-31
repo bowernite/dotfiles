@@ -61,7 +61,7 @@ function git_show_modified_files() {
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function get_changed_frontend_files() {
   local base_branch="${1:-origin/$(git_parent_branch)}"
-  get_changed_files '\.(js|jsx|ts|tsx|html|css)$' "$base_branch"
+  get_changed_files '\.(js|jsx|ts|tsx|html|css|svelte|mjs)$' "$base_branch"
 }
 
 # get_changed_js_ts_files returns a list of changed JavaScript/TypeScript files.
