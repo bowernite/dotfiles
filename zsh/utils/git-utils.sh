@@ -9,7 +9,14 @@
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function get_changed_files() {
   local pattern="$1"
-  local base_branch="${2:-origin/$(git_parent_branch)}"
+  local parent_branch="$(git_parent_branch)"
+  # local default_base_branch
+  # if [[ "$parent_branch" == "$git_dev_branch" ]]; then
+  #   default_base_branch="origin/$parent_branch"
+  # else
+  #   default_base_branch="$parent_branch"
+  # fi
+  local base_branch="${2:-$parent_branch}"
   
   # Get committed changes, staged changes, and working directory changes
   local changed_files
@@ -33,7 +40,8 @@ function get_changed_files() {
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function show_changed_files_preview() {
   local pattern="$1"
-  local base_branch="${2:-origin/$(git_parent_branch)}"
+  # local base_branch="${2:-origin/$(git_parent_branch)}"
+  local base_branch="${2:-$(git_parent_branch)}"
   
   echo "🔍 Base branch: $base_branch"
   
@@ -60,7 +68,7 @@ function git_show_modified_files() {
 # It takes one optional parameter:
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function get_changed_frontend_files() {
-  local base_branch="${1:-origin/$(git_parent_branch)}"
+  local base_branch="${1:-$(git_parent_branch)}"
   get_changed_files '\.(js|jsx|ts|tsx|html|css|svelte|mjs)$' "$base_branch"
 }
 
@@ -68,6 +76,5 @@ function get_changed_frontend_files() {
 # It takes one optional parameter:
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function get_changed_js_ts_files() {
-  local base_branch="${1:-origin/$(git_parent_branch)}"
-  get_changed_files '\.(js|jsx|ts|tsx)$' "$base_branch"
+  get_changed_files '\.(js|jsx|ts|tsx)$'
 }
