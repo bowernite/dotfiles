@@ -76,5 +76,5 @@ function get_changed_frontend_files() {
 # It takes one optional parameter:
 # - base_branch: The base branch to compare against, defaults to origin/$(git_parent_branch) if not provided
 function get_changed_js_ts_files() {
-  get_changed_files '\.(js|jsx|ts|tsx)$'
+  get_changed_files '\.(js|jsx|ts|tsx|svelte|mjs)$'
 }
