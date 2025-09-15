@@ -83,7 +83,7 @@ function validate_repo() {
   done
   
   # Run all commands concurrently with names
-  concurrently -n "$(IFS=,; echo "${names[*]}")" -c "bgYellow,bgMagenta,bgBlue,bgGreen,bgCyan" "${actual_commands[@]}" &&
+  concurrently -n "$(IFS=,; echo "${names[*]}")" -c "bgYellow,bgMagenta,bgRed,bgBlue,bgGreen,bgCyan" "${actual_commands[@]}" &&
     echo -e "\n\033[0;32mGood to go.\033[0m" ||
     (echo -e "\n\033[0;31mThere be errors.\033[0m" && exit 1)
 }
