@@ -90,3 +90,5 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only --syntax-theme=GitHub
+[credential]
+	helper = osxkeychain
