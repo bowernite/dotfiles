@@ -9,10 +9,10 @@ function git_show_modified_files() {
 
 function git_commit_lint() {
   local auto_commit=${1:-false}
-  
+
   if [[ $(git status --porcelain) ]]; then
     local should_commit="false"
-    
+
     if [[ "$auto_commit" == "true" ]]; then
       should_commit="true"
     else
@@ -24,7 +24,7 @@ function git_commit_lint() {
         should_commit="true"
       fi
     fi
-    
+
     if [[ "$should_commit" == "true" ]]; then
       git add .
       git commit -m "lint & format"
@@ -239,7 +239,7 @@ git_has_changes() {
 ###########################################################
 git_parent_branch() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
-  
+
   # First, try to get parent branch from Graphite if it's tracked
   if command -v gt >/dev/null 2>&1; then
     local graphite_parent=$(gt parent 2>/dev/null)
@@ -248,33 +248,33 @@ git_parent_branch() {
       return
     fi
   fi
-  
+
   local current_branch_start=$(git rev-list --max-parents=0 "$current_branch" 2>/dev/null | head -n1)
-  
+
   # If branch has its own root commit, it's not branched from anywhere in this repo
   if [[ -n "$current_branch_start" && "$current_branch_start" != $(git rev-list --max-parents=0 HEAD 2>/dev/null) ]]; then
     git_dev_branch
     return
   fi
-  
+
   # Get local branches excluding the current one
   local branches=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -v "^$current_branch$")
-  
+
   # Find the best candidate by looking for most recent common ancestor
   local best_branch=""
   local best_commit=""
   local best_count=0
-  
+
   for branch in $branches; do
     # Find merge-base (common ancestor) and count commits since then
     local base=$(git merge-base "$current_branch" "$branch" 2>/dev/null)
     if [[ -z "$base" ]]; then
       continue
     fi
-    
+
     # Count commits from base to branch (fewer commits = closer relationship)
     local count=$(git rev-list --count "$base..$branch" 2>/dev/null)
-    
+
     # Use the branch that has the closest relationship (fewest commits since diverging)
     if [[ -z "$best_branch" || "$count" -lt "$best_count" ]]; then
       best_branch="$branch"
@@ -282,12 +282,12 @@ git_parent_branch() {
       best_count="$count"
     fi
   done
-  
+
   if [[ -n "$best_branch" ]]; then
     echo "$best_branch"
     return
   fi
-  
+
   # If everything fails, default to the development branch
   git_dev_branch
 }
@@ -307,31 +307,31 @@ diff() {
   # Process options first
   while [[ $# -gt 0 ]]; do
     case "$1" in
-      --dev)
-        compare_branch=$(git_dev_branch)
+    --dev)
+      compare_branch=$(git_dev_branch)
+      shift
+      ;;
+    --origin/dev)
+      compare_branch="origin/$(git_dev_branch)"
+      shift
+      ;;
+    -*)
+      # This is a git diff option, add to other_args
+      other_args+=("$1")
+      shift
+      ;;
+    *)
+      # This is likely the compare branch
+      if [[ -z "$compare_branch" && "$has_branch" == "false" ]]; then
+        compare_branch="$1"
+        has_branch=true
         shift
-        ;;
-      --origin/dev)
-        compare_branch="origin/$(git_dev_branch)"
-        shift
-        ;;
-      -*)
-        # This is a git diff option, add to other_args
+      else
+        # Any other non-option arguments
         other_args+=("$1")
         shift
-        ;;
-      *)
-        # This is likely the compare branch
-        if [[ -z "$compare_branch" && "$has_branch" == "false" ]]; then
-          compare_branch="$1"
-          has_branch=true
-          shift
-        else
-          # Any other non-option arguments
-          other_args+=("$1")
-          shift
-        fi
-        ;;
+      fi
+      ;;
     esac
   done
 
@@ -345,4 +345,98 @@ diff() {
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
   git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
+}
+
+#####################################################################
+# Skipping
+#####################################################################
+# Utils that help us utilize --skip-worktree, to allow us to change
+# files that are tracked by Git, in a way that doesn't change them
+# in the git index / team's repo
+
+# Function to get all files that are currently set to skip-worktree
+get_skip_worktree_files() {
+  git ls-files -v | grep '^S' | cut -c3-
+}
+
+# Helper to get a namespaced temp file for skip-worktree tracking
+get_skip_worktree_tmpfile() {
+  local repo_name
+  repo_name=$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")
+  echo "/tmp/skip_worktree_files_${repo_name}.txt"
+}
+
+# Function to temporarily unskip and stash local config files
+unskip() {
+  local skip_files tmpfile
+  skip_files=$(get_skip_worktree_files)
+  tmpfile=$(get_skip_worktree_tmpfile)
+
+  if [ -z "$skip_files" ]; then
+    echo "No skip-worktree files found. Nothing to do."
+    return 0
+  fi
+
+  echo "Found skip-worktree files:"
+  echo "$skip_files" | sed 's/^/  /'
+  echo ""
+
+  echo "$skip_files" >"$tmpfile" || {
+    echo "Failed to write skip-worktree file list."
+    return 1
+  }
+
+  echo "Temporarily unskipping local config files..."
+  echo "$skip_files" | xargs git update-index --no-skip-worktree || {
+    echo "Failed to update-index --no-skip-worktree."
+    return 1
+  }
+
+  echo "Stashing local changes..."
+  echo "$skip_files" | xargs git stash push -m "Local config changes $(date)" -- || {
+    echo "Failed to stash local config changes."
+    return 1
+  }
+
+  echo "Local config files are now stashed and ready for Git operations."
+}
+
+# Function to restore local config files and re-apply skip-worktree
+reskip() {
+  local tmpfile skip_files
+  tmpfile=$(get_skip_worktree_tmpfile)
+
+  echo "Restoring local changes..."
+  git stash pop || {
+    echo "No stash to pop or failed to pop stash."
+    return 1
+  }
+
+  if [ -f "$tmpfile" ]; then
+    skip_files=$(cat "$tmpfile")
+    if [ -n "$skip_files" ]; then
+      echo "Re-applying skip-worktree..."
+      echo "$skip_files" | xargs git update-index --skip-worktree || {
+        echo "Failed to re-apply skip-worktree."
+        return 1
+      }
+      echo "Local config changes restored and skip-worktree re-applied."
+    fi
+    rm -f "$tmpfile"
+  else
+    echo "No skip-worktree files to restore."
+  fi
+}
+
+# Function to do a simple pull with local config handling
+pull_with_skip() {
+  unskip || return 1
+  echo "Pulling latest changes..."
+  git pull || {
+    echo "git pull failed."
+    reskip
+    return 1
+  }
+  reskip
+  echo "Done! Your local config changes are preserved."
 }
