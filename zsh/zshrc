@@ -36,6 +36,8 @@ source $dotfiles_dir/zsh/zshrc__devenv
 # User binaries (including kitty)
 export PATH="$HOME/bin:$PATH"
 
+export PATH="$HOME/src/personal/dotfiles/private/repo-utils/bin:$PATH"
+
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -242,7 +244,7 @@ if [[ -z $has_aliased_npx ]]; then
 fi
 
 # Symlink local executables into a path-accessible place
-if [[ ! -L "/usr/local/bin/gcim" ]]; then
+if [[ ! -e "/usr/local/bin/gcim" ]] && [[ -f "$dotfiles_dir/bin/gcim" ]]; then
   sudo ln -sf "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
 fi
 
