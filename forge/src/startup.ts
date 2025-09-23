@@ -8,8 +8,6 @@ import { runNodeApp } from "./node-utils.js";
 // Constants
 const LOGS_DIR = "logs";
 const PORT_CLEANUP_DELAY = 1000;
-const CONCURRENTLY_COLORS =
-  "bgBlue.bold,bgMagenta.bold,bgGreen.bold,bgYellow.bold,bgRed.bold";
 
 export interface StartupOptions {
   service?: string;
@@ -126,7 +124,7 @@ async function startAllServices(config: Config): Promise<void> {
 
   const serviceCommands = Object.entries(config.services).map(
     ([name, service]) => ({
-      name,
+      name: name.toUpperCase(),
       command: buildServiceCommand(name, service),
     })
   );
@@ -134,9 +132,11 @@ async function startAllServices(config: Config): Promise<void> {
   try {
     const { result } = concurrently(serviceCommands, {
       prefix: "name",
-      killOthers: ["failure"],
+      killOthersOn: ["failure"],
       padPrefix: true,
-      prefixColors: CONCURRENTLY_COLORS.split(","),
+      prefixColors: Object.values(config.services).map(
+        (service) => service.color ?? "bgBlue.bold"
+      ),
     });
 
     await result;
