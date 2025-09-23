@@ -22,7 +22,7 @@ export async function getNodeBinRunner(binName: string): Promise<string> {
   }
 }
 
-export function runNodeApp({
+export function generateRunNodeCommand({
   directory,
   stringCommand,
 }: {
