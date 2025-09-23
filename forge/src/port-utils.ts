@@ -1,7 +1,7 @@
 import { execa } from "execa";
 import chalk from "chalk";
 
-export async function killPortProcesses(ports: number[]): Promise<void> {
+export async function killPortProcesses(ports: (number | undefined)[]): Promise<void> {
   for (const port of ports) {
     try {
       console.log(chalk.yellow(`Killing processes on port ${port}...`));

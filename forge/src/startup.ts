@@ -1,9 +1,10 @@
 import { execa } from "execa";
 import chalk from "chalk";
 import concurrently from "concurrently";
-import { Config } from "./config.js";
+import { Config, Service } from "./config.js";
 import { killPortProcesses } from "./port-utils.js";
-import { runNodeApp } from "./node-utils.js";
+import { generateRunNodeCommand } from "./node-utils.js";
+import { executeShellCommand } from "./shell-utils.js";
 
 // Constants
 const LOGS_DIR = "logs";
@@ -30,14 +31,14 @@ async function prepareLogDirectory(
   }
 }
 
-function buildServiceCommand(name: string, service: any): string {
+function buildServiceCommand(service: Service): string {
   const installCmd = service.installCommand ? `${service.installCommand}` : "";
 
   let command = installCmd
     ? `${installCmd} && ${service.startCommand}`
     : service.startCommand;
 
-  return runNodeApp({ directory: service.directory, stringCommand: command });
+  return generateRunNodeCommand({ directory: service.directory, stringCommand: command });
 }
 
 export async function startServices(options: StartupOptions): Promise<void> {
@@ -74,16 +75,11 @@ async function startSingleService(
   if (service.installCommand) {
     console.log(chalk.blue(`📦 Installing dependencies for ${serviceName}...`));
     try {
-      const installCommand = runNodeApp({
+      const installCommand = generateRunNodeCommand({
         stringCommand: service.installCommand,
       });
 
-      await execa("sh", ["-c", installCommand], {
-        cwd: service.directory,
-        stdio: "inherit",
-        shell: true,
-        env: { ...process.env },
-      });
+      await executeShellCommand(installCommand, { cwd: service.directory });
     } catch (error) {
       console.error(
         chalk.red(`Failed to install dependencies for ${serviceName}:`),
@@ -93,7 +89,6 @@ async function startSingleService(
     }
   }
 
-  // Start the service
   console.log(chalk.blue(`🚀 Starting ${serviceName}...`));
   try {
     await runWithLogging(serviceName, service.directory, service.startCommand);
@@ -106,26 +101,19 @@ async function startSingleService(
 async function startAllServices(config: Config): Promise<void> {
   console.log(chalk.blue("🛑 Stopping any existing processes..."));
 
-  // Kill all service ports
-  const ports = Object.values(config.services)
-    .map((s) => s.port)
-    .filter(Boolean) as number[];
-
-  await killPortProcesses(ports);
+  await killPortProcesses(Object.values(config.services).map((s) => s.port));
   await new Promise((resolve) => setTimeout(resolve, PORT_CLEANUP_DELAY));
 
-  // Prepare log directories
   for (const [name, service] of Object.entries(config.services)) {
     await prepareLogDirectory(name, service.directory);
   }
 
-  // Start all services concurrently
   console.log(chalk.blue("🚀 Starting services..."));
 
   const serviceCommands = Object.entries(config.services).map(
     ([name, service]) => ({
       name: name.toUpperCase(),
-      command: buildServiceCommand(name, service),
+      command: buildServiceCommand(service),
     })
   );
 
@@ -151,21 +139,12 @@ async function runWithLogging(
   directory: string,
   command: string
 ): Promise<void> {
-  const logFile = `${directory}/${LOGS_DIR}/${name}.log`;
-
   try {
-    // Create logs directory
     await prepareLogDirectory(name, directory);
 
-    // Run command with logging and fnm environment
-    const fullCommand = runNodeApp({ stringCommand: command });
+    const fullCommand = generateRunNodeCommand({ stringCommand: command });
 
-    await execa("sh", ["-c", fullCommand], {
-      cwd: directory,
-      stdio: "inherit",
-      shell: true,
-      env: { ...process.env },
-    });
+    await executeShellCommand(fullCommand, { cwd: directory });
   } catch (error) {
     console.error(chalk.red(`Error running ${name}:`), error);
     throw new Error(`Failed to run ${name}`);
