@@ -1,5 +1,6 @@
 import { execa } from "execa";
 import chalk from "chalk";
+import { createColorMap, getChalkColor } from "./chalk-utils.js";
 import {
   getBranchChangedFiles,
   getChangedFrontendFiles,
@@ -65,38 +66,6 @@ export async function runValidation(
 
 import Spinnies from "spinnies";
 
-// Color utility functions
-function createColorMap(): Record<string, (text: string) => string> {
-  return {
-    blue: chalk.blue,
-    green: chalk.green,
-    yellow: chalk.yellow,
-    magenta: chalk.magenta,
-    cyan: chalk.cyan,
-    red: chalk.red,
-    white: chalk.white,
-    gray: chalk.gray,
-    grey: chalk.grey,
-    black: chalk.black,
-    bgBlue: chalk.bgBlue,
-    bgGreen: chalk.bgGreen,
-    bgYellow: chalk.bgYellow,
-    bgMagenta: chalk.bgMagenta,
-    bgCyan: chalk.bgCyan,
-    bgRed: chalk.bgRed,
-    bgWhite: chalk.bgWhite,
-    bgGray: chalk.bgGray,
-    bgGrey: chalk.bgGrey,
-    bgBlack: chalk.bgBlack,
-  };
-}
-
-function getChalkColor(colorName?: string): ((text: string) => string) | null {
-  if (!colorName) return null;
-
-  const colorMap = createColorMap();
-  return colorMap[colorName] || null;
-}
 
 function getDefaultColors(): Array<(text: string) => string> {
   return [

@@ -1,16 +1,17 @@
-import chalk from "chalk";
+import { ChalkColor } from "./chalk-utils.js";
 
 export interface Service {
   directory: string;
   installCommand?: string;
   startCommand: string;
   port?: number;
+  color?: ChalkColor;
 }
 
 export interface ValidationCommand {
   name: string;
   command: string;
-  color?: keyof typeof chalk;
+  color?: ChalkColor;
   quickMode?: boolean;
 }
 
