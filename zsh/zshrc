@@ -36,7 +36,7 @@ source $dotfiles_dir/zsh/zshrc__devenv
 # User binaries (including kitty)
 export PATH="$HOME/bin:$PATH"
 
-export PATH="$HOME/src/personal/dotfiles/private/repo-utils/bin:$PATH"
+export PATH="$HOME/src/personal/dotfiles/forge/bin:$PATH"
 
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
@@ -261,13 +261,12 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
 # Disable eslint debug output when running lint commands
 alias lint="DEBUG= npx eslint"
 
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+# fnm (Fast Node Manager)
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
