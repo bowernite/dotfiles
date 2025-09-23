@@ -89,6 +89,6 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only --syntax-theme=GitHub
+	diffFilter = delta --color-only --syntax-theme=Monokai Extended
 [credential]
 	helper = osxkeychain

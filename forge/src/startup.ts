@@ -1,5 +1,6 @@
 import { execa } from "execa";
 import chalk from "chalk";
+import concurrently from "concurrently";
 import { Config } from "./config.js";
 import { killPortProcesses } from "./port-utils.js";
 import { runNodeApp } from "./node-utils.js";
@@ -124,22 +125,21 @@ async function startAllServices(config: Config): Promise<void> {
   console.log(chalk.blue("🚀 Starting services..."));
 
   const serviceCommands = Object.entries(config.services).map(
-    ([name, service]) => buildServiceCommand(name, service)
+    ([name, service]) => ({
+      name,
+      command: buildServiceCommand(name, service),
+    })
   );
 
   try {
-    await execa(
-      "concurrently",
-      [
-        "--kill-others-on-fail",
-        "-n",
-        Object.keys(config.services).join(","),
-        "-c",
-        CONCURRENTLY_COLORS,
-        ...serviceCommands,
-      ],
-      { stdio: "inherit" }
-    );
+    const { result } = concurrently(serviceCommands, {
+      prefix: "name",
+      killOthers: ["failure"],
+      padPrefix: true,
+      prefixColors: CONCURRENTLY_COLORS.split(","),
+    });
+
+    await result;
   } catch (error) {
     console.error(chalk.red("Failed to start services:"), error);
     throw new Error("Failed to start services");
