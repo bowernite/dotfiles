@@ -4,7 +4,7 @@ import chalk from "chalk";
 export async function killPortProcesses(ports: (number | undefined)[]): Promise<void> {
   for (const port of ports) {
     try {
-      console.log(chalk.yellow(`Killing processes on port ${port}...`));
+      console.log(chalk.yellow(`🧹 Checking for processes on port ${port}...`));
 
       // Find processes on the port
       const { stdout } = await execa("lsof", ["-i", `:${port}`], {
