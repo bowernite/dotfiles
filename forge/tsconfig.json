@@ -17,7 +17,7 @@
     "types": ["node"],
     "lib": ["ES2022"]
   },
-  "include": ["src/**/*", "private/slc.ts", "slc/**/*"],
+  "include": ["src/**/*", "projects/slc.ts", "slc/**/*"],
   "exclude": ["node_modules", "dist"]
 }
 
