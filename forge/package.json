@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npm run build:all",
-    "build:all": "npm run build:slc",
-    "build:slc": "bun build --compile --outfile=.build/slc private/slc.ts && mv .build/slc bin/slc && rm -f .*.bun-build",
+    "build:all": "./scripts/build.sh",
+    "build:slc": "bun build --compile --outfile=.build/slc projects/slc.ts && mv .build/slc bin/slc && rm -f .*.bun-build",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf .build bin/* && mkdir -p bin"
   },

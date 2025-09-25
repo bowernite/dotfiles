@@ -12,8 +12,6 @@ dist/
 *.bun-build
 .bun/
 
-# Old binaries (keep only the one in bin/)
-repo-utils
-slc-cli
-
 /bin
+
+/projects
