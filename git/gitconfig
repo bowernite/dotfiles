@@ -90,5 +90,9 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta --color-only --syntax-theme=GitHub
+
 [credential]
 	helper = osxkeychain
+
+[url "https://github.com/"]
+	insteadOf = git@github.com:
