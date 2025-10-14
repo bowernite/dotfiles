@@ -36,8 +36,6 @@ source $dotfiles_dir/zsh/zshrc__devenv
 # User binaries (including kitty)
 export PATH="$HOME/bin:$PATH"
 
-export PATH="$HOME/src/personal/dotfiles/forge/bin:$PATH"
-
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
 eval "$(/opt/homebrew/bin/brew shellenv)"
