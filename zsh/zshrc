@@ -8,7 +8,7 @@ fpath+=~/.zfunc
 # - Compile the compdump file once it exists
 # - Enable completion caching to avoid recomputing expensive completions
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-$HOME/.zcompdump}
-if [[ -r $ZSH_COMPDUMP && ( ! -r ${ZSH_COMPDUMP}.zwc || $ZSH_COMPDUMP -nt ${ZSH_COMPDUMP}.zwc ) ]]; then
+if [[ -r $ZSH_COMPDUMP && (! -r ${ZSH_COMPDUMP}.zwc || $ZSH_COMPDUMP -nt ${ZSH_COMPDUMP}.zwc) ]]; then
   zcompile $ZSH_COMPDUMP
 fi
 zstyle ':completion::complete:*' use-cache on
@@ -104,7 +104,6 @@ ZSH_THEME_TERM_TITLE_IDLE="%1~"
 
 # Enable git auto-completion
 ## Source: https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
- 
 
 #####################################################################
 # FZF
@@ -201,7 +200,6 @@ compdef _gt_yargs_completions gt
 #####################################################################
 
 # Enable autocompletions for poetry
- 
 
 # Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
 ## See: https://docs.brew.sh/Homebrew-and-Python
@@ -270,3 +268,6 @@ alias lint="DEBUG= npx eslint"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+
+export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
