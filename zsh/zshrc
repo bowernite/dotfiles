@@ -240,7 +240,7 @@ if [[ -z $has_aliased_npx ]]; then
 fi
 
 # Symlink local executables into a path-accessible place
-if [[ ! -L "/usr/local/bin/gcim" ]]; then
+if [[ ! -e "/usr/local/bin/gcim" ]] && [[ -f "$dotfiles_dir/bin/gcim" ]]; then
   sudo ln -sf "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
 fi
 
@@ -257,10 +257,10 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
 export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
 # Disable eslint debug output when running lint commands
 alias lint="DEBUG= npx eslint"
 
@@ -269,5 +269,8 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+
+# fnm (Fast Node Manager)
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
