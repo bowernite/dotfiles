@@ -1,4 +1,4 @@
-source ~/src/personal/dotfiles/zsh/private/zshrc__graphite
+source ~/src/personal/dotfiles/zsh/private/zshrc__git-private
 
 function git_show_modified_files() {
   if [[ $(git status --porcelain) ]]; then
