@@ -1,13 +1,73 @@
-source ~/src/personal/dotfiles/zsh/private/zshrc__git-private
+submit() {
+  if [[ " $* " == *" --squash "* ]]; then
+    squash
+    make_time
+  fi
 
-function git_show_modified_files() {
+  add_empty_commit
+
+  local other_flags=("${@/--squash/}")
+
+  # Don't publish if --draft flag is provided
+  local publish_flag=""
+  if [[ " $* " != *" --draft "* ]]; then
+    publish_flag="--publish"
+  fi
+
+  # echo "🚀 Submitting with flags: $publish_flag ${other_flags[@]} --ai"
+  # gt submit $publish_flag --ai ${other_flags[@]}
+
+  echo "🚀 Submitting via: 'git publish'"
+  git publish
+
+  local branch_name="$(git branch-name)"
+  local pr_title_prefix="$(get_pr_title_prefix "$branch_name")"
+  if [[ -n "$pr_title_prefix" ]]; then
+    echo ""
+    echo -ne "📋 \033[1;36mPR title prefix:\033[0m $pr_title_prefix\n"
+    echo -n "$pr_title_prefix" | pbcopy
+    echo -e "✅ \033[1;32mCopied to clipboard!\033[0m"
+  else
+    echo -e "⚠️  \033[1;33mNo PR title prefix found\033[0m"
+  fi
+
+  # gt submit --publish --no-edit-description --ai ${other_flags[@]}
+}
+
+squash() {
+  echo "🔪 Squashing commits"
+  gt squash --no-edit
+}
+
+make_time() {
+  local date_string="$(date)"
+  echo "⏰ Setting latest commit to $date_string"
+  git commit --amend --no-edit --date="$date_string"
+}
+
+parse_ticket_number() {
+  local branch_name="$1"
+  if [[ "$branch_name" =~ ^([A-Z]+-[0-9]+) ]]; then
+    echo "${match[1]}"
+  fi
+}
+
+get_pr_title_prefix() {
+  local branch_name="$1"
+  local ticket_number="$(parse_ticket_number "$branch_name")"
+  if [[ -n "$ticket_number" ]]; then
+    echo "[$ticket_number]"
+  fi
+}
+
+git_show_modified_files() {
   if [[ $(git status --porcelain) ]]; then
     echo -e "\n📝 \033[0;33mModified files:\033[0m"
     git status --porcelain
   fi
 }
 
-function git_commit_lint() {
+git_commit_lint() {
   local auto_commit=${1:-false}
 
   if [[ $(git status --porcelain) ]]; then
