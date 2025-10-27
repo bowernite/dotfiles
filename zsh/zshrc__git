@@ -32,8 +32,8 @@ submit() {
   if gt submit $publish_flag --ai ${other_flags[@]} 2> >(tee "$gt_error" >&2); then
     echo "✅ Submitted with gt submit"
   else
-    if grep -i 'to use graphite in' "$gt_error" >/dev/null; then
-      echo "ℹ️ Graphite not configured for this team/repo."
+    if grep -i 'graphite could not verify you have access to the repo' "$gt_error" >/dev/null; then
+      echo "ℹ️  Graphite not configured for this team/repo."
       echo "🚀 Submitting via: 'git publish'"
       git publish
     else
@@ -59,6 +59,11 @@ submit() {
 }
 
 add_submit_commit() {
+  # Check if there is a "~submit~" commit in the last 50 commits
+  # if git log -n 50 --pretty=%B | grep -Fxq "~submit~"; then
+  #   echo "🔎 '~submit~' commit already exists in last 50 commits. Skipping."
+  #   return 0
+  # fi
   git commit --allow-empty -m "~submit~"
 }
 
