@@ -1,0 +1,63 @@
+local cold_turkey_path="/Applications/Cold Turkey Blocker.app/Contents/MacOS/Cold Turkey Blocker"
+
+# Wrapper for the Cold Turkey Blocker app
+#
+# Usage:
+#   cold_turkey [-stop] [app1] [--timeout=minutes]
+#
+# Examples:
+#   cold_turkey -stop "Email and LinkedIn Messages" --timeout=30
+#   (any other valid Cold Turkey usages)
+cold_turkey() {
+  local duration_minutes=30
+  local args=()
+  local stop_found=0
+
+  # Parse arguments
+  for arg in "$@"; do
+    if [[ "$arg" == --timeout=* ]]; then
+      duration_minutes="${arg#--timeout=}"
+      # remove this arg from args
+      continue
+    fi
+    if [[ "$arg" == "-stop" ]]; then
+      stop_found=1
+    fi
+    args+=("$arg")
+  done
+
+  # If we're stopping a block, start it again after a certain amount of time
+  if [[ $stop_found -eq 1 ]]; then
+    echo "\033[34m🦃 Starting block for ${duration_minutes} minutes\033[0m"
+    
+    "$cold_turkey_path" "${args[@]}"
+    
+    local start_args=()
+    for a in "${args[@]}"; do
+      if [[ "$a" == "-stop" ]]; then
+        start_args+=("-start")
+      else
+        start_args+=("$a")
+      fi
+    done
+    
+    # Uses nohup + subshell instead of launchctl submit because:
+    # - launchctl submit is designed for persistent services that stay alive, not one-time deferred tasks
+    # - Would require manual cleanup (launchctl remove) after execution
+    # - nohup + subshell provides clean one-time execution that auto-cleans up
+    #
+    # Implementation details:
+    # - nohup: prevents hangup signal when terminal closes
+    # - zsh -c: spawns completely independent zsh process
+    # - subshell (): isolates background job from parent shell job table, suppressing job control output
+    # - printf '%q': properly quotes arguments for safe eval (handles spaces, special chars)
+    # - >/dev/null 2>&1: silences all output
+    # This approach survives shell closure and won't block the terminal session
+    local start_args_quoted=$(printf '%q ' "${start_args[@]}")
+    (
+      nohup zsh -c "sleep $((${duration_minutes} * 60)); $(printf '%q' "$cold_turkey_path") $start_args_quoted" >/dev/null 2>&1 &
+    )
+  else
+    "$cold_turkey_path" "${args[@]}"
+  fi
+}
