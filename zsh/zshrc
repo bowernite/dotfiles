@@ -274,3 +274,7 @@ export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions
 eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
+
+# Better memory usage for TypeScript..? See personal note on "why useFsEvents"
+export TSC_WATCHFILE=useFsEvents
+export TSC_WATCHDIRECTORY=useFsEvents
