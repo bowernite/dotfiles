@@ -24,10 +24,9 @@ source $dotfiles_dir/zsh/zshrc__aliases
 source $dotfiles_dir/zsh/private/zshrc__private
 
 source $dotfiles_dir/zsh/zshrc__focus
-
 source $dotfiles_dir/zsh/zshrc__playground
-
 source $dotfiles_dir/zsh/zshrc__devenv
+source $dotfiles_dir/zsh/zshrc__cold-turkey
 
 #####################################################################
 # PATH shenanigans
