@@ -40,7 +40,9 @@ cold_turkey() {
         start_args+=("$a")
       fi
     done
-    
+    # Ensure -as-is is included when original args had -stop (i.e. when we're running -start after timeout)
+    start_args+=("-as-is")
+
     # Uses nohup + subshell instead of launchctl submit because:
     # - launchctl submit is designed for persistent services that stay alive, not one-time deferred tasks
     # - Would require manual cleanup (launchctl remove) after execution
