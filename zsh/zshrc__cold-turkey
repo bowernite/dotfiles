@@ -28,7 +28,7 @@ cold_turkey() {
 
   # If we're stopping a block, start it again after a certain amount of time
   if [[ $stop_found -eq 1 ]]; then
-    echo "\033[34m🦃 Starting block for ${duration_minutes} minutes\033[0m"
+    echo "\033[34m🦃 Stopping block for ${duration_minutes} minutes\033[0m"
     
     "$cold_turkey_path" "${args[@]}"
     
