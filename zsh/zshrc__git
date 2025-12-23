@@ -45,7 +45,7 @@ submit() {
   rm -f "$gt_error"
 
   local branch_name="$(git branch-name)"
-  local pr_title_prefix="$(get_pr_title_prefix "$branch_name")"
+  local pr_title_prefix="$(get_pr_title_prefix "$branch_name") "
   if [[ -n "$pr_title_prefix" ]]; then
     echo ""
     echo -ne "📋 \033[1;36mPR title prefix:\033[0m $pr_title_prefix\n"
