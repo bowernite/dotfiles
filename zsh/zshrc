@@ -134,6 +134,8 @@ _fzf_compgen_path() {
 # In fzf-history-search, bind ctrl-d to delete the selected command from history
 # 6/12/25: Doesn't work 🤷‍♂️
 # export FZF_CTRL_R_OPTS="--bind 'alt+bs:execute(sed -i \"\" \"\$d\" \$HISTFILE)+reload:fc -pa \$HISTFILE; fc -rl 1 | awk \"{ cmd=\$0; sub(/^[ \\t]*[0-9]+\\**[ \\t]+/, \\\"\\\", cmd); if (!seen[cmd]++) print \$0 }\"' --header 'ALT+Backspace to delete'"
+# Make CTRL-R history search use exact (substring) matching by default (less "broad" than fuzzy subsequence matching); you can still force fuzzy per-term by prefixing it with `'` inside fzf.
+export FZF_CTRL_R_OPTS='--exact'
 
 #####################################################################
 # Navigation
