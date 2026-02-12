@@ -280,7 +280,7 @@ alias wh=which
 # Butterfish
 #####################################################################
 
-alias b="butterfish"
+alias bf="butterfish"
 
 alias bshell="butterfish shell -m 'gpt-4o' --autosuggest-model='gpt-4o-mini'"
 alias chat="bsh"
@@ -372,3 +372,6 @@ edit() {
 
   $editor $target
 }
+
+# 'b' for 'Build'
+alias b="claud"

@@ -33,3 +33,6 @@ logs/*
 
 # QA/Playwright auth state files
 **/state-storage/*.json
+
+.claude/*
+CLAUDE.md

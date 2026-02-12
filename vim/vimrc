@@ -60,7 +60,8 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 let mapleader = "\<Space>"
 
 " Copy to clipboard when yanking
-set clipboard=unnamed
+" Commented out due to Vim bug on macOS (https://github.com/vim/vim/issues/18600)
+" set clipboard=unnamed
 
 " Store temp and swap files in macOS's temp directory
 " This keeps working directories cleaner, but preserves vim's native
