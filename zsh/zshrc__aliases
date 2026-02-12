@@ -374,4 +374,4 @@ edit() {
 }
 
 # 'b' for 'Build'
-alias b="claud"
+alias b="claude"
