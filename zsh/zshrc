@@ -2,21 +2,14 @@ dotfiles_dir=$HOME/src/personal/dotfiles
 
 #####################################################################
 
+# fpath additions (before shell init so compinit picks them up)
 fpath+=~/.zfunc
+fpath=(~/.zsh $fpath)
 
-# Speed up zsh completion init on subsequent shells
-# - Compile the compdump file once it exists
-# - Enable completion caching to avoid recomputing expensive completions
-ZSH_COMPDUMP=${ZSH_COMPDUMP:-$HOME/.zcompdump}
-if [[ -r $ZSH_COMPDUMP && (! -r ${ZSH_COMPDUMP}.zwc || $ZSH_COMPDUMP -nt ${ZSH_COMPDUMP}.zwc) ]]; then
-  zcompile $ZSH_COMPDUMP
-fi
-zstyle ':completion::complete:*' use-cache on
-zstyle ':completion::complete:*' cache-path "$HOME/.zcompcache"
+# Shell fundamentals: colors, history, completion, keybindings, terminal title
+source $dotfiles_dir/zsh/zshrc__shell
 
-# The generated file that comes from oh-my-zsh
-source $dotfiles_dir/zsh/zshrc__generated
-
+source $dotfiles_dir/zsh/zshrc__git-base
 source $dotfiles_dir/zsh/zshrc__git
 source $dotfiles_dir/zsh/zshrc__aliases
 
@@ -37,7 +30,14 @@ export PATH="$HOME/bin:$PATH"
 
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Static brew shellenv (avoid forking brew Ruby process on every shell)
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
 # Python
 PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
@@ -72,30 +72,34 @@ PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 export PATH
 
 #####################################################################
-# Shell prompt
+# Shell prompt (robbyrussell-style, inlined)
 #####################################################################
 
-# Two-line prompt with emoji
-# This is off for now... it go annoying with the emojis that were sometimes wider than one character, depending on the terminal that was rendering it. Maybe one day I'll turn it back on and move the emoji or just use emojis that are always one character wide (e.g. 😀)
-# Source: https://github.com/kentcdodds/dotfiles/blob/master/.zshrc
-function random_element {
-  declare -a array=("$@")
-  r=$((RANDOM % ${#array[@]}))
-  printf "%s\n" "${array[$r]}"
+# Git prompt for the shell prompt line
+function git_prompt_info() {
+  local ref
+  ref=$(command git symbolic-ref --short HEAD 2>/dev/null) \
+    || ref=$(command git describe --tags --exact-match HEAD 2>/dev/null) \
+    || ref=$(command git rev-parse --short HEAD 2>/dev/null) \
+    || return 0
+  local dirty
+  if [[ -n $(command git status --porcelain 2>/dev/null | tail -n 1) ]]; then
+    dirty="%{$fg[blue]%}) %{$fg[yellow]%}%1{✗%}"
+  else
+    dirty="%{$fg[blue]%})"
+  fi
+  echo "%{$fg_bold[blue]%}git:(%{$fg[red]%}${ref:gs/%/%%}${dirty}%{$reset_color%} "
 }
-function random_emoji() {
-  printf "$(random_element 😅 👽 🔥 👻 ⛄ 👾 🍔 😄 🍰 🐑 😎 🏎 🤖 😇 😼 💪 🦄 🥓 🌮 🎉 💯 ⚛️ 🐠 🐳 🐿 🥳 🤩 🤯 🤠 👨‍💻 🦸‍ 🧝‍ 🧞‍ 🧙‍ 👨‍🚀 👨‍🔬 🕺 🦁 🐶 🐵 🐻 🦊 🐙 🦎 🦖 🦕 🦍 🦈 🐊 🦂 🐍 🐢 🐘 🐉 🦚 ✨ ☄️ ⚡️ 💥 💫 🧬 🔮 ⚗️ 🎊 🔭 ⚪️ 🔱)"
-}
-# PROMPT="$PROMPT"$'\n'"$(random_emoji)  "
 
-PROMPT="$PROMPT"$'\n'"  "
+# Green arrow on success, red on failure + current dir + git info + newline
+PROMPT="%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT+=' $(git_prompt_info)'
+PROMPT+=$'\n'"  "
 
-# Sets the window / tab title
+# Add a blank line between prompts
 precmd() {
-  # Add a new line after each prompt
   echo
 }
-ZSH_THEME_TERM_TITLE_IDLE="%1~"
 
 #####################################################################
 # Git
@@ -103,6 +107,7 @@ ZSH_THEME_TERM_TITLE_IDLE="%1~"
 
 # Enable git auto-completion
 ## Source: https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 
 #####################################################################
 # FZF
@@ -131,9 +136,6 @@ _fzf_compgen_path() {
   # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
 }
 
-# In fzf-history-search, bind ctrl-d to delete the selected command from history
-# 6/12/25: Doesn't work 🤷‍♂️
-# export FZF_CTRL_R_OPTS="--bind 'alt+bs:execute(sed -i \"\" \"\$d\" \$HISTFILE)+reload:fc -pa \$HISTFILE; fc -rl 1 | awk \"{ cmd=\$0; sub(/^[ \\t]*[0-9]+\\**[ \\t]+/, \\\"\\\", cmd); if (!seen[cmd]++) print \$0 }\"' --header 'ALT+Backspace to delete'"
 # Make CTRL-R history search use exact (substring) matching by default (less "broad" than fuzzy subsequence matching); you can still force fuzzy per-term by prefixing it with `'` inside fzf.
 export FZF_CTRL_R_OPTS='--exact'
 
@@ -151,27 +153,6 @@ cdpath=($HOME/src $HOME/src/work $HOME/src/personal $HOME/playground $HOME/Dropb
 # Source: https://superuser.com/questions/515633/my-zsh-autocompletion-for-cdpath-stopped-working
 zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
   'local-directories named-directories path-directories'
-
-#####################################################################
-# zsh plugins
-#####################################################################
-
-# Install Zinit (added by Zinit's installer)
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-  print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-  command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-  command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" &&
-    print -P "%F{33} %F{34}Installation successful.%f%b" ||
-    print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-[[ -v _comps ]] && _comps[zinit]=_zinit
-
-# Load specific plugins
-## Off for now, until we need it
-# zinit load wfxr/forgit
 
 #####################################################################
 # Graphite
@@ -279,3 +260,8 @@ export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
 # Better memory usage for TypeScript..? See personal note on "why useFsEvents"
 export TSC_WATCHFILE=useFsEvents
 export TSC_WATCHDIRECTORY=useFsEvents
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Claude Code: load CLAUDE.md + rules from additionalDirectories
+export CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1
