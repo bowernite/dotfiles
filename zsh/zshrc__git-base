@@ -4,7 +4,14 @@
 #####################################################################
 
 autoload -Uz is-at-least
-local git_version="${${(As: :)$(git version 2>/dev/null)}[3]}"
+# Cache git version to avoid forking on every shell
+_git_ver_cache="$HOME/.cache/git-version"
+if [[ ! -r "$_git_ver_cache" || "$(whence -p git)" -nt "$_git_ver_cache" ]]; then
+  mkdir -p "${_git_ver_cache:h}"
+  git version 2>/dev/null | cut -d' ' -f3 > "$_git_ver_cache"
+fi
+local git_version="$(<$_git_ver_cache)"
+unset _git_ver_cache
 
 #####################################################################
 # Functions
