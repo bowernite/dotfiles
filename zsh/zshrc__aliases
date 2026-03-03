@@ -2,7 +2,6 @@ source $dotfiles_dir/zsh/zshrc__locations
 
 # "Import" all of our global utils that we have in separate files
 for file in $HOME/src/personal/dotfiles/bin/global-utils/*.sh(N); do
-  chmod +x $file
   source $file
 done
 
@@ -196,18 +195,12 @@ setup_themes() {
 
   # To make sure git uses Delta, _with_ the theme we've decided on :)
   export GIT_PAGER="delta --syntax-theme=$delta_theme"
-  # Oh, and since you can't use environment variables in your ~/gitconfig, we're going to manually set the "system" gitconfig here based on $delta_theme, to make sure intractive git commands (e.g. `git add -p`) are also pretty 💅
-  # NOTE: Since moving to Apple Silicon mac, using --system here (like I want to do, since it doesn't touch our global and git-tracked gitconfig) requires sudo access. Which we can't do, because then we need a password everytime we start up a new shell
-  git config --global interactive.diffFilter "delta --color-only --syntax-theme=$delta_theme"
+  # For interactive git commands (e.g. `git add -p`). Uses env var read by a
+  # wrapper script in gitconfig, avoiding a `git config --global` fork per shell
+  export DELTA_SYNTAX_THEME="$delta_theme"
 
   # Use `bat` for syntax highlighting in man pages
   export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=$bat_theme'"
-
-  # Only run kitten if it's available and kitty is installed
-  if command -v kitten >/dev/null 2>&1 && [[ -d "/Applications/kitty.app" ]]; then
-    # 7/22/25: Disabling for now, as it seems like Kitty has this built in now..?
-    # kitten themes --reload-in=all $kitty_theme
-  fi
 }
 setup_themes
 
