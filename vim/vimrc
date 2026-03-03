@@ -60,8 +60,29 @@ autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 let mapleader = "\<Space>"
 
 " Copy to clipboard when yanking
-" Commented out due to Vim bug on macOS (https://github.com/vim/vim/issues/18600)
-" set clipboard=unnamed
+" Vim 9.2 with +clipboard_provider no longer has built-in macOS terminal
+" clipboard support — register pbcopy/pbpaste as a provider to fix W23
+if has('clipboard_provider') && !has('gui_running') && has('mac')
+  function! s:PbcopyAvail() abort
+    return executable('pbcopy') && executable('pbpaste')
+  endfunction
+
+  function! s:PbcopyPaste(reg) abort
+    return ['', split(system('pbpaste'), '\n', 1)]
+  endfunction
+
+  function! s:PbcopyCopy(reg, regtype, lines) abort
+    call system('pbcopy', a:lines)
+  endfunction
+
+  let v:clipproviders['pbcopy'] = {
+        \ 'available': function('s:PbcopyAvail'),
+        \ 'paste': {'*': function('s:PbcopyPaste'), '+': function('s:PbcopyPaste')},
+        \ 'copy': {'*': function('s:PbcopyCopy'), '+': function('s:PbcopyCopy')},
+        \ }
+  set clipmethod=pbcopy
+endif
+set clipboard=unnamed
 
 " Store temp and swap files in macOS's temp directory
 " This keeps working directories cleaner, but preserves vim's native
