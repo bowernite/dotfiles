@@ -2,6 +2,8 @@
 
 dotfiles_dir=~/src/personal/dotfiles
 
+source "$dotfiles_dir/bin/global-utils/safe-symlink.sh"
+
 #######################################
 # "Installs" a dotfile by symlinking it from this directory to $HOME.
 #
@@ -27,27 +29,8 @@ install_dotfile() {
     return 1
   fi
 
-  # Clear immutable flag before removing/replacing (set by us on a previous run)
-  chflags nouchg "$to" 2>/dev/null || true
-
-  # Remove existing symlink if it exists (whether broken or working)
-  if [[ -L "$to" ]]; then
-    echo "Removing existing symlink: $to"
-    rm "$to"
-  fi
-
-  # Remove existing file/directory if it exists and is not a symlink
-  if [[ -e "$to" ]]; then
-    echo "File/directory already exists at $to. Removing to create symlink."
-    rm -rf "$to"
-  fi
-
   echo "Creating symlink: $to -> $from"
-  ln -s "$from" "$to"
-
-  # Prevent tools that do atomic/rename-based writes from replacing the symlink
-  # with a regular file. Writes *through* the symlink to the target still work.
-  chflags uchg "$to"
+  safe_symlink "$from" "$to"
 }
 
 ##############################################################
