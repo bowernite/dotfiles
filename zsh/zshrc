@@ -25,8 +25,8 @@ source $dotfiles_dir/zsh/zshrc__cold-turkey
 # PATH shenanigans
 #####################################################################
 
-# User binaries (including kitty)
-export PATH="$HOME/bin:$PATH"
+# User binaries (including kitty) and dotfiles scripts
+export PATH="$HOME/bin:$dotfiles_dir/bin:$PATH"
 
 # New M1 homebrew (Homebrew paths prioritized)
 PATH="/opt/homebrew/bin:$PATH"
@@ -113,8 +113,19 @@ zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 # FZF
 #####################################################################
 
-# fzf autocompletion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf autocompletion — cached to avoid forking on every shell
+_fzf_cache="$HOME/.cache/fzf-init.zsh"
+_fzf_bin="$(whence -p fzf)"
+if [[ ! -r "$_fzf_cache" || "$_fzf_bin" -nt "$_fzf_cache" ]]; then
+  mkdir -p "${_fzf_cache:h}"
+  # Replicate what ~/.fzf.zsh does: add to PATH + source shell init
+  {
+    [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]] && echo 'PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"'
+    fzf --zsh
+  } > "$_fzf_cache"
+fi
+source "$_fzf_cache"
+unset _fzf_cache _fzf_bin
 
 FZF_EXCLUDE_GLOB="**/{node_modules,.git,.Trash,Library,Music,.node-gyp,.npm}"
 
@@ -240,20 +251,23 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
 
 # Disable eslint debug output when running lint commands
 alias lint="DEBUG= npx eslint"
 
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
-# fnm (Fast Node Manager)
-eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
+# fnm (Fast Node Manager) — cached to avoid forking on every shell
+_fnm_cache="$HOME/.cache/fnm-env.zsh"
+_fnm_bin="$(whence -p fnm)"
+if [[ ! -r "$_fnm_cache" || "$_fnm_bin" -nt "$_fnm_cache" ]]; then
+  mkdir -p "${_fnm_cache:h}"
+  fnm env --use-on-cd --version-file-strategy=recursive --shell zsh > "$_fnm_cache"
+fi
+source "$_fnm_cache"
+unset _fnm_cache _fnm_bin
 
 export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
 
