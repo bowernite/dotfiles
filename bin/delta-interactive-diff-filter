@@ -1,0 +1,3 @@
+#!/bin/sh
+# Wrapper for git's interactive.diffFilter that picks up the theme from env
+exec delta --color-only --syntax-theme="${DELTA_SYNTAX_THEME:-GitHub}"

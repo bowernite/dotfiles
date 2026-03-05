@@ -61,9 +61,15 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
 zstyle '*' single-ignored show
 
 # Init completion (with dump file for speed)
+# Only run full compinit (with compaudit security check) once per day;
+# otherwise load the cached dump directly — saves ~15ms per shell
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-$HOME/.zcompdump}
 autoload -Uz compinit
-compinit -d "$ZSH_COMPDUMP"
+if [[ -n $ZSH_COMPDUMP(#qN.mh+24) ]]; then
+  compinit -d "$ZSH_COMPDUMP"
+else
+  compinit -C -d "$ZSH_COMPDUMP"
+fi
 
 # Compile dump file if out of date
 if [[ -r $ZSH_COMPDUMP && (! -r ${ZSH_COMPDUMP}.zwc || $ZSH_COMPDUMP -nt ${ZSH_COMPDUMP}.zwc) ]]; then
