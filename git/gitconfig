@@ -89,7 +89,7 @@
 [init]
 	defaultBranch = main
 [interactive]
-	diffFilter = delta --color-only --syntax-theme=GitHub
+	diffFilter = delta-interactive-diff-filter
 
 [credential]
 	helper = osxkeychain
