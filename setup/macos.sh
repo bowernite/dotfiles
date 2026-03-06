@@ -359,32 +359,11 @@ defaults write com.knollsoft.Rectangle SUEnableAutomaticChecks -bool true
 # Default apps by file extension
 #
 # Set default apps for files with duti util
-# https://github.com/moretension/duti/
+# Config lives in setup/default-apps.conf
+# Can also be run standalone: ./setup/default-apps.sh
 ##############################################################
 
-duti -s com.microsoft.VSCode js all
-duti -s com.microsoft.VSCode mjs all
-duti -s com.microsoft.VSCode jsx all
-duti -s com.microsoft.VSCode ts all
-duti -s com.microsoft.VSCode tsx all
-duti -s com.microsoft.VSCode json all
-duti -s com.microsoft.VSCode yml all
-duti -s com.microsoft.VSCode yaml all
-duti -s com.microsoft.VSCode php all
-duti -s com.microsoft.VSCode c all
-duti -s com.microsoft.VSCode cpp all
-duti -s com.microsoft.VSCode md all
-duti -s com.microsoft.VSCode mdx all
-duti -s com.microsoft.VSCode rb all
-duti -s com.microsoft.VSCode go all
-duti -s com.microsoft.VSCode py all
-duti -s com.microsoft.VSCode pyc all
-duti -s com.microsoft.VSCode css all
-duti -s com.microsoft.VSCode scss all
-duti -s com.microsoft.VSCode lock all
-duti -s com.microsoft.VSCode log all
-duti -s com.microsoft.VSCode plist all
-duti -s com.microsoft.VSCode sh all
+source "$dotfiles_dir/setup/default-apps.sh"
 
 ##############################################################
 # ???
