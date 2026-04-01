@@ -279,3 +279,9 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Claude Code: load CLAUDE.md + rules from additionalDirectories
 export CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1
+# bun completions
+[ -s "/Users/brett.abramczyk/.bun/_bun" ] && source "/Users/brett.abramczyk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

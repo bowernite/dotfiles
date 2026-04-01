@@ -90,9 +90,9 @@
 	defaultBranch = main
 [interactive]
 	diffFilter = delta-interactive-diff-filter
-
-[credential]
-	helper = osxkeychain
-
-[url "https://github.com/"]
-	insteadOf = git@github.com:
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
