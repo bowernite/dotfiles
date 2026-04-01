@@ -37,3 +37,6 @@ logs/*
 
 .claude/*
 CLAUDE.md
+
+# /dispatch claude code skill
+.dispatch/
