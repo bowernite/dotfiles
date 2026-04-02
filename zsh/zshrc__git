@@ -27,9 +27,15 @@ submit() {
     publish_flag="--publish"
   fi
 
-  echo "🚀 Submitting with flags: $publish_flag ${other_flags[@]} --ai"
+  local ai_flag="--ai"
+  if [[ " $* " == *" --no-ai "* ]]; then
+    ai_flag="--no-ai"
+    other_flags=("${other_flags[@]/--no-ai/}")
+  fi
+
+  echo "🚀 Submitting with flags: $publish_flag $ai_flag ${other_flags[@]}"
   local gt_error="$(mktemp)"
-  if gt submit $publish_flag --ai ${other_flags[@]} 2> >(tee "$gt_error" >&2); then
+  if gt submit $publish_flag $ai_flag ${other_flags[@]} 2> >(tee "$gt_error" >&2); then
     echo "✅ Submitted with gt submit"
   else
     if grep -i 'graphite could not verify you have access to the repo' "$gt_error" >/dev/null; then
