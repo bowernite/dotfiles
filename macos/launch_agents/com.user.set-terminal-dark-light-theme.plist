@@ -8,6 +8,8 @@
     <array>
         <string>/Users/brett/src/personal/dotfiles/macos/launch_agents/set-terminal-dark-light-themes.sh</string>
     </array>
+    <key>Disabled</key>
+    <true/>
     <key>RunAtLoad</key>
     <true/>
     <key>WatchPaths</key>

@@ -31,6 +31,7 @@ pull_request_template.md
 
 # Logs
 logs/*
+*.log
 
 # QA/Playwright auth state files
 **/state-storage/*.json
@@ -40,3 +41,8 @@ CLAUDE.md
 
 # /dispatch claude code skill
 .dispatch/
+
+# Env files (per-dev secrets — never commit)
+.env
+.env.*
+!.env.example

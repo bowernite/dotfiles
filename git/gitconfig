@@ -7,6 +7,10 @@
 [includeIf "gitdir:~/src/work/"]
   path = ~/src/work/.gitconfig
 
+# supa-brett identity for Supademo repos (overrides the broader work config above)
+[includeIf "gitdir:~/src/work/spd/"]
+  path = ~/src/work/spd/.gitconfig
+
 [alias]
   branch-name = "!git rev-parse --abbrev-ref HEAD"
   # Prints the branch name of the main development branch
