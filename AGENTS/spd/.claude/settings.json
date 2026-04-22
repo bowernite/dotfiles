@@ -1,0 +1,94 @@
+{
+  "fileSuggestion": {
+    "type": "command",
+    "command": "~/.claude/file-suggestion.sh"
+  },
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": "false",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "CLAUDE_CODE_DEBUG": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "WebFetch",
+      "WebSearch",
+      "Grep",
+      "Glob",
+      "Task",
+      "Bash",
+      "mcp__github__*",
+      "mcp__ref__*",
+      "mcp__hex__*",
+      "mcp__Jam__*",
+      "mcp__sentry__*",
+      "mcp__betterstack__*",
+      "mcp__linear-server__*",
+      "mcp__ide__*",
+      "mcp__customerio__*",
+      "mcp__postgres__*",
+      "mcp__figma__*",
+      "mcp__notion__*",
+      "mcp__plugin_slack_slack__*",
+      "mcp__datadog-mcp__*",
+      "mcp__trigger__*",
+      "mcp__vercel__*",
+      "Skill(feature-apps)",
+      "Skill(agent-browser)",
+      "Monitor"
+    ],
+    "deny": [
+      "mcp__sentry__create_dsn"
+    ],
+    "ask": [
+      "Bash(rm -rf*)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "mcp__github__add_issue_comment",
+      "mcp__github__pull_request_review_write",
+      "mcp__linear-server__create_comment",
+      "Bash(sudo*)"
+    ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff & ~/.claude/notify.sh 'Needs your attention'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Hero.aiff & ~/.claude/notify.sh 'Done'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": false,
+    "slack@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "claudeMdExcludes": [
+    "**/slc-server/CLAUDE.md",
+    "**/slc-server/AGENTS.md"
+  ],
+  "gitAttribution": false,
+  "defaultMode": "acceptEdits"
+}
