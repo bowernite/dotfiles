@@ -398,7 +398,7 @@ git_parent_branch() {
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
 #   - Any additional arguments are passed to git diff
-diff() {
+dif() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
   local other_args=()
