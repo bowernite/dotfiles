@@ -23,6 +23,8 @@ brew "dockutil"
 # Tool for managing default apps for each extension on macos
 brew "duti"
 brew "fzf"
+# Homebrew vim 9.2+ has clipboard_provider support needed for terminal clipboard
+brew "vim"
 brew "go"
 brew "hyperfine"
 brew "neovim"
