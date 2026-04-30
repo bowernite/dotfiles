@@ -58,6 +58,9 @@ PATH="/usr/local/opt/ruby/bin:$PATH"
 # Homebrew sbin
 PATH="/usr/local/sbin:$PATH"
 
+# mysql-client (keg-only, provides the `mysql` CLI without installing the server)
+PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 # GNU commands as defaults
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/gnu-indent/libexec/gnubin:$PATH"

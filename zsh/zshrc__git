@@ -393,16 +393,18 @@ git_parent_branch() {
 }
 
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
-# Usage: diff [--dev] [--origin-dev] [compare_branch] [git_diff_args...]
+# Usage: diff [--dev] [--origin-dev] [--all] [compare_branch] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
+#   - If --include-uncommitted is provided, includes uncommitted (staged and unstaged) changes
 #   - Any additional arguments are passed to git diff
 dif() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
   local other_args=()
   local has_branch=false
+  local include_all=false
 
   # Process options first
   while [[ $# -gt 0 ]]; do
@@ -413,6 +415,10 @@ dif() {
       ;;
     --origin/dev)
       compare_branch="origin/$(git_dev_branch)"
+      shift
+      ;;
+    --include-uncommitted)
+      include_all=true
       shift
       ;;
     -*)
@@ -444,7 +450,12 @@ dif() {
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
-  git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
+  if [[ "$include_all" == "true" ]]; then
+    # Diff from merge base to working tree (includes staged + unstaged changes)
+    git diff "${other_args[@]}" "$merge_base" ":(exclude)package-lock.json"
+  else
+    git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
+  fi
 }
 
 #####################################################################
