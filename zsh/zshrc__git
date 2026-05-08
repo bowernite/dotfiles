@@ -403,6 +403,7 @@ dif() {
   local compare_branch
   local other_args=()
   local has_branch=false
+  local include_uncommitted=false
 
   # Process options first
   while [[ $# -gt 0 ]]; do
@@ -413,6 +414,10 @@ dif() {
       ;;
     --origin/dev)
       compare_branch="origin/$(git_dev_branch)"
+      shift
+      ;;
+    --include-uncommitted)
+      include_uncommitted=true
       shift
       ;;
     -*)
@@ -444,7 +449,14 @@ dif() {
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
-  git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
+  if [[ "$include_uncommitted" == "true" ]]; then
+    # Committed branch changes (merge base → HEAD), then staged, then unstaged
+    git diff "${other_args[@]}" "$merge_base" HEAD ":(exclude)package-lock.json"
+    git diff "${other_args[@]}" --cached ":(exclude)package-lock.json"
+    git diff "${other_args[@]}" ":(exclude)package-lock.json"
+  else
+    git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
+  fi
 }
 
 #####################################################################
