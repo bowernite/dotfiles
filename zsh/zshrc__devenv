@@ -104,6 +104,9 @@ export WEBPACK_DASHBOARD_SILENT=true
 # Disable automatic browser opening
 export BROWSER=none
 
+# Disable git hooks (husky) locally — hooks belong in CI
+export HUSKY=0
+
 # Disable telemetry in various tools
 export NEXT_TELEMETRY_DISABLED=1
 export ASTRO_TELEMETRY_DISABLED=1
