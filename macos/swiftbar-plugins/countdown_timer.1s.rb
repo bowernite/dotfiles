@@ -9,6 +9,60 @@
 # <xbar.abouturl>http://github.com/kizzx2/bitbar-countdown-timer</xbar.abouturl>
 
 # NOTE: The above is the original plugin. I've made my own modifications. Also, note that that repository above doesn't seem to be fully updated to what you get when you actually install the plugin.
+#
+# ==============================================================================
+# USAGE
+# ==============================================================================
+#
+# SwiftBar runs this script every second (per the `.1s.rb` filename) with no
+# args — that's the "refresh" path, which reads `.countdown` and redraws the
+# menu bar. To *start* a timer, invoke the script directly with args:
+#
+#     ./countdown_timer.1s.rb [DURATION[,LOCKOUT]] [task description...]
+#
+# DURATION / LOCKOUT format:
+#   <number><unit?>   where unit is s | m | h  (default: m)
+#
+# When the timer hits 0, the screen locks and stays locked for LOCKOUT seconds
+# (default 90s). 5-minute and 2-minute warnings fire via Hammerspoon alerts.
+#
+# ------------------------------------------------------------------------------
+# Examples
+# ------------------------------------------------------------------------------
+#
+#   # Start the default timer: 25m work block, 90s lockout, no task label
+#   ./countdown_timer.1s.rb
+#
+#   # 25m timer with a task label (first arg isn't a duration → treated as task)
+#   ./countdown_timer.1s.rb "deep work on MED-123"
+#
+#   # 10 minute timer, default lockout
+#   ./countdown_timer.1s.rb 10m
+#
+#   # 45s timer (explicit unit)
+#   ./countdown_timer.1s.rb 45s
+#
+#   # 50 minute timer + 5 minute lockout, with task
+#   ./countdown_timer.1s.rb 50m,5m "writing"
+#
+#   # 2 hour timer + 30s lockout
+#   ./countdown_timer.1s.rb 2h,30s
+#
+#   # Cancel a running timer (also wired up as a menu bar item)
+#   ./countdown_timer.1s.rb CANCEL_TIMER
+#
+#   # Reset to the default 25m/90s timer (also a menu bar item)
+#   ./countdown_timer.1s.rb RESET_TIMER
+#
+# ------------------------------------------------------------------------------
+# State
+# ------------------------------------------------------------------------------
+#
+# Timer state lives in `.countdown` next to this script as simple key=value
+# lines: finish_timestamp, lockout_duration, task. SwiftBar's per-second
+# refresh reads this file; arg-invocations write it.
+#
+# ==============================================================================
 
 filename = File.join(File.dirname($0), '.countdown')
 
