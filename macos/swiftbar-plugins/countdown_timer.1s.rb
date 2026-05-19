@@ -93,6 +93,19 @@ def show_hammerspoon_alert(title, message, duration)
   system "hs -c \"hs.alert.show('#{alert_message}', #{duration})\" > /dev/null"
 end
 
+WARNINGS = [
+  { at: 300, title: "5 minutes remaining! ⚠️",  duration: 5 },
+  { at: 120, title: "2 minutes remaining! ⚠️",  duration: 10 },
+  { at: 30,  title: "🚨 30 seconds remaining!", duration: 10 },
+  { at: 10,  title: "🚨 10 seconds remaining! 🚨", duration: 10 },
+]
+
+def maybe_show_warning(seconds_remaining, task)
+  warning = WARNINGS.find { |w| w[:at] == seconds_remaining }
+  return unless warning
+  show_hammerspoon_alert(warning[:title], task, warning[:duration])
+end
+
 def parse_data_from_file(filename)
   if File.file?(filename)
     data = {}
@@ -182,18 +195,7 @@ if is_refresh
 
   seconds_remaining = (finish_timestamp - Time.now).to_i
   
-  if seconds_remaining == 300
-    title = "5 minutes remaining! ⚠️"
-    message = task
-    # show_macos_notification(title, message)
-    show_hammerspoon_alert(title, message, 5)
-  end
-  if seconds_remaining == 120
-    title = "2 minutes remaining! ⚠️"
-    message = task
-    # show_macos_notification(title, message)
-    show_hammerspoon_alert(title, message, 10)
-  end
+  maybe_show_warning(seconds_remaining, task)
 
   if seconds_remaining == 0
     unlock_time = Time.now + locked_out_for
