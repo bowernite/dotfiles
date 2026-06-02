@@ -1,0 +1,13 @@
+# ~/.zshenv -- sourced by EVERY zsh invocation: interactive, non-interactive
+# (`zsh -c '...'`), and scripts. (.zshrc, by contrast, is interactive-only.)
+# Keep this file minimal and side-effect-free.
+
+# Disable zsh's built-in `log` so the command name resolves to macOS's
+# /usr/bin/log -- the unified-logging CLI (`log show`, `log stream`).
+#
+# Background: zsh ships an obscure built-in `log` (prints users from the
+# `watch` parameter). Because builtins outrank $PATH executables, a bare
+# `log show ...` hits the builtin and dies with "too many arguments" in any
+# non-interactive shell -- e.g. tools that run commands via `zsh -c`, like
+# Claude Code's Bash tool. Disabling it here fixes that everywhere.
+(( ${+builtins[log]} )) && disable log

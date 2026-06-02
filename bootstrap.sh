@@ -44,9 +44,10 @@ sleep 2s
 ##############################################################
 # Symlinks
 ##############################################################
-log "Symlinking appropriate files to the \$HOME directory ($HOME)"
+bootstrap_log "Symlinking appropriate files to the \$HOME directory ($HOME)"
 
 install_dotfile "zsh/zshrc" ".zshrc"
+install_dotfile "zsh/zshenv" ".zshenv"
 install_dotfile "zsh/zshrc__generated" ".zshrc__generated"
 install_dotfile "zsh/zshrc__aliases" ".zshrc__aliases"
 install_dotfile "zsh/zshrc__private" ".zshrc__private"
@@ -60,7 +61,7 @@ install_dotfile "shell/yabairc" ".yabairc"
 ##############################################################
 # Karabiner symlinking
 ##############################################################
-log "Symlinking files/dirs for Karabiner Elements and Goku"
+bootstrap_log "Symlinking files/dirs for Karabiner Elements and Goku"
 
 kb_root_dir="$HOME/.config/karabiner"
 kb_dotfiles_dir="$dotfiles_dir/karabiner"
@@ -188,4 +189,4 @@ fi
 # Fin
 ##############################################################
 
-log "All done. Have fun! 🚀"
+bootstrap_log "All done. Have fun! 🚀"

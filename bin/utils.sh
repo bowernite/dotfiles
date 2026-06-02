@@ -34,9 +34,11 @@ install_dotfile() {
 }
 
 ##############################################################
-# Pretty logger for bootstrapping only
+# Pretty logger for bootstrapping only.
+# Named `bootstrap_log` (not `log`) so it never collides with macOS's
+# /usr/bin/log or zsh's built-in `log` when these setup scripts run.
 ##############################################################
-log() {
+bootstrap_log() {
   local separator="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   printf "\n\n\n"
   echo $separator

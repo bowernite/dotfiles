@@ -7,7 +7,7 @@ source ~/src/personal/dotfiles/bin/utils.sh
 # Ask for the administrator password upfront
 sudo -v
 
-log " Configuring macOS..."
+bootstrap_log " Configuring macOS..."
 
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do
