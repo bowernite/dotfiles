@@ -445,7 +445,20 @@ dif() {
     compare_branch=$(git_parent_branch)
   fi
 
-  local merge_base=$(git merge-base "$current_branch" "$compare_branch")
+  local merge_base=$(git merge-base "$current_branch" "$compare_branch" 2>/dev/null)
+
+  # A local branch (e.g. master) can lag its remote — common in worktrees branched
+  # straight off origin/<dev>. If a remote-tracking counterpart yields a *newer*
+  # merge base (i.e. the local base is its ancestor), prefer it so the diff shows
+  # only our changes, not everything upstream landed since the local ref last moved.
+  if [[ "$compare_branch" != */* ]] && git rev-parse --verify --quiet "origin/$compare_branch" >/dev/null; then
+    local remote_base=$(git merge-base "$current_branch" "origin/$compare_branch" 2>/dev/null)
+    if [[ -n "$remote_base" && "$remote_base" != "$merge_base" ]] &&
+      { [[ -z "$merge_base" ]] || git merge-base --is-ancestor "$merge_base" "$remote_base" 2>/dev/null; }; then
+      merge_base="$remote_base"
+      compare_branch="origin/$compare_branch"
+    fi
+  fi
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
