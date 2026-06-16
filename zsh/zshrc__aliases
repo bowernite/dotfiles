@@ -368,4 +368,12 @@ edit() {
 }
 
 # Overrides "clang - the Clang C, C++, and Objective-C compiler" ¯\_(ツ)_/¯
-alias cc="sn && claude"
+# `sn` is silenced unless it fails (incl. a 5s timeout), in which case we show a
+# red warning and skip `claude`
+cc() {
+  if ! timeout 5 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
+    print -P "%F{red}⚠️  sync-machines failed%f"
+    return 1
+  fi
+  claude "$@"
+}
