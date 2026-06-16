@@ -368,4 +368,4 @@ edit() {
 }
 
 # Overrides "clang - the Clang C, C++, and Objective-C compiler" ¯\_(ツ)_/¯
-alias cc="claude"
+alias cc="sn && claude"
