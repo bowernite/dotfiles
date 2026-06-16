@@ -285,3 +285,7 @@ export CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+function sn() {
+  ~/src/personal/AGENTS/sync-machines.sh $@
+}
