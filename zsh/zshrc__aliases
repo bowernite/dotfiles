@@ -368,12 +368,16 @@ edit() {
 }
 
 # Overrides "clang - the Clang C, C++, and Objective-C compiler" ¯\_(ツ)_/¯
-# `sn` is silenced unless it fails (incl. a 5s timeout), in which case we show a
-# red warning and skip `claude`
+# Syncs machines (silent unless it fails, incl. a 5s timeout) at most once per
+# 10min, then launches claude. On failure: red warning, skip claude.
 cc() {
-  if ! timeout 5 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
-    print -P "%F{red}⚠️  sync-machines failed%f"
-    return 1
+  local marker="${HOME}/.cache/cc-last-sync"
+  if [[ -z $(find "$marker" -mmin -10 2>/dev/null) ]]; then
+    if ! timeout 5 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
+      print -P "%F{red}⚠️  sync-machines failed%f"
+      return 1
+    fi
+    mkdir -p "${marker:h}" && touch "$marker"
   fi
   claude "$@"
 }
