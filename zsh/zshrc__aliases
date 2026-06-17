@@ -373,11 +373,11 @@ edit() {
 cc() {
   local marker="${HOME}/.cache/cc-last-sync"
   if [[ -z $(find "$marker" -mmin -10 2>/dev/null) ]]; then
-    if ! timeout 5 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
-      print -P "%F{red}⚠️  sync-machines failed%f"
-      return 1
-    fi
+    # Mark up-front so a slow/failed sync doesn't re-run (and re-block) every launch.
     mkdir -p "${marker:h}" && touch "$marker"
+    if ! timeout 8 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
+      print -P "%F{red}⚠️  sync-machines failed (continuing to claude)%f"
+    fi
   fi
   claude "$@"
 }
