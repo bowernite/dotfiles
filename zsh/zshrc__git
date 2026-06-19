@@ -393,17 +393,19 @@ git_parent_branch() {
 }
 
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
-# Usage: diff [--dev] [--origin-dev] [compare_branch] [git_diff_args...]
+# Usage: diff [--dev] [--origin-dev] [--exclude-uncommitted] [compare_branch] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
+#   - Uncommitted (staged + unstaged) changes are included by default
+#   - If --exclude-uncommitted is provided, only committed branch changes are shown
 #   - Any additional arguments are passed to git diff
 dif() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
   local other_args=()
   local has_branch=false
-  local include_uncommitted=false
+  local include_uncommitted=true
 
   # Process options first
   while [[ $# -gt 0 ]]; do
@@ -418,6 +420,10 @@ dif() {
       ;;
     --include-uncommitted)
       include_uncommitted=true
+      shift
+      ;;
+    --exclude-uncommitted)
+      include_uncommitted=false
       shift
       ;;
     -*)
