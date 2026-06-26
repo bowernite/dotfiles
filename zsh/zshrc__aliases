@@ -375,8 +375,10 @@ cc() {
   if [[ -z $(find "$marker" -mmin -10 2>/dev/null) ]]; then
     # Mark up-front so a slow/failed sync doesn't re-run (and re-block) every launch.
     mkdir -p "${marker:h}" && touch "$marker"
-    if ! timeout 8 ~/src/personal/AGENTS/sync-machines.sh >/dev/null 2>&1; then
+    local sync_out
+    if ! sync_out=$(timeout 8 ~/src/personal/AGENTS/sync-machines.sh 2>&1); then
       print -P "%F{red}⚠️  sync-machines failed (continuing to claude)%f"
+      [[ -n $sync_out ]] && print -P "%F{red}$sync_out%f"
     fi
   fi
   claude "$@"
