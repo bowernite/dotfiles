@@ -1,0 +1,13 @@
+{
+  "jobs": [
+    {
+      "name": "dummy-daily-heartbeat",
+      "description": "Test job proving OpenClaw cron fires on schedule (and catches up after sleep).",
+      "cron": "0 9 * * *",
+      "tz": "America/Chicago",
+      "session": "main",
+      "systemEvent": "Dummy recurring test job fired — cron is working.",
+      "wake": "now"
+    }
+  ]
+}
