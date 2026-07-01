@@ -16,6 +16,8 @@ brew "bluetoothconnector"
 # brew "cliclick"
 # More Docker / container runtimes
 brew "colima"
+# Docker CLI (colima provides the runtime/engine, this provides the `docker` command)
+brew "docker"
 # Pretty diffs 😍
 brew "git-delta"
 # Util for managing dock with the command line. Used in bootstrap scripts to set dock icons
