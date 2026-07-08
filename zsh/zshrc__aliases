@@ -368,18 +368,14 @@ edit() {
 }
 
 # Overrides "clang - the Clang C, C++, and Objective-C compiler" ¯\_(ツ)_/¯
-# Syncs machines (silent unless it fails, incl. a 5s timeout) at most once per
-# 10min, then launches claude. On failure: red warning, skip claude.
+# Fires off a machine sync at most once per 10min (non-blocking — errors already
+# surface via an OS notification), then launches claude immediately.
 cc() {
   local marker="${HOME}/.cache/cc-last-sync"
   if [[ -z $(find "$marker" -mmin -10 2>/dev/null) ]]; then
-    # Mark up-front so a slow/failed sync doesn't re-run (and re-block) every launch.
+    # Mark up-front so a slow/failed sync doesn't re-run every launch.
     mkdir -p "${marker:h}" && touch "$marker"
-    local sync_out
-    if ! sync_out=$(timeout 8 ~/src/personal/AGENTS/sync-machines.sh 2>&1); then
-      print -P "%F{red}⚠️  sync-machines failed (continuing to claude)%f"
-      [[ -n $sync_out ]] && print -P "%F{red}$sync_out%f"
-    fi
+    (~/src/personal/AGENTS/sync-machines.sh &>/dev/null &)
   fi
   claude "$@"
 }
