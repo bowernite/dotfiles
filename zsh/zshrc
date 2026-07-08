@@ -1,0 +1,291 @@
+dotfiles_dir=$HOME/src/personal/dotfiles
+
+#####################################################################
+
+# fpath additions (before shell init so compinit picks them up)
+fpath+=~/.zfunc
+fpath=(~/.zsh $fpath)
+
+# Shell fundamentals: colors, history, completion, keybindings, terminal title
+source $dotfiles_dir/zsh/zshrc__shell
+
+source $dotfiles_dir/zsh/zshrc__git-base
+source $dotfiles_dir/zsh/zshrc__git
+source $dotfiles_dir/zsh/zshrc__aliases
+
+# Private stuff (keys, company-specific, etc.)
+source $dotfiles_dir/zsh/private/zshrc__private
+
+source $dotfiles_dir/zsh/zshrc__focus
+source $dotfiles_dir/zsh/zshrc__playground
+source $dotfiles_dir/zsh/zshrc__devenv
+source $dotfiles_dir/zsh/zshrc__cold-turkey
+
+#####################################################################
+# PATH shenanigans
+#####################################################################
+
+# User binaries (including kitty) and dotfiles scripts
+export PATH="$HOME/bin:$dotfiles_dir/bin:$PATH"
+
+# New M1 homebrew (Homebrew paths prioritized)
+PATH="/opt/homebrew/bin:$PATH"
+# Static brew shellenv (avoid forking brew Ruby process on every shell)
+export HOMEBREW_PREFIX="/opt/homebrew"
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+export HOMEBREW_REPOSITORY="/opt/homebrew"
+fpath[1,0]="/opt/homebrew/share/zsh/site-functions"
+PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+[ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}"
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
+
+# Python
+PATH="/opt/homebrew/opt/python@3.10/bin:$PATH"
+
+# pipx executables
+PATH="$HOME/.local/bin:$PATH"
+
+# MongoDB
+PATH="$HOME/mongodb/bin:$PATH"
+
+# Go executables
+PATH="$HOME/go/bin:$PATH"
+
+# Ruby and its gem executables
+PATH="/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
+PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Homebrew sbin
+PATH="/usr/local/sbin:$PATH"
+
+# GNU commands as defaults
+PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-indent/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-which/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gawk/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnutls/bin:$PATH"
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+
+export PATH
+
+#####################################################################
+# Shell prompt (robbyrussell-style, inlined)
+#####################################################################
+
+# Git prompt for the shell prompt line
+function git_prompt_info() {
+  local ref
+  ref=$(command git symbolic-ref --short HEAD 2>/dev/null) \
+    || ref=$(command git describe --tags --exact-match HEAD 2>/dev/null) \
+    || ref=$(command git rev-parse --short HEAD 2>/dev/null) \
+    || return 0
+  local dirty
+  if [[ -n $(command git status --porcelain 2>/dev/null | tail -n 1) ]]; then
+    dirty="%{$fg[blue]%}) %{$fg[yellow]%}%1{✗%}"
+  else
+    dirty="%{$fg[blue]%})"
+  fi
+  echo "%{$fg_bold[blue]%}git:(%{$fg[red]%}${ref:gs/%/%%}${dirty}%{$reset_color%} "
+}
+
+# Green arrow on success, red on failure + current dir + git info + newline
+PROMPT="%(?:%{$fg_bold[green]%}%1{➜%} :%{$fg_bold[red]%}%1{➜%} ) %{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT+=' $(git_prompt_info)'
+PROMPT+=$'\n'"  "
+
+# Add a blank line between prompts
+precmd() {
+  echo
+}
+
+#####################################################################
+# Git
+#####################################################################
+
+# Enable git auto-completion
+## Source: https://www.oliverspryn.com/blog/adding-git-completion-to-zsh
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+
+#####################################################################
+# FZF
+#####################################################################
+
+# fzf autocompletion — cached to avoid forking on every shell
+_fzf_cache="$HOME/.cache/fzf-init.zsh"
+_fzf_bin="$(whence -p fzf)"
+if [[ ! -r "$_fzf_cache" || "$_fzf_bin" -nt "$_fzf_cache" ]]; then
+  mkdir -p "${_fzf_cache:h}"
+  # Replicate what ~/.fzf.zsh does: add to PATH + source shell init
+  {
+    [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]] && echo 'PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"'
+    fzf --zsh
+  } > "$_fzf_cache"
+fi
+source "$_fzf_cache"
+unset _fzf_cache _fzf_bin
+
+FZF_EXCLUDE_GLOB="**/{node_modules,.git,.Trash,Library,Music,.node-gyp,.npm}"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude='$FZF_EXCLUDE_GLOB'"
+# This version only looks for files through git. But this can be annoying sometimes (when git doesn't know about files yet, for example). So going to try only leveraging the exclude glob above, and seeing if that's better. Also, `fd` respects gitignore by default. So the only thing piping `git ls-tree` is really providing here is ignoring untracked files, which... no
+# export FZF_DEFAULT_COMMAND="git ls-tree -r --name-only HEAD 2>/dev/null || fd --hidden --follow --exclude='$FZF_EXCLUDE_GLOB'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --exclude='$FZF_EXCLUDE_GLOB'"
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --exclude=$FZF_EXCLUDE_GLOB . $1
+}
+_fzf_compgen_path() {
+  fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+  # See notes above on rationale for not using git here
+  # If it's a git repo, only search for files tracked by git
+  # Otherwise, just use fd
+  # git ls-tree -r --name-only HEAD 2>/dev/null $1 || fd --type f --hidden --follow --exclude=$FZF_EXCLUDE_GLOB . $1
+}
+
+# Make CTRL-R history search use exact (substring) matching by default (less "broad" than fuzzy subsequence matching); you can still force fuzzy per-term by prefixing it with `'` inside fzf.
+export FZF_CTRL_R_OPTS='--exact'
+
+#####################################################################
+# Navigation
+#####################################################################
+
+# When typing a command that can't be executed, and the command is the name of the directory, cd into it. Also works with autocomplete
+# Source: http://zsh.sourceforge.net/Doc/Release/Options.html
+setopt auto_cd
+
+cdpath=($HOME/src $HOME/src/work $HOME/src/personal $HOME/playground $HOME/Dropbox)
+
+# Show named and cdpath directories in autocomplete suggestions
+# Source: https://superuser.com/questions/515633/my-zsh-autocompletion-for-cdpath-stopped-working
+zstyle ':completion:*:complete:(cd|pushd):*' tag-order \
+  'local-directories named-directories path-directories'
+
+#####################################################################
+# Graphite
+#####################################################################
+
+# (autogenerated by Graphite)
+#compdef gt
+###-begin-gt-completions-###
+#
+# yargs command completion script
+#
+# Installation: /opt/homebrew/bin/gt completion >> ~/.zshrc
+#    or /opt/homebrew/bin/gt completion >> ~/.zprofile on OSX.
+#
+_gt_yargs_completions() {
+  local reply
+  local si=$IFS
+  IFS=$'\n' reply=($(COMP_CWORD="$((CURRENT - 1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" /opt/homebrew/bin/gt --get-yargs-completions "${words[@]}"))
+  IFS=$si
+  _describe 'values' reply
+}
+compdef _gt_yargs_completions gt
+###-end-gt-completions-###
+
+#####################################################################
+# Python sheeeit
+#####################################################################
+
+# Enable autocompletions for poetry
+
+# Set up for python, so that `python` can be invoked (i.e. instead of having to use `python3`). e.g. required for an Alfred workflow I use
+## See: https://docs.brew.sh/Homebrew-and-Python
+# PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+
+# #####################################################################
+# # Miscellaneous setup
+# #####################################################################
+
+# Load sandboxd to lazy load some things
+# Source: https://github.com/benvan/sandboxd
+# See sandboxrc for details
+# Turning this off for now -- current position has a node requirement in package.json that prevents a lot of things from running if the correct node version isn't available. So for now, going to roll without sandboxd
+# source $dotfiles_dir/bin/sandboxd
+
+# export NVM_DIR="$HOME/.nvm"
+# Normally, nvm wants us to run these lines to load nvm on shell startup. But instead, we're using sandboxd to lazy load nvm logic to keep shell startup snappy af
+# [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"                                       # This loads nvm
+# [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+# Skip all annoying commit hooks
+# WIP, not really tested yet
+export HUSKY_SKIP_HOOKS=1
+if [[ -z $has_aliased_npx ]]; then
+  npx() {
+    # shfmt doesn't like this ¯\_(ツ)_/¯
+    # local -i i=$argv[(i)^-*]
+    # $argv[i] is the first non-option argument (or empty if there is none).
+    local is_bad=0
+    case $argv[i] in
+    commitlint | lint-staged) is_bad=1 ;;
+    esac
+    if [[ $is_bad == 0 ]]; then
+      command npx "$@"
+    fi
+  }
+  export has_aliased_npx=1
+fi
+
+# Symlink local executables into a path-accessible place
+if [[ ! -e "/usr/local/bin/gcim" ]] && [[ -f "$dotfiles_dir/bin/gcim" ]]; then
+  sudo ln -sf "$dotfiles_dir/bin/gcim" "/usr/local/bin/gcim"
+fi
+
+# Don't know why this isn't available to set in gitconfig globally, but 🤷‍♂️
+export GIT_MERGE_AUTOEDIT=no
+
+# Enable zsh-syntax-highlighting.
+# NOTE: Per this package's documentation, this needs to be at the end of this file
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+*:"$PNPM_HOME":*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="$PNPM_HOME:$PATH"
+
+# Disable eslint debug output when running lint commands
+alias lint="DEBUG= npx eslint"
+
+export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+# fnm (Fast Node Manager) — cached to avoid forking on every shell
+_fnm_cache="$HOME/.cache/fnm-env.zsh"
+_fnm_bin="$(whence -p fnm)"
+if [[ ! -r "$_fnm_cache" || "$_fnm_bin" -nt "$_fnm_cache" ]]; then
+  mkdir -p "${_fnm_cache:h}"
+  fnm env --use-on-cd --version-file-strategy=recursive --shell zsh > "$_fnm_cache"
+fi
+source "$_fnm_cache"
+unset _fnm_cache _fnm_bin
+
+export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
+
+# Better memory usage for TypeScript..? See personal note on "why useFsEvents"
+export TSC_WATCHFILE=useFsEvents
+export TSC_WATCHDIRECTORY=useFsEvents
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Claude Code: load CLAUDE.md + rules from additionalDirectories
+export CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1
+# bun completions
+[ -s "/Users/brett.abramczyk/.bun/_bun" ] && source "/Users/brett.abramczyk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+function sn() {
+  ~/src/personal/AGENTS/sync-machines.sh $@
+}
