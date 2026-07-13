@@ -289,3 +289,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 function sn() {
   ~/src/personal/AGENTS/sync-machines.sh $@
 }
+# Standalone gcloud SDK (homebrew python broken pyexpat as of 2026-07)
+export PATH="$HOME/google-cloud-sdk-install/google-cloud-sdk/bin:$PATH"
+export CLOUDSDK_PYTHON=/opt/homebrew/opt/python@3.14/libexec/bin/python
