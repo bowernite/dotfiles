@@ -1,0 +1,44 @@
+# Startup: open tabs replicating kitty's startup.conf
+# initial-command = /Users/brett/.config/ghostty/startup.sh
+
+# Theme - automatically switches with macOS dark/light mode
+theme = light:Modus Operandi,dark:Modus Vivendi Tinted
+
+# Font
+font-size = 23
+
+# Scrollback
+scrollback-limit = 10000000
+
+# Copy on select
+copy-on-select = clipboard
+
+# Window padding (kitty: window_padding_width 8)
+window-padding-x = 8
+window-padding-y = 8
+
+# No confirmation on close (kitty: confirm_os_window_close 0)
+confirm-close-surface = false
+
+# New tabs open in home directory instead of inheriting current tab's directory
+window-inherit-working-directory = false
+working-directory = home
+
+# macOS option as alt (kitty: macos_option_as_alt yes)
+macos-option-as-alt = true
+
+# Keybindings
+# Navigate splits (kitty: cmd+shift+h/l neighboring_window)
+keybind = cmd+shift+h=goto_split:left
+keybind = cmd+shift+l=goto_split:right
+
+# New vertical split (kitty: cmd+; launch --location=vsplit)
+keybind = cmd+;=new_split:right
+
+# Scrollback search (kitty: cmd+f show_scrollback)
+keybind = cmd+f=write_scrollback_file:open
+
+# Close surface (kitty: cmd+w close_window)
+keybind = cmd+w=close_surface
+keybind = page_up=scroll_page_up
+keybind = page_down=scroll_page_down

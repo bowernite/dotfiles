@@ -110,6 +110,23 @@ echo "Creating goku.log symlink"
 ln -s "$dotfiles_dir/karabiner/goku.log" ~/Library/Logs/goku.log
 
 ##############################################################
+# cmux + Ghostty symlinking
+##############################################################
+bootstrap_log "Symlinking cmux and Ghostty config"
+
+[[ -d "$HOME/.config" ]] || mkdir "$HOME/.config"
+mkdir -p "$HOME/.config/cmux"
+
+# cmux's primary config file (~/.config/cmux/cmux.json). settings.json is a
+# legacy fallback and isn't tracked. safe_symlink's immutable flag keeps cmux's
+# atomic "safe writes" from replacing the symlink with a plain file.
+install_dotfile "cmux/cmux.json" ".config/cmux/cmux.json"
+
+# Ghostty (cmux reads it for terminal appearance/keybinds); whole dir so custom
+# themes/ travel too.
+install_dotfile "ghostty" ".config/ghostty"
+
+##############################################################
 # Software installs (homebrew, npm/yarn, etc.)
 ##############################################################
 
