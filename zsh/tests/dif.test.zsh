@@ -222,6 +222,21 @@ test_pushed_feature_branch() {
 }
 
 # ---------------------------------------------------------------------------
+test_descendant_branch_not_parent() {
+  echo "test: a branch stacked on top of mine is not treated as my parent"
+  setup_clone_with_remote_feature t10
+  g checkout -qb my-branch develop
+  commit_file mine.txt
+  g checkout -qb stacked-on-mine
+  commit_file theirs.txt
+  g checkout -q my-branch
+  local out=$(dif --exclude-uncommitted --stat 2>&1)
+  assert_contains "$out" "mine.txt" "diff includes my file (not an empty compare against the descendant)"
+  assert_not_contains "$out" "stacked-on-mine" "descendant branch is not the compare target"
+  assert_contains "$out" "develop" "reports develop as compare target"
+}
+
+# ---------------------------------------------------------------------------
 test_remote_only_parent
 test_branch_off_local_develop
 test_stacked_branches
@@ -232,6 +247,7 @@ test_unrelated_histories
 test_uncommitted_and_lockfile
 test_dif_on_develop_itself
 test_pushed_feature_branch
+test_descendant_branch_not_parent
 
 echo "\n$PASS passed, $FAIL failed"
 ((FAIL == 0))

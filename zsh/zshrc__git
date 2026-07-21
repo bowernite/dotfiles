@@ -368,14 +368,26 @@ git_parent_branch() {
     own_remote="origin/$current_branch"
   fi
 
+  # Refs strictly ahead of HEAD are descendants (e.g. a branch someone
+  # stacked on top of ours) — a descendant is not a parent, and comparing
+  # to one yields an empty diff. Refs pointing exactly AT HEAD stay eligible
+  # (a just-created branch with no commits yet legitimately diffs empty).
+  local head_sha=$(git rev-parse HEAD 2>/dev/null)
+  local descendants=$(git for-each-ref --format='%(refname:short)|%(objectname)' \
+    --contains=HEAD refs/heads refs/remotes 2>/dev/null |
+    awk -F'|' -v h="$head_sha" '$2 != h {print $1}')
+
   # Other refs at/containing a commit — excluding ourselves, our own
-  # caught-up remote counterpart, and remote HEAD pseudo-refs (origin/HEAD
-  # short-names to just "origin", so filter on the full refname)
+  # caught-up remote counterpart, descendants, and remote HEAD pseudo-refs
+  # (origin/HEAD short-names to just "origin", so filter on the full refname)
   __dif_other_refs() {
     git for-each-ref --format='%(refname)|%(refname:short)' "$1=$2" \
       refs/heads refs/remotes 2>/dev/null |
       awk -F'|' '$1 !~ /^refs\/remotes\/[^\/]+\/HEAD$/ {print $2}' |
-      grep -v -x -e "$current_branch" -e "$own_remote"
+      grep -v -x -e "$current_branch" -e "$own_remote" |
+      awk -v skip="$descendants" '
+        BEGIN { n = split(skip, a, "\n"); for (i = 1; i <= n; i++) if (a[i] != "") s[a[i]] = 1 }
+        !($0 in s)'
   }
 
   local commit candidates exact pick set
