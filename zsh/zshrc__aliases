@@ -377,5 +377,20 @@ cc() {
     mkdir -p "${marker:h}" && touch "$marker"
     (~/src/personal/AGENTS/sync-machines.sh &>/dev/null &)
   fi
+
+  # Claude Code updates ship an unpatched binary; re-apply the @-menu ranking
+  # patch (AGENTS scripts/patch-claude-file-suggestions.sh) before launch so
+  # this session gets it. Version-stamp check is ~0ms; the patch itself runs
+  # only once per update (~seconds). Stamped even on failure so a pattern
+  # mismatch warns once instead of delaying every launch.
+  local claude_bin="$(readlink ~/.local/bin/claude 2>/dev/null)"
+  local patch_stamp="${HOME}/.cache/cc-claude-patched"
+  if [[ -n "$claude_bin" && "$(cat "$patch_stamp" 2>/dev/null)" != "$claude_bin" ]]; then
+    if ! ~/src/personal/AGENTS/scripts/patch-claude-file-suggestions.sh >/dev/null 2>&1; then
+      echo "⚠️  claude @-menu patch failed (pattern changed?) — see AGENTS scripts/patch-claude-file-suggestions.sh"
+    fi
+    print -r -- "$claude_bin" >"$patch_stamp"
+  fi
+
   claude "$@"
 }
