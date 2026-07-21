@@ -338,57 +338,71 @@ git_has_changes() {
 # 3. Default to the dev branch if all else fails
 ###########################################################
 git_parent_branch() {
-  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local current_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+  if [[ -z "$current_branch" ]]; then
+    echo "⚠️  git_parent_branch: not in a git repository" >&2
+    return 1
+  fi
 
-  # First, try to get parent branch from Graphite if it's tracked
-  if command -v gt >/dev/null 2>&1; then
-    local graphite_parent=$(gt parent 2>/dev/null)
-    if [[ -n "$graphite_parent" ]]; then
+  # Graphite knows the parent exactly — but only ask in a graphite-tracked repo
+  # (in an untracked repo `gt parent` tries to *initialize* graphite and prints
+  # a welcome banner, which would get captured as the "branch")
+  if graphite_is_installed && is_graphite_repo; then
+    local graphite_parent=$(gt parent 2>/dev/null | head -n1)
+    if [[ -n "$graphite_parent" ]] && git rev-parse --verify --quiet "$graphite_parent^{commit}" >/dev/null; then
       echo "$graphite_parent"
       return
     fi
   fi
 
-  local current_branch_start=$(git rev-list --max-parents=0 "$current_branch" 2>/dev/null | head -n1)
-
-  # If branch has its own root commit, it's not branched from anywhere in this repo
-  if [[ -n "$current_branch_start" && "$current_branch_start" != $(git rev-list --max-parents=0 HEAD 2>/dev/null) ]]; then
-    git_dev_branch
-    return
+  # Walk our own (first-parent) history, newest first. The first commit that
+  # some *other* ref contains is where we forked, and a ref containing it is
+  # the parent. Unlike "closest local branch" heuristics, this considers
+  # remote branches (a branch cut from origin/X often has no local parent)
+  # and can't be fooled by stale local branches pointing at old ancestors.
+  # Our own remote counterpart is only a useless compare target when it
+  # already has everything we have (empty diff). If we're ahead of it
+  # (e.g. unpushed commits on develop), it's exactly the right target.
+  local own_remote="__none__"
+  if git merge-base --is-ancestor HEAD "origin/$current_branch" 2>/dev/null; then
+    own_remote="origin/$current_branch"
   fi
 
-  # Get local branches excluding the current one
-  local branches=$(git for-each-ref --format='%(refname:short)' refs/heads/ | grep -v "^$current_branch$")
+  # Other refs at/containing a commit — excluding ourselves, our own
+  # caught-up remote counterpart, and remote HEAD pseudo-refs (origin/HEAD
+  # short-names to just "origin", so filter on the full refname)
+  __dif_other_refs() {
+    git for-each-ref --format='%(refname)|%(refname:short)' "$1=$2" \
+      refs/heads refs/remotes 2>/dev/null |
+      awk -F'|' '$1 !~ /^refs\/remotes\/[^\/]+\/HEAD$/ {print $2}' |
+      grep -v -x -e "$current_branch" -e "$own_remote"
+  }
 
-  # Find the best candidate by looking for most recent common ancestor
-  local best_branch=""
-  local best_commit=""
-  local best_count=0
+  local commit candidates exact pick set
+  for commit in $(git rev-list --first-parent -n 200 HEAD 2>/dev/null); do
+    candidates=$(__dif_other_refs --contains "$commit")
+    [[ -z "$candidates" ]] && continue
 
-  for branch in $branches; do
-    # Find merge-base (common ancestor) and count commits since then
-    local base=$(git merge-base "$current_branch" "$branch" 2>/dev/null)
-    if [[ -z "$base" ]]; then
-      continue
-    fi
+    # Prefer a ref sitting exactly at the fork point (the classic
+    # just-branched-from-here parent), then local over remote
+    exact=$(__dif_other_refs --points-at "$commit")
 
-    # Count commits from base to branch (fewer commits = closer relationship)
-    local count=$(git rev-list --count "$base..$branch" 2>/dev/null)
-
-    # Use the branch that has the closest relationship (fewest commits since diverging)
-    if [[ -z "$best_branch" || "$count" -lt "$best_count" ]]; then
-      best_branch="$branch"
-      best_commit="$base"
-      best_count="$count"
-    fi
+    for set in "$exact" "$candidates"; do
+      [[ -z "$set" ]] && continue
+      pick=$(echo "$set" | while read -r ref; do
+        if git show-ref --verify --quiet "refs/heads/$ref"; then
+          echo "$ref"
+          break
+        fi
+      done)
+      [[ -z "$pick" ]] && pick=$(echo "$set" | head -n1)
+      echo "$pick"
+      return
+    done
   done
 
-  if [[ -n "$best_branch" ]]; then
-    echo "$best_branch"
-    return
-  fi
-
-  # If everything fails, default to the development branch
+  # Nothing in our recent history is contained by any other ref
+  echo "⚠️  git_parent_branch: couldn't determine parent branch; falling back to $(git_dev_branch)" >&2
   git_dev_branch
 }
 
@@ -451,6 +465,11 @@ dif() {
     compare_branch=$(git_parent_branch)
   fi
 
+  if [[ -z "$compare_branch" ]]; then
+    echo "❌ dif: couldn't determine a branch to compare against (pass one explicitly, e.g. \`dif origin/develop\`)" >&2
+    return 1
+  fi
+
   local merge_base=$(git merge-base "$current_branch" "$compare_branch" 2>/dev/null)
 
   # A local branch (e.g. master) can lag its remote — common in worktrees branched
@@ -464,6 +483,11 @@ dif() {
       merge_base="$remote_base"
       compare_branch="origin/$compare_branch"
     fi
+  fi
+
+  if [[ -z "$merge_base" ]]; then
+    echo "❌ dif: no merge base between \`$current_branch\` and \`$compare_branch\` (unrelated histories or bad ref?)" >&2
+    return 1
   fi
 
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
