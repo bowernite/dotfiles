@@ -1,46 +1,50 @@
 {
-  "$schema" : "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
-  "schemaVersion" : 1,
-  "shortcuts" : {
-    "bindings" : {
-      "focusLeft" : {
-        "first" : {
-          "command" : true,
-          "control" : false,
-          "key" : "h",
-          "keyCode" : 4,
-          "option" : false,
-          "shift" : true
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+  "shortcuts": {
+    "bindings": {
+      "focusLeft": {
+        "first": {
+          "command": true,
+          "control": false,
+          "key": "h",
+          "keyCode": 4,
+          "option": false,
+          "shift": true
         }
       },
-      "focusRight" : {
-        "first" : {
-          "command" : true,
-          "control" : false,
-          "key" : "l",
-          "keyCode" : 37,
-          "option" : false,
-          "shift" : true
+      "focusRight": {
+        "first": {
+          "command": true,
+          "control": false,
+          "key": "l",
+          "keyCode": 37,
+          "option": false,
+          "shift": true
         }
       },
-      "openBrowser" : {
-        "first" : {
-          "command" : false,
-          "control" : false,
-          "key" : "",
-          "option" : false,
-          "shift" : false
+      "openBrowser": {
+        "first": {
+          "command": false,
+          "control": false,
+          "key": "",
+          "option": false,
+          "shift": false
         }
       },
-      "triggerFlash" : {
-        "first" : {
-          "command" : false,
-          "control" : false,
-          "key" : "",
-          "option" : false,
-          "shift" : false
+      "triggerFlash": {
+        "first": {
+          "command": false,
+          "control": false,
+          "key": "",
+          "option": false,
+          "shift": false
         }
       }
     }
+  },
+  "automation": {
+    "socketControlMode": "password",
+    "socketPassword": "3cbde7299f63727fcd18b65761a424e0"
   }
 }
