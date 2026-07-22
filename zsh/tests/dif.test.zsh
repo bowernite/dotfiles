@@ -71,7 +71,6 @@ setup_clone_with_remote_feature() {
   cd "$TMP_ROOT/$name"
 }
 
-# ---------------------------------------------------------------------------
 test_remote_only_parent() {
   echo "test: branch off a remote-only feature branch compares against it (the PHY-1146 bug)"
   setup_clone_with_remote_feature t1
@@ -83,7 +82,6 @@ test_remote_only_parent() {
   assert_contains "$out" "feature/x" "reports the feature branch as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_branch_off_local_develop() {
   echo "test: branch off local develop still compares against develop"
   setup_clone_with_remote_feature t2
@@ -95,7 +93,6 @@ test_branch_off_local_develop() {
   assert_contains "$out" "develop" "reports develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_stacked_branches() {
   echo "test: stacked branch compares against its immediate parent, not develop"
   setup_clone_with_remote_feature t3
@@ -109,7 +106,6 @@ test_stacked_branches() {
   assert_contains "$out" "branch-a" "reports branch-a as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_stale_local_develop() {
   echo "test: stale local develop doesn't hijack; compares against moved origin/develop"
   setup_clone_with_remote_feature t4
@@ -124,7 +120,6 @@ test_stale_local_develop() {
   assert_contains "$out" "origin/develop" "reports origin/develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_explicit_branch() {
   echo "test: explicitly passed branch wins over parent detection"
   setup_clone_with_remote_feature t5
@@ -139,7 +134,6 @@ test_explicit_branch() {
   assert_contains "$out" "develop" "reports develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_not_a_git_repo() {
   echo "test: outside a git repo fails with a meaningful error"
   mkdir -p "$TMP_ROOT/not-a-repo"
@@ -178,7 +172,6 @@ test_unrelated_histories() {
   fi
 }
 
-# ---------------------------------------------------------------------------
 test_uncommitted_and_lockfile() {
   echo "test: uncommitted changes included by default; package-lock.json excluded"
   setup_clone_with_remote_feature t7
@@ -197,7 +190,6 @@ test_uncommitted_and_lockfile() {
   assert_not_contains "$out_excl" "uncommitted.txt" "--exclude-uncommitted hides staged file"
 }
 
-# ---------------------------------------------------------------------------
 test_dif_on_develop_itself() {
   echo "test: dif on develop itself shows only unpushed commits (vs origin/develop)"
   setup_clone_with_remote_feature t8
@@ -209,7 +201,6 @@ test_dif_on_develop_itself() {
   assert_contains "$out" "origin/develop" "reports origin/develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_pushed_feature_branch() {
   echo "test: pushed feature branch still compares against its parent (not its own remote copy)"
   setup_clone_with_remote_feature t9
@@ -221,7 +212,6 @@ test_pushed_feature_branch() {
   assert_contains "$out" "develop" "reports develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_descendant_branch_not_parent() {
   echo "test: a branch stacked on top of mine is not treated as my parent"
   setup_clone_with_remote_feature t10
@@ -236,7 +226,6 @@ test_descendant_branch_not_parent() {
   assert_contains "$out" "develop" "reports develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_develop_behind_origin() {
   echo "test: on develop behind origin/develop, compares to origin/develop (empty diff, no hijack)"
   setup_clone_with_remote_feature t11
@@ -285,7 +274,6 @@ test_partially_pushed_branch() {
   assert_contains "$out" "develop" "reports develop as compare target"
 }
 
-# ---------------------------------------------------------------------------
 test_shared_branch_pull_rebase() {
   echo "test: shared branch synced via pull --rebase still compares against develop"
   setup_clone_with_remote_feature t14
@@ -329,6 +317,51 @@ test_rebased_onto_new_parent() {
   assert_contains "$out" "feature/x" "reports the new parent as compare target"
 }
 
+test_history_surgery_within_branch() {
+  echo "test: rebase onto the branch's own former commit is not re-parenting"
+  setup_clone_with_remote_feature t16
+  g checkout -qb my-branch origin/develop
+  commit_file a.txt
+  local a_sha=$(g rev-parse HEAD)
+  g reset -q --hard HEAD~1
+  commit_file c.txt
+  # surgery: replay c onto the thrown-away commit a (a is our own former position)
+  g rebase -q --onto "$a_sha" origin/develop my-branch 2>/dev/null
+  # colleague forks mid-line, from the surgery commit, and pushes
+  g push -q origin my-branch 2>/dev/null
+  (cd "$TMP_ROOT/t16-origin" &&
+    g checkout -q my-branch 2>/dev/null &&
+    g checkout -qb colleague-fork "$a_sha" &&
+    commit_file colleague.txt &&
+    g checkout -q develop)
+  g fetch -q origin
+  # and we keep working past the fork point
+  commit_file d.txt
+  local out=$(dif --exclude-uncommitted --stat 2>&1)
+  assert_contains "$out" "a.txt" "diff includes all the branch's work"
+  assert_contains "$out" "c.txt" "diff includes replayed work"
+  assert_not_contains "$out" "colleague-fork" "colleague's fork is not the compare target"
+  assert_contains "$out" "develop" "reports develop as compare target"
+}
+
+test_trunk_preferred_over_sibling_at_shared_fork() {
+  echo "test: at a shared fork point, develop beats an unrelated sibling branch"
+  setup_clone_with_remote_feature t17
+  # a sibling branch forked from the same develop commit (alphabetically first)
+  g checkout -qb aaa-other origin/develop
+  commit_file other.txt
+  g checkout -qb my-branch origin/develop
+  commit_file mine.txt
+  # develop moves on so nothing points exactly at the fork anymore
+  (cd "$TMP_ROOT/t17-origin" && commit_file upstream.txt)
+  g fetch -q origin
+  g branch -qf develop origin/develop
+  local out=$(dif --exclude-uncommitted --stat 2>&1)
+  assert_contains "$out" "mine.txt" "diff includes my file"
+  assert_not_contains "$out" "aaa-other" "unrelated sibling is not the compare target"
+  assert_contains "$out" "develop" "reports develop as compare target"
+}
+
 # ---------------------------------------------------------------------------
 test_remote_only_parent
 test_branch_off_local_develop
@@ -346,6 +379,8 @@ test_sibling_forked_from_my_branch
 test_partially_pushed_branch
 test_shared_branch_pull_rebase
 test_rebased_onto_new_parent
+test_history_surgery_within_branch
+test_trunk_preferred_over_sibling_at_shared_fork
 
 echo "\n$PASS passed, $FAIL failed"
 ((FAIL == 0))

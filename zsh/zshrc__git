@@ -376,24 +376,58 @@ git_parent_branch() {
   local own_remote="origin/$current_branch"
 
   # The branch's "baseline": where its base was last established — creation,
-  # a reset, or what a rebase moved it onto. Commits after the baseline are
-  # this branch's own work, so a ref forking there is a child/sibling built
-  # on top of us, not a parent (topology alone can't tell the direction).
-  local baseline="" reflog_line reflog_sha reflog_msg
-  while IFS= read -r reflog_line; do
-    reflog_sha="${reflog_line%% *}"
-    reflog_msg="${reflog_line#* }"
+  # a reset to somewhere foreign, or a rebase onto a new parent. Commits after
+  # the baseline are this branch's own work, so a ref forking there is a
+  # child/sibling built on top of us, not a parent (topology alone can't tell
+  # the direction). Not base-establishing: pull --rebase (syncs with our own
+  # upstream) and rebases/resets targeting our own ancestors (squash/cleanup).
+  local baseline="" reflog_sha reflog_msg reflog_prev reflog_onto
+  local -a reflog_lines
+  reflog_lines=("${(@f)$(git reflog show --format='%H %gs' "$current_branch" 2>/dev/null)}")
+
+  # A rebase/reset is only re-parenting if its target is foreign — i.e.
+  # neither an ancestor of where the branch was, nor anywhere the branch
+  # itself has ever been (history surgery within the branch)
+  __dif_target_is_internal() {
+    local target=$1 prev=$2 older_start=$3 j
+    if [[ -n "$prev" ]] && git merge-base --is-ancestor "$target" "$prev" 2>/dev/null; then
+      return 0
+    fi
+    for ((j = older_start; j <= ${#reflog_lines[@]}; j++)); do
+      [[ "${reflog_lines[j]%% *}" == "$target" ]] && return 0
+    done
+    return 1
+  }
+
+  local ri
+  for ((ri = 1; ri <= ${#reflog_lines[@]}; ri++)); do
+    reflog_sha="${reflog_lines[ri]%% *}"
+    reflog_msg="${reflog_lines[ri]#* }"
+    reflog_prev="${reflog_lines[ri + 1]%% *}"
     case "$reflog_msg" in
-    "branch: Created from"* | "reset: moving to"*)
+    *pull*) continue ;;
+    "branch: Created from"*)
       baseline="$reflog_sha"
       break
       ;;
-    *"rebase (finish)"*)
-      baseline=$(echo "$reflog_msg" | grep -oE 'onto [0-9a-f]{40}' | head -n1 | awk '{print $2}')
-      [[ -n "$baseline" ]] && break
+    "reset: moving to"*)
+      if __dif_target_is_internal "$reflog_sha" "$reflog_prev" $((ri + 1)); then
+        continue
+      fi
+      baseline="$reflog_sha"
+      break
+      ;;
+    *rebase*)
+      reflog_onto=$(echo "$reflog_msg" | grep -oE 'onto [0-9a-f]{40}' | head -n1 | cut -d' ' -f2)
+      [[ -z "$reflog_onto" ]] && continue
+      if __dif_target_is_internal "$reflog_onto" "$reflog_prev" $((ri + 1)); then
+        continue
+      fi
+      baseline="$reflog_onto"
+      break
       ;;
     esac
-  done < <(git reflog show --format='%H %gs' "$current_branch" 2>/dev/null)
+  done
   if [[ -n "$baseline" ]] && ! git rev-parse --verify --quiet "$baseline^{commit}" >/dev/null; then
     baseline=""
   fi
@@ -420,7 +454,29 @@ git_parent_branch() {
         !($0 in s)'
   }
 
-  local commit candidates exact pick set
+  # Within a candidate set: trunk-class refs (dev branches, then feature
+  # branches) beat arbitrary sibling branches that happen to share the fork
+  # point; then local over remote
+  __dif_pick_ref() {
+    local -a refs
+    refs=("${(@f)$(cat)}")
+    local r
+    for r in "${refs[@]}"; do
+      case "$r" in develop | development | dev | main | master) echo "$r" && return ;; esac
+    done
+    for r in "${refs[@]}"; do
+      case "$r" in origin/develop | origin/development | origin/dev | origin/main | origin/master) echo "$r" && return ;; esac
+    done
+    for r in "${refs[@]}"; do
+      case "$r" in feature/* | */feature/*) echo "$r" && return ;; esac
+    done
+    for r in "${refs[@]}"; do
+      git show-ref --verify --quiet "refs/heads/$r" && echo "$r" && return
+    done
+    echo "${refs[1]}"
+  }
+
+  local commit candidates exact ref_group
   for commit in $(git rev-list --first-parent -n 200 HEAD 2>/dev/null); do
     # Skip our own work (commits after the baseline) — refs forking there
     # are built on us, not the other way around
@@ -435,16 +491,9 @@ git_parent_branch() {
     # just-branched-from-here parent), then local over remote
     exact=$(__dif_other_refs --points-at "$commit")
 
-    for set in "$exact" "$candidates"; do
-      [[ -z "$set" ]] && continue
-      pick=$(echo "$set" | while read -r ref; do
-        if git show-ref --verify --quiet "refs/heads/$ref"; then
-          echo "$ref"
-          break
-        fi
-      done)
-      [[ -z "$pick" ]] && pick=$(echo "$set" | head -n1)
-      echo "$pick"
+    for ref_group in "$exact" "$candidates"; do
+      [[ -z "$ref_group" ]] && continue
+      echo "$ref_group" | __dif_pick_ref
       return
     done
   done
@@ -455,7 +504,7 @@ git_parent_branch() {
 }
 
 # "git diff": Diffs the current branch against its parent branch, specified branch, dev branch, or origin dev
-# Usage: diff [--dev] [--origin-dev] [--exclude-uncommitted] [compare_branch] [git_diff_args...]
+# Usage: diff [--dev] [--origin/dev] [--include-uncommitted] [--exclude-uncommitted] [compare_branch] [git_diff_args...]
 #   - If no compare_branch is provided, it automatically finds the parent branch
 #   - If --dev is provided, it compares against the dev branch
 #   - If --origin-dev is provided, it compares against the origin dev branch
@@ -466,7 +515,6 @@ dif() {
   local current_branch=$(git rev-parse --abbrev-ref HEAD)
   local compare_branch
   local other_args=()
-  local has_branch=false
   local include_uncommitted=true
 
   # Process options first
@@ -495,9 +543,8 @@ dif() {
       ;;
     *)
       # This is likely the compare branch
-      if [[ -z "$compare_branch" && "$has_branch" == "false" ]]; then
+      if [[ -z "$compare_branch" ]]; then
         compare_branch="$1"
-        has_branch=true
         shift
       else
         # Any other non-option arguments
