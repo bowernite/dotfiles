@@ -360,12 +360,42 @@ git_parent_branch() {
   # the parent. Unlike "closest local branch" heuristics, this considers
   # remote branches (a branch cut from origin/X often has no local parent)
   # and can't be fooled by stale local branches pointing at old ancestors.
-  # Our own remote counterpart is only a useless compare target when it
-  # already has everything we have (empty diff). If we're ahead of it
-  # (e.g. unpushed commits on develop), it's exactly the right target.
-  local own_remote="__none__"
-  if git merge-base --is-ancestor HEAD "origin/$current_branch" 2>/dev/null; then
-    own_remote="origin/$current_branch"
+  # Dev/main branches don't fork from anything local — their parent is
+  # simply their remote counterpart
+  case "$current_branch" in
+  develop | development | dev | main | master)
+    if git rev-parse --verify --quiet "origin/$current_branch^{commit}" >/dev/null; then
+      echo "origin/$current_branch"
+      return
+    fi
+    ;;
+  esac
+
+  # Our own remote counterpart is never our parent (comparing to it would
+  # show only unpushed commits, or nothing)
+  local own_remote="origin/$current_branch"
+
+  # The branch's "baseline": where its base was last established — creation,
+  # a reset, or what a rebase moved it onto. Commits after the baseline are
+  # this branch's own work, so a ref forking there is a child/sibling built
+  # on top of us, not a parent (topology alone can't tell the direction).
+  local baseline="" reflog_line reflog_sha reflog_msg
+  while IFS= read -r reflog_line; do
+    reflog_sha="${reflog_line%% *}"
+    reflog_msg="${reflog_line#* }"
+    case "$reflog_msg" in
+    "branch: Created from"* | "reset: moving to"*)
+      baseline="$reflog_sha"
+      break
+      ;;
+    *"rebase (finish)"*)
+      baseline=$(echo "$reflog_msg" | grep -oE 'onto [0-9a-f]{40}' | head -n1 | awk '{print $2}')
+      [[ -n "$baseline" ]] && break
+      ;;
+    esac
+  done < <(git reflog show --format='%H %gs' "$current_branch" 2>/dev/null)
+  if [[ -n "$baseline" ]] && ! git rev-parse --verify --quiet "$baseline^{commit}" >/dev/null; then
+    baseline=""
   fi
 
   # Refs strictly ahead of HEAD are descendants (e.g. a branch someone
@@ -392,6 +422,12 @@ git_parent_branch() {
 
   local commit candidates exact pick set
   for commit in $(git rev-list --first-parent -n 200 HEAD 2>/dev/null); do
+    # Skip our own work (commits after the baseline) — refs forking there
+    # are built on us, not the other way around
+    if [[ -n "$baseline" ]] && ! git merge-base --is-ancestor "$commit" "$baseline" 2>/dev/null; then
+      continue
+    fi
+
     candidates=$(__dif_other_refs --contains "$commit")
     [[ -z "$candidates" ]] && continue
 
