@@ -588,10 +588,15 @@ dif() {
   echo "🌿 Current branch: $current_branch" && echo "🔀 Comparing against: $compare_branch" && echo "🔗 Merge base: $merge_base"
 
   if [[ "$include_uncommitted" == "true" ]]; then
-    # Committed branch changes (merge base → HEAD), then staged, then unstaged
-    git diff "${other_args[@]}" "$merge_base" HEAD ":(exclude)package-lock.json"
-    git diff "${other_args[@]}" --cached ":(exclude)package-lock.json"
-    git diff "${other_args[@]}" ":(exclude)package-lock.json"
+    # Committed branch changes (merge base → HEAD), then staged, then unstaged.
+    # Emit each as a raw (un-paged) diff and feed the combined stream to a single
+    # pager so it's one scroll buffer instead of one pager per section. Only page
+    # when stdout is a terminal (keeps output plain when captured/piped).
+    {
+      git --no-pager diff "${other_args[@]}" "$merge_base" HEAD ":(exclude)package-lock.json"
+      git --no-pager diff "${other_args[@]}" --cached ":(exclude)package-lock.json"
+      git --no-pager diff "${other_args[@]}" ":(exclude)package-lock.json"
+    } | if [[ -t 1 ]]; then eval "${$(git var GIT_PAGER):-cat}"; else cat; fi
   else
     git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
   fi
