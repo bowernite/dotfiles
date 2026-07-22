@@ -45,6 +45,6 @@
   },
   "automation": {
     "socketControlMode": "password",
-    "socketPassword": "3cbde7299f63727fcd18b65761a424e0"
+    "socketPassword": "REPLACE-ME-generate-a-long-random-string"
   }
 }
