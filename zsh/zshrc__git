@@ -596,7 +596,7 @@ dif() {
       git --no-pager diff "${other_args[@]}" "$merge_base" HEAD ":(exclude)package-lock.json"
       git --no-pager diff "${other_args[@]}" --cached ":(exclude)package-lock.json"
       git --no-pager diff "${other_args[@]}" ":(exclude)package-lock.json"
-    } | if [[ -t 1 ]]; then eval "${$(git var GIT_PAGER):-cat}"; else cat; fi
+    } | if [[ -t 1 ]]; then eval "\\${$(git var GIT_PAGER):-cat}"; else cat; fi
   else
     git diff "${other_args[@]}" "$merge_base" "$current_branch" ":(exclude)package-lock.json"
   fi
