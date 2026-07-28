@@ -43,8 +43,10 @@
       }
     }
   },
+  // "cmuxOnly" needs no socketPassword, which keeps this file free of secrets so
+  // it can live in git. Switching to "password" mode means adding a secret here;
+  // do that only via a machine-local override, never committed.
   "automation": {
-    "socketControlMode": "password",
-    "socketPassword": "REPLACE-ME-generate-a-long-random-string"
+    "socketControlMode": "cmuxOnly"
   }
 }
