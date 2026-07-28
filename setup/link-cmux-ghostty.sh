@@ -51,7 +51,7 @@ if [[ -x "$cmux_bin" ]]; then
     manual_steps+=("Start cmux, then run: cmux reload-config")
   fi
 else
-  manual_steps+=("Install cmux (https://cmux.com), then re-run: make cmux")
+  manual_steps+=("Install cmux (https://cmux.com), then re-run: make link-cmux")
 fi
 
 if ! command -v ghostty >/dev/null 2>&1 && [[ ! -d /Applications/Ghostty.app ]]; then
