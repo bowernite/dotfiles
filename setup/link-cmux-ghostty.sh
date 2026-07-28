@@ -78,9 +78,10 @@ if (( ${#manual_steps[@]} )); then
   done
 fi
 
-# Socket control is "cmuxOnly", which needs no password and so keeps this file
-# committable. Flag the footgun rather than let someone leak a secret.
+# Socket control is "automation": no password (so nothing secret lands in this
+# public repo) while still admitting local automation clients like the launchd
+# autocompact daemon. Flag the footgun rather than let someone leak a secret.
 echo
-echo "Note: socketControlMode is 'cmuxOnly' (no password, nothing secret in git)."
+echo "Note: socketControlMode is 'automation' (no password, nothing secret in git)."
 echo "If you switch to 'password' mode, the password lives in cmux.json — keep it"
 echo "out of commits, since this repo is public."
