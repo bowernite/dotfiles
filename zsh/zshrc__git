@@ -80,7 +80,6 @@ squash() {
 
 make_time() {
   local date_string="$(date)"
-  echo "⏰ Setting latest commit to $date_string"
   git commit --amend --no-edit --date="$date_string"
 }
 
