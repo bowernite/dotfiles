@@ -354,7 +354,7 @@ serve() {
 
 # "edit": Opens a file or directory in the default editor
 edit() {
-  local editor="cursor"
+  local editor="cursor --legacy"
   local target="${1:-.}"
 
   # Create directory if it doesn't exist
