@@ -56,12 +56,18 @@ for path in "${STATIC_PATHS[@]}"; do
 done
 
 if [ -d "$SRC_ROOT" ]; then
-  while IFS= read -r path; do
-    exclude "$path"
-  done < <(find "$SRC_ROOT" -type d \
+  # find still prints every match it found when some entries error, so use the
+  # results either way and only record the partial failure.
+  src_dirs=$(find "$SRC_ROOT" -type d \
     \( -name node_modules -o -name .next -o -name dist -o -name build \
        -o -name target -o -name venv -o -name .venv -o -name DerivedData \) \
-    -prune -print 2>/dev/null)
+    -prune -print) || {
+    failed=$((failed + 1))
+    echo "  ! errors while scanning $SRC_ROOT" >&2
+  }
+  while IFS= read -r path; do
+    [ -n "$path" ] && exclude "$path"
+  done <<< "$src_dirs"
 fi
 
 echo "Time Machine exclusions: ${added} added, ${present} already present, ${failed} failed"
