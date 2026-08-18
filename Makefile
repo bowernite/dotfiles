@@ -23,11 +23,11 @@ check:
 		echo "cmux not installed; skipping config check"; \
 	fi
 
-# Every suite is self-contained and runs against a sandbox $$HOME, so this never
-# touches real machine state.
+# Every suite runs against a sandbox $$HOME, so this never touches real machine
+# state.
 test:
 	@fail=0; \
-	for t in $$(find . -path ./.git -prune -o -name '*.test.sh' -print -o -name '*.test.zsh' -print | sort); do \
+	for t in $$(find . -name '*.test.sh' -o -name '*.test.zsh' | sort); do \
 		echo "==> $$t"; \
 		case "$$t" in *.zsh) zsh "$$t" || fail=1;; *) bash "$$t" || fail=1;; esac; \
 	done; \

@@ -10,6 +10,8 @@ source ~/src/personal/dotfiles/bin/utils.sh
 mkdir -p ~/Library/LaunchAgents
 
 for plist in "$dotfiles_dir"/macos/launch_agents/*.plist; do
+  [ -e "$plist" ] || continue # with no plists the glob comes through unexpanded
+
   label=$(basename "$plist" .plist)
   install_dotfile "macos/launch_agents/${label}.plist" "Library/LaunchAgents/${label}.plist"
 

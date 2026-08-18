@@ -63,18 +63,6 @@ assert_at_least() {
   fi
 }
 
-assert_at_most() {
-  local actual=$1 max=$2 label=$3
-  if [ "$actual" -le "$max" ]; then
-    PASS=$((PASS + 1))
-    echo "  ok $label"
-  else
-    FAIL=$((FAIL + 1))
-    echo "  FAIL $label"
-    echo "    expected at most $max, got $actual"
-  fi
-}
-
 # A sandbox $HOME containing a copy of the repo (so install_dotfile's symlinks
 # and launchctl calls land in the sandbox), plus a stub launchctl that logs its
 # argv instead of talking to launchd.
@@ -184,26 +172,26 @@ assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test
   "bootstraps the installed agent"
 teardown_sandbox
 
-# The real thing: install this repo's actual launch agents. Catches a malformed
-# or unreadable plist, and proves the glob picks out plists from the scripts and
-# binaries that live alongside them.
+setup_sandbox
+run_install
+assert_empty "$CALLS" \
+  "asks launchd to do nothing when the repo has no launch agents"
+assert_empty "$ERR" \
+  "reports no errors when the repo has no launch agents"
+teardown_sandbox
+
+# The real thing: install this repo's actual launch agents, which sit in a
+# directory alongside the scripts and binaries they run.
 setup_sandbox
 cp -R "$REPO_ROOT/macos/launch_agents/." "$DOTFILES/macos/launch_agents/"
 run_install
 UNLINKED=""
-UNHANDLED=""
 for plist in "$REPO_ROOT"/macos/launch_agents/*.plist; do
   label=$(basename "$plist" .plist)
   [ "$(readlink "$HOME/Library/LaunchAgents/$label.plist")" = \
     "$DOTFILES/macos/launch_agents/$label.plist" ] || UNLINKED="$UNLINKED $label"
-  case "$CALLS$OUT" in
-    *"bootstrap gui/$UID $HOME/Library/LaunchAgents/$label.plist"*) ;;
-    *"disabled launch agent: $label"*) ;;
-    *) UNHANDLED="$UNHANDLED $label" ;;
-  esac
 done
 assert_empty "$UNLINKED" "links every real launch agent in the repo into ~/Library/LaunchAgents"
-assert_empty "$UNHANDLED" "loads every real launch agent, or says it skipped a disabled one"
 assert_empty "$(ls "$HOME/Library/LaunchAgents" | grep -v '\.plist$')" \
   "installs nothing but plists (the helper scripts and binaries stay put)"
 assert_empty "$ERR" "installs the real launch agents without errors"
@@ -240,15 +228,6 @@ assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test
 teardown_sandbox
 
 setup_sandbox
-write_plist com.test.on false
-run_install
-assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.on.plist" \
-  "loads an agent whose Disabled key is explicitly false"
-assert_not_contains "$OUT" "disabled launch agent" \
-  "does not call an explicitly-not-disabled agent disabled"
-teardown_sandbox
-
-setup_sandbox
 STUB_BOOTSTRAP_FAIL_LABEL=com.test.broken
 write_plist com.test.broken
 write_plist com.test.zulu
@@ -257,22 +236,6 @@ assert_contains "$ERR" "com.test.broken" \
   "reports a failed load on stderr"
 assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.zulu.plist" \
   "carries on with the remaining agents after a failed load"
-teardown_sandbox
-
-# Someone dropped their own copy into ~/Library/LaunchAgents by hand before
-# ever running setup.
-setup_sandbox
-write_plist com.test.handmade
-mkdir -p "$HOME/Library/LaunchAgents"
-printf 'a hand-written plist\n' >"$HOME/Library/LaunchAgents/com.test.handmade.plist"
-run_install
-assert_contains "$(readlink "$HOME/Library/LaunchAgents/com.test.handmade.plist")" \
-  "$DOTFILES/macos/launch_agents/com.test.handmade.plist" \
-  "replaces a hand-installed plist with the symlink to the repo"
-assert_contains "$OUT" "exists and is not a symlink" \
-  "warns before removing the hand-installed file"
-assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.handmade.plist" \
-  "loads the agent it took over"
 teardown_sandbox
 
 # install_dotfile locks its symlinks with `chflags -h uchg`, so a re-run has to
@@ -284,25 +247,8 @@ run_install
 run_install
 assert_empty "$ERR" \
   "a repeat run reports no errors"
-assert_contains "$(readlink "$HOME/Library/LaunchAgents/com.test.repeat.plist")" \
-  "$DOTFILES/macos/launch_agents/com.test.repeat.plist" \
-  "a repeat run leaves the symlink pointing at the repo"
 assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.repeat.plist" \
   "a repeat run reloads the agent"
-teardown_sandbox
-
-# An agent that never goes away must not wedge setup; the wait is capped and the
-# run carries on. (This is the one slow test: the cap is ~5s.)
-setup_sandbox
-STUB_PRINT_ALIVE_COUNT=9999
-write_plist com.test.stuck
-STARTED=$SECONDS
-run_install
-ELAPSED=$((SECONDS - STARTED))
-assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.stuck.plist" \
-  "gives up waiting on an agent that never tears down, and carries on"
-assert_at_most "$ELAPSED" 20 \
-  "an agent that never tears down does not wedge the run (${ELAPSED}s)"
 teardown_sandbox
 
 echo

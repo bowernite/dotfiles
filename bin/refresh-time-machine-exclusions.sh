@@ -2,11 +2,10 @@
 
 # Refresh Time Machine exclusions for dependency/build directories.
 #
-# Time Machine path exclusions are static, so directories created after setup
-# (new clones, new worktrees) get backed up unless re-scanned. This is idempotent
-# and safe to run on a schedule.
-#
-# Needs SUDO_ASKPASS pointing at bin/sudo_askpass.sh (gitignored) to run unattended.
+# Time Machine path exclusions are static, so directories created after setup (new clones,
+# new worktrees) get backed up unless something re-scans. Idempotent, so it's safe to run on
+# a schedule. Needs SUDO_ASKPASS pointing at bin/sudo_askpass.sh (gitignored) to run
+# unattended.
 
 set -uo pipefail
 
