@@ -5,6 +5,8 @@
 # Time Machine path exclusions are static, so directories created after setup
 # (new clones, new worktrees) get backed up unless re-scanned. This is idempotent
 # and safe to run on a schedule.
+#
+# Needs SUDO_ASKPASS pointing at bin/sudo_askpass.sh (gitignored) to run unattended.
 
 set -uo pipefail
 
@@ -31,6 +33,7 @@ STATIC_PATHS=(
 
 added=0
 present=0
+failed=0
 
 exclude() {
   local path="$1"
@@ -39,10 +42,11 @@ exclude() {
     present=$((present + 1))
     return 0
   fi
-  if sudo -A tmutil addexclusion -p "$path" 2>/dev/null; then
+  if sudo -A tmutil addexclusion -p "$path"; then
     added=$((added + 1))
     echo "  + $path"
   else
+    failed=$((failed + 1))
     echo "  ! failed: $path" >&2
   fi
 }
@@ -60,4 +64,6 @@ if [ -d "$SRC_ROOT" ]; then
     -prune -print 2>/dev/null)
 fi
 
-echo "Time Machine exclusions: ${added} added, ${present} already present"
+echo "Time Machine exclusions: ${added} added, ${present} already present, ${failed} failed"
+
+[ "$failed" -eq 0 ] || exit 1

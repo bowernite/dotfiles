@@ -27,8 +27,15 @@ osascript -e 'tell application "System Preferences" to quit'
 # Launch Agents
 #####################################################################
 
-launchctl load ~/Library/LaunchAgents/com.user.set-terminal-dark-light-theme.plist
-# To unload: launchctl unload ~/Library/LaunchAgents/com.user.set-terminal-dark-light-theme.plist
+mkdir -p ~/Library/LaunchAgents
+
+for plist in "$dotfiles_dir"/macos/launch_agents/*.plist; do
+  label=$(basename "$plist" .plist)
+  install_dotfile "macos/launch_agents/${label}.plist" "Library/LaunchAgents/${label}.plist"
+  launchctl bootout "gui/$UID/$label" 2>/dev/null
+  launchctl bootstrap "gui/$UID" ~/Library/LaunchAgents/"${label}.plist"
+done
+# To unload: launchctl bootout gui/$UID/<label>
 
 ##############################################################
 # General/UI/UX
