@@ -159,21 +159,24 @@ run_script() {
 
 echo "refresh-time-machine-exclusions"
 
-echo "test: excludes an existing tool-cache dir that is not excluded yet"
+echo "test: excludes the tool-cache dirs that exist, ignores the ones that do not"
 setup_sandbox
 mkdir -p "$HOME/.npm"
 run_script
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/.npm" "adds ~/.npm"
+assert_not_contains "$LOG" "$HOME/.cache" "never touches ~/.cache, which is absent"
+assert_not_contains "$LOG" "$HOME/go/pkg/mod" "never touches ~/go/pkg/mod, which is absent"
+assert_eq "$REPORT" "$(printf '  + ~/.npm\nTime Machine exclusions: 1 added, 0 already present, 0 failed')" \
+  "reports the one exclusion, and a missing ~/src is not an error"
 assert_eq "$RC" "0" "exits 0"
 teardown_sandbox
 
-echo "test: skips tool-cache dirs that do not exist on disk"
+echo "test: a machine with none of these dirs is a clean no-op"
 setup_sandbox
-mkdir -p "$HOME/.npm"
 run_script
-assert_contains "$LOG" "$HOME/.npm" "still handles the dir that does exist"
-assert_not_contains "$LOG" "$HOME/.cache" "never touches ~/.cache, which is absent"
-assert_not_contains "$LOG" "$HOME/go/pkg/mod" "never touches ~/go/pkg/mod, which is absent"
+assert_eq "$LOG" "" "runs no tmutil commands at all"
+assert_eq "$REPORT" "Time Machine exclusions: 0 added, 0 already present, 0 failed" \
+  "reports an empty run"
 assert_eq "$RC" "0" "exits 0"
 teardown_sandbox
 
@@ -211,6 +214,7 @@ mkdir -p "$HOME/src/web/node_modules" "$HOME/src/web/.next" "$HOME/src/web/src/c
 mkdir -p "$HOME/src/api/target" "$HOME/src/api/build" "$HOME/src/py/.venv" "$HOME/src/py/venv"
 mkdir -p "$HOME/src/nested/deep/pkg/dist" "$HOME/src/ios/DerivedData"
 mkdir -p "$HOME/src/web/docs" "$HOME/src/notes"
+mkdir -p "$HOME/src/my project/node_modules"
 run_script
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/web/node_modules" "excludes node_modules"
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/web/.next" "excludes .next"
@@ -220,6 +224,8 @@ assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/py/.venv" "excludes .ve
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/py/venv" "excludes venv"
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/nested/deep/pkg/dist" "excludes a deeply nested dist"
 assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/ios/DerivedData" "excludes DerivedData"
+assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/my\\ project/node_modules" \
+  "excludes a scanned path containing spaces as a single path"
 assert_not_contains "$LOG" "$HOME/src/web/src" "leaves an ordinary source dir alone"
 assert_not_contains "$LOG" "$HOME/src/web/docs" "leaves an ordinary docs dir alone"
 assert_not_contains "$LOG" "$HOME/src/notes" "leaves an unrelated project dir alone"
@@ -235,15 +241,6 @@ assert_contains "$LOG" "tmutil addexclusion -p $HOME/src/web/node_modules" "excl
 assert_not_contains "$LOG" "$HOME/src/web/node_modules/pkg" "does not also exclude nested matches inside it"
 assert_eq "$REPORT" "$(printf '  + ~/src/web/node_modules\nTime Machine exclusions: 1 added, 0 already present, 0 failed')" \
   "reports exactly one exclusion"
-assert_eq "$RC" "0" "exits 0"
-teardown_sandbox
-
-echo "test: a missing ~/src is not an error"
-setup_sandbox
-mkdir -p "$HOME/.npm"
-run_script
-assert_eq "$REPORT" "$(printf '  + ~/.npm\nTime Machine exclusions: 1 added, 0 already present, 0 failed')" \
-  "reports only the tool-cache dir, with no scan error"
 assert_eq "$RC" "0" "exits 0"
 teardown_sandbox
 
@@ -282,24 +279,39 @@ assert_contains "$LOG" "sudo -A tmutil addexclusion -p $HOME/.npm" "elevates the
 assert_not_contains "$LOG" "sudo -A tmutil isexcluded" "reads the current state without sudo"
 teardown_sandbox
 
-echo "test: covers the documented tool-cache dirs"
+# The fixed list is the whole point of the script: a dir silently dropped from
+# it is dev-tool bloat silently landing in backups again. Compared as a sorted
+# set, since the order the list is walked in is not part of the contract.
+echo "test: excludes every tool-cache dir it claims to cover"
 setup_sandbox
-mkdir -p "$HOME/.npm" "$HOME/.cache" "$HOME/go/pkg/mod"
-mkdir -p "$HOME/Library/Application Support/Code/Cache" "$HOME/Library/Developer/Xcode/DerivedData"
+TOOL_CACHE_DIRS=(
+  ".bun/install/cache"
+  ".cache"
+  ".colima"
+  ".gradle"
+  ".npm"
+  ".yarn"
+  "go/pkg/mod"
+  "Library/Application Support/Code/Cache"
+  "Library/Application Support/Code/CachedData"
+  "Library/Application Support/Cursor/CachedData"
+  "Library/Application Support/Cursor/CachedExtensionVSIXs"
+  "Library/Application Support/Cursor/Partitions"
+  "Library/Application Support/Cursor/logs"
+  "Library/Developer/CoreSimulator"
+  "Library/Developer/Xcode/DerivedData"
+  "Library/pnpm/store"
+)
+for dir in "${TOOL_CACHE_DIRS[@]}"; do
+  mkdir -p "$HOME/$dir"
+done
 run_script
-# asserted as a set, not a snapshot: the order the fixed list is walked in is
-# not part of the contract
-# shellcheck disable=SC2088 # literal ~, REPORT has $HOME folded back to ~
-assert_contains "$REPORT" "+ ~/.cache" "covers ~/.cache"
-# shellcheck disable=SC2088
-assert_contains "$REPORT" "+ ~/.npm" "covers ~/.npm"
-# shellcheck disable=SC2088
-assert_contains "$REPORT" "+ ~/go/pkg/mod" "covers ~/go/pkg/mod"
-# shellcheck disable=SC2088
-assert_contains "$REPORT" "+ ~/Library/Application Support/Code/Cache" "covers the VS Code cache"
-# shellcheck disable=SC2088
-assert_contains "$REPORT" "+ ~/Library/Developer/Xcode/DerivedData" "covers Xcode DerivedData"
-assert_contains "$REPORT" "5 added, 0 already present, 0 failed" "counts all five"
+assert_eq \
+  "$(printf '%s\n' "$REPORT" | grep '^  + ' | LC_ALL=C sort)" \
+  "$(printf '  + ~/%s\n' "${TOOL_CACHE_DIRS[@]}" | LC_ALL=C sort)" \
+  "excludes every documented tool-cache dir, and nothing else"
+assert_contains "$REPORT" "${#TOOL_CACHE_DIRS[@]} added, 0 already present, 0 failed" \
+  "counts every one of them"
 assert_eq "$RC" "0" "exits 0"
 teardown_sandbox
 
