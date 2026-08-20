@@ -180,6 +180,18 @@ assert_empty "$ERR" \
   "reports no errors when the repo has no launch agents"
 teardown_sandbox
 
+setup_sandbox
+printf '%s\n' 'print("ok")' >"$DOTFILES/macos/launch_agents/hello.swift"
+write_plist com.test.hello
+run_install
+assert_empty "$ERR" "compiles a Swift launch agent without errors"
+compiled=""
+[ -x "$DOTFILES/macos/launch_agents/hello" ] || compiled="missing"
+assert_empty "$compiled" "writes the compiled binary next to the Swift source"
+assert_contains "$OUT" "Compiling hello.swift" \
+  "says which Swift launch agent it compiled"
+teardown_sandbox
+
 # The real thing: install this repo's actual launch agents, which sit in a
 # directory alongside the scripts and binaries they run.
 setup_sandbox

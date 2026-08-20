@@ -1,4 +1,4 @@
-.PHONY: help link-cmux link-ghostty check test
+.PHONY: help link-cmux link-ghostty check test launch-agents
 
 help:
 	@echo "Targets:"
@@ -6,6 +6,10 @@ help:
 	@echo "  make link-ghostty   Alias for 'make link-cmux' (they're linked together)"
 	@echo "  make check          Verify the links are in place and cmux's config is valid"
 	@echo "  make test           Run the shell test suites"
+	@echo "  make launch-agents  Compile Swift launch agents and (re)load them under launchd"
+
+launch-agents:
+	@bash setup/install-launch-agents.sh
 
 # Both configs are linked by one script: cmux reads the Ghostty config, so
 # they're only useful together.

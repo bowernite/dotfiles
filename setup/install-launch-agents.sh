@@ -7,6 +7,16 @@
 
 source ~/src/personal/dotfiles/bin/utils.sh
 
+for src in "$dotfiles_dir"/macos/launch_agents/*.swift; do
+  [ -e "$src" ] || continue
+  dest="${src%.swift}"
+  echo "Compiling $(basename "$src")"
+  swiftc -O "$src" -o "$dest" || {
+    echo "Failed to compile $src" >&2
+    exit 1
+  }
+done
+
 mkdir -p ~/Library/LaunchAgents
 
 for plist in "$dotfiles_dir"/macos/launch_agents/*.plist; do
