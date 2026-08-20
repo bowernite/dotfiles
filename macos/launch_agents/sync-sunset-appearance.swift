@@ -7,6 +7,7 @@ private let loggerTag = "com.user.sync-sunset-appearance"
 
 func log(_ message: String) {
     print(message)
+    fflush(stdout)
     let process = Process()
     process.executableURL = URL(fileURLWithPath: "/usr/bin/logger")
     process.arguments = ["-t", loggerTag, message]
@@ -79,6 +80,11 @@ guard loadCoreBrightness() else {
     exit(1)
 }
 
+if let isDaylight = nightShiftIsDaylight() {
+    log("started; Night Shift isDaylight=\(isDaylight) appearanceDark=\(currentAppearanceIsDark())")
+} else {
+    log("started; could not read Night Shift solar schedule")
+}
 syncAppearanceToNightShift()
 RunLoop.current.add(
     Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { _ in
