@@ -20,4 +20,20 @@ if [[ -n ${CURSOR_AGENT:-} || ${SUDO_ASKPASS:-} == *cursor-askpass* ]]; then
   sudo() {
     SUDO_ASKPASS="${HOME}/src/personal/dotfiles/bin/sudo_askpass.sh" command sudo -A "$@"
   }
+
+  # Match $PWD Node via fnm (.nvmrc / .node-version / engines) for JS toolchain commands.
+  _fnm_bin="${HOMEBREW_PREFIX:-/opt/homebrew}/bin/fnm"
+  [[ -x $_fnm_bin ]] || _fnm_bin="$(command -v fnm 2>/dev/null)"
+  if [[ -n $_fnm_bin ]]; then
+    _fnm_ensure() {
+      "$_fnm_bin" use --silent-if-unchanged >/dev/null 2>&1 && return
+      "$_fnm_bin" install --log-level=quiet >/dev/null 2>&1 || true
+      "$_fnm_bin" use --silent-if-unchanged >/dev/null 2>&1 || true
+    }
+    node() { _fnm_ensure; command node "$@"; }
+    npm() { _fnm_ensure; command npm "$@"; }
+    npx() { _fnm_ensure; command npx "$@"; }
+    pnpm() { _fnm_ensure; command pnpm "$@"; }
+    yarn() { _fnm_ensure; command yarn "$@"; }
+  fi
 fi

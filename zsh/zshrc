@@ -259,15 +259,9 @@ alias lint="DEBUG= npx eslint"
 export PATH="/Users/brett.abramczyk/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
-# fnm (Fast Node Manager) — cached to avoid forking on every shell
-_fnm_cache="$HOME/.cache/fnm-env.zsh"
-_fnm_bin="$(whence -p fnm)"
-if [[ ! -r "$_fnm_cache" || "$_fnm_bin" -nt "$_fnm_cache" ]]; then
-  mkdir -p "${_fnm_cache:h}"
-  fnm env --use-on-cd --version-file-strategy=recursive --shell zsh > "$_fnm_cache"
-fi
-source "$_fnm_cache"
-unset _fnm_cache _fnm_bin
+# fnm — per-shell multishell (do not cache: cached FNM_MULTISHELL_PATH is shared
+# across shells and races when dirs need different Node versions)
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --shell zsh)"
 
 # Interactive shells: local askpass for `sudo -A`. (Cursor agents: see zshenv.)
 export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
