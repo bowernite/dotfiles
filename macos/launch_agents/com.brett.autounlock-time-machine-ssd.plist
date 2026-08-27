@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.brett.autounlock-time-machine-ssd</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/brett/src/personal/dotfiles/bin/autounlock-time-machine-ssd.sh</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StartInterval</key>
+    <integer>5</integer>
+    <key>LaunchEvents</key>
+    <dict>
+        <key>com.apple.iokit.matching</key>
+        <dict>
+            <key>apfs-container</key>
+            <dict>
+                <key>IOMatchLaunchStream</key>
+                <true/>
+                <key>IOProviderClass</key>
+                <string>AppleAPFSContainer</string>
+            </dict>
+        </dict>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/brett/Library/Logs/autounlock-time-machine-ssd.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/brett/Library/Logs/autounlock-time-machine-ssd.log</string>
+</dict>
+</plist>
