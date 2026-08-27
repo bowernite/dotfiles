@@ -11,3 +11,13 @@
 # non-interactive shell -- e.g. tools that run commands via `zsh -c`, like
 # Claude Code's Bash tool. Disabling it here fixes that everywhere.
 (( ${+builtins[log]} )) && disable log
+
+# Cursor agent shells inherit SUDO_ASKPASS=…/cursor-askpass (TUI prompt). Agents are
+# non-interactive so .zshrc never runs; force the local askpass helper instead.
+# Re-bind at invoke time in case the agent wrapper resets the env after zshenv.
+if [[ -n ${CURSOR_AGENT:-} || ${SUDO_ASKPASS:-} == *cursor-askpass* ]]; then
+  export SUDO_ASKPASS="${HOME}/src/personal/dotfiles/bin/sudo_askpass.sh"
+  sudo() {
+    SUDO_ASKPASS="${HOME}/src/personal/dotfiles/bin/sudo_askpass.sh" command sudo -A "$@"
+  }
+fi

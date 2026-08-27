@@ -12,19 +12,6 @@
     <true/>
     <key>StartInterval</key>
     <integer>5</integer>
-    <key>LaunchEvents</key>
-    <dict>
-        <key>com.apple.iokit.matching</key>
-        <dict>
-            <key>apfs-container</key>
-            <dict>
-                <key>IOMatchLaunchStream</key>
-                <true/>
-                <key>IOProviderClass</key>
-                <string>AppleAPFSContainer</string>
-            </dict>
-        </dict>
-    </dict>
     <key>StandardOutPath</key>
     <string>/Users/brett/Library/Logs/autounlock-time-machine-ssd.log</string>
     <key>StandardErrorPath</key>

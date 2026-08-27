@@ -269,6 +269,7 @@ fi
 source "$_fnm_cache"
 unset _fnm_cache _fnm_bin
 
+# Interactive shells: local askpass for `sudo -A`. (Cursor agents: see zshenv.)
 export SUDO_ASKPASS="$dotfiles_dir/bin/sudo_askpass.sh"
 
 # Better memory usage for TypeScript..? See personal note on "why useFsEvents"
