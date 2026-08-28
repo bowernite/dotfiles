@@ -21,6 +21,10 @@ bootstrap_log "Homebrew: Installing and upgrading packages..."
 cd $dotfiles_dir
 brew bundle
 
+if command -v agent-browser >/dev/null 2>&1; then
+  agent-browser install
+fi
+
 bootstrap_log "Homebrew: Starting services..."
 # Based on documentation I've read, Homebrew _should_ automatically start these services up on boot indefinitely
 if ! brew services list | grep goku >/dev/null; then

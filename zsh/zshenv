@@ -23,9 +23,16 @@ if [[ -n ${CURSOR_AGENT:-} || ${SUDO_ASKPASS:-} == *cursor-askpass* ]]; then
 
   # Match $PWD Node via fnm (.nvmrc / .node-version / engines) for JS toolchain commands.
   _fnm_bin="${HOMEBREW_PREFIX:-/opt/homebrew}/bin/fnm"
+  [[ -x $_fnm_bin ]] || _fnm_bin=/usr/local/bin/fnm
   [[ -x $_fnm_bin ]] || _fnm_bin="$(command -v fnm 2>/dev/null)"
   if [[ -n $_fnm_bin ]]; then
     _fnm_ensure() {
+      if [[ -z ${FNM_MULTISHELL_PATH:-} ]]; then
+        eval "$("$_fnm_bin" env --version-file-strategy=recursive --shell zsh)"
+      fi
+      if [[ -n ${FNM_MULTISHELL_PATH:-} && $PATH != "$FNM_MULTISHELL_PATH/bin":* ]]; then
+        PATH="$FNM_MULTISHELL_PATH/bin:$PATH"
+      fi
       "$_fnm_bin" use --silent-if-unchanged >/dev/null 2>&1 && return
       "$_fnm_bin" install --log-level=quiet >/dev/null 2>&1 || true
       "$_fnm_bin" use --silent-if-unchanged >/dev/null 2>&1 || true

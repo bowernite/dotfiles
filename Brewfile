@@ -25,6 +25,10 @@ brew "dockutil"
 # Tool for managing default apps for each extension on macos
 brew "duti"
 brew "fzf"
+# Node version manager used by zsh + agent shells
+brew "fnm"
+# Browser automation CLI for agents (also: `agent-browser install` for Chrome)
+brew "agent-browser"
 # Homebrew vim 9.2+ has clipboard_provider support needed for terminal clipboard
 brew "vim"
 brew "go"
