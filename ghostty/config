@@ -1,7 +1,9 @@
 # Startup: open tabs replicating kitty's startup.conf
 # initial-command = /Users/brett/.config/ghostty/startup.sh
 
-# Theme - automatically switches with macOS dark/light mode
+# Theme - switches with macOS dark/light mode in standalone Ghostty.
+# CMUX has a split-theme bug (#4565); launch agents pin an unconditional theme via
+# ~/Library/Application Support/com.cmuxterm.app/config.ghostty instead.
 theme = light:Modus Operandi,dark:Modus Vivendi Tinted
 
 # Font

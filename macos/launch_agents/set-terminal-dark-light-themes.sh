@@ -23,7 +23,10 @@ else
 fi
 
 CMUX_BIN="/Applications/cmux.app/Contents/Resources/bin/cmux"
-if [ -x "$CMUX_BIN" ]; then
+SET_CMUX_THEME="$HOME/src/personal/dotfiles/macos/launch_agents/set-cmux-terminal-theme.sh"
+if [[ -x "$SET_CMUX_THEME" ]]; then
+  "$SET_CMUX_THEME"
+elif [[ -x "$CMUX_BIN" ]]; then
   "$CMUX_BIN" reload-config >/dev/null 2>&1 || true
 fi
 

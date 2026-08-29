@@ -44,11 +44,10 @@ func currentAppearanceIsDark() -> Bool {
 }
 
 func reloadCmuxConfig() {
-    let cmuxBin = "/Applications/cmux.app/Contents/Resources/bin/cmux"
-    guard FileManager.default.isExecutableFile(atPath: cmuxBin) else { return }
+    let script = "/Users/brett/src/personal/dotfiles/macos/launch_agents/set-cmux-terminal-theme.sh"
+    guard FileManager.default.isExecutableFile(atPath: script) else { return }
     let process = Process()
-    process.executableURL = URL(fileURLWithPath: cmuxBin)
-    process.arguments = ["reload-config"]
+    process.executableURL = URL(fileURLWithPath: script)
     try? process.run()
     process.waitUntilExit()
 }

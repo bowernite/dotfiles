@@ -4,6 +4,12 @@
   "app": {
     "appearance": "system"
   },
+  "sidebarAppearance": {
+    "matchTerminalBackground": false,
+    "darkModeTintColor": "#141528",
+    "lightModeTintColor": "#f2f2f2",
+    "tintOpacity": 1
+  },
   "shortcuts": {
     "bindings": {
       "focusLeft": {
