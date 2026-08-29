@@ -43,6 +43,23 @@ func currentAppearanceIsDark() -> Bool {
     UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
 }
 
+func reloadCmuxConfig() {
+    let cmuxBin = "/Applications/cmux.app/Contents/Resources/bin/cmux"
+    guard FileManager.default.isExecutableFile(atPath: cmuxBin) else { return }
+    let process = Process()
+    process.executableURL = URL(fileURLWithPath: cmuxBin)
+    process.arguments = ["reload-config"]
+    try? process.run()
+    process.waitUntilExit()
+}
+
+func notifyAppearanceChanged() {
+    DistributedNotificationCenter.default().post(
+        name: NSNotification.Name("AppleInterfaceThemeChangedNotification"),
+        object: nil
+    )
+}
+
 func setSystemDark(_ dark: Bool) {
     guard let handle = dlopen(
         "/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight",
@@ -58,6 +75,8 @@ func setSystemDark(_ dark: Bool) {
     }
     unsafeBitCast(symbol, to: SetTheme.self)(dark)
     UserDefaults.standard.set(true, forKey: "AppleInterfaceStyleSwitchesAutomatically")
+    notifyAppearanceChanged()
+    reloadCmuxConfig()
 }
 
 func syncAppearanceToNightShift() {

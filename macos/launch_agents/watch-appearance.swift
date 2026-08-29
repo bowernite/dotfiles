@@ -3,9 +3,21 @@
 import Cocoa
 import Foundation
 
+func reloadCmuxConfig() {
+    let cmuxBin = "/Applications/cmux.app/Contents/Resources/bin/cmux"
+    guard FileManager.default.isExecutableFile(atPath: cmuxBin) else { return }
+    let process = Process()
+    process.executableURL = URL(fileURLWithPath: cmuxBin)
+    process.arguments = ["reload-config"]
+    try? process.run()
+    process.waitUntilExit()
+}
+
 func updateTheme() {
     let isDark = UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
     let claudeTheme = isDark ? "dark" : "light"
+
+    reloadCmuxConfig()
 
     let logMessage = "macOS appearance changed: setting Claude Code theme to \(claudeTheme)"
     print(logMessage)

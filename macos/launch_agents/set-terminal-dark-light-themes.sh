@@ -22,6 +22,11 @@ else
   CLAUDE_THEME="light"
 fi
 
+CMUX_BIN="/Applications/cmux.app/Contents/Resources/bin/cmux"
+if [ -x "$CMUX_BIN" ]; then
+  "$CMUX_BIN" reload-config >/dev/null 2>&1 || true
+fi
+
 # Update Claude Code theme
 CLAUDE_JSON="$HOME/.claude.json"
 if [ -f "$CLAUDE_JSON" ]; then
