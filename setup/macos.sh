@@ -35,9 +35,8 @@ defaults -currentHost write -g AppleFontSmoothing -int 0
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Automatically switch between Light and Dark mode based on time of day
-# System Preferences > General > Appearance
-defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
+# Sunset-only dark mode is handled by com.user.sync-sunset-appearance launch agent
+defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool false
 
 # System Preferences > General > Click in the scrollbar to: Jump to the spot that's clicked
 defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true

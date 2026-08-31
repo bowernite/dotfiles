@@ -4,6 +4,7 @@ import Darwin
 import Foundation
 
 private let loggerTag = "com.user.sync-sunset-appearance"
+private let sunsetAppliedKey = "com.user.sync-sunset-appearance.sunsetAppliedForCurrentNight"
 
 func log(_ message: String) {
     print(message)
@@ -73,24 +74,46 @@ func setSystemDark(_ dark: Bool) {
         return
     }
     unsafeBitCast(symbol, to: SetTheme.self)(dark)
-    UserDefaults.standard.set(true, forKey: "AppleInterfaceStyleSwitchesAutomatically")
     notifyAppearanceChanged()
     reloadCmuxConfig()
 }
 
-func syncAppearanceToNightShift() {
+func sunsetAlreadyAppliedForCurrentNight() -> Bool {
+    UserDefaults.standard.bool(forKey: sunsetAppliedKey)
+}
+
+func markSunsetAppliedForCurrentNight() {
+    UserDefaults.standard.set(true, forKey: sunsetAppliedKey)
+}
+
+func clearSunsetAppliedForCurrentNight() {
+    UserDefaults.standard.removeObject(forKey: sunsetAppliedKey)
+}
+
+func applySunsetDarkModeIfNeeded() {
     guard let isDaylight = nightShiftIsDaylight() else {
         log("Could not read Night Shift solar schedule")
         return
     }
-    let wantDark = !isDaylight
-    if wantDark == currentAppearanceIsDark() {
+
+    if isDaylight {
+        if sunsetAlreadyAppliedForCurrentNight() {
+            clearSunsetAppliedForCurrentNight()
+        }
         return
     }
-    log(wantDark
-        ? "Night Shift sunset reached; switching to dark"
-        : "Night Shift sunrise reached; switching to light")
-    setSystemDark(wantDark)
+
+    if sunsetAlreadyAppliedForCurrentNight() {
+        return
+    }
+
+    log("Sunset reached; switching to dark")
+    if currentAppearanceIsDark() {
+        markSunsetAppliedForCurrentNight()
+        return
+    }
+    setSystemDark(true)
+    markSunsetAppliedForCurrentNight()
 }
 
 guard loadCoreBrightness() else {
@@ -103,10 +126,10 @@ if let isDaylight = nightShiftIsDaylight() {
 } else {
     log("started; could not read Night Shift solar schedule")
 }
-syncAppearanceToNightShift()
+applySunsetDarkModeIfNeeded()
 RunLoop.current.add(
     Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { _ in
-        syncAppearanceToNightShift()
+        applySunsetDarkModeIfNeeded()
     },
     forMode: .common
 )
