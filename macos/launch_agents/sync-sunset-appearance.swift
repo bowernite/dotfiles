@@ -5,6 +5,9 @@ import Foundation
 
 private let loggerTag = "com.user.sync-sunset-appearance"
 private let sunsetAppliedKey = "com.user.sync-sunset-appearance.sunsetAppliedForCurrentNight"
+private let cmuxScript = "/Users/brett/src/personal/dotfiles/macos/launch_agents/set-cmux-terminal-theme.sh"
+
+var lastIsDaylight: Bool?
 
 func log(_ message: String) {
     print(message)
@@ -44,13 +47,31 @@ func currentAppearanceIsDark() -> Bool {
     UserDefaults.standard.string(forKey: "AppleInterfaceStyle") == "Dark"
 }
 
-func reloadCmuxConfig() {
-    let script = "/Users/brett/src/personal/dotfiles/macos/launch_agents/set-cmux-terminal-theme.sh"
-    guard FileManager.default.isExecutableFile(atPath: script) else { return }
+func reloadCmuxConfig(trigger: String) {
+    guard FileManager.default.isExecutableFile(atPath: cmuxScript) else {
+        log("cmux sync skipped: script not executable trigger=\(trigger) path=\(cmuxScript)")
+        return
+    }
+
     let process = Process()
-    process.executableURL = URL(fileURLWithPath: script)
-    try? process.run()
+    process.executableURL = URL(fileURLWithPath: cmuxScript)
+    var env = ProcessInfo.processInfo.environment
+    env["TRIGGER"] = trigger
+    process.environment = env
+
+    do {
+        try process.run()
+    } catch {
+        log("cmux sync failed to start trigger=\(trigger) error=\(error.localizedDescription)")
+        return
+    }
+
     process.waitUntilExit()
+    if process.terminationStatus == 0 {
+        log("cmux sync ok trigger=\(trigger) appearanceDark=\(currentAppearanceIsDark())")
+    } else {
+        log("cmux sync failed trigger=\(trigger) appearanceDark=\(currentAppearanceIsDark()) exitCode=\(process.terminationStatus)")
+    }
 }
 
 func notifyAppearanceChanged() {
@@ -65,17 +86,18 @@ func setSystemDark(_ dark: Bool) {
         "/System/Library/PrivateFrameworks/SkyLight.framework/SkyLight",
         RTLD_NOW
     ) else {
-        log("Could not load SkyLight")
+        log("setSystemDark failed: could not load SkyLight dark=\(dark)")
         return
     }
     typealias SetTheme = @convention(c) (Bool) -> Void
     guard let symbol = dlsym(handle, "SLSSetAppearanceThemeLegacy") else {
-        log("Could not find SLSSetAppearanceThemeLegacy")
+        log("setSystemDark failed: could not find SLSSetAppearanceThemeLegacy dark=\(dark)")
         return
     }
     unsafeBitCast(symbol, to: SetTheme.self)(dark)
+    log("setSystemDark ok dark=\(dark)")
     notifyAppearanceChanged()
-    reloadCmuxConfig()
+    reloadCmuxConfig(trigger: "sunset-set-dark")
 }
 
 func sunsetAlreadyAppliedForCurrentNight() -> Bool {
@@ -92,24 +114,36 @@ func clearSunsetAppliedForCurrentNight() {
 
 func applySunsetDarkModeIfNeeded() {
     guard let isDaylight = nightShiftIsDaylight() else {
-        log("Could not read Night Shift solar schedule")
+        log("poll skipped: could not read Night Shift solar schedule")
         return
     }
 
     if isDaylight {
+        let wasNight = lastIsDaylight == false
+        lastIsDaylight = true
+
         if sunsetAlreadyAppliedForCurrentNight() {
             clearSunsetAppliedForCurrentNight()
+            log("sunrise: cleared sunset flag appearanceDark=\(currentAppearanceIsDark())")
+        }
+
+        if wasNight {
+            log("sunrise transition: resyncing CMUX appearanceDark=\(currentAppearanceIsDark())")
+            reloadCmuxConfig(trigger: "sunrise")
         }
         return
     }
+
+    lastIsDaylight = false
 
     if sunsetAlreadyAppliedForCurrentNight() {
         return
     }
 
-    log("Sunset reached; switching to dark")
+    log("sunset reached; switching to dark appearanceDark=\(currentAppearanceIsDark())")
     if currentAppearanceIsDark() {
         markSunsetAppliedForCurrentNight()
+        log("sunset skipped: already dark")
         return
     }
     setSystemDark(true)
@@ -117,14 +151,15 @@ func applySunsetDarkModeIfNeeded() {
 }
 
 guard loadCoreBrightness() else {
-    log("Could not load CoreBrightness")
+    log("startup failed: could not load CoreBrightness")
     exit(1)
 }
 
 if let isDaylight = nightShiftIsDaylight() {
-    log("started; Night Shift isDaylight=\(isDaylight) appearanceDark=\(currentAppearanceIsDark())")
+    lastIsDaylight = isDaylight
+    log("started isDaylight=\(isDaylight) appearanceDark=\(currentAppearanceIsDark()) sunsetApplied=\(sunsetAlreadyAppliedForCurrentNight())")
 } else {
-    log("started; could not read Night Shift solar schedule")
+    log("started: could not read Night Shift solar schedule appearanceDark=\(currentAppearanceIsDark())")
 }
 applySunsetDarkModeIfNeeded()
 RunLoop.current.add(
