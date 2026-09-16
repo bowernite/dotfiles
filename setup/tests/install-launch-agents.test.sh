@@ -63,8 +63,8 @@ assert_at_least() {
   fi
 }
 
-# A sandbox $HOME containing a copy of the repo (so install_dotfile's symlinks
-# and launchctl calls land in the sandbox), plus a stub launchctl that logs its
+# A sandbox $HOME containing a copy of the repo (so installed plists and
+# launchctl calls land in the sandbox), plus a stub launchctl that logs its
 # argv instead of talking to launchd.
 #
 # Stub knobs (env vars, read at call time):
@@ -165,9 +165,10 @@ echo "install-launch-agents"
 setup_sandbox
 write_plist com.test.alpha
 run_install
-assert_contains "$(readlink "$HOME/Library/LaunchAgents/com.test.alpha.plist")" \
-  "$DOTFILES/macos/launch_agents/com.test.alpha.plist" \
-  "installs the plist into ~/Library/LaunchAgents as a symlink back to the repo"
+assert_empty "$(readlink "$HOME/Library/LaunchAgents/com.test.alpha.plist" 2>/dev/null || true)" \
+  "installs the plist into ~/Library/LaunchAgents as a file, not a symlink"
+[ -f "$HOME/Library/LaunchAgents/com.test.alpha.plist" ] || FAIL_FILE="missing"
+assert_empty "${FAIL_FILE:-}" "writes ~/Library/LaunchAgents/com.test.alpha.plist"
 assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test.alpha.plist" \
   "bootstraps the installed agent"
 teardown_sandbox
@@ -197,13 +198,21 @@ teardown_sandbox
 setup_sandbox
 cp -R "$REPO_ROOT/macos/launch_agents/." "$DOTFILES/macos/launch_agents/"
 run_install
-UNLINKED=""
+MISSING=""
+STILL_BRETT=""
 for plist in "$REPO_ROOT"/macos/launch_agents/*.plist; do
   label=$(basename "$plist" .plist)
-  [ "$(readlink "$HOME/Library/LaunchAgents/$label.plist")" = \
-    "$DOTFILES/macos/launch_agents/$label.plist" ] || UNLINKED="$UNLINKED $label"
+  dest="$HOME/Library/LaunchAgents/$label.plist"
+  [ -f "$dest" ] && [ ! -L "$dest" ] || MISSING="$MISSING $label"
+  if grep -q '/Users/brett/' "$plist" && grep -q '/Users/brett/' "$dest"; then
+    STILL_BRETT="$STILL_BRETT $label"
+  fi
+  if grep -q '/Users/brett/' "$plist" && ! grep -q "$HOME/" "$dest"; then
+    STILL_BRETT="$STILL_BRETT $label-no-home"
+  fi
 done
-assert_empty "$UNLINKED" "links every real launch agent in the repo into ~/Library/LaunchAgents"
+assert_empty "$MISSING" "installs every real launch agent in the repo into ~/Library/LaunchAgents"
+assert_empty "$STILL_BRETT" "rewrites /Users/brett/ to \$HOME in installed plists"
 assert_empty "$(ls "$HOME/Library/LaunchAgents" | grep -v '\.plist$')" \
   "installs nothing but plists (the helper scripts and binaries stay put)"
 assert_empty "$ERR" "installs the real launch agents without errors"
@@ -250,8 +259,7 @@ assert_contains "$CALLS" "bootstrap gui/$UID $HOME/Library/LaunchAgents/com.test
   "carries on with the remaining agents after a failed load"
 teardown_sandbox
 
-# install_dotfile locks its symlinks with `chflags -h uchg`, so a re-run has to
-# cope with a file it is not allowed to overwrite in place.
+# A re-run has to replace an existing installed plist (possibly uchg-locked).
 setup_sandbox
 write_plist com.test.repeat
 run_install
