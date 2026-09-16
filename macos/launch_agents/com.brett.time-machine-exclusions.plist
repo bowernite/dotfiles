@@ -6,12 +6,12 @@
     <string>com.brett.time-machine-exclusions</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/brett.abramczyk/src/personal/dotfiles/bin/refresh-time-machine-exclusions.sh</string>
+        <string>/Users/brett/src/personal/dotfiles/bin/refresh-time-machine-exclusions.sh</string>
     </array>
     <key>EnvironmentVariables</key>
     <dict>
         <key>SUDO_ASKPASS</key>
-        <string>/Users/brett.abramczyk/src/personal/dotfiles/bin/sudo_askpass.sh</string>
+        <string>/Users/brett/src/personal/dotfiles/bin/sudo_askpass.sh</string>
     </dict>
     <key>RunAtLoad</key>
     <true/>

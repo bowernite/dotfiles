@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
-# Symlink every launch agent plist in this repo into ~/Library/LaunchAgents and
+# Install every launch agent plist in this repo into ~/Library/LaunchAgents and
 # (re)load it under launchd. Plists marked Disabled are installed but not loaded.
+#
+# Tracked plists hardcode /Users/brett/ (personal Mac). launchd does not expand
+# $HOME, so this copies each plist and rewrites that prefix to $HOME.
 #
 # To unload one by hand: launchctl bootout gui/$UID/<label>
 
@@ -19,11 +22,21 @@ done
 
 mkdir -p ~/Library/LaunchAgents
 
+install_launch_agent_plist() {
+  local src="$1"
+  local dest="$2"
+  chflags -h nouchg "$dest" 2>/dev/null || true
+  rm -f "$dest"
+  # Personal-Mac prefix only; no-op when $HOME is already /Users/brett.
+  sed "s|/Users/brett/|${HOME}/|g" "$src" >"$dest"
+}
+
 for plist in "$dotfiles_dir"/macos/launch_agents/*.plist; do
   [ -e "$plist" ] || continue # with no plists the glob comes through unexpanded
 
   label=$(basename "$plist" .plist)
-  install_dotfile "macos/launch_agents/${label}.plist" "Library/LaunchAgents/${label}.plist"
+  dest="$HOME/Library/LaunchAgents/${label}.plist"
+  install_launch_agent_plist "$plist" "$dest"
 
   launchctl bootout "gui/$UID/$label" 2>/dev/null
   # bootout returns before teardown finishes when the agent has a live process.
@@ -37,6 +50,12 @@ for plist in "$dotfiles_dir"/macos/launch_agents/*.plist; do
     continue
   fi
 
-  launchctl bootstrap "gui/$UID" ~/Library/LaunchAgents/"${label}.plist" ||
+  program=$(plutil -extract ProgramArguments.0 raw -o - "$dest" 2>/dev/null || true)
+  if [ -n "$program" ] && [ ! -e "$program" ]; then
+    echo "Skipping launch agent with missing program: $label ($program)"
+    continue
+  fi
+
+  launchctl bootstrap "gui/$UID" "$dest" ||
     echo "Failed to bootstrap launch agent: $label" >&2
 done

@@ -6,7 +6,7 @@
     <string>com.user.sync-sunset-appearance</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/brett.abramczyk/src/personal/dotfiles/macos/launch_agents/sync-sunset-appearance</string>
+        <string>/Users/brett/src/personal/dotfiles/macos/launch_agents/sync-sunset-appearance</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
