@@ -6,7 +6,7 @@
     <string>com.user.watch-appearance</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/brett/src/personal/dotfiles/macos/launch_agents/watch-appearance</string>
+        <string>/Users/brett.abramczyk/src/personal/dotfiles/macos/launch_agents/watch-appearance</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
