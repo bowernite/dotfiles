@@ -396,7 +396,20 @@ cc() {
     print -r -- "$claude_bin" >"$patch_stamp"
   fi
 
-  claude "$@"
+  local -a cc_args=("$@")
+  if [[ "$PWD" == ${HOME}/src/personal/AGENTS(|/*) ]]; then
+    local arg skip_bypass
+    for arg in "$@"; do
+      case "$arg" in
+        (--permission-mode|--dangerously-skip-permissions|--allow-dangerously-skip-permissions)
+          skip_bypass=1
+          ;;
+      esac
+    done
+    [[ -z "$skip_bypass" ]] && cc_args=(--permission-mode bypassPermissions "${cc_args[@]}")
+  fi
+
+  claude "${cc_args[@]}"
 }
 
 ant() {
