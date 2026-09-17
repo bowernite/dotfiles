@@ -1,0 +1,99 @@
+#!/bin/bash
+# Block or restore automatic mount/unlock for "Time Machine (SSD)" on this Mac.
+set -euo pipefail
+
+VOLUME_NAME='Time Machine (SSD)'
+FSTAB_MARKER='Time Machine (SSD) — block automount'
+FSTAB_LINE='UUID=53AEC47B-D288-4E75-8A10-247EFA74C897 none apfs rw,noauto'
+
+usage() {
+  cat <<EOF
+Usage: $(basename "$0") disable|enable|status
+
+  disable  Add /etc/fstab noauto so macOS will not auto-mount or prompt to unlock
+  enable   Remove the fstab entry (previous default behavior)
+  status   Show whether the block is active
+EOF
+}
+
+require_sudo() {
+  if [[ "${EUID:-$(id -u)}" -ne 0 ]]; then
+    export SUDO_ASKPASS="${SUDO_ASKPASS:-$HOME/src/personal/dotfiles/bin/sudo_askpass.sh}"
+    exec sudo -A "$0" "$@"
+  fi
+}
+
+fstab_has_block() {
+  [[ -f /etc/fstab ]] && grep -Fq "$FSTAB_MARKER" /etc/fstab
+}
+
+cmd_status() {
+  if fstab_has_block; then
+    echo "Automount block: active (/etc/fstab)"
+    grep "$FSTAB_MARKER" /etc/fstab || true
+  else
+    echo "Automount block: inactive"
+  fi
+  diskutil info "$VOLUME_NAME" 2>/dev/null | grep -E 'Mounted|Volume UUID' || true
+}
+
+cmd_disable() {
+  require_sudo "$@"
+
+  if fstab_has_block; then
+    echo "Already disabled."
+    cmd_status
+    exit 0
+  fi
+
+  if [[ ! -f /etc/fstab ]]; then
+    touch /etc/fstab
+    chmod 644 /etc/fstab
+  fi
+
+  {
+    echo ""
+    echo "# $FSTAB_MARKER"
+    echo "$FSTAB_LINE # $FSTAB_MARKER"
+  } >> /etc/fstab
+
+  automount -vc
+  diskutil unmount "$VOLUME_NAME" 2>/dev/null || true
+
+  echo "Disabled auto-mount for \"$VOLUME_NAME\"."
+  echo "To use the drive: Disk Utility → select volume → Mount (or: diskutil mount \"$VOLUME_NAME\")."
+  echo "To undo: $(dirname "$0")/time-machine-ssd-automount enable"
+}
+
+cmd_enable() {
+  require_sudo "$@"
+
+  if ! fstab_has_block; then
+    echo "Block not present; nothing to do."
+    exit 0
+  fi
+
+  local tmp
+  tmp="$(mktemp)"
+  grep -Fv "$FSTAB_MARKER" /etc/fstab | sed -e '/^$/N;/^\n$/D' > "$tmp"
+  mv "$tmp" /etc/fstab
+  automount -vc
+
+  echo "Restored default auto-mount behavior for \"$VOLUME_NAME\"."
+}
+
+main() {
+  local cmd="${1:-}"
+  case "$cmd" in
+    disable) cmd_disable "$@" ;;
+    enable) cmd_enable "$@" ;;
+    status) cmd_status ;;
+    -h|--help|help) usage ;;
+    *)
+      usage >&2
+      exit 1
+      ;;
+  esac
+}
+
+main "$@"
