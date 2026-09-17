@@ -60,6 +60,13 @@ cmd_disable() {
   automount -vc
   diskutil unmount "$VOLUME_NAME" 2>/dev/null || true
 
+  local vol_dev
+  vol_dev="$(diskutil info "$VOLUME_NAME" | awk '/Device Identifier/ {print $3}')"
+  if [[ -n "$vol_dev" ]]; then
+    diskutil apfs changeVolumeRole "$vol_dev" t
+    echo "Cleared APFS Backup (Time Machine) role on $vol_dev."
+  fi
+
   echo "Disabled auto-mount for \"$VOLUME_NAME\"."
   echo "To use the drive: Disk Utility → select volume → Mount (or: diskutil mount \"$VOLUME_NAME\")."
   echo "To undo: $(dirname "$0")/time-machine-ssd-automount enable"
@@ -78,6 +85,13 @@ cmd_enable() {
   grep -Fv "$FSTAB_MARKER" /etc/fstab | sed -e '/^$/N;/^\n$/D' > "$tmp"
   mv "$tmp" /etc/fstab
   automount -vc
+
+  local vol_dev
+  vol_dev="$(diskutil info "$VOLUME_NAME" | awk '/Device Identifier/ {print $3}')"
+  if [[ -n "$vol_dev" ]]; then
+    diskutil apfs changeVolumeRole "$vol_dev" T
+    echo "Restored APFS Backup (Time Machine) role on $vol_dev."
+  fi
 
   echo "Restored default auto-mount behavior for \"$VOLUME_NAME\"."
 }
