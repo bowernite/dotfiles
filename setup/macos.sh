@@ -19,6 +19,9 @@ done 2>/dev/null &
 # Make Spotlight/Alfred index markdown files
 source $dotfiles_dir/setup/make-spotlight-index-markdown.sh
 
+# Keep Trash out of Spotlight / Alfred file search
+"$dotfiles_dir/bin/exclude-trash-from-spotlight.sh"
+
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we're about to change
 osascript -e 'tell application "System Preferences" to quit'
