@@ -414,7 +414,7 @@ cc() {
 
 ant() {
   maybe_sync_machines
-  agent --model composer-2.5-fast "$@"
+  agent "$@"
 }
 
-alias help='cd ~/src/personal/assistant && ant'
+alias help='cd ~/src/personal/assistant && ant --model composer-2.5-fast '
