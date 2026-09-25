@@ -44,3 +44,10 @@ if [[ -n ${CURSOR_AGENT:-} || ${SUDO_ASKPASS:-} == *cursor-askpass* ]]; then
     yarn() { _fnm_ensure; command yarn "$@"; }
   fi
 fi
+
+# Agent shells (Claude Code, Cursor) in personal repos: export ./.env so agent
+# commands never need `source .env`. Personal repos only -- work repos' .env
+# (NODE_ENV, DATABASE_URL, ...) would silently change tool/test behavior.
+if [[ -n ${CLAUDECODE:-}${CURSOR_AGENT:-} && $PWD == $HOME/src/personal/* && -f .env ]]; then
+  set -a; source ./.env; set +a
+fi
