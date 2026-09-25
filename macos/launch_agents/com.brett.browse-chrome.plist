@@ -9,6 +9,11 @@
         <string>/Users/brett/src/personal/dotfiles/bin/browse</string>
         <string>up</string>
     </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>BROWSE_PROFILE</key>
+        <string>/Users/brett/.agent-browser/profiles/google</string>
+    </dict>
     <key>RunAtLoad</key>
     <true/>
     <key>StandardOutPath</key>
